@@ -3,181 +3,17 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Figure and Ground — Line-interleaved, overlapping</title>
-<style>
-  @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500;1,600&display=swap');
-
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-
-  body {
-    font-family: 'Cormorant Garamond', 'Georgia', serif;
-    background: #333;
-  }
-
-  .poster {
-    width: 100vw;
-    min-height: 100vh;
-    position: relative;
-    background: linear-gradient(to right,
-      #f4f4f4 0%,
-      #e8e8e8 12%,
-      #888888 38%,
-      #1a1a1a 68%,
-      #0a0a0a 100%
-    );
-    padding: 3vh 0 6vh 0;
-  }
-
-  /* ── TITLE ── */
-  .main-title {
-    display: flex;
-    justify-content: center;
-    align-items: baseline;
-    gap: 0.4em;
-    padding-bottom: 3vh;
-    font-size: clamp(1.8rem, 3vw, 3.2rem);
-    font-weight: 300;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    padding-right: 24vw;
-  }
-
-  .word-figure {
-    color: #000000;
-    text-shadow: 0 0 12px rgba(255,255,255,0.8);
-  }
-  .word-and {
-    color: #888888;
-    font-size: 0.7em;
-    letter-spacing: 0.2em;
-    font-weight: 400;
-  }
-  .word-ground {
-    color: #ffffff;
-    text-shadow: 0 0 12px rgba(0,0,0,0.8);
-  }
-
-  /* ── SUBTITLE ROW ── */
-  .subtitle-row {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    padding: 0 4vw;
-    margin-bottom: 2.2em;
-  }
-
-  .subtitle-left {
-    font-size: clamp(1.05rem, 1.4vw, 1.5rem);
-    font-weight: 600;
-    letter-spacing: 0.12em;
-    font-style: italic;
-    color: #000;
-    text-shadow: 0 0 12px rgba(255,255,255,1), 0 0 24px rgba(255,255,255,0.5);
-    /* offset down to match Odysseus starting on second line */
-    margin-top: 1.6em;
-  }
-
-  .subtitle-right {
-    font-size: clamp(1.05rem, 1.4vw, 1.5rem);
-    font-weight: 600;
-    letter-spacing: 0.12em;
-    font-style: italic;
-    color: #fff;
-    text-shadow: 0 0 12px rgba(0,0,0,1), 0 0 24px rgba(0,0,0,0.5);
-  }
-
-  /* ── INTERLEAVED + OVERLAPPING ── */
-  :root {
-    --base-size: clamp(0.72rem, 0.88vw, 0.92rem);
-    --line-unit: 1.55em;
-    --double-line: calc(var(--line-unit) * 2);
-  }
-
-  .interleave {
-    display: grid;
-    grid-template-columns: 1fr;
-    padding: 0 3vw;
-    position: relative;
-  }
-
-  .col-odysseus,
-  .col-siren {
-    grid-column: 1;
-    grid-row: 1;
-    font-size: var(--base-size);
-    line-height: var(--double-line);
-    text-align: justify;
-    hyphens: auto;
-    -webkit-hyphens: auto;
-  }
-
-  /* Odysseus: left-aligned, extends to ~42% */
-  .col-odysseus {
-    width: 42%;
-    justify-self: start;
-    color: #000000;
-    font-weight: 500;
-    text-shadow:
-      0 0 8px rgba(255,255,255,0.9),
-      0 0 18px rgba(255,255,255,0.6),
-      0 0 30px rgba(255,255,255,0.3);
-    padding-left: 1vw;
-    padding-right: 2vw;
-    /* Odysseus starts on second line */
-    margin-top: var(--line-unit);
-    /* fade out text at right edge — stay opaque longer */
-    -webkit-mask-image: linear-gradient(to right, black 0%, black 88%, rgba(0,0,0,0.3) 100%);
-    mask-image: linear-gradient(to right, black 0%, black 88%, rgba(0,0,0,0.3) 100%);
-  }
-
-  /* Siren: right-aligned, extends to ~68%, overlapping Odysseus */
-  .col-siren {
-    width: 68%;
-    justify-self: end;
-    color: #ffffff;
-    font-weight: 400;
-    text-shadow:
-      0 0 8px rgba(0,0,0,0.9),
-      0 0 18px rgba(0,0,0,0.6),
-      0 0 30px rgba(0,0,0,0.3);
-    padding-right: 1vw;
-    padding-left: 2vw;
-    /* Siren starts first — no offset */
-    /* fade out text at left edge — stay opaque longer */
-    -webkit-mask-image: linear-gradient(to left, black 0%, black 88%, rgba(0,0,0,0.3) 100%);
-    mask-image: linear-gradient(to left, black 0%, black 88%, rgba(0,0,0,0.3) 100%);
-  }
-
-  /* Paragraph spacing — multiples of line unit to stay in sync */
-  .col-odysseus p,
-  .col-siren p {
-    margin-bottom: var(--double-line);
-  }
-
-  .col-odysseus p:last-child,
-  .col-siren p:last-child {
-    margin-bottom: 0;
-  }
-
-  /* Italic passages */
-  .song {
-    font-style: italic;
-  }
-
-  /* ── PRINT ── */
-  @media print {
-    .poster { width: 841mm; min-height: 594mm; }
-  }
-</style>
+<title>Figure and Ground</title>
+<link rel="stylesheet" href="poster.css">
 </head>
 <body>
 
 <div class="poster">
 
   <div class="main-title">
-    <span class="word-figure">Figure</span>
-    <span class="word-and">and</span>
-    <span class="word-ground">Ground</span>
+    <span class="word-left">Figure</span>
+    <span class="word-mid">and</span>
+    <span class="word-right">Ground</span>
   </div>
 
   <div class="subtitle-row">
@@ -187,7 +23,7 @@
 
   <div class="interleave">
 
-    <!-- LEFT: Odysseus — black, bolder, fading at right edge -->
+    <!-- LEFT: Odysseus -->
     <div class="col-odysseus">
 
       <p>In the weaker moments of our meandering lives, we tend to feel an urge at last to claim what we believe has long been owed to us since the days of our dreamy youth and withheld by fate until now. Out of sheer heedlessness we begin to expose ourselves to forces which – once unleashed – we can scarcely bring back under control, and which – should we eventually escape the grinding struggle with them – leave their mark on us forever. We undo ourselves because we are convinced of our own steadfastness and believe we could hold our ground even in a heroic epic.</p>
@@ -202,7 +38,7 @@
 
     </div>
 
-    <!-- RIGHT: Siren — white, fading at left edge -->
+    <!-- RIGHT: Siren -->
     <div class="col-siren">
 
       <p>Tender goes the night, like a confederate of the furtive pair that has just stepped onto the celestial stage in the east. Ruby-red, Mars pierces the midnight-blue velvet, soon outshone by the opal shimmer of Venus; already, though, their presence fades in the transfiguring blue of the awakening day, which swiftly traverses the entire firmament and at last, far in the west, dismisses even Orion until evening.</p>
