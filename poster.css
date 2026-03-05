@@ -157,72 +157,47 @@ body {
   font-style: italic;
 }
 
-/* ── MOBILE ── */
+/* ── MOBILE: swipeable overlapping columns ── */
 @media (max-width: 768px) {
+  body {
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  :root {
+    --base-size: 1rem;
+  }
+
   .poster {
-    background: linear-gradient(to bottom,
-      #f4f4f4 0%,
-      #e8e8e8 8%,
-      #aaaaaa 40%,
-      #444444 60%,
-      #1a1a1a 85%,
-      #0a0a0a 100%
-    );
-    padding: 3vh 5vw 6vh 5vw;
+    width: 170vw;
+    padding: 3vh 3vw 6vh 3vw;
+    /* gradient stays horizontal, stretched across wider poster */
   }
 
   .main-title {
-    padding-right: 0;
-    font-size: clamp(1.4rem, 6vw, 2.2rem);
-  }
-
-  .subtitle-row {
-    flex-direction: column;
-    gap: 0;
-    padding: 0;
-    margin-bottom: 1.5em;
+    padding-right: 40vw;
+    font-size: 1.6rem;
   }
 
   .subtitle-left {
-    margin-top: 0;
-    font-size: 1rem;
+    font-size: 1.05rem;
+    margin-top: 1.2em;
   }
 
   .subtitle-right {
-    font-size: 1rem;
-    align-self: flex-end;
-    margin-top: 1.5em;
+    font-size: 1.05rem;
   }
 
-  .interleave {
-    display: flex;
-    flex-direction: column;
-    gap: 2em;
-    padding: 0;
-  }
-
-  .col-odysseus,
-  .col-siren {
-    width: 100%;
-    line-height: 1.7em;
-    font-size: 1rem;
-    text-align: left;
-    -webkit-mask-image: none;
-    mask-image: none;
-  }
-
+  /* Both columns widen to ~60%, creating ~20vw overlap zone */
   .col-odysseus {
-    margin-top: 0;
-    padding: 0;
+    width: 60%;
+    scroll-snap-align: start;
   }
 
   .col-siren {
-    padding: 0;
-  }
-
-  .col-odysseus p,
-  .col-siren p {
-    margin-bottom: 1.2em;
+    width: 60%;
+    scroll-snap-align: end;
   }
 }
 
