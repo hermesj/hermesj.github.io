@@ -200,8 +200,8 @@ body {
     scroll-snap-align: start;
     font-weight: 600;
     /* stronger mask: fade more on mobile, extra space beyond text */
-    -webkit-mask-image: linear-gradient(to right, black 0%, black 85%, rgba(0,0,0,0.2) 110%);
-    mask-image: linear-gradient(to right, black 0%, black 85%, rgba(0,0,0,0.2) 110%);
+    -webkit-mask-image: linear-gradient(to right, black 0%, black 75%, rgba(0,0,0,0.2) 110%);
+    mask-image: linear-gradient(to right, black 0%, black 75%, rgba(0,0,0,0.2) 110%);
     /* stronger glow for readability */
     text-shadow:
       0 0 10px rgba(255,255,255,1),
