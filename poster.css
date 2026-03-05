@@ -13,10 +13,10 @@ body {
   position: relative;
   background: linear-gradient(to right,
     #f4f4f4 0%,
-    #e8e8e8 12%,
-    #888888 38%,
-    #1a1a1a 68%,
-    #0a0a0a 100%
+    #e4eaf0 12%,
+    #98a8b8 38%,
+    #3a4d66 68%,
+    #0f1926 100%
   );
   padding: 3vh 0 6vh 0;
 }
@@ -167,17 +167,31 @@ body {
 
   :root {
     --base-size: 1.25rem;
+    --mobile-margin: 4vw;
   }
 
   .poster {
     width: 170vw;
-    padding: 3vh 3vw 6vh 3vw;
-    /* gradient stays horizontal, stretched across wider poster */
+    padding: 3vh 0 6vh 0;
+    /* gentler gradient: white → light blue → night blue */
+    background: linear-gradient(to right,
+      #f4f4f4 0%,
+      #e4eaf0 15%,
+      #98a8b8 48%,
+      #3a4d66 75%,
+      #0f1926 100%
+    );
   }
 
   .main-title {
-    padding-right: 40vw;
+    justify-content: center;
+    padding-right: 36vw;
+    padding-left: 0;
     font-size: 2.0rem;
+  }
+
+  .subtitle-row {
+    padding: 0 var(--mobile-margin);
   }
 
   .subtitle-left {
@@ -185,13 +199,13 @@ body {
     margin-top: 1.2em;
   }
 
-  .subtitle-row {
-    padding: 0 3vw;
-  }
-
   .subtitle-right {
     font-size: 1.5rem;
     white-space: nowrap;
+  }
+
+  .interleave {
+    padding: 0;
   }
 
   /* Both columns widen to ~60%, creating ~20vw overlap zone */
@@ -199,7 +213,9 @@ body {
     width: 60%;
     scroll-snap-align: start;
     font-weight: 600;
-    /* stronger mask: fade more on mobile, extra space beyond text */
+    padding-left: var(--mobile-margin);
+    padding-right: var(--mobile-margin);
+    /* stronger mask: fade more on mobile */
     -webkit-mask-image: linear-gradient(to right, black 0%, black 75%, rgba(0,0,0,0.2) 110%);
     mask-image: linear-gradient(to right, black 0%, black 75%, rgba(0,0,0,0.2) 110%);
     /* stronger glow for readability */
@@ -212,6 +228,8 @@ body {
   .col-siren {
     width: 60%;
     scroll-snap-align: end;
+    padding-left: var(--mobile-margin);
+    padding-right: var(--mobile-margin);
     -webkit-mask-image: linear-gradient(to left, black 0%, black 92%, rgba(0,0,0,0.4) 100%);
     mask-image: linear-gradient(to left, black 0%, black 92%, rgba(0,0,0,0.4) 100%);
     text-shadow:
