@@ -166,7 +166,7 @@ body {
   }
 
   :root {
-    --base-size: 1.15rem;
+    --base-size: 1.25rem;
   }
 
   .poster {
@@ -177,11 +177,11 @@ body {
 
   .main-title {
     padding-right: 40vw;
-    font-size: 1.8rem;
+    font-size: 2.0rem;
   }
 
   .subtitle-left {
-    font-size: 1.25rem;
+    font-size: 1.5rem;
     margin-top: 1.2em;
   }
 
