@@ -193,11 +193,25 @@ body {
   .col-odysseus {
     width: 60%;
     scroll-snap-align: start;
+    /* stronger mask: stay opaque longer on mobile */
+    -webkit-mask-image: linear-gradient(to right, black 0%, black 92%, rgba(0,0,0,0.4) 100%);
+    mask-image: linear-gradient(to right, black 0%, black 92%, rgba(0,0,0,0.4) 100%);
+    /* stronger glow for readability */
+    text-shadow:
+      0 0 10px rgba(255,255,255,1),
+      0 0 22px rgba(255,255,255,0.7),
+      0 0 36px rgba(255,255,255,0.4);
   }
 
   .col-siren {
     width: 60%;
     scroll-snap-align: end;
+    -webkit-mask-image: linear-gradient(to left, black 0%, black 92%, rgba(0,0,0,0.4) 100%);
+    mask-image: linear-gradient(to left, black 0%, black 92%, rgba(0,0,0,0.4) 100%);
+    text-shadow:
+      0 0 10px rgba(0,0,0,1),
+      0 0 22px rgba(0,0,0,0.7),
+      0 0 36px rgba(0,0,0,0.4);
   }
 }
 
