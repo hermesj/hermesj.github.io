@@ -157,6 +157,75 @@ body {
   font-style: italic;
 }
 
+/* ── MOBILE ── */
+@media (max-width: 768px) {
+  .poster {
+    background: linear-gradient(to bottom,
+      #f4f4f4 0%,
+      #e8e8e8 8%,
+      #aaaaaa 40%,
+      #444444 60%,
+      #1a1a1a 85%,
+      #0a0a0a 100%
+    );
+    padding: 3vh 5vw 6vh 5vw;
+  }
+
+  .main-title {
+    padding-right: 0;
+    font-size: clamp(1.4rem, 6vw, 2.2rem);
+  }
+
+  .subtitle-row {
+    flex-direction: column;
+    gap: 0;
+    padding: 0;
+    margin-bottom: 1.5em;
+  }
+
+  .subtitle-left {
+    margin-top: 0;
+    font-size: 1rem;
+  }
+
+  .subtitle-right {
+    font-size: 1rem;
+    align-self: flex-end;
+    margin-top: 1.5em;
+  }
+
+  .interleave {
+    display: flex;
+    flex-direction: column;
+    gap: 2em;
+    padding: 0;
+  }
+
+  .col-odysseus,
+  .col-siren {
+    width: 100%;
+    line-height: 1.7em;
+    font-size: 1rem;
+    text-align: left;
+    -webkit-mask-image: none;
+    mask-image: none;
+  }
+
+  .col-odysseus {
+    margin-top: 0;
+    padding: 0;
+  }
+
+  .col-siren {
+    padding: 0;
+  }
+
+  .col-odysseus p,
+  .col-siren p {
+    margin-bottom: 1.2em;
+  }
+}
+
 /* ── PRINT ── */
 @media print {
   .poster { width: 841mm; min-height: 594mm; }
