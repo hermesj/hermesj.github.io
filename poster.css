@@ -191,10 +191,7 @@ body {
 
   .subtitle-right {
     font-size: 1.25rem;
-    /* align with Siren column: right-aligned, 60% width */
-    width: 60%;
-    text-align: right;
-    margin-left: auto;
+    white-space: nowrap;
   }
 
   /* Both columns widen to ~60%, creating ~20vw overlap zone */
@@ -202,9 +199,9 @@ body {
     width: 60%;
     scroll-snap-align: start;
     font-weight: 600;
-    /* stronger mask: fade more on mobile */
-    -webkit-mask-image: linear-gradient(to right, black 0%, black 92%, rgba(0,0,0,0.2) 100%);
-    mask-image: linear-gradient(to right, black 0%, black 92%, rgba(0,0,0,0.2) 100%);
+    /* stronger mask: fade more on mobile, extra space beyond text */
+    -webkit-mask-image: linear-gradient(to right, black 0%, black 85%, rgba(0,0,0,0.2) 105%);
+    mask-image: linear-gradient(to right, black 0%, black 85%, rgba(0,0,0,0.2) 105%);
     /* stronger glow for readability */
     text-shadow:
       0 0 10px rgba(255,255,255,1),
