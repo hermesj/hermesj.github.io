@@ -193,6 +193,7 @@ body {
   .col-odysseus {
     width: 60%;
     scroll-snap-align: start;
+    font-weight: 600;
     /* stronger mask: stay opaque longer on mobile */
     -webkit-mask-image: linear-gradient(to right, black 0%, black 92%, rgba(0,0,0,0.4) 100%);
     mask-image: linear-gradient(to right, black 0%, black 92%, rgba(0,0,0,0.4) 100%);
