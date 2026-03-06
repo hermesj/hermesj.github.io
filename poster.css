@@ -81,7 +81,7 @@ body {
 
 /* ── INTERLEAVED + OVERLAPPING ── */
 :root {
-  --base-size: clamp(0.85rem, 1vw, 1.1rem);
+  --base-size: clamp(0.72rem, 0.88vw, 0.92rem);
   --line-unit: 1.55em;
   --double-line: calc(var(--line-unit) * 2);
 }
