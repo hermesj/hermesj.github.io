@@ -244,7 +244,76 @@ body {
   }
 }
 
-/* ── PRINT ── */
+/* ── PRINT: A1 portrait (594 × 841 mm) ── */
 @media print {
-  .poster { width: 841mm; min-height: 594mm; }
+  @page {
+    size: 594mm 841mm;
+    margin: 0;
+  }
+
+  body {
+    background: none;
+    margin: 0;
+    padding: 0;
+    overflow-x: visible;
+    scroll-snap-type: none;
+  }
+
+  .poster {
+    width: 594mm;
+    min-height: 841mm;
+    padding: 25mm 0 30mm 0;
+    background: linear-gradient(to right,
+      #f4f4f4 0%,
+      #e4eaf0 12%,
+      #98a8b8 38%,
+      #3a4d66 68%,
+      #0f1926 100%
+    );
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+    color-adjust: exact;
+  }
+
+  .interleave {
+    padding: 0 3vw;
+  }
+
+  /* Reset mobile overrides — force desktop layout */
+  .col-odysseus {
+    width: 42%;
+    font-weight: 500;
+    padding-left: 1vw;
+    padding-right: 2vw;
+    scroll-snap-align: unset;
+    -webkit-mask-image: linear-gradient(to right, black 0%, black 88%, rgba(0,0,0,0.3) 100%);
+    mask-image: linear-gradient(to right, black 0%, black 88%, rgba(0,0,0,0.3) 100%);
+    text-shadow:
+      0 0 8px rgba(255,255,255,0.9),
+      0 0 18px rgba(255,255,255,0.6),
+      0 0 30px rgba(255,255,255,0.3);
+  }
+
+  .col-siren {
+    width: 68%;
+    padding-left: 2vw;
+    padding-right: 1vw;
+    scroll-snap-align: unset;
+    -webkit-mask-image: linear-gradient(to left, black 0%, black 88%, rgba(0,0,0,0.3) 100%);
+    mask-image: linear-gradient(to left, black 0%, black 88%, rgba(0,0,0,0.3) 100%);
+    text-shadow:
+      0 0 8px rgba(0,0,0,0.9),
+      0 0 18px rgba(0,0,0,0.6),
+      0 0 30px rgba(0,0,0,0.3);
+  }
+
+  .main-title {
+    padding-right: 24vw;
+    padding-left: 0;
+    font-size: clamp(1.8rem, 3vw, 3.2rem);
+  }
+
+  .poster-footer {
+    display: none;
+  }
 }
