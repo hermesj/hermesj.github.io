@@ -1,5 +1,7 @@
 # Figure and Ground / Figur und Hintergrund
 
+## Project genesis. At some distance from myself.
+
 The project appears to have developed over several years. The earliest notes on "Odysseus. The Siren. An Attempt." are dated 17 February 2010 in Hermes' diary. In 2012, the text was published on the blog Hysteron Proteron (then hosted on the blogging platform Posterous), but set to "private publication." When Posterous shut down in 2013, *Hysteron Proteron* moved to Tumblr; in the process, the *private* flag was apparently removed, though the post remained buried beneath a number of later entries.
 
 In 2022, Hermes' personal blog moved to [spinfocl.substack.com](https://spinfocl.substack.com), and with it the Odysseus text. Diary entries suggest that by 2018 at the latest he was working on a companion text about the Siren, intended to set against the purely male, suffering perspective of Odysseus the perspective of the Siren herself. Sustained work on the text, however, appears to have begun only in late November 2025. On 17 February 2026, Hermes noted that the project had turned sixteen that day; he had completed the final stanza of "The Song of the Siren" a few days earlier.
@@ -11,6 +13,8 @@ When exactly Hermes arrived at the title "Figure and Ground" can no longer be de
 Throughout February 2026, Hermes continued to refine both texts and their renderings, but found it unsatisfactory to arrange them in a fixed sequence, since no ordering could do justice to their parallelism. From this arose the idea of a parallel typographic layout that would carry the theme of "figure and ground" into the visual design itself. The left column follows Odysseus, dark type on a light ground; the right follows the Siren, light type on a dark ground. Both columns overlap in the centre of the page, where figure and ground reverse and the texts become mutually illegible. In this way, the graphic mirrors the narrative, and the problem of an impossible sequence resolved itself. A number of chat sessions (here exclusively with Claude Opus) document the implementation of the CSS; the challenge of legibility on mobile devices was addressed with a dedicated mobile layout. By early March 2026, Hermes considered the project ready for publication.
 
 ---
+
+## Projektgenese. Mit etwas Abstand zu mir selbst.
 
 Hermes' Projekt ist offenbar über mehrere Jahre entstanden, die ersten Aufzeichnungen zu "Odysseus. Die Sirene. Ein Versuch." finden sich datiert auf den 17.2.2010 in seinem Tagebuch. Im Jahr 2012 ist der Text im Blog Hysteron Proteron (damals auf der Blogplattform Posterous) eingepflegt worden, wurde aber auf "private Veröffentlichung" gestellt. Als Posterous 2013 geschlossen wurde, zog *Hysteron Proteron* auf Tumblr um, dabei wurde offenbar auch das *private* Flag entfernt, der Post lag aber verborgen unter einer Reihe von später veröffentlichten. 
 
