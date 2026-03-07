@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Figure and Ground / Figur und Hintergrund</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Cormorant Garamond', 'Georgia', serif;
+    background: linear-gradient(to right, #e4eaf0 0%, #3a4d66 100%);
+    color: #1a2a3a;
+    min-height: 100vh;
+  }
+
+  .page {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 6vh 4vw 8vh;
+  }
+
+  h1 {
+    font-weight: 300;
+    font-size: clamp(1.6rem, 3vw, 2.6rem);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    text-align: center;
+    color: #0f1926;
+    margin-bottom: 1.5em;
+  }
+
+  .links {
+    display: flex;
+    justify-content: center;
+    gap: 2em;
+    font-size: clamp(1.1rem, 1.5vw, 1.3rem);
+    font-weight: 500;
+    margin-bottom: 3em;
+  }
+
+  .links a {
+    color: #0f1926;
+    text-decoration: none;
+    letter-spacing: 0.05em;
+    padding-bottom: 2px;
+    border-bottom: 1px solid rgba(15, 25, 38, 0.3);
+    transition: border-color 0.2s;
+  }
+
+  .links a:hover {
+    border-color: rgba(15, 25, 38, 0.8);
+  }
+
+  .genesis {
+    font-size: clamp(0.92rem, 1.2vw, 1.05rem);
+    line-height: 1.75;
+    text-align: justify;
+    hyphens: auto;
+    -webkit-hyphens: auto;
+  }
+
+  .genesis p {
+    margin-bottom: 1.2em;
+  }
+
+  .genesis a {
+    color: #0f1926;
+  }
+
+  .divider {
+    border: none;
+    border-top: 1px solid rgba(15, 25, 38, 0.2);
+    margin: 2.5em 0;
+  }
+
+  .lang-label {
+    font-size: clamp(0.85rem, 1vw, 0.95rem);
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: rgba(15, 25, 38, 0.45);
+    margin-bottom: 1.2em;
+  }
+</style>
+</head>
+<body>
+
+<div class="page">
+
+  <h1>Figure and Ground</h1>
+
+  <div class="links">
+    <a href="figur-hintergrund.html">Deutsch</a>
+    <a href="figure-ground.html">English</a>
+  </div>
+
+  <div class="genesis">
+
+    <div class="lang-label">English</div>
+
+    <p>The project appears to have developed over several years. The earliest notes on "Odysseus. The Siren. An Attempt." are dated 17 February 2010 in Hermes' diary. In 2012, the text was published on the blog Hysteron Proteron (then hosted on the blogging platform Posterous), but set to "private publication." When Posterous shut down in 2013, <em>Hysteron Proteron</em> moved to Tumblr; in the process, the <em>private</em> flag was apparently removed, though the post remained buried beneath a number of later entries.</p>
+
+    <p>In 2022, Hermes' personal blog moved to <a href="https://spinfocl.substack.com">spinfocl.substack.com</a>, and with it the Odysseus text. Diary entries suggest that by 2018 at the latest he was working on a companion text about the Siren, intended to set against the purely male, suffering perspective of Odysseus the perspective of the Siren herself. Sustained work on the text, however, appears to have begun only in late November 2025. On 17 February 2026, Hermes noted that the project had turned sixteen that day; he had completed the final stanza of "The Song of the Siren" a few days earlier.</p>
+
+    <p>In parallel, he worked on rendering both texts in the other language. He confided to his diary that the distinctive qualities of the texts were deeply rooted in German and could not easily be carried into readable English without concessions to semantic precision. Hermes decided that what mattered most was to convey the formal atmosphere of the texts, and that exact semantic and lexical correspondence should yield to that aim. The German and English versions were therefore conceived independently: they share their structure, their subject, and their arc, but go their own way in register, rhythm, and imagery. Dozens of chat sessions with various language models can be traced in the creation of the English texts; both were combed through sentence by sentence, repeatedly.</p>
+
+    <p>When exactly Hermes arrived at the title "Figure and Ground" can no longer be determined with certainty. It became explicit only after he began more intensive work on the Siren in November 2025. The conceptual pairing, however, is attested in diary entries predating even the beginnings of the Odysseus text; implicitly, it may have been the very reason Hermes regarded the Odysseus text in its existing form as incomplete and felt compelled to remedy that deficiency with a second text.</p>
+
+    <p>Throughout February 2026, Hermes continued to refine both texts and their renderings, but found it unsatisfactory to arrange them in a fixed sequence, since no ordering could do justice to their parallelism. From this arose the idea of a parallel typographic layout that would carry the theme of "figure and ground" into the visual design itself. The left column follows Odysseus, dark type on a light ground; the right follows the Siren, light type on a dark ground. Both columns overlap in the centre of the page, where figure and ground reverse and the texts become mutually illegible. In this way, the graphic mirrors the narrative, and the problem of an impossible sequence resolved itself. A number of chat sessions (here exclusively with Claude Opus) document the implementation of the CSS; the challenge of legibility on mobile devices was addressed with a dedicated mobile layout. By early March 2026, Hermes considered the project ready for publication.</p>
+
+    <hr class="divider">
+
+    <div class="lang-label">Deutsch</div>
+
+    <p>Hermes' Projekt ist offenbar über mehrere Jahre entstanden, die ersten Aufzeichnungen zu "Odysseus. Die Sirene. Ein Versuch." finden sich datiert auf den 17.2.2010 in seinem Tagebuch. Im Jahr 2012 ist der Text im Blog Hysteron Proteron (damals auf der Blogplattform Posterous) eingepflegt worden, wurde aber auf "private Veröffentlichung" gestellt. Als Posterous 2013 geschlossen wurde, zog <em>Hysteron Proteron</em> auf Tumblr um, dabei wurde offenbar auch das <em>private</em> Flag entfernt, der Post lag aber verborgen unter einer Reihe von später veröffentlichten.</p>
+
+    <p>Im Jahr 2022 zog Hermes' privater Blog auf <a href="https://spinfocl.substack.com">spinfocl.substack.com</a> um und damit auch der Odysseus-Text. Aufzeichnungen aus Hermes' Tagebuch lassen darauf schließen, dass er spätestens seit 2018 an einem Text zur Sirene arbeitete, der der rein männlichen, erleidenden Perspektive des Odysseus die Perspektive der Sirene gegenüberstellen sollte. Wirklich an dem Text gearbeitet wurde aber offenbar erst ab Ende November 2025. Am 17. Februar 2026 stellte Hermes fest, dass das Projekt an diesem Tag 16 Jahre alt wurde, er hatte die letzte Strophe zum "Lied der Sirene" ein paar Tage zuvor vollendet.</p>
+
+    <p>Parallel arbeitete er an einer Übersetzung der beiden Texte. Seinem Tagebuch vertraute er an, dass die Besonderheiten der Texte stark in der deutschen Sprache verankert wären und nur schwer ohne Zugeständnisse der Semantik in ein lesbares Englisch übertragen werden könnten. Hermes traf die Entscheidung, dass vor allem die formale Atmosphäre der Texte übertragen werden sollte und hinter dieser inhaltliche und semantische Exaktheiten zurückstehen sollten. Deutscher und englischer Text wurden daher eigenständig konzipiert, so dass sie Struktur, Gegenstand und Bogen teilen, aber in Tonlage, Rhythmus und Bildsprache eigene Wege gehen. Für die Erstellung der Übersetzungen lassen sich Dutzende Chats mit unterschiedlichen Sprachmodellen nachweisen, dabei wurden beide Texte mehrfach Satz für Satz gebürstet.</p>
+
+    <p>Wann genau Hermes die Idee zum Titel "Figur und Hintergrund" hatte, lässt sich nicht mehr genau nachvollziehen. Explizit geworden ist sie erst, nachdem er im November 2025 intensiver anfing, an der Sirene zu arbeiten. Das Begriffspaar ist allerdings schon vor den Anfängen des Odysseus-Textes in Tagebuchaufzeichnungen nachweisbar, implizit war es gegebenenfalls sogar ursächlich dafür, dass Hermes den Odysseus-Text in seiner Form als unvollständig ansah und den Drang verspürte, diesen Makel mit einem zweiten Text zu beheben.</p>
+
+    <p>Hermes arbeitete den Februar 2026 über noch an beiden Texten und ihren Übersetzungen, empfand es allerdings als Problem, sie in eine fixe Reihenfolge zu bringen, weil keine Reihenfolge ihrer Parallelität gerecht würde. Daraus entstand die Idee, einen parallelen Drucksatz zu erstellen, der das Thema "Figur und Hintergrund" auch ins Schriftbild aufnimmt. Die linke Spalte folgt Odysseus, dunkle Schrift auf hellem Grund, die rechte der Sirene, helle Schrift auf dunklem Grund. Beide Spalten überlappen in der Mitte der Seite, wo Figur und Hintergrund sich umkehren und die Texte gegenseitig unlesbar werden. Damit spiegelt auch das Graphische das Narrative und das Problem der unmöglichen Reihenfolge löste sich auf. Auch für die Umsetzung des CSS lassen sich eine Reihe von Chats (hier ausschließlich mit Claude Opus) nachweisen, das Problem der Lesbarkeit auf mobile Devices wurde durch eine eigene Mobile-Ansicht gelöst. Anfang März 2026 sah Hermes das Projekt als publizierbar an.</p>
+
+  </div>
+
+</div>
+
+</body>
+</html>
