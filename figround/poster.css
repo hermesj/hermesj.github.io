@@ -163,7 +163,7 @@ body {
 }
 
 /* ── MOBILE: swipeable overlapping columns ── */
-@media (max-width: 768px) {
+@media (max-width: 1080px) {
   body {
     overflow-x: auto;
     scroll-snap-type: x mandatory;
