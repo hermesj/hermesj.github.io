@@ -6,3 +6,4 @@ A literary project: two parallel prose texts on the myth of Odysseus and the Sir
 - [Projektgenese (Deutsch)](https://spinfocl.substack.com/p/figur-und-hintergrund)
 - [Figur und Hintergrund](figur-hintergrund.html) — the original German text
 - [Figure and Ground](figure-ground.html) — an independent English rendering, not a translation
+- [License](LICENSE)
