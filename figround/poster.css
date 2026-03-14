@@ -157,11 +157,6 @@ body {
   font-style: italic;
 }
 
-/* ── SIREN FOOTER IMAGE ── */
-.poster-footer {
-  display: none;
-}
-
 /* ── MOBILE: swipeable overlapping columns ── */
 @media (max-width: 1366px) and (orientation: portrait) {
   body {
@@ -311,9 +306,5 @@ body {
     padding-right: 24vw;
     padding-left: 0;
     font-size: clamp(1.8rem, 3vw, 3.2rem);
-  }
-
-  .poster-footer {
-    display: none;
   }
 }
