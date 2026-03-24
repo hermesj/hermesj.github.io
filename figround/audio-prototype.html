@@ -24,7 +24,33 @@
     align-items: center;
     justify-content: center;
     padding: 4vh 4vw;
-    overflow: hidden;
+    overflow-x: hidden;
+    overflow-y: auto;
+  }
+
+  /* Scroll hint — visible only when page overflows */
+  .scroll-hint {
+    position: fixed;
+    bottom: 1em;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #fff;
+    text-shadow: 0 0 8px rgba(0,0,0,0.6);
+    font-size: 0.8rem;
+    font-style: italic;
+    opacity: 0.8;
+    transition: opacity 0.5s ease;
+    pointer-events: none;
+  }
+
+  .scroll-hint span {
+    display: inline-block;
+    animation: bounce 1.5s ease infinite;
+  }
+
+  @keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(4px); }
   }
 
   /* ── TITLE ── */
@@ -265,7 +291,8 @@
   .status {
     text-align: center;
     font-size: 0.95rem;
-    color: #4a5a6a;
+    color: #fff;
+    text-shadow: 0 0 6px rgba(0,0,0,0.5);
     font-style: italic;
     min-height: 1.5em;
     margin-bottom: 1em;
@@ -297,9 +324,10 @@
   .hint {
     text-align: center;
     font-size: 0.8rem;
-    color: #5a6a7a;
+    color: #fff;
+    text-shadow: 0 0 6px rgba(0,0,0,0.5);
     font-style: italic;
-    opacity: 0.7;
+    opacity: 0.85;
   }
 
   /* ── TEXT TICKER ── */
@@ -314,9 +342,11 @@
 
   .ticker {
     flex: 1;
+    min-width: 0;
     overflow: hidden;
     position: relative;
     height: 2.4em;
+    padding: 0 0.6em;
     border-radius: 3px;
   }
 
@@ -502,12 +532,30 @@
   <a href="index.html">← Overview</a>
 </div>
 
+<div class="scroll-hint" id="scrollHint"><span>&#x25BE;</span> scroll <span>&#x25BE;</span></div>
+
 <script>
+// ── Scroll hint: show only when content overflows ──
+(function() {
+  const hint = document.getElementById('scrollHint');
+  function checkOverflow() {
+    hint.style.display = document.body.scrollHeight > window.innerHeight ? '' : 'none';
+  }
+  checkOverflow();
+  window.addEventListener('resize', checkOverflow);
+  window.addEventListener('scroll', function() {
+    if (window.scrollY > 30) {
+      hint.style.opacity = '0';
+      setTimeout(() => hint.style.display = 'none', 500);
+    }
+  });
+})();
+
 // ── Audio Engine ──
 
 const AUDIO_FILES = {
-  de: { odysseus: 'audio/odysseus_de.mp3', siren: 'audio/siren_de.mp3' },
-  en: { odysseus: 'audio/odysseus_en.mp3', siren: 'audio/siren_en.mp3' },
+  de: { odysseus: 'audio/Odysseus_de/odysseus_de_indexed.mp3', siren: 'audio/Siren_de/siren_de_indexed.mp3' },
+  en: { odysseus: 'audio/Odysseus_en/odysseus_en.mp3', siren: 'audio/Siren_en/siren_en.mp3' },
 };
 
 let audioCtx = null;
@@ -682,12 +730,10 @@ function togglePlay() {
   if (audioCtx.state === 'suspended') audioCtx.resume();
 
   if (isPlaying) {
-    // Pause
     pauseOffset = getCurrentTime();
     isPlaying = false;
     stopSources();
   } else {
-    // Play
     startPlayback(pauseOffset);
   }
   updatePlayButton();
@@ -735,7 +781,7 @@ function updateProgress() {
   }
 
   // Always update tickers (also when paused, for seek)
-  updateTickers(pct);
+  updateTickers(cur);
 
   requestAnimationFrame(updateProgress);
 }
@@ -745,6 +791,7 @@ requestAnimationFrame(updateProgress);
 // ── Seek ──
 
 function seek(e) {
+  if (audioCtx.state === 'suspended') audioCtx.resume();
   const rect = document.getElementById('progressBg').getBoundingClientRect();
   const x = (e.clientX - rect.left) / rect.width;
   const dur = getMaxDuration();
@@ -798,8 +845,8 @@ function switchLang(lang) {
 
 const TEXTS = {
   de: {
-    odysseus: 'In schwachen Phasen unseres dahinrinnenden Lebens neigen wir dazu, endlich finden zu wollen, was uns unserer Meinung nach schon seit den Zeiten unserer träumerischen Jugend zusteht und uns vom Schicksal bisher versagt wurde. Aus purem Leichtsinn beginnen wir, uns Kräften auszusetzen, die wir — einmal entfesselt — nurmehr schwerlich unter Kontrolle bringen und die uns — sollten wir doch irgendwann dem zähen Ringen mit ihnen entkommen sein — als für immer gezeichnete Gestalten zurücklassen. Wir verderben uns, weil wir von unserer Standfestigkeit überzeugt sind und glauben, selbst in einem Heldenepos damit bestehen zu können. ◆ Wie jeder menschliche Mangel wird auch dieser in seiner endgültigen Konsequenz vom listenreichen Odysseus dargeboten. In der ereignisarmen Zeit nach seinem Gang durch die Pfade des Hades und noch bevor Scylla und Charybdis sich am Horizont abzeichneten, beschloss er aus einer Laune heraus, alle Warnungen in den Wind zu schlagen und sich etwas auszusetzen, das schon dem Argonautenzug um ein Haar den Garaus gemacht hätte. Gestählt hervorgegangen aus unzählbaren Schlachten, mit der Selbstgewissheit eines Mannes, dessen verschlagene Listen zuvor allesamt glückten, erschien es ihm ein Leichtes, dem Gesang allenfalls überschaubar gefährlicher Fabelwesen widerstehen zu können. Finale Zweifel gedachte er zu zerstreuen, indem er sich mit Ketten an den zentralen Mast des Schiffes schmieden ließ. Seine Mannschaft aber hieß er, sich gegenseitig Wachs in die Ohren zu träufeln, auf dass sie während des erwarteten Spektakels unbehelligt ihrer Arbeit nachgehen könnten. Und so näherte sich des Odysseus Schiff der Insel, auf der die Sängerinnen gemutmaßt wurden: Eine Reihe abgeschirmter arbeitsamer Seelen nebst einem Körper in Ketten. ◆ <span class="song">Sie ruft aus einer anderen Welt. Tongewordene Sehnsucht. Verfüllendes Begehren. Klaviaturen von Glück. Sie steht nur dort und singt und überschwemmt ihn mit gewallter Empfindung, deren Wucht er zuvor nicht einmal erahnte. Und so ihm gewahr wird, dass er nicht folgen kann, verwandelt sich diese in einen Sturzbach aus all dem Lärm, der die Erde seit Anbeginn der Zeit erfüllte. Zerfetzter Zeitlauf. Verzerrter Raum. Die resorbierende Anomalie nimmt ihm die Luft, die er zum Schreien benötigte. Reißt ihm die Haut vom Fleisch, das Fleisch von den Knochen. Nimmt alles Gedärm und zum Schluss sein Herz. Zurück bleibt nur sein kranker Geist, allem beraubt, was dem Schmerz einen Ausdruck geben könnte. Die Schreie, die niemand hörte, sind längst verklungen. Die Ketten halten.</span> ◆ Als die Männer sie zerschlugen, verlachten sie ihn ob seiner Klagen. Schlicht nichts habe sich ereignet, als man an der Insel vorüberfuhr. Keine Zeit dürfe man nun mit Lamentieren vertändeln, die Meerenge zwischen dem Strudel und dem Monster nahe. Weder Gesang noch Inferno habe man vernommen. Kein Riss im Gefüge war erschienen, keine Sogwirkung war entfacht. Nichts war geschehen, dem man irgendwie nachhängen könnte. ◆ Und Odysseus wurde gewahr, dass ihm der Schmerz nicht nur zugefügt, sondern tief in ihm vergraben wurde und er für alle Zeit mit ihm allein bleiben würde. Auch als die Jahre der Irrfahrt vorüber waren, er Penelope von ihren Freiern erlöst und wieder den Platz an ihrer Seite auf dem Thron von Ithaka eingenommen hatte, kam er zurück. In jedem Frühjahr von neuem.',
-    siren: 'Zärtlich weicht die Nacht, wie eine Verbündete des heimlichen Paars, das eben erst im Osten die Himmelsbühne betrat. Rubinrot sticht Mars aus dem nachtblauen Samt hervor, alsbald von der opalschimmernden Venus noch überstrahlt; doch schon verblasst ihre Anwesenheit im verklarenden Blau des erwachenden Tages, das rasch das gesamte Firmament durchmisst und schließlich weit im Westen auch Orion bis zum Abend von seinem Dienst entbindet. ◆ Wo der Planetenjäger wich, sind in dieser frühen Stunde die Grenzen zwischen den Zuständen der Welt noch verschwommen und nur die sacht bewegte Spiegelung des einen im anderen lässt jene Schwelle erahnen, an der die Elemente sich trennen. Von dort lösen sich, noch etliche Stadien entfernt, zwei Punkte, umeinander tollend wie beseelte Funken, in atemberaubendem Tempo an Farbe und Gestalt gewinnend, gleich orangeblau gekleideten Geschossen auf dem Weg in den beginnenden Tag. ◆ Wie der Zeit entzogen liegt das Meer unter dem rasanten Zug, wie eingefroren das Langschiff, vom Eisvogelpaar im Bruchteil eines Augenblicks passiert. Die Segel sind verstaut, denn Aiolos hat die Winde gehalten; doch auch die Ruderbänke wirken in ihrer Reglosigkeit, als hätte man dort Platz genommen, um einer Aufführung beizuwohnen. Schnell löst sich das Geschehen wieder vom Schiff, denn weiter geht die halcyonische Jagd über die ruhende See hin zur nahenden Küstenlinie, hinter der sich nur wenige Augenblicke noch die Sonne verbirgt, ehe sie sich den Himmel untertan macht. ◆ Im Herannahen der Küste hebt sich das Meer nun wahrnehmbarer, gleich dem Brustkorb eines ruhenden Titanen. Tänzerisch nehmen die beiden die Bewegung in ihren Flug auf und stoßen wiederholt mit dem Schnabel voran durch die nasse Oberfläche, als Gruß an die Töchter des Nereus, die dem Schauspiel verzückt vom Meeresboden aus beiwohnen. Verwegen und erst knapp vor der Steilküste wechseln die Flugkünstler in die Vertikale, ohne dabei ihre Dynamik zu verlieren. Sie durchmessen in meisterlicher Leichtigkeit den Raum zwischen den Pfeilern aus lichtweißem Stein, die in ihrer filigranen Gliederung als Vorbild für das Strebewerk ehrgeiziger Kathedralen dienen könnten, von Baumeistern erst künftiger Zeitalter erdacht. ◆ Weit oben werden die Streben lichter und verlieren sich schließlich in eine offene, sanft steigende Hochebene – eine Weide mit natürlicher Begrenzung für die sich langsam im Zwielicht des beginnenden Morgens aus ihren Verschlägen hervorwagenden Herdentiere. Noch ist die Wiese von silbrigem Nebel bedeckt, der im nächsten Moment von der sich nun erhebenden Sonne mit einem Blinzeln in Richtung des Klippenrandes hinweggefegt wird. Sattes, nahrhaftes Grün, gesprenkelt mit leuchtenden Wildblumeninseln, kommt zum Vorschein. Fast schwebend auf der vordersten Klippe wird nun ein zartes Wesen offenbar, sein Schatten von der tief stehenden Sonne weit hinaus ins Meer geworfen bis über das Langschiff am Horizont. Aufrecht, das Antlitz an die See gerichtet steht dort eine Frau, die Lippen leicht öffnend im harmonischen Spiel mit der sanften Bewegung ihres Körpers. Die Frau singt. Sie singt ein Feenlied. ◆ <span class="song">Alles in dieser Welt ist vom Gesang durchdrungen und richtet sich in ihm auf. Als gewinne die Hochebene durch ihn ihre Erhabenheit und die Küste ihre Monumentalität, als sei durch sein Wirken das Meer milder, der Himmel weiter und selbst die Sonne in ihrer Majestät weniger streng als sanft. Als tunke er die Gräser in tieferes Grün, gäbe er den Blüten wärmere Farben, ließe er die Schafe sanftmütiger, die Zicklein tollkühner und die Eisvögel ausgelassener wirken. Ein Lied als Balsam, dem sich alles öffnet und sich bestärkt, ermutigt, verstanden fühlt; das süße Tagträume von ihrer Flüchtigkeit erlösen und sie zu Substanz formen könnte. Musik mit gewaltigen Wellen der Resonanz, die selbst die mächtigsten Dämonen der Innenwelten in einen beschwingten Tanz zwänge. Welche Kraft könnte sie erst dort entfachen, wo Sehnsüchte in Ketten liegen, wo die Einsamen Gefährten, die Ungeliebten Erwiderung, die Unverstandenen Widerhall ersehnen? Nichts vermag gegen diese Macht anzukommen, nichts sich zu entziehen, nichts sie zu erreichen. Solange sie singt, ist die Sirene das schönste aller Wesen.</span> ◆ Die Welt lauscht, doch gebiert sie keine Antwort; noch nie erzeugte die Resonanz Widerhall, der zur Schöpferin drang – auch jetzt nicht. Schon bevor der Apfel die Hand der Eris verließ, vertonte die Sirene, wie zur stummen Gefährtin ihr die Einsamkeit wurde. Komponierte Lieder über Dichter, denen das Verstummen verwehrt war, auch wenn sie ungelesen blieben; über Tänzerinnen, an deren anmutigen Bewegungen sich nur der eigene Spiegel erfreuen durfte; über Maler, deren bewegende Bilder ungesehen auf staubigen Böden verblassten; über im Gesang verwebte Wesen, deren Dasein das Singen verlangt, auch wenn es die Zustände nicht ändern, die Isolation nicht beenden, die Traurigkeit nicht lindern, den Dorn nicht ziehen kann. Den gesamten Lauf des Tages trägt der Sirene Gesang die Welt, durchzieht Himmel und Meer, Klippe und Ebene, Pflanze und Tier; erst am Abend entrinnt ihr eine monadische Träne, in der die untergehende Sonne ihr letztes Leuchten spiegelt. ◆ Wie ein Vorhang fällt die Nacht. Reglos liegt das Meer, kaum vorangekommen das Langschiff, verwaist die Ruderbänke. Seltsam mechanisch, wie an Seilwinden gezogen, wirkt die Rückkehr der Eisvögel in den Westen, wo noch für einen Atemzug der einsame Merkur die Himmelskuppel durchsticht, dann sind sie mit ihm verschwunden. Der Welt bleibt Schweigen.',
+    odysseus: 'Odysseus. Die Sirene. Ein Versuch ◆ In schwachen Phasen unseres dahinrinnenden Lebens neigen wir dazu, endlich finden zu wollen, was uns unserer Meinung nach schon seit den Zeiten unserer träumerischen Jugend zusteht und uns vom Schicksal bisher versagt wurde. Aus purem Leichtsinn beginnen wir, uns Kräften auszusetzen, die wir — einmal entfesselt — nurmehr schwerlich unter Kontrolle bringen und die uns — sollten wir doch irgendwann dem zähen Ringen mit ihnen entkommen sein — als für immer gezeichnete Gestalten zurücklassen. Wir verderben uns, weil wir von unserer Standfestigkeit überzeugt sind und glauben, selbst in einem Heldenepos damit bestehen zu können. ◆ Wie jeder menschliche Mangel wird auch dieser in seiner endgültigen Konsequenz vom listenreichen Odysseus dargeboten. In der ereignisarmen Zeit nach seinem Gang durch die Pfade des Hades und noch bevor Scylla und Charybdis sich am Horizont abzeichneten, beschloss er aus einer Laune heraus, alle Warnungen in den Wind zu schlagen und sich etwas auszusetzen, das schon dem Argonautenzug um ein Haar den Garaus gemacht hätte. Gestählt hervorgegangen aus unzählbaren Schlachten, mit der Selbstgewissheit eines Mannes, dessen verschlagene Listen zuvor allesamt glückten, erschien es ihm ein Leichtes, dem Gesang allenfalls überschaubar gefährlicher Fabelwesen widerstehen zu können. Finale Zweifel gedachte er zu zerstreuen, indem er sich mit Ketten an den zentralen Mast des Schiffes schmieden ließ. Seine Mannschaft aber hieß er, sich gegenseitig Wachs in die Ohren zu träufeln, auf dass sie während des erwarteten Spektakels unbehelligt ihrer Arbeit nachgehen könnten. Und so näherte sich des Odysseus Schiff der Insel, auf der die Sängerinnen gemutmaßt wurden: Eine Reihe abgeschirmter arbeitsamer Seelen nebst einem Körper in Ketten. ◆ <span class="song">Sie ruft aus einer anderen Welt. Tongewordene Sehnsucht. Verfüllendes Begehren. Klaviaturen von Glück. Sie steht nur dort und singt und überschwemmt ihn mit gewallter Empfindung, deren Wucht er zuvor nicht einmal erahnte. Und so ihm gewahr wird, dass er nicht folgen kann, verwandelt sich diese in einen Sturzbach aus all dem Lärm, der die Erde seit Anbeginn der Zeit erfüllte. Zerfetzter Zeitlauf. Verzerrter Raum. Die resorbierende Anomalie nimmt ihm die Luft, die er zum Schreien benötigte. Reißt ihm die Haut vom Fleisch, das Fleisch von den Knochen. Nimmt alles Gedärm und zum Schluss sein Herz. Zurück bleibt nur sein kranker Geist, allem beraubt, was dem Schmerz einen Ausdruck geben könnte. Die Schreie, die niemand hörte, sind längst verklungen. Die Ketten halten.</span> ◆ Als die Männer sie zerschlugen, verlachten sie ihn ob seiner Klagen. Schlicht nichts habe sich ereignet, als man an der Insel vorüberfuhr. Keine Zeit dürfe man nun mit Lamentieren vertändeln, die Meerenge zwischen dem Strudel und dem Monster nahe. Weder Gesang noch Inferno habe man vernommen. Kein Riss im Gefüge war erschienen, keine Sogwirkung war entfacht. Nichts war geschehen, dem man irgendwie nachhängen könnte. ◆ Und Odysseus wurde gewahr, dass ihm der Schmerz nicht nur zugefügt, sondern tief in ihm vergraben wurde und er für alle Zeit mit ihm allein bleiben würde. Auch als die Jahre der Irrfahrt vorüber waren, er Penelope von ihren Freiern erlöst und wieder den Platz an ihrer Seite auf dem Thron von Ithaka eingenommen hatte, kam er zurück. In jedem Frühjahr von neuem.',
+    siren: 'Das Lied der Sirene ◆ Zärtlich weicht die Nacht, wie eine Verbündete des heimlichen Paars, das eben erst im Osten die Himmelsbühne betrat. Rubinrot sticht Mars aus dem nachtblauen Samt hervor, alsbald von der opalschimmernden Venus noch überstrahlt; doch schon verblasst ihre Anwesenheit im verklarenden Blau des erwachenden Tages, das rasch das gesamte Firmament durchmisst und schließlich weit im Westen auch Orion bis zum Abend von seinem Dienst entbindet. ◆ Wo der Planetenjäger wich, sind in dieser frühen Stunde die Grenzen zwischen den Zuständen der Welt noch verschwommen und nur die sacht bewegte Spiegelung des einen im anderen lässt jene Schwelle erahnen, an der die Elemente sich trennen. Von dort lösen sich, noch etliche Stadien entfernt, zwei Punkte, umeinander tollend wie beseelte Funken, in atemberaubendem Tempo an Farbe und Gestalt gewinnend, gleich orangeblau gekleideten Geschossen auf dem Weg in den beginnenden Tag. ◆ Wie der Zeit entzogen liegt das Meer unter dem rasanten Zug, wie eingefroren das Langschiff, vom Eisvogelpaar im Bruchteil eines Augenblicks passiert. Die Segel sind verstaut, denn Aiolos hat die Winde gehalten; doch auch die Ruderbänke wirken in ihrer Reglosigkeit, als hätte man dort Platz genommen, um einer Aufführung beizuwohnen. Schnell löst sich das Geschehen wieder vom Schiff, denn weiter geht die halcyonische Jagd über die ruhende See hin zur nahenden Küstenlinie, hinter der sich nur wenige Augenblicke noch die Sonne verbirgt, ehe sie sich den Himmel untertan macht. ◆ Im Herannahen der Küste hebt sich das Meer nun wahrnehmbarer, gleich dem Brustkorb eines ruhenden Titanen. Tänzerisch nehmen die beiden die Bewegung in ihren Flug auf und stoßen wiederholt mit dem Schnabel voran durch die nasse Oberfläche, als Gruß an die Töchter des Nereus, die dem Schauspiel verzückt vom Meeresboden aus beiwohnen. Verwegen und erst knapp vor der Steilküste wechseln die Flugkünstler in die Vertikale, ohne dabei ihre Dynamik zu verlieren. Sie durchmessen in meisterlicher Leichtigkeit den Raum zwischen den Pfeilern aus lichtweißem Stein, die in ihrer filigranen Gliederung als Vorbild für das Strebewerk ehrgeiziger Kathedralen dienen könnten, von Baumeistern erst künftiger Zeitalter erdacht. ◆ Weit oben werden die Streben lichter und verlieren sich schließlich in eine offene, sanft steigende Hochebene – eine Weide mit natürlicher Begrenzung für die sich langsam im Zwielicht des beginnenden Morgens aus ihren Verschlägen hervorwagenden Herdentiere. Noch ist die Wiese von silbrigem Nebel bedeckt, der im nächsten Moment von der sich nun erhebenden Sonne mit einem Blinzeln in Richtung des Klippenrandes hinweggefegt wird. Sattes, nahrhaftes Grün, gesprenkelt mit leuchtenden Wildblumeninseln, kommt zum Vorschein. Fast schwebend auf der vordersten Klippe wird nun ein zartes Wesen offenbar, sein Schatten von der tief stehenden Sonne weit hinaus ins Meer geworfen bis über das Langschiff am Horizont. Aufrecht, das Antlitz an die See gerichtet steht dort eine Frau, die Lippen leicht öffnend im harmonischen Spiel mit der sanften Bewegung ihres Körpers. Die Frau singt. Sie singt ein Feenlied. ◆ <span class="song">Alles in dieser Welt ist vom Gesang durchdrungen und richtet sich in ihm auf. Als gewinne die Hochebene durch ihn ihre Erhabenheit und die Küste ihre Monumentalität, als sei durch sein Wirken das Meer milder, der Himmel weiter und selbst die Sonne in ihrer Majestät weniger streng als sanft. Als tunke er die Gräser in tieferes Grün, gäbe er den Blüten wärmere Farben, ließe er die Schafe sanftmütiger, die Zicklein tollkühner und die Eisvögel ausgelassener wirken. Ein Lied als Balsam, dem sich alles öffnet und sich bestärkt, ermutigt, verstanden fühlt; das süße Tagträume von ihrer Flüchtigkeit erlösen und sie zu Substanz formen könnte. Musik mit gewaltigen Wellen der Resonanz, die selbst die mächtigsten Dämonen der Innenwelten in einen beschwingten Tanz zwänge. Welche Kraft könnte sie erst dort entfachen, wo Sehnsüchte in Ketten liegen, wo die Einsamen Gefährten, die Ungeliebten Erwiderung, die Unverstandenen Widerhall ersehnen? Nichts vermag gegen diese Macht anzukommen, nichts sich zu entziehen, nichts sie zu erreichen. Solange sie singt, ist die Sirene das schönste aller Wesen.</span> ◆ Die Welt lauscht, doch gebiert sie keine Antwort; noch nie erzeugte die Resonanz Widerhall, der zur Schöpferin drang – auch jetzt nicht. Schon bevor der Apfel die Hand der Eris verließ, vertonte die Sirene, wie zur stummen Gefährtin ihr die Einsamkeit wurde. Komponierte Lieder über Dichter, denen das Verstummen verwehrt war, auch wenn sie ungelesen blieben; über Tänzerinnen, an deren anmutigen Bewegungen sich nur der eigene Spiegel erfreuen durfte; über Maler, deren bewegende Bilder ungesehen auf staubigen Böden verblassten; über im Gesang verwebte Wesen, deren Dasein das Singen verlangt, auch wenn es die Zustände nicht ändern, die Isolation nicht beenden, die Traurigkeit nicht lindern, den Dorn nicht ziehen kann. Den gesamten Lauf des Tages trägt der Sirene Gesang die Welt, durchzieht Himmel und Meer, Klippe und Ebene, Pflanze und Tier; erst am Abend entrinnt ihr eine monadische Träne, in der die untergehende Sonne ihr letztes Leuchten spiegelt. ◆ Wie ein Vorhang fällt die Nacht. Reglos liegt das Meer, kaum vorangekommen das Langschiff, verwaist die Ruderbänke. Seltsam mechanisch, wie an Seilwinden gezogen, wirkt die Rückkehr der Eisvögel in den Westen, wo noch für einen Atemzug der einsame Merkur die Himmelskuppel durchsticht, dann sind sie mit ihm verschwunden. Der Welt bleibt Schweigen.',
   },
   en: {
     odysseus: 'In the weaker moments of our meandering lives, we tend to feel an urge at last to claim what we believe has long been owed to us since the days of our dreamy youth, yet withheld by fate. Out of sheer abandon we begin to expose ourselves to forces which, once unleashed, we can hardly rein in, and which, should we eventually escape the grinding struggle with them, leave their mark on us forever. We undo ourselves because we are convinced of our own resolve and believe we could hold our ground even in a heroic epic. ◆ Like every human failing, this above all finds its ultimate expression in the figure of the wily Odysseus. In the uneventful interval after his descent into Hades and before Scylla and Charybdis loomed on the horizon, he saw fit, on a whim, to cast all caution to the wind and expose himself to that which had nearly brought the Argonauts\' voyage to grief. Steeled by countless battles, with the self-assurance of a man whose ingenious stratagems had never yet failed, he thought it a small thing to resist the song of fabled creatures whose menace seemed, at best, containable. He meant to dispel any lingering doubts by having himself bound to the ship\'s central mast. His crew, however, he ordered to stop their ears with wax, so that they might go about their work undisturbed during the anticipated spectacle. And so Odysseus\'s ship approached the island where the singers were presumed to dwell: a row of shielded, industrious souls beside a body in chains. ◆ <span class="song">She calls from another world. Desire made sound. Fulfilled longing. Keys of bliss. She stands there, merely singing, flooding him with surging sensation whose force he could not have fathomed. And as he becomes aware that he cannot follow, it turns to a torrent of all the noise that has filled the earth since the beginning of time. Shredded time. Distorted space. An engulfing anomaly robs him of the air he needs to scream. Tears the skin from his flesh, the flesh from his bones. Takes all his entrails and finally his heart. All that remains is his ravaged mind, robbed of everything that could give expression to the pain. The screams no one heard have long since faded. The chains hold.</span> ◆ When the men broke them, they mocked him for his laments. Nothing at all, they said, had occurred as they sailed past the island. No time now to squander on grief, the strait between the vortex and the monster looming near. Neither song nor inferno had they perceived. No rift had appeared, no draw had been unleashed. Nothing had happened worth dwelling upon. ◆ It dawned on Odysseus that the pain had not only been inflicted but lay buried deep within him; that he would remain alone with it for all time. Even when the wandering years were over, when he had freed Penelope from her suitors and reclaimed his place at her side on the throne of Ithaca, it came back. Every spring anew.',
@@ -807,16 +854,81 @@ const TEXTS = {
   }
 };
 
+// ── Strophe Timestamps (seconds) ──
+
+const TIMESTAMPS = {
+  de: {
+    odysseus: [
+      { start: 0, end: 7 },
+      { start: 7, end: 45 },
+      { start: 50, end: 120 },
+      { start: 190, end: 252 },
+      { start: 254, end: 285 },
+      { start: 285, end: 312 },
+    ],
+    siren: [
+      { start: 0, end: 4 },
+      { start: 4, end: 30 },
+      { start: 30, end: 60 },
+      { start: 60, end: 92 },
+      { start: 94, end: 135 },
+      { start: 135, end: 188 },
+      { start: 190, end: 252 },
+      { start: 252, end: 315 },
+      { start: 315, end: 345 },
+    ],
+  },
+};
+
+let tickerData = { odysseus: null, siren: null };
+
 // ── Perspective Toggle ──
 // 'odysseus' = light button, Ody normal L→R, Siren mirrored R→L
 // 'siren'    = dark button,  Siren normal L→R, Ody mirrored R→L
 let perspectiveMode = 'odysseus';
 
 function initTickers() {
-  const odyEl = document.getElementById('tickerTextOdy');
-  const sirEl = document.getElementById('tickerTextSir');
-  odyEl.innerHTML = TEXTS[currentLang].odysseus;
-  sirEl.innerHTML = TEXTS[currentLang].siren;
+  const lang = currentLang;
+  const ts = TIMESTAMPS[lang];
+
+  for (const voice of ['odysseus', 'siren']) {
+    const el = document.getElementById(voice === 'odysseus' ? 'tickerTextOdy' : 'tickerTextSir');
+    const fullText = TEXTS[lang][voice];
+    const parts = fullText.split(' ◆ ');
+
+    if (ts && ts[voice] && parts.length === ts[voice].length) {
+      // Wrap each strophe in a measurable span, with spaced separators
+      el.innerHTML =
+        parts.map((part, i) =>
+          '<span class="strophe" data-strophe="' + i + '">' + part + '</span>'
+        ).join('<span class="strophe-sep">&nbsp;&nbsp;&nbsp; ◆ &nbsp;&nbsp;&nbsp;</span>') +
+        '<span class="strophe-pad">&nbsp;&nbsp;&nbsp;&nbsp;</span>';
+
+      // Force layout, then measure strophe pixel positions
+      void el.offsetWidth;
+      const stropheEls = el.querySelectorAll('.strophe');
+      const ranges = [];
+      stropheEls.forEach(s => {
+        ranges.push({
+          left: s.offsetLeft,
+          width: s.offsetWidth,
+          right: s.offsetLeft + s.offsetWidth,
+        });
+      });
+
+      tickerData[voice] = {
+        ranges: ranges,
+        timestamps: ts[voice],
+        totalWidth: el.scrollWidth,
+      };
+      console.log('[ticker]', voice, 'strophe-sync ON —', parts.length, 'parts,', ranges.length, 'ranges, totalWidth:', el.scrollWidth);
+    } else {
+      // No timestamps available — plain text, linear fallback
+      el.innerHTML = fullText;
+      tickerData[voice] = null;
+      console.warn('[ticker]', voice, 'LINEAR FALLBACK — parts:', parts.length, 'timestamps:', ts && ts[voice] ? ts[voice].length : 'none');
+    }
+  }
 }
 
 function togglePerspective() {
@@ -832,9 +944,46 @@ function togglePerspective() {
   }
 }
 
-function updateTickers(progress) {
-  // progress: 0..1
-  // transform-origin is set to 0% 50% (left center) in CSS
+// Convert current playback time to a 0..1 scroll progress for one voice,
+// taking strophe boundaries and pauses into account.
+function getScrollProgress(voice, currentTime, duration) {
+  const data = tickerData[voice];
+  if (!data) {
+    // Linear fallback (no timestamps for this language)
+    return duration > 0 ? currentTime / duration : 0;
+  }
+
+  const { ranges, timestamps, totalWidth } = data;
+  if (totalWidth === 0) return 0;
+
+  // Before first strophe starts
+  if (currentTime < timestamps[0].start) return 0;
+
+  for (let i = 0; i < timestamps.length; i++) {
+    const ts = timestamps[i];
+
+    // Currently inside strophe i — interpolate within it
+    if (currentTime >= ts.start && currentTime <= ts.end) {
+      const t = (currentTime - ts.start) / (ts.end - ts.start);
+      const pixelPos = ranges[i].left + t * ranges[i].width;
+      return pixelPos / totalWidth;
+    }
+
+    // In a pause between strophe i and i+1 — hold at midpoint of separator
+    // so the ◆ and the strophe ending stay visible
+    if (i < timestamps.length - 1 && currentTime > ts.end && currentTime < timestamps[i + 1].start) {
+      var pausePos = (ranges[i].right + ranges[i + 1].left) / 2;
+      return pausePos / totalWidth;
+    }
+  }
+
+  // After all strophes (trailing silence) — include trailing pad
+  return Math.min(1, (ranges[ranges.length - 1].right + 60) / totalWidth);
+}
+
+function updateTickers(currentTime) {
+  const duration = getMaxDuration();
+
   const odyEl = document.getElementById('tickerTextOdy');
   const sirEl = document.getElementById('tickerTextSir');
   const tickerOdyW = document.getElementById('tickerOdy').offsetWidth;
@@ -842,22 +991,31 @@ function updateTickers(progress) {
   const odyTextW = odyEl.scrollWidth;
   const sirTextW = sirEl.scrollWidth;
 
+  const odyProgress = getScrollProgress('odysseus', currentTime, duration);
+  const sirProgress = getScrollProgress('siren', currentTime, duration);
+
+  // Gentle lead-in: at progress=0 the text starts ~35% into the ticker,
+  // fading to normal scrolling by ~8% progress.
+  function leadIn(progress, tickerW) {
+    return Math.max(0, (1 - progress * 12)) * tickerW * 0.35;
+  }
+
   if (perspectiveMode === 'odysseus') {
-    // Odysseus: normal text, scrolls L→R (reading position moves through text)
-    const odyX = -progress * (odyTextW - tickerOdyW);
-    odyEl.style.transform = `translateY(-50%) translateX(${odyX}px)`;
+    // Odysseus: normal text, scrolls L→R
+    const odyX = leadIn(odyProgress, tickerOdyW) - odyProgress * (odyTextW - tickerOdyW);
+    odyEl.style.transform = 'translateY(-50%) translateX(' + odyX + 'px)';
 
     // Siren: mirrored text, scrolls R→L
-    const sirX = tickerSirW + progress * (sirTextW - tickerSirW);
-    sirEl.style.transform = `translateY(-50%) translateX(${sirX}px) scaleX(-1)`;
+    const sirX = tickerSirW - leadIn(sirProgress, tickerSirW) + sirProgress * (sirTextW - tickerSirW);
+    sirEl.style.transform = 'translateY(-50%) translateX(' + sirX + 'px) scaleX(-1)';
   } else {
     // Siren: normal text, scrolls L→R
-    const sirX = -progress * (sirTextW - tickerSirW);
-    sirEl.style.transform = `translateY(-50%) translateX(${sirX}px)`;
+    const sirX = leadIn(sirProgress, tickerSirW) - sirProgress * (sirTextW - tickerSirW);
+    sirEl.style.transform = 'translateY(-50%) translateX(' + sirX + 'px)';
 
     // Odysseus: mirrored text, scrolls R→L
-    const odyX = tickerOdyW + progress * (odyTextW - tickerOdyW);
-    odyEl.style.transform = `translateY(-50%) translateX(${odyX}px) scaleX(-1)`;
+    const odyX = tickerOdyW - leadIn(odyProgress, tickerOdyW) + odyProgress * (odyTextW - tickerOdyW);
+    odyEl.style.transform = 'translateY(-50%) translateX(' + odyX + 'px) scaleX(-1)';
   }
 }
 
