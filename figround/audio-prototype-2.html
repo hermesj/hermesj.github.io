@@ -1,0 +1,1256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Figure and Ground — Audio</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500;1,600&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Cormorant Garamond', 'Georgia', serif;
+    background: linear-gradient(to right,
+      #f4f4f4 0%,
+      #e4eaf0 12%,
+      #98a8b8 38%,
+      #3a4d66 68%,
+      #0f1926 100%
+    );
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 4vh 4vw;
+    overflow-x: hidden;
+    overflow-y: auto;
+  }
+
+  /* Scroll hint — visible only when page overflows */
+  .scroll-hint {
+    position: fixed;
+    bottom: 1em;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #fff;
+    text-shadow: 0 0 8px rgba(0,0,0,0.6);
+    font-size: 0.8rem;
+    font-style: italic;
+    opacity: 0.8;
+    transition: opacity 0.5s ease;
+    pointer-events: none;
+  }
+
+  .scroll-hint span {
+    display: inline-block;
+    animation: bounce 1.5s ease infinite;
+  }
+
+  @keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(4px); }
+  }
+
+  /* ── TITLE ── */
+  .main-title {
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+    gap: 0.4em;
+    font-size: clamp(1.6rem, 3vw, 2.8rem);
+    font-weight: 300;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    margin-bottom: 1em;
+  }
+
+  .word-left {
+    color: #000;
+    text-shadow: 0 0 12px rgba(255,255,255,0.8);
+  }
+  .word-mid {
+    color: #888;
+    font-size: 0.7em;
+    letter-spacing: 0.2em;
+    font-weight: 400;
+  }
+  .word-right {
+    color: #fff;
+    text-shadow: 0 0 12px rgba(0,0,0,0.8);
+  }
+
+  /* ── AUDIO PLAYER AREA ── */
+  .audio-stage {
+    width: 100%;
+    max-width: 900px;
+    position: relative;
+  }
+
+  /* Speaker labels */
+  .speaker-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    padding: 0 1em;
+    margin-bottom: 1.5em;
+  }
+
+  .speaker-left {
+    font-size: clamp(1rem, 1.4vw, 1.35rem);
+    font-weight: 600;
+    font-style: italic;
+    letter-spacing: 0.08em;
+    color: #000;
+    text-shadow: 0 0 12px rgba(255,255,255,1), 0 0 24px rgba(255,255,255,0.5);
+  }
+
+  .speaker-right {
+    font-size: clamp(1rem, 1.4vw, 1.35rem);
+    font-weight: 600;
+    font-style: italic;
+    letter-spacing: 0.08em;
+    color: #fff;
+    text-shadow: 0 0 12px rgba(0,0,0,1), 0 0 24px rgba(0,0,0,0.5);
+  }
+
+  /* ── CROSSFADE SLIDER ── */
+  .slider-container {
+    position: relative;
+    width: 100%;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 2em;
+  }
+
+  .slider-track-bg {
+    position: absolute;
+    width: 100%;
+    height: 6px;
+    border-radius: 3px;
+    background: linear-gradient(to right,
+      rgba(0,0,0,0.6) 0%,
+      rgba(120,140,160,0.4) 50%,
+      rgba(255,255,255,0.6) 100%
+    );
+  }
+
+  input[type="range"]#crossfade {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 100%;
+    height: 6px;
+    background: transparent;
+    position: relative;
+    z-index: 2;
+    cursor: pointer;
+  }
+
+  input[type="range"]#crossfade::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: radial-gradient(circle at 40% 40%, #c8d0d8, #5a6a7a);
+    border: 2px solid rgba(255,255,255,0.4);
+    box-shadow: 0 0 12px rgba(0,0,0,0.4), 0 0 24px rgba(0,0,0,0.15);
+    cursor: grab;
+    transition: transform 0.15s ease;
+  }
+
+  input[type="range"]#crossfade::-webkit-slider-thumb:active {
+    cursor: grabbing;
+    transform: scale(1.15);
+  }
+
+  input[type="range"]#crossfade::-moz-range-thumb {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: radial-gradient(circle at 40% 40%, #c8d0d8, #5a6a7a);
+    border: 2px solid rgba(255,255,255,0.4);
+    box-shadow: 0 0 12px rgba(0,0,0,0.4);
+    cursor: grab;
+  }
+
+  /* Volume indicators */
+  .volume-indicators {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 0.5em;
+    margin-top: -0.5em;
+    margin-bottom: 2em;
+  }
+
+  .vol-label {
+    font-size: 0.85rem;
+    font-weight: 400;
+    letter-spacing: 0.05em;
+    opacity: 0.7;
+    transition: opacity 0.3s ease;
+  }
+
+  .vol-left {
+    color: #000;
+    text-shadow: 0 0 8px rgba(255,255,255,0.6);
+  }
+
+  .vol-right {
+    color: #fff;
+    text-shadow: 0 0 8px rgba(0,0,0,0.6);
+  }
+
+  /* ── TRANSPORT CONTROLS ── */
+  .transport {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5em;
+    margin-bottom: 1.5em;
+  }
+
+  .btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-family: inherit;
+    font-size: 1.1rem;
+    letter-spacing: 0.08em;
+    padding: 0.5em 1.2em;
+    border-radius: 4px;
+    transition: all 0.2s ease;
+  }
+
+  .btn-play {
+    color: #1a2a3a;
+    background: rgba(255,255,255,0.25);
+    border: 1px solid rgba(0,0,0,0.15);
+    backdrop-filter: blur(4px);
+    font-size: 1.3rem;
+    padding: 0.6em 2em;
+  }
+
+  .btn-play:hover {
+    background: rgba(255,255,255,0.4);
+  }
+
+  .btn-lang {
+    color: #3a4d66;
+    background: rgba(255,255,255,0.12);
+    border: 1px solid rgba(100,120,140,0.2);
+    font-size: 0.95rem;
+  }
+
+  .btn-lang:hover {
+    background: rgba(255,255,255,0.22);
+  }
+
+  .btn-lang.active {
+    background: rgba(255,255,255,0.35);
+    border-color: rgba(0,0,0,0.2);
+    color: #0f1926;
+  }
+
+  .play-group {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.3em;
+  }
+
+  .play-group .btn-play {
+    width: 100%;
+  }
+
+  .transport-secondary {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 0.3em;
+  }
+
+  .btn-transport {
+    color: #1a2a3a;
+    background: rgba(255,255,255,0.25);
+    border: 1px solid rgba(0,0,0,0.15);
+    backdrop-filter: blur(4px);
+    cursor: pointer;
+    font-family: inherit;
+    font-size: 1rem;
+    padding: 0.45em 0;
+    border-radius: 4px;
+    transition: all 0.2s ease;
+    letter-spacing: 0.08em;
+    line-height: 1;
+    text-align: center;
+  }
+
+  .btn-transport:hover {
+    background: rgba(255,255,255,0.4);
+  }
+
+  /* ── PROGRESS ── */
+  .progress-container {
+    width: 100%;
+    margin-bottom: 0.8em;
+    position: relative;
+  }
+
+  .progress-bar-bg {
+    position: relative;
+    width: 100%;
+    height: 3px;
+    background: rgba(120,140,160,0.25);
+    border-radius: 2px;
+    overflow: visible;
+    cursor: pointer;
+  }
+
+  .progress-bar-fill {
+    height: 100%;
+    width: 0%;
+    background: linear-gradient(to right, rgba(0,0,0,0.5), rgba(255,255,255,0.5));
+    border-radius: 2px;
+    transition: width 0.1s linear;
+  }
+
+  .time-row {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.8rem;
+    letter-spacing: 0.04em;
+    padding: 0.3em 0.2em 0;
+  }
+
+  #timeCurrent {
+    color: #4a5a6a;
+  }
+
+  #timeDuration {
+    color: rgba(255,255,255,0.75);
+  }
+
+  /* ── STROPHE MARKERS (inside progress bar) ── */
+  .strophe-marker {
+    position: absolute;
+    width: 1.5px;
+    top: -3px;
+    height: 9px;
+    cursor: pointer;
+    transition: opacity 0.2s;
+    opacity: 0.7;
+    z-index: 2;
+  }
+
+  .strophe-marker:hover {
+    opacity: 1;
+  }
+
+  .strophe-marker::after {
+    content: '';
+    position: absolute;
+    left: -4px;
+    right: -4px;
+    top: 0;
+    bottom: 0;
+  }
+
+  .strophe-marker-ody {
+    background: #1a2a4a;
+  }
+
+  .strophe-marker-sir {
+    background: #fff;
+  }
+
+  /* ── STATUS / LOADING ── */
+  .status {
+    text-align: center;
+    font-size: 0.95rem;
+    color: #fff;
+    text-shadow: 0 0 6px rgba(0,0,0,0.5);
+    font-style: italic;
+    min-height: 1.5em;
+    margin-bottom: 1em;
+  }
+
+  .loading-bar {
+    width: 100%;
+    height: 2px;
+    background: rgba(120,140,160,0.15);
+    border-radius: 1px;
+    overflow: hidden;
+    margin-bottom: 1em;
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+
+  .loading-bar.visible {
+    opacity: 1;
+  }
+
+  .loading-bar-fill {
+    height: 100%;
+    width: 0%;
+    background: linear-gradient(to right, rgba(0,0,0,0.3), rgba(255,255,255,0.4));
+    transition: width 0.3s;
+  }
+
+  /* ── HINT ── */
+  .hint {
+    text-align: center;
+    font-size: 0.8rem;
+    color: #fff;
+    text-shadow: 0 0 6px rgba(0,0,0,0.5);
+    font-style: italic;
+    opacity: 0.85;
+  }
+
+  /* ── TEXT TICKER ── */
+  .ticker-row {
+    width: 100%;
+    max-width: 900px;
+    margin-top: 1em;
+    display: flex;
+    align-items: center;
+    gap: 0.6em;
+  }
+
+  .ticker {
+    flex: 1;
+    min-width: 0;
+    overflow: hidden;
+    position: relative;
+    height: 2.4em;
+    padding: 0 0.6em;
+    border-radius: 3px;
+  }
+
+  /* ── PERSPECTIVE TOGGLE ── */
+  .perspective-toggle {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    border: 2px solid rgba(120,140,160,0.4);
+    cursor: pointer;
+    flex-shrink: 0;
+    transition: all 0.35s ease;
+    box-shadow: 0 0 8px rgba(0,0,0,0.15);
+  }
+
+  .perspective-toggle.mode-odysseus {
+    background: radial-gradient(circle at 40% 40%, #f4f4f4, #c8d0d8);
+    border-color: rgba(200,210,220,0.6);
+  }
+
+  .perspective-toggle.mode-siren {
+    background: radial-gradient(circle at 40% 40%, #3a4d66, #0f1926);
+    border-color: rgba(15,25,38,0.6);
+  }
+
+  .ticker-odysseus {
+    background: linear-gradient(to right,
+      rgba(244,244,244,0.5) 0%,
+      rgba(228,234,240,0.4) 50%,
+      rgba(152,168,184,0.2) 100%
+    );
+  }
+
+  .ticker-siren {
+    background: linear-gradient(to right,
+      rgba(58,77,102,0.2) 0%,
+      rgba(58,77,102,0.4) 50%,
+      rgba(15,25,38,0.5) 100%
+    );
+  }
+
+  .ticker-text {
+    position: absolute;
+    top: 50%;
+    white-space: nowrap;
+    font-size: clamp(0.85rem, 1.1vw, 1.05rem);
+    line-height: 1.4;
+    letter-spacing: 0.02em;
+    transform-origin: 0% 50%;
+  }
+
+  .ticker-text-odysseus {
+    color: #000;
+    font-weight: 500;
+    text-shadow: 0 0 8px rgba(255,255,255,0.9), 0 0 16px rgba(255,255,255,0.5);
+  }
+
+  .ticker-text-siren {
+    color: #fff;
+    font-weight: 400;
+    text-shadow: 0 0 8px rgba(0,0,0,0.9), 0 0 16px rgba(0,0,0,0.5);
+  }
+
+  .ticker-text .song {
+    font-style: italic;
+  }
+
+  /* Fade edges of ticker */
+  .ticker-odysseus::before,
+  .ticker-odysseus::after,
+  .ticker-siren::before,
+  .ticker-siren::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 60px;
+    z-index: 2;
+    pointer-events: none;
+  }
+
+  .ticker-odysseus::before {
+    left: 0;
+    background: linear-gradient(to right, rgba(244,244,244,0.8), transparent);
+  }
+  .ticker-odysseus::after {
+    right: 0;
+    background: linear-gradient(to left, rgba(180,196,210,0.6), transparent);
+  }
+  .ticker-siren::before {
+    left: 0;
+    background: linear-gradient(to right, rgba(58,77,102,0.6), transparent);
+  }
+  .ticker-siren::after {
+    right: 0;
+    background: linear-gradient(to left, rgba(15,25,38,0.8), transparent);
+  }
+
+  /* ── BACK LINK ── */
+  .back-link {
+    margin-top: 3em;
+    text-align: center;
+  }
+
+  .back-link a {
+    color: #3a4d66;
+    text-decoration: none;
+    font-size: 0.95rem;
+    border-bottom: 1px solid rgba(58,77,102,0.3);
+    transition: border-color 0.2s;
+  }
+
+  .back-link a:hover {
+    border-color: rgba(58,77,102,0.7);
+  }
+</style>
+</head>
+<body>
+
+<div class="main-title">
+  <span class="word-left">Figure</span>
+  <span class="word-mid">and</span>
+  <span class="word-right">Ground</span>
+</div>
+
+<div class="audio-stage">
+
+  <div class="speaker-row">
+    <span class="speaker-left">Odysseus</span>
+    <span class="speaker-right">The Siren</span>
+  </div>
+
+  <!-- Crossfade slider -->
+  <div class="slider-container">
+    <div class="slider-track-bg"></div>
+    <input type="range" id="crossfade" min="0" max="100" value="50" step="1">
+  </div>
+
+  <div class="volume-indicators">
+    <span class="vol-label vol-left" id="volLeft">100 %</span>
+    <span class="hint">Move the slider to shift between perspectives. Headphones recommended.</span>
+    <span class="vol-label vol-right" id="volRight">100 %</span>
+  </div>
+
+  <!-- Transport -->
+  <div class="transport">
+    <button class="btn btn-lang active" id="btnDe" onclick="switchLang('de')">Deutsch</button>
+    <div class="play-group">
+      <button class="btn btn-play" id="btnPlay" onclick="togglePlay()" disabled>▶ Play</button>
+      <div class="transport-secondary">
+        <button class="btn-transport" onclick="jumpPrev()" title="Vorherige Strophe">◀◀</button>
+        <button class="btn-transport" onclick="stopPlayback()" title="Stop">■</button>
+        <button class="btn-transport" onclick="jumpNext()" title="Nächste Strophe">▶▶</button>
+      </div>
+    </div>
+    <button class="btn btn-lang" id="btnEn" onclick="switchLang('en')">English</button>
+  </div>
+
+  <!-- Loading -->
+  <div class="loading-bar" id="loadingBar">
+    <div class="loading-bar-fill" id="loadingFill"></div>
+  </div>
+  <div class="status" id="status">Loading audio files …</div>
+
+  <!-- Progress -->
+  <div class="progress-container">
+    <div class="progress-bar-bg" id="progressBg" onclick="seek(event)">
+      <div class="progress-bar-fill" id="progressFill"></div>
+    </div>
+    <div class="time-row">
+      <span id="timeCurrent">0:00</span>
+      <span id="timeDuration">—</span>
+    </div>
+  </div>
+
+</div>
+
+<!-- Text tickers with perspective toggle -->
+<div class="ticker-row">
+  <div class="ticker ticker-odysseus" id="tickerOdy">
+    <div class="ticker-text ticker-text-odysseus" id="tickerTextOdy"></div>
+  </div>
+  <button class="perspective-toggle mode-odysseus" id="perspToggle" onclick="togglePerspective()" title="Perspektive wechseln"></button>
+  <div class="ticker ticker-siren" id="tickerSir">
+    <div class="ticker-text ticker-text-siren" id="tickerTextSir"></div>
+  </div>
+</div>
+
+<div class="back-link">
+  <a href="index.html">← Overview</a>
+</div>
+
+<div class="scroll-hint" id="scrollHint"><span>&#x25BE;</span> scroll <span>&#x25BE;</span></div>
+
+<script>
+// ── Scroll hint: show only when content overflows ──
+(function() {
+  const hint = document.getElementById('scrollHint');
+  function checkOverflow() {
+    hint.style.display = document.body.scrollHeight > window.innerHeight ? '' : 'none';
+  }
+  checkOverflow();
+  window.addEventListener('resize', checkOverflow);
+  window.addEventListener('scroll', function() {
+    if (window.scrollY > 30) {
+      hint.style.opacity = '0';
+      setTimeout(() => hint.style.display = 'none', 500);
+    }
+  });
+})();
+
+// ── Audio Engine ──
+
+const AUDIO_FILES = {
+  de: { odysseus: 'audio/Odysseus_de/odysseus_de_indexed.mp3', siren: 'audio/Siren_de/siren_de_indexed.mp3' },
+  en: { odysseus: 'audio/Odysseus_en/odysseus_en_indexed.mp3', siren: 'audio/Siren_en/siren_en_indexed.mp3' },
+};
+
+let audioCtx = null;
+let buffers = { de: {}, en: {} };
+let sources = { odysseus: null, siren: null };
+let gains = { odysseus: null, siren: null };
+let panners = { odysseus: null, siren: null };
+
+let currentLang = 'de';
+let isPlaying = false;
+let startTime = 0;      // audioCtx.currentTime when playback started
+let pauseOffset = 0;    // how far into the track we paused
+let loadedCount = 0;
+const totalFiles = 4;
+
+// Stereo panning range: how far left/right the voices sit
+// -1 = hard left, +1 = hard right
+const PAN_ODYSSEUS_BASE = -0.35;  // Odysseus slightly left
+const PAN_SIREN_BASE = 0.35;     // Siren slightly right
+
+// ── Init ──
+
+async function init() {
+  audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+
+  // Create panner nodes (stereo positioning)
+  panners.odysseus = audioCtx.createStereoPanner();
+  panners.siren = audioCtx.createStereoPanner();
+  panners.odysseus.pan.setValueAtTime(PAN_ODYSSEUS_BASE, audioCtx.currentTime);
+  panners.siren.pan.setValueAtTime(PAN_SIREN_BASE, audioCtx.currentTime);
+
+  // Create gain nodes
+  gains.odysseus = audioCtx.createGain();
+  gains.siren = audioCtx.createGain();
+
+  // Signal chain: source → gain → panner → destination
+  gains.odysseus.connect(panners.odysseus);
+  gains.siren.connect(panners.siren);
+  panners.odysseus.connect(audioCtx.destination);
+  panners.siren.connect(audioCtx.destination);
+
+  // Apply initial crossfade (50/50)
+  updateCrossfade(50);
+
+  // Load all audio files
+  const loadingBar = document.getElementById('loadingBar');
+  const loadingFill = document.getElementById('loadingFill');
+  loadingBar.classList.add('visible');
+
+  const loadPromises = [];
+
+  for (const lang of ['de', 'en']) {
+    for (const role of ['odysseus', 'siren']) {
+      const url = AUDIO_FILES[lang][role];
+      loadPromises.push(
+        fetch(url)
+          .then(r => {
+            if (!r.ok) throw new Error(`Failed to load ${url}`);
+            return r.arrayBuffer();
+          })
+          .then(buf => audioCtx.decodeAudioData(buf))
+          .then(decoded => {
+            buffers[lang][role] = decoded;
+            loadedCount++;
+            loadingFill.style.width = (loadedCount / totalFiles * 100) + '%';
+            document.getElementById('status').textContent =
+              `Loaded: ${loadedCount} / ${totalFiles} …`;
+          })
+      );
+    }
+  }
+
+  try {
+    await Promise.all(loadPromises);
+    loadingBar.classList.remove('visible');
+    document.getElementById('status').textContent = '';
+    document.getElementById('btnPlay').disabled = false;
+    updateDuration();
+    renderStropheMarkers();
+  } catch (e) {
+    document.getElementById('status').textContent =
+      'Error loading audio. Please make sure the MP3 files are in the audio/ folder.';
+    console.error(e);
+  }
+}
+
+// ── Crossfade ──
+
+function updateCrossfade(value) {
+  // value: 0 = full Odysseus, 100 = full Siren
+  // Use equal-power crossfade
+  const x = value / 100;
+  const gainOdy = Math.cos(x * Math.PI / 2);
+  const gainSir = Math.sin(x * Math.PI / 2);
+
+  if (gains.odysseus) gains.odysseus.gain.setValueAtTime(gainOdy, audioCtx.currentTime);
+  if (gains.siren) gains.siren.gain.setValueAtTime(gainSir, audioCtx.currentTime);
+
+  // Dynamic stereo panning:
+  // At center (x=0.5): voices sit at their base positions (L/R)
+  // Focus Odysseus (x→0): Odysseus moves toward center, Siren pushed further right
+  // Focus Siren (x→1): Siren moves toward center, Odysseus pushed further left
+  if (panners.odysseus && panners.siren) {
+    const panOdy = PAN_ODYSSEUS_BASE * (1 + x * 0.6);   // more left as siren focused
+    const panSir = PAN_SIREN_BASE * (1 + (1 - x) * 0.6); // more right as odysseus focused
+    panners.odysseus.pan.setValueAtTime(Math.max(-1, panOdy), audioCtx.currentTime);
+    panners.siren.pan.setValueAtTime(Math.min(1, panSir), audioCtx.currentTime);
+  }
+
+  // Update labels
+  document.getElementById('volLeft').textContent = Math.round(gainOdy * 100) + ' %';
+  document.getElementById('volRight').textContent = Math.round(gainSir * 100) + ' %';
+
+  // Update label opacity
+  document.getElementById('volLeft').style.opacity = 0.4 + gainOdy * 0.6;
+  document.getElementById('volRight').style.opacity = 0.4 + gainSir * 0.6;
+}
+
+document.getElementById('crossfade').addEventListener('input', function() {
+  updateCrossfade(parseInt(this.value));
+});
+
+// ── Playback ──
+
+function startPlayback(offset) {
+  // Create new source nodes (they're one-shot)
+  sources.odysseus = audioCtx.createBufferSource();
+  sources.siren = audioCtx.createBufferSource();
+  sources.odysseus.buffer = buffers[currentLang].odysseus;
+  sources.siren.buffer = buffers[currentLang].siren;
+  sources.odysseus.connect(gains.odysseus);
+  sources.siren.connect(gains.siren);
+
+  // When the longer track ends, stop everything
+  const durOdy = buffers[currentLang].odysseus.duration;
+  const durSir = buffers[currentLang].siren.duration;
+  const maxDur = Math.max(durOdy, durSir);
+
+  sources.odysseus.onended = () => {
+    if (isPlaying && getCurrentTime() >= maxDur - 0.1) {
+      stopPlayback();
+    }
+  };
+  sources.siren.onended = () => {
+    if (isPlaying && getCurrentTime() >= maxDur - 0.1) {
+      stopPlayback();
+    }
+  };
+
+  sources.odysseus.start(0, offset);
+  sources.siren.start(0, offset);
+  startTime = audioCtx.currentTime - offset;
+  isPlaying = true;
+}
+
+function stopSources() {
+  try { sources.odysseus?.stop(); } catch(e) {}
+  try { sources.siren?.stop(); } catch(e) {}
+  sources.odysseus = null;
+  sources.siren = null;
+}
+
+function stopPlayback() {
+  pauseOffset = 0;
+  isPlaying = false;
+  stopSources();
+  updatePlayButton();
+  document.getElementById('progressFill').style.width = '0%';
+  document.getElementById('timeCurrent').textContent = '0:00';
+}
+
+function togglePlay() {
+  if (audioCtx.state === 'suspended') audioCtx.resume();
+
+  if (isPlaying) {
+    pauseOffset = getCurrentTime();
+    isPlaying = false;
+    stopSources();
+  } else {
+    startPlayback(pauseOffset);
+  }
+  updatePlayButton();
+}
+
+function updatePlayButton() {
+  const btn = document.getElementById('btnPlay');
+  btn.textContent = isPlaying ? '❚❚ Pause' : '▶ Play';
+}
+
+function getCurrentTime() {
+  if (!isPlaying) return pauseOffset;
+  return audioCtx.currentTime - startTime;
+}
+
+function getMaxDuration() {
+  if (!buffers[currentLang].odysseus || !buffers[currentLang].siren) return 0;
+  return Math.max(
+    buffers[currentLang].odysseus.duration,
+    buffers[currentLang].siren.duration
+  );
+}
+
+function updateDuration() {
+  const dur = getMaxDuration();
+  document.getElementById('timeDuration').textContent = formatTime(dur);
+}
+
+function formatTime(s) {
+  const m = Math.floor(s / 60);
+  const sec = Math.floor(s % 60);
+  return m + ':' + (sec < 10 ? '0' : '') + sec;
+}
+
+// ── Progress update loop ──
+
+function updateProgress() {
+  const cur = getCurrentTime();
+  const dur = getMaxDuration();
+  const pct = dur > 0 ? Math.min(cur / dur, 1) : 0;
+
+  if (isPlaying) {
+    document.getElementById('progressFill').style.width = (pct * 100) + '%';
+    document.getElementById('timeCurrent').textContent = formatTime(cur);
+  }
+
+  // Always update tickers (also when paused, for seek)
+  updateTickers(cur);
+
+  requestAnimationFrame(updateProgress);
+}
+
+requestAnimationFrame(updateProgress);
+
+// ── Seek ──
+
+function seek(e) {
+  if (audioCtx.state === 'suspended') audioCtx.resume();
+  const rect = document.getElementById('progressBg').getBoundingClientRect();
+  const x = (e.clientX - rect.left) / rect.width;
+  const dur = getMaxDuration();
+  const target = Math.max(0, Math.min(x * dur, dur));
+
+  if (isPlaying) {
+    stopSources();
+    startPlayback(target);
+  } else {
+    pauseOffset = target;
+    document.getElementById('timeCurrent').textContent = formatTime(target);
+    document.getElementById('progressFill').style.width = (target / dur * 100) + '%';
+  }
+}
+
+// ── Language switch ──
+
+function switchLang(lang) {
+  if (lang === currentLang) return;
+
+  const wasPlaying = isPlaying;
+  const offset = getCurrentTime();
+
+  if (isPlaying) {
+    stopSources();
+    isPlaying = false;
+  }
+
+  currentLang = lang;
+  pauseOffset = 0; // reset to start when switching language
+
+  document.getElementById('btnDe').classList.toggle('active', lang === 'de');
+  document.getElementById('btnEn').classList.toggle('active', lang === 'en');
+
+  // Reset play button text
+  document.getElementById('btnPlay').textContent = '▶ Play';
+
+  updateDuration();
+  document.getElementById('timeCurrent').textContent = '0:00';
+  document.getElementById('progressFill').style.width = '0%';
+  renderStropheMarkers();
+  initTickers();
+  updateTickers(0);
+
+  if (wasPlaying) {
+    startPlayback(0);
+    updatePlayButton();
+  }
+}
+
+// ── Strophe Markers on Timeline ──
+
+function renderStropheMarkers() {
+  var bar = document.getElementById('progressBg');
+  // Remove old markers
+  var old = bar.querySelectorAll('.strophe-marker');
+  for (var j = 0; j < old.length; j++) old[j].remove();
+
+  var dur = getMaxDuration();
+  if (dur === 0) return;
+
+  var ts = TIMESTAMPS[currentLang];
+  if (!ts) return;
+
+  function addMarkers(voice, cssClass) {
+    var entries = ts[voice];
+    if (!entries) return;
+    // Skip index 0 (title) — first strophe marker would be at 0% anyway
+    for (var i = 1; i < entries.length; i++) {
+      var pct = (entries[i].start / dur) * 100;
+      var tick = document.createElement('div');
+      tick.className = 'strophe-marker ' + cssClass;
+      tick.style.left = pct + '%';
+      tick.title = voice + ' ' + i + ' — ' + formatTime(entries[i].start);
+      (function(startSec) {
+        tick.addEventListener('click', function(e) {
+          e.stopPropagation();
+          seekTo(startSec);
+        });
+      })(entries[i].start);
+      bar.appendChild(tick);
+    }
+  }
+
+  addMarkers('odysseus', 'strophe-marker-ody');
+  addMarkers('siren', 'strophe-marker-sir');
+}
+
+function seekTo(seconds) {
+  if (audioCtx.state === 'suspended') audioCtx.resume();
+  var dur = getMaxDuration();
+  var target = Math.max(0, Math.min(seconds, dur));
+
+  if (isPlaying) {
+    stopSources();
+    startPlayback(target);
+  } else {
+    pauseOffset = target;
+    document.getElementById('timeCurrent').textContent = formatTime(target);
+    document.getElementById('progressFill').style.width = (target / dur * 100) + '%';
+  }
+}
+
+// Jump to the next (+1) or previous (-1) strophe boundary for a given voice
+function jumpStrophe(voice, direction) {
+  var ts = TIMESTAMPS[currentLang];
+  if (!ts || !ts[voice]) return;
+  var entries = ts[voice];
+  var cur = getCurrentTime();
+
+  if (direction > 0) {
+    // Find the first strophe that starts after current time (with small tolerance)
+    for (var i = 0; i < entries.length; i++) {
+      if (entries[i].start > cur + 0.5) {
+        seekTo(entries[i].start);
+        return;
+      }
+    }
+  } else {
+    // Find the last strophe whose start is before current time (with tolerance)
+    for (var i = entries.length - 1; i >= 0; i--) {
+      if (entries[i].start < cur - 1.5) {
+        seekTo(entries[i].start);
+        return;
+      }
+    }
+    seekTo(0);
+  }
+}
+
+// Jump to next/previous strophe boundary (either voice, whichever comes first)
+function jumpNext() {
+  var ts = TIMESTAMPS[currentLang];
+  if (!ts) return;
+  var cur = getCurrentTime();
+  var best = Infinity;
+
+  for (var voice in ts) {
+    var entries = ts[voice];
+    for (var i = 0; i < entries.length; i++) {
+      if (entries[i].start > cur + 0.5 && entries[i].start < best) {
+        best = entries[i].start;
+        break;
+      }
+    }
+  }
+  if (best < Infinity) seekTo(best);
+}
+
+function jumpPrev() {
+  var ts = TIMESTAMPS[currentLang];
+  if (!ts) return;
+  var cur = getCurrentTime();
+  var best = -1;
+
+  for (var voice in ts) {
+    var entries = ts[voice];
+    for (var i = entries.length - 1; i >= 0; i--) {
+      if (entries[i].start < cur - 1.5 && entries[i].start > best) {
+        best = entries[i].start;
+        break;
+      }
+    }
+  }
+  seekTo(best >= 0 ? best : 0);
+}
+
+// ── Scrolling Text ──
+
+const TEXTS = {
+  de: {
+    odysseus: 'Odysseus. Die Sirene. Ein Versuch ◆ In schwachen Phasen unseres dahinrinnenden Lebens neigen wir dazu, endlich finden zu wollen, was uns unserer Meinung nach schon seit den Zeiten unserer träumerischen Jugend zusteht und uns vom Schicksal bisher versagt wurde. Aus purem Leichtsinn beginnen wir, uns Kräften auszusetzen, die wir — einmal entfesselt — nurmehr schwerlich unter Kontrolle bringen und die uns — sollten wir doch irgendwann dem zähen Ringen mit ihnen entkommen sein — als für immer gezeichnete Gestalten zurücklassen. Wir verderben uns, weil wir von unserer Standfestigkeit überzeugt sind und glauben, selbst in einem Heldenepos damit bestehen zu können. ◆ Wie jeder menschliche Mangel wird auch dieser in seiner endgültigen Konsequenz vom listenreichen Odysseus dargeboten. In der ereignisarmen Zeit nach seinem Gang durch die Pfade des Hades und noch bevor Scylla und Charybdis sich am Horizont abzeichneten, beschloss er aus einer Laune heraus, alle Warnungen in den Wind zu schlagen und sich etwas auszusetzen, das schon dem Argonautenzug um ein Haar den Garaus gemacht hätte. Gestählt hervorgegangen aus unzählbaren Schlachten, mit der Selbstgewissheit eines Mannes, dessen verschlagene Listen zuvor allesamt glückten, erschien es ihm ein Leichtes, dem Gesang allenfalls überschaubar gefährlicher Fabelwesen widerstehen zu können. Finale Zweifel gedachte er zu zerstreuen, indem er sich mit Ketten an den zentralen Mast des Schiffes schmieden ließ. Seine Mannschaft aber hieß er, sich gegenseitig Wachs in die Ohren zu träufeln, auf dass sie während des erwarteten Spektakels unbehelligt ihrer Arbeit nachgehen könnten. Und so näherte sich des Odysseus Schiff der Insel, auf der die Sängerinnen gemutmaßt wurden: Eine Reihe abgeschirmter arbeitsamer Seelen nebst einem Körper in Ketten. ◆ <span class="song">Sie ruft aus einer anderen Welt. Tongewordene Sehnsucht. Verfüllendes Begehren. Klaviaturen von Glück. Sie steht nur dort und singt und überschwemmt ihn mit gewallter Empfindung, deren Wucht er zuvor nicht einmal erahnte. Und so ihm gewahr wird, dass er nicht folgen kann, verwandelt sich diese in einen Sturzbach aus all dem Lärm, der die Erde seit Anbeginn der Zeit erfüllte. Zerfetzter Zeitlauf. Verzerrter Raum. Die resorbierende Anomalie nimmt ihm die Luft, die er zum Schreien benötigte. Reißt ihm die Haut vom Fleisch, das Fleisch von den Knochen. Nimmt alles Gedärm und zum Schluss sein Herz. Zurück bleibt nur sein kranker Geist, allem beraubt, was dem Schmerz einen Ausdruck geben könnte. Die Schreie, die niemand hörte, sind längst verklungen. Die Ketten halten.</span> ◆ Als die Männer sie zerschlugen, verlachten sie ihn ob seiner Klagen. Schlicht nichts habe sich ereignet, als man an der Insel vorüberfuhr. Keine Zeit dürfe man nun mit Lamentieren vertändeln, die Meerenge zwischen dem Strudel und dem Monster nahe. Weder Gesang noch Inferno habe man vernommen. Kein Riss im Gefüge war erschienen, keine Sogwirkung war entfacht. Nichts war geschehen, dem man irgendwie nachhängen könnte. ◆ Und Odysseus wurde gewahr, dass ihm der Schmerz nicht nur zugefügt, sondern tief in ihm vergraben wurde und er für alle Zeit mit ihm allein bleiben würde. Auch als die Jahre der Irrfahrt vorüber waren, er Penelope von ihren Freiern erlöst und wieder den Platz an ihrer Seite auf dem Thron von Ithaka eingenommen hatte, kam er zurück. In jedem Frühjahr von neuem.',
+    siren: 'Das Lied der Sirene ◆ Zärtlich weicht die Nacht, wie eine Verbündete des heimlichen Paars, das eben erst im Osten die Himmelsbühne betrat. Rubinrot sticht Mars aus dem nachtblauen Samt hervor, alsbald von der opalschimmernden Venus noch überstrahlt; doch schon verblasst ihre Anwesenheit im verklarenden Blau des erwachenden Tages, das rasch das gesamte Firmament durchmisst und schließlich weit im Westen auch Orion bis zum Abend von seinem Dienst entbindet. ◆ Wo der Planetenjäger wich, sind in dieser frühen Stunde die Grenzen zwischen den Zuständen der Welt noch verschwommen und nur die sacht bewegte Spiegelung des einen im anderen lässt jene Schwelle erahnen, an der die Elemente sich trennen. Von dort lösen sich, noch etliche Stadien entfernt, zwei Punkte, umeinander tollend wie beseelte Funken, in atemberaubendem Tempo an Farbe und Gestalt gewinnend, gleich orangeblau gekleideten Geschossen auf dem Weg in den beginnenden Tag. ◆ Wie der Zeit entzogen liegt das Meer unter dem rasanten Zug, wie eingefroren das Langschiff, vom Eisvogelpaar im Bruchteil eines Augenblicks passiert. Die Segel sind verstaut, denn Aiolos hat die Winde gehalten; doch auch die Ruderbänke wirken in ihrer Reglosigkeit, als hätte man dort Platz genommen, um einer Aufführung beizuwohnen. Schnell löst sich das Geschehen wieder vom Schiff, denn weiter geht die halcyonische Jagd über die ruhende See hin zur nahenden Küstenlinie, hinter der sich nur wenige Augenblicke noch die Sonne verbirgt, ehe sie sich den Himmel untertan macht. ◆ Im Herannahen der Küste hebt sich das Meer nun wahrnehmbarer, gleich dem Brustkorb eines ruhenden Titanen. Tänzerisch nehmen die beiden die Bewegung in ihren Flug auf und stoßen wiederholt mit dem Schnabel voran durch die nasse Oberfläche, als Gruß an die Töchter des Nereus, die dem Schauspiel verzückt vom Meeresboden aus beiwohnen. Verwegen und erst knapp vor der Steilküste wechseln die Flugkünstler in die Vertikale, ohne dabei ihre Dynamik zu verlieren. Sie durchmessen in meisterlicher Leichtigkeit den Raum zwischen den Pfeilern aus lichtweißem Stein, die in ihrer filigranen Gliederung als Vorbild für das Strebewerk ehrgeiziger Kathedralen dienen könnten, von Baumeistern erst künftiger Zeitalter erdacht. ◆ Weit oben werden die Streben lichter und verlieren sich schließlich in eine offene, sanft steigende Hochebene – eine Weide mit natürlicher Begrenzung für die sich langsam im Zwielicht des beginnenden Morgens aus ihren Verschlägen hervorwagenden Herdentiere. Noch ist die Wiese von silbrigem Nebel bedeckt, der im nächsten Moment von der sich nun erhebenden Sonne mit einem Blinzeln in Richtung des Klippenrandes hinweggefegt wird. Sattes, nahrhaftes Grün, gesprenkelt mit leuchtenden Wildblumeninseln, kommt zum Vorschein. Fast schwebend auf der vordersten Klippe wird nun ein zartes Wesen offenbar, sein Schatten von der tief stehenden Sonne weit hinaus ins Meer geworfen bis über das Langschiff am Horizont. Aufrecht, das Antlitz an die See gerichtet steht dort eine Frau, die Lippen leicht öffnend im harmonischen Spiel mit der sanften Bewegung ihres Körpers. Die Frau singt. Sie singt ein Feenlied. ◆ <span class="song">Alles in dieser Welt ist vom Gesang durchdrungen und richtet sich in ihm auf. Als gewinne die Hochebene durch ihn ihre Erhabenheit und die Küste ihre Monumentalität, als sei durch sein Wirken das Meer milder, der Himmel weiter und selbst die Sonne in ihrer Majestät weniger streng als sanft. Als tunke er die Gräser in tieferes Grün, gäbe er den Blüten wärmere Farben, ließe er die Schafe sanftmütiger, die Zicklein tollkühner und die Eisvögel ausgelassener wirken. Ein Lied als Balsam, dem sich alles öffnet und sich bestärkt, ermutigt, verstanden fühlt; das süße Tagträume von ihrer Flüchtigkeit erlösen und sie zu Substanz formen könnte. Musik mit gewaltigen Wellen der Resonanz, die selbst die mächtigsten Dämonen der Innenwelten in einen beschwingten Tanz zwänge. Welche Kraft könnte sie erst dort entfachen, wo Sehnsüchte in Ketten liegen, wo die Einsamen Gefährten, die Ungeliebten Erwiderung, die Unverstandenen Widerhall ersehnen? Nichts vermag gegen diese Macht anzukommen, nichts sich zu entziehen, nichts sie zu erreichen. Solange sie singt, ist die Sirene das schönste aller Wesen.</span> ◆ Die Welt lauscht, doch gebiert sie keine Antwort; noch nie erzeugte die Resonanz Widerhall, der zur Schöpferin drang – auch jetzt nicht. Schon bevor der Apfel die Hand der Eris verließ, vertonte die Sirene, wie zur stummen Gefährtin ihr die Einsamkeit wurde. Komponierte Lieder über Dichter, denen das Verstummen verwehrt war, auch wenn sie ungelesen blieben; über Tänzerinnen, an deren anmutigen Bewegungen sich nur der eigene Spiegel erfreuen durfte; über Maler, deren bewegende Bilder ungesehen auf staubigen Böden verblassten; über im Gesang verwebte Wesen, deren Dasein das Singen verlangt, auch wenn es die Zustände nicht ändern, die Isolation nicht beenden, die Traurigkeit nicht lindern, den Dorn nicht ziehen kann. Den gesamten Lauf des Tages trägt der Sirene Gesang die Welt, durchzieht Himmel und Meer, Klippe und Ebene, Pflanze und Tier; erst am Abend entrinnt ihr eine monadische Träne, in der die untergehende Sonne ihr letztes Leuchten spiegelt. ◆ Wie ein Vorhang fällt die Nacht. Reglos liegt das Meer, kaum vorangekommen das Langschiff, verwaist die Ruderbänke. Seltsam mechanisch, wie an Seilwinden gezogen, wirkt die Rückkehr der Eisvögel in den Westen, wo noch für einen Atemzug der einsame Merkur die Himmelskuppel durchsticht, dann sind sie mit ihm verschwunden. Der Welt bleibt Schweigen.',
+  },
+  en: {
+    odysseus: 'Odysseus. The Siren. An Attempt. ◆ In the weaker moments of our meandering lives, we tend to feel an urge at last to claim what we believe has long been owed to us since the days of our dreamy youth, yet withheld by fate. Out of sheer abandon we begin to expose ourselves to forces which, once unleashed, we can hardly rein in, and which, should we eventually escape the grinding struggle with them, leave their mark on us forever. We undo ourselves because we are convinced of our own resolve and believe we could hold our ground even in a heroic epic. ◆ Like every human failing, this above all finds its ultimate expression in the figure of the wily Odysseus. In the uneventful interval after his descent into Hades and before Scylla and Charybdis loomed on the horizon, he saw fit, on a whim, to cast all caution to the wind and expose himself to that which had nearly brought the Argonauts\' voyage to grief. Steeled by countless battles, with the self-assurance of a man whose ingenious stratagems had never yet failed, he thought it a small thing to resist the song of fabled creatures whose menace seemed, at best, containable. He meant to dispel any lingering doubts by having himself bound to the ship\'s central mast. His crew, however, he ordered to stop their ears with wax, so that they might go about their work undisturbed during the anticipated spectacle. And so Odysseus\'s ship approached the island where the singers were presumed to dwell: a row of shielded, industrious souls beside a body in chains. ◆ <span class="song">She calls from another world. Desire made sound. Fulfilled longing. Keys of bliss. She stands there, merely singing, flooding him with surging sensation whose force he could not have fathomed. And as he becomes aware that he cannot follow, it turns to a torrent of all the noise that has filled the earth since the beginning of time. Shredded time. Distorted space. An engulfing anomaly robs him of the air he needs to scream. Tears the skin from his flesh, the flesh from his bones. Takes all his entrails and finally his heart. All that remains is his ravaged mind, robbed of everything that could give expression to the pain. The screams no one heard have long since faded. The chains hold.</span> ◆ When the men broke them, they mocked him for his laments. Nothing at all, they said, had occurred as they sailed past the island. No time now to squander on grief, the strait between the vortex and the monster looming near. Neither song nor inferno had they perceived. No rift had appeared, no draw had been unleashed. Nothing had happened worth dwelling upon. ◆ It dawned on Odysseus that the pain had not only been inflicted but lay buried deep within him; that he would remain alone with it for all time. Even when the wandering years were over, when he had freed Penelope from her suitors and reclaimed his place at her side on the throne of Ithaca, it came back. Every spring anew.',
+    siren: 'The Song of the Siren ◆ Tender goes the night, like a consort to the furtive pair just stepping onto the celestial stage in the east. Ruby-red, Mars pierces the midnight-blue velvet, soon outshone by opalescent Venus; already, though, their presence fades in the transfiguring blue of the awakening day, which swiftly traverses the firmament and at last, far in the west, releases even Orion until evening. ◆ Where the planet hunter withdrew, the boundaries between the states of the world still blur in this early hour, and only the gently stirring reflection of each in the other hints at that threshold where the elements part. From there, still several stadia distant, two points emerge, tumbling one around the other like animate sparks, gaining colour and form at breathtaking speed — like projectiles clad in orange and blue piercing the dawning day. ◆ The sea lies beneath the hurtling flight as though removed from time, a longship as though frozen, passed in a heartbeat by the kingfisher pair. The sails are stowed, for Aeolus has held the winds; the rowing benches so still, as though someone had sat down to attend a performance. Swiftly the scene detaches from the ship, for on goes the halcyon chase across the calm sea towards the coastline, behind which the sun conceals itself before mounting once more to reclaim the sky. ◆ As the coast draws near, the sea rises and falls more perceptibly, like the chest of a slumbering titan. The two take up its rhythm in flight, plunging beak-first, again and again, into the swell, as a salute to the daughters of Nereus, who attend the spectacle from the ocean floor in rapture. Daringly, just before the cliff face, they turn heavenward without losing their momentum, traversing with masterful ease the pillars of luminous white stone whose filigree might have inspired the flying buttresses of ambitious cathedrals, conceived by master builders of ages yet to come. ◆ High above, the arches grow lighter, giving way at last to an open, gently rising plateau — a natural pasture where creatures slowly venture out in the half-light of early morning. The meadow still lies under silvery mist, swept away the next moment towards the cliff\'s edge with a roguish wink of the rising sun. Rich, nourishing green comes into view, speckled with luminous islands of wildflowers. At the foremost edge, as though suspended, a delicate being appears, its shadow cast by the low sun far out across the sea, past the ship on the horizon. Upright, her countenance turned to the sea, a woman stands, lips parting gently in time with the soft movement of her body. The woman sings. She sings a faery song. ◆ <span class="song">All in this world is suffused with song and rises within it. As though the plateau drew its grandeur from its swell, the coastline its stature, as though in its wake the sea grew milder, the sky vaster, and even the sun in its majesty less stern than gentle. As though it dipped the grasses in a deeper green, lent the blossoms warmer colours, made the sheep meeker, the lambs more daring, the kingfishers more exuberant still. A song like balm, to which all things open — enlivened, heartened, heard; that could redeem sweet daydreams from their transience and shape them into substance. Music whose mighty waves of resonance could press even the fiercest daemons within into a buoyant dance. What force might it unleash where longings lie in chains, where the lonely crave companions, the unloved requital, the misunderstood an echo? Nothing can withstand this power. Nothing escape it. Nothing reach it. As long as she sings, the Siren is the most beautiful of all beings.</span> ◆ The world listens, but has no answer to give. No echo of all that resonance has ever reached its creatrix. Nor will it now. Long before the apple left the hand of Eris, the Siren set to music how solitude had become her mute companion. She composed songs of poets denied their silence, though they remained unread for all their lives; of dancers whose graceful movements only their own mirror was permitted to enjoy; of painters whose stirring works faded unseen on dusty floors. Songs of beings woven into song, singing because they must, even though it cannot change what is, nor end the isolation, nor ease the sadness, nor draw the thorn. All day long her song carries the world, pervades sky and sea, cliff and plain, plant and creature; not until evening does one solitary tear escape her, mirroring the setting sun\'s last glow. ◆ Night falls like a curtain. The sea lies motionless, the ship barely advanced, the rowing benches orphaned. Strangely mechanical, as though drawn on winches, the kingfishers return to the west, where for one last breath the solitary Mercury pierces the dome of the sky, then they are gone with him. The world is silence.',
+  }
+};
+
+// ── Strophe Timestamps (seconds) ──
+
+const TIMESTAMPS = {
+  de: {
+    odysseus: [
+      { start: 0, end: 7 },
+      { start: 7, end: 45 },
+      { start: 50, end: 120 },
+      { start: 190, end: 252 },
+      { start: 254, end: 285 },
+      { start: 285, end: 312 },
+    ],
+    siren: [
+      { start: 0, end: 4 },
+      { start: 4, end: 30 },
+      { start: 30, end: 60 },
+      { start: 60, end: 92 },
+      { start: 94, end: 135 },
+      { start: 135, end: 188 },
+      { start: 190, end: 252 },
+      { start: 252, end: 315 },
+      { start: 315, end: 345 },
+    ],
+  },
+  en: {
+    odysseus: [
+      { start: 0, end: 4 },
+      { start: 4, end: 38 },
+      { start: 40, end: 98 },
+      { start: 171, end: 212 },
+      { start: 231, end: 252 },
+      { start: 253, end: 270 },
+    ],
+    siren: [
+      { start: 0, end: 4 },
+      { start: 4, end: 29 },
+      { start: 30, end: 56 },
+      { start: 57, end: 87 },
+      { start: 88, end: 123 },
+      { start: 124, end: 169 },
+      { start: 171, end: 230 },
+      { start: 231, end: 283 },
+      { start: 284, end: 309 },
+    ],
+  },
+};
+
+let tickerData = { odysseus: null, siren: null };
+
+// ── Perspective Toggle ──
+// 'odysseus' = light button, Ody normal L→R, Siren mirrored R→L
+// 'siren'    = dark button,  Siren normal L→R, Ody mirrored R→L
+let perspectiveMode = 'odysseus';
+
+function initTickers() {
+  const lang = currentLang;
+  const ts = TIMESTAMPS[lang];
+
+  for (const voice of ['odysseus', 'siren']) {
+    const el = document.getElementById(voice === 'odysseus' ? 'tickerTextOdy' : 'tickerTextSir');
+    const fullText = TEXTS[lang][voice];
+    const parts = fullText.split(' ◆ ');
+
+    if (ts && ts[voice] && parts.length === ts[voice].length) {
+      // Wrap each strophe in a measurable span, with spaced separators
+      el.innerHTML =
+        parts.map((part, i) =>
+          '<span class="strophe" data-strophe="' + i + '">' + part + '</span>'
+        ).join('<span class="strophe-sep">&nbsp;&nbsp;&nbsp; ◆ &nbsp;&nbsp;&nbsp;</span>') +
+        '<span class="strophe-pad">&nbsp;&nbsp;&nbsp;&nbsp;</span>';
+
+      // Force layout, then measure strophe pixel positions
+      void el.offsetWidth;
+      const stropheEls = el.querySelectorAll('.strophe');
+      const ranges = [];
+      stropheEls.forEach(s => {
+        ranges.push({
+          left: s.offsetLeft,
+          width: s.offsetWidth,
+          right: s.offsetLeft + s.offsetWidth,
+        });
+      });
+
+      tickerData[voice] = {
+        ranges: ranges,
+        timestamps: ts[voice],
+        totalWidth: el.scrollWidth,
+      };
+      console.log('[ticker]', voice, 'strophe-sync ON —', parts.length, 'parts,', ranges.length, 'ranges, totalWidth:', el.scrollWidth);
+    } else {
+      // No timestamps available — plain text, linear fallback
+      el.innerHTML = fullText;
+      tickerData[voice] = null;
+      console.warn('[ticker]', voice, 'LINEAR FALLBACK — parts:', parts.length, 'timestamps:', ts && ts[voice] ? ts[voice].length : 'none');
+    }
+  }
+}
+
+function togglePerspective() {
+  const btn = document.getElementById('perspToggle');
+  if (perspectiveMode === 'odysseus') {
+    perspectiveMode = 'siren';
+    btn.classList.remove('mode-odysseus');
+    btn.classList.add('mode-siren');
+  } else {
+    perspectiveMode = 'odysseus';
+    btn.classList.remove('mode-siren');
+    btn.classList.add('mode-odysseus');
+  }
+}
+
+// Convert current playback time to a 0..1 scroll progress for one voice,
+// taking strophe boundaries and pauses into account.
+function getScrollProgress(voice, currentTime, duration) {
+  const data = tickerData[voice];
+  if (!data) {
+    // Linear fallback (no timestamps for this language)
+    return duration > 0 ? currentTime / duration : 0;
+  }
+
+  const { ranges, timestamps, totalWidth } = data;
+  if (totalWidth === 0) return 0;
+
+  // Before first strophe starts
+  if (currentTime < timestamps[0].start) return 0;
+
+  for (let i = 0; i < timestamps.length; i++) {
+    const ts = timestamps[i];
+
+    // Currently inside strophe i — interpolate within it
+    if (currentTime >= ts.start && currentTime <= ts.end) {
+      const t = (currentTime - ts.start) / (ts.end - ts.start);
+      const pixelPos = ranges[i].left + t * ranges[i].width;
+      return pixelPos / totalWidth;
+    }
+
+    // In a pause between strophe i and i+1 — hold at midpoint of separator
+    // so the ◆ and the strophe ending stay visible
+    if (i < timestamps.length - 1 && currentTime > ts.end && currentTime < timestamps[i + 1].start) {
+      var pausePos = (ranges[i].right + ranges[i + 1].left) / 2;
+      return pausePos / totalWidth;
+    }
+  }
+
+  // After all strophes (trailing silence) — include trailing pad
+  return Math.min(1, (ranges[ranges.length - 1].right + 60) / totalWidth);
+}
+
+function updateTickers(currentTime) {
+  const duration = getMaxDuration();
+
+  const odyEl = document.getElementById('tickerTextOdy');
+  const sirEl = document.getElementById('tickerTextSir');
+  const tickerOdyW = document.getElementById('tickerOdy').offsetWidth;
+  const tickerSirW = document.getElementById('tickerSir').offsetWidth;
+  const odyTextW = odyEl.scrollWidth;
+  const sirTextW = sirEl.scrollWidth;
+
+  const odyProgress = getScrollProgress('odysseus', currentTime, duration);
+  const sirProgress = getScrollProgress('siren', currentTime, duration);
+
+  // Gentle lead-in: at progress=0 the text starts ~35% into the ticker,
+  // fading to normal scrolling by ~8% progress.
+  function leadIn(progress, tickerW) {
+    return Math.max(0, (1 - progress * 12)) * tickerW * 0.35;
+  }
+
+  if (perspectiveMode === 'odysseus') {
+    // Odysseus: normal text, scrolls L→R
+    const odyX = leadIn(odyProgress, tickerOdyW) - odyProgress * (odyTextW - tickerOdyW);
+    odyEl.style.transform = 'translateY(-50%) translateX(' + odyX + 'px)';
+
+    // Siren: mirrored text, scrolls R→L
+    const sirX = tickerSirW - leadIn(sirProgress, tickerSirW) + sirProgress * (sirTextW - tickerSirW);
+    sirEl.style.transform = 'translateY(-50%) translateX(' + sirX + 'px) scaleX(-1)';
+  } else {
+    // Siren: normal text, scrolls L→R
+    const sirX = leadIn(sirProgress, tickerSirW) - sirProgress * (sirTextW - tickerSirW);
+    sirEl.style.transform = 'translateY(-50%) translateX(' + sirX + 'px)';
+
+    // Odysseus: mirrored text, scrolls R→L
+    const odyX = tickerOdyW - leadIn(odyProgress, tickerOdyW) + odyProgress * (odyTextW - tickerOdyW);
+    odyEl.style.transform = 'translateY(-50%) translateX(' + odyX + 'px) scaleX(-1)';
+  }
+}
+
+initTickers();
+updateTickers(0);
+
+// ── Start ──
+
+init();
+</script>
+
+</body>
+</html>
