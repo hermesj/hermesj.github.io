@@ -30,38 +30,10 @@
     mix-blend-mode: difference;
   }
 
-  /* ── TITLE ── */
-  .main-title {
-    display: flex;
-    justify-content: center;
-    align-items: baseline;
-    gap: 0.4em;
-    padding: 4vh 0 2vh 0;
-    font-size: clamp(1.6rem, 3vw, 2.8rem);
-    font-weight: 300;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-  }
-
-  .word-left {
-    color: #000;
-    text-shadow: 0 0 12px rgba(255,255,255,0.8);
-  }
-  .word-mid {
-    color: #888;
-    font-size: 0.7em;
-    letter-spacing: 0.2em;
-    font-weight: 400;
-  }
-  .word-right {
-    color: #fff;
-    text-shadow: 0 0 12px rgba(0,0,0,0.8);
-  }
-
   /* ── LANG SWITCH ── */
   .lang-switch {
     text-align: center;
-    margin-bottom: 1vh;
+    padding: 1.5vh 0 0.5vh 0;
     cursor: default;
   }
 
@@ -84,24 +56,62 @@
     border-bottom: 1px solid rgba(80,100,120,0.5);
   }
 
-  /* ── HINT ── */
-  .hint {
+  /* ── TITLE ── */
+  .main-title {
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+    gap: 0.4em;
+    padding: 0.5vh 0 1.5vh 0;
+    font-size: clamp(1.6rem, 3vw, 2.8rem);
+    font-weight: 300;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+  }
+
+  .word-left {
+    color: #000;
+    text-shadow: 0 0 12px rgba(255,255,255,0.8);
+  }
+  .word-mid {
+    color: #888;
+    font-size: 0.7em;
+    letter-spacing: 0.2em;
+    font-weight: 400;
+  }
+  .word-right {
+    color: #fff;
+    text-shadow: 0 0 12px rgba(0,0,0,0.8);
+  }
+
+  /* ── HINT OVERLAY ── */
+  .hint-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 0.8em;
-    margin-bottom: 3vh;
-    transition: opacity 2s ease;
+    z-index: 900;
     pointer-events: none;
+    transition: opacity 1.5s ease;
   }
 
-  .hint.faded {
+  .hint-overlay.faded {
     opacity: 0;
   }
 
+  .hint-inner {
+    display: flex;
+    align-items: center;
+    gap: 1.5em;
+  }
+
   .hint-arrow {
-    font-size: 1.2rem;
-    color: rgba(160,170,180,0.5);
+    font-size: 2.5rem;
+    color: rgba(160,170,180,0.7);
     animation: hint-pulse 2s ease-in-out infinite;
   }
 
@@ -109,8 +119,8 @@
   .hint-arrow-right { animation-delay: 1s; }
 
   @keyframes hint-pulse {
-    0%, 100% { opacity: 0.3; transform: translateX(0); }
-    50% { opacity: 0.7; transform: translateX(-3px); }
+    0%, 100% { opacity: 0.4; transform: translateX(0); }
+    50% { opacity: 0.9; transform: translateX(-6px); }
   }
 
   .hint-arrow-right {
@@ -118,14 +128,14 @@
   }
 
   @keyframes hint-pulse-right {
-    0%, 100% { opacity: 0.3; transform: translateX(0); }
-    50% { opacity: 0.7; transform: translateX(3px); }
+    0%, 100% { opacity: 0.4; transform: translateX(0); }
+    50% { opacity: 0.9; transform: translateX(6px); }
   }
 
   .hint-icon {
-    width: 20px;
-    height: 20px;
-    opacity: 0.35;
+    width: 48px;
+    height: 48px;
+    opacity: 0.5;
   }
 
   /* ── TEXT STAGE ── */
@@ -133,7 +143,11 @@
     position: relative;
     max-width: 700px;
     margin: 0 auto;
-    padding: 0 4vw 20vh 4vw;
+    padding: 0 4vw 0 4vw;
+  }
+
+  .end-spacer {
+    height: 30vh;
   }
 
   .text-layer {
@@ -185,7 +199,8 @@
     body { cursor: default; }
     .cursor-dot { display: none; }
     .text-layer { font-size: 1.15rem; }
-    .hint-icon { width: 24px; height: 24px; }
+    .hint-icon { width: 56px; height: 56px; }
+    .hint-arrow { font-size: 3rem; }
   }
 </style>
 </head>
@@ -193,10 +208,18 @@
 
 <div class="cursor-dot" id="cursorDot"></div>
 
-<div class="main-title">
-  <span class="word-left" id="titleLeft">Figure</span>
-  <span class="word-mid" id="titleMid">and</span>
-  <span class="word-right" id="titleRight">Ground</span>
+<!-- Hint overlay — centered on screen, fades on interaction -->
+<div class="hint-overlay" id="hint">
+  <div class="hint-inner">
+    <span class="hint-arrow hint-arrow-left">&#x25C0;</span>
+    <svg class="hint-icon" id="hintIcon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="color: rgba(160,170,180,0.5);">
+      <rect x="6" y="2" width="12" height="20" rx="6"/>
+      <line x1="12" y1="6" x2="12" y2="10"/>
+      <line x1="3" y1="12" x2="6" y2="12"/>
+      <line x1="18" y1="12" x2="21" y2="12"/>
+    </svg>
+    <span class="hint-arrow hint-arrow-right">&#x25B6;</span>
+  </div>
 </div>
 
 <div class="lang-switch" id="langSwitch">
@@ -204,22 +227,18 @@
   <a id="btnEn" class="active" onclick="switchLang('en')">English</a>
 </div>
 
-<div class="hint" id="hint">
-  <span class="hint-arrow hint-arrow-left">&#x25C0;</span>
-  <svg class="hint-icon" id="hintIcon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="color: rgba(160,170,180,0.5);">
-    <!-- mouse icon (desktop default) -->
-    <rect x="6" y="2" width="12" height="20" rx="6"/>
-    <line x1="12" y1="6" x2="12" y2="10"/>
-    <line x1="3" y1="12" x2="6" y2="12"/>
-    <line x1="18" y1="12" x2="21" y2="12"/>
-  </svg>
-  <span class="hint-arrow hint-arrow-right">&#x25B6;</span>
+<div class="main-title">
+  <span class="word-left" id="titleLeft">Figure</span>
+  <span class="word-mid" id="titleMid">and</span>
+  <span class="word-right" id="titleRight">Ground</span>
 </div>
 
 <div class="text-stage" id="stage">
   <div class="text-layer layer-odysseus" id="layerOdy"></div>
   <div class="text-layer layer-siren" id="layerSir"></div>
 </div>
+
+<div class="end-spacer"></div>
 
 <script src="texts.js"></script>
 <script>
@@ -247,6 +266,15 @@
   function lerp(a, b, t) { return a + (b - a) * t; }
   function clamp(v, lo, hi) { return Math.max(lo, Math.min(hi, v)); }
 
+  var stage = document.getElementById('stage');
+
+  // Ensure stage height accommodates the absolutely-positioned siren layer
+  function fitStage() {
+    var h = Math.max(layerOdy.scrollHeight, layerSir.scrollHeight);
+    stage.style.minHeight = h + 'px';
+  }
+  window.addEventListener('resize', fitStage);
+
   // ── Language switching ──
   window.switchLang = function (lang) {
     currentLang = lang;
@@ -260,6 +288,8 @@
     layerSir.innerHTML = FIGROUND.renderParagraphs(data.siren.paragraphs);
     document.getElementById('btnDe').className = (lang === 'de') ? 'active' : '';
     document.getElementById('btnEn').className = (lang === 'en') ? 'active' : '';
+    // Refit stage height after content change
+    requestAnimationFrame(fitStage);
   };
 
   // ── Background gradient shift ──
