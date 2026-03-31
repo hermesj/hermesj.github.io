@@ -234,14 +234,14 @@
     .subtitle-ody,
     .subtitle-sir { font-size: 1.1rem; }
 
-    /* Title: "Figur und" left, "Hintergrund" right on next line */
-    .main-title {
+    /* German title only: "Figur und" left, "Hintergrund" right on next line */
+    .main-title.title-de {
       flex-wrap: wrap;
       justify-content: flex-start;
       padding-left: 4vw;
       padding-right: 4vw;
     }
-    .word-right {
+    .title-de .word-right {
       flex-basis: 100%;
       text-align: right;
     }
@@ -341,6 +341,9 @@
     layerSir.innerHTML = FIGROUND.renderParagraphs(data.siren.paragraphs);
     document.getElementById('btnDe').className = (lang === 'de') ? 'active' : '';
     document.getElementById('btnEn').className = (lang === 'en') ? 'active' : '';
+    // German title wrapping (mobile only, handled via CSS)
+    var titleEl = document.querySelector('.main-title');
+    titleEl.classList.toggle('title-de', lang === 'de');
     // Refit stage height after content change
     requestAnimationFrame(fitStage);
   };
