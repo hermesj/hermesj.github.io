@@ -234,9 +234,17 @@
     .subtitle-ody,
     .subtitle-sir { font-size: 1.1rem; }
 
-    /* Title: "Hintergrund" wraps to its own right-aligned line */
-    .main-title { flex-wrap: wrap; }
-    .word-right { width: 100%; text-align: right; }
+    /* Title: "Figur und" left, "Hintergrund" right on next line */
+    .main-title {
+      flex-wrap: wrap;
+      justify-content: flex-start;
+      padding-left: 4vw;
+      padding-right: 4vw;
+    }
+    .word-right {
+      flex-basis: 100%;
+      text-align: right;
+    }
   }
 </style>
 </head>
