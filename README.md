@@ -1,3 +1,3 @@
 # Collection of Web Projects
 
-## figround: The figure and ground project
+- [figround]{hermesj.github.io/figround}: The figure and ground project
