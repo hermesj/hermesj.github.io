@@ -111,12 +111,12 @@
 
   .hint-arrow {
     font-size: 3.5rem;
-    color: rgba(160,170,180,0.7);
-    animation: hint-pulse 2s ease-in-out infinite;
+    color: rgba(160,170,180,0.8);
+    animation: hint-pulse 1s ease-in-out infinite;
   }
 
-  .hint-arrow-left { animation-delay: 0s; }
-  .hint-arrow-right { animation-delay: 1s; }
+  .hint-arrow-left { animation-delay: 0.2s; }
+  .hint-arrow-right { animation-delay: 0.4s; }
 
   @keyframes hint-pulse {
     0%, 100% { opacity: 0.4; transform: translateX(0); }
@@ -226,8 +226,8 @@
   @media (max-width: 768px) {
     body { cursor: default; }
     .cursor-dot { display: none; }
-    .text-layer { font-size: 1.15rem; }
-    .hint-icon { width: 80px; height: 80px; }
+    .text-layer { font-size: 1.45rem; }
+    .hint-icon { width: 90px; height: 90px; }
     .hint-arrow { font-size: 3.5rem; }
   }
 </style>
