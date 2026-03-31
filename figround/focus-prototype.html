@@ -38,7 +38,7 @@
   }
 
   .lang-switch a {
-    font-size: 0.85rem;
+    font-size: 0.7rem;
     letter-spacing: 0.06em;
     text-decoration: none;
     color: rgba(120,140,160,0.8);
@@ -110,7 +110,7 @@
   }
 
   .hint-arrow {
-    font-size: 2.5rem;
+    font-size: 3.5rem;
     color: rgba(160,170,180,0.7);
     animation: hint-pulse 2s ease-in-out infinite;
   }
@@ -133,9 +133,37 @@
   }
 
   .hint-icon {
-    width: 48px;
-    height: 48px;
-    opacity: 0.5;
+    width: 72px;
+    height: 72px;
+    opacity: 0.8;
+  }
+
+  /* ── SUBTITLE ROW ── */
+  .subtitle-row {
+    display: flex;
+    justify-content: space-between;
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 0 4vw 1.2em 4vw;
+  }
+
+  .subtitle-ody,
+  .subtitle-sir {
+    font-size: clamp(0.9rem, 1.2vw, 1.15rem);
+    font-weight: 600;
+    font-style: italic;
+    letter-spacing: 0.06em;
+    transition: filter 0.15s ease, opacity 0.15s ease;
+  }
+
+  .subtitle-ody {
+    color: #000;
+    text-shadow: 0 0 10px rgba(255,255,255,0.9), 0 0 20px rgba(255,255,255,0.5);
+  }
+
+  .subtitle-sir {
+    color: #fff;
+    text-shadow: 0 0 10px rgba(0,0,0,0.9), 0 0 20px rgba(0,0,0,0.5);
   }
 
   /* ── TEXT STAGE ── */
@@ -199,8 +227,8 @@
     body { cursor: default; }
     .cursor-dot { display: none; }
     .text-layer { font-size: 1.15rem; }
-    .hint-icon { width: 56px; height: 56px; }
-    .hint-arrow { font-size: 3rem; }
+    .hint-icon { width: 80px; height: 80px; }
+    .hint-arrow { font-size: 3.5rem; }
   }
 </style>
 </head>
@@ -212,7 +240,7 @@
 <div class="hint-overlay" id="hint">
   <div class="hint-inner">
     <span class="hint-arrow hint-arrow-left">&#x25C0;</span>
-    <svg class="hint-icon" id="hintIcon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="color: rgba(160,170,180,0.5);">
+    <svg class="hint-icon" id="hintIcon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="color: rgba(160,170,180,0.8);">
       <rect x="6" y="2" width="12" height="20" rx="6"/>
       <line x1="12" y1="6" x2="12" y2="10"/>
       <line x1="3" y1="12" x2="6" y2="12"/>
@@ -233,6 +261,11 @@
   <span class="word-right" id="titleRight">Ground</span>
 </div>
 
+<div class="subtitle-row">
+  <span class="subtitle-ody" id="subOdy"></span>
+  <span class="subtitle-sir" id="subSir"></span>
+</div>
+
 <div class="text-stage" id="stage">
   <div class="text-layer layer-odysseus" id="layerOdy"></div>
   <div class="text-layer layer-siren" id="layerSir"></div>
@@ -245,6 +278,8 @@
 (function () {
   var layerOdy = document.getElementById('layerOdy');
   var layerSir = document.getElementById('layerSir');
+  var subOdy = document.getElementById('subOdy');
+  var subSir = document.getElementById('subSir');
   var cursorDot = document.getElementById('cursorDot');
   var hint = document.getElementById('hint');
   var hintFaded = false;
@@ -284,6 +319,8 @@
     document.getElementById('titleRight').textContent = data.title[2];
     document.documentElement.lang = lang;
     document.title = data.title.join(' ') + ' \u2014 Focus';
+    subOdy.textContent = data.odysseus.subtitle;
+    subSir.textContent = data.siren.subtitle;
     layerOdy.innerHTML = FIGROUND.renderParagraphs(data.odysseus.paragraphs);
     layerSir.innerHTML = FIGROUND.renderParagraphs(data.siren.paragraphs);
     document.getElementById('btnDe').className = (lang === 'de') ? 'active' : '';
@@ -324,6 +361,12 @@
 
     layerSir.style.filter = 'blur(' + sirBlur.toFixed(1) + 'px)';
     layerSir.style.opacity = sirOpacity.toFixed(3);
+
+    // Subtitles follow the same blur/opacity as their text layers
+    subOdy.style.filter = 'blur(' + odyBlur.toFixed(1) + 'px)';
+    subOdy.style.opacity = odyOpacity.toFixed(3);
+    subSir.style.filter = 'blur(' + sirBlur.toFixed(1) + 'px)';
+    subSir.style.opacity = sirOpacity.toFixed(3);
 
     document.body.style.background = buildGradient(x);
   }
