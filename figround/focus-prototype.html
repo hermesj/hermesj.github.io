@@ -226,9 +226,31 @@
   @media (max-width: 768px) {
     body { cursor: default; }
     .cursor-dot { display: none; }
-    .text-layer { font-size: 1.45rem; }
+    .text-layer { font-size: 1.45rem !important; }
     .hint-icon { width: 90px; height: 90px; }
     .hint-arrow { font-size: 3.5rem; }
+
+    /* Softer text colors so text stays readable at bright/dark edges */
+    .layer-odysseus {
+      color: #1a1a1a;
+      text-shadow:
+        0 0 6px rgba(255,255,255,0.7),
+        0 0 14px rgba(255,255,255,0.35);
+    }
+    .layer-siren {
+      color: #e0e0e0;
+      text-shadow:
+        0 0 6px rgba(0,0,0,0.7),
+        0 0 14px rgba(0,0,0,0.35);
+    }
+    .subtitle-ody {
+      color: #1a1a1a;
+      text-shadow: 0 0 8px rgba(255,255,255,0.7), 0 0 16px rgba(255,255,255,0.35);
+    }
+    .subtitle-sir {
+      color: #e0e0e0;
+      text-shadow: 0 0 8px rgba(0,0,0,0.7), 0 0 16px rgba(0,0,0,0.35);
+    }
   }
 </style>
 </head>
@@ -334,7 +356,8 @@
   // x=0.5: original poster gradient
   // x=1 (right/Siren): much darker
   function buildGradient(x) {
-    var shift = (0.5 - x) * 60; // ±30 percentage points
+    var range = isMobile ? 36 : 60; // mobile: ±18pp, desktop: ±30pp
+    var shift = (0.5 - x) * range;
     var s0 = clamp(0 + shift, -5, 100);
     var s1 = clamp(12 + shift, 0, 100);
     var s2 = clamp(38 + shift, 0, 100);
