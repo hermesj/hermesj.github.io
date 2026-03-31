@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Figure and Ground — Focus</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500;1,600&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Cormorant Garamond', 'Georgia', serif;
+    min-height: 100vh;
+    overflow-x: hidden;
+    cursor: none;
+  }
+
+  /* ── CUSTOM CURSOR ── */
+  .cursor-dot {
+    position: fixed;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: rgba(180,180,180,0.6);
+    pointer-events: none;
+    z-index: 1000;
+    transform: translate(-50%, -50%);
+    transition: opacity 0.3s;
+    mix-blend-mode: difference;
+  }
+
+  /* ── TITLE ── */
+  .main-title {
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+    gap: 0.4em;
+    padding: 4vh 0 2vh 0;
+    font-size: clamp(1.6rem, 3vw, 2.8rem);
+    font-weight: 300;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+  }
+
+  .word-left {
+    color: #000;
+    text-shadow: 0 0 12px rgba(255,255,255,0.8);
+  }
+  .word-mid {
+    color: #888;
+    font-size: 0.7em;
+    letter-spacing: 0.2em;
+    font-weight: 400;
+  }
+  .word-right {
+    color: #fff;
+    text-shadow: 0 0 12px rgba(0,0,0,0.8);
+  }
+
+  /* ── LANG SWITCH ── */
+  .lang-switch {
+    text-align: center;
+    margin-bottom: 1vh;
+    cursor: default;
+  }
+
+  .lang-switch a {
+    font-size: 0.85rem;
+    letter-spacing: 0.06em;
+    text-decoration: none;
+    color: rgba(120,140,160,0.8);
+    cursor: pointer;
+    padding: 0.2em 0.5em;
+    transition: color 0.2s;
+  }
+
+  .lang-switch a:hover {
+    color: rgba(120,140,160,1);
+  }
+
+  .lang-switch a.active {
+    color: rgba(80,100,120,1);
+    border-bottom: 1px solid rgba(80,100,120,0.5);
+  }
+
+  /* ── HINT ── */
+  .hint {
+    text-align: center;
+    font-size: 0.85rem;
+    color: rgba(255,255,255,0.7);
+    font-style: italic;
+    margin-bottom: 3vh;
+    letter-spacing: 0.04em;
+    transition: opacity 1.5s ease;
+  }
+
+  .hint.faded {
+    opacity: 0;
+  }
+
+  /* ── TEXT STAGE ── */
+  .text-stage {
+    position: relative;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 4vw 6vh 4vw;
+  }
+
+  .text-layer {
+    font-size: clamp(0.85rem, 1.1vw, 1.05rem);
+    line-height: 1.95;
+    text-align: justify;
+    hyphens: auto;
+    -webkit-hyphens: auto;
+    transition: filter 0.15s ease, opacity 0.15s ease;
+  }
+
+  .text-layer p {
+    margin-bottom: 1.8em;
+  }
+
+  .text-layer p:last-child {
+    margin-bottom: 0;
+  }
+
+  /* Odysseus layer */
+  .layer-odysseus {
+    position: relative;
+    color: #000;
+    font-weight: 500;
+    text-shadow:
+      0 0 8px rgba(255,255,255,0.9),
+      0 0 18px rgba(255,255,255,0.5);
+  }
+
+  /* Siren layer — overlaid on top */
+  .layer-siren {
+    position: absolute;
+    top: 0;
+    left: 4vw;
+    right: 4vw;
+    color: #fff;
+    font-weight: 400;
+    text-shadow:
+      0 0 8px rgba(0,0,0,0.9),
+      0 0 18px rgba(0,0,0,0.5);
+  }
+
+  .song {
+    font-style: italic;
+  }
+
+  /* ── MOBILE ── */
+  @media (max-width: 768px) {
+    body { cursor: default; }
+    .cursor-dot { display: none; }
+    .text-layer { font-size: 1rem; }
+    .hint { font-size: 0.9rem; }
+  }
+</style>
+</head>
+<body>
+
+<div class="cursor-dot" id="cursorDot"></div>
+
+<div class="main-title">
+  <span class="word-left" id="titleLeft">Figure</span>
+  <span class="word-mid" id="titleMid">and</span>
+  <span class="word-right" id="titleRight">Ground</span>
+</div>
+
+<div class="lang-switch" id="langSwitch">
+  <a id="btnDe" onclick="switchLang('de')">Deutsch</a>
+  <a id="btnEn" class="active" onclick="switchLang('en')">English</a>
+</div>
+
+<div class="hint" id="hint">Move to read.</div>
+
+<div class="text-stage" id="stage">
+  <div class="text-layer layer-odysseus" id="layerOdy"></div>
+  <div class="text-layer layer-siren" id="layerSir"></div>
+</div>
+
+<script src="texts.js"></script>
+<script>
+(function () {
+  var layerOdy = document.getElementById('layerOdy');
+  var layerSir = document.getElementById('layerSir');
+  var cursorDot = document.getElementById('cursorDot');
+  var hint = document.getElementById('hint');
+  var hintFaded = false;
+
+  var currentX = 0.5;
+  var targetX = 0.5;
+  var animating = false;
+  var isMobile = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+  var currentLang = 'en';
+
+  function lerp(a, b, t) { return a + (b - a) * t; }
+  function clamp(v, lo, hi) { return Math.max(lo, Math.min(hi, v)); }
+
+  // ── Language switching ──
+  window.switchLang = function (lang) {
+    currentLang = lang;
+    var data = FIGROUND[lang];
+    document.getElementById('titleLeft').textContent = data.title[0];
+    document.getElementById('titleMid').textContent = data.title[1];
+    document.getElementById('titleRight').textContent = data.title[2];
+    document.documentElement.lang = lang;
+    document.title = data.title.join(' ') + ' \u2014 Focus';
+    layerOdy.innerHTML = FIGROUND.renderParagraphs(data.odysseus.paragraphs);
+    layerSir.innerHTML = FIGROUND.renderParagraphs(data.siren.paragraphs);
+    document.getElementById('btnDe').className = (lang === 'de') ? 'active' : '';
+    document.getElementById('btnEn').className = (lang === 'en') ? 'active' : '';
+  };
+
+  // ── Background gradient shift ──
+  // x=0 (left/Odysseus): much brighter
+  // x=0.5: original poster gradient
+  // x=1 (right/Siren): much darker
+  function buildGradient(x) {
+    var shift = (0.5 - x) * 60; // ±30 percentage points
+    var s0 = clamp(0 + shift, -5, 100);
+    var s1 = clamp(12 + shift, 0, 100);
+    var s2 = clamp(38 + shift, 0, 100);
+    var s3 = clamp(68 + shift, 0, 100);
+    var s4 = clamp(100 + shift, 0, 105);
+    return 'linear-gradient(to right,' +
+      '#f4f4f4 ' + s0 + '%,' +
+      '#e4eaf0 ' + s1 + '%,' +
+      '#98a8b8 ' + s2 + '%,' +
+      '#3a4d66 ' + s3 + '%,' +
+      '#0f1926 ' + s4 + '%)';
+  }
+
+  // ── Focus / blur ──
+  function applyFocus(x) {
+    var odyBlur = clamp((x - 0.15) * 8, 0, 5);
+    var odyOpacity = clamp(1 - (x - 0.2) * 0.9, 0.08, 1);
+
+    var sirBlur = clamp((0.85 - x) * 8, 0, 5);
+    var sirOpacity = clamp(1 - (0.8 - x) * 0.9, 0.08, 1);
+
+    layerOdy.style.filter = 'blur(' + odyBlur.toFixed(1) + 'px)';
+    layerOdy.style.opacity = odyOpacity.toFixed(3);
+
+    layerSir.style.filter = 'blur(' + sirBlur.toFixed(1) + 'px)';
+    layerSir.style.opacity = sirOpacity.toFixed(3);
+
+    document.body.style.background = buildGradient(x);
+  }
+
+  // ── Animation loop ──
+  function tick() {
+    currentX = lerp(currentX, targetX, 0.10);
+    if (Math.abs(currentX - targetX) < 0.0005) {
+      currentX = targetX;
+      animating = false;
+    }
+    applyFocus(currentX);
+    if (animating) requestAnimationFrame(tick);
+  }
+
+  function startAnimation() {
+    if (!animating) {
+      animating = true;
+      requestAnimationFrame(tick);
+    }
+  }
+
+  function fadeHint() {
+    if (!hintFaded) {
+      hint.classList.add('faded');
+      hintFaded = true;
+    }
+  }
+
+  // ── Desktop: mouse ──
+  document.addEventListener('mousemove', function (e) {
+    fadeHint();
+    cursorDot.style.left = e.clientX + 'px';
+    cursorDot.style.top = e.clientY + 'px';
+    targetX = e.clientX / window.innerWidth;
+    startAnimation();
+  });
+
+  // ── Mobile: gyroscope (tilt left/right) ──
+  if (isMobile && window.DeviceOrientationEvent) {
+    hint.textContent = 'Tilt to read.';
+
+    var gyroAvailable = false;
+
+    function handleOrientation(e) {
+      if (e.gamma === null) return;
+      if (!gyroAvailable) {
+        gyroAvailable = true;
+        fadeHint();
+      }
+      var gamma = clamp(e.gamma, -30, 30);
+      targetX = (gamma + 30) / 60;
+      startAnimation();
+    }
+
+    if (typeof DeviceOrientationEvent.requestPermission === 'function') {
+      hint.textContent = 'Tap to enable tilt control.';
+      hint.style.cursor = 'pointer';
+      hint.addEventListener('click', function () {
+        DeviceOrientationEvent.requestPermission().then(function (state) {
+          if (state === 'granted') {
+            window.addEventListener('deviceorientation', handleOrientation, true);
+            hint.textContent = 'Tilt to read.';
+            hint.style.cursor = '';
+            setTimeout(function () { hint.classList.add('faded'); hintFaded = true; }, 2000);
+          }
+        }).catch(console.error);
+      }, { once: true });
+    } else {
+      window.addEventListener('deviceorientation', handleOrientation, true);
+    }
+
+    // Fallback: touch position
+    setTimeout(function () {
+      if (!gyroAvailable) {
+        hint.textContent = 'Touch and slide.';
+        document.addEventListener('touchstart', function (e) {
+          fadeHint();
+          targetX = e.touches[0].clientX / window.innerWidth;
+          startAnimation();
+        }, { passive: true });
+        document.addEventListener('touchmove', function (e) {
+          targetX = e.touches[0].clientX / window.innerWidth;
+          startAnimation();
+        }, { passive: true });
+      }
+    }, 1500);
+  }
+
+  // ── Init: detect language from URL or browser ──
+  var urlLang = new URLSearchParams(window.location.search).get('lang');
+  var initLang = (urlLang === 'de' || urlLang === 'en') ? urlLang :
+                 (navigator.language && navigator.language.startsWith('de')) ? 'de' : 'en';
+  switchLang(initLang);
+  applyFocus(0.5);
+})();
+</script>
+
+</body>
+</html>

@@ -9,6 +9,17 @@
 
   * { margin: 0; padding: 0; box-sizing: border-box; }
 
+  /* ── COLOR SCHEME: Odysseus (dark/left) & Siren (light/right) ── */
+  .color-ody {
+    color: #000;
+    text-shadow: 0 0 8px rgba(255,255,255,0.6);
+  }
+
+  .color-sir {
+    color: #fff;
+    text-shadow: 0 0 8px rgba(0,0,0,0.6);
+  }
+
   body {
     font-family: 'Cormorant Garamond', 'Georgia', serif;
     background: linear-gradient(to right,
@@ -66,19 +77,11 @@
     margin-bottom: 1em;
   }
 
-  .word-left {
-    color: #000;
-    text-shadow: 0 0 12px rgba(255,255,255,0.8);
-  }
   .word-mid {
     color: #888;
     font-size: 0.7em;
     letter-spacing: 0.2em;
     font-weight: 400;
-  }
-  .word-right {
-    color: #fff;
-    text-shadow: 0 0 12px rgba(0,0,0,0.8);
   }
 
   /* ── AUDIO PLAYER AREA ── */
@@ -97,21 +100,19 @@
     margin-bottom: 1.5em;
   }
 
-  .speaker-left {
-    font-size: clamp(1rem, 1.4vw, 1.35rem);
-    font-weight: 600;
-    font-style: italic;
-    letter-spacing: 0.08em;
-    color: #000;
-    text-shadow: 0 0 12px rgba(255,255,255,1), 0 0 24px rgba(255,255,255,0.5);
-  }
-
+  .speaker-left,
   .speaker-right {
     font-size: clamp(1rem, 1.4vw, 1.35rem);
     font-weight: 600;
     font-style: italic;
     letter-spacing: 0.08em;
-    color: #fff;
+  }
+
+  /* Stronger glow for prominent labels */
+  .speaker-left.color-ody {
+    text-shadow: 0 0 12px rgba(255,255,255,1), 0 0 24px rgba(255,255,255,0.5);
+  }
+  .speaker-right.color-sir {
     text-shadow: 0 0 12px rgba(0,0,0,1), 0 0 24px rgba(0,0,0,0.5);
   }
 
@@ -193,15 +194,7 @@
     transition: opacity 0.3s ease;
   }
 
-  .vol-left {
-    color: #000;
-    text-shadow: 0 0 8px rgba(255,255,255,0.6);
-  }
-
-  .vol-right {
-    color: #fff;
-    text-shadow: 0 0 8px rgba(0,0,0,0.6);
-  }
+  /* vol-left/vol-right: colors via .color-ody / .color-sir */
 
   /* ── TRANSPORT CONTROLS ── */
   .transport {
@@ -282,10 +275,11 @@
     display: flex;
     justify-content: space-between;
     font-size: 0.8rem;
-    color: #4a5a6a;
     letter-spacing: 0.04em;
     padding: 0.3em 0.2em 0;
   }
+
+  /* timeCurrent/timeDuration: colors via .color-ody / .color-sir */
 
   /* ── STATUS / LOADING ── */
   .status {
@@ -352,24 +346,24 @@
 
   /* ── PERSPECTIVE TOGGLE ── */
   .perspective-toggle {
-    width: 32px;
-    height: 32px;
+    width: 28px;
+    height: 28px;
     border-radius: 50%;
-    border: 2px solid rgba(120,140,160,0.4);
+    border: 2px solid rgba(255,255,255,0.4);
     cursor: pointer;
     flex-shrink: 0;
     transition: all 0.35s ease;
-    box-shadow: 0 0 8px rgba(0,0,0,0.15);
+    box-shadow: 0 0 12px rgba(0,0,0,0.4), 0 0 24px rgba(0,0,0,0.15);
   }
 
   .perspective-toggle.mode-odysseus {
-    background: radial-gradient(circle at 40% 40%, #f4f4f4, #c8d0d8);
-    border-color: rgba(200,210,220,0.6);
+    background: radial-gradient(circle at 40% 40%, #e4eaf0, #a8b8c8);
+    border-color: rgba(255,255,255,0.5);
   }
 
   .perspective-toggle.mode-siren {
-    background: radial-gradient(circle at 40% 40%, #3a4d66, #0f1926);
-    border-color: rgba(15,25,38,0.6);
+    background: radial-gradient(circle at 40% 40%, #5a6a7a, #2a3a4a);
+    border-color: rgba(255,255,255,0.3);
   }
 
   .ticker-odysseus {
@@ -399,13 +393,11 @@
   }
 
   .ticker-text-odysseus {
-    color: #000;
     font-weight: 500;
     text-shadow: 0 0 8px rgba(255,255,255,0.9), 0 0 16px rgba(255,255,255,0.5);
   }
 
   .ticker-text-siren {
-    color: #fff;
     font-weight: 400;
     text-shadow: 0 0 8px rgba(0,0,0,0.9), 0 0 16px rgba(0,0,0,0.5);
   }
@@ -467,16 +459,16 @@
 <body>
 
 <div class="main-title">
-  <span class="word-left">Figure</span>
+  <span class="word-left color-ody">Figure</span>
   <span class="word-mid">and</span>
-  <span class="word-right">Ground</span>
+  <span class="word-right color-sir">Ground</span>
 </div>
 
 <div class="audio-stage">
 
   <div class="speaker-row">
-    <span class="speaker-left">Odysseus</span>
-    <span class="speaker-right">The Siren</span>
+    <span class="speaker-left color-ody">Odysseus</span>
+    <span class="speaker-right color-sir">The Siren</span>
   </div>
 
   <!-- Crossfade slider -->
@@ -486,9 +478,9 @@
   </div>
 
   <div class="volume-indicators">
-    <span class="vol-label vol-left" id="volLeft">100 %</span>
+    <span class="vol-label vol-left color-ody" id="volLeft">100 %</span>
     <span class="hint">Move the slider to shift between perspectives. Headphones recommended.</span>
-    <span class="vol-label vol-right" id="volRight">100 %</span>
+    <span class="vol-label vol-right color-sir" id="volRight">100 %</span>
   </div>
 
   <!-- Transport -->
@@ -510,8 +502,8 @@
       <div class="progress-bar-fill" id="progressFill"></div>
     </div>
     <div class="time-row">
-      <span id="timeCurrent">0:00</span>
-      <span id="timeDuration">—</span>
+      <span id="timeCurrent" class="color-ody">0:00</span>
+      <span id="timeDuration" class="color-sir">—</span>
     </div>
   </div>
 
@@ -520,11 +512,11 @@
 <!-- Text tickers with perspective toggle -->
 <div class="ticker-row">
   <div class="ticker ticker-odysseus" id="tickerOdy">
-    <div class="ticker-text ticker-text-odysseus" id="tickerTextOdy"></div>
+    <div class="ticker-text ticker-text-odysseus color-ody" id="tickerTextOdy"></div>
   </div>
   <button class="perspective-toggle mode-odysseus" id="perspToggle" onclick="togglePerspective()" title="Perspektive wechseln"></button>
   <div class="ticker ticker-siren" id="tickerSir">
-    <div class="ticker-text ticker-text-siren" id="tickerTextSir"></div>
+    <div class="ticker-text ticker-text-siren color-sir" id="tickerTextSir"></div>
   </div>
 </div>
 
