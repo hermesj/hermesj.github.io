@@ -334,13 +334,16 @@
   // x=0.5: original poster gradient
   // x=1 (right/Siren): much darker
   function buildGradient(x) {
-    var range = isMobile ? 90 : 60; // mobile: ±45pp (more uniform bg), desktop: ±30pp
+    var range = isMobile ? 200 : 60; // mobile: push gradient off-screen at extremes
     var shift = (0.5 - x) * range;
-    var s0 = clamp(0 + shift, -5, 100);
-    var s1 = clamp(12 + shift, 0, 100);
-    var s2 = clamp(38 + shift, 0, 100);
-    var s3 = clamp(68 + shift, 0, 100);
-    var s4 = clamp(100 + shift, 0, 105);
+    // mobile: allow stops far beyond 0–100% so colours slide off-screen
+    var lo = isMobile ? -200 : -5;
+    var hi = isMobile ?  300 : 105;
+    var s0 = clamp(0 + shift, lo, hi);
+    var s1 = clamp(12 + shift, lo, hi);
+    var s2 = clamp(38 + shift, lo, hi);
+    var s3 = clamp(68 + shift, lo, hi);
+    var s4 = clamp(100 + shift, lo, hi);
     return 'linear-gradient(to right,' +
       '#f4f4f4 ' + s0 + '%,' +
       '#e4eaf0 ' + s1 + '%,' +
