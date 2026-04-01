@@ -1,9 +1,6 @@
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500;1,600&display=swap');
-
-* { margin: 0; padding: 0; box-sizing: border-box; }
+@import url('figround.css');
 
 body {
-  font-family: 'Cormorant Garamond', 'Georgia', serif;
   background: #333;
 }
 
@@ -23,31 +20,9 @@ body {
 
 /* ── TITLE ── */
 .main-title {
-  display: flex;
-  justify-content: center;
-  align-items: baseline;
-  gap: 0.4em;
   padding-bottom: 3vh;
   font-size: clamp(1.8rem, 3vw, 3.2rem);
-  font-weight: 300;
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
   padding-right: 24vw;
-}
-
-.word-left {
-  color: #000000;
-  text-shadow: 0 0 12px rgba(255,255,255,0.8);
-}
-.word-mid {
-  color: #888888;
-  font-size: 0.7em;
-  letter-spacing: 0.2em;
-  font-weight: 400;
-}
-.word-right {
-  color: #ffffff;
-  text-shadow: 0 0 12px rgba(0,0,0,0.8);
 }
 
 /* ── SUBTITLE ROW ── */
@@ -150,11 +125,6 @@ body {
 .col-odysseus p:last-child,
 .col-siren p:last-child {
   margin-bottom: 0;
-}
-
-/* Italic passages */
-.song {
-  font-style: italic;
 }
 
 /* ── MOBILE: swipeable overlapping columns ── */

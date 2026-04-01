@@ -4,13 +4,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Figure and Ground — Focus</title>
+<link rel="stylesheet" href="figround.css">
 <style>
-  @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500;1,600&display=swap');
-
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-
   body {
-    font-family: 'Cormorant Garamond', 'Georgia', serif;
     min-height: 100vh;
     overflow-x: hidden;
     cursor: none;
@@ -56,32 +52,9 @@
     border-bottom: 1px solid rgba(80,100,120,0.5);
   }
 
-  /* ── TITLE ── */
+  /* ── TITLE (override base padding) ── */
   .main-title {
-    display: flex;
-    justify-content: center;
-    align-items: baseline;
-    gap: 0.4em;
     padding: 0.5vh 0 1.5vh 0;
-    font-size: clamp(1.6rem, 3vw, 2.8rem);
-    font-weight: 300;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-  }
-
-  .word-left {
-    color: #000;
-    text-shadow: 0 0 12px rgba(255,255,255,0.8);
-  }
-  .word-mid {
-    color: #888;
-    font-size: 0.7em;
-    letter-spacing: 0.2em;
-    font-weight: 400;
-  }
-  .word-right {
-    color: #fff;
-    text-shadow: 0 0 12px rgba(0,0,0,0.8);
   }
 
   /* ── HINT OVERLAY ── */
@@ -220,10 +193,6 @@
       0 0 18px rgba(0,0,0,0.5);
   }
 
-  .song {
-    font-style: italic;
-  }
-
   /* ── MOBILE ── */
   @media (max-width: 768px) {
     body { cursor: default; }
@@ -291,9 +260,9 @@
 
 <div class="end-spacer"></div>
 
-<script src="texts.js"></script>
+<script src="figround.js"></script>
 <script>
-(function () {
+FIGROUND.ready.then(function (texts) {
   var layerOdy = document.getElementById('layerOdy');
   var layerSir = document.getElementById('layerSir');
   var subOdy = document.getElementById('subOdy');
@@ -331,7 +300,7 @@
   // ── Language switching ──
   window.switchLang = function (lang) {
     currentLang = lang;
-    var data = FIGROUND[lang];
+    var data = texts[lang];
     document.getElementById('titleLeft').textContent = data.title[0];
     document.getElementById('titleMid').textContent = data.title[1];
     document.getElementById('titleRight').textContent = data.title[2];
@@ -351,13 +320,9 @@
   };
 
   // ── Background gradient shift ──
-  // x=0 (left/Odysseus): much brighter
-  // x=0.5: original poster gradient
-  // x=1 (right/Siren): much darker
   function buildGradient(x) {
-    var range = isMobile ? 200 : 60; // mobile: push gradient off-screen at extremes
+    var range = isMobile ? 200 : 60;
     var shift = (0.5 - x) * range;
-    // mobile: allow stops far beyond 0–100% so colours slide off-screen
     var lo = isMobile ? -200 : -5;
     var hi = isMobile ?  300 : 105;
     var s0 = clamp(0 + shift, lo, hi);
@@ -387,7 +352,6 @@
     layerSir.style.filter = 'blur(' + sirBlur.toFixed(1) + 'px)';
     layerSir.style.opacity = sirOpacity.toFixed(3);
 
-    // Subtitles follow the same blur/opacity as their text layers
     subOdy.style.filter = 'blur(' + odyBlur.toFixed(1) + 'px)';
     subOdy.style.opacity = odyOpacity.toFixed(3);
     subSir.style.filter = 'blur(' + sirBlur.toFixed(1) + 'px)';
@@ -446,7 +410,6 @@
     }
 
     if (typeof DeviceOrientationEvent.requestPermission === 'function') {
-      // iOS: hint must be tappable to request permission
       hint.style.pointerEvents = 'auto';
       hint.style.cursor = 'pointer';
       hint.addEventListener('click', function () {
@@ -485,7 +448,7 @@
                  (navigator.language && navigator.language.startsWith('de')) ? 'de' : 'en';
   switchLang(initLang);
   applyFocus(0.5);
-})();
+});
 </script>
 
 </body>

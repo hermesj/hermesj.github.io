@@ -28,12 +28,12 @@
 
 </div>
 
-<script src="texts.js"></script>
+<script src="figround.js"></script>
 <script>
-(function () {
+FIGROUND.ready.then(function(texts) {
   var urlLang = new URLSearchParams(window.location.search).get('lang');
   var lang = (urlLang === 'de' || urlLang === 'en') ? urlLang : 'en';
-  var data = FIGROUND[lang];
+  var data = texts[lang];
 
   document.documentElement.lang = lang;
   document.title = data.title.join(' ');
@@ -44,7 +44,7 @@
   document.getElementById('subtitleRight').textContent = data.siren.subtitle;
   document.getElementById('colOdy').innerHTML = FIGROUND.renderParagraphs(data.odysseus.paragraphs);
   document.getElementById('colSir').innerHTML = FIGROUND.renderParagraphs(data.siren.paragraphs);
-})();
+});
 </script>
 
 </body>

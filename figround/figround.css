@@ -1,0 +1,66 @@
+/* ══════════════════════════════════════════════════════
+   Figure and Ground — shared styles
+   Loaded by all presentation formats (poster, focus, audio)
+   ══════════════════════════════════════════════════════ */
+
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500;1,600&display=swap');
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: 'Cormorant Garamond', 'Georgia', serif;
+}
+
+/* ── COLOR UTILITIES ──
+   Odysseus = dark text on light ground
+   Siren    = light text on dark ground                  */
+.color-ody {
+  color: #000;
+  text-shadow: 0 0 8px rgba(255,255,255,0.6);
+}
+.color-sir {
+  color: #fff;
+  text-shadow: 0 0 8px rgba(0,0,0,0.6);
+}
+
+/* Stronger glow variants for prominent elements */
+.color-ody-strong {
+  color: #000;
+  text-shadow: 0 0 12px rgba(255,255,255,1), 0 0 24px rgba(255,255,255,0.5);
+}
+.color-sir-strong {
+  color: #fff;
+  text-shadow: 0 0 12px rgba(0,0,0,1), 0 0 24px rgba(0,0,0,0.5);
+}
+
+/* ── MAIN TITLE (three-part: word-left · word-mid · word-right) ── */
+.main-title {
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+  gap: 0.4em;
+  font-size: clamp(1.6rem, 3vw, 2.8rem);
+  font-weight: 300;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+.word-left {
+  color: #000;
+  text-shadow: 0 0 12px rgba(255,255,255,0.8);
+}
+.word-mid {
+  color: #888;
+  font-size: 0.7em;
+  letter-spacing: 0.2em;
+  font-weight: 400;
+}
+.word-right {
+  color: #fff;
+  text-shadow: 0 0 12px rgba(0,0,0,0.8);
+}
+
+/* ── SONG PASSAGES ── */
+.song {
+  font-style: italic;
+}

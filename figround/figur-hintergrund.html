@@ -28,15 +28,15 @@
 
 </div>
 
-<script src="texts.js"></script>
+<script src="figround.js"></script>
 <script>
-(function () {
-  var data = FIGROUND.de;
+FIGROUND.ready.then(function(texts) {
+  var data = texts.de;
   document.getElementById('subtitleLeft').textContent = data.odysseus.subtitle;
   document.getElementById('subtitleRight').textContent = data.siren.subtitle;
   document.getElementById('colOdy').innerHTML = FIGROUND.renderParagraphs(data.odysseus.paragraphs);
   document.getElementById('colSir').innerHTML = FIGROUND.renderParagraphs(data.siren.paragraphs);
-})();
+});
 </script>
 
 </body>
