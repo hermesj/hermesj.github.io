@@ -600,14 +600,20 @@ async function init() {
 // ── Crossfade control ──
 
 function updateCrossfade(value) {
-  const pct = value / 100;
-  gains.odysseus.gain.setValueAtTime(pct, audioCtx.currentTime);
-  gains.siren.gain.setValueAtTime(1 - pct, audioCtx.currentTime);
+  // value: 0 = full Odysseus, 100 = full Siren
+  // Equal-power crossfade
+  const x = value / 100;
+  const gainOdy = Math.cos(x * Math.PI / 2);
+  const gainSir = Math.sin(x * Math.PI / 2);
 
-  const volLeftPct = Math.round(pct * 100);
-  const volRightPct = Math.round((1 - pct) * 100);
-  document.getElementById('volLeft').textContent = volLeftPct + ' %';
-  document.getElementById('volRight').textContent = volRightPct + ' %';
+  gains.odysseus.gain.setValueAtTime(gainOdy, audioCtx.currentTime);
+  gains.siren.gain.setValueAtTime(gainSir, audioCtx.currentTime);
+
+  document.getElementById('volLeft').textContent = Math.round(gainOdy * 100) + ' %';
+  document.getElementById('volRight').textContent = Math.round(gainSir * 100) + ' %';
+
+  document.getElementById('volLeft').style.opacity = 0.4 + gainOdy * 0.6;
+  document.getElementById('volRight').style.opacity = 0.4 + gainSir * 0.6;
 }
 
 document.getElementById('crossfade')?.addEventListener('input', (e) => {

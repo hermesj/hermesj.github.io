@@ -394,52 +394,70 @@ FIGROUND.ready.then(function (texts) {
     startAnimation();
   });
 
-  // ── Mobile: gyroscope (tilt left/right) ──
-  if (isMobile && window.DeviceOrientationEvent) {
+  // ── Mobile: gyroscope + touch ──
+  if (isMobile) {
     var gyroAvailable = false;
+    var useTouch = false;
+    var touchTimer = null;
 
-    function handleOrientation(e) {
-      if (e.gamma === null) return;
-      if (!gyroAvailable) {
-        gyroAvailable = true;
-        fadeHint();
-      }
-      var gamma = clamp(e.gamma, -30, 30);
-      targetX = (gamma + 30) / 60;
+    // ── Touch: always active, overrides gyro while touching ──
+    function onTouch(e) {
+      fadeHint();
+      useTouch = true;
+      clearTimeout(touchTimer);
+      targetX = e.touches[0].clientX / window.innerWidth;
       startAnimation();
     }
-
-    if (typeof DeviceOrientationEvent.requestPermission === 'function') {
-      hint.style.pointerEvents = 'auto';
-      hint.style.cursor = 'pointer';
-      hint.addEventListener('click', function () {
-        DeviceOrientationEvent.requestPermission().then(function (state) {
-          if (state === 'granted') {
-            window.addEventListener('deviceorientation', handleOrientation, true);
-            hint.style.pointerEvents = '';
-            hint.style.cursor = '';
-            setTimeout(function () { hint.classList.add('faded'); hintFaded = true; }, 2000);
-          }
-        }).catch(console.error);
-      }, { once: true });
-    } else {
-      window.addEventListener('deviceorientation', handleOrientation, true);
+    function onTouchEnd() {
+      // Resume gyro 2s after last touch
+      touchTimer = setTimeout(function () { useTouch = false; }, 1000);
     }
+    document.addEventListener('touchstart', onTouch, { passive: true });
+    document.addEventListener('touchmove', onTouch, { passive: true });
+    document.addEventListener('touchend', onTouchEnd, { passive: true });
 
-    // Fallback: touch position if no gyro after 1.5s
-    setTimeout(function () {
-      if (!gyroAvailable) {
-        document.addEventListener('touchstart', function (e) {
+    // ── Gyroscope: adapts axis to screen orientation ──
+    if (window.DeviceOrientationEvent) {
+      function handleOrientation(e) {
+        if (useTouch || e.gamma === null) return;
+        if (!gyroAvailable) {
+          gyroAvailable = true;
           fadeHint();
-          targetX = e.touches[0].clientX / window.innerWidth;
-          startAnimation();
-        }, { passive: true });
-        document.addEventListener('touchmove', function (e) {
-          targetX = e.touches[0].clientX / window.innerWidth;
-          startAnimation();
-        }, { passive: true });
+        }
+        // Pick the correct axis for left-right tilt
+        var angle = (screen.orientation && screen.orientation.angle) ||
+                    window.orientation || 0;
+        var tilt;
+        if (angle === 90) {
+          tilt = -e.beta;       // landscape, home button right
+        } else if (angle === -90 || angle === 270) {
+          tilt = e.beta;        // landscape, home button left
+        } else {
+          tilt = e.gamma;       // portrait (0 or 180)
+        }
+        tilt = clamp(tilt, -30, 30);
+        targetX = (tilt + 30) / 60;
+        startAnimation();
       }
-    }, 1500);
+
+      if (typeof DeviceOrientationEvent.requestPermission === 'function') {
+        // iOS: hint must be tappable to request permission
+        hint.style.pointerEvents = 'auto';
+        hint.style.cursor = 'pointer';
+        hint.addEventListener('click', function () {
+          DeviceOrientationEvent.requestPermission().then(function (state) {
+            if (state === 'granted') {
+              window.addEventListener('deviceorientation', handleOrientation, true);
+              hint.style.pointerEvents = '';
+              hint.style.cursor = '';
+              setTimeout(function () { hint.classList.add('faded'); hintFaded = true; }, 2000);
+            }
+          }).catch(console.error);
+        }, { once: true });
+      } else {
+        window.addEventListener('deviceorientation', handleOrientation, true);
+      }
+    }
   }
 
   // ── Init: detect language from URL or browser ──
