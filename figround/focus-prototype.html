@@ -410,7 +410,7 @@ FIGROUND.ready.then(function (texts) {
     }
     function onTouchEnd() {
       // Resume gyro 2s after last touch
-      touchTimer = setTimeout(function () { useTouch = false; }, 1000);
+      touchTimer = setTimeout(function () { useTouch = false; }, 2500);
     }
     document.addEventListener('touchstart', onTouch, { passive: true });
     document.addEventListener('touchmove', onTouch, { passive: true });
