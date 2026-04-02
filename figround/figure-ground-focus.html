@@ -4,6 +4,13 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Figure and Ground — Focus</title>
+<meta name="description" content="Interactive reading view — gyroscope, touch, or mouse control the focus and visibility of both texts.">
+<meta property="og:title" content="Figure and Ground — Focus">
+<meta property="og:description" content="Interactive reading view — gyroscope, touch, or mouse control the focus and visibility of both texts.">
+<meta property="og:image" content="https://hermesj.github.io/figround/images/og-image-focus.png">
+<meta property="og:url" content="https://hermesj.github.io/figround/figure-ground-focus.html">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
 <link rel="stylesheet" href="figround.css">
 <style>
   body {
@@ -409,7 +416,7 @@ FIGROUND.ready.then(function (texts) {
       startAnimation();
     }
     function onTouchEnd() {
-      // Resume gyro 2s after last touch
+      // Resume gyro after last touch (25 s)
       touchTimer = setTimeout(function () { useTouch = false; }, 25000);
     }
     document.addEventListener('touchstart', onTouch, { passive: true });

@@ -4,6 +4,13 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Figure and Ground — Audio</title>
+<meta name="description" content="Figure and Ground — audio version with crossfade between Odysseus and the Siren.">
+<meta property="og:title" content="Figure and Ground — Audio">
+<meta property="og:description" content="Audio version — crossfade between the voices of Odysseus and the Siren.">
+<meta property="og:image" content="https://hermesj.github.io/figround/images/og-image-audio.png">
+<meta property="og:url" content="https://hermesj.github.io/figround/audio-prototype.html">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
 <link rel="stylesheet" href="figround.css">
 <style>
   /* ── BODY STYLING (keeping audio-specific gradient) ── */
@@ -535,10 +542,6 @@ async function init() {
   // Wait for texts to load from JSON
   const texts = await FIGROUND.ready;
 
-  // Initialise tickers now that text data is available
-  initTickers();
-  updateTickers(0);
-
   audioCtx = new (window.AudioContext || window.webkitAudioContext)();
 
   // Create panner nodes (stereo positioning)
@@ -817,12 +820,10 @@ function initTickers() {
         timestamps: ts[voice],
         totalWidth: el.scrollWidth,
       };
-      console.log('[ticker]', voice, 'strophe-sync ON —', parts.length, 'parts,', ranges.length, 'ranges, totalWidth:', el.scrollWidth);
     } else {
       // No timestamps available — plain text, linear fallback
       el.innerHTML = tickerHtml;
       tickerData[voice] = null;
-      console.warn('[ticker]', voice, 'LINEAR FALLBACK — parts:', parts.length, 'timestamps:', ts && ts[voice] ? ts[voice].length : 'none');
     }
   }
 }

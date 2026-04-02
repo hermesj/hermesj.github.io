@@ -1040,12 +1040,10 @@ function initTickers() {
         timestamps: ts[voice],
         totalWidth: el.scrollWidth,
       };
-      console.log('[ticker]', voice, 'strophe-sync ON —', parts.length, 'parts,', ranges.length, 'ranges, totalWidth:', el.scrollWidth);
     } else {
       // No timestamps available — plain text, linear fallback
       el.innerHTML = tickerHtml;
       tickerData[voice] = null;
-      console.warn('[ticker]', voice, 'LINEAR FALLBACK — parts:', parts.length, 'timestamps:', ts && ts[voice] ? ts[voice].length : 'none');
     }
   }
 }
