@@ -51,12 +51,21 @@
   }
 
   .lang-switch a:hover {
-    color: rgba(120,140,160,1);
+    color: rgba(80,100,120,1);
   }
 
   .lang-switch a.active {
     color: rgba(80,100,120,1);
     border-bottom: 1px solid rgba(80,100,120,0.5);
+  }
+
+  .lang-switch .nav-link {
+    margin-left: 2.5em;
+    color: rgba(160,170,180,0.5);
+  }
+
+  .lang-switch .nav-link:hover {
+    color: rgba(160,170,180,0.9);
   }
 
   /* ── TITLE (override base padding) ── */
@@ -247,6 +256,7 @@
 <div class="lang-switch" id="langSwitch">
   <a id="btnDe" onclick="switchLang('de')">Deutsch</a>
   <a id="btnEn" class="active" onclick="switchLang('en')">English</a>
+  <a href="index.html" class="nav-link">Project Overview</a>
 </div>
 
 <div class="main-title">

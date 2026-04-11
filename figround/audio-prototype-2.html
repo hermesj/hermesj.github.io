@@ -585,7 +585,9 @@
 </div>
 
 <div class="back-link">
-  <a href="index.html">← Overview</a>
+  <a href="index.html">Project Overview</a>
+  <span style="margin: 0 1em; color: #3a4d66;">·</span>
+  <a href="audio-prototype.html">Simple Mode</a>
 </div>
 
 <div class="scroll-hint" id="scrollHint"><span>&#x25BE;</span> scroll <span>&#x25BE;</span></div>
@@ -622,7 +624,7 @@ let sources = { odysseus: null, siren: null };
 let gains = { odysseus: null, siren: null };
 let panners = { odysseus: null, siren: null };
 
-let currentLang = 'de';
+let currentLang = (navigator.language && navigator.language.startsWith('de')) ? 'de' : 'en';
 let isPlaying = false;
 let startTime = 0;      // audioCtx.currentTime when playback started
 let pauseOffset = 0;    // how far into the track we paused
@@ -698,6 +700,16 @@ async function init() {
     loadingBar.classList.remove('visible');
     document.getElementById('status').textContent = '';
     document.getElementById('btnPlay').disabled = false;
+
+    // Apply detected language to UI
+    var data = FIGROUND.data[currentLang];
+    document.querySelector('.word-left').textContent = data.title[0];
+    document.querySelector('.word-mid').textContent = data.title[1];
+    document.querySelector('.word-right').textContent = data.title[2];
+    document.querySelector('.speaker-right').textContent = currentLang === 'de' ? 'Die Sirene' : 'The Siren';
+    document.getElementById('btnDe').classList.toggle('active', currentLang === 'de');
+    document.getElementById('btnEn').classList.toggle('active', currentLang === 'en');
+
     updateDuration();
     renderStropheMarkers();
   } catch (e) {
@@ -860,6 +872,13 @@ function switchLang(lang) {
 
   document.getElementById('btnDe').classList.toggle('active', lang === 'de');
   document.getElementById('btnEn').classList.toggle('active', lang === 'en');
+
+  // Update title and speaker labels
+  var data = FIGROUND.data[lang];
+  document.querySelector('.word-left').textContent = data.title[0];
+  document.querySelector('.word-mid').textContent = data.title[1];
+  document.querySelector('.word-right').textContent = data.title[2];
+  document.querySelector('.speaker-right').textContent = lang === 'de' ? 'Die Sirene' : 'The Siren';
 
   // Reset play button text
   document.getElementById('btnPlay').textContent = '▶ Play';
