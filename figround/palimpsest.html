@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Figure and Ground — Palimpsest</title>
+<meta name="description" content="Figure and Ground — palimpsest view. Touch the surface to reveal the hidden text beneath.">
+<meta property="og:title" content="Figure and Ground — Palimpsest">
+<meta property="og:description" content="Touch the surface to reveal the hidden text beneath.">
+<meta property="og:image" content="https://hermesj.github.io/figround/images/og-image-palimpsest-en.png">
+<meta property="og:url" content="https://hermesj.github.io/figround/palimpsest.html">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="stylesheet" href="figround.css">
+<style>
+  body {
+    background: linear-gradient(to right,
+      #f4f4f4 0%,
+      #e4eaf0 12%,
+      #98a8b8 38%,
+      #3a4d66 68%,
+      #0f1926 100%
+    );
+    min-height: 100vh;
+    overflow-x: hidden;
+    cursor: none;
+  }
+
+  /* ── CUSTOM CURSOR ── */
+  .cursor-ring {
+    position: fixed;
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 1000;
+    transform: translate(-50%, -50%);
+    transition: width 0.3s ease, height 0.3s ease, opacity 0.3s, border-color 0.4s ease;
+  }
+
+  /* Odysseus on surface → revealing Siren (light on dark) → dark cursor */
+  .mode-odysseus .cursor-ring {
+    border: 1px solid rgba(15,25,38,0.4);
+    background: radial-gradient(circle, rgba(15,25,38,0.35) 0%, rgba(15,25,38,0.2) 60%, transparent 100%);
+  }
+
+  /* Siren on surface → revealing Odysseus (dark on light) → light cursor */
+  .mode-siren .cursor-ring {
+    border: 1px solid rgba(230,235,240,0.5);
+    background: radial-gradient(circle, rgba(245,248,252,0.45) 0%, rgba(245,248,252,0.25) 60%, transparent 100%);
+  }
+
+  /* ── CONTROLS ── */
+  .controls {
+    text-align: center;
+    padding: 1.5vh 0 0.5vh 0;
+    cursor: default;
+    position: relative;
+    z-index: 10;
+  }
+
+  .controls a, .controls button {
+    font-family: 'Cormorant Garamond', 'Georgia', serif;
+    font-size: 0.7rem;
+    letter-spacing: 0.06em;
+    text-decoration: none;
+    color: rgba(40,55,70,0.7);
+    cursor: pointer;
+    padding: 0.2em 0.5em;
+    transition: color 0.2s;
+    background: none;
+    border: none;
+  }
+
+  .controls a:hover, .controls button:hover {
+    color: rgba(20,30,40,1);
+  }
+
+  .controls a.active, .controls button.active {
+    color: rgba(20,30,40,1);
+    border-bottom: 1px solid rgba(20,30,40,0.5);
+  }
+
+  .controls .nav-link {
+    margin-left: 2.5em;
+    color: rgba(200,210,220,0.6);
+  }
+
+  .controls .nav-link:hover {
+    color: rgba(220,230,240,0.9);
+  }
+
+  .swap-btn {
+    margin-right: 2.5em;
+    color: rgba(40,55,70,0.45) !important;
+  }
+
+  .swap-btn:hover {
+    color: rgba(20,30,40,0.9) !important;
+  }
+
+  /* ── TITLE ── */
+  .main-title {
+    padding: 0.5vh 0 1.5vh 0;
+  }
+
+  /* ── HINT OVERLAY ── */
+  .hint-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 900;
+    pointer-events: none;
+    transition: opacity 1.5s ease;
+  }
+
+  .hint-overlay.faded {
+    opacity: 0;
+  }
+
+  .hint-text {
+    font-size: clamp(0.9rem, 1.2vw, 1.1rem);
+    font-style: italic;
+    color: rgba(140,150,160,0.8);
+    text-align: center;
+    line-height: 1.8;
+  }
+
+  /* ── SUBTITLE ROW ── */
+  .subtitle-row {
+    position: relative;
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 0 4vw 1.2em 4vw;
+  }
+
+  .subtitle-surface,
+  .subtitle-hidden {
+    font-size: clamp(0.9rem, 1.2vw, 1.15rem);
+    font-weight: 600;
+    font-style: italic;
+    letter-spacing: 0.06em;
+    transition: opacity 0.4s ease;
+  }
+
+  .subtitle-hidden {
+    position: absolute;
+    top: -0.6em; /* half-line offset like the text layers */
+    left: 4vw;
+  }
+
+  /* ── TEXT STAGE ── */
+  .text-stage {
+    position: relative;
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 0 4vw;
+  }
+
+  .end-spacer {
+    height: 30vh;
+  }
+
+  .text-layer {
+    font-size: clamp(0.85rem, 1.1vw, 1.05rem);
+    line-height: 1.95;
+    text-align: justify;
+    hyphens: auto;
+    -webkit-hyphens: auto;
+  }
+
+  /* Half-line offset so hidden text doesn't overlap surface text exactly */
+  .layer-hidden {
+    margin-top: -0.975em; /* half of line-height (1.95 / 2) */
+  }
+
+  .text-layer p {
+    margin-bottom: 1.8em;
+  }
+
+  .text-layer p:last-child {
+    margin-bottom: 0;
+  }
+
+  /* ── SURFACE LAYER (fully visible) ── */
+  .layer-surface {
+    position: relative;
+  }
+
+  /* ── HIDDEN LAYER (revealed by cursor) ── */
+  .layer-hidden {
+    position: absolute;
+    top: 0;
+    left: 4vw;
+    right: 4vw;
+    /* mask is set dynamically via JS */
+    -webkit-mask-image: radial-gradient(circle 0px at 0px 0px, black 0%, transparent 100%);
+    mask-image: radial-gradient(circle 0px at 0px 0px, black 0%, transparent 100%);
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    transition: none;
+  }
+
+  /* ── MODE: ODYSSEUS ON TOP ── */
+  .mode-odysseus .layer-surface,
+  .mode-odysseus .subtitle-surface {
+    color: #000;
+    font-weight: 600;
+    text-shadow:
+      0 0 8px rgba(255,255,255,0.9),
+      0 0 18px rgba(255,255,255,0.5);
+  }
+
+  .mode-odysseus .layer-hidden,
+  .mode-odysseus .subtitle-hidden {
+    color: #fff;
+    font-weight: 400;
+    text-shadow:
+      0 0 8px rgba(0,0,0,0.9),
+      0 0 18px rgba(0,0,0,0.5);
+  }
+
+  .mode-odysseus .subtitle-surface { text-align: left; }
+  .mode-odysseus .subtitle-hidden { text-align: left; }
+
+  /* ── MODE: SIREN ON TOP ── */
+  .mode-siren .layer-surface,
+  .mode-siren .subtitle-surface {
+    color: #fff;
+    font-weight: 400;
+    text-shadow:
+      0 0 8px rgba(0,0,0,0.9),
+      0 0 18px rgba(0,0,0,0.5);
+  }
+
+  .mode-siren .layer-hidden,
+  .mode-siren .subtitle-hidden {
+    color: #000;
+    font-weight: 600;
+    text-shadow:
+      0 0 8px rgba(255,255,255,0.9),
+      0 0 18px rgba(255,255,255,0.5);
+  }
+
+  .mode-siren .subtitle-surface { text-align: left; }
+  .mode-siren .subtitle-hidden { text-align: left; }
+
+  /* ── MOBILE ── */
+  @media (max-width: 768px) {
+    body { cursor: default; }
+    .cursor-ring { display: none; }
+    .text-layer { font-size: 1.3rem !important; }
+    .subtitle-surface,
+    .subtitle-hidden { font-size: 1.1rem; }
+  }
+</style>
+</head>
+<body class="mode-odysseus">
+
+<div class="cursor-ring" id="cursorRing"></div>
+
+<!-- Hint overlay -->
+<div class="hint-overlay" id="hint">
+  <div class="hint-text" id="hintText">
+    Move to reveal what lies beneath.
+  </div>
+</div>
+
+<!-- Controls -->
+<div class="controls">
+  <button class="swap-btn" id="swapBtn" onclick="swapLayers()" title="Swap surface and hidden text">&#x21C5; Swap</button>
+  <a id="btnDe" onclick="switchLang('de')">Deutsch</a>
+  <a id="btnEn" class="active" onclick="switchLang('en')">English</a>
+  <a href="index.html" class="nav-link">Project Overview</a>
+</div>
+
+<div class="main-title">
+  <span class="word-left" id="titleLeft">Figure</span>
+  <span class="word-mid" id="titleMid">and</span>
+  <span class="word-right" id="titleRight">Ground</span>
+</div>
+
+<div class="subtitle-row" id="subtitleRow">
+  <span class="subtitle-surface" id="subSurface"></span>
+  <span class="subtitle-hidden" id="subHidden"></span>
+</div>
+
+<div class="text-stage" id="stage">
+  <div class="text-layer layer-surface" id="layerSurface"></div>
+  <div class="text-layer layer-hidden" id="layerHidden"></div>
+</div>
+
+<div class="end-spacer"></div>
+
+<script src="figround.js"></script>
+<script>
+FIGROUND.ready.then(function (texts) {
+  var layerSurface = document.getElementById('layerSurface');
+  var layerHidden = document.getElementById('layerHidden');
+  var subSurface = document.getElementById('subSurface');
+  var subHidden = document.getElementById('subHidden');
+  var cursorRing = document.getElementById('cursorRing');
+  var hint = document.getElementById('hint');
+  var stage = document.getElementById('stage');
+  var hintFaded = false;
+
+  var currentLang = (navigator.language && navigator.language.startsWith('de')) ? 'de' : 'en';
+  // 'odysseus' = Odysseus text on surface, Siren hidden beneath
+  var surfaceVoice = 'odysseus';
+
+  var isMobile = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+
+  // Reveal radius
+  var REVEAL_RADIUS = isMobile ? 100 : 120;
+  var REVEAL_EDGE = 60; // soft edge in px
+
+  // Track mouse/touch position relative to the stage
+  var pointerX = -9999;
+  var pointerY = -9999;
+  var pointerActive = false;
+
+  var i18nHint = {
+    de: 'Bewegen, um den verborgenen Text freizulegen.',
+    en: 'Move to reveal what lies beneath.'
+  };
+
+  // ── Render ──
+
+  function render() {
+    var data = texts[currentLang];
+    var surface = surfaceVoice === 'odysseus' ? data.odysseus : data.siren;
+    var hidden = surfaceVoice === 'odysseus' ? data.siren : data.odysseus;
+
+    document.getElementById('titleLeft').textContent = data.title[0];
+    document.getElementById('titleMid').textContent = data.title[1];
+    document.getElementById('titleRight').textContent = data.title[2];
+    document.documentElement.lang = currentLang;
+    document.title = data.title.join(' ') + ' — Palimpsest';
+
+    subSurface.textContent = surface.subtitle;
+    subHidden.textContent = hidden.subtitle;
+    layerSurface.innerHTML = FIGROUND.renderParagraphs(surface.paragraphs);
+    layerHidden.innerHTML = FIGROUND.renderParagraphs(hidden.paragraphs);
+
+    document.getElementById('btnDe').className = (currentLang === 'de') ? 'active' : '';
+    document.getElementById('btnEn').className = (currentLang === 'en') ? 'active' : '';
+
+    document.body.className = surfaceVoice === 'odysseus' ? 'mode-odysseus' : 'mode-siren';
+
+    document.getElementById('hintText').textContent = i18nHint[currentLang];
+
+    // Fit stage height
+    requestAnimationFrame(fitStage);
+  }
+
+  function fitStage() {
+    var h = Math.max(layerSurface.scrollHeight, layerHidden.scrollHeight);
+    stage.style.minHeight = h + 'px';
+  }
+  window.addEventListener('resize', fitStage);
+
+  // ── Language switching ──
+  window.switchLang = function (lang) {
+    currentLang = lang;
+    render();
+  };
+
+  // ── Swap layers ──
+  window.swapLayers = function () {
+    surfaceVoice = surfaceVoice === 'odysseus' ? 'siren' : 'odysseus';
+    render();
+  };
+
+  // ── Reveal mask ──
+
+  function updateMask(clientX, clientY) {
+    // Convert client coords to position relative to layerHidden element
+    var hiddenRect = layerHidden.getBoundingClientRect();
+    var rx = clientX - hiddenRect.left;
+    var ry = clientY - hiddenRect.top;
+
+    // Also position relative to subtitle hidden element
+    var subHiddenRect = subHidden.getBoundingClientRect();
+    var subRx = clientX - subHiddenRect.left;
+    var subRy = clientY - subHiddenRect.top;
+
+    var maskValue = 'radial-gradient(circle ' + REVEAL_RADIUS + 'px at ' +
+      rx + 'px ' + ry + 'px, black 0%, black ' +
+      (REVEAL_RADIUS - REVEAL_EDGE) + 'px, transparent ' + REVEAL_RADIUS + 'px)';
+
+    layerHidden.style.webkitMaskImage = maskValue;
+    layerHidden.style.maskImage = maskValue;
+
+    // Subtitle reveal
+    var subMask = 'radial-gradient(circle ' + REVEAL_RADIUS + 'px at ' +
+      subRx + 'px ' + subRy + 'px, black 0%, black ' +
+      (REVEAL_RADIUS - REVEAL_EDGE) + 'px, transparent ' + REVEAL_RADIUS + 'px)';
+
+    subHidden.style.webkitMaskImage = subMask;
+    subHidden.style.maskImage = subMask;
+  }
+
+  function clearMask() {
+    var empty = 'radial-gradient(circle 0px at -9999px -9999px, black 0%, transparent 0%)';
+    layerHidden.style.webkitMaskImage = empty;
+    layerHidden.style.maskImage = empty;
+    subHidden.style.webkitMaskImage = empty;
+    subHidden.style.maskImage = empty;
+  }
+
+  function fadeHint() {
+    if (!hintFaded) {
+      hint.classList.add('faded');
+      hintFaded = true;
+    }
+  }
+
+  // ── Desktop: mouse ──
+  document.addEventListener('mousemove', function (e) {
+    fadeHint();
+    cursorRing.style.left = e.clientX + 'px';
+    cursorRing.style.top = e.clientY + 'px';
+    updateMask(e.clientX, e.clientY);
+  });
+
+  // ── Mobile: touch ──
+  if (isMobile) {
+    document.addEventListener('touchstart', function (e) {
+      fadeHint();
+      updateMask(e.touches[0].clientX, e.touches[0].clientY);
+    }, { passive: true });
+
+    document.addEventListener('touchmove', function (e) {
+      fadeHint();
+      updateMask(e.touches[0].clientX, e.touches[0].clientY);
+    }, { passive: true });
+
+    document.addEventListener('touchend', function () {
+      clearMask();
+    }, { passive: true });
+  }
+
+  // ── Init ──
+  render();
+});
+</script>
+
+</body>
+</html>

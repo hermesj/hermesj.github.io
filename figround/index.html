@@ -4,10 +4,10 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Figure and Ground</title>
-<meta name="description" content="A literary project: two parallel prose texts on the myth of Odysseus and the Siren, presented as poster, interactive focus view, and audio overlay.">
+<meta name="description" content="Two parallel prose texts on the myth of Odysseus and the Siren — as poster, focus, sound, and palimpsest.">
 <meta property="og:title" content="Figure and Ground">
-<meta property="og:description" content="Two parallel prose texts on the myth of Odysseus and the Siren — as poster, focus view, and audio overlay.">
-<meta property="og:image" content="https://hermesj.github.io/figround/images/og-image-main.png">
+<meta property="og:description" content="One myth. Two perspectives. Four ways in.">
+<meta property="og:image" content="https://hermesj.github.io/figround/images/og-image-index-en.png">
 <meta property="og:url" content="https://hermesj.github.io/figround/">
 <meta property="og:type" content="website">
 <meta name="twitter:card" content="summary_large_image">
@@ -20,10 +20,40 @@
   }
 
   .page {
-    max-width: 640px;
+    max-width: 900px;
     margin: 0 auto;
-    padding: 8vh 4vw;
+    padding: 6vh 4vw 4vh 4vw;
+  }
+
+  /* ── LANGUAGE SWITCH ── */
+  .lang-switch {
     text-align: center;
+    margin-bottom: 2vh;
+  }
+
+  .lang-switch a {
+    font-size: 0.7rem;
+    letter-spacing: 0.06em;
+    text-decoration: none;
+    color: rgba(80,90,100,0.6);
+    cursor: pointer;
+    padding: 0.2em 0.5em;
+    transition: color 0.2s;
+  }
+
+  .lang-switch a:hover {
+    color: rgba(40,50,60,1);
+  }
+
+  .lang-switch a.active {
+    color: rgba(40,50,60,1);
+    border-bottom: 1px solid rgba(40,50,60,0.5);
+  }
+
+  /* ── HEADER ── */
+  .header {
+    text-align: center;
+    margin-bottom: 4vh;
   }
 
   h1 {
@@ -32,42 +62,107 @@
     letter-spacing: 0.12em;
     text-transform: uppercase;
     color: #0f1926;
-    margin-bottom: 0.3em;
+    margin-bottom: 0.5em;
   }
 
-  .intro {
+  .tagline {
     font-size: clamp(1rem, 1.3vw, 1.15rem);
     line-height: 1.7;
     color: #2a3a4a;
-    margin-bottom: 2.5em;
     font-style: italic;
   }
 
-  .links {
-    list-style: none;
-    font-size: clamp(1.05rem, 1.4vw, 1.2rem);
-    line-height: 2.2;
-    margin-bottom: 1.2em;
+  /* ── TILE GRID ── */
+  .tiles {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.8em;
+    margin-bottom: 4vh;
   }
 
-  .links:last-of-type {
-    margin-bottom: 0;
-  }
-
-  .links a {
-    color: #0f1926;
+  .tile {
+    display: block;
     text-decoration: none;
-    border-bottom: 1px solid rgba(15, 25, 38, 0.25);
-    transition: border-color 0.2s;
+    color: inherit;
+    border-radius: 6px;
+    overflow: hidden;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.12);
+    background: rgba(255,255,255,0.15);
   }
 
-  .links a:hover {
-    border-color: rgba(15, 25, 38, 0.7);
+  .tile:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 24px rgba(0,0,0,0.2);
   }
 
-  .note {
+  .tile-img {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    display: block;
+  }
+
+  .tile-body {
+    padding: 0.9em 1em;
+  }
+
+  .tile-title {
+    font-size: clamp(1rem, 1.3vw, 1.15rem);
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    margin-bottom: 0.25em;
+  }
+
+  .tile-desc {
+    font-size: clamp(0.85rem, 1vw, 0.95rem);
     color: #4a5a6a;
-    font-size: 0.88em;
+    line-height: 1.5;
+  }
+
+  /* ── FOOTER LINKS ── */
+  .footer-links {
+    text-align: center;
+    padding: 2vh 0 0 0;
+    border-top: 1px solid rgba(15,25,38,0.1);
+  }
+
+  .footer-links a {
+    font-size: clamp(0.9rem, 1.1vw, 1rem);
+    color: #2a3a4a;
+    text-decoration: none;
+    border-bottom: 1px solid rgba(15,25,38,0.2);
+    transition: border-color 0.2s;
+    margin: 0 1em;
+  }
+
+  .footer-links a:hover {
+    border-color: rgba(15,25,38,0.6);
+  }
+
+  .footer-links .footer-row {
+    line-height: 2.5;
+  }
+
+  .footer-links .license {
+    display: block;
+    margin-top: 1em;
+    font-size: 0.8rem;
+    color: #6a7a8a;
+  }
+
+  .footer-links .license a {
+    font-size: 0.8rem;
+    color: #6a7a8a;
+    border-bottom-color: rgba(100,120,140,0.25);
+  }
+
+  /* ── MOBILE ── */
+  @media (max-width: 560px) {
+    .tiles {
+      grid-template-columns: 1fr;
+      gap: 1.2em;
+    }
   }
 </style>
 </head>
@@ -75,27 +170,108 @@
 
 <div class="page">
 
-  <h1>Figure and Ground</h1>
+  <div class="lang-switch">
+    <a id="btnDe" onclick="switchLang('de')">Deutsch</a>
+    <a id="btnEn" class="active" onclick="switchLang('en')">English</a>
+  </div>
 
-  <p class="intro">A literary project: two parallel prose texts on the myth of Odysseus and the Siren, presented as an interleaved visual poster, as a text overlay (focus version) and an audio overlay (audio version).</p>
+  <div class="header">
+    <h1 id="title">Figure and Ground</h1>
+    <p class="tagline" id="tagline">One myth. Two perspectives. Four ways in.</p>
+  </div>
 
-  <ul class="links">
-    <li><a href="figur-hintergrund.html">Figur und Hintergrund</a> <span class="note">— the original German text as interleaved poster.</span></li>
-    <li><a href="figure-ground.html">Figure and Ground</a> <span class="note">— an independent English rendering, also as interleaved poster.</span></li>
-    <li><a href="figure-ground-focus.html">Focus</a> <span class="note">— Interactive reading view — gyroscope, touch, or mouse control the focus and visibility of both texts (de/en).</span></li>
-    <li><a href="audio-prototype.html">Audio prototype</a> <span class="note">— experimental audio version (de/en) – work in progress</span></li>
-  </ul>
+  <div class="tiles">
 
-  <ul class="links">
-    <li><a href="https://foclen.substack.com/p/figure-and-ground">Project genesis</a> <span class="note">(English)</span></li>
-    <li><a href="https://spinfocl.substack.com/p/figur-und-hintergrund">Projektgenese</a> <span class="note">(Deutsch)</span></li>
-  </ul>
+    <a class="tile" href="figure-ground-focus.html" id="tileFocus">
+      <img class="tile-img" src="images/og-image-focus-en.png" alt="Focus view preview" id="focusImg" data-img-en="images/og-image-focus-en.png" data-img-de="images/og-image-focus-de.png">
+      <div class="tile-body">
+        <div class="tile-title" data-en="Focus" data-de="Fokus">Focus</div>
+        <div class="tile-desc" data-en="Interactive reading — mouse, touch, or gyroscope shift between both texts." data-de="Interaktives Lesen — Maus, Touch oder Gyroskop verschieben den Fokus zwischen beiden Texten.">Interactive reading — mouse, touch, or gyroscope shift between both texts.</div>
+      </div>
+    </a>
 
-  <ul class="links">
-    <li><a href="https://github.com/hermesj/hermesj.github.io/blob/main/figround/LICENSE">License</a></li>
-  </ul>
+    <a class="tile" href="figur-hintergrund.html" id="tilePoster">
+      <img class="tile-img" src="images/og-image-poster-en.png" alt="Poster view preview" id="posterImg" data-img-en="images/og-image-poster-en.png" data-img-de="images/og-image-poster-de.png">
+      <div class="tile-body">
+        <div class="tile-title" data-en="Poster" data-de="Poster">Poster</div>
+        <div class="tile-desc" data-en="Both texts interleaved as a visual poster — dark on light, light on dark." data-de="Beide Texte als visuelles Poster verschränkt — dunkel auf hell, hell auf dunkel.">Both texts interleaved as a visual poster — dark on light, light on dark.</div>
+      </div>
+    </a>
+
+     <a class="tile" href="palimpsest.html" id="tilePalimpsest">
+      <img class="tile-img" src="images/og-image-palimpsest-en.png" alt="Palimpsest view preview" id="palimpsestImg" data-img-en="images/og-image-palimpsest-en.png" data-img-de="images/og-image-palimpsest-de.png">
+      <div class="tile-body">
+        <div class="tile-title" data-en="Palimpsest (experimental)" data-de="Palimpsest (experimental)">Palimpsest (experimental)</div>
+        <div class="tile-desc" data-en="Touch the surface to reveal the hidden text beneath." data-de="Die Oberfläche berühren, um den verborgenen Text darunter freizulegen.">Touch the surface to reveal the hidden text beneath.</div>
+      </div>
+    </a>
+
+    <a class="tile" href="audio-prototype.html" id="tileAudio">
+      <img class="tile-img" src="images/og-image-audio-en.png" alt="Audio view preview" id="audioImg" data-img-en="images/og-image-audio-en.png" data-img-de="images/og-image-audio-de.png">
+      <div class="tile-body">
+        <div class="tile-title" data-en="Audio (experimental)" data-de="Audio  (experimental)">Audio (experimental)</div>
+        <div class="tile-desc" data-en="Two voices, one slider — crossfade between Odysseus and the Siren." data-de="Zwei Stimmen, ein Regler — Überblendung zwischen Odysseus und der Sirene.">Two voices, one slider — crossfade between Odysseus and the Siren.</div>
+      </div>
+    </a>
+
+  </div>
+
+  <div class="footer-links">
+    <div class="footer-row" id="footerRow">
+      <a href="https://foclen.substack.com/p/figure-and-ground" id="linkGenesis" data-en="Project Genesis" data-de="Projektgenese">Project Genesis</a>
+      <a href="https://github.com/hermesj/hermesj.github.io/tree/main/figround" id="linkSource" data-en="Source" data-de="Quellcode">Source</a>
+    </div>
+    <span class="license"><a href="https://github.com/hermesj/hermesj.github.io/blob/main/figround/LICENSE">License</a></span>
+  </div>
 
 </div>
+
+<script>
+var currentLang = (navigator.language && navigator.language.startsWith('de')) ? 'de' : 'en';
+
+var i18n = {
+  de: {
+    title: 'Figur und Hintergrund',
+    tagline: 'Ein Mythos. Zwei Perspektiven. Vier Zugänge.',
+    genesisHref: 'https://spinfocl.substack.com/p/figur-und-hintergrund',
+    posterHref: 'figur-hintergrund.html',
+  },
+  en: {
+    title: 'Figure and Ground',
+    tagline: 'One myth. Two perspectives. Four ways in.',
+    genesisHref: 'https://foclen.substack.com/p/figure-and-ground',
+    posterHref: 'figure-ground.html',
+  }
+};
+
+function switchLang(lang) {
+  currentLang = lang;
+  var data = i18n[lang];
+
+  document.documentElement.lang = lang;
+  document.getElementById('title').textContent = data.title;
+  document.getElementById('tagline').textContent = data.tagline;
+  document.getElementById('linkGenesis').href = data.genesisHref;
+  document.getElementById('tilePoster').href = data.posterHref;
+
+  document.getElementById('btnDe').className = (lang === 'de') ? 'active' : '';
+  document.getElementById('btnEn').className = (lang === 'en') ? 'active' : '';
+
+  // Update all text elements with data-en / data-de attributes
+  var els = document.querySelectorAll('[data-' + lang + ']');
+  for (var i = 0; i < els.length; i++) {
+    els[i].textContent = els[i].getAttribute('data-' + lang);
+  }
+
+  // Update all tile images with data-img-en / data-img-de attributes
+  var imgs = document.querySelectorAll('[data-img-' + lang + ']');
+  for (var i = 0; i < imgs.length; i++) {
+    imgs[i].src = imgs[i].getAttribute('data-img-' + lang);
+  }
+}
+
+switchLang(currentLang);
+</script>
 
 </body>
 </html>
