@@ -1,6 +1,6 @@
 /* ══════════════════════════════════════════════════════
    Figure and Ground — shared styles
-   Loaded by all presentation formats (poster, focus, audio)
+   Loaded by all presentation formats (poster, focus, audio, palimpsest)
    ══════════════════════════════════════════════════════ */
 
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500;1,600&display=swap');
@@ -63,4 +63,66 @@ body {
 /* ── SONG PASSAGES ── */
 .song {
   font-style: italic;
+}
+
+/* ── HINT OVERLAY ──
+   Used by focus and palimpsest views.
+   Content inside (arrows, text) is view-specific.       */
+.hint-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 900;
+  pointer-events: none;
+  transition: opacity 1.5s ease;
+}
+
+.hint-overlay.faded {
+  opacity: 0;
+}
+
+/* ── TEXT STAGE ──
+   Container for overlaid text layers (focus, palimpsest) */
+.text-stage {
+  position: relative;
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 0 4vw;
+}
+
+/* ── TEXT LAYER BASE ──
+   Shared typography for reading views (focus, palimpsest) */
+.text-layer {
+  font-size: clamp(0.85rem, 1.1vw, 1.05rem);
+  line-height: 1.95;
+  text-align: justify;
+  hyphens: auto;
+  -webkit-hyphens: auto;
+}
+
+.text-layer p {
+  margin-bottom: 1.8em;
+}
+
+.text-layer p:last-child {
+  margin-bottom: 0;
+}
+
+/* ── SUBTITLE ROW ──
+   Container for subtitle labels (focus, palimpsest)      */
+.subtitle-row {
+  position: relative;
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 0 4vw 1.2em 4vw;
+}
+
+/* ── MOBILE SHARED ── */
+@media (max-width: 768px) {
+  .text-layer { font-size: 1.3rem !important; }
 }

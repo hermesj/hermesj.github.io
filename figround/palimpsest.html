@@ -104,24 +104,7 @@
     padding: 0.5vh 0 1.5vh 0;
   }
 
-  /* ── HINT OVERLAY ── */
-  .hint-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 900;
-    pointer-events: none;
-    transition: opacity 1.5s ease;
-  }
-
-  .hint-overlay.faded {
-    opacity: 0;
-  }
+  /* hint-overlay base is in figround.css */
 
   .hint-text {
     font-size: clamp(0.9rem, 1.2vw, 1.1rem);
@@ -131,13 +114,7 @@
     line-height: 1.8;
   }
 
-  /* ── SUBTITLE ROW ── */
-  .subtitle-row {
-    position: relative;
-    max-width: 700px;
-    margin: 0 auto;
-    padding: 0 4vw 1.2em 4vw;
-  }
+  /* subtitle-row base is in figround.css */
 
   .subtitle-surface,
   .subtitle-hidden {
@@ -154,37 +131,17 @@
     left: 4vw;
   }
 
-  /* ── TEXT STAGE ── */
-  .text-stage {
-    position: relative;
-    max-width: 700px;
-    margin: 0 auto;
-    padding: 0 4vw;
-  }
+  /* text-stage base is in figround.css */
 
   .end-spacer {
     height: 30vh;
   }
 
-  .text-layer {
-    font-size: clamp(0.85rem, 1.1vw, 1.05rem);
-    line-height: 1.95;
-    text-align: justify;
-    hyphens: auto;
-    -webkit-hyphens: auto;
-  }
+  /* text-layer base is in figround.css */
 
   /* Half-line offset so hidden text doesn't overlap surface text exactly */
   .layer-hidden {
     margin-top: -0.975em; /* half of line-height (1.95 / 2) */
-  }
-
-  .text-layer p {
-    margin-bottom: 1.8em;
-  }
-
-  .text-layer p:last-child {
-    margin-bottom: 0;
   }
 
   /* ── SURFACE LAYER (fully visible) ── */
@@ -253,8 +210,9 @@
   /* ── MOBILE ── */
   @media (max-width: 768px) {
     body { cursor: default; }
-    .cursor-ring { display: none; }
-    .text-layer { font-size: 1.3rem !important; }
+    .cursor-ring { opacity: 0; }
+    .cursor-ring.touch-active { opacity: 1; }
+    /* text-layer mobile font-size is in figround.css */
     .subtitle-surface,
     .subtitle-hidden { font-size: 1.1rem; }
   }
@@ -307,13 +265,13 @@ FIGROUND.ready.then(function (texts) {
   var cursorRing = document.getElementById('cursorRing');
   var hint = document.getElementById('hint');
   var stage = document.getElementById('stage');
-  var hintFaded = false;
+  var fadeHint = FIGROUND.createHintFader(hint);
 
-  var currentLang = (navigator.language && navigator.language.startsWith('de')) ? 'de' : 'en';
+  var currentLang = FIGROUND.detectLang();
   // 'odysseus' = Odysseus text on surface, Siren hidden beneath
   var surfaceVoice = 'odysseus';
 
-  var isMobile = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+  var isMobile = FIGROUND.isMobile;
 
   // Reveal radius
   var REVEAL_RADIUS = isMobile ? 100 : 120;
@@ -336,11 +294,7 @@ FIGROUND.ready.then(function (texts) {
     var surface = surfaceVoice === 'odysseus' ? data.odysseus : data.siren;
     var hidden = surfaceVoice === 'odysseus' ? data.siren : data.odysseus;
 
-    document.getElementById('titleLeft').textContent = data.title[0];
-    document.getElementById('titleMid').textContent = data.title[1];
-    document.getElementById('titleRight').textContent = data.title[2];
-    document.documentElement.lang = currentLang;
-    document.title = data.title.join(' ') + ' — Palimpsest';
+    FIGROUND.updateTitle(currentLang, ' — Palimpsest');
 
     subSurface.textContent = surface.subtitle;
     subHidden.textContent = hidden.subtitle;
@@ -413,13 +367,6 @@ FIGROUND.ready.then(function (texts) {
     subHidden.style.maskImage = empty;
   }
 
-  function fadeHint() {
-    if (!hintFaded) {
-      hint.classList.add('faded');
-      hintFaded = true;
-    }
-  }
-
   // ── Desktop: mouse ──
   document.addEventListener('mousemove', function (e) {
     fadeHint();
@@ -430,17 +377,21 @@ FIGROUND.ready.then(function (texts) {
 
   // ── Mobile: touch ──
   if (isMobile) {
-    document.addEventListener('touchstart', function (e) {
+    function onTouch(e) {
       fadeHint();
-      updateMask(e.touches[0].clientX, e.touches[0].clientY);
-    }, { passive: true });
+      var tx = e.touches[0].clientX;
+      var ty = e.touches[0].clientY;
+      cursorRing.style.left = tx + 'px';
+      cursorRing.style.top = ty + 'px';
+      cursorRing.classList.add('touch-active');
+      updateMask(tx, ty);
+    }
 
-    document.addEventListener('touchmove', function (e) {
-      fadeHint();
-      updateMask(e.touches[0].clientX, e.touches[0].clientY);
-    }, { passive: true });
+    document.addEventListener('touchstart', onTouch, { passive: true });
+    document.addEventListener('touchmove', onTouch, { passive: true });
 
     document.addEventListener('touchend', function () {
+      cursorRing.classList.remove('touch-active');
       clearMask();
     }, { passive: true });
   }

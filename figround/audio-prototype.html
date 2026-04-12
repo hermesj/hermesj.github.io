@@ -425,9 +425,9 @@
 <body>
 
 <div class="main-title">
-  <span class="word-left color-ody">Figure</span>
-  <span class="word-mid">and</span>
-  <span class="word-right color-sir">Ground</span>
+  <span class="word-left color-ody" id="titleLeft">Figure</span>
+  <span class="word-mid" id="titleMid">and</span>
+  <span class="word-right color-sir" id="titleRight">Ground</span>
 </div>
 
 <div class="audio-stage">
@@ -526,7 +526,7 @@ let sources = { odysseus: null, siren: null };
 let gains = { odysseus: null, siren: null };
 let panners = { odysseus: null, siren: null };
 
-let currentLang = (navigator.language && navigator.language.startsWith('de')) ? 'de' : 'en';
+let currentLang = FIGROUND.detectLang();
 let isPlaying = false;
 let startTime = 0;      // audioCtx.currentTime when playback started
 let pauseOffset = 0;    // how far into the track we paused
@@ -599,10 +599,7 @@ async function init() {
   document.getElementById('btnPlay').disabled = false;
 
   // Apply detected language to UI
-  var data = FIGROUND.data[currentLang];
-  document.querySelector('.word-left').textContent = data.title[0];
-  document.querySelector('.word-mid').textContent = data.title[1];
-  document.querySelector('.word-right').textContent = data.title[2];
+  FIGROUND.updateTitle(currentLang, ' — Audio');
   document.querySelector('.speaker-right').textContent = currentLang === 'de' ? 'Die Sirene' : 'The Siren';
   document.getElementById('btnDe').classList.toggle('active', currentLang === 'de');
   document.getElementById('btnEn').classList.toggle('active', currentLang === 'en');
@@ -779,10 +776,7 @@ function switchLang(lang) {
   document.getElementById('btnEn').classList.toggle('active', lang === 'en');
 
   // Update title and speaker labels
-  var data = FIGROUND.data[lang];
-  document.querySelector('.word-left').textContent = data.title[0];
-  document.querySelector('.word-mid').textContent = data.title[1];
-  document.querySelector('.word-right').textContent = data.title[2];
+  FIGROUND.updateTitle(lang, ' — Audio');
   document.querySelector('.speaker-right').textContent = lang === 'de' ? 'Die Sirene' : 'The Siren';
 
   // Reset play button text

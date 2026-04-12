@@ -26,12 +26,14 @@ body {
 }
 
 /* ── SUBTITLE ROW ── */
+/* Override shared subtitle-row from figround.css */
 .subtitle-row {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
+  max-width: none;
+  margin: 0 0 2.2em 0;
   padding: 0 4vw;
-  margin-bottom: 2.2em;
 }
 
 .subtitle-left {

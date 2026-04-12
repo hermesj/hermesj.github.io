@@ -73,24 +73,7 @@
     padding: 0.5vh 0 1.5vh 0;
   }
 
-  /* ── HINT OVERLAY ── */
-  .hint-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 900;
-    pointer-events: none;
-    transition: opacity 1.5s ease;
-  }
-
-  .hint-overlay.faded {
-    opacity: 0;
-  }
+  /* hint-overlay base is in figround.css */
 
   .hint-inner {
     display: flex;
@@ -127,13 +110,7 @@
     opacity: 0.8;
   }
 
-  /* ── SUBTITLE ROW ── */
-  .subtitle-row {
-    position: relative;
-    max-width: 700px;
-    margin: 0 auto;
-    padding: 0 4vw 1.2em 4vw;
-  }
+  /* subtitle-row base is in figround.css */
 
   .subtitle-ody,
   .subtitle-sir {
@@ -157,33 +134,14 @@
     text-shadow: 0 0 10px rgba(0,0,0,0.9), 0 0 20px rgba(0,0,0,0.5);
   }
 
-  /* ── TEXT STAGE ── */
-  .text-stage {
-    position: relative;
-    max-width: 700px;
-    margin: 0 auto;
-    padding: 0 4vw 0 4vw;
-  }
+  /* text-stage and text-layer base are in figround.css */
 
   .end-spacer {
     height: 30vh;
   }
 
   .text-layer {
-    font-size: clamp(0.85rem, 1.1vw, 1.05rem);
-    line-height: 1.95;
-    text-align: justify;
-    hyphens: auto;
-    -webkit-hyphens: auto;
     transition: filter 0.15s ease, opacity 0.15s ease;
-  }
-
-  .text-layer p {
-    margin-bottom: 1.8em;
-  }
-
-  .text-layer p:last-child {
-    margin-bottom: 0;
   }
 
   /* Odysseus layer */
@@ -213,7 +171,7 @@
   @media (max-width: 768px) {
     body { cursor: default; }
     .cursor-dot { display: none; }
-    .text-layer { font-size: 1.3rem !important; }
+    /* text-layer mobile font-size is in figround.css */
     .hint-icon { width: 90px; height: 90px; }
     .hint-arrow { font-size: 3.5rem; }
 
@@ -286,12 +244,12 @@ FIGROUND.ready.then(function (texts) {
   var subSir = document.getElementById('subSir');
   var cursorDot = document.getElementById('cursorDot');
   var hint = document.getElementById('hint');
-  var hintFaded = false;
+  var fadeHint = FIGROUND.createHintFader(hint);
 
   var currentX = 0.5;
   var targetX = 0.5;
   var animating = false;
-  var isMobile = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+  var isMobile = FIGROUND.isMobile;
   var currentLang = 'en';
 
   // Swap hint icon for mobile (phone tilt instead of mouse)
@@ -318,11 +276,7 @@ FIGROUND.ready.then(function (texts) {
   window.switchLang = function (lang) {
     currentLang = lang;
     var data = texts[lang];
-    document.getElementById('titleLeft').textContent = data.title[0];
-    document.getElementById('titleMid').textContent = data.title[1];
-    document.getElementById('titleRight').textContent = data.title[2];
-    document.documentElement.lang = lang;
-    document.title = data.title.join(' ') + ' \u2014 Focus';
+    FIGROUND.updateTitle(lang, ' \u2014 Focus');
     subOdy.textContent = data.odysseus.subtitle;
     subSir.textContent = data.siren.subtitle;
     layerOdy.innerHTML = FIGROUND.renderParagraphs(data.odysseus.paragraphs);
@@ -395,13 +349,6 @@ FIGROUND.ready.then(function (texts) {
     }
   }
 
-  function fadeHint() {
-    if (!hintFaded) {
-      hint.classList.add('faded');
-      hintFaded = true;
-    }
-  }
-
   // ── Desktop: mouse ──
   document.addEventListener('mousemove', function (e) {
     fadeHint();
@@ -467,7 +414,7 @@ FIGROUND.ready.then(function (texts) {
               window.addEventListener('deviceorientation', handleOrientation, true);
               hint.style.pointerEvents = '';
               hint.style.cursor = '';
-              setTimeout(function () { hint.classList.add('faded'); hintFaded = true; }, 2000);
+              setTimeout(fadeHint, 2000);
             }
           }).catch(console.error);
         }, { once: true });
@@ -478,10 +425,7 @@ FIGROUND.ready.then(function (texts) {
   }
 
   // ── Init: detect language from URL or browser ──
-  var urlLang = new URLSearchParams(window.location.search).get('lang');
-  var initLang = (urlLang === 'de' || urlLang === 'en') ? urlLang :
-                 (navigator.language && navigator.language.startsWith('de')) ? 'de' : 'en';
-  switchLang(initLang);
+  switchLang(FIGROUND.detectLang());
   applyFocus(0.5);
 });
 </script>
