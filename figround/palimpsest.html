@@ -215,6 +215,26 @@
     /* text-layer mobile font-size is in figround.css */
     .subtitle-surface,
     .subtitle-hidden { font-size: 1.1rem; }
+
+    /* Narrower gradient range per mode so text stays readable at edges */
+    .mode-odysseus {
+      background: linear-gradient(to right,
+        #f4f4f4 0%,
+        #e4eaf0 12%,
+        #98a8b8 40%,
+        #6a7d90 70%,
+        #4a5e72 100%
+      ) !important;
+    }
+    .mode-siren {
+      background: linear-gradient(to right,
+        #4a5e72 0%,
+        #6a7d90 30%,
+        #98a8b8 60%,
+        #3a4d66 85%,
+        #0f1926 100%
+      ) !important;
+    }
   }
 </style>
 </head>
