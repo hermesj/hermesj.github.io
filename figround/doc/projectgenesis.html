@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Experiment and Ground — Project Genesis</title>
+<meta name="description" content="How a literary figure-ground project challenged a text definition — and what approximations emerged. A field report.">
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: linear-gradient(to right, #ede6df 0%, #a08a78 100%);
+    color: #2a2018;
+    font-family: 'EB Garamond', Georgia, 'Times New Roman', serif;
+    font-size: clamp(1.05rem, 1.2vw, 1.15rem);
+    line-height: 1.75;
+    min-height: 100vh;
+  }
+
+  .page {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 6vh 4vw 6vh 4vw;
+  }
+
+  /* ── BACK LINK ── */
+  .back {
+    display: inline-block;
+    font-size: 0.8rem;
+    letter-spacing: 0.06em;
+    text-decoration: none;
+    color: rgba(90,70,55,0.6);
+    margin-bottom: 3vh;
+    transition: color 0.2s;
+  }
+  .back:hover { color: rgba(60,40,25,1); }
+
+  /* ── HEADER ── */
+  header {
+    text-align: center;
+    margin-bottom: 4vh;
+    padding-bottom: 2vh;
+    border-bottom: 1px solid rgba(60,40,20,0.12);
+  }
+
+  h1 {
+    font-weight: 400;
+    font-size: clamp(1.5rem, 2.5vw, 2.2rem);
+    letter-spacing: 0.06em;
+    color: #3a2a1a;
+    margin-bottom: 0.4em;
+  }
+
+  .subtitle {
+    font-size: clamp(0.95rem, 1.15vw, 1.05rem);
+    color: #5a4535;
+    font-style: italic;
+    line-height: 1.6;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  .meta {
+    font-size: 0.85rem;
+    color: #8a7a6a;
+    margin-top: 1em;
+  }
+
+  .meta a {
+    color: #8a7a6a;
+    text-decoration: none;
+    border-bottom: 1px solid rgba(100,80,60,0.25);
+    transition: border-color 0.2s;
+  }
+  .meta a:hover { border-color: rgba(60,40,20,0.6); }
+
+  /* ── ARTICLE ── */
+  article h2 {
+    font-weight: 500;
+    font-size: clamp(1.15rem, 1.5vw, 1.35rem);
+    color: #3a2a1a;
+    letter-spacing: 0.04em;
+    margin: 2.5em 0 0.7em 0;
+  }
+
+  article p {
+    margin-bottom: 1em;
+    text-align: left;
+    hyphens: auto;
+    -webkit-hyphens: auto;
+  }
+
+  article a {
+    color: #4a3a2a;
+    text-decoration: none;
+    border-bottom: 1px solid rgba(60,40,20,0.25);
+    transition: border-color 0.2s;
+  }
+  article a:hover { border-color: rgba(60,40,20,0.6); }
+
+  article em { font-style: italic; }
+  article strong { font-weight: 600; }
+
+  blockquote {
+    margin: 1.2em 0;
+    padding: 0.1em 0 0.1em 1.5em;
+    border-left: 2px solid rgba(60,40,20,0.2);
+    color: #5a4a3a;
+    font-style: italic;
+  }
+
+  /* ── FOOTER ── */
+  footer {
+    margin-top: 4vh;
+    padding-top: 2vh;
+    border-top: 1px solid rgba(60,40,20,0.12);
+    font-size: 0.85rem;
+    color: #8a7a6a;
+    line-height: 1.6;
+  }
+
+  footer a {
+    color: #8a7a6a;
+    text-decoration: none;
+    border-bottom: 1px solid rgba(100,80,60,0.25);
+    transition: border-color 0.2s;
+  }
+  footer a:hover { border-color: rgba(60,40,20,0.6); }
+
+  .note {
+    font-size: 0.8rem;
+    color: #8a7a6a;
+    font-style: italic;
+    margin-top: 1.5em;
+  }
+
+  /* ── MOBILE ── */
+  @media (max-width: 560px) {
+    .page { padding: 4vh 6vw 4vh 6vw; }
+  }
+</style>
+</head>
+<body>
+
+<div class="page">
+
+  <a class="back" href="../index.html">&larr; Figure and Ground</a>
+
+  <header>
+    <h1>Experiment and Ground</h1>
+    <p class="subtitle">A Self-Correction in Four Media</p>
+    <p class="meta">
+      J&uuml;rgen Hermes &middot; April 14, 2026<br>
+      English version of <a href="https://texperimentales.hypotheses.org/6379">the original German post</a> on <em>TEXperimenTales</em>
+    </p>
+  </header>
+
+  <article>
+
+    <p style="font-size: 0.9rem; color: #6a5a4a; margin-bottom: 1.5em; padding: 0.6em 0; border-bottom: 1px solid rgba(60,40,20,0.1);">This is an English translation of the German blog post <a href="https://texperimentales.hypotheses.org/6379">&ldquo;Versuch und Hintergrund: Eine Selbstkorrektur in vier Medien&rdquo;</a>, published on <em>TEXperimenTales</em>.</p>
+
+    <p><em>How a <a href="https://hermesj.github.io/figround/index.html">literary project</a> more or less unintentionally challenged the text definition from my 2012 dissertation&nbsp;&mdash; and what approximations I arrived at in the process. Also a field report on using current frontier LLM infrastructure for different tasks.</em></p>
+
+    <p>The number and quality of my means of expression are limited. The one thing that works reasonably well is writing. Even if it rarely interests anyone, there seem to be reasons for me to keep at it. Last winter was one of those times when something was fermenting inside me and wouldn&rsquo;t leave me alone, until after various evening shifts I was more or less satisfied with the text I had produced. I have already <a href="https://spinfocl.substack.com/p/figur-und-hintergrund">laid out the details of the text&rsquo;s genesis in my private blog</a>; they shall not be repeated here. The freshly written text (&ldquo;The Song of the Siren&rdquo;) was in any case not alone, because it was a kind of response to an older text of mine (&ldquo;Odysseus. The Siren. An Attempt.&rdquo;). Or, as I put it in the shared title of both texts (&ldquo;Figure and Ground&rdquo;)&nbsp;&mdash; the ground for a figure I had created earlier. Or a figure against the ground of the older text.</p>
+
+    <h2>In search of an appropriate sequence</h2>
+
+    <p>Now, in terms of <a href="https://en.wikipedia.org/wiki/Figure%E2%80%93ground_(perception)">Gestalt psychology</a>, figure and ground have the property that one perceives them together. Or possibly in succession, depending on where one places one&rsquo;s focus. What matters, however, is that one can shift this focus at any time. For my pair of texts, this meant that I could find no logical order for their presentation and had to come up with something other than simply publishing them one after the other as two blog posts. Merely cross-linking them did not seem sufficient.</p>
+
+    <p>Interestingly, this challenged precisely the text definition I had used in my <a href="https://texperimentales.hypotheses.org/79">2012 dissertation</a>, titled &ldquo;Text Processing: Design and Application.&rdquo; It read: &ldquo;<em>Definition 1 (Text): A text is a concrete instance of a sequence of discrete units from a finite alphabet.</em>&rdquo; The definition is on the one hand very general (since it goes beyond texts as written natural language), but on the other hand maximally restrictive, as it characterizes texts as a phenomenon that has only one dimension (a sequence). My motivation for framing it this way was to present in my dissertation a cross-disciplinary methodology for processing texts that would encompass biological (proteins/genomes), musical (scores), programming language, cryptological, and indeed natural language texts. For this I needed a corresponding definition of the concept of text&nbsp;&mdash; and it was precisely at the limits of this definition that I now found myself with my literary project. For I now had two one-dimensional sequences before me that could not, taken together, be captured in a single dimension, because I wanted to interweave them as figure and ground.</p>
+
+    <p>After letting the idea settle for a few days, a notion took shape that the solution to my problem might lie in arranging the texts on a page in a specific way, so that both are interlocked, but readers can decide for themselves which text to prioritize. For the figure-ground interplay, I envisioned that the colors and backgrounds of the two texts should be inverted&nbsp;&mdash; one text dark on a light background, the other light on dark. The screen would essentially be split between normal and dark mode. But there should be no strict division between the left and right halves, since that would have imposed a predetermined order again. In the middle, the texts should overlap. HTML and CSS should be able to handle something like this, but how much time would it cost someone as unpracticed as myself? It was fortunate, then, that I had been meaning to test the capabilities of Claude Cowork and needed a test project for it. My undertaking seemed well suited, since one would only need to edit individual files without executing code or importing libraries&nbsp;&mdash; both of which would have argued for using Claude Code instead. Caveat: yes, <a href="https://texperimentales.hypotheses.org/6224">even though I preach water</a> (use of open language models)&nbsp;&mdash; to continue doing so in good conscience, I do need to taste the wine (proprietary models) as well! And yes, using Claude Cowork was remarkably comfortable, even though I had to start quite a number of sessions over the course of the project.</p>
+
+    <p>In fact, the view component for my content (the two texts, in their German and English forms) was expanded far more than I had initially imagined, mainly because Cowork gave me a way to implement my ideas relatively quickly and, above all, adaptably. The (still provisional) result <a href="https://hermesj.github.io/figround/index.html">can be viewed here</a>; the underlying data and code are in a <a href="https://github.com/hermesj/hermesj.github.io/tree/main/figround">Github repository</a>. In total, four different perspectives on the texts emerged&nbsp;&mdash; I am fairly satisfied with two of them, while the other two are still experimental but already accessible on the site.</p>
+
+    <h2>View 1: Interlocked texts (poster version)</h2>
+
+    <p>This perspective realizes my original idea of the two texts as mutual figure and ground. The page itself has a color gradient from light (left) to dark (right). On the left side is one text (&ldquo;Odysseus. The Siren. An Attempt.&rdquo; in dark type), on the right the second (&ldquo;The Song of the Siren&rdquo;) in light type. The right-hand text begins slightly above the left (to somewhat offset the advantage of being on the left), and in the middle there is a zone where both texts overlap. To improve readability there, the background behind the individual lines has been pushed toward higher contrast. The font size is chosen so that the text fills an A1 poster well and is easily legible at that scale. The left column is set slightly narrower than the right, since the text is correspondingly shorter and the poster surface is still fully utilized. Beyond the texts, their headings, and the background gradient, there is nothing else on the pages, so as not to disturb the poster&rsquo;s aesthetics. The <a href="https://hermesj.github.io/figround/figur-hintergrund.html">German</a> and <a href="https://hermesj.github.io/figround/figure-ground.html">English versions</a> are therefore on separate pages (below we will see that the language can be toggled in the other perspectives). For mobile devices there is a separate implementation, since small screens are not wide enough to display both texts in parallel. I therefore opted to show only one of the two text columns (with an overlap zone to the other); horizontal swiping lets one move from one column to the other. In the desktop version the view is static, just like a printed poster. It was already a first approximation of the desired parallelism of the texts, but I thought this could be made more dynamic once one abstracted from a potentially printable poster.</p>
+
+    <h2>View 2: Voiced simultaneity (audio prototype)</h2>
+
+    <p>Reflecting on what further possibilities for parallelization there might be, I realized that this could be achieved with a spoken rendition of the texts played simultaneously. We are not exactly accustomed to listening to two voices at once, but it is not impossible. And besides, there are ways to adjust the level between the two voices so that one can easily follow one while the other recedes into the background. I implemented this (again with Claude Opus 4.6&rsquo;s help) in the <a href="https://hermesj.github.io/figround/audio-prototype.html">audio prototype</a> with a crossfade slider. I recorded the German texts myself; I slowed down the Odysseus part slightly and then pitched it back up by the corresponding semitones to reconstruct my voice. I passed the recorded Siren audio track to ElevenLabs, where it was voiced with &ldquo;Doris&rdquo; (but with my intonation and at my tempo). A trial account was sufficient for this. I still had a few free tokens at OpenAI, which I used to have the English texts read by a more masculine (Odysseus) and a more feminine (Siren) sounding voice. I am not truly satisfied with any of the audio tracks, but the view still has prototype character. Should anyone have a wonderful reading voice and take a liking to the texts and their implementation, I would be glad to collaborate!</p>
+
+    <p>In the audio view, the two texts also scroll in separate bands, largely in sync with the audio track. This involved a fair bit of fiddling with timestamps, especially because the Odysseus text is shorter and therefore pauses. Since I found it aesthetically unpleasing to have both scroll from left to right, one runs in mirror script from right to left. Which text suffers this fate can be determined via a toggle, and one can also switch between the German and English texts. There is also an <a href="https://hermesj.github.io/figround/audio-prototype-2.html">advanced mode</a> with more functionality but less elegance. As the filename audio-prototype.html already suggests, work on neither mode is finished, but I think the potential can already be gauged.</p>
+
+    <h2>View 3: Shifting attention (focus version)</h2>
+
+    <p>The idea of using a slider to switch between audio tracks could also be applied to the texts themselves, I thought. One does not even need a slider&nbsp;&mdash; one can use either the mouse position, or on mobile devices, touch interactions or even gyroscope data to let visitors navigate between the texts. I described the idea to Claude and received overlaid texts, unreadable together, that become alternately decipherable as one shifts the focus position: steering the mouse, touchscreen, or the entire mobile device to the left brightens the screen and the Odysseus text becomes legible in dark type. On the right, the screen darkens and the Siren&rsquo;s text becomes readable. Although Claude&rsquo;s first draft was already quite promising, a number of adjustments were needed until both the desktop and mobile versions were reasonably intuitive to control. And I must say that the <a href="https://hermesj.github.io/figround/figure-ground-focus.html">focus view</a> is currently the one I find most compelling, because it actually lets the texts step alternately into the foreground and background&nbsp;&mdash; which comes quite close to the underlying idea.</p>
+
+    <h2>View 4: Hidden layers (palimpsest prototype)</h2>
+
+    <p>After creating the three views I had more or less arrived at on my own, I asked Claude whether the figure-ground paradigm could be realized in yet another way. Claude came up with a number of suggestions whose appeal I could not quite discern&nbsp;&mdash; most ideas switched automatically between the texts without allowing the reader to intervene, which I imagined would be rather annoying for texts like these. One of the proposals, however, I did find interesting: Claude itself called it &ldquo;palimpsest.&rdquo; One sees only one text on the page, but has a fairly large circle as a cursor. When one moves this over the text, another text becomes visible between the lines of the first, much like the close examination of old parchments where traces of earlier inscriptions may still be found. We had to experiment with color gradients of the background, the text, and the cursor area before the second text became reasonably legible&nbsp;&mdash; which so far has truly succeeded only in the desktop version. Here too one can switch between languages and between the texts, determining which stands in the foreground and which must first be revealed through the cursor. Partly because of the still poorly readable mobile version, the <a href="https://hermesj.github.io/figround/palimpsest.html">palimpsest view</a> is also still work in progress.</p>
+
+    <h2>Tech: Stack it simple</h2>
+
+    <p>Technically, the implementations deliberately operate at a low level&nbsp;&mdash; they are built on static HTML, CSS, and a bit of JavaScript&nbsp;&mdash; no frameworks, no build process, no dependencies beyond an embedded font. The texts (Odysseus, Siren, each bilingual) are stored in a JSON file and loaded when each page opens; the rest is styling in the browser. This has the advantage that everything can live in a simple Github repository and be served via Github Pages without further infrastructure. HTML and CSS carry the entire visual design&nbsp;&mdash; gradients, transparencies, masks, and typography accomplish a surprising amount of what at first glance looks like elaborate graphics. JavaScript is used only where interaction or audio playback actually occurs: for controlling focus and visibility via mouse or gyroscope, for dynamically uncovering hidden texts, for crossfading between two audio tracks. It is no coincidence that these are precisely the points at which the one-dimensionality of the texts is being broken&nbsp;&mdash; the static poster view, which comes closest to the classical concept of text, gets by almost without JavaScript&nbsp;&mdash; there, only the texts need to be imported. I deliberately chose not to forego this, because I want to make changes to the text material in exactly one place. That four quite different approaches to the same texts emerged was due less to technical sophistication than to the fact that the low complexity of the tech stack allowed rapid experimentation&nbsp;&mdash; a quality that meshed well with the iterative workflow in Claude Cowork.</p>
+
+    <p>I must admit that without the infrastructure of Claude Cowork and the Opus 4.6 model I would probably never have found the time to implement the four different views. I probably would not have come up with the palimpsest view on my own at all. As mentioned above, I needed quite a number of sessions (I would estimate around 20), because the token limit available to me (I subscribed to Claude Pro for &euro;214.20 per year) was frequently exhausted and I had to wait several hours for it to reset. Since this was a private project for which I mostly used the evening hours, that was sometimes a welcome opportunity to call it a day. Or an invitation to make some progress on my own, which I was occasionally happy to accept. Most of the code was, however, definitively written by Claude and further refined in interaction with me, until I could live with the result (at least for the time being).</p>
+
+    <p>I did not use generative AI in this project solely for coding; I already mentioned that ElevenLabs and OpenAI were used for creating the audio files&nbsp;&mdash; with not entirely satisfactory, but at least provisionally usable results. While writing the Siren text I occasionally asked generative AI for synonyms when Openthesaurus came up empty; sometimes it also helped with word-finding difficulties. Out of curiosity I also tried to get various models from Anthropic, OpenAI, and Google to continue my literary Siren text based on fairly detailed specifications, which led to thoroughly unusable results&nbsp;&mdash; which in the case of ChatGPT is not exactly surprising if one is familiar with <a href="https://www.christoph-heilig.de/en/post/manipulating-gpt-5-x-with-pseudo-literature">Christoph Heilig&rsquo;s relevant research</a>. At least all models readily agreed when I called them lousy poets. What was very helpful to me, however, were discussions I held with Claude and ChatGPT on translating my originally German texts into English. I had certain ideas about how these should read, and the models had their own. We discussed (one cannot say argued, because&nbsp;&mdash; sycophancy&nbsp;&mdash; one essentially always gets one&rsquo;s way if one asks the wrong way) at length and repeatedly over nearly every passage. It was ultimately a struggle to reconcile my ideas with a reasonably accepted English register. It would probably have been difficult to find someone willing to undertake this laborious task with me. I am not the one to judge the result well, but it satisfied both me and, ultimately, the LLMs. And I am definitely very open to feedback of any kind regarding the outcome!</p>
+
+    <p>By now I am myself surprised at how much work I have put into this project over recent months. Somehow the right things came together&nbsp;&mdash; the need to write a text, the resulting problem of publishing two texts that resist being placed in sequence, my enjoyment of implementing things in software, and the professional imperative to test the merits and limits of new language models and the environments in which they are embedded. As for the text definition from my dissertation, <a href="https://dhc.hypotheses.org/18">I was already aware</a> that it would not be able to capture all literary or philological variations&nbsp;&mdash; there are, after all, graphical forms of texts, those that undergo development over time, and now also those with a figure-ground structure that simply cannot be grasped in a single dimension. I believe it retains its justification nonetheless, because in one respect it does manage to lay a common foundation for different fields of research.</p>
+
+    <p>A question that arises for me is whether the four views that now exist obscure the content of the two texts I carried with me for so long. Or whether they are rather an integral part of the expression I have been refining for so long now. Should anyone actually have read &ldquo;The Song of the Siren,&rdquo; it would be known that I do not expect much resonance for projects of this kind. But if someone should nonetheless wish to share their thoughts, that would of course make me very happy!</p>
+
+  </article>
+
+  <footer>
+    <p>Only the text is available under the <a href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International</a> license. All other elements (illustrations, imported attachments) are &ldquo;All rights reserved&rdquo; unless otherwise stated.</p>
+
+    <p class="note">English translation of: J&uuml;rgen Hermes (April 14, 2026). &ldquo;Versuch und Hintergrund: Eine Selbstkorrektur in vier Medien.&rdquo; <em>TEXperimenTales</em>. <a href="https://doi.org/10.58079/1628e">https://doi.org/10.58079/1628e</a></p>
+  </footer>
+
+</div>
+
+</body>
+</html>
