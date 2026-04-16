@@ -6,44 +6,44 @@
 var AUDIO_TIMESTAMPS = {
   de: {
     odysseus: [
-      { start: 0, end: 7 },
-      { start: 7, end: 45 },
-      { start: 50, end: 120 },
-      { start: 190, end: 252 },
-      { start: 254, end: 285 },
-      { start: 285, end: 312 }
+      { start: 2, end: 7 },
+      { start: 9, end: 45 },
+      { start: 52, end: 120 },
+      { start: 192, end: 252 },
+      { start: 256, end: 285 },
+      { start: 287, end: 312 }
     ],
     siren: [
-      { start: 0, end: 4 },
-      { start: 4, end: 30 },
-      { start: 30, end: 60 },
-      { start: 60, end: 92 },
-      { start: 94, end: 135 },
-      { start: 135, end: 188 },
-      { start: 190, end: 252 },
-      { start: 252, end: 315 },
-      { start: 315, end: 345 }
+      { start: 2, end: 4 },
+      { start: 6, end: 30 },
+      { start: 32, end: 60 },
+      { start: 62, end: 92 },
+      { start: 96, end: 135 },
+      { start: 137, end: 188 },
+      { start: 192, end: 252 },
+      { start: 254, end: 315 },
+      { start: 317, end: 345 }
     ]
   },
   en: {
     odysseus: [
-      { start: 0, end: 4 },
-      { start: 4, end: 38 },
-      { start: 40, end: 98 },
-      { start: 171, end: 212 },
-      { start: 231, end: 252 },
-      { start: 253, end: 270 }
+      { start: 2, end: 5 },
+      { start: 9, end: 54 },
+      { start: 64, end: 145 },
+      { start: 232, end: 300 },
+      { start: 332, end: 357 },
+      { start: 364, end: 391 }
     ],
     siren: [
-      { start: 0, end: 4 },
-      { start: 4, end: 29 },
-      { start: 30, end: 56 },
-      { start: 57, end: 87 },
-      { start: 88, end: 123 },
-      { start: 124, end: 169 },
-      { start: 171, end: 230 },
-      { start: 231, end: 283 },
-      { start: 284, end: 309 }
+      { start: 2, end: 3 },
+      { start: 7, end: 38 },
+      { start: 41, end: 76 },
+      { start: 79, end: 117 },
+      { start: 121, end: 163 },
+      { start: 167, end: 227 },
+      { start: 232, end: 327 },
+      { start: 332, end: 414 },
+      { start: 417, end: 452 }
     ]
   }
 };
