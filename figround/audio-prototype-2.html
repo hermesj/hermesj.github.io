@@ -307,37 +307,54 @@
     color: rgba(255,255,255,0.75);
   }
 
-  /* ── STROPHE MARKERS (inside progress bar) ── */
-  .strophe-marker {
-    position: absolute;
-    width: 1.5px;
-    top: -3px;
-    height: 9px;
-    cursor: pointer;
-    transition: opacity 0.2s;
-    opacity: 0.7;
-    z-index: 2;
+  /* ── STROPHE BARS (above/below progress bar) ── */
+  .strophe-bars {
+    position: relative;
+    width: 100%;
+    height: 14px;
   }
 
-  .strophe-marker:hover {
+  .strophe-bars-ody {
+    margin-bottom: 2px;
+  }
+
+  .strophe-bars-sir {
+    margin-top: 2px;
+  }
+
+  .strophe-bar {
+    position: absolute;
+    height: 100%;
+    border-radius: 2px;
+    cursor: pointer;
+    transition: opacity 0.2s;
+    opacity: 0.6;
+  }
+
+  .strophe-bar:hover {
     opacity: 1;
   }
 
-  .strophe-marker::after {
-    content: '';
-    position: absolute;
-    left: -4px;
-    right: -4px;
-    top: 0;
-    bottom: 0;
+  .strophe-bar-ody {
+    background: rgba(80,100,140,0.18);
+    border: 1px solid rgba(20,30,50,0.4);
   }
 
-  .strophe-marker-ody {
-    background: #1a2a4a;
+  .strophe-bar-sir {
+    background: rgba(160,175,195,0.22);
+    border: 1px solid rgba(200,210,225,0.5);
   }
 
-  .strophe-marker-sir {
-    background: #fff;
+  .strophe-bar-active {
+    opacity: 1;
+  }
+
+  .strophe-bar-ody.strophe-bar-active {
+    background: rgba(80,100,140,0.35);
+  }
+
+  .strophe-bar-sir.strophe-bar-active {
+    background: rgba(160,175,195,0.4);
   }
 
   /* ── STATUS / LOADING ── */
@@ -560,11 +577,13 @@
   </div>
   <div class="status" id="status">Loading audio files …</div>
 
-  <!-- Progress -->
+  <!-- Progress with strophe bars -->
   <div class="progress-container">
+    <div class="strophe-bars strophe-bars-ody" id="stropheBarsOdy"></div>
     <div class="progress-bar-bg" id="progressBg" onclick="seek(event)">
       <div class="progress-bar-fill" id="progressFill"></div>
     </div>
+    <div class="strophe-bars strophe-bars-sir" id="stropheBarsSir"></div>
     <div class="time-row">
       <span id="timeCurrent">0:00</span>
       <span id="timeDuration">—</span>
@@ -708,7 +727,7 @@ async function init() {
     document.getElementById('btnEn').classList.toggle('active', currentLang === 'en');
 
     updateDuration();
-    renderStropheMarkers();
+    renderStropheBars();
   } catch (e) {
     document.getElementById('status').textContent =
       'Error loading audio. Please make sure the MP3 files are in the audio/ folder.';
@@ -880,7 +899,7 @@ function switchLang(lang) {
   updateDuration();
   document.getElementById('timeCurrent').textContent = '0:00';
   document.getElementById('progressFill').style.width = '0%';
-  renderStropheMarkers();
+  renderStropheBars();
   initTickers();
   updateTickers(0);
 
@@ -892,11 +911,11 @@ function switchLang(lang) {
 
 // ── Strophe Markers on Timeline ──
 
-function renderStropheMarkers() {
-  var bar = document.getElementById('progressBg');
-  // Remove old markers
-  var old = bar.querySelectorAll('.strophe-marker');
-  for (var j = 0; j < old.length; j++) old[j].remove();
+function renderStropheBars() {
+  var odyContainer = document.getElementById('stropheBarsOdy');
+  var sirContainer = document.getElementById('stropheBarsSir');
+  odyContainer.innerHTML = '';
+  sirContainer.innerHTML = '';
 
   var dur = getMaxDuration();
   if (dur === 0) return;
@@ -904,28 +923,48 @@ function renderStropheMarkers() {
   var ts = AUDIO_TIMESTAMPS[currentLang];
   if (!ts) return;
 
-  function addMarkers(voice, cssClass) {
+  function addBars(voice, container, cssClass) {
     var entries = ts[voice];
     if (!entries) return;
-    // Skip index 0 (title) — first strophe marker would be at 0% anyway
-    for (var i = 1; i < entries.length; i++) {
-      var pct = (entries[i].start / dur) * 100;
-      var tick = document.createElement('div');
-      tick.className = 'strophe-marker ' + cssClass;
-      tick.style.left = pct + '%';
-      tick.title = voice + ' ' + i + ' — ' + formatTime(entries[i].start);
+    for (var i = 0; i < entries.length; i++) {
+      var leftPct = (entries[i].start / dur) * 100;
+      var widthPct = ((entries[i].end - entries[i].start) / dur) * 100;
+      var bar = document.createElement('div');
+      bar.className = 'strophe-bar ' + cssClass;
+      bar.setAttribute('data-voice', voice);
+      bar.setAttribute('data-index', i);
+      bar.style.left = leftPct + '%';
+      bar.style.width = Math.max(widthPct, 0.3) + '%';
+      bar.title = voice + ' ' + (i + 1) + ' — ' + formatTime(entries[i].start) + '–' + formatTime(entries[i].end);
       (function(startSec) {
-        tick.addEventListener('click', function(e) {
+        bar.addEventListener('click', function(e) {
           e.stopPropagation();
           seekTo(startSec);
         });
       })(entries[i].start);
-      bar.appendChild(tick);
+      container.appendChild(bar);
     }
   }
 
-  addMarkers('odysseus', 'strophe-marker-ody');
-  addMarkers('siren', 'strophe-marker-sir');
+  addBars('odysseus', odyContainer, 'strophe-bar-ody');
+  addBars('siren', sirContainer, 'strophe-bar-sir');
+}
+
+function updateStropheHighlight(currentTime) {
+  var ts = AUDIO_TIMESTAMPS[currentLang];
+  if (!ts) return;
+
+  var allBars = document.querySelectorAll('.strophe-bar');
+  for (var i = 0; i < allBars.length; i++) {
+    var voice = allBars[i].getAttribute('data-voice');
+    var idx = parseInt(allBars[i].getAttribute('data-index'));
+    var entry = ts[voice] && ts[voice][idx];
+    if (entry && currentTime >= entry.start && currentTime <= entry.end) {
+      allBars[i].classList.add('strophe-bar-active');
+    } else {
+      allBars[i].classList.remove('strophe-bar-active');
+    }
+  }
 }
 
 function seekTo(seconds) {
@@ -1161,8 +1200,9 @@ function updateProgress() {
     document.getElementById('timeCurrent').textContent = formatTime(cur);
   }
 
-  // Always update tickers (also when paused, for seek)
+  // Always update tickers and strophe highlights (also when paused, for seek)
   updateTickers(cur);
+  updateStropheHighlight(cur);
 
   requestAnimationFrame(updateProgress);
 }
