@@ -20,7 +20,7 @@ var AUDIO_TIMESTAMPS = {
       { start: 62, end: 92 },
       { start: 96, end: 135 },
       { start: 137, end: 188 },
-      { start: 192, end: 252 },
+      { start: 191, end: 252 },
       { start: 254, end: 315 },
       { start: 317, end: 345 }
     ]
@@ -41,7 +41,7 @@ var AUDIO_TIMESTAMPS = {
       { start: 79, end: 117 },
       { start: 121, end: 163 },
       { start: 167, end: 227 },
-      { start: 232, end: 327 },
+      { start: 231, end: 327 },
       { start: 332, end: 414 },
       { start: 417, end: 452 }
     ]

@@ -1149,6 +1149,26 @@ function updateTickers(currentTime) {
   }
 }
 
+// ── Progress update loop ──
+
+function updateProgress() {
+  var cur = getCurrentTime();
+  var dur = getMaxDuration();
+  var pct = dur > 0 ? Math.min(cur / dur, 1) : 0;
+
+  if (isPlaying) {
+    document.getElementById('progressFill').style.width = (pct * 100) + '%';
+    document.getElementById('timeCurrent').textContent = formatTime(cur);
+  }
+
+  // Always update tickers (also when paused, for seek)
+  updateTickers(cur);
+
+  requestAnimationFrame(updateProgress);
+}
+
+requestAnimationFrame(updateProgress);
+
 // ── Start ──
 
 init();
