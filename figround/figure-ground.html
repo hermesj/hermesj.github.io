@@ -2,57 +2,19 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Figure and Ground</title>
-<meta name="description" content="Figure and Ground — two parallel prose texts on the myth of Odysseus and the Siren, presented as an interleaved visual poster.">
+<link rel="canonical" href="https://hermesj.github.io/figround/poster.html?lang=en">
+<meta http-equiv="refresh" content="0; url=poster.html?lang=en">
+<meta name="description" content="Two parallel prose texts on the myth of Odysseus and the Siren, presented as an interleaved visual poster.">
 <meta property="og:title" content="Figure and Ground">
 <meta property="og:description" content="Two parallel prose texts on the myth of Odysseus and the Siren — interleaved visual poster.">
 <meta property="og:image" content="https://hermesj.github.io/figround/images/og-image-poster-en.png">
-<meta property="og:url" content="https://hermesj.github.io/figround/figure-ground.html">
+<meta property="og:url" content="https://hermesj.github.io/figround/poster.html?lang=en">
 <meta property="og:type" content="website">
 <meta name="twitter:card" content="summary_large_image">
-<link rel="stylesheet" href="poster.css">
+<script>location.replace('poster.html?lang=en' + location.hash);</script>
 </head>
 <body>
-
-<div class="poster">
-
-  <div class="main-title">
-    <span class="word-left" id="titleLeft">Figure</span>
-    <span class="word-mid" id="titleMid">and</span>
-    <span class="word-right" id="titleRight">Ground</span>
-  </div>
-
-  <div class="subtitle-row">
-    <div class="subtitle-left" id="subtitleLeft"></div>
-    <div class="subtitle-right" id="subtitleRight"></div>
-  </div>
-
-  <div class="interleave">
-    <div class="col-odysseus" id="colOdy"></div>
-    <div class="col-siren" id="colSir"></div>
-  </div>
-
-</div>
-
-<script src="figround.js"></script>
-<script>
-FIGROUND.ready.then(function(texts) {
-  var urlLang = new URLSearchParams(window.location.search).get('lang');
-  var lang = (urlLang === 'de' || urlLang === 'en') ? urlLang : 'en';
-  var data = texts[lang];
-
-  document.documentElement.lang = lang;
-  document.title = data.title.join(' ');
-  document.getElementById('titleLeft').textContent = data.title[0];
-  document.getElementById('titleMid').textContent = data.title[1];
-  document.getElementById('titleRight').textContent = data.title[2];
-  document.getElementById('subtitleLeft').textContent = data.odysseus.subtitle;
-  document.getElementById('subtitleRight').textContent = data.siren.subtitle;
-  document.getElementById('colOdy').innerHTML = FIGROUND.renderParagraphs(data.odysseus.paragraphs);
-  document.getElementById('colSir').innerHTML = FIGROUND.renderParagraphs(data.siren.paragraphs);
-});
-</script>
-
+<p>Redirecting to <a href="poster.html?lang=en">poster.html?lang=en</a>…</p>
 </body>
 </html>

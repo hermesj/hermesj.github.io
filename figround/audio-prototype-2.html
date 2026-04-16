@@ -5,158 +5,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Figure and Ground — Audio</title>
 <link rel="stylesheet" href="figround.css">
+<link rel="stylesheet" href="audio-shared.css">
 <style>
-  /* ── BODY STYLING (keeping audio-specific gradient) ── */
-  body {
-    background: linear-gradient(to right,
-      #f4f4f4 0%,
-      #e4eaf0 12%,
-      #98a8b8 38%,
-      #3a4d66 68%,
-      #0f1926 100%
-    );
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 4vh 4vw;
-    overflow-x: hidden;
-    overflow-y: auto;
-  }
-
-  /* Scroll hint — visible only when page overflows */
-  .scroll-hint {
-    position: fixed;
-    bottom: 1em;
-    left: 50%;
-    transform: translateX(-50%);
-    color: #fff;
-    text-shadow: 0 0 8px rgba(0,0,0,0.6);
-    font-size: 0.8rem;
-    font-style: italic;
-    opacity: 0.8;
-    transition: opacity 0.5s ease;
-    pointer-events: none;
-  }
-
-  .scroll-hint span {
-    display: inline-block;
-    animation: bounce 1.5s ease infinite;
-  }
-
-  @keyframes bounce {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(4px); }
-  }
-
-  /* ── TITLE (keeping audio-specific margin-bottom) ── */
-  .main-title {
-    margin-bottom: 1em;
-  }
-
-  /* ── AUDIO PLAYER AREA ── */
-  .audio-stage {
-    width: 100%;
-    max-width: 900px;
-    position: relative;
-  }
-
-  /* Speaker labels */
-  .speaker-row {
-    display: flex;
-    justify-content: space-between;
-    align-items: baseline;
-    padding: 0 1em;
-    margin-bottom: 1.5em;
-  }
-
-  .speaker-left,
-  .speaker-right {
-    font-size: clamp(1rem, 1.4vw, 1.35rem);
-    font-weight: 600;
-    font-style: italic;
-    letter-spacing: 0.08em;
-  }
-
-  /* ── CROSSFADE SLIDER ── */
-  .slider-container {
-    position: relative;
-    width: 100%;
-    height: 80px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 2em;
-  }
-
-  .slider-track-bg {
-    position: absolute;
-    width: 100%;
-    height: 6px;
-    border-radius: 3px;
-    background: linear-gradient(to right,
-      rgba(0,0,0,0.6) 0%,
-      rgba(120,140,160,0.4) 50%,
-      rgba(255,255,255,0.6) 100%
-    );
-  }
-
-  input[type="range"]#crossfade {
-    -webkit-appearance: none;
-    appearance: none;
-    width: 100%;
-    height: 6px;
-    background: transparent;
-    position: relative;
-    z-index: 2;
-    cursor: pointer;
-  }
-
-  input[type="range"]#crossfade::-webkit-slider-thumb {
-    -webkit-appearance: none;
-    width: 28px;
-    height: 28px;
-    border-radius: 50%;
-    background: radial-gradient(circle at 40% 40%, #c8d0d8, #5a6a7a);
-    border: 2px solid rgba(255,255,255,0.4);
-    box-shadow: 0 0 12px rgba(0,0,0,0.4), 0 0 24px rgba(0,0,0,0.15);
-    cursor: grab;
-    transition: transform 0.15s ease;
-  }
-
-  input[type="range"]#crossfade::-webkit-slider-thumb:active {
-    cursor: grabbing;
-    transform: scale(1.15);
-  }
-
-  input[type="range"]#crossfade::-moz-range-thumb {
-    width: 28px;
-    height: 28px;
-    border-radius: 50%;
-    background: radial-gradient(circle at 40% 40%, #c8d0d8, #5a6a7a);
-    border: 2px solid rgba(255,255,255,0.4);
-    box-shadow: 0 0 12px rgba(0,0,0,0.4);
-    cursor: grab;
-  }
-
-  /* Volume indicators */
-  .volume-indicators {
-    display: flex;
-    justify-content: space-between;
-    padding: 0 0.5em;
-    margin-top: -0.5em;
-    margin-bottom: 2em;
-  }
-
-  .vol-label {
-    font-size: 0.85rem;
-    font-weight: 400;
-    letter-spacing: 0.05em;
-    opacity: 0.7;
-    transition: opacity 0.3s ease;
-  }
-
+  /* ── VOLUME LABEL COLORS (local — parallels figround .color-ody / .color-sir) ── */
   .vol-left {
     color: #000;
     text-shadow: 0 0 8px rgba(255,255,255,0.6);
@@ -167,7 +18,7 @@
     text-shadow: 0 0 8px rgba(0,0,0,0.6);
   }
 
-  /* ── TRANSPORT CONTROLS ── */
+  /* ── TRANSPORT CONTROLS (advanced layout) ── */
   .transport {
     display: flex;
     justify-content: space-between;
@@ -267,7 +118,7 @@
     transform: scale(0.95);
   }
 
-  /* ── PROGRESS BAR ── */
+  /* ── PROGRESS BAR (local — strophe bars overflow the bar) ── */
   .progress-container {
     width: 100%;
     margin-bottom: 1.5em;
@@ -281,22 +132,6 @@
     border-radius: 2px;
     overflow: visible;
     cursor: pointer;
-  }
-
-  .progress-bar-fill {
-    height: 100%;
-    width: 0%;
-    background: linear-gradient(to right, rgba(0,0,0,0.5), rgba(255,255,255,0.5));
-    border-radius: 2px;
-    transition: width 0.1s linear;
-  }
-
-  .time-row {
-    display: flex;
-    justify-content: space-between;
-    font-size: 0.8rem;
-    letter-spacing: 0.04em;
-    padding: 0.3em 0.2em 0;
   }
 
   #timeCurrent {
@@ -357,70 +192,7 @@
     background: rgba(160,175,195,0.4);
   }
 
-  /* ── STATUS / LOADING ── */
-  .status {
-    text-align: center;
-    font-size: 0.95rem;
-    color: #fff;
-    text-shadow: 0 0 6px rgba(0,0,0,0.5);
-    font-style: italic;
-    min-height: 1.5em;
-    margin-bottom: 1em;
-  }
-
-  .loading-bar {
-    width: 100%;
-    height: 2px;
-    background: rgba(120,140,160,0.15);
-    border-radius: 1px;
-    overflow: hidden;
-    margin-bottom: 1em;
-    opacity: 0;
-    transition: opacity 0.3s;
-  }
-
-  .loading-bar.visible {
-    opacity: 1;
-  }
-
-  .loading-bar-fill {
-    height: 100%;
-    width: 0%;
-    background: linear-gradient(to right, rgba(0,0,0,0.3), rgba(255,255,255,0.4));
-    transition: width 0.3s;
-  }
-
-  /* ── HINT ── */
-  .hint {
-    text-align: center;
-    font-size: 0.8rem;
-    color: #fff;
-    text-shadow: 0 0 6px rgba(0,0,0,0.5);
-    font-style: italic;
-    opacity: 0.85;
-  }
-
-  /* ── TEXT TICKER ── */
-  .ticker-row {
-    width: 100%;
-    max-width: 900px;
-    margin-top: 1em;
-    display: flex;
-    align-items: center;
-    gap: 0.6em;
-  }
-
-  .ticker {
-    flex: 1;
-    min-width: 0;
-    overflow: hidden;
-    position: relative;
-    height: 2.4em;
-    padding: 0 0.6em;
-    border-radius: 3px;
-  }
-
-  /* ── PERSPECTIVE TOGGLE ── */
+  /* ── PERSPECTIVE TOGGLE (advanced palette) ── */
   .perspective-toggle {
     width: 32px;
     height: 32px;
@@ -442,92 +214,10 @@
     border-color: rgba(15,25,38,0.6);
   }
 
-  .ticker-odysseus {
-    background: linear-gradient(to right,
-      rgba(244,244,244,0.5) 0%,
-      rgba(228,234,240,0.4) 50%,
-      rgba(152,168,184,0.2) 100%
-    );
-  }
-
-  .ticker-siren {
-    background: linear-gradient(to right,
-      rgba(58,77,102,0.2) 0%,
-      rgba(58,77,102,0.4) 50%,
-      rgba(15,25,38,0.5) 100%
-    );
-  }
-
-  .ticker-text {
-    position: absolute;
-    top: 50%;
-    white-space: nowrap;
-    font-size: clamp(0.85rem, 1.1vw, 1.05rem);
-    line-height: 1.4;
-    letter-spacing: 0.02em;
-    transform-origin: 0% 50%;
-  }
-
-  .ticker-text-odysseus {
-    color: #000;
-    font-weight: 500;
-    text-shadow: 0 0 8px rgba(255,255,255,0.9), 0 0 16px rgba(255,255,255,0.5);
-  }
-
-  .ticker-text-siren {
-    color: #fff;
-    font-weight: 400;
-    text-shadow: 0 0 8px rgba(0,0,0,0.9), 0 0 16px rgba(0,0,0,0.5);
-  }
-
-  /* Fade edges of ticker */
-  .ticker-odysseus::before,
-  .ticker-odysseus::after,
-  .ticker-siren::before,
-  .ticker-siren::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    width: 60px;
-    z-index: 2;
-    pointer-events: none;
-  }
-
-  .ticker-odysseus::before {
-    left: 0;
-    background: linear-gradient(to right, rgba(244,244,244,0.8), transparent);
-  }
-  .ticker-odysseus::after {
-    right: 0;
-    background: linear-gradient(to left, rgba(180,196,210,0.6), transparent);
-  }
-  .ticker-siren::before {
-    left: 0;
-    background: linear-gradient(to right, rgba(58,77,102,0.6), transparent);
-  }
-  .ticker-siren::after {
-    right: 0;
-    background: linear-gradient(to left, rgba(15,25,38,0.8), transparent);
-  }
-
-  /* ── BACK LINK ── */
-  .back-link {
-    margin-top: 3em;
-    text-align: center;
-  }
-
-  .back-link a {
-    color: #3a4d66;
-    text-decoration: none;
-    font-size: 0.95rem;
-    border-bottom: 1px solid rgba(58,77,102,0.3);
-    transition: border-color 0.2s;
-  }
-
-  .back-link a:hover {
-    border-color: rgba(58,77,102,0.7);
-  }
+  /* Ticker text colors — proto-2 uses explicit values
+     (audio-shared.css supplies only font-weight + glow).  */
+  .ticker-text-odysseus { color: #000; }
+  .ticker-text-siren { color: #fff; }
 </style>
 </head>
 <body>
@@ -613,48 +303,8 @@
 
 <script src="figround.js"></script>
 <script src="audio-timestamps.js"></script>
+<script src="audio-shared.js"></script>
 <script>
-// ── Scroll hint: show only when content overflows ──
-(function() {
-  const hint = document.getElementById('scrollHint');
-  function checkOverflow() {
-    hint.style.display = document.body.scrollHeight > window.innerHeight ? '' : 'none';
-  }
-  checkOverflow();
-  window.addEventListener('resize', checkOverflow);
-  window.addEventListener('scroll', function() {
-    if (window.scrollY > 30) {
-      hint.style.opacity = '0';
-      setTimeout(() => hint.style.display = 'none', 500);
-    }
-  });
-})();
-
-// ── Audio Engine ──
-
-const AUDIO_FILES = {
-  de: { odysseus: 'audio/Odysseus_de/odysseus_de_indexed.mp3', siren: 'audio/Siren_de/siren_de_indexed.mp3' },
-  en: { odysseus: 'audio/Odysseus_en/odysseus_en_indexed.mp3', siren: 'audio/Siren_en/siren_en_indexed.mp3' },
-};
-
-let audioCtx = null;
-let buffers = { de: {}, en: {} };
-let sources = { odysseus: null, siren: null };
-let gains = { odysseus: null, siren: null };
-let panners = { odysseus: null, siren: null };
-
-let currentLang = FIGROUND.detectLang();
-let isPlaying = false;
-let startTime = 0;      // audioCtx.currentTime when playback started
-let pauseOffset = 0;    // how far into the track we paused
-let loadedCount = 0;
-const totalFiles = 4;
-
-// Stereo panning range: how far left/right the voices sit
-// -1 = hard left, +1 = hard right
-const PAN_ODYSSEUS_BASE = -0.35;  // Odysseus slightly left
-const PAN_SIREN_BASE = 0.35;     // Siren slightly right
-
 // ── Init ──
 
 async function init() {
@@ -802,64 +452,6 @@ function startPlayback(offset) {
   sources.siren.start(0, offset);
   startTime = audioCtx.currentTime - offset;
   isPlaying = true;
-}
-
-function stopSources() {
-  try { sources.odysseus?.stop(); } catch(e) {}
-  try { sources.siren?.stop(); } catch(e) {}
-  sources.odysseus = null;
-  sources.siren = null;
-}
-
-function stopPlayback() {
-  pauseOffset = 0;
-  isPlaying = false;
-  stopSources();
-  updatePlayButton();
-  document.getElementById('progressFill').style.width = '0%';
-  document.getElementById('timeCurrent').textContent = '0:00';
-}
-
-function togglePlay() {
-  if (audioCtx.state === 'suspended') audioCtx.resume();
-
-  if (isPlaying) {
-    pauseOffset = getCurrentTime();
-    isPlaying = false;
-    stopSources();
-  } else {
-    startPlayback(pauseOffset);
-  }
-  updatePlayButton();
-}
-
-function updatePlayButton() {
-  const btn = document.getElementById('btnPlay');
-  btn.textContent = isPlaying ? '❚❚ Pause' : '▶ Play';
-}
-
-function getCurrentTime() {
-  if (!isPlaying) return pauseOffset;
-  return audioCtx.currentTime - startTime;
-}
-
-function getMaxDuration() {
-  if (!buffers[currentLang].odysseus || !buffers[currentLang].siren) return 0;
-  return Math.max(
-    buffers[currentLang].odysseus.duration,
-    buffers[currentLang].siren.duration
-  );
-}
-
-function updateDuration() {
-  const dur = getMaxDuration();
-  document.getElementById('timeDuration').textContent = formatTime(dur);
-}
-
-function formatTime(seconds) {
-  const m = Math.floor(seconds / 60);
-  const s = Math.floor(seconds % 60);
-  return m + ':' + (s < 10 ? '0' : '') + s;
 }
 
 function seek(event) {
@@ -1044,148 +636,6 @@ function jumpPrev() {
     }
   }
   seekTo(best >= 0 ? best : 0);
-}
-
-// ── Scrolling Text ──
-
-let tickerData = { odysseus: null, siren: null };
-
-// ── Perspective Toggle ──
-// 'odysseus' = light button, Ody normal L→R, Siren mirrored R→L
-// 'siren'    = dark button,  Siren normal L→R, Ody mirrored R→L
-let perspectiveMode = 'odysseus';
-
-function initTickers() {
-  const lang = currentLang;
-  const ts = AUDIO_TIMESTAMPS[lang];
-  const figroundData = FIGROUND.data[lang];
-
-  for (const voice of ['odysseus', 'siren']) {
-    const el = document.getElementById(voice === 'odysseus' ? 'tickerTextOdy' : 'tickerTextSir');
-
-    // Build ticker text from FIGROUND data using renderTicker
-    const tickerHtml = FIGROUND.renderTicker(figroundData[voice]);
-    const parts = tickerHtml.split(' ◆ ');
-
-    if (ts && ts[voice] && parts.length === ts[voice].length) {
-      // Wrap each strophe in a measurable span, with spaced separators
-      el.innerHTML =
-        parts.map((part, i) =>
-          '<span class="strophe" data-strophe="' + i + '">' + part + '</span>'
-        ).join('<span class="strophe-sep">&nbsp;&nbsp;&nbsp; ◆ &nbsp;&nbsp;&nbsp;</span>') +
-        '<span class="strophe-pad">&nbsp;&nbsp;&nbsp;&nbsp;</span>';
-
-      // Force layout, then measure strophe pixel positions
-      void el.offsetWidth;
-      const stropheEls = el.querySelectorAll('.strophe');
-      const ranges = [];
-      stropheEls.forEach(s => {
-        ranges.push({
-          left: s.offsetLeft,
-          width: s.offsetWidth,
-          right: s.offsetLeft + s.offsetWidth,
-        });
-      });
-
-      tickerData[voice] = {
-        ranges: ranges,
-        timestamps: ts[voice],
-        totalWidth: el.scrollWidth,
-      };
-    } else {
-      // No timestamps available — plain text, linear fallback
-      el.innerHTML = tickerHtml;
-      tickerData[voice] = null;
-    }
-  }
-}
-
-function togglePerspective() {
-  const btn = document.getElementById('perspToggle');
-  if (perspectiveMode === 'odysseus') {
-    perspectiveMode = 'siren';
-    btn.classList.remove('mode-odysseus');
-    btn.classList.add('mode-siren');
-  } else {
-    perspectiveMode = 'odysseus';
-    btn.classList.remove('mode-siren');
-    btn.classList.add('mode-odysseus');
-  }
-}
-
-// Convert current playback time to a 0..1 scroll progress for one voice,
-// taking strophe boundaries and pauses into account.
-function getScrollProgress(voice, currentTime, duration) {
-  const data = tickerData[voice];
-  if (!data) {
-    // Linear fallback (no timestamps for this language)
-    return duration > 0 ? currentTime / duration : 0;
-  }
-
-  const { ranges, timestamps, totalWidth } = data;
-  if (totalWidth === 0) return 0;
-
-  // Before first strophe starts
-  if (currentTime < timestamps[0].start) return 0;
-
-  for (let i = 0; i < timestamps.length; i++) {
-    const ts = timestamps[i];
-
-    // Currently inside strophe i — interpolate within it
-    if (currentTime >= ts.start && currentTime <= ts.end) {
-      const t = (currentTime - ts.start) / (ts.end - ts.start);
-      const pixelPos = ranges[i].left + t * ranges[i].width;
-      return pixelPos / totalWidth;
-    }
-
-    // In a pause between strophe i and i+1 — hold at midpoint of separator
-    // so the ◆ and the strophe ending stay visible
-    if (i < timestamps.length - 1 && currentTime > ts.end && currentTime < timestamps[i + 1].start) {
-      var pausePos = (ranges[i].right + ranges[i + 1].left) / 2;
-      return pausePos / totalWidth;
-    }
-  }
-
-  // After all strophes (trailing silence) — include trailing pad
-  return Math.min(1, (ranges[ranges.length - 1].right + 60) / totalWidth);
-}
-
-function updateTickers(currentTime) {
-  const duration = getMaxDuration();
-
-  const odyEl = document.getElementById('tickerTextOdy');
-  const sirEl = document.getElementById('tickerTextSir');
-  const tickerOdyW = document.getElementById('tickerOdy').offsetWidth;
-  const tickerSirW = document.getElementById('tickerSir').offsetWidth;
-  const odyTextW = odyEl.scrollWidth;
-  const sirTextW = sirEl.scrollWidth;
-
-  const odyProgress = getScrollProgress('odysseus', currentTime, duration);
-  const sirProgress = getScrollProgress('siren', currentTime, duration);
-
-  // Gentle lead-in: at progress=0 the text starts ~35% into the ticker,
-  // fading to normal scrolling by ~8% progress.
-  function leadIn(progress, tickerW) {
-    return Math.max(0, (1 - progress * 12)) * tickerW * 0.35;
-  }
-
-  if (perspectiveMode === 'odysseus') {
-    // Odysseus: normal text, scrolls L→R
-    const odyX = leadIn(odyProgress, tickerOdyW) - odyProgress * (odyTextW - tickerOdyW);
-    odyEl.style.transform = 'translateY(-50%) translateX(' + odyX + 'px)';
-
-    // Siren: mirrored text, scrolls R→L
-    const sirX = tickerSirW - leadIn(sirProgress, tickerSirW) + sirProgress * (sirTextW - tickerSirW);
-    sirEl.style.transform = 'translateY(-50%) translateX(' + sirX + 'px) scaleX(-1)';
-  } else {
-    // Siren: normal text, scrolls L→R
-    const sirX = leadIn(sirProgress, tickerSirW) - sirProgress * (sirTextW - tickerSirW);
-    sirEl.style.transform = 'translateY(-50%) translateX(' + sirX + 'px)';
-
-    // Odysseus: mirrored text, scrolls R→L
-    const odyX = tickerOdyW - leadIn(odyProgress, tickerOdyW) + odyProgress * (odyTextW - tickerOdyW);
-    odyEl.style.transform = 'translateY(-50%) translateX(' + odyX + 'px) scaleX(-1)';
-  }
 }
 
 // ── Progress update loop ──

@@ -122,6 +122,12 @@ body {
   padding: 0 4vw 1.2em 4vw;
 }
 
+/* ── END SPACER ──
+   Bottom padding for scroll-driven reading views (focus, palimpsest) */
+.end-spacer {
+  height: 30vh;
+}
+
 /* ── MOBILE SHARED ── */
 @media (max-width: 768px) {
   .text-layer { font-size: 1.3rem !important; }
