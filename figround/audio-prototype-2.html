@@ -305,19 +305,31 @@
 
   <div class="volume-indicators">
     <span class="vol-label vol-left" id="volLeft">100 %</span>
-    <span class="hint">Move the slider to shift between perspectives. Headphones recommended.</span>
     <span class="vol-label vol-right" id="volRight">100 %</span>
+  </div>
+
+  <div class="hint-row">
+    <span class="hint">Move the slider to shift between perspectives. Headphones recommended.</span>
   </div>
 
   <!-- Transport -->
   <div class="transport">
     <button class="btn btn-lang active" id="btnDe" onclick="switchLang('de')">Deutsch</button>
     <div class="play-group">
-      <button class="btn btn-play" id="btnPlay" onclick="togglePlay()" disabled>▶ Play</button>
+      <button class="btn btn-play" id="btnPlay" onclick="togglePlay()" disabled>
+        <span class="btn-icon" id="btnPlayIcon" aria-hidden="true"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round"><path d="M6 4.5 L16 10 L6 15.5 Z"/></svg></span>
+        <span class="btn-label" id="btnPlayLabel">Play</span>
+      </button>
       <div class="transport-secondary">
-        <button class="btn-transport" onclick="jumpPrev()" title="Vorherige Strophe">◀◀</button>
-        <button class="btn-transport" onclick="stopPlayback()" title="Stop">■</button>
-        <button class="btn-transport" onclick="jumpNext()" title="Nächste Strophe">▶▶</button>
+        <button class="btn-transport" onclick="jumpPrev()" title="Vorherige Strophe" aria-label="Previous">
+          <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round"><line x1="5" y1="5" x2="5" y2="15"/><path d="M16 5 L7.5 10 L16 15 Z"/></svg>
+        </button>
+        <button class="btn-transport" onclick="stopPlayback()" title="Stop" aria-label="Stop">
+          <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"><rect x="5.5" y="5.5" width="9" height="9"/></svg>
+        </button>
+        <button class="btn-transport" onclick="jumpNext()" title="Nächste Strophe" aria-label="Next">
+          <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round"><path d="M4 5 L12.5 10 L4 15 Z"/><line x1="15" y1="5" x2="15" y2="15"/></svg>
+        </button>
       </div>
     </div>
     <button class="btn btn-lang" id="btnEn" onclick="switchLang('en')">English</button>
@@ -367,6 +379,19 @@
 <script src="audio-timestamps.js"></script>
 <script src="audio-shared.js"></script>
 <script>
+// ── SVG icon set (overrides audio-shared.js updatePlayButton) ──
+const PLAY_ICON_SVG  = '<svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round"><path d="M6 4.5 L16 10 L6 15.5 Z"/></svg>';
+const PAUSE_ICON_SVG = '<svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><line x1="7.5" y1="5" x2="7.5" y2="15"/><line x1="12.5" y1="5" x2="12.5" y2="15"/></svg>';
+
+// Redeclare updatePlayButton — later global function declaration wins,
+// so this replaces the text-based version from audio-shared.js.
+function updatePlayButton() {
+  const iconEl  = document.getElementById('btnPlayIcon');
+  const labelEl = document.getElementById('btnPlayLabel');
+  if (iconEl)  iconEl.innerHTML   = isPlaying ? PAUSE_ICON_SVG : PLAY_ICON_SVG;
+  if (labelEl) labelEl.textContent = isPlaying ? 'Pause'        : 'Play';
+}
+
 // ── Init ──
 
 async function init() {
@@ -547,8 +572,8 @@ function switchLang(lang) {
   FIGROUND.updateTitle(lang, ' — Audio');
   document.querySelector('.speaker-right').textContent = lang === 'de' ? 'Die Sirene' : 'The Siren';
 
-  // Reset play button text
-  document.getElementById('btnPlay').textContent = '▶ Play';
+  // Reset play button (SVG + label)
+  updatePlayButton();
 
   updateDuration();
   document.getElementById('timeCurrent').textContent = '0:00';
