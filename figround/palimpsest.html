@@ -210,11 +210,14 @@
     .subtitle-surface,
     .subtitle-hidden { font-size: 1.1rem; }
 
-    /* Narrower gradient range per mode so text stays readable at edges */
+    /* Narrower gradient range per mode so BOTH texts stay readable at edges.
+       Key: pull back the *problematic* extreme where the hidden voice (opposite
+       colour) would otherwise vanish — white Siren on pure-white ground, or
+       black Odysseus on pitch-dark ground. */
     .mode-odysseus {
       background: linear-gradient(to right,
-        #f4f4f4 0%,
-        #e4eaf0 12%,
+        #dde5ee 0%,   /* was #f4f4f4 — keeps hidden Siren (white) legible at left */
+        #cdd8e2 12%,  /* was #e4eaf0 */
         #98a8b8 40%,
         #6a7d90 70%,
         #4a5e72 100%
@@ -226,7 +229,7 @@
         #6a7d90 30%,
         #98a8b8 60%,
         #3a4d66 85%,
-        #0f1926 100%
+        #253240 100%  /* was #0f1926 — keeps hidden Odysseus (black) legible at right */
       ) !important;
     }
   }
