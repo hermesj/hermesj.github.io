@@ -248,6 +248,66 @@
       ) !important;
     }
   }
+
+  /* ── TABLET (iPad portrait + landscape, up to iPad Pro 11") ──
+     Mirrors the tablet treatment of figure-ground-focus.html:
+     bigger text, slimmer margins, wider stage — plus the mobile
+     per-mode gradient and stronger cursor tint, since iPads are
+     touch devices too. */
+  @media (min-width: 769px) and (max-width: 1200px) {
+    body { cursor: default; }
+    .cursor-ring { opacity: 0; }
+    .cursor-ring.touch-active { opacity: 1; }
+
+    .text-layer { font-size: 1.2rem !important; }
+    .text-stage,
+    .subtitle-row {
+      max-width: 820px;
+      padding-left: 2vw;
+      padding-right: 2vw;
+    }
+    .layer-hidden { left: 2vw; right: 2vw; }
+    .subtitle-hidden { left: 2vw; }
+
+    .subtitle-surface,
+    .subtitle-hidden { font-size: 1.05rem; }
+
+    /* Stronger cursor tint — same as mobile */
+    .mode-odysseus .cursor-ring {
+      border: 1px solid rgba(15,25,38,0.65);
+      background: radial-gradient(circle,
+        rgba(15,25,38,0.6) 0%,
+        rgba(15,25,38,0.35) 60%,
+        transparent 100%);
+    }
+    .mode-siren .cursor-ring {
+      border: 1px solid rgba(245,248,252,0.75);
+      background: radial-gradient(circle,
+        rgba(245,248,252,0.65) 0%,
+        rgba(245,248,252,0.35) 60%,
+        transparent 100%);
+    }
+
+    /* Per-mode gradient — same as mobile */
+    .mode-odysseus {
+      background: linear-gradient(to right,
+        #f4f4f4 0%,
+        #e4eaf0 12%,
+        #98a8b8 40%,
+        #6a7d90 70%,
+        #4a5e72 100%
+      ) !important;
+    }
+    .mode-siren {
+      background: linear-gradient(to right,
+        #4a5e72 0%,
+        #6a7d90 30%,
+        #98a8b8 60%,
+        #3a4d66 85%,
+        #0f1926 100%
+      ) !important;
+    }
+  }
 </style>
 </head>
 <body class="mode-odysseus">
