@@ -7,18 +7,40 @@
 <link rel="stylesheet" href="figround.css">
 <link rel="stylesheet" href="audio-shared.css">
 <style>
-  /* ── VOLUME LABEL COLORS (local — parallels figround .color-ody / .color-sir) ── */
+  /* ── VOLUME LABEL COLORS (gradient-mirrored: they SIT at the extremes) ── */
   .vol-left {
     color: #000;
     text-shadow: 0 0 8px rgba(255,255,255,0.6);
   }
-
   .vol-right {
     color: #fff;
     text-shadow: 0 0 8px rgba(0,0,0,0.6);
   }
 
-  /* ── TRANSPORT CONTROLS (advanced layout) ── */
+  /* ── HINT (own row below volume-indicators, gradient-agnostic italic) ── */
+  .hint-row {
+    text-align: center;
+    margin-top: -0.8em;
+    margin-bottom: 1.2em;
+  }
+  /* Override audio-shared.css: proto-2 uses dark italic on the medium
+     middle-gradient, so it reads on the actual stage width. */
+  .hint {
+    color: rgba(30,40,55,0.85);
+    text-shadow: 0 0 8px rgba(244,244,244,0.75);
+    font-style: italic;
+    font-size: 0.88rem;
+    opacity: 1;
+  }
+
+  /* ══════════════════════════════════════════════════════════════
+     CHIP-STYLE CONTROLS
+     All buttons sit on a translucent dark pill so they read on
+     ANY gradient position (no more "Deutsch" vanishing on #f4f4f4).
+     Approach: opacity 0.7 dark fill → white text is legible
+     against the chip regardless of what's behind it.
+     ══════════════════════════════════════════════════════════════ */
+
   .transport {
     display: flex;
     justify-content: space-between;
@@ -29,24 +51,21 @@
 
   .btn {
     padding: 0.6em 1em;
-    border: 1px solid rgba(120,140,160,0.3);
-    border-radius: 4px;
-    background: rgba(244,244,244,0.05);
+    border: 1px solid rgba(140,160,180,0.4);
+    border-radius: 6px;
+    background: rgba(30,40,55,0.7);
     color: #fff;
     font-family: 'Cormorant Garamond', serif;
-    font-size: 0.9rem;
+    font-size: 0.95rem;
     font-weight: 500;
     letter-spacing: 0.05em;
     cursor: pointer;
     transition: all 0.2s ease;
-    text-shadow: 0 0 4px rgba(0,0,0,0.3);
   }
-
   .btn:hover {
-    border-color: rgba(120,140,160,0.6);
-    background: rgba(244,244,244,0.15);
+    border-color: rgba(160,180,200,0.7);
+    background: rgba(40,55,75,0.85);
   }
-
   .btn:active {
     transform: scale(0.98);
   }
@@ -54,13 +73,11 @@
   .btn-lang {
     flex: 1;
   }
-
   .btn-lang.active {
-    border-color: rgba(120,140,160,0.9);
-    background: rgba(244,244,244,0.2);
+    background: rgba(20,30,45,0.9);
+    border-color: rgba(220,230,240,0.45);
     font-weight: 600;
   }
-
   .btn-lang:disabled {
     opacity: 0.5;
     cursor: not-allowed;
@@ -75,21 +92,34 @@
 
   .btn-play {
     flex: 1;
-    padding: 0.6em 1.2em;
-    border: 2px solid rgba(120,140,160,0.5);
-    background: linear-gradient(to right, rgba(244,244,244,0.1), rgba(244,244,244,0.05));
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5em;
+    padding: 0.55em 1.2em;
+    border: 2px solid rgba(160,180,200,0.55);
+    background: linear-gradient(to right, rgba(40,55,75,0.8), rgba(25,40,60,0.8));
     font-weight: 600;
     letter-spacing: 0.08em;
   }
-
   .btn-play:hover {
-    border-color: rgba(120,140,160,0.8);
-    background: linear-gradient(to right, rgba(244,244,244,0.2), rgba(244,244,244,0.1));
+    border-color: rgba(180,200,220,0.85);
+    background: linear-gradient(to right, rgba(55,70,90,0.9), rgba(40,55,75,0.9));
+  }
+  .btn-play:disabled {
+    opacity: 0.55;
+    cursor: not-allowed;
   }
 
-  .btn-play:disabled {
-    opacity: 0.6;
-    cursor: not-allowed;
+  .btn-icon {
+    display: inline-flex;
+    align-items: center;
+    line-height: 0;
+  }
+  .btn-icon svg {
+    width: 1.1em;
+    height: 1.1em;
+    display: block;
   }
 
   .transport-secondary {
@@ -98,24 +128,28 @@
   }
 
   .btn-transport {
-    padding: 0.5em 0.7em;
-    border: 1px solid rgba(120,140,160,0.25);
-    border-radius: 3px;
-    background: rgba(120,140,160,0.08);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.55em 0.85em;
+    border: 1px solid rgba(140,160,180,0.4);
+    border-radius: 5px;
+    background: rgba(30,40,55,0.7);
     color: #fff;
-    font-size: 0.9rem;
     cursor: pointer;
     transition: all 0.2s ease;
-    text-shadow: 0 0 4px rgba(0,0,0,0.3);
   }
-
   .btn-transport:hover {
-    border-color: rgba(120,140,160,0.5);
-    background: rgba(120,140,160,0.15);
+    border-color: rgba(160,180,200,0.7);
+    background: rgba(40,55,75,0.85);
   }
-
   .btn-transport:active {
     transform: scale(0.95);
+  }
+  .btn-transport svg {
+    width: 1.05em;
+    height: 1.05em;
+    display: block;
   }
 
   /* ── PROGRESS BAR (local — strophe bars overflow the bar) ── */
@@ -123,7 +157,6 @@
     width: 100%;
     margin-bottom: 1.5em;
   }
-
   .progress-bar-bg {
     position: relative;
     width: 100%;
@@ -133,30 +166,17 @@
     overflow: visible;
     cursor: pointer;
   }
+  #timeCurrent { color: #4a5a6a; }
+  #timeDuration { color: rgba(255,255,255,0.75); }
 
-  #timeCurrent {
-    color: #4a5a6a;
-  }
-
-  #timeDuration {
-    color: rgba(255,255,255,0.75);
-  }
-
-  /* ── STROPHE BARS (above/below progress bar) ── */
+  /* ── STROPHE BARS ── */
   .strophe-bars {
     position: relative;
     width: 100%;
     height: 14px;
   }
-
-  .strophe-bars-ody {
-    margin-bottom: 2px;
-  }
-
-  .strophe-bars-sir {
-    margin-top: 2px;
-  }
-
+  .strophe-bars-ody { margin-bottom: 2px; }
+  .strophe-bars-sir { margin-top: 2px; }
   .strophe-bar {
     position: absolute;
     height: 100%;
@@ -165,34 +185,20 @@
     transition: opacity 0.2s;
     opacity: 0.6;
   }
-
-  .strophe-bar:hover {
-    opacity: 1;
-  }
-
+  .strophe-bar:hover { opacity: 1; }
   .strophe-bar-ody {
     background: rgba(80,100,140,0.18);
     border: 1px solid rgba(20,30,50,0.4);
   }
-
   .strophe-bar-sir {
     background: rgba(160,175,195,0.22);
     border: 1px solid rgba(200,210,225,0.5);
   }
+  .strophe-bar-active { opacity: 1; }
+  .strophe-bar-ody.strophe-bar-active { background: rgba(80,100,140,0.35); }
+  .strophe-bar-sir.strophe-bar-active { background: rgba(160,175,195,0.4); }
 
-  .strophe-bar-active {
-    opacity: 1;
-  }
-
-  .strophe-bar-ody.strophe-bar-active {
-    background: rgba(80,100,140,0.35);
-  }
-
-  .strophe-bar-sir.strophe-bar-active {
-    background: rgba(160,175,195,0.4);
-  }
-
-  /* ── PERSPECTIVE TOGGLE (advanced palette) ── */
+  /* ── PERSPECTIVE TOGGLE ── */
   .perspective-toggle {
     width: 32px;
     height: 32px;
@@ -203,12 +209,10 @@
     transition: all 0.35s ease;
     box-shadow: 0 0 8px rgba(0,0,0,0.15);
   }
-
   .perspective-toggle.mode-odysseus {
     background: radial-gradient(circle at 40% 40%, #f4f4f4, #c8d0d8);
     border-color: rgba(200,210,220,0.6);
   }
-
   .perspective-toggle.mode-siren {
     background: radial-gradient(circle at 40% 40%, #3a4d66, #0f1926);
     border-color: rgba(15,25,38,0.6);
@@ -218,6 +222,64 @@
      (audio-shared.css supplies only font-weight + glow).  */
   .ticker-text-odysseus { color: #000; }
   .ticker-text-siren { color: #fff; }
+
+  /* ══════════════════════════════════════════════════════════════
+     MOBILE (phones, < 768 px)
+     ══════════════════════════════════════════════════════════════ */
+  @media (max-width: 768px) {
+    .speaker-left,
+    .speaker-right {
+      font-size: 1.15rem;
+    }
+
+    .vol-label {
+      font-size: 1rem;
+    }
+
+    .hint {
+      font-size: 0.95rem;
+    }
+
+    /* Transport: 3-row grid
+       Row 1: Deutsch | English
+       Row 2: Play (full-width)
+       Row 3: Prev · Stop · Next */
+    .transport {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-areas:
+        "lang-de lang-en"
+        "play    play"
+        "skip    skip";
+      gap: 0.55em;
+    }
+    #btnDe { grid-area: lang-de; }
+    #btnEn { grid-area: lang-en; }
+    /* Unwrap play-group so its children participate in the grid */
+    .play-group { display: contents; }
+    .btn-play {
+      grid-area: play;
+      padding: 0.9em 1.2em;
+      font-size: 1.1rem;
+    }
+    .transport-secondary {
+      grid-area: skip;
+      display: flex;
+      gap: 0.4em;
+    }
+    .btn-lang {
+      padding: 0.75em 0.5em;
+      font-size: 1rem;
+    }
+    .btn-transport {
+      flex: 1;
+      padding: 0.75em 0.5em;
+    }
+
+    .time-row {
+      font-size: 0.9rem;
+    }
+  }
 </style>
 </head>
 <body>
