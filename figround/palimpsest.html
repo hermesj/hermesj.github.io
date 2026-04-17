@@ -210,14 +210,29 @@
     .subtitle-surface,
     .subtitle-hidden { font-size: 1.1rem; }
 
-    /* Narrower gradient range per mode so BOTH texts stay readable at edges.
-       Key: pull back the *problematic* extreme where the hidden voice (opposite
-       colour) would otherwise vanish — white Siren on pure-white ground, or
-       black Odysseus on pitch-dark ground. */
+    /* Stronger cursor tint on mobile: acts as a local contrast "puddle"
+       for the revealed hidden text. Dark puddle under white Siren,
+       light puddle under black Odysseus. */
+    .mode-odysseus .cursor-ring {
+      border: 1px solid rgba(15,25,38,0.65);
+      background: radial-gradient(circle,
+        rgba(15,25,38,0.6) 0%,
+        rgba(15,25,38,0.35) 60%,
+        transparent 100%);
+    }
+    .mode-siren .cursor-ring {
+      border: 1px solid rgba(245,248,252,0.75);
+      background: radial-gradient(circle,
+        rgba(245,248,252,0.65) 0%,
+        rgba(245,248,252,0.35) 60%,
+        transparent 100%);
+    }
+
+    /* Narrower gradient range per mode so text stays readable at edges */
     .mode-odysseus {
       background: linear-gradient(to right,
-        #dde5ee 0%,   /* was #f4f4f4 — keeps hidden Siren (white) legible at left */
-        #cdd8e2 12%,  /* was #e4eaf0 */
+        #f4f4f4 0%,
+        #e4eaf0 12%,
         #98a8b8 40%,
         #6a7d90 70%,
         #4a5e72 100%
@@ -229,7 +244,7 @@
         #6a7d90 30%,
         #98a8b8 60%,
         #3a4d66 85%,
-        #253240 100%  /* was #0f1926 — keeps hidden Odysseus (black) legible at right */
+        #0f1926 100%
       ) !important;
     }
   }
