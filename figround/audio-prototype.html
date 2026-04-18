@@ -14,64 +14,16 @@
 <link rel="stylesheet" href="figround.css">
 <link rel="stylesheet" href="audio-shared.css">
 <style>
-  /* ── TRANSPORT CONTROLS ── */
-  .transport {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 1.5em;
-    margin-bottom: 1.5em;
-  }
+  /* Simple-Mode specifics.
+     Shared chip controls, hint box, back-link, mobile base → audio-shared.css.
+     Play button SVG icons + updatePlayButton()            → audio-shared.js.  */
 
-  .btn {
-    background: none;
-    border: none;
-    cursor: pointer;
-    font-family: inherit;
-    font-size: 1.1rem;
-    letter-spacing: 0.08em;
-    padding: 0.5em 1.2em;
-    border-radius: 4px;
-    transition: all 0.2s ease;
-  }
-
-  .btn-play {
-    color: #1a2a3a;
-    background: rgba(255,255,255,0.25);
-    border: 1px solid rgba(0,0,0,0.15);
-    backdrop-filter: blur(4px);
-    font-size: 1.3rem;
-    padding: 0.6em 2em;
-  }
-
-  .btn-play:hover {
-    background: rgba(255,255,255,0.4);
-  }
-
-  .btn-lang {
-    color: #3a4d66;
-    background: rgba(255,255,255,0.12);
-    border: 1px solid rgba(100,120,140,0.2);
-    font-size: 0.95rem;
-  }
-
-  .btn-lang:hover {
-    background: rgba(255,255,255,0.22);
-  }
-
-  .btn-lang.active {
-    background: rgba(255,255,255,0.35);
-    border-color: rgba(0,0,0,0.2);
-    color: #0f1926;
-  }
-
-  /* ── PROGRESS (local overrides over audio-shared.css) ── */
+  /* ── PROGRESS (local: simple mode has no strophe-bars overflow) ── */
   .progress-container {
     width: 100%;
     margin-bottom: 0.8em;
     position: relative;
   }
-
   .progress-bar-bg {
     width: 100%;
     height: 3px;
@@ -80,10 +32,9 @@
     overflow: hidden;
     cursor: pointer;
   }
-
   /* timeCurrent/timeDuration: colors via .color-ody / .color-sir */
 
-  /* ── PERSPECTIVE TOGGLE ── */
+  /* ── PERSPECTIVE TOGGLE (simple mode: smaller, softer palette) ── */
   .perspective-toggle {
     width: 28px;
     height: 28px;
@@ -94,16 +45,18 @@
     transition: all 0.35s ease;
     box-shadow: 0 0 12px rgba(0,0,0,0.4), 0 0 24px rgba(0,0,0,0.15);
   }
-
   .perspective-toggle.mode-odysseus {
     background: radial-gradient(circle at 40% 40%, #e4eaf0, #a8b8c8);
     border-color: rgba(255,255,255,0.5);
   }
-
   .perspective-toggle.mode-siren {
     background: radial-gradient(circle at 40% 40%, #5a6a7a, #2a3a4a);
     border-color: rgba(255,255,255,0.3);
   }
+
+  /* Ticker text colors (audio-shared.css supplies only font-weight + glow). */
+  .ticker-text-odysseus { color: #000; }
+  .ticker-text-siren    { color: #fff; }
 </style>
 </head>
 <body>
@@ -129,14 +82,20 @@
 
   <div class="volume-indicators">
     <span class="vol-label vol-left color-ody" id="volLeft">100 %</span>
-    <span class="hint">Move the slider to shift between perspectives. Headphones recommended.</span>
     <span class="vol-label vol-right color-sir" id="volRight">100 %</span>
+  </div>
+
+  <div class="hint-row">
+    <span class="hint">Move the slider to shift between perspectives. Headphones recommended.</span>
   </div>
 
   <!-- Transport -->
   <div class="transport">
     <button class="btn btn-lang active" id="btnDe" onclick="switchLang('de')">Deutsch</button>
-    <button class="btn btn-play" id="btnPlay" onclick="togglePlay()" disabled>▶ Play</button>
+    <button class="btn btn-play" id="btnPlay" onclick="togglePlay()" disabled>
+      <span class="btn-icon" id="btnPlayIcon" aria-hidden="true"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round"><path d="M6 4.5 L16 10 L6 15.5 Z"/></svg></span>
+      <span class="btn-label" id="btnPlayLabel">Play</span>
+    </button>
     <button class="btn btn-lang" id="btnEn" onclick="switchLang('en')">English</button>
   </div>
 
@@ -172,7 +131,6 @@
 
 <div class="back-link">
   <a href="index.html">Project Overview</a>
-  <span style="margin: 0 1em; color: #3a4d66;">·</span>
   <a href="audio-prototype-2.html">Advanced Mode</a>
 </div>
 
@@ -365,8 +323,8 @@ function switchLang(lang) {
   FIGROUND.updateTitle(lang, ' — Audio');
   document.querySelector('.speaker-right').textContent = lang === 'de' ? 'Die Sirene' : 'The Siren';
 
-  // Reset play button text
-  document.getElementById('btnPlay').textContent = '▶ Play';
+  // Reset play button (SVG + label)
+  updatePlayButton();
 
   updateDuration();
   document.getElementById('timeCurrent').textContent = '0:00';

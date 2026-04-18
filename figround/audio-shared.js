@@ -77,9 +77,21 @@ function togglePlay() {
   updatePlayButton();
 }
 
+// ── Play button: SVG icon + label ──
+// Both prototypes use a markup pattern of:
+//   <button id="btnPlay">
+//     <span id="btnPlayIcon"></span>
+//     <span id="btnPlayLabel">Play</span>
+//   </button>
+
+const PLAY_ICON_SVG  = '<svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round"><path d="M6 4.5 L16 10 L6 15.5 Z"/></svg>';
+const PAUSE_ICON_SVG = '<svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><line x1="7.5" y1="5" x2="7.5" y2="15"/><line x1="12.5" y1="5" x2="12.5" y2="15"/></svg>';
+
 function updatePlayButton() {
-  const btn = document.getElementById('btnPlay');
-  btn.textContent = isPlaying ? '❚❚ Pause' : '▶ Play';
+  const iconEl  = document.getElementById('btnPlayIcon');
+  const labelEl = document.getElementById('btnPlayLabel');
+  if (iconEl)  iconEl.innerHTML   = isPlaying ? PAUSE_ICON_SVG : PLAY_ICON_SVG;
+  if (labelEl) labelEl.textContent = isPlaying ? 'Pause'        : 'Play';
 }
 
 function getCurrentTime() {

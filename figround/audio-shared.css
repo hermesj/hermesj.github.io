@@ -206,14 +206,113 @@ input[type="range"]#crossfade::-moz-range-thumb {
   transition: width 0.3s;
 }
 
-/* ── HINT ── */
-.hint {
+/* ── HINT ROW (own line below volume-indicators) ── */
+.hint-row {
   text-align: center;
-  font-size: 0.8rem;
-  color: #fff;
-  text-shadow: 0 0 6px rgba(0,0,0,0.5);
+  margin-top: -0.8em;
+  margin-bottom: 1.2em;
+}
+
+/* ── HINT BOX — soft light pill, gradient-agnostic ── */
+.hint {
+  display: inline-block;
+  padding: 0.4em 0.95em;
+  background: rgba(228,234,242,0.5);
+  border: none;
+  border-radius: 4px;
+  color: #1a2838;
+  text-shadow: none;
   font-style: italic;
-  opacity: 0.85;
+  font-size: 0.88rem;
+  opacity: 1;
+}
+
+/* ══════════════════════════════════════════════════════════════
+   CHIP-STYLE CONTROLS — buttons, transport, language switch
+   Proto-specific bits (btn-transport, strophe-bars, play-group grid)
+   live in each prototype's inline <style>.
+   ══════════════════════════════════════════════════════════════ */
+
+.transport {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.8em;
+  margin-bottom: 1.5em;
+}
+
+.btn {
+  padding: 0.6em 1em;
+  border: 1px solid rgba(160,180,200,0.45);
+  border-radius: 6px;
+  background: rgba(80,100,125,0.65);
+  color: #fff;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 0.95rem;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+.btn:hover {
+  border-color: rgba(200,215,230,0.7);
+  background: rgba(105,125,150,0.78);
+}
+.btn:active {
+  transform: scale(0.98);
+}
+
+.btn-lang {
+  flex: 1;
+  /* Pre-reserve the 2 px active border so inactive↔active toggling
+     doesn't nudge the layout by 1 px. */
+  border-width: 2px;
+}
+.btn-lang.active {
+  border: 2px solid rgba(160,180,200,0.55);
+  background: linear-gradient(to right, rgba(40,55,75,0.8), rgba(25,40,60,0.8));
+  font-weight: 600;
+  letter-spacing: 0.08em;
+}
+.btn-lang.active:hover {
+  border-color: rgba(180,200,220,0.85);
+  background: linear-gradient(to right, rgba(55,70,90,0.9), rgba(40,55,75,0.9));
+}
+.btn-lang:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.btn-play {
+  flex: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5em;
+  padding: 0.55em 1.2em;
+  border: 2px solid rgba(160,180,200,0.55);
+  background: linear-gradient(to right, rgba(40,55,75,0.8), rgba(25,40,60,0.8));
+  font-weight: 600;
+  letter-spacing: 0.08em;
+}
+.btn-play:hover {
+  border-color: rgba(180,200,220,0.85);
+  background: linear-gradient(to right, rgba(55,70,90,0.9), rgba(40,55,75,0.9));
+}
+.btn-play:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+.btn-icon {
+  display: inline-flex;
+  align-items: center;
+  line-height: 0;
+}
+.btn-icon svg {
+  width: 1.1em;
+  height: 1.1em;
+  display: block;
 }
 
 /* ── TEXT TICKER ── */
@@ -306,20 +405,63 @@ input[type="range"]#crossfade::-moz-range-thumb {
   background: linear-gradient(to left, rgba(15,25,38,0.8), transparent);
 }
 
-/* ── BACK LINK ── */
+/* ── BACK LINK — chip-style, matches inactive transport buttons ── */
 .back-link {
+  display: flex;
+  justify-content: center;
+  gap: 0.8em;
   margin-top: 3em;
-  text-align: center;
 }
-
 .back-link a {
-  color: #3a4d66;
+  display: inline-block;
+  padding: 0.5em 1em;
+  border: 1px solid rgba(160,180,200,0.45);
+  border-radius: 6px;
+  background: rgba(80,100,125,0.65);
+  color: #fff;
+  font-size: 0.9rem;
+  letter-spacing: 0.04em;
   text-decoration: none;
-  font-size: 0.95rem;
-  border-bottom: 1px solid rgba(58,77,102,0.3);
-  transition: border-color 0.2s;
+  transition: all 0.2s ease;
+}
+.back-link a:hover {
+  background: rgba(105,125,150,0.78);
+  border-color: rgba(200,215,230,0.7);
 }
 
-.back-link a:hover {
-  border-color: rgba(58,77,102,0.7);
+/* ══════════════════════════════════════════════════════════════
+   MOBILE BASE (phones, < 768 px) — 2-row transport grid:
+   Row 1: Deutsch | English
+   Row 2: Play (full-width)
+   Proto-2 extends this with a third "skip" row in its inline style.
+   ══════════════════════════════════════════════════════════════ */
+@media (max-width: 768px) {
+  .speaker-left,
+  .speaker-right { font-size: 1.15rem; }
+
+  .vol-label { font-size: 1rem; }
+
+  .hint { font-size: 0.95rem; }
+
+  .time-row { font-size: 0.9rem; }
+
+  .transport {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+      "lang-de lang-en"
+      "play    play";
+    gap: 0.55em;
+  }
+  #btnDe { grid-area: lang-de; }
+  #btnEn { grid-area: lang-en; }
+  .btn-play {
+    grid-area: play;
+    padding: 0.9em 1.2em;
+    font-size: 1.1rem;
+  }
+  .btn-lang {
+    padding: 0.75em 0.5em;
+    font-size: 1rem;
+  }
 }
