@@ -98,6 +98,10 @@
 
   .tile-img {
     width: 100%;
+    /* height: auto is crucial when the <img> has HTML width/height
+       attributes — otherwise the literal "height=630" pin wins and
+       aspect-ratio can't compute the rendered height. */
+    height: auto;
     aspect-ratio: 16 / 9;
     object-fit: cover;
     display: block;
