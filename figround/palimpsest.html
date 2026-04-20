@@ -24,9 +24,10 @@
     min-height: 100vh;
     overflow-x: hidden;
     cursor: none;
-    /* Only vertical scroll + pinch zoom — horizontal drags don't pan
-       the page, so swiping sideways to reveal text feels stable. */
-    touch-action: pan-y pinch-zoom;
+    /* On touch devices, vertical scrolling happens exclusively via the
+       dedicated chevron buttons — drags on the body stay as reveal
+       gestures only. Pinch-zoom remains enabled for accessibility. */
+    touch-action: pinch-zoom;
   }
 
   /* ── CUSTOM CURSOR ──
@@ -367,6 +368,58 @@
       ) !important;
     }
   }
+
+  /* ── SCROLL ARROWS (touch only) ──
+     Dedicated chevrons handle vertical scrolling, since the rest of the
+     surface is reserved for the reveal gesture. Hidden by default —
+     shown only when there's content to scroll in that direction, and
+     only on touch-capable viewports (mobile + tablet). */
+  .scroll-arrow {
+    position: fixed;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 48px;
+    height: 48px;
+    display: none;           /* toggled to 'flex' on touch viewports only */
+    align-items: center;
+    justify-content: center;
+    background: rgba(30, 40, 55, 0.55);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: 24px;
+    color: rgba(245, 248, 252, 0.95);
+    cursor: pointer;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease, background 0.2s ease, transform 0.15s ease;
+    z-index: 1500;           /* above cursor-ring (1000) + layer-hidden (1001) */
+    padding: 0;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  .scroll-arrow.visible {
+    opacity: 0.85;
+    pointer-events: auto;
+  }
+
+  .scroll-arrow:active {
+    background: rgba(30, 40, 55, 0.8);
+    transform: translateX(-50%) scale(0.92);
+  }
+
+  .scroll-arrow svg {
+    width: 22px;
+    height: 22px;
+    display: block;
+  }
+
+  .scroll-arrow-up   { top: 12px; }
+  .scroll-arrow-down { bottom: 12px; }
+
+  /* Only show the buttons on touch-capable viewports.
+     Desktop scrolls with wheel/trackpad as usual. */
+  @media (max-width: 1200px) {
+    .scroll-arrow { display: flex; }
+  }
 </style>
 </head>
 <body class="mode-odysseus">
@@ -405,6 +458,18 @@
 </div>
 
 <div class="end-spacer"></div>
+
+<!-- Scroll arrows (touch devices only; hidden on desktop via media query) -->
+<button class="scroll-arrow scroll-arrow-up" id="scrollUp" aria-label="Scroll up">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+    <polyline points="6 15 12 9 18 15"></polyline>
+  </svg>
+</button>
+<button class="scroll-arrow scroll-arrow-down" id="scrollDown" aria-label="Scroll down">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+    <polyline points="6 9 12 15 18 9"></polyline>
+  </svg>
+</button>
 
 <script src="figround.js"></script>
 <script>
@@ -530,6 +595,11 @@ FIGROUND.ready.then(function (texts) {
   });
 
   // ── Mobile: touch ──
+  // Flag set while a scroll arrow is held — reveal handlers then bail,
+  // so the ring doesn't chase the button and the mask doesn't update
+  // from the button-press coordinates.
+  var scrollingViaArrow = false;
+
   if (isMobile) {
     // On small+medium viewports (mobile and tablet) the ring sits above
     // the finger — bottom edge of circle at the touch point — so the
@@ -546,6 +616,7 @@ FIGROUND.ready.then(function (texts) {
     window.addEventListener('orientationchange', recalcRingOffset);
 
     function onTouch(e) {
+      if (scrollingViaArrow) return;
       fadeHint();
       var tx = e.touches[0].clientX;
       var ty = e.touches[0].clientY - ringOffsetY;
@@ -565,6 +636,85 @@ FIGROUND.ready.then(function (texts) {
       cursorRing.classList.remove('touch-active');
     }, { passive: true });
   }
+
+  // ── Scroll arrows ──
+  // Hold-to-scroll at a constant rate. Buttons are hidden via CSS on
+  // desktop (>1200px), so this code only takes effect on touch viewports.
+  var scrollUp   = document.getElementById('scrollUp');
+  var scrollDown = document.getElementById('scrollDown');
+  var SCROLL_SPEED = 8; // px per animation frame (~480 px/s at 60fps)
+  var scrollRafId = null;
+
+  function scrollLoop(direction) {
+    window.scrollBy(0, direction * SCROLL_SPEED);
+    scrollRafId = requestAnimationFrame(function () { scrollLoop(direction); });
+  }
+
+  function startScroll(direction) {
+    fadeHint();
+    scrollingViaArrow = true;
+    // Hide the reveal ring while scrolling so it doesn't appear to jump.
+    cursorRing.classList.remove('touch-active');
+    if (scrollRafId !== null) cancelAnimationFrame(scrollRafId);
+    scrollLoop(direction);
+  }
+
+  function stopScroll() {
+    if (scrollRafId !== null) {
+      cancelAnimationFrame(scrollRafId);
+      scrollRafId = null;
+    }
+    scrollingViaArrow = false;
+  }
+
+  function bindScrollButton(btn, direction) {
+    // Touch: hold to scroll.
+    btn.addEventListener('touchstart', function (e) {
+      e.stopPropagation();
+      e.preventDefault(); // don't fall through to the reveal listener
+      startScroll(direction);
+    }, { passive: false });
+
+    ['touchend', 'touchcancel'].forEach(function (ev) {
+      btn.addEventListener(ev, function (e) {
+        e.stopPropagation();
+        stopScroll();
+      });
+    });
+
+    // Mouse fallback (for desktop testing in DevTools device emulation).
+    btn.addEventListener('mousedown', function (e) {
+      e.stopPropagation();
+      e.preventDefault();
+      startScroll(direction);
+    });
+    ['mouseup', 'mouseleave'].forEach(function (ev) {
+      btn.addEventListener(ev, stopScroll);
+    });
+  }
+
+  bindScrollButton(scrollUp,   -1);
+  bindScrollButton(scrollDown, +1);
+
+  function updateArrowVisibility() {
+    var y = window.scrollY || window.pageYOffset || 0;
+    var max = (document.documentElement.scrollHeight || document.body.scrollHeight) - window.innerHeight;
+
+    // Up: visible once we've scrolled a bit away from the top.
+    if (y > 40) scrollUp.classList.add('visible');
+    else        scrollUp.classList.remove('visible');
+
+    // Down: visible while there's meaningful content below the fold.
+    if (max > 60 && y < max - 20) scrollDown.classList.add('visible');
+    else                          scrollDown.classList.remove('visible');
+  }
+
+  window.addEventListener('scroll', updateArrowVisibility, { passive: true });
+  window.addEventListener('resize', updateArrowVisibility);
+  // Initial check after render + fitStage settle.
+  requestAnimationFrame(function () {
+    requestAnimationFrame(updateArrowVisibility);
+  });
 
   // ── Init ──
   render();
