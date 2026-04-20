@@ -204,7 +204,12 @@
   /* ── MOBILE ── */
   @media (max-width: 768px) {
     body { cursor: default; }
-    .cursor-ring { opacity: 0; }
+    /* Ring doubled and shifted in JS so bottom edge sits on the finger */
+    .cursor-ring {
+      width: 320px;
+      height: 320px;
+      opacity: 0;
+    }
     .cursor-ring.touch-active { opacity: 1; }
     /* text-layer mobile font-size is in figround.css */
     .subtitle-surface,
@@ -214,18 +219,36 @@
        for the revealed hidden text. Dark puddle under white Siren,
        light puddle under black Odysseus. */
     .mode-odysseus .cursor-ring {
-      border: 1px solid rgba(15,25,38,0.65);
+      border: 1px solid rgba(15,25,38,0.7);
       background: radial-gradient(circle,
-        rgba(15,25,38,0.6) 0%,
-        rgba(15,25,38,0.35) 60%,
+        rgba(15,25,38,0.75) 0%,
+        rgba(15,25,38,0.45) 55%,
         transparent 100%);
     }
     .mode-siren .cursor-ring {
-      border: 1px solid rgba(245,248,252,0.75);
+      border: 1px solid rgba(245,248,252,0.8);
       background: radial-gradient(circle,
-        rgba(245,248,252,0.65) 0%,
-        rgba(245,248,252,0.35) 60%,
+        rgba(245,248,252,0.8) 0%,
+        rgba(245,248,252,0.45) 55%,
         transparent 100%);
+    }
+
+    /* Stronger halo for hidden text on mobile, so the revealed voice
+       stays legible where its color fights the gradient side:
+       white Siren on the light left, black Odysseus on the dark right. */
+    .mode-odysseus .layer-hidden,
+    .mode-odysseus .subtitle-hidden {
+      text-shadow:
+        0 0 10px rgba(0,0,0,1),
+        0 0 22px rgba(0,0,0,0.8),
+        0 0 40px rgba(0,0,0,0.4);
+    }
+    .mode-siren .layer-hidden,
+    .mode-siren .subtitle-hidden {
+      text-shadow:
+        0 0 10px rgba(255,255,255,1),
+        0 0 22px rgba(255,255,255,0.8),
+        0 0 40px rgba(255,255,255,0.4);
     }
 
     /* Narrower gradient range per mode so text stays readable at edges */
@@ -256,7 +279,12 @@
      touch devices too. */
   @media (min-width: 769px) and (max-width: 1200px) {
     body { cursor: default; }
-    .cursor-ring { opacity: 0; }
+    /* Ring doubled and shifted in JS so bottom edge sits on the finger */
+    .cursor-ring {
+      width: 320px;
+      height: 320px;
+      opacity: 0;
+    }
     .cursor-ring.touch-active { opacity: 1; }
 
     .text-layer { font-size: 1.2rem !important; }
@@ -274,18 +302,34 @@
 
     /* Stronger cursor tint — same as mobile */
     .mode-odysseus .cursor-ring {
-      border: 1px solid rgba(15,25,38,0.65);
+      border: 1px solid rgba(15,25,38,0.7);
       background: radial-gradient(circle,
-        rgba(15,25,38,0.6) 0%,
-        rgba(15,25,38,0.35) 60%,
+        rgba(15,25,38,0.75) 0%,
+        rgba(15,25,38,0.45) 55%,
         transparent 100%);
     }
     .mode-siren .cursor-ring {
-      border: 1px solid rgba(245,248,252,0.75);
+      border: 1px solid rgba(245,248,252,0.8);
       background: radial-gradient(circle,
-        rgba(245,248,252,0.65) 0%,
-        rgba(245,248,252,0.35) 60%,
+        rgba(245,248,252,0.8) 0%,
+        rgba(245,248,252,0.45) 55%,
         transparent 100%);
+    }
+
+    /* Stronger halo for hidden text — same as mobile */
+    .mode-odysseus .layer-hidden,
+    .mode-odysseus .subtitle-hidden {
+      text-shadow:
+        0 0 10px rgba(0,0,0,1),
+        0 0 22px rgba(0,0,0,0.8),
+        0 0 40px rgba(0,0,0,0.4);
+    }
+    .mode-siren .layer-hidden,
+    .mode-siren .subtitle-hidden {
+      text-shadow:
+        0 0 10px rgba(255,255,255,1),
+        0 0 22px rgba(255,255,255,0.8),
+        0 0 40px rgba(255,255,255,0.4);
     }
 
     /* Per-mode gradient — same as mobile */
@@ -469,10 +513,24 @@ FIGROUND.ready.then(function (texts) {
 
   // ── Mobile: touch ──
   if (isMobile) {
+    // On small+medium viewports (mobile and tablet) the ring sits above
+    // the finger — bottom edge of circle at the touch point — so the
+    // reveal isn't covered by the hand. Offset = half the ring's rendered
+    // height, read from the live element so it stays in sync with the CSS.
+    var ringOffsetY = 0;
+    function recalcRingOffset() {
+      ringOffsetY = window.matchMedia('(max-width: 1200px)').matches
+        ? cursorRing.offsetHeight / 2
+        : 0;
+    }
+    recalcRingOffset();
+    window.addEventListener('resize', recalcRingOffset);
+    window.addEventListener('orientationchange', recalcRingOffset);
+
     function onTouch(e) {
       fadeHint();
       var tx = e.touches[0].clientX;
-      var ty = e.touches[0].clientY;
+      var ty = e.touches[0].clientY - ringOffsetY;
       cursorRing.style.left = tx + 'px';
       cursorRing.style.top = ty + 'px';
       cursorRing.classList.add('touch-active');
