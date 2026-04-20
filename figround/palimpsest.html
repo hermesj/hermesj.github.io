@@ -129,6 +129,9 @@
     position: absolute;
     top: -0.6em; /* half-line offset like the text layers */
     left: 4vw;
+    /* Above the cursor ring (z-index 1000) so the revealed subtitle
+       isn't dimmed by the puddle tint. */
+    z-index: 1001;
   }
 
   /* text-stage, text-layer, and end-spacer base are in figround.css */
@@ -149,6 +152,10 @@
     top: 0;
     left: 4vw;
     right: 4vw;
+    /* Above the cursor ring (z-index 1000): the puddle tint sits
+       between body gradient and surface text, not on top of the
+       revealed hidden text. */
+    z-index: 1001;
     /* mask is set dynamically via JS */
     -webkit-mask-image: radial-gradient(circle 0px at 0px 0px, black 0%, transparent 100%);
     mask-image: radial-gradient(circle 0px at 0px 0px, black 0%, transparent 100%);
