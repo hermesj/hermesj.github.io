@@ -44,28 +44,28 @@
     font-size: 0.7rem;
     letter-spacing: 0.06em;
     text-decoration: none;
-    color: rgba(120,140,160,0.8);
+    color: #0f1926;          /* Deutsch + English: darkest blue */
     cursor: pointer;
     padding: 0.2em 0.5em;
     transition: color 0.2s;
   }
 
   .lang-switch a:hover {
-    color: rgba(80,100,120,1);
+    color: #000;
   }
 
   .lang-switch a.active {
-    color: rgba(80,100,120,1);
-    border-bottom: 1px solid rgba(80,100,120,0.5);
+    color: #0f1926;
+    border-bottom: 1px solid rgba(15, 25, 38, 0.6);
   }
 
   .lang-switch .nav-link {
     margin-left: 2.5em;
-    color: rgba(160,170,180,0.5);
+    color: #e4eaf0;          /* Project Overview: lightest blue */
   }
 
   .lang-switch .nav-link:hover {
-    color: rgba(160,170,180,0.9);
+    color: #ffffff;
   }
 
   /* ── TITLE (override base padding) ── */
@@ -171,9 +171,10 @@
     .hint-icon { width: 90px; height: 90px; }
     .hint-arrow { font-size: 3.5rem; }
 
-    /* Subtitles larger on mobile */
+    /* Subtitles larger on mobile — but not so large they break
+       "Die Sirene. Ein Versuch." into awkward wraps on small phones. */
     .subtitle-ody,
-    .subtitle-sir { font-size: 1.5rem; }
+    .subtitle-sir { font-size: 1.25rem; }
 
     /* German title only: "Figur und" left, "Hintergrund" right on next line */
     .main-title.title-de {
