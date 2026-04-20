@@ -24,6 +24,9 @@
     min-height: 100vh;
     overflow-x: hidden;
     cursor: none;
+    /* Only vertical scroll + pinch zoom — horizontal drags don't pan
+       the page, so swiping sideways to reveal text feels stable. */
+    touch-action: pan-y pinch-zoom;
   }
 
   /* ── CUSTOM CURSOR ──
@@ -220,7 +223,7 @@
     body { cursor: default; }
     /* Ring doubled and shifted in JS so bottom edge sits on the finger */
     .cursor-ring {
-      --ring-size: 320px;
+      --ring-size: 260px;
       opacity: 0;
     }
     .cursor-ring.touch-active { opacity: 1; }
@@ -294,7 +297,7 @@
     body { cursor: default; }
     /* Ring doubled and shifted in JS so bottom edge sits on the finger */
     .cursor-ring {
-      --ring-size: 320px;
+      --ring-size: 260px;
       opacity: 0;
     }
     .cursor-ring.touch-active { opacity: 1; }
@@ -422,7 +425,10 @@ FIGROUND.ready.then(function (texts) {
   var isMobile = FIGROUND.isMobile;
 
   // Reveal radius
-  var REVEAL_RADIUS = isMobile ? 100 : 120;
+  // Reveal radius matches the visual ring radius on touch devices
+  // (ring diameter 260 → radius 130), so the illuminated text spans
+  // the full ring rather than a smaller inner circle.
+  var REVEAL_RADIUS = isMobile ? 130 : 120;
   var REVEAL_EDGE = 60; // soft edge in px
 
   // Track mouse/touch position relative to the stage
@@ -553,8 +559,10 @@ FIGROUND.ready.then(function (texts) {
     document.addEventListener('touchmove', onTouch, { passive: true });
 
     document.addEventListener('touchend', function () {
+      // Ring fades out, but the reveal mask stays put — the last
+      // revealed patch of text remains readable (at lower contrast,
+      // since the puddle is gone). Next touch overwrites the mask.
       cursorRing.classList.remove('touch-active');
-      clearMask();
     }, { passive: true });
   }
 
