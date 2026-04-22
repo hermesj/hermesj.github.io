@@ -212,6 +212,65 @@
     .subtitle-ody,
     .subtitle-sir { font-size: 1.3rem; }
   }
+
+  /* ── DESKTOP: Siren centered, Odysseus nested left-aligned inside ──
+     On wide viewports, lay out the voices asymmetrically:
+       · Siren:    68% wide, horizontally centered on the stage
+       · Odysseus: 42% wide, sharing Siren's left edge
+       → Siren extends ~26% past Odysseus on the right.
+     Both texts overlap where they share the left region; the focus/blur
+     cross-fade still governs which voice is legible.
+
+     Grid columns 16 / 42 / 26 / 16 give us those exact positions:
+       · Odysseus spans column 2 (42%).
+       · Siren    spans columns 2–3 (42% + 26% = 68%).
+       · Cols 1 and 4 are equal margins → Siren is centered. */
+  @media (min-width: 1201px) {
+    .text-stage,
+    .subtitle-row {
+      max-width: 1100px;
+      display: grid;
+      /* Identical column track on both grids — guarantees the
+         Siren subtitle's right edge lines up with the Siren text's
+         right edge, and Odysseus-subtitle left with Odysseus-text left. */
+      grid-template-columns: 16fr 42fr 26fr 16fr;
+    }
+
+    .layer-odysseus,
+    .layer-siren {
+      grid-row: 1;
+    }
+
+    .layer-odysseus {
+      grid-column: 2;
+      /* position: relative stays from base */
+    }
+
+    .layer-siren {
+      grid-column: 2 / span 2;
+      /* Drop the mobile/tablet absolute positioning so the grid
+         takes over sizing + placement. */
+      position: relative;
+      top: auto;
+      left: auto;
+      right: auto;
+    }
+
+    /* Subtitles live in the same grid cells as their voices */
+    .subtitle-ody {
+      grid-column: 2;
+      grid-row: 1;
+    }
+    .subtitle-sir {
+      grid-column: 3;
+      grid-row: 1;
+      text-align: right;
+      /* Override base absolute positioning so the grid places it */
+      position: relative;
+      top: auto;
+      right: auto;
+    }
+  }
 </style>
 </head>
 <body>

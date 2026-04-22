@@ -72,6 +72,40 @@
     font-style: italic;
   }
 
+  /* ── VIDEO ── */
+  .video-hero {
+    margin-bottom: 4vh;
+  }
+
+  .video-title {
+    text-align: center;
+    font-weight: 300;
+    font-size: clamp(0.85rem, 1.1vw, 1rem);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #5a4535;
+    margin: 0 0 0.8em 0;
+  }
+
+  .video-embed {
+    position: relative;
+    aspect-ratio: 16 / 9;
+    max-width: 435px;
+    margin: 0 auto;
+    border-radius: 6px;
+    overflow: hidden;
+    box-shadow: 0 2px 12px rgba(60,40,20,0.15);
+    background: rgba(0,0,0,0.06);
+  }
+
+  .video-embed iframe {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+  }
+
   /* ── TILE GRID ── */
   .tiles {
     display: grid;
@@ -228,6 +262,19 @@
 
   </div>
 
+  <div class="video-hero">
+    <h2 class="video-title" id="videoTitle">Watch the intro</h2>
+    <div class="video-embed">
+      <iframe
+        src="https://www.youtube-nocookie.com/embed/FGkI4Qlr-_4"
+        title="Figure and Ground — Intro"
+        loading="lazy"
+        allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        referrerpolicy="strict-origin-when-cross-origin"
+        allowfullscreen></iframe>
+    </div>
+  </div>
+
   <div class="footer-links">
     <div class="footer-row" id="footerRow">
       <a href="https://foclen.substack.com/p/figure-and-ground" id="linkTextGenesis" data-en="Text Genesis (foclen.substack.com)" data-de="Textgenese (spinfocl.substack.com)">Text Genesis</a>
@@ -246,6 +293,7 @@ var i18n = {
   de: {
     title: 'Figur und Hintergrund',
     tagline: 'Ein Mythos. Zwei Perspektiven. Vier Zugänge.',
+    videoTitle: 'Zur Einführung',
     textgenesisHref: 'https://spinfocl.substack.com/p/figur-und-hintergrund',
     projgenesisHref: 'https://texperimentales.hypotheses.org/6379',
     posterHref: 'poster.html?lang=de',
@@ -253,6 +301,7 @@ var i18n = {
   en: {
     title: 'Figure and Ground',
     tagline: 'One myth. Two perspectives. Four ways in.',
+    videoTitle: 'Watch the intro',
     textgenesisHref: 'https://foclen.substack.com/p/figure-and-ground',
     projgenesisHref: 'doc/projectgenesis.html',
     posterHref: 'poster.html?lang=en',
@@ -266,6 +315,7 @@ function switchLang(lang) {
   document.documentElement.lang = lang;
   document.getElementById('title').textContent = data.title;
   document.getElementById('tagline').textContent = data.tagline;
+  document.getElementById('videoTitle').textContent = data.videoTitle;
   document.getElementById('linkTextGenesis').href = data.textgenesisHref;
   document.getElementById('linkProjGenesis').href = data.projgenesisHref;
   document.getElementById('tilePoster').href = data.posterHref;
