@@ -49,25 +49,47 @@
     transition: opacity 0.3s, border-color 0.4s ease;
   }
 
-  /* Odysseus on surface → revealing Siren (light on dark) → dark cursor */
+  /* Odysseus on surface → revealing Siren (light on dark) → dark cursor.
+     Puddle is strong enough that the circular "flashlight" shape remains
+     visible even where the reveal circle is clipped by the text column
+     edge — e.g. in vertical-aligned mode with the narrower Odysseus
+     column, or anywhere near the stage margins. */
   .mode-odysseus .cursor-ring {
-    border: 1px solid rgba(15,25,38,0.4);
-    background: radial-gradient(circle, rgba(15,25,38,0.35) 0%, rgba(15,25,38,0.2) 60%, transparent 100%);
+    border: 1px solid rgba(15,25,38,0.55);
+    background: radial-gradient(circle,
+      rgba(15,25,38,0.55) 0%,
+      rgba(15,25,38,0.35) 55%,
+      rgba(15,25,38,0.12) 85%,
+      transparent 100%);
   }
 
-  /* Siren on surface → revealing Odysseus (dark on light) → light cursor */
+  /* Siren on surface → revealing Odysseus (dark on light) → light cursor. */
   .mode-siren .cursor-ring {
-    border: 1px solid rgba(230,235,240,0.5);
-    background: radial-gradient(circle, rgba(245,248,252,0.45) 0%, rgba(245,248,252,0.25) 60%, transparent 100%);
+    border: 1px solid rgba(230,235,240,0.65);
+    background: radial-gradient(circle,
+      rgba(245,248,252,0.55) 0%,
+      rgba(245,248,252,0.35) 55%,
+      rgba(245,248,252,0.12) 85%,
+      transparent 100%);
   }
 
   /* ── CONTROLS ── */
   .controls {
-    text-align: center;
     padding: 1.5vh 0 0.5vh 0;
     cursor: default;
     position: relative;
     z-index: 10;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    column-gap: 2.2em;
+    row-gap: 0.2em;
+  }
+
+  .switch-group {
+    display: inline-flex;
+    align-items: center;
   }
 
   .controls a, .controls button {
@@ -82,8 +104,11 @@
     border: none;
   }
 
-  .controls .nav-link { margin-left: 2.5em; }
-  .swap-btn           { margin-right: 2.5em; }
+  /* Alignment toggle: only meaningful on viewports where the
+     asymmetric (vertical-aligned) layout actually kicks in. */
+  @media (max-width: 800px) {
+    .switch-group.align-group { display: none; }
+  }
 
   /* Link colour tracks the active mode:
      Odysseus surface → light gradient → darkest blue text
@@ -128,7 +153,11 @@
     line-height: 1.8;
   }
 
-  /* subtitle-row base is in figround.css */
+  /* subtitle-row base is in figround.css. Palimpsest centers both
+     subtitles (surface + hidden) regardless of mode or layout. */
+  .subtitle-row {
+    text-align: center;
+  }
 
   .subtitle-surface,
   .subtitle-hidden {
@@ -143,6 +172,7 @@
     position: absolute;
     top: -0.6em; /* half-line offset like the text layers */
     left: 4vw;
+    right: 4vw;   /* spans the full row so text-align:center works */
     /* Above the cursor ring (z-index 1000) so the revealed subtitle
        isn't dimmed by the puddle tint. */
     z-index: 1001;
@@ -178,6 +208,30 @@
     transition: none;
   }
 
+  /* ── VERTICAL ALIGNED MODE ──
+     Only Odysseus narrows in vertical mode: a 55%-wide centered column.
+     The 55% is tuned so Odysseus runs roughly the same number of lines
+     as the Siren (which keeps the full stage width) — i.e. both voices
+     end at about the same vertical position.
+     Siren extends symmetrically past Odysseus on both sides.
+     The .voice-odysseus / .voice-siren class is set in render() on both
+     layers and flips on swap. Only active on viewports >800px. */
+  @media (min-width: 801px) {
+    /* Surface layer (position:relative) — center via margin auto. */
+    body.layout-vertical .layer-surface.voice-odysseus {
+      max-width: 55%;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    /* Hidden layer (position:absolute) — center via left/right offsets.
+       For Odysseus 55%, each side gets (100 - 55) / 2 = 22.5%. */
+    body.layout-vertical .layer-hidden.voice-odysseus {
+      left: 22.5%;
+      right: 22.5%;
+    }
+  }
+
   /* ── MODE: ODYSSEUS ON TOP ── */
   .mode-odysseus .layer-surface,
   .mode-odysseus .subtitle-surface {
@@ -197,9 +251,6 @@
       0 0 18px rgba(0,0,0,0.5);
   }
 
-  .mode-odysseus .subtitle-surface { text-align: left; }
-  .mode-odysseus .subtitle-hidden { text-align: left; }
-
   /* ── MODE: SIREN ON TOP ── */
   .mode-siren .layer-surface,
   .mode-siren .subtitle-surface {
@@ -218,9 +269,6 @@
       0 0 8px rgba(255,255,255,0.9),
       0 0 18px rgba(255,255,255,0.5);
   }
-
-  .mode-siren .subtitle-surface { text-align: left; }
-  .mode-siren .subtitle-hidden { text-align: left; }
 
   /* ── MOBILE ── */
   @media (max-width: 768px) {
@@ -327,7 +375,7 @@
       padding-right: 2vw;
     }
     .layer-hidden { left: 2vw; right: 2vw; }
-    .subtitle-hidden { left: 2vw; }
+    .subtitle-hidden { left: 2vw; right: 2vw; }
 
     .subtitle-surface,
     .subtitle-hidden { font-size: 1.3rem; }
@@ -451,10 +499,20 @@
 
 <!-- Controls -->
 <div class="controls">
-  <button class="swap-btn" id="swapBtn" onclick="swapLayers()" title="Swap surface and hidden text">&#x21C5; Swap</button>
-  <a id="btnDe" onclick="switchLang('de')">Deutsch</a>
-  <a id="btnEn" class="active" onclick="switchLang('en')">English</a>
-  <a href="index.html" class="nav-link">Project Overview</a>
+  <span class="switch-group">
+    <a id="btnDe" onclick="switchLang('de')">Deutsch</a>
+    <a id="btnEn" class="active" onclick="switchLang('en')">English</a>
+  </span>
+  <span class="switch-group">
+    <a href="index.html" class="nav-link" data-en="Project Overview" data-de="Projektübersicht">Project Overview</a>
+  </span>
+  <span class="switch-group">
+    <button class="swap-btn" id="swapBtn" onclick="swapLayers()" title="Swap surface and hidden text" data-en="&#x21C5; Swap" data-de="&#x21C5; Tauschen">&#x21C5; Swap</button>
+  </span>
+  <span class="switch-group align-group">
+    <a id="btnAlignH" class="active" onclick="switchAlign('horizontal')" data-en="Horizontal aligned" data-de="Horizontal ausgerichtet">Horizontal aligned</a>
+    <a id="btnAlignV" onclick="switchAlign('vertical')" data-en="Vertical aligned" data-de="Vertikal ausgerichtet">Vertical aligned</a>
+  </span>
 </div>
 
 <div class="main-title">
@@ -538,12 +596,31 @@ FIGROUND.ready.then(function (texts) {
     layerSurface.innerHTML = FIGROUND.renderParagraphs(surface.paragraphs);
     layerHidden.innerHTML = FIGROUND.renderParagraphs(hidden.paragraphs);
 
+    // Voice classes drive the vertical-aligned layout (Odysseus narrow,
+    // Siren wider). Classes flip whenever swap toggles surfaceVoice.
+    layerSurface.classList.toggle('voice-odysseus', surfaceVoice === 'odysseus');
+    layerSurface.classList.toggle('voice-siren',    surfaceVoice === 'siren');
+    layerHidden.classList.toggle('voice-odysseus',  surfaceVoice === 'siren');
+    layerHidden.classList.toggle('voice-siren',     surfaceVoice === 'odysseus');
+
     document.getElementById('btnDe').className = (currentLang === 'de') ? 'active' : '';
     document.getElementById('btnEn').className = (currentLang === 'en') ? 'active' : '';
 
-    document.body.className = surfaceVoice === 'odysseus' ? 'mode-odysseus' : 'mode-siren';
+    // Preserve mode classes on body, but reapply fresh in case alignment
+    // classes were added separately. layout-horizontal / layout-vertical
+    // is managed by switchAlign() and shouldn't be clobbered here, so we
+    // only touch the mode-* classes.
+    document.body.classList.toggle('mode-odysseus', surfaceVoice === 'odysseus');
+    document.body.classList.toggle('mode-siren',    surfaceVoice === 'siren');
 
     document.getElementById('hintText').textContent = i18nHint[currentLang];
+
+    // Localize elements that carry data-en / data-de attributes
+    // (project-overview link, swap button, alignment toggle labels).
+    var els = document.querySelectorAll('[data-' + currentLang + ']');
+    for (var i = 0; i < els.length; i++) {
+      els[i].textContent = els[i].getAttribute('data-' + currentLang);
+    }
 
     // Fit stage height
     requestAnimationFrame(fitStage);
@@ -565,6 +642,22 @@ FIGROUND.ready.then(function (texts) {
   window.swapLayers = function () {
     surfaceVoice = surfaceVoice === 'odysseus' ? 'siren' : 'odysseus';
     render();
+  };
+
+  // ── Alignment mode switching ──
+  // horizontal = equal-width columns (both voices span the full stage)
+  // vertical   = asymmetric: Odysseus narrower, Siren wider, both centered,
+  //              so Siren extends past Odysseus on both sides
+  //              (only renders on viewports >= 801px; toggle is hidden below)
+  window.switchAlign = function (mode) {
+    document.body.classList.toggle('layout-vertical',   mode === 'vertical');
+    document.body.classList.toggle('layout-horizontal', mode === 'horizontal');
+    document.getElementById('btnAlignH').className =
+      (mode === 'horizontal') ? 'active' : '';
+    document.getElementById('btnAlignV').className =
+      (mode === 'vertical') ? 'active' : '';
+    // Layout change affects layer heights → refit stage
+    requestAnimationFrame(fitStage);
   };
 
   // ── Reveal mask ──
@@ -736,6 +829,7 @@ FIGROUND.ready.then(function (texts) {
 
   // ── Init ──
   render();
+  switchAlign('horizontal');
 });
 </script>
 

@@ -35,16 +35,26 @@
 
   /* ── LANG SWITCH ── */
   .lang-switch {
-    text-align: center;
     padding: 1.5vh 0 0.5vh 0;
     cursor: default;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    column-gap: 2.2em;
+    row-gap: 0.2em;
+  }
+
+  .switch-group {
+    display: inline-flex;
+    align-items: center;
   }
 
   .lang-switch a {
     font-size: 0.7rem;
     letter-spacing: 0.06em;
     text-decoration: none;
-    color: #0f1926;          /* Deutsch + English: darkest blue */
+    color: #0f1926;          /* Toggles: darkest blue */
     cursor: pointer;
     padding: 0.2em 0.5em;
     transition: color 0.2s;
@@ -60,12 +70,30 @@
   }
 
   .lang-switch .nav-link {
-    margin-left: 2.5em;
     color: #e4eaf0;          /* Project Overview: lightest blue */
   }
 
   .lang-switch .nav-link:hover {
     color: #ffffff;
+  }
+
+  /* Alignment toggle: only meaningful on viewports where the
+     asymmetric (vertical-aligned) grid actually kicks in. */
+  @media (max-width: 800px) {
+    .switch-group.align-group { display: none; }
+  }
+
+  /* Alignment toggle uses the lighter nav-link palette to match
+     Project Overview and sit visually apart from the language pair. */
+  .lang-switch .align-group a {
+    color: #e4eaf0;
+  }
+  .lang-switch .align-group a:hover {
+    color: #ffffff;
+  }
+  .lang-switch .align-group a.active {
+    color: #e4eaf0;
+    border-bottom: 1px solid rgba(228, 234, 240, 0.6);
   }
 
   /* ── TITLE (override base padding) ── */
@@ -213,8 +241,9 @@
     .subtitle-sir { font-size: 1.3rem; }
   }
 
-  /* ── DESKTOP: Siren centered, Odysseus nested left-aligned inside ──
-     On wide viewports, lay out the voices asymmetrically:
+  /* ── DESKTOP — VERTICAL ALIGNED MODE ──
+     Opt-in layout where the two voices end at the same vertical line
+     rather than sharing equal column width.
        · Siren:    68% wide, horizontally centered on the stage
        · Odysseus: 42% wide, sharing Siren's left edge
        → Siren extends ~26% past Odysseus on the right.
@@ -224,10 +253,13 @@
      Grid columns 16 / 42 / 26 / 16 give us those exact positions:
        · Odysseus spans column 2 (42%).
        · Siren    spans columns 2–3 (42% + 26% = 68%).
-       · Cols 1 and 4 are equal margins → Siren is centered. */
-  @media (min-width: 1201px) {
-    .text-stage,
-    .subtitle-row {
+       · Cols 1 and 4 are equal margins → Siren is centered.
+
+     Activated only on viewports wide enough (>800px) AND only when the
+     user selects "vertical aligned" via the toggle (body.layout-vertical). */
+  @media (min-width: 801px) {
+    body.layout-vertical .text-stage,
+    body.layout-vertical .subtitle-row {
       max-width: 1100px;
       display: grid;
       /* Identical column track on both grids — guarantees the
@@ -236,17 +268,17 @@
       grid-template-columns: 16fr 42fr 26fr 16fr;
     }
 
-    .layer-odysseus,
-    .layer-siren {
+    body.layout-vertical .layer-odysseus,
+    body.layout-vertical .layer-siren {
       grid-row: 1;
     }
 
-    .layer-odysseus {
+    body.layout-vertical .layer-odysseus {
       grid-column: 2;
       /* position: relative stays from base */
     }
 
-    .layer-siren {
+    body.layout-vertical .layer-siren {
       grid-column: 2 / span 2;
       /* Drop the mobile/tablet absolute positioning so the grid
          takes over sizing + placement. */
@@ -257,11 +289,11 @@
     }
 
     /* Subtitles live in the same grid cells as their voices */
-    .subtitle-ody {
+    body.layout-vertical .subtitle-ody {
       grid-column: 2;
       grid-row: 1;
     }
-    .subtitle-sir {
+    body.layout-vertical .subtitle-sir {
       grid-column: 3;
       grid-row: 1;
       text-align: right;
@@ -292,9 +324,17 @@
 </div>
 
 <div class="lang-switch" id="langSwitch">
-  <a id="btnDe" onclick="switchLang('de')">Deutsch</a>
-  <a id="btnEn" class="active" onclick="switchLang('en')">English</a>
-  <a href="index.html" class="nav-link">Project Overview</a>
+  <span class="switch-group">
+    <a id="btnDe" onclick="switchLang('de')">Deutsch</a>
+    <a id="btnEn" class="active" onclick="switchLang('en')">English</a>
+  </span>
+  <span class="switch-group">
+    <a href="index.html" class="nav-link" data-en="Project Overview" data-de="Projektübersicht">Project Overview</a>
+  </span>
+  <span class="switch-group align-group">
+    <a id="btnAlignH" class="active" onclick="switchAlign('horizontal')" data-en="Horizontal aligned" data-de="Horizontal ausgerichtet">Horizontal aligned</a>
+    <a id="btnAlignV" onclick="switchAlign('vertical')" data-en="Vertical aligned" data-de="Vertikal ausgerichtet">Vertical aligned</a>
+  </span>
 </div>
 
 <div class="main-title">
@@ -363,10 +403,31 @@ FIGROUND.ready.then(function (texts) {
     layerSir.innerHTML = FIGROUND.renderParagraphs(data.siren.paragraphs);
     document.getElementById('btnDe').className = (lang === 'de') ? 'active' : '';
     document.getElementById('btnEn').className = (lang === 'en') ? 'active' : '';
+    // Localize labels that use data-en / data-de attributes
+    var els = document.querySelectorAll('[data-' + lang + ']');
+    for (var i = 0; i < els.length; i++) {
+      // Preserve .active class on alignment buttons; only swap textContent.
+      els[i].textContent = els[i].getAttribute('data-' + lang);
+    }
     // German title wrapping (mobile only, handled via CSS)
     var titleEl = document.querySelector('.main-title');
     titleEl.classList.toggle('title-de', lang === 'de');
     // Refit stage height after content change
+    requestAnimationFrame(fitStage);
+  };
+
+  // ── Alignment mode switching ──
+  // horizontal = equal-width columns (default, both voices same width)
+  // vertical   = asymmetric grid where voices end at the same bottom line
+  //              (only renders on viewports >= 1201px; toggle is hidden below)
+  window.switchAlign = function (mode) {
+    document.body.classList.toggle('layout-vertical', mode === 'vertical');
+    document.body.classList.toggle('layout-horizontal', mode === 'horizontal');
+    document.getElementById('btnAlignH').className =
+      (mode === 'horizontal') ? 'active' : '';
+    document.getElementById('btnAlignV').className =
+      (mode === 'vertical') ? 'active' : '';
+    // Layout change affects layer heights → refit stage
     requestAnimationFrame(fitStage);
   };
 
@@ -506,6 +567,7 @@ FIGROUND.ready.then(function (texts) {
 
   // ── Init: detect language from URL or browser ──
   switchLang(FIGROUND.detectLang());
+  switchAlign('horizontal');
   applyFocus(0.5);
 });
 </script>
