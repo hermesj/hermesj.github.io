@@ -30,6 +30,35 @@
     touch-action: pinch-zoom;
   }
 
+  /* ── REVEAL WASH ──
+     Full-viewport tint that's revealed by the SAME circular mask the
+     hidden-text layer uses. Inside the text column it just strengthens
+     the "lit" feel; past the column edges — where there is no hidden
+     text for the mask to expose — the wash gives the illumination cone
+     somewhere to land, so the circle stays visibly round instead of
+     being cropped by the text boundary.
+     z-index sits between body and the cursor-ring puddle (1000); the
+     ring tint layers on top of the wash, the revealed text on top of
+     everything. */
+  .reveal-wash {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 999;
+    -webkit-mask-image: radial-gradient(circle 0px at 0px 0px, black 0%, transparent 100%);
+    mask-image: radial-gradient(circle 0px at 0px 0px, black 0%, transparent 100%);
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    transition: background 0.3s ease;
+  }
+
+  /* Tint is subtle — just enough to carry the cone past the text
+     boundary. The softness comes from the JS mask below, which uses
+     a continuous radial fade (no solid inner disc) so the wash reads
+     as a gradient, not a bordered circle. */
+  .mode-odysseus .reveal-wash { background: rgba(15,25,38,0.10); }
+  .mode-siren    .reveal-wash { background: rgba(245,248,252,0.10); }
+
   /* ── CUSTOM CURSOR ──
      Sized via --ring-size so media queries only need to bump the var.
      Centered via negative margins rather than transform: translate()
@@ -37,7 +66,14 @@
      iOS Safari and some Chrome Android builds, which then stacks on
      top of the hidden text regardless of z-index. */
   .cursor-ring {
-    --ring-size: 160px;
+    /* Sized to the reveal radius (REVEAL_RADIUS = 120 in JS) * 2 so the
+       puddle is always exactly as wide as the revealed hidden-text circle.
+       If the ring were smaller (e.g. 160 we had before), the visible zone
+       would look larger inside the text column — where revealed text
+       extends the illusion out to the reveal radius — and smaller past
+       the column edge, where only the narrower puddle remains. That
+       mismatch reads as the cone "going flat" at the text boundary. */
+    --ring-size: 240px;
     position: fixed;
     width: var(--ring-size);
     height: var(--ring-size);
@@ -49,27 +85,27 @@
     transition: opacity 0.3s, border-color 0.4s ease;
   }
 
-  /* Odysseus on surface → revealing Siren (light on dark) → dark cursor.
-     Puddle is strong enough that the circular "flashlight" shape remains
-     visible even where the reveal circle is clipped by the text column
-     edge — e.g. in vertical-aligned mode with the narrower Odysseus
-     column, or anywhere near the stage margins. */
+  /* Desktop "flashlight cone" — no border, just a radial fade so the
+     cursor looks like a soft pool of light rather than a bordered
+     disc. Touch modes below re-add a crisper edge since a finger-sized
+     ring needs a more defined silhouette. */
   .mode-odysseus .cursor-ring {
-    border: 1px solid rgba(15,25,38,0.55);
+    border: none;
     background: radial-gradient(circle,
-      rgba(15,25,38,0.55) 0%,
-      rgba(15,25,38,0.35) 55%,
-      rgba(15,25,38,0.12) 85%,
+      rgba(15,25,38,0.45) 0%,
+      rgba(15,25,38,0.30) 45%,
+      rgba(15,25,38,0.15) 75%,
+      rgba(15,25,38,0.06) 92%,
       transparent 100%);
   }
 
-  /* Siren on surface → revealing Odysseus (dark on light) → light cursor. */
   .mode-siren .cursor-ring {
-    border: 1px solid rgba(230,235,240,0.65);
+    border: none;
     background: radial-gradient(circle,
-      rgba(245,248,252,0.55) 0%,
-      rgba(245,248,252,0.35) 55%,
-      rgba(245,248,252,0.12) 85%,
+      rgba(245,248,252,0.45) 0%,
+      rgba(245,248,252,0.30) 45%,
+      rgba(245,248,252,0.15) 75%,
+      rgba(245,248,252,0.06) 92%,
       transparent 100%);
   }
 
@@ -270,8 +306,11 @@
       0 0 18px rgba(255,255,255,0.5);
   }
 
-  /* ── MOBILE ── */
-  @media (max-width: 768px) {
+  /* ── MOBILE ──
+     Gated on pointer:coarse so a desktop user with a narrow browser
+     window doesn't accidentally get the touch styles (hard circle,
+     scroll arrows, per-mode gradient). Phones always match. */
+  @media (max-width: 768px) and (pointer: coarse) {
     body { cursor: default; }
     /* Ring doubled and shifted in JS so bottom edge sits on the finger */
     .cursor-ring {
@@ -357,8 +396,13 @@
      Mirrors the tablet treatment of figure-ground-focus.html:
      bigger text, slimmer margins, wider stage — plus the mobile
      per-mode gradient and stronger cursor tint, since iPads are
-     touch devices too. */
-  @media (min-width: 769px) and (max-width: 1200px) {
+     touch devices too.
+     Gated on pointer:coarse so the block only matches on actual
+     touch devices. Without that gate, a desktop laptop with a
+     narrow window (<=1200 CSS-px, which happens on many MacBooks
+     at 100% zoom) would incorrectly get the hard-circle tablet
+     mode instead of the soft flashlight cone. */
+  @media (min-width: 769px) and (max-width: 1200px) and (pointer: coarse) {
     body { cursor: default; }
     /* Ring doubled and shifted in JS so bottom edge sits on the finger */
     .cursor-ring {
@@ -480,14 +524,18 @@
   .scroll-arrow-down { bottom: 12px; }
 
   /* Only show the buttons on touch-capable viewports.
-     Desktop scrolls with wheel/trackpad as usual. */
-  @media (max-width: 1200px) {
+     Desktop scrolls with wheel/trackpad as usual — gated on
+     pointer:coarse so a narrow-window desktop doesn't get them. */
+  @media (max-width: 1200px) and (pointer: coarse) {
     .scroll-arrow { display: flex; }
   }
 </style>
 </head>
 <body class="mode-odysseus">
 
+<!-- Full-viewport wash — gives the reveal cone something to land on
+     past the text column edges. See .reveal-wash CSS above. -->
+<div class="reveal-wash" id="revealWash"></div>
 <div class="cursor-ring" id="cursorRing"></div>
 
 <!-- Hint overlay -->
@@ -553,6 +601,7 @@ FIGROUND.ready.then(function (texts) {
   var subSurface = document.getElementById('subSurface');
   var subHidden = document.getElementById('subHidden');
   var cursorRing = document.getElementById('cursorRing');
+  var revealWash = document.getElementById('revealWash');
   var hint = document.getElementById('hint');
   var stage = document.getElementById('stage');
   var fadeHint = FIGROUND.createHintFader(hint);
@@ -687,6 +736,18 @@ FIGROUND.ready.then(function (texts) {
 
     subHidden.style.webkitMaskImage = subMask;
     subHidden.style.maskImage = subMask;
+
+    // Wash reveal — positioned in viewport coords since .reveal-wash is
+    // position:fixed (not tied to the text column like layer-hidden).
+    // Continuous fade (black → transparent) rather than the solid-inner
+    // mask used for layer-hidden: we want the wash to read as a soft
+    // gradient cone, not a defined disc. The text-reveal mask keeps
+    // its solid inner so text stays fully readable.
+    var washMask = 'radial-gradient(circle ' + REVEAL_RADIUS + 'px at ' +
+      clientX + 'px ' + clientY + 'px, black 0%, transparent 100%)';
+
+    revealWash.style.webkitMaskImage = washMask;
+    revealWash.style.maskImage = washMask;
   }
 
   function clearMask() {
@@ -695,6 +756,8 @@ FIGROUND.ready.then(function (texts) {
     layerHidden.style.maskImage = empty;
     subHidden.style.webkitMaskImage = empty;
     subHidden.style.maskImage = empty;
+    revealWash.style.webkitMaskImage = empty;
+    revealWash.style.maskImage = empty;
   }
 
   // ── Desktop: mouse ──
@@ -718,7 +781,12 @@ FIGROUND.ready.then(function (texts) {
     // height, read from the live element so it stays in sync with the CSS.
     var ringOffsetY = 0;
     function recalcRingOffset() {
-      ringOffsetY = window.matchMedia('(max-width: 1200px)').matches
+      // Shift the ring up on touch viewports so the bottom edge sits
+      // on the fingertip. Gated on pointer:coarse (matches the CSS
+      // media query) so it doesn't misfire on a narrow desktop
+      // window where FIGROUND.isMobile might still be true
+      // (e.g. touch-capable laptop used with a mouse).
+      ringOffsetY = window.matchMedia('(max-width: 1200px) and (pointer: coarse)').matches
         ? cursorRing.offsetHeight / 2
         : 0;
     }
