@@ -23,7 +23,7 @@
     text-shadow: 0 0 8px rgba(0,0,0,0.6);
   }
 
-  /* ── TRANSPORT LAYOUT (proto-2 has a prev/stop/next group beside Play).
+  /* ── TRANSPORT LAYOUT — prev sits left of Play, next on the right.
      Lang buttons used to flank the play-group — they live in the shared
      header now, so the row centers the single play-group. */
   .play-group {
@@ -32,11 +32,6 @@
     gap: 0.5em;
     flex: 1;
     max-width: 480px;
-  }
-
-  .transport-secondary {
-    display: flex;
-    gap: 0.4em;
   }
 
   .btn-transport {
@@ -135,24 +130,17 @@
   .ticker-text-siren    { color: #fff; }
 
   /* ══════════════════════════════════════════════════════════════
-     MOBILE — Play full-width, prev/stop/next on a second row.
+     MOBILE — keep prev / Play / next on one row, Play stretches.
      ══════════════════════════════════════════════════════════════ */
   @media (max-width: 768px) {
     .play-group {
-      flex-direction: column;
       width: 100%;
       max-width: none;
-      gap: 0.55em;
-    }
-    .btn-play { width: 100%; }
-    .transport-secondary {
-      width: 100%;
-      display: flex;
       gap: 0.4em;
     }
+    .btn-play { flex: 1; }
     .btn-transport {
-      flex: 1;
-      padding: 0.75em 0.5em;
+      padding: 0.75em 0.7em;
     }
   }
 </style>
@@ -185,24 +173,19 @@
     <span class="vol-label vol-right" id="volRight">100 %</span>
   </div>
 
-  <!-- Transport (lang buttons live in the shared header now) -->
+  <!-- Transport — prev / Play / next on a single row. -->
   <div class="transport">
     <div class="play-group">
+      <button class="btn-transport" onclick="jumpPrev()" title="Vorherige Strophe" aria-label="Previous">
+        <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round"><line x1="5" y1="5" x2="5" y2="15"/><path d="M16 5 L7.5 10 L16 15 Z"/></svg>
+      </button>
       <button class="btn btn-play" id="btnPlay" onclick="togglePlay()" disabled>
         <span class="btn-icon" id="btnPlayIcon" aria-hidden="true"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round"><path d="M6 4.5 L16 10 L6 15.5 Z"/></svg></span>
         <span class="btn-label" id="btnPlayLabel">Play</span>
       </button>
-      <div class="transport-secondary">
-        <button class="btn-transport" onclick="jumpPrev()" title="Vorherige Strophe" aria-label="Previous">
-          <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round"><line x1="5" y1="5" x2="5" y2="15"/><path d="M16 5 L7.5 10 L16 15 Z"/></svg>
-        </button>
-        <button class="btn-transport" onclick="stopPlayback()" title="Stop" aria-label="Stop">
-          <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"><rect x="5.5" y="5.5" width="9" height="9"/></svg>
-        </button>
-        <button class="btn-transport" onclick="jumpNext()" title="Nächste Strophe" aria-label="Next">
-          <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round"><path d="M4 5 L12.5 10 L4 15 Z"/><line x1="15" y1="5" x2="15" y2="15"/></svg>
-        </button>
-      </div>
+      <button class="btn-transport" onclick="jumpNext()" title="Nächste Strophe" aria-label="Next">
+        <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round"><path d="M4 5 L12.5 10 L4 15 Z"/><line x1="15" y1="5" x2="15" y2="15"/></svg>
+      </button>
     </div>
   </div>
 
@@ -248,11 +231,7 @@
 <script>
 // Inject shared header / footer / explanation synchronously so the
 // btnDe / btnEn IDs exist by the time switchLang runs in init().
-// Simple Mode lives as an extra link in the header.
 FIGROUND.injectHeader({
-  extraLinks: [
-    { href: 'audio-prototype.html', en: 'Simple Mode', de: 'Einfacher Modus' }
-  ],
   explanation: {
     en: 'Move the slider to shift between perspectives — Odysseus on the left, the Siren on the right. Headphones recommended. The strophe bars beside the timeline let you jump between sections.',
     de: 'Bewege den Regler, um zwischen den Perspektiven zu wechseln — Odysseus links, die Sirene rechts. Kopfhörer empfohlen. Die Strophenleisten neben der Zeitleiste erlauben den Sprung zwischen Abschnitten.'

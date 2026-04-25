@@ -1,6 +1,6 @@
 // ══════════════════════════════════════════════════════
-// Figure and Ground — shared audio prototype logic
-// Used by audio-prototype.html and audio-prototype-2.html
+// Figure and Ground — shared audio logic
+// Used by audio.html (and the deprecated audio-prototype.html)
 // Depends on: figround.js (FIGROUND), audio-timestamps.js (AUDIO_TIMESTAMPS)
 // ══════════════════════════════════════════════════════
 

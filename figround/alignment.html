@@ -4,9 +4,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Figure and Ground — Parallel</title>
-<meta name="description" content="Figure and Ground — alignement view. Two horizontal bands, coupled so the voices stay aligned.">
+<meta name="description" content="Figure and Ground — alignement view. Two coupled horizontal bands.">
 <meta property="og:title" content="Figure and Ground — Parallel">
-<meta property="og:description" content="Two horizontal bands, coupled so the voices stay aligned. Drag, scroll, or click to focus.">
+<meta property="og:description" content="Two coupled horizontal bands. Drag, scroll, or click to focus.">
 <meta property="og:url" content="https://hermesj.github.io/figround/alignement.html">
 <meta property="og:type" content="website">
 <meta name="twitter:card" content="summary_large_image">
@@ -51,9 +51,13 @@
     --band-h: calc(var(--track-fs) * var(--line-h) * (1 + 2 * 1.618));
   }
 
-  /* ── TITLE ── */
+  /* ── TITLE ──
+     Padding bumped (top + bottom) for breathing room beneath the
+     shared header bar; font-size override scales the title 1.5× the
+     base figround.css value (clamp(1.6rem, 3vw, 2.8rem)). */
   .main-title {
-    padding: 0.3vh 0 1.2vh 0;
+    padding: 1.5vh 0 1.5vh 0;
+    font-size: clamp(2.4rem, 4.5vw, 4.2rem);
   }
 
   /* Tighten the explanation slab a touch so the bands don't lose
@@ -66,14 +70,12 @@
 
   /* ── BANDS CONTAINER ──
      Fills the available vertical space below the title + explanation.
-     The bands
-     themselves are fixed-height (var(--band-h)); three .band-pad spacers
+     The bands themselves are fixed-height (var(--band-h)); each band is
+     preceded by its own .band-label heading; three .band-pad spacers
      soak up the leftover space using a 0.55 : 0.618 : 1 flex ratio. The
      middle gap stays at the φ-section value, the bottom margin keeps the
-     full share, and the top margin is shrunk so the upper band sits
-     closer to the heading (about 1/3 less empty space above it). To
-     nudge the gap to the heading, change the flex value on
-     `.band-pad.pad-top` below. */
+     full share, and the top margin is shrunk so the upper label sits
+     closer to the page heading. */
   .bands {
     flex: 1;
     min-height: 0;
@@ -85,8 +87,35 @@
   }
 
   .band-pad { flex: 1; min-height: 0; }
-  .band-pad.pad-top { flex: 0.55; }   /* gap to heading — smaller = tighter */
-  .band-pad.pad-mid { flex: 0.618; }  /* gap between bands (φ-section) */
+  .band-pad.pad-top { flex: 0.55; }   /* gap to page title — smaller = tighter */
+  .band-pad.pad-mid { flex: 0.618; }  /* gap between the two band groups (φ-section) */
+
+  /* ── BAND LABEL ──
+     Voice heading sitting just above its band. Sized like a main-title
+     on the other views (figround.css base clamp). Odysseus reads black,
+     the Siren reads white — each carries a soft glow in the opposite
+     tone so the label stays readable across the page-wide gradient. */
+  .band-label {
+    flex: 0 0 auto;
+    text-align: center;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(1.6rem, 3vw, 2.8rem);
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    line-height: 1.1;
+    padding: 0 0 0.18em 0;
+    pointer-events: none;        /* clicks fall through to the band below */
+  }
+  .band-label-odysseus {
+    color: #0f1926;
+    text-shadow: 0 0 12px rgba(255,255,255,0.55),
+                 0 0 24px rgba(255,255,255,0.35);
+  }
+  .band-label-siren {
+    color: #eef2f6;
+    text-shadow: 0 0 12px rgba(0,0,0,0.7),
+                 0 0 24px rgba(0,0,0,0.4);
+  }
 
   /* ── BAND ──
      One reading line each, height = var(--band-h) (golden-ratio padding).
@@ -112,14 +141,19 @@
 
   /* Swap toggles DOM order only — voice colors stay tied to voice.
      (The user's spec: "Positionen vertauschen. Farben bleiben.")
-     Pads stay in slots 1, 3, 5; only the bands' order flips. */
-  .pad-top       { order: 1; }
-  .band-odysseus { order: 2; }
-  .pad-mid       { order: 3; }
-  .band-siren    { order: 4; }
-  .pad-bottom    { order: 5; }
-  body.swapped .band-odysseus { order: 4; }
-  body.swapped .band-siren    { order: 2; }
+     Pads stay in slots 1, 4, 7. Each voice's label sits in the slot
+     just above its band, so the two move together when swapped. */
+  .pad-top              { order: 1; }
+  .band-label-odysseus  { order: 2; }
+  .band-odysseus        { order: 3; }
+  .pad-mid              { order: 4; }
+  .band-label-siren     { order: 5; }
+  .band-siren           { order: 6; }
+  .pad-bottom           { order: 7; }
+  body.swapped .band-label-siren     { order: 2; }
+  body.swapped .band-siren           { order: 3; }
+  body.swapped .band-label-odysseus  { order: 5; }
+  body.swapped .band-odysseus        { order: 6; }
 
   /* Band colours follow the project's Odysseus-light / Siren-dark
      convention. Tones are pulled toward the middle of the palimpsest
@@ -255,15 +289,18 @@
   <span class="word-right" id="titleRight">Ground</span>
 </div>
 
-<!-- Bands. The three .band-pad spacers split the leftover vertical
-     space in 1 : 0.618 : 1 (golden ratio) so the band centers land
-     at φ-section points of the available area. -->
+<!-- Bands. Each band carries a short voice label above it; the label and
+     band share an `order` slot via CSS so they swap as one unit. The three
+     .band-pad spacers split the leftover vertical space (0.55 : 0.618 : 1)
+     so the band centers land at φ-section points of the available area. -->
 <div class="bands" id="bands">
   <div class="band-pad pad-top"></div>
+  <div class="band-label band-label-odysseus" data-en="Odysseus. Die Sirene. Ein Versuch." data-de="Odysseus. The Siren. An Attempt.">Odysseus. The Siren. An Attempt.</div>
   <div class="band band-odysseus" id="bandOdy" data-voice="odysseus">
     <div class="band-track" id="trackOdy"></div>
   </div>
   <div class="band-pad pad-mid"></div>
+  <div class="band-label band-label-siren" data-en="The Song of the Siren." data-de="Das Lied der Sirene.">The Song of the Siren.</div>
   <div class="band band-siren" id="bandSir" data-voice="siren">
     <div class="band-track" id="trackSir"></div>
   </div>
@@ -279,8 +316,8 @@ FIGROUND.injectHeader({
   showSwap: true,
   swapHandler: 'swap',
   explanation: {
-    en: 'Two voices, one tempo. Drag a band, scroll, or click it for reading-speed autoplay — the other voice follows in step.',
-    de: 'Zwei Stimmen, ein Takt. Ziehe ein Band, scrolle oder klick es für Lesetempo — die andere Stimme läuft im Gleichschritt mit.'
+    en: 'Two interlinked perspectives. Click a ribbon to set the reading speed, scroll to jump.',
+    de: 'Zwei aneinander gekettete Perspektiven. Klicke ein Band für Lesegeschwindigkeit, scrolle um zu springen.'
   }
 });
 
@@ -305,21 +342,23 @@ FIGROUND.ready.then(function (texts) {
   // the viewport center; the rightmost centers `right.word`. The bands
   // can't be scrolled past these bounds.
   //
-  //   idx : -1 = subtitle, 0..N = paragraph N (0-indexed)
+  //   idx : 0..N = paragraph N (0-indexed). The voice subtitle now lives
+  //                as a heading above the band, so paragraph 0 is the
+  //                first chunk and the natural left-bound home.
   //   word: a substring inside that span; case-sensitive; first match wins.
   //
   // The two voices' anchors form one piecewise-linear pair, so when
-  // Odysseus is at his `left` word (e.g. "Sirene"), the Siren is
-  // automatically at hers (e.g. "der") — and likewise at the right end.
-  // To nudge either bound, just change the word string below.
+  // Odysseus is at his `left` word, the Siren is automatically at hers
+  // — and likewise at the right end. To nudge either bound, just change
+  // the word string below.
   var SCROLL_ANCHORS = {
     de: {
-      odysseus: { left: { idx: -1, word: 'Sirene' }, right: { idx: 4, word: 'Frühjahr' } },
-      siren:    { left: { idx: -1, word: 'der'    }, right: { idx: 7, word: 'bleibt'   } }
+      odysseus: { left: { idx: 0, word: 'In schwachen' },   right: { idx: 4, word: 'Frühjahr' } },
+      siren:    { left: { idx: 0, word: 'Zärtlich weicht' }, right: { idx: 7, word: 'bleibt'   } }
     },
     en: {
-      odysseus: { left: { idx: -1, word: 'Siren'  }, right: { idx: 4, word: 'spring'  } },
-      siren:    { left: { idx: -1, word: 'of'     }, right: { idx: 7, word: 'silence' } }
+      odysseus: { left: { idx: 0, word: 'In the' },     right: { idx: 4, word: 'spring'  } },
+      siren:    { left: { idx: 0, word: 'Tender goes' }, right: { idx: 7, word: 'silence' } }
     }
   };
 
@@ -331,16 +370,15 @@ FIGROUND.ready.then(function (texts) {
     siren:    { offset: 0 }
   };
 
-  // anchors[voice].pts = 5-element array of offsets used as the piecewise
+  // anchors[voice].pts = 4-element array of offsets used as the piecewise
   // linear alignment map between voices. Order:
-  //   [0]  start-of-subtitle           (always 0)
-  //   [1]  start-of-paragraph-0        (= end of subtitle)
-  //   [2]  middle anchor A             (Odys P2 start  ↔  Siren P5 start)
-  //   [3]  middle anchor B             (Odys P3 start  ↔  Siren P6 start)
-  //   [4]  end of track
+  //   [0]  left bound (centered on first two words of paragraph 0)
+  //   [1]  middle anchor A             (Odys P2 start  ↔  Siren P5 start)
+  //   [2]  middle anchor B             (Odys P3 start  ↔  Siren P6 start)
+  //   [3]  right bound (centered on a tunable word late in the text)
   var anchors = {
-    odysseus: { pts: [0, 0, 0, 0, 0], end: 0 },
-    siren:    { pts: [0, 0, 0, 0, 0], end: 0 }
+    odysseus: { pts: [0, 0, 0, 0], end: 0 },
+    siren:    { pts: [0, 0, 0, 0], end: 0 }
   };
 
   var viewCenter = window.innerWidth / 2;
@@ -364,16 +402,16 @@ FIGROUND.ready.then(function (texts) {
 
   // ── RENDER ─────────────────────────────────────────────────
 
-  // Build the inline-span markup for a track. Subtitles become
-  // .t-sub (bold), song paragraphs become .t-song (italic), separators
+  // Build the inline-span markup for a track. The voice subtitle is
+  // shown as a heading above the band (not inside it), so we render
+  // paragraphs only — paragraph 0 becomes the first chunk and our
+  // offset origin. Song paragraphs become .t-song (italic), separators
   // are their own spans so paragraph-start offset measurements aren't
   // skewed by neighbouring whitespace.
   function renderTrack(voice, trackEl) {
     var parts = [];
-    parts.push('<span class="t-chunk t-sub" data-idx="-1">' +
-      escapeHtml(voice.subtitle) + '</span>');
     voice.paragraphs.forEach(function (p, i) {
-      parts.push('<span class="t-sep">\u25C6</span>');
+      if (i > 0) parts.push('<span class="t-sep">\u25C6</span>');
       if (typeof p === 'object' && p.song) {
         parts.push('<span class="t-chunk t-song" data-idx="' + i + '">' +
           escapeHtml(p.text) + '</span>');
@@ -393,11 +431,12 @@ FIGROUND.ready.then(function (texts) {
   }
 
   // Measure paragraph-start offsets after render. offsetLeft is taken
-  // relative to the subtitle span's offsetLeft so that the track's left
-  // padding drops out — offset 0 always means "first glyph of subtitle".
+  // relative to the FIRST chunk's offsetLeft (paragraph 0) so the
+  // track's left padding drops out — offset 0 always means "first
+  // glyph of paragraph 0".
   function computeAnchors(trackEl) {
-    var subSpan = trackEl.querySelector('[data-idx="-1"]');
-    var base = subSpan.offsetLeft;
+    var firstSpan = trackEl.querySelector('.t-chunk');
+    var base = firstSpan.offsetLeft;
     var pts = {};
     var all = trackEl.querySelectorAll('.t-chunk');
     all.forEach(function (el) {
@@ -409,12 +448,12 @@ FIGROUND.ready.then(function (texts) {
     return pts;
   }
 
-  // Find the offset (in track-local units, relative to subtitle start)
-  // that puts a particular word at viewport center. Uses the Range API
-  // to locate `cfg.word` inside the span at data-idx="cfg.idx", measures
-  // the word's center via getBoundingClientRect, and converts back into
-  // the same offset coordinate computeAnchors() returns. Caller is
-  // responsible for setting both tracks' transform to translateX(0)
+  // Find the offset (in track-local units, relative to paragraph 0
+  // start) that puts a particular word at viewport center. Uses the
+  // Range API to locate `cfg.word` inside the span at data-idx="cfg.idx",
+  // measures the word's center via getBoundingClientRect, and converts
+  // back into the same offset coordinate computeAnchors() returns. Caller
+  // is responsible for setting both tracks' transform to translateX(0)
   // first, so getBoundingClientRect reads natural positions.
   function findWordOffset(trackEl, cfg) {
     var span = trackEl.querySelector('[data-idx="' + cfg.idx + '"]');
@@ -427,22 +466,24 @@ FIGROUND.ready.then(function (texts) {
     range.setStart(node, i);
     range.setEnd(node, i + cfg.word.length);
     var rect = range.getBoundingClientRect();
-    var subLeft = trackEl.querySelector('[data-idx="-1"]')
-                         .getBoundingClientRect().left;
-    return (rect.left + rect.width / 2) - subLeft;
+    var baseLeft = trackEl.querySelector('.t-chunk')
+                          .getBoundingClientRect().left;
+    return (rect.left + rect.width / 2) - baseLeft;
   }
 
-  // Build the five-anchor arrays from raw paragraph offsets, encoding
+  // Build the four-anchor arrays from raw paragraph offsets, encoding
   // the user's alignment spec for the middle, plus the SCROLL_ANCHORS
   // word positions for the outer bounds:
-  //   [0] left bound:   "Sirene" / "der"          ←  user-tunable
-  //   [1] subtitle end: P0-start ↔ P0-start       (natural transition)
-  //   [2] mid-anchor A: Odys P2-start ↔ Siren P5-start
-  //   [3] mid-anchor B: Odys P3-start ↔ Siren P6-start
-  //   [4] right bound:  "Frühjahr" / "bleibt"     ←  user-tunable
+  //   [0] left bound:   "In schwachen" / "Zärtlich weicht"   ← user-tunable
+  //   [1] mid-anchor A: Odys P2-start ↔ Siren P5-start
+  //   [2] mid-anchor B: Odys P3-start ↔ Siren P6-start
+  //   [3] right bound:  "Frühjahr" / "bleibt"                ← user-tunable
   // Segments between anchors are interpolated linearly. Because both
   // voices share the same first / last anchor, clamping each voice to
   // its own [pts[0], pts[end]] range automatically lines the words up.
+  // (Paragraph-0-start used to be a separate anchor, but with the
+  // subtitle pulled out of the band the left bound now sits inside
+  // paragraph 0 itself, so that intermediate anchor is gone.)
   function rebuildAnchors() {
     var ody  = computeAnchors(trackOdy);
     var sir  = computeAnchors(trackSir);
@@ -460,21 +501,21 @@ FIGROUND.ready.then(function (texts) {
     if (sirL === null) sirL = 0;
     if (sirR === null) sirR = sir.end;
 
-    anchors.odysseus.pts = [odyL, ody[0], ody[2], ody[3], odyR];
-    anchors.siren.pts    = [sirL, sir[0], sir[5], sir[6], sirR];
+    anchors.odysseus.pts = [odyL, ody[2], ody[3], odyR];
+    anchors.siren.pts    = [sirL, sir[5], sir[6], sirR];
     anchors.odysseus.end = ody.end;   // full track end (used by speed calibration)
     anchors.siren.end    = sir.end;
   }
 
   // Measure the horizontal shift each track needs so that offset 0 puts
-  // the subtitle's first glyph at viewport center. Must run with the
+  // paragraph 0's first glyph at viewport center. Must run with the
   // tracks at translateX(0) so getBoundingClientRect returns the natural
-  // (un-transformed) position of the subtitle.
+  // (un-transformed) position of the first chunk.
   function recalcTrackBase() {
     trackOdy.style.transform = 'translateX(0)';
     trackSir.style.transform = 'translateX(0)';
-    var rOdy = trackOdy.querySelector('[data-idx="-1"]').getBoundingClientRect();
-    var rSir = trackSir.querySelector('[data-idx="-1"]').getBoundingClientRect();
+    var rOdy = trackOdy.querySelector('.t-chunk').getBoundingClientRect();
+    var rSir = trackSir.querySelector('.t-chunk').getBoundingClientRect();
     trackBase.odysseus = viewCenter - rOdy.left;
     trackBase.siren    = viewCenter - rSir.left;
   }
