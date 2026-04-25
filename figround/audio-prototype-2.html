@@ -8,8 +8,10 @@
 <link rel="stylesheet" href="audio-shared.css">
 <style>
   /* Proto-2 (Advanced Mode) specifics.
-     Shared chips, hint box, back-link, mobile base → audio-shared.css.
-     Play button SVG icons + updatePlayButton()    → audio-shared.js.   */
+     Shared transport / play-button chrome, mobile base → audio-shared.css.
+     Play button SVG icons + updatePlayButton()         → audio-shared.js.
+     Header / footer / explanation                      → injected by
+                                                          FIGROUND.injectHeader. */
 
   /* ── VOLUME LABEL COLORS (gradient-mirrored: they sit at the extremes) ── */
   .vol-left {
@@ -21,18 +23,15 @@
     text-shadow: 0 0 8px rgba(0,0,0,0.6);
   }
 
-  /* ── TRANSPORT LAYOUT OVERRIDES (proto-2 has a prev/stop/next group) ── */
-  .transport {
-    /* proto-2 has three peer blocks (DE, play-group, EN),
-       so space-between spreads them instead of centring. */
-    justify-content: space-between;
-  }
-
+  /* ── TRANSPORT LAYOUT (proto-2 has a prev/stop/next group beside Play).
+     Lang buttons used to flank the play-group — they live in the shared
+     header now, so the row centers the single play-group. */
   .play-group {
     display: flex;
     align-items: center;
     gap: 0.5em;
-    flex: 2;
+    flex: 1;
+    max-width: 480px;
   }
 
   .transport-secondary {
@@ -136,19 +135,18 @@
   .ticker-text-siren    { color: #fff; }
 
   /* ══════════════════════════════════════════════════════════════
-     MOBILE — extend the shared 2-row grid with a third "skip" row
+     MOBILE — Play full-width, prev/stop/next on a second row.
      ══════════════════════════════════════════════════════════════ */
   @media (max-width: 768px) {
-    .transport {
-      grid-template-areas:
-        "lang-de lang-en"
-        "play    play"
-        "skip    skip";
+    .play-group {
+      flex-direction: column;
+      width: 100%;
+      max-width: none;
+      gap: 0.55em;
     }
-    /* Unwrap play-group so its children participate in the grid */
-    .play-group { display: contents; }
+    .btn-play { width: 100%; }
     .transport-secondary {
-      grid-area: skip;
+      width: 100%;
       display: flex;
       gap: 0.4em;
     }
@@ -160,6 +158,8 @@
 </style>
 </head>
 <body>
+
+<main class="audio-content">
 
 <div class="main-title">
   <span class="word-left" id="titleLeft">Figure</span>
@@ -185,13 +185,8 @@
     <span class="vol-label vol-right" id="volRight">100 %</span>
   </div>
 
-  <div class="hint-row">
-    <span class="hint">Move the slider to shift between perspectives. Headphones recommended.</span>
-  </div>
-
-  <!-- Transport -->
+  <!-- Transport (lang buttons live in the shared header now) -->
   <div class="transport">
-    <button class="btn btn-lang active" id="btnDe" onclick="switchLang('de')">Deutsch</button>
     <div class="play-group">
       <button class="btn btn-play" id="btnPlay" onclick="togglePlay()" disabled>
         <span class="btn-icon" id="btnPlayIcon" aria-hidden="true"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round"><path d="M6 4.5 L16 10 L6 15.5 Z"/></svg></span>
@@ -209,7 +204,6 @@
         </button>
       </div>
     </div>
-    <button class="btn btn-lang" id="btnEn" onclick="switchLang('en')">English</button>
   </div>
 
   <!-- Loading -->
@@ -244,10 +238,7 @@
   </div>
 </div>
 
-<div class="back-link">
-  <a href="index.html">Project Overview</a>
-  <a href="audio-prototype.html">Simple Mode</a>
-</div>
+</main>
 
 <div class="scroll-hint" id="scrollHint"><span>&#x25BE;</span> scroll <span>&#x25BE;</span></div>
 
@@ -255,6 +246,19 @@
 <script src="audio-timestamps.js"></script>
 <script src="audio-shared.js"></script>
 <script>
+// Inject shared header / footer / explanation synchronously so the
+// btnDe / btnEn IDs exist by the time switchLang runs in init().
+// Simple Mode lives as an extra link in the header.
+FIGROUND.injectHeader({
+  extraLinks: [
+    { href: 'audio-prototype.html', en: 'Simple Mode', de: 'Einfacher Modus' }
+  ],
+  explanation: {
+    en: 'Move the slider to shift between perspectives — Odysseus on the left, the Siren on the right. Headphones recommended. The strophe bars beside the timeline let you jump between sections.',
+    de: 'Bewege den Regler, um zwischen den Perspektiven zu wechseln — Odysseus links, die Sirene rechts. Kopfhörer empfohlen. Die Strophenleisten neben der Zeitleiste erlauben den Sprung zwischen Abschnitten.'
+  }
+});
+
 // ── Init ──
 
 async function init() {

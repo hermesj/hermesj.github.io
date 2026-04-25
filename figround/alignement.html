@@ -51,64 +51,22 @@
     --band-h: calc(var(--track-fs) * var(--line-h) * (1 + 2 * 1.618));
   }
 
-  /* ── CONTROLS ── */
-  .controls {
-    padding: 1.5vh 0 0.5vh 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    column-gap: 2.2em;
-    row-gap: 0.2em;
-    z-index: 10;
-  }
-  .switch-group { display: inline-flex; align-items: center; }
-
-  /* White text with a dark glow so labels read on both ends of the
-     left-to-right gradient (very light → very dark). Same idea as
-     .color-sir in figround.css but authored here for the shared row. */
-  .controls a, .controls button {
-    font-family: 'Cormorant Garamond', 'Georgia', serif;
-    font-size: 0.7rem;
-    letter-spacing: 0.06em;
-    text-decoration: none;
-    cursor: pointer;
-    padding: 0.2em 0.5em;
-    color: #f4f4f4;
-    background: none;
-    border: none;
-    text-shadow: 0 0 8px rgba(0,0,0,0.85), 0 0 18px rgba(0,0,0,0.5);
-    transition: color 0.2s, text-shadow 0.2s;
-  }
-  .controls a:hover, .controls button:hover {
-    color: #ffffff;
-    text-shadow: 0 0 10px rgba(0,0,0,1), 0 0 22px rgba(0,0,0,0.6);
-  }
-  .controls a.active {
-    border-bottom: 1px solid rgba(244, 244, 244, 0.6);
-  }
-
   /* ── TITLE ── */
   .main-title {
     padding: 0.3vh 0 1.2vh 0;
   }
 
-  /* ── HINT ──
-     Fades out on first pointer/wheel interaction. */
-  .parallel-hint {
-    text-align: center;
-    font-size: 0.9rem;
-    font-style: italic;
-    color: #e4eaf0;
-    text-shadow: 0 0 8px rgba(0,0,0,0.7), 0 0 16px rgba(0,0,0,0.35);
-    padding: 0 1em 1vh;
-    min-height: 1.3em;
-    transition: opacity 1.2s ease;
+  /* Tighten the explanation slab a touch so the bands don't lose
+     too much vertical room on the constrained 100vh layout. */
+  .shared-explanation {
+    margin-top: 0;
+    margin-bottom: 0.6em;
+    padding: 0.65em 1.2em;
   }
-  .parallel-hint.faded { opacity: 0; }
 
   /* ── BANDS CONTAINER ──
-     Fills the available vertical space below the title/hint. The bands
+     Fills the available vertical space below the title + explanation.
+     The bands
      themselves are fixed-height (var(--band-h)); three .band-pad spacers
      soak up the leftover space using a 0.55 : 0.618 : 1 flex ratio. The
      middle gap stays at the φ-section value, the bottom margin keeps the
@@ -272,7 +230,6 @@
     /* Override --track-fs only — band height auto-recomputes from it. */
     body { --track-fs: 1.3rem; }
     .bands { width: 92vw; }
-    .parallel-hint { font-size: 0.8rem; padding: 0 1em 0.6vh; }
 
     /* German title wraps ("Figur und" / "Hintergrund") like the other views. */
     .main-title.title-de {
@@ -290,30 +247,12 @@
 </head>
 <body>
 
-<!-- Controls -->
-<div class="controls">
-  <span class="switch-group">
-    <a id="btnDe" onclick="switchLang('de')">Deutsch</a>
-    <a id="btnEn" class="active" onclick="switchLang('en')">English</a>
-  </span>
-  <span class="switch-group">
-    <a href="index.html" class="nav-link" data-en="Project Overview" data-de="Projektübersicht">Project Overview</a>
-  </span>
-  <span class="switch-group">
-    <button class="swap-btn" id="swapBtn" onclick="swap()" title="Swap band positions" data-en="&#x21C5; Swap" data-de="&#x21C5; Tauschen">&#x21C5; Swap</button>
-  </span>
-</div>
-
-<!-- Title -->
+<!-- Title — header / explanation / footer are injected by
+     FIGROUND.injectHeader at the bottom of the script below. -->
 <div class="main-title">
   <span class="word-left" id="titleLeft">Figure</span>
   <span class="word-mid" id="titleMid">and</span>
   <span class="word-right" id="titleRight">Ground</span>
-</div>
-
-<!-- Hint -->
-<div class="parallel-hint" id="hint">
-  Drag or scroll to read. Click a band to auto-play at reading speed.
 </div>
 
 <!-- Bands. The three .band-pad spacers split the leftover vertical
@@ -333,21 +272,30 @@
 
 <script src="figround.js"></script>
 <script>
+// Inject shared header + footer + explanation. Synchronous, runs
+// before FIGROUND.ready resolves so btnDe/btnEn etc. exist by the
+// time switchLang/swap reference them.
+FIGROUND.injectHeader({
+  showSwap: true,
+  swapHandler: 'swap',
+  explanation: {
+    en: 'Two voices, one tempo. Drag a band, scroll, or click it for reading-speed autoplay — the other voice follows in step.',
+    de: 'Zwei Stimmen, ein Takt. Ziehe ein Band, scrolle oder klick es für Lesetempo — die andere Stimme läuft im Gleichschritt mit.'
+  }
+});
+
 FIGROUND.ready.then(function (texts) {
 
   var trackOdy = document.getElementById('trackOdy');
   var trackSir = document.getElementById('trackSir');
   var bandOdy  = document.getElementById('bandOdy');
   var bandSir  = document.getElementById('bandSir');
-  var hint     = document.getElementById('hint');
-  var fadeHint = FIGROUND.createHintFader(hint);
+  var explanation = document.getElementById('sharedExplanation');
+  var fadeHint = explanation
+    ? FIGROUND.createHintFader(explanation)
+    : function () {};
 
   var currentLang = FIGROUND.detectLang();
-
-  var i18nHint = {
-    de: 'Ziehen oder scrollen zum Lesen. Klick auf eine Spur für Lesegeschwindigkeit.',
-    en: 'Drag or scroll to read. Click a band to auto-play at reading speed.'
-  };
 
   // ──────────────────────────────────────────────────────────
   // SCROLL-RANGE ANCHORS  ←  edit these to retune the visible
@@ -565,12 +513,11 @@ FIGROUND.ready.then(function (texts) {
     document.getElementById('btnDe').className = (currentLang === 'de') ? 'active' : '';
     document.getElementById('btnEn').className = (currentLang === 'en') ? 'active' : '';
 
-    // Localize nav + swap button labels.
+    // Localize nav + swap button labels (and the shared explanation).
     var els = document.querySelectorAll('[data-' + currentLang + ']');
     for (var i = 0; i < els.length; i++) {
       els[i].textContent = els[i].getAttribute('data-' + currentLang);
     }
-    hint.textContent = i18nHint[currentLang];
 
     // Wait one frame so layout settles before we measure offsets.
     requestAnimationFrame(function () {

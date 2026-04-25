@@ -109,84 +109,9 @@
       transparent 100%);
   }
 
-  /* ── CONTROLS ── */
-  .controls {
-    padding: 1.5vh 0 0.5vh 0;
-    cursor: default;
-    position: relative;
-    z-index: 10;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    column-gap: 2.2em;
-    row-gap: 0.2em;
-  }
-
-  .switch-group {
-    display: inline-flex;
-    align-items: center;
-  }
-
-  .controls a, .controls button {
-    font-family: 'Cormorant Garamond', 'Georgia', serif;
-    font-size: 0.7rem;
-    letter-spacing: 0.06em;
-    text-decoration: none;
-    cursor: pointer;
-    padding: 0.2em 0.5em;
-    transition: color 0.2s;
-    background: none;
-    border: none;
-  }
-
-  /* Alignment toggle: only meaningful on viewports where the
-     asymmetric (vertical-aligned) layout actually kicks in. */
-  @media (max-width: 800px) {
-    .switch-group.align-group { display: none; }
-  }
-
-  /* Link colour tracks the active mode:
-     Odysseus surface → light gradient → darkest blue text
-     Siren surface    → dark gradient  → lightest blue text
-     All controls share the colour so the whole row reads as one unit. */
-  .mode-odysseus .controls a,
-  .mode-odysseus .controls button {
-    color: #0f1926;
-  }
-  .mode-odysseus .controls a:hover,
-  .mode-odysseus .controls button:hover {
-    color: #000;
-  }
-  .mode-odysseus .controls a.active {
-    border-bottom: 1px solid rgba(15, 25, 38, 0.6);
-  }
-
-  .mode-siren .controls a,
-  .mode-siren .controls button {
-    color: #e4eaf0;
-  }
-  .mode-siren .controls a:hover,
-  .mode-siren .controls button:hover {
-    color: #ffffff;
-  }
-  .mode-siren .controls a.active {
-    border-bottom: 1px solid rgba(228, 234, 240, 0.6);
-  }
-
   /* ── TITLE ── */
   .main-title {
-    padding: 0.5vh 0 1.5vh 0;
-  }
-
-  /* hint-overlay base is in figround.css */
-
-  .hint-text {
-    font-size: clamp(0.9rem, 1.2vw, 1.1rem);
-    font-style: italic;
-    color: rgba(140,150,160,0.8);
-    text-align: center;
-    line-height: 1.8;
+    padding: 0.6em 0 0.4em 0;
   }
 
   /* subtitle-row base is in figround.css. Palimpsest centers both
@@ -538,31 +463,6 @@
 <div class="reveal-wash" id="revealWash"></div>
 <div class="cursor-ring" id="cursorRing"></div>
 
-<!-- Hint overlay -->
-<div class="hint-overlay" id="hint">
-  <div class="hint-text" id="hintText">
-    Move to reveal what lies beneath.
-  </div>
-</div>
-
-<!-- Controls -->
-<div class="controls">
-  <span class="switch-group">
-    <a id="btnDe" onclick="switchLang('de')">Deutsch</a>
-    <a id="btnEn" class="active" onclick="switchLang('en')">English</a>
-  </span>
-  <span class="switch-group">
-    <a href="index.html" class="nav-link" data-en="Project Overview" data-de="Projektübersicht">Project Overview</a>
-  </span>
-  <span class="switch-group">
-    <button class="swap-btn" id="swapBtn" onclick="swapLayers()" title="Swap surface and hidden text" data-en="&#x21C5; Swap" data-de="&#x21C5; Tauschen">&#x21C5; Swap</button>
-  </span>
-  <span class="switch-group align-group">
-    <a id="btnAlignH" class="active" onclick="switchAlign('horizontal')" data-en="Horizontal aligned" data-de="Horizontal ausgerichtet">Horizontal aligned</a>
-    <a id="btnAlignV" onclick="switchAlign('vertical')" data-en="Vertical aligned" data-de="Vertikal ausgerichtet">Vertical aligned</a>
-  </span>
-</div>
-
 <div class="main-title">
   <span class="word-left" id="titleLeft">Figure</span>
   <span class="word-mid" id="titleMid">and</span>
@@ -595,6 +495,19 @@
 
 <script src="figround.js"></script>
 <script>
+// Inject shared header / footer / explanation synchronously so the
+// btnDe/btnEn/swapBtn/btnAlignH/btnAlignV IDs exist by the time the
+// view's switchLang/switchAlign/swapLayers handlers run.
+FIGROUND.injectHeader({
+  showSwap: true,
+  swapHandler: 'swapLayers',
+  showAlignment: true,
+  explanation: {
+    en: 'Two voices share the page — one on the surface, one beneath. Move the cursor or your finger to light up the hidden text.',
+    de: 'Zwei Stimmen teilen sich die Seite — eine an der Oberfläche, eine darunter. Bewege Cursor oder Finger, um den verborgenen Text aufleuchten zu lassen.'
+  }
+});
+
 FIGROUND.ready.then(function (texts) {
   var layerSurface = document.getElementById('layerSurface');
   var layerHidden = document.getElementById('layerHidden');
@@ -602,9 +515,13 @@ FIGROUND.ready.then(function (texts) {
   var subHidden = document.getElementById('subHidden');
   var cursorRing = document.getElementById('cursorRing');
   var revealWash = document.getElementById('revealWash');
-  var hint = document.getElementById('hint');
+  var explanation = document.getElementById('sharedExplanation');
   var stage = document.getElementById('stage');
-  var fadeHint = FIGROUND.createHintFader(hint);
+  // The shared explanation slab takes the role of the previous hint
+  // overlay — fade it on first interaction.
+  var fadeHint = explanation
+    ? FIGROUND.createHintFader(explanation)
+    : function () {};
 
   var currentLang = FIGROUND.detectLang();
   // 'odysseus' = Odysseus text on surface, Siren hidden beneath
@@ -623,11 +540,6 @@ FIGROUND.ready.then(function (texts) {
   var pointerX = -9999;
   var pointerY = -9999;
   var pointerActive = false;
-
-  var i18nHint = {
-    de: 'Bewegen, um den verborgenen Text freizulegen.',
-    en: 'Move to reveal what lies beneath.'
-  };
 
   // ── Render ──
 
@@ -662,10 +574,8 @@ FIGROUND.ready.then(function (texts) {
     document.body.classList.toggle('mode-odysseus', surfaceVoice === 'odysseus');
     document.body.classList.toggle('mode-siren',    surfaceVoice === 'siren');
 
-    document.getElementById('hintText').textContent = i18nHint[currentLang];
-
     // Localize elements that carry data-en / data-de attributes
-    // (project-overview link, swap button, alignment toggle labels).
+    // (main-page link, swap button, alignment toggle labels, explanation).
     var els = document.querySelectorAll('[data-' + currentLang + ']');
     for (var i = 0; i < els.length; i++) {
       els[i].textContent = els[i].getAttribute('data-' + currentLang);

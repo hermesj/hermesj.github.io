@@ -3,7 +3,10 @@
    Used by audio-prototype.html and audio-prototype-2.html
    ══════════════════════════════════════════════════════ */
 
-/* ── BODY (audio-specific gradient) ── */
+/* ── BODY (audio-specific gradient) ──
+   Body is a top-to-bottom flex column so the shared header pins to the
+   top, the .audio-content wrapper claims the middle (flex:1, centered),
+   and the shared footer's `margin-top: auto` flushes it to the bottom. */
 body {
   background: linear-gradient(to right,
     #f4f4f4 0%,
@@ -15,11 +18,20 @@ body {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 4vh 4vw;
   overflow-x: hidden;
   overflow-y: auto;
+}
+
+/* Centered stage between header and footer. Inherits the 4vh / 4vw
+   inset that used to live on body. */
+.audio-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 4vh 4vw;
 }
 
 /* ── SCROLL HINT (shown while page overflows) ── */
@@ -206,31 +218,11 @@ input[type="range"]#crossfade::-moz-range-thumb {
   transition: width 0.3s;
 }
 
-/* ── HINT ROW (own line below volume-indicators) ── */
-.hint-row {
-  text-align: center;
-  margin-top: -0.8em;
-  margin-bottom: 1.2em;
-}
-
-/* ── HINT BOX — soft light pill, gradient-agnostic ── */
-.hint {
-  display: inline-block;
-  padding: 0.4em 0.95em;
-  background: rgba(228,234,242,0.5);
-  border: none;
-  border-radius: 4px;
-  color: #1a2838;
-  text-shadow: none;
-  font-style: italic;
-  font-size: 0.88rem;
-  opacity: 1;
-}
-
 /* ══════════════════════════════════════════════════════════════
-   CHIP-STYLE CONTROLS — buttons, transport, language switch
-   Proto-specific bits (btn-transport, strophe-bars, play-group grid)
-   live in each prototype's inline <style>.
+   CHIP-STYLE CONTROLS — buttons, transport.
+   Proto-specific bits (btn-transport, strophe-bars, play-group)
+   live in each prototype's inline <style>. Lang buttons live in
+   the shared header (figround.css) — no .btn-lang here anymore.
    ══════════════════════════════════════════════════════════════ */
 
 .transport {
@@ -260,27 +252,6 @@ input[type="range"]#crossfade::-moz-range-thumb {
 }
 .btn:active {
   transform: scale(0.98);
-}
-
-.btn-lang {
-  flex: 1;
-  /* Pre-reserve the 2 px active border so inactive↔active toggling
-     doesn't nudge the layout by 1 px. */
-  border-width: 2px;
-}
-.btn-lang.active {
-  border: 2px solid rgba(160,180,200,0.55);
-  background: linear-gradient(to right, rgba(40,55,75,0.8), rgba(25,40,60,0.8));
-  font-weight: 600;
-  letter-spacing: 0.08em;
-}
-.btn-lang.active:hover {
-  border-color: rgba(180,200,220,0.85);
-  background: linear-gradient(to right, rgba(55,70,90,0.9), rgba(40,55,75,0.9));
-}
-.btn-lang:disabled {
-  opacity: 0.5;
-  cursor: not-allowed;
 }
 
 .btn-play {
@@ -405,35 +376,10 @@ input[type="range"]#crossfade::-moz-range-thumb {
   background: linear-gradient(to left, rgba(15,25,38,0.8), transparent);
 }
 
-/* ── BACK LINK — chip-style, matches inactive transport buttons ── */
-.back-link {
-  display: flex;
-  justify-content: center;
-  gap: 0.8em;
-  margin-top: 3em;
-}
-.back-link a {
-  display: inline-block;
-  padding: 0.5em 1em;
-  border: 1px solid rgba(160,180,200,0.45);
-  border-radius: 6px;
-  background: rgba(80,100,125,0.65);
-  color: #fff;
-  font-size: 0.9rem;
-  letter-spacing: 0.04em;
-  text-decoration: none;
-  transition: all 0.2s ease;
-}
-.back-link a:hover {
-  background: rgba(105,125,150,0.78);
-  border-color: rgba(200,215,230,0.7);
-}
-
 /* ══════════════════════════════════════════════════════════════
-   MOBILE BASE (phones, < 768 px) — 2-row transport grid:
-   Row 1: Deutsch | English
-   Row 2: Play (full-width)
-   Proto-2 extends this with a third "skip" row in its inline style.
+   MOBILE BASE (phones, < 768 px) — language buttons now live in the
+   shared header, so transport contains only Play (and prev/stop/next
+   in proto-2, handled by that file's inline style).
    ══════════════════════════════════════════════════════════════ */
 @media (max-width: 768px) {
   .speaker-left,
@@ -445,23 +391,8 @@ input[type="range"]#crossfade::-moz-range-thumb {
 
   .time-row { font-size: 0.9rem; }
 
-  .transport {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-areas:
-      "lang-de lang-en"
-      "play    play";
-    gap: 0.55em;
-  }
-  #btnDe { grid-area: lang-de; }
-  #btnEn { grid-area: lang-en; }
   .btn-play {
-    grid-area: play;
     padding: 0.9em 1.2em;
     font-size: 1.1rem;
-  }
-  .btn-lang {
-    padding: 0.75em 0.5em;
-    font-size: 1rem;
   }
 }

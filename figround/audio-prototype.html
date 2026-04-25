@@ -15,8 +15,10 @@
 <link rel="stylesheet" href="audio-shared.css">
 <style>
   /* Simple-Mode specifics.
-     Shared chip controls, hint box, back-link, mobile base → audio-shared.css.
-     Play button SVG icons + updatePlayButton()            → audio-shared.js.  */
+     Shared transport / play-button chrome, mobile base → audio-shared.css.
+     Play button SVG icons + updatePlayButton()         → audio-shared.js.
+     Header / footer / explanation                      → injected by
+                                                          FIGROUND.injectHeader. */
 
   /* ── PROGRESS (local: simple mode has no strophe-bars overflow) ── */
   .progress-container {
@@ -61,6 +63,8 @@
 </head>
 <body>
 
+<main class="audio-content">
+
 <div class="main-title">
   <span class="word-left color-ody" id="titleLeft">Figure</span>
   <span class="word-mid" id="titleMid">and</span>
@@ -85,18 +89,12 @@
     <span class="vol-label vol-right color-sir" id="volRight">100 %</span>
   </div>
 
-  <div class="hint-row">
-    <span class="hint">Move the slider to shift between perspectives. Headphones recommended.</span>
-  </div>
-
-  <!-- Transport -->
+  <!-- Transport (lang buttons live in the shared header now) -->
   <div class="transport">
-    <button class="btn btn-lang active" id="btnDe" onclick="switchLang('de')">Deutsch</button>
     <button class="btn btn-play" id="btnPlay" onclick="togglePlay()" disabled>
       <span class="btn-icon" id="btnPlayIcon" aria-hidden="true"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round"><path d="M6 4.5 L16 10 L6 15.5 Z"/></svg></span>
       <span class="btn-label" id="btnPlayLabel">Play</span>
     </button>
-    <button class="btn btn-lang" id="btnEn" onclick="switchLang('en')">English</button>
   </div>
 
   <!-- Loading -->
@@ -129,10 +127,7 @@
   </div>
 </div>
 
-<div class="back-link">
-  <a href="index.html">Project Overview</a>
-  <a href="audio-prototype-2.html">Advanced Mode</a>
-</div>
+</main>
 
 <div class="scroll-hint" id="scrollHint"><span>&#x25BE;</span> scroll <span>&#x25BE;</span></div>
 
@@ -140,6 +135,19 @@
 <script src="audio-timestamps.js"></script>
 <script src="audio-shared.js"></script>
 <script>
+// Inject shared header / footer / explanation synchronously so the
+// btnDe / btnEn IDs exist by the time switchLang runs in init().
+// Advanced Mode lives as an extra link in the header.
+FIGROUND.injectHeader({
+  extraLinks: [
+    { href: 'audio-prototype-2.html', en: 'Advanced Mode', de: 'Erweiterter Modus' }
+  ],
+  explanation: {
+    en: 'Move the slider to shift between perspectives — Odysseus on the left, the Siren on the right. Headphones recommended.',
+    de: 'Bewege den Regler, um zwischen den Perspektiven zu wechseln — Odysseus links, die Sirene rechts. Kopfhörer empfohlen.'
+  }
+});
+
 // ── Init ──
 
 async function init() {

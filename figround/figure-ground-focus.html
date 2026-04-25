@@ -33,72 +33,9 @@
     mix-blend-mode: difference;
   }
 
-  /* ── LANG SWITCH ── */
-  .lang-switch {
-    padding: 1.5vh 0 0.5vh 0;
-    cursor: default;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    column-gap: 2.2em;
-    row-gap: 0.2em;
-  }
-
-  .switch-group {
-    display: inline-flex;
-    align-items: center;
-  }
-
-  .lang-switch a {
-    font-size: 0.7rem;
-    letter-spacing: 0.06em;
-    text-decoration: none;
-    color: #0f1926;          /* Toggles: darkest blue */
-    cursor: pointer;
-    padding: 0.2em 0.5em;
-    transition: color 0.2s;
-  }
-
-  .lang-switch a:hover {
-    color: #000;
-  }
-
-  .lang-switch a.active {
-    color: #0f1926;
-    border-bottom: 1px solid rgba(15, 25, 38, 0.6);
-  }
-
-  .lang-switch .nav-link {
-    color: #e4eaf0;          /* Project Overview: lightest blue */
-  }
-
-  .lang-switch .nav-link:hover {
-    color: #ffffff;
-  }
-
-  /* Alignment toggle: only meaningful on viewports where the
-     asymmetric (vertical-aligned) grid actually kicks in. */
-  @media (max-width: 800px) {
-    .switch-group.align-group { display: none; }
-  }
-
-  /* Alignment toggle uses the lighter nav-link palette to match
-     Project Overview and sit visually apart from the language pair. */
-  .lang-switch .align-group a {
-    color: #e4eaf0;
-  }
-  .lang-switch .align-group a:hover {
-    color: #ffffff;
-  }
-  .lang-switch .align-group a.active {
-    color: #e4eaf0;
-    border-bottom: 1px solid rgba(228, 234, 240, 0.6);
-  }
-
   /* ── TITLE (override base padding) ── */
   .main-title {
-    padding: 0.5vh 0 1.5vh 0;
+    padding: 0.6em 0 0.4em 0;
   }
 
   /* hint-overlay base is in figround.css */
@@ -323,20 +260,6 @@
   </div>
 </div>
 
-<div class="lang-switch" id="langSwitch">
-  <span class="switch-group">
-    <a id="btnDe" onclick="switchLang('de')">Deutsch</a>
-    <a id="btnEn" class="active" onclick="switchLang('en')">English</a>
-  </span>
-  <span class="switch-group">
-    <a href="index.html" class="nav-link" data-en="Project Overview" data-de="Projektübersicht">Project Overview</a>
-  </span>
-  <span class="switch-group align-group">
-    <a id="btnAlignH" class="active" onclick="switchAlign('horizontal')" data-en="Horizontal aligned" data-de="Horizontal ausgerichtet">Horizontal aligned</a>
-    <a id="btnAlignV" onclick="switchAlign('vertical')" data-en="Vertical aligned" data-de="Vertikal ausgerichtet">Vertical aligned</a>
-  </span>
-</div>
-
 <div class="main-title">
   <span class="word-left" id="titleLeft">Figure</span>
   <span class="word-mid" id="titleMid">and</span>
@@ -357,6 +280,17 @@
 
 <script src="figround.js"></script>
 <script>
+// Inject shared header / footer / explanation synchronously so the
+// btnDe/btnEn/btnAlignH/btnAlignV IDs exist by the time switchLang +
+// switchAlign run inside FIGROUND.ready.then(...).
+FIGROUND.injectHeader({
+  showAlignment: true,
+  explanation: {
+    en: 'Move the mouse, touch the screen, or tilt the phone — focus shifts between Odysseus on the light end and the Siren on the dark end.',
+    de: 'Bewege die Maus, berühre den Bildschirm oder neige das Telefon — der Fokus wandert zwischen Odysseus auf der hellen Seite und der Sirene auf der dunklen.'
+  }
+});
+
 FIGROUND.ready.then(function (texts) {
   var layerOdy = document.getElementById('layerOdy');
   var layerSir = document.getElementById('layerSir');
@@ -364,7 +298,14 @@ FIGROUND.ready.then(function (texts) {
   var subSir = document.getElementById('subSir');
   var cursorDot = document.getElementById('cursorDot');
   var hint = document.getElementById('hint');
-  var fadeHint = FIGROUND.createHintFader(hint);
+  var explanation = document.getElementById('sharedExplanation');
+  var fadeIcon = FIGROUND.createHintFader(hint);
+  var fadeExplanation = explanation
+    ? FIGROUND.createHintFader(explanation)
+    : function () {};
+  // Single call fades both the icon overlay and the explanation slab
+  // on first pointer / touch / gyro interaction.
+  var fadeHint = function () { fadeIcon(); fadeExplanation(); };
 
   var currentX = 0.5;
   var targetX = 0.5;

@@ -132,3 +132,119 @@ body {
 @media (max-width: 768px) {
   .text-layer { font-size: 1.3rem !important; }
 }
+
+/* ══════════════════════════════════════════════════════════════
+   SHARED HEADER / FOOTER / EXPLANATION
+   Injected by FIGROUND.injectHeader on every view except poster.
+   Light cream bar with dark text — reads on every gradient. The
+   explanation is a darker slab between title and view content,
+   light text on dark, optionally fades on first interaction.
+   ══════════════════════════════════════════════════════════════ */
+.shared-bar {
+  /* Light cream wash, slightly translucent so the body gradient
+     bleeds through faintly. Dark text reads cleanly against it
+     regardless of where on the gradient axis we sit. */
+  background: rgba(245, 240, 232, 0.94);
+  color: #2a2018;
+  padding: 0.55em 1em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  column-gap: 1.4em;
+  row-gap: 0.25em;
+  font-family: 'Cormorant Garamond', 'Georgia', serif;
+  font-size: 0.78rem;
+  letter-spacing: 0.05em;
+  position: relative;
+  z-index: 100;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+  cursor: default;
+}
+
+.shared-bar.shared-footer {
+  /* `margin-top: auto` makes the footer stick to the bottom in
+     flex-column layouts (Alignment); in normal block flow it
+     just sits after the previous element, which is what we
+     want for Focus / Palimpsest (long scrolled content). */
+  margin-top: auto;
+  box-shadow: 0 -1px 3px rgba(0, 0, 0, 0.08);
+}
+
+.shared-bar a,
+.shared-bar button {
+  color: #2a2018;
+  background: none;
+  border: none;
+  text-decoration: none;
+  cursor: pointer;
+  font: inherit;
+  letter-spacing: inherit;
+  padding: 0.15em 0.45em;
+  transition: color 0.2s, border-color 0.2s;
+}
+
+.shared-bar a:hover,
+.shared-bar button:hover {
+  color: #000;
+}
+
+.shared-bar a.active {
+  border-bottom: 1px solid rgba(40, 30, 20, 0.55);
+}
+
+.shared-bar .hdr-group {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.4em;
+}
+
+.shared-bar .hdr-align-label {
+  color: rgba(40, 30, 20, 0.6);
+  font-size: 0.95em;
+}
+
+/* Hide alignment toggle on narrow viewports — its layout only
+   activates >800 px anyway in the views that have it. */
+@media (max-width: 800px) {
+  .shared-bar .hdr-group.hdr-align { display: none; }
+}
+
+/* Help / Hilfe overlay. Hidden by default; the Help button in the
+   shared header toggles `.visible`, and the next click / touch /
+   keypress / wheel anywhere dismisses it. Centered as a fixed slab
+   so it doesn't displace the underlying view layout. */
+.shared-explanation {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.96);
+  max-width: 560px;
+  width: calc(100% - 3em);
+  background: rgba(15, 25, 38, 0.94);
+  color: #e4eaf0;
+  padding: 1.4em 1.7em;
+  text-align: center;
+  font-size: clamp(1rem, 1.3vw, 1.15rem);
+  font-style: italic;
+  line-height: 1.6;
+  border-radius: 8px;
+  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.45);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  z-index: 2000;
+}
+
+.shared-explanation.visible {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translate(-50%, -50%) scale(1);
+}
+
+@media (max-width: 768px) {
+  .shared-explanation {
+    font-size: 0.98rem;
+    padding: 1.2em 1.4em;
+  }
+}
