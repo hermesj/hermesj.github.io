@@ -1,0 +1,776 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Figure and Ground — Parallel</title>
+<meta name="description" content="Figure and Ground — alignement view. Two horizontal bands, coupled so the voices stay aligned.">
+<meta property="og:title" content="Figure and Ground — Parallel">
+<meta property="og:description" content="Two horizontal bands, coupled so the voices stay aligned. Drag, scroll, or click to focus.">
+<meta property="og:url" content="https://hermesj.github.io/figround/alignement.html">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="stylesheet" href="figround.css">
+<style>
+  /* ══════════════════════════════════════════════════════
+     Alignement view — two horizontal tickers stacked vertically.
+     Odysseus runs at reading pace; the Siren is coupled to him
+     via a piecewise-linear map of paragraph-start offsets,
+     so she speaks her 8 paragraphs in the same "wall-time"
+     that Odysseus speaks his 5. Click a band to hand it the
+     reading-speed autoplay; the other band follows.
+     ══════════════════════════════════════════════════════ */
+
+  html, body { height: 100%; }
+
+  body {
+    /* Same blue-spectrum gradient as Palimpsest and Focus: light on
+       the Odysseus end, dark on the Siren end. The bands overlay only
+       part of the page, so the gradient frames them top, bottom, and
+       on the sides — visible "ground" behind the figures. */
+    background: linear-gradient(to right,
+      #f4f4f4 0%,
+      #e4eaf0 15%,
+      #98a8b8 42%,
+      #3a4d66 72%,
+      #0f1926 100%);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;          /* bands scroll internally, not the page */
+    user-select: none;
+    -webkit-user-select: none;
+
+    /* ── BAND TYPE + GEOMETRY ──
+       Track font-size is the only authority — band height derives from
+       it via the golden ratio, so resizing the type rescales everything
+       in proportion. Padding above/below the text line equals 1.618 ×
+       the text line-height; total band height = 1.4em × (1 + 2 × 1.618)
+       ≈ 5.93em. */
+    --track-fs: clamp(1.2rem, 1.65vw, 1.6rem);
+    --line-h: 1.4;
+    --band-h: calc(var(--track-fs) * var(--line-h) * (1 + 2 * 1.618));
+  }
+
+  /* ── CONTROLS ── */
+  .controls {
+    padding: 1.5vh 0 0.5vh 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    column-gap: 2.2em;
+    row-gap: 0.2em;
+    z-index: 10;
+  }
+  .switch-group { display: inline-flex; align-items: center; }
+
+  /* White text with a dark glow so labels read on both ends of the
+     left-to-right gradient (very light → very dark). Same idea as
+     .color-sir in figround.css but authored here for the shared row. */
+  .controls a, .controls button {
+    font-family: 'Cormorant Garamond', 'Georgia', serif;
+    font-size: 0.7rem;
+    letter-spacing: 0.06em;
+    text-decoration: none;
+    cursor: pointer;
+    padding: 0.2em 0.5em;
+    color: #f4f4f4;
+    background: none;
+    border: none;
+    text-shadow: 0 0 8px rgba(0,0,0,0.85), 0 0 18px rgba(0,0,0,0.5);
+    transition: color 0.2s, text-shadow 0.2s;
+  }
+  .controls a:hover, .controls button:hover {
+    color: #ffffff;
+    text-shadow: 0 0 10px rgba(0,0,0,1), 0 0 22px rgba(0,0,0,0.6);
+  }
+  .controls a.active {
+    border-bottom: 1px solid rgba(244, 244, 244, 0.6);
+  }
+
+  /* ── TITLE ── */
+  .main-title {
+    padding: 0.3vh 0 1.2vh 0;
+  }
+
+  /* ── HINT ──
+     Fades out on first pointer/wheel interaction. */
+  .parallel-hint {
+    text-align: center;
+    font-size: 0.9rem;
+    font-style: italic;
+    color: #e4eaf0;
+    text-shadow: 0 0 8px rgba(0,0,0,0.7), 0 0 16px rgba(0,0,0,0.35);
+    padding: 0 1em 1vh;
+    min-height: 1.3em;
+    transition: opacity 1.2s ease;
+  }
+  .parallel-hint.faded { opacity: 0; }
+
+  /* ── BANDS CONTAINER ──
+     Fills the available vertical space below the title/hint. The bands
+     themselves are fixed-height (var(--band-h)); three .band-pad spacers
+     soak up the leftover space using a 0.55 : 0.618 : 1 flex ratio. The
+     middle gap stays at the φ-section value, the bottom margin keeps the
+     full share, and the top margin is shrunk so the upper band sits
+     closer to the heading (about 1/3 less empty space above it). To
+     nudge the gap to the heading, change the flex value on
+     `.band-pad.pad-top` below. */
+  .bands {
+    flex: 1;
+    min-height: 0;
+    width: 72vw;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .band-pad { flex: 1; min-height: 0; }
+  .band-pad.pad-top { flex: 0.55; }   /* gap to heading — smaller = tighter */
+  .band-pad.pad-mid { flex: 0.618; }  /* gap between bands (φ-section) */
+
+  /* ── BAND ──
+     One reading line each, height = var(--band-h) (golden-ratio padding).
+     Rounded corners; overflow:hidden clips the inner edge-veil to the
+     same shape so the corners don't stick out as squared rectangles.
+     `touch-action: none` claims drag + wheel input exclusively; the page
+     never scrolls from a band gesture. */
+  .band {
+    position: relative;
+    flex: 0 0 auto;
+    width: 100%;
+    height: var(--band-h);
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    border-radius: 12px;
+    cursor: grab;
+    touch-action: none;
+    font-size: var(--track-fs);   /* makes 1em on band == track type size */
+    transition: box-shadow 0.35s ease;
+  }
+  .band:active { cursor: grabbing; }
+
+  /* Swap toggles DOM order only — voice colors stay tied to voice.
+     (The user's spec: "Positionen vertauschen. Farben bleiben.")
+     Pads stay in slots 1, 3, 5; only the bands' order flips. */
+  .pad-top       { order: 1; }
+  .band-odysseus { order: 2; }
+  .pad-mid       { order: 3; }
+  .band-siren    { order: 4; }
+  .pad-bottom    { order: 5; }
+  body.swapped .band-odysseus { order: 4; }
+  body.swapped .band-siren    { order: 2; }
+
+  /* Band colours follow the project's Odysseus-light / Siren-dark
+     convention. Tones are pulled toward the middle of the palimpsest
+     gradient (not the stark #f4f4f4 / #0f1926 extremes) so the bands
+     feel like blue-grey slabs rather than paper-white + jet-black. */
+
+  /* Odysseus = light band (muted blue-grey), dark text. */
+  .band-odysseus {
+    background: linear-gradient(to right,
+      #bfcbd6 0%, #d3dde6 50%, #bfcbd6 100%);
+  }
+  /* Siren = dark band (muted midnight blue), light text. */
+  .band-siren {
+    background: linear-gradient(to right,
+      #2e3f55 0%, #42566d 50%, #2e3f55 100%);
+  }
+
+  /* Focused band gets a subtle inner halo so the user knows which band
+     the autoplay is driving. */
+  .band-odysseus.focused {
+    box-shadow: inset 0 0 60px rgba(40, 60, 85, 0.20);
+  }
+  .band-siren.focused {
+    box-shadow: inset 0 0 60px rgba(200, 215, 230, 0.18);
+  }
+
+  /* Edge veil — the band's own background color fades across the text
+     from the sides, making only a ~20%-wide center strip fully readable
+     and the edges "blur" out. Pointer-events:none so drag still hits
+     the band underneath. */
+  .band-odysseus::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    z-index: 2;
+    background: linear-gradient(to right,
+      rgba(191, 203, 214, 1)    0%,
+      rgba(191, 203, 214, 0.88) 8%,
+      rgba(191, 203, 214, 0.55) 20%,
+      rgba(191, 203, 214, 0.15) 32%,
+      rgba(191, 203, 214, 0)    42%,
+      rgba(191, 203, 214, 0)    58%,
+      rgba(191, 203, 214, 0.15) 68%,
+      rgba(191, 203, 214, 0.55) 80%,
+      rgba(191, 203, 214, 0.88) 92%,
+      rgba(191, 203, 214, 1)    100%);
+  }
+  .band-siren::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    z-index: 2;
+    background: linear-gradient(to right,
+      rgba(46, 63, 85, 1)    0%,
+      rgba(46, 63, 85, 0.88) 8%,
+      rgba(46, 63, 85, 0.55) 20%,
+      rgba(46, 63, 85, 0.15) 32%,
+      rgba(46, 63, 85, 0)    42%,
+      rgba(46, 63, 85, 0)    58%,
+      rgba(46, 63, 85, 0.15) 68%,
+      rgba(46, 63, 85, 0.55) 80%,
+      rgba(46, 63, 85, 0.88) 92%,
+      rgba(46, 63, 85, 1)    100%);
+  }
+
+  /* ── TRACK ──
+     The single line of text. Transformed via inline style in JS —
+     `translateX(trackBase - offset px)`, where trackBase is measured
+     once per track so offset=0 puts the subtitle's first glyph at
+     horizontal viewport center regardless of the band's own x-position. */
+  .band-track {
+    position: relative;
+    z-index: 1;
+    white-space: nowrap;
+    font-size: var(--track-fs);
+    line-height: var(--line-h);
+    letter-spacing: 0.02em;
+    will-change: transform;
+    padding: 0 1em;       /* keeps the subtitle off the very edge */
+  }
+  /* Odysseus = light band → dark text (black with a soft white glow). */
+  .band-odysseus .band-track {
+    color: #0f1926;
+    font-weight: 500;
+    text-shadow: 0 0 8px rgba(255,255,255,0.7), 0 0 16px rgba(255,255,255,0.35);
+  }
+  /* Siren = dark band → light text (off-white with a soft dark glow). */
+  .band-siren .band-track {
+    color: #eef2f6;
+    font-weight: 400;
+    text-shadow: 0 0 8px rgba(0,0,0,0.65), 0 0 16px rgba(0,0,0,0.35);
+  }
+
+  /* Inline typography inside the track. Subtitles are bold; song passages
+     italic (matches the shared .song convention in figround.css). */
+  .t-sub { font-weight: 700; letter-spacing: 0.04em; }
+  .t-song { font-style: italic; }
+  .t-sep {
+    margin: 0 0.9em;
+    opacity: 0.55;
+    font-size: 0.85em;
+  }
+
+  /* ── MOBILE ── */
+  @media (max-width: 768px) {
+    /* Override --track-fs only — band height auto-recomputes from it. */
+    body { --track-fs: 1.3rem; }
+    .bands { width: 92vw; }
+    .parallel-hint { font-size: 0.8rem; padding: 0 1em 0.6vh; }
+
+    /* German title wraps ("Figur und" / "Hintergrund") like the other views. */
+    .main-title.title-de {
+      flex-wrap: wrap;
+      justify-content: flex-start;
+      padding-left: 4vw;
+      padding-right: 4vw;
+    }
+    .title-de .word-right {
+      flex-basis: 100%;
+      text-align: right;
+    }
+  }
+</style>
+</head>
+<body>
+
+<!-- Controls -->
+<div class="controls">
+  <span class="switch-group">
+    <a id="btnDe" onclick="switchLang('de')">Deutsch</a>
+    <a id="btnEn" class="active" onclick="switchLang('en')">English</a>
+  </span>
+  <span class="switch-group">
+    <a href="index.html" class="nav-link" data-en="Project Overview" data-de="Projektübersicht">Project Overview</a>
+  </span>
+  <span class="switch-group">
+    <button class="swap-btn" id="swapBtn" onclick="swap()" title="Swap band positions" data-en="&#x21C5; Swap" data-de="&#x21C5; Tauschen">&#x21C5; Swap</button>
+  </span>
+</div>
+
+<!-- Title -->
+<div class="main-title">
+  <span class="word-left" id="titleLeft">Figure</span>
+  <span class="word-mid" id="titleMid">and</span>
+  <span class="word-right" id="titleRight">Ground</span>
+</div>
+
+<!-- Hint -->
+<div class="parallel-hint" id="hint">
+  Drag or scroll to read. Click a band to auto-play at reading speed.
+</div>
+
+<!-- Bands. The three .band-pad spacers split the leftover vertical
+     space in 1 : 0.618 : 1 (golden ratio) so the band centers land
+     at φ-section points of the available area. -->
+<div class="bands" id="bands">
+  <div class="band-pad pad-top"></div>
+  <div class="band band-odysseus" id="bandOdy" data-voice="odysseus">
+    <div class="band-track" id="trackOdy"></div>
+  </div>
+  <div class="band-pad pad-mid"></div>
+  <div class="band band-siren" id="bandSir" data-voice="siren">
+    <div class="band-track" id="trackSir"></div>
+  </div>
+  <div class="band-pad pad-bottom"></div>
+</div>
+
+<script src="figround.js"></script>
+<script>
+FIGROUND.ready.then(function (texts) {
+
+  var trackOdy = document.getElementById('trackOdy');
+  var trackSir = document.getElementById('trackSir');
+  var bandOdy  = document.getElementById('bandOdy');
+  var bandSir  = document.getElementById('bandSir');
+  var hint     = document.getElementById('hint');
+  var fadeHint = FIGROUND.createHintFader(hint);
+
+  var currentLang = FIGROUND.detectLang();
+
+  var i18nHint = {
+    de: 'Ziehen oder scrollen zum Lesen. Klick auf eine Spur für Lesegeschwindigkeit.',
+    en: 'Drag or scroll to read. Click a band to auto-play at reading speed.'
+  };
+
+  // ──────────────────────────────────────────────────────────
+  // SCROLL-RANGE ANCHORS  ←  edit these to retune the visible
+  //                          start / end of each band
+  // ──────────────────────────────────────────────────────────
+  // The leftmost scroll position centers `left.word` of each track at
+  // the viewport center; the rightmost centers `right.word`. The bands
+  // can't be scrolled past these bounds.
+  //
+  //   idx : -1 = subtitle, 0..N = paragraph N (0-indexed)
+  //   word: a substring inside that span; case-sensitive; first match wins.
+  //
+  // The two voices' anchors form one piecewise-linear pair, so when
+  // Odysseus is at his `left` word (e.g. "Sirene"), the Siren is
+  // automatically at hers (e.g. "der") — and likewise at the right end.
+  // To nudge either bound, just change the word string below.
+  var SCROLL_ANCHORS = {
+    de: {
+      odysseus: { left: { idx: -1, word: 'Sirene' }, right: { idx: 4, word: 'Frühjahr' } },
+      siren:    { left: { idx: -1, word: 'der'    }, right: { idx: 7, word: 'bleibt'   } }
+    },
+    en: {
+      odysseus: { left: { idx: -1, word: 'Siren'  }, right: { idx: 4, word: 'spring'  } },
+      siren:    { left: { idx: -1, word: 'of'     }, right: { idx: 7, word: 'silence' } }
+    }
+  };
+
+  // ── STATE ──
+  // Per-voice scroll offset (pixels travelled from the start of the text).
+  // offset = 0 → first glyph of the subtitle sits at viewport center.
+  var state = {
+    odysseus: { offset: 0 },
+    siren:    { offset: 0 }
+  };
+
+  // anchors[voice].pts = 5-element array of offsets used as the piecewise
+  // linear alignment map between voices. Order:
+  //   [0]  start-of-subtitle           (always 0)
+  //   [1]  start-of-paragraph-0        (= end of subtitle)
+  //   [2]  middle anchor A             (Odys P2 start  ↔  Siren P5 start)
+  //   [3]  middle anchor B             (Odys P3 start  ↔  Siren P6 start)
+  //   [4]  end of track
+  var anchors = {
+    odysseus: { pts: [0, 0, 0, 0, 0], end: 0 },
+    siren:    { pts: [0, 0, 0, 0, 0], end: 0 }
+  };
+
+  var viewCenter = window.innerWidth / 2;
+  var autoplayVoice = null;
+  var rafId = null;
+  var lastT = 0;
+
+  // Reading-pace target for the focused voice. Both voices are calibrated
+  // to this rate independently (see calibrateSpeeds) — so when Odysseus is
+  // focused, *his* text passes the center at 200 wpm, and when the Siren
+  // is focused, *hers* does. The un-focused voice follows via the map.
+  var TARGET_WPM = 200;
+  var SPEED_ODY = 0;   // filled in by calibrateSpeeds()
+  var SPEED_SIR = 0;
+
+  // Per-track horizontal shift that puts offset-0 at viewport center.
+  // Measured once after render (see recalcTrackBase) because the bands
+  // are no longer full-width — the track's natural left edge depends
+  // on the band's centered position in the viewport.
+  var trackBase = { odysseus: 0, siren: 0 };
+
+  // ── RENDER ─────────────────────────────────────────────────
+
+  // Build the inline-span markup for a track. Subtitles become
+  // .t-sub (bold), song paragraphs become .t-song (italic), separators
+  // are their own spans so paragraph-start offset measurements aren't
+  // skewed by neighbouring whitespace.
+  function renderTrack(voice, trackEl) {
+    var parts = [];
+    parts.push('<span class="t-chunk t-sub" data-idx="-1">' +
+      escapeHtml(voice.subtitle) + '</span>');
+    voice.paragraphs.forEach(function (p, i) {
+      parts.push('<span class="t-sep">\u25C6</span>');
+      if (typeof p === 'object' && p.song) {
+        parts.push('<span class="t-chunk t-song" data-idx="' + i + '">' +
+          escapeHtml(p.text) + '</span>');
+      } else {
+        parts.push('<span class="t-chunk" data-idx="' + i + '">' +
+          escapeHtml(p) + '</span>');
+      }
+    });
+    trackEl.innerHTML = parts.join(' ');
+  }
+
+  function escapeHtml(s) {
+    return String(s)
+      .replace(/&/g, '&amp;')
+      .replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;');
+  }
+
+  // Measure paragraph-start offsets after render. offsetLeft is taken
+  // relative to the subtitle span's offsetLeft so that the track's left
+  // padding drops out — offset 0 always means "first glyph of subtitle".
+  function computeAnchors(trackEl) {
+    var subSpan = trackEl.querySelector('[data-idx="-1"]');
+    var base = subSpan.offsetLeft;
+    var pts = {};
+    var all = trackEl.querySelectorAll('.t-chunk');
+    all.forEach(function (el) {
+      var idx = parseInt(el.getAttribute('data-idx'), 10);
+      pts[idx] = el.offsetLeft - base;
+    });
+    var last = all[all.length - 1];
+    pts.end = (last.offsetLeft + last.offsetWidth) - base;
+    return pts;
+  }
+
+  // Find the offset (in track-local units, relative to subtitle start)
+  // that puts a particular word at viewport center. Uses the Range API
+  // to locate `cfg.word` inside the span at data-idx="cfg.idx", measures
+  // the word's center via getBoundingClientRect, and converts back into
+  // the same offset coordinate computeAnchors() returns. Caller is
+  // responsible for setting both tracks' transform to translateX(0)
+  // first, so getBoundingClientRect reads natural positions.
+  function findWordOffset(trackEl, cfg) {
+    var span = trackEl.querySelector('[data-idx="' + cfg.idx + '"]');
+    if (!span) return null;
+    var node = span.firstChild;
+    if (!node || node.nodeType !== 3) return null;  // 3 = TEXT_NODE
+    var i = node.textContent.indexOf(cfg.word);
+    if (i < 0) return null;
+    var range = document.createRange();
+    range.setStart(node, i);
+    range.setEnd(node, i + cfg.word.length);
+    var rect = range.getBoundingClientRect();
+    var subLeft = trackEl.querySelector('[data-idx="-1"]')
+                         .getBoundingClientRect().left;
+    return (rect.left + rect.width / 2) - subLeft;
+  }
+
+  // Build the five-anchor arrays from raw paragraph offsets, encoding
+  // the user's alignment spec for the middle, plus the SCROLL_ANCHORS
+  // word positions for the outer bounds:
+  //   [0] left bound:   "Sirene" / "der"          ←  user-tunable
+  //   [1] subtitle end: P0-start ↔ P0-start       (natural transition)
+  //   [2] mid-anchor A: Odys P2-start ↔ Siren P5-start
+  //   [3] mid-anchor B: Odys P3-start ↔ Siren P6-start
+  //   [4] right bound:  "Frühjahr" / "bleibt"     ←  user-tunable
+  // Segments between anchors are interpolated linearly. Because both
+  // voices share the same first / last anchor, clamping each voice to
+  // its own [pts[0], pts[end]] range automatically lines the words up.
+  function rebuildAnchors() {
+    var ody  = computeAnchors(trackOdy);
+    var sir  = computeAnchors(trackSir);
+    var saOd = SCROLL_ANCHORS[currentLang].odysseus;
+    var saSr = SCROLL_ANCHORS[currentLang].siren;
+
+    // Word-based bounds — fall back to start/end of track if the word
+    // can't be located (e.g. someone edits the config to a typo).
+    var odyL = findWordOffset(trackOdy, saOd.left);
+    var odyR = findWordOffset(trackOdy, saOd.right);
+    var sirL = findWordOffset(trackSir, saSr.left);
+    var sirR = findWordOffset(trackSir, saSr.right);
+    if (odyL === null) odyL = 0;
+    if (odyR === null) odyR = ody.end;
+    if (sirL === null) sirL = 0;
+    if (sirR === null) sirR = sir.end;
+
+    anchors.odysseus.pts = [odyL, ody[0], ody[2], ody[3], odyR];
+    anchors.siren.pts    = [sirL, sir[0], sir[5], sir[6], sirR];
+    anchors.odysseus.end = ody.end;   // full track end (used by speed calibration)
+    anchors.siren.end    = sir.end;
+  }
+
+  // Measure the horizontal shift each track needs so that offset 0 puts
+  // the subtitle's first glyph at viewport center. Must run with the
+  // tracks at translateX(0) so getBoundingClientRect returns the natural
+  // (un-transformed) position of the subtitle.
+  function recalcTrackBase() {
+    trackOdy.style.transform = 'translateX(0)';
+    trackSir.style.transform = 'translateX(0)';
+    var rOdy = trackOdy.querySelector('[data-idx="-1"]').getBoundingClientRect();
+    var rSir = trackSir.querySelector('[data-idx="-1"]').getBoundingClientRect();
+    trackBase.odysseus = viewCenter - rOdy.left;
+    trackBase.siren    = viewCenter - rSir.left;
+  }
+
+  // Calibrate autoplay speeds so each focused voice reads at TARGET_WPM.
+  // Rate = (words / sec) × (pixels / word). Pixels per word is measured
+  // per voice from the actual rendered track width ÷ actual word count,
+  // so changes to font-size, letter-spacing, or language all self-correct.
+  function calibrateSpeeds() {
+    var data = texts[currentLang];
+    function wordCount(voice) {
+      var w = voice.subtitle.trim().split(/\s+/).length;
+      voice.paragraphs.forEach(function (p) {
+        var t = (typeof p === 'object' && p.song) ? p.text : p;
+        w += t.trim().split(/\s+/).length;
+      });
+      return w;
+    }
+    var pxPerWordOdy = anchors.odysseus.end / wordCount(data.odysseus);
+    var pxPerWordSir = anchors.siren.end    / wordCount(data.siren);
+    SPEED_ODY = (TARGET_WPM / 60) * pxPerWordOdy;
+    SPEED_SIR = (TARGET_WPM / 60) * pxPerWordSir;
+  }
+
+  function render() {
+    var data = texts[currentLang];
+    FIGROUND.updateTitle(currentLang, ' — Parallel');
+
+    // German title wraps on mobile — mirror the palimpsest/focus pattern.
+    document.querySelector('.main-title').classList.toggle(
+      'title-de', currentLang === 'de');
+
+    renderTrack(data.odysseus, trackOdy);
+    renderTrack(data.siren,    trackSir);
+
+    document.getElementById('btnDe').className = (currentLang === 'de') ? 'active' : '';
+    document.getElementById('btnEn').className = (currentLang === 'en') ? 'active' : '';
+
+    // Localize nav + swap button labels.
+    var els = document.querySelectorAll('[data-' + currentLang + ']');
+    for (var i = 0; i < els.length; i++) {
+      els[i].textContent = els[i].getAttribute('data-' + currentLang);
+    }
+    hint.textContent = i18nHint[currentLang];
+
+    // Wait one frame so layout settles before we measure offsets.
+    requestAnimationFrame(function () {
+      // recalcTrackBase zeroes the transforms — required for both the
+      // subtitle position read AND the Range-based word measurements
+      // inside rebuildAnchors. Order matters here.
+      recalcTrackBase();
+      rebuildAnchors();
+      calibrateSpeeds();
+      // Land both bands at the user-defined left bound. setOffset on
+      // Odysseus drives Siren via the map, so she also lines up on her
+      // own left-anchor word.
+      setOffset('odysseus', anchors.odysseus.pts[0]);
+    });
+  }
+
+  // ── MAPPING ───────────────────────────────────────────────
+  // Piecewise linear interpolation: map x in src-anchor space to the
+  // corresponding point in dst-anchor space. Before the first / after
+  // the last anchor, clamps to the endpoint.
+  function piecewiseMap(x, src, dst) {
+    if (x <= src[0]) return dst[0];
+    for (var i = 0; i < src.length - 1; i++) {
+      var s0 = src[i], s1 = src[i + 1];
+      if (x <= s1) {
+        var span = s1 - s0;
+        if (span <= 0) return dst[i + 1];
+        var t = (x - s0) / span;
+        return dst[i] + t * (dst[i + 1] - dst[i]);
+      }
+    }
+    return dst[dst.length - 1];
+  }
+
+  function applyTransforms() {
+    trackOdy.style.transform =
+      'translateX(' + (trackBase.odysseus - state.odysseus.offset) + 'px)';
+    trackSir.style.transform =
+      'translateX(' + (trackBase.siren    - state.siren.offset)    + 'px)';
+  }
+
+  // Set the offset of `voice` (the one the user just touched) and
+  // derive the other voice via the piecewise map, so the two texts
+  // stay in alignment. Clamps at the user-tunable word anchors —
+  // pts[0] (left bound) and pts[len-1] (right bound).
+  function setOffset(voice, offset) {
+    var pts = anchors[voice].pts;
+    var min = pts[0];
+    var max = pts[pts.length - 1];
+    var clamped = Math.max(min, Math.min(max, offset));
+    state[voice].offset = clamped;
+
+    var other = voice === 'odysseus' ? 'siren' : 'odysseus';
+    var mapped = piecewiseMap(clamped, pts, anchors[other].pts);
+    state[other].offset = mapped;
+    applyTransforms();
+  }
+
+  // ── AUTOPLAY ──────────────────────────────────────────────
+  function startAutoplay(voice) {
+    if (autoplayVoice === voice) { stopAutoplay(); return; }
+    stopAutoplay();
+    autoplayVoice = voice;
+    // If we're sitting at (or past) the right bound, rewind to the
+    // left bound so clicking a finished band restarts from the top
+    // instead of ending immediately.
+    var pts = anchors[voice].pts;
+    var max = pts[pts.length - 1];
+    if (state[voice].offset >= max - 1) {
+      setOffset(voice, pts[0]);
+    }
+    bandEl(voice).classList.add('focused');
+    lastT = 0;
+    rafId = requestAnimationFrame(autoplayLoop);
+  }
+
+  function stopAutoplay() {
+    if (autoplayVoice) bandEl(autoplayVoice).classList.remove('focused');
+    autoplayVoice = null;
+    if (rafId) { cancelAnimationFrame(rafId); rafId = null; }
+  }
+
+  function bandEl(voice) {
+    return voice === 'odysseus' ? bandOdy : bandSir;
+  }
+
+  function autoplayLoop(t) {
+    if (!autoplayVoice) return;
+    var dt = lastT ? (t - lastT) : 16;
+    lastT = t;
+    var speed = autoplayVoice === 'odysseus' ? SPEED_ODY : SPEED_SIR;
+    var newOff = state[autoplayVoice].offset + speed * dt / 1000;
+    var pts = anchors[autoplayVoice].pts;
+    var max = pts[pts.length - 1];
+    if (newOff >= max) {
+      setOffset(autoplayVoice, max);
+      stopAutoplay();
+      return;
+    }
+    setOffset(autoplayVoice, newOff);
+    rafId = requestAnimationFrame(autoplayLoop);
+  }
+
+  // ── INTERACTION ───────────────────────────────────────────
+  // Each band handles its own pointer + wheel input. A small movement
+  // threshold separates "click" from "drag": clicks toggle autoplay
+  // focus on that band; drags manually seek (and cancel autoplay).
+  function bindBand(band, voice) {
+    var downX = 0;
+    var downOff = 0;
+    var pointerDown = false;
+    var moved = false;
+    var activePointerId = null;
+
+    band.addEventListener('pointerdown', function (e) {
+      fadeHint();
+      pointerDown = true;
+      moved = false;
+      downX = e.clientX;
+      downOff = state[voice].offset;
+      activePointerId = e.pointerId;
+      band.setPointerCapture(e.pointerId);
+    });
+
+    band.addEventListener('pointermove', function (e) {
+      if (!pointerDown || e.pointerId !== activePointerId) return;
+      var dx = e.clientX - downX;
+      if (!moved && Math.abs(dx) > 5) {
+        moved = true;
+        stopAutoplay();   // a real drag takes over from autoplay
+      }
+      if (moved) {
+        // Drag right → text slides right → offset decreases (we go back).
+        setOffset(voice, downOff - dx);
+      }
+    });
+
+    function endPointer(e) {
+      if (!pointerDown) return;
+      if (e.pointerId !== undefined && e.pointerId !== activePointerId) return;
+      pointerDown = false;
+      activePointerId = null;
+      if (!moved) {
+        // No drag — treat as a click: toggle autoplay focus.
+        startAutoplay(voice);
+      }
+    }
+
+    band.addEventListener('pointerup', endPointer);
+    band.addEventListener('pointercancel', endPointer);
+
+    band.addEventListener('wheel', function (e) {
+      // Capture the wheel so the page doesn't try to scroll. Both axes
+      // are accepted: trackpads often send horizontal; mice send vertical.
+      e.preventDefault();
+      fadeHint();
+      stopAutoplay();
+      var dy = Math.abs(e.deltaX) > Math.abs(e.deltaY) ? e.deltaX : e.deltaY;
+      setOffset(voice, state[voice].offset + dy);
+    }, { passive: false });
+  }
+
+  bindBand(bandOdy, 'odysseus');
+  bindBand(bandSir, 'siren');
+
+  // ── LANG SWITCH ──
+  window.switchLang = function (lang) {
+    currentLang = lang;
+    stopAutoplay();
+    render();
+  };
+
+  // ── SWAP ──
+  // Flips the two bands' DOM order (via CSS flex `order`), which moves
+  // Odysseus from top to bottom and vice versa. Colors stay bound to
+  // voice, per the user's spec: "Positionen vertauschen. Farben bleiben."
+  window.swap = function () {
+    document.body.classList.toggle('swapped');
+  };
+
+  // ── RESIZE ──
+  window.addEventListener('resize', function () {
+    viewCenter = window.innerWidth / 2;
+    // Font clamp + layout changes shift paragraph offsets and the
+    // per-track base — re-measure both, and re-derive reading speed
+    // since pixels-per-word depends on the rendered font size. Order
+    // mirrors render(): recalcTrackBase zeroes the transforms before
+    // rebuildAnchors does its Range-based word measurements.
+    requestAnimationFrame(function () {
+      recalcTrackBase();
+      rebuildAnchors();
+      calibrateSpeeds();
+      applyTransforms();
+    });
+  });
+
+  // ── INIT ──
+  render();
+});
+</script>
+
+</body>
+</html>

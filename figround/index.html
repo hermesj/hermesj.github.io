@@ -6,7 +6,7 @@
 <title>Figure and Ground</title>
 <meta name="description" content="Two parallel prose texts on the myth of Odysseus and the Siren — as poster, focus, sound, and palimpsest.">
 <meta property="og:title" content="Figure and Ground">
-<meta property="og:description" content="One myth. Two perspectives. Four ways in.">
+<meta property="og:description" content="One myth. Two perspectives. Five ways in.">
 <meta property="og:image" content="https://hermesj.github.io/figround/images/og-image-index-en.png">
 <meta property="og:url" content="https://hermesj.github.io/figround/">
 <meta property="og:type" content="website">
@@ -114,6 +114,16 @@
     margin-bottom: 4vh;
   }
 
+  /* If the last tile ends up alone in its row (odd total in a 2-col grid),
+     stretch it across both columns and self-center it. The width is capped
+     to one column's worth so the lone tile keeps the same size as its
+     siblings — it just sits in the middle instead of pinned to the left. */
+  .tiles > .tile:last-child:nth-child(odd) {
+    grid-column: 1 / -1;
+    justify-self: center;
+    width: calc(50% - 0.9em);   /* one column = (100% − gap) / 2 */
+  }
+
   .tile {
     display: block;
     text-decoration: none;
@@ -201,6 +211,13 @@
       grid-template-columns: 1fr;
       gap: 1.2em;
     }
+    /* Single-column layout: every tile is alone in its row, so the
+       centering rule above would cap them all to half-width. Reset. */
+    .tiles > .tile:last-child:nth-child(odd) {
+      grid-column: auto;
+      justify-self: stretch;
+      width: auto;
+    }
   }
 </style>
 </head>
@@ -215,7 +232,7 @@
 
   <div class="header">
     <h1 id="title">Figure and Ground</h1>
-    <p class="tagline" id="tagline">One myth. Two perspectives. Four ways in.</p>
+    <p class="tagline" id="tagline">One myth. Two perspectives. Five ways in.</p>
   </div>
 
   <div class="tiles">
@@ -230,38 +247,50 @@
       </div>
     </a>
 
-    <a class="tile" href="poster.html" id="tilePoster">
-      <img class="tile-img" src="images/tile-poster-en.jpg" alt="Poster view preview" id="posterImg"
-           width="1200" height="630" loading="lazy" decoding="async"
-           data-img-en="images/tile-poster-en.jpg" data-img-de="images/tile-poster-de.jpg">
-      <div class="tile-body">
-        <div class="tile-title" data-en="Poster" data-de="Poster">Poster</div>
-        <div class="tile-desc" data-en="Texts interleaved as a visual poster." data-de="Verschränkte Texte als visuelles Poster.">Texts interleaved as a visual poster.</div>
-      </div>
-    </a>
-
-     <a class="tile" href="palimpsest.html" id="tilePalimpsest">
+    <a class="tile" href="palimpsest.html" id="tilePalimpsest">
       <img class="tile-img" src="images/tile-palimpsest-en.jpg" alt="Palimpsest view preview" id="palimpsestImg"
            width="1200" height="630" loading="lazy" decoding="async"
            data-img-en="images/tile-palimpsest-en.jpg" data-img-de="images/tile-palimpsest-de.jpg">
       <div class="tile-body">
-        <div class="tile-title" data-en="Palimpsest (experimental)" data-de="Palimpsest (experimentell)">Palimpsest (experimental)</div>
+        <div class="tile-title" data-en="Palimpsest" data-de="Palimpsest">Palimpsest</div>
         <div class="tile-desc" data-en="Hidden text beneath the surface." data-de="Verborgener Text unter der Oberfläche.">Hidden text beneath the surface.</div>
       </div>
     </a>
 
-    <a class="tile" href="audio-prototype.html" id="tileAudio">
+    <a class="tile" href="alignement.html" id="tileAlignement">
+      <img class="tile-img" src="images/tile-alignement-en.png" alt="Alignement view preview" id="alignementImg"
+           width="1200" height="630" loading="lazy" decoding="async"
+           data-img-en="images/tile-alignement-en.png" data-img-de="images/tile-alignement-de.png">
+      <div class="tile-body">
+        <div class="tile-title" data-en="Alignement" data-de="Alignement">Alignement</div>
+        <div class="tile-desc" data-en="Texts aligned in two prompters." data-de="Texte aligniert auf zwei Bändern.">Texts aligned in two prompters.</div>
+      </div>
+    </a>
+
+     <a class="tile" href="audio-prototype.html" id="tileAudio">
       <img class="tile-img" src="images/tile-audio-en.jpg" alt="Audio view preview" id="audioImg"
            width="1200" height="630" loading="lazy" decoding="async"
            data-img-en="images/tile-audio-en.jpg" data-img-de="images/tile-audio-de.jpg">
       <div class="tile-body">
-        <div class="tile-title" data-en="Audio (experimental)" data-de="Audio  (experimentell)">Audio (experimental)</div>
+        <div class="tile-title" data-en="Audio" data-de="Audio">Audio</div>
         <div class="tile-desc" data-en="Crossfade between two voices." data-de="Überblendung zwischen zwei Stimmen.">Crossfade between two voices.</div>
       </div>
     </a>
+ <a class="tile" href="poster.html" id="tilePoster">
+      <img class="tile-img" src="images/tile-poster-en.jpg" alt="Poster view preview" id="posterImg"
+           width="1200" height="630" loading="lazy" decoding="async"
+           data-img-en="images/tile-poster-en.jpg" data-img-de="images/tile-poster-de.jpg">
+      <div class="tile-body">
+        <div class="tile-title" data-en="Poster (static)" data-de="Poster (static)">Poster</div>
+        <div class="tile-desc" data-en="Texts interleaved as a visual poster." data-de="Verschränkte Texte als visuelles Poster.">Texts interleaved as a visual poster.</div>
+      </div>
+    </a>
+    
 
   </div>
 
+ 
+ 
   <div class="video-hero">
     <h2 class="video-title" id="videoTitle">Watch the intro</h2>
     <div class="video-embed">
@@ -292,7 +321,7 @@ var currentLang = (navigator.language && navigator.language.startsWith('de')) ? 
 var i18n = {
   de: {
     title: 'Figur und Hintergrund',
-    tagline: 'Ein Mythos. Zwei Perspektiven. Vier Zugänge.',
+    tagline: 'Ein Mythos. Zwei Perspektiven. Fünf Zugänge.',
     videoTitle: 'Zur Einführung',
     textgenesisHref: 'https://spinfocl.substack.com/p/figur-und-hintergrund',
     projgenesisHref: 'https://texperimentales.hypotheses.org/6379',
@@ -300,7 +329,7 @@ var i18n = {
   },
   en: {
     title: 'Figure and Ground',
-    tagline: 'One myth. Two perspectives. Four ways in.',
+    tagline: 'One myth. Two perspectives. Fünf ways in.',
     videoTitle: 'Watch the intro',
     textgenesisHref: 'https://foclen.substack.com/p/figure-and-ground',
     projgenesisHref: 'doc/projectgenesis.html',
