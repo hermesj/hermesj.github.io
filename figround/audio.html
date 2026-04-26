@@ -239,6 +239,17 @@ FIGROUND.injectHeader({
 });
 
 // ── Init ──
+//
+// Audio architecture: HTMLAudioElement + MediaElementAudioSourceNode.
+// All four <audio> elements (lang × role) are created at startup with
+// preload="metadata", so the browser fetches just the MP3 headers
+// (~50 KB / file) — enough to know each track's duration. Actual
+// streaming starts on first play(); the browser handles range requests
+// and buffering. Each element is wrapped exactly once in a
+// MediaElementAudioSourceNode (the API is single-shot per element) and
+// stays permanently connected to its role's gain node — switching
+// language is just pause + reset on the old pair, play on the new one,
+// no fetch / decode involved.
 
 async function init() {
   // Wait for texts to load from JSON
@@ -269,36 +280,41 @@ async function init() {
   // Apply initial crossfade (50/50)
   updateCrossfade(50);
 
-  // Load all audio files
+  // Build the four streaming sources. Hidden <audio> elements live in
+  // the DOM (some browsers — historically iOS Safari — only fully wire
+  // up media playback for elements attached to a document).
   const loadingBar = document.getElementById('loadingBar');
-  const loadingFill = document.getElementById('loadingFill');
   loadingBar.classList.add('visible');
-
-  const loadPromises = [];
+  document.getElementById('status').textContent = 'Loading audio …';
 
   for (const lang of ['de', 'en']) {
     for (const role of ['odysseus', 'siren']) {
-      const url = AUDIO_FILES[lang][role];
-      loadPromises.push(
-        fetch(url)
-          .then(r => {
-            if (!r.ok) throw new Error(`Failed to load ${url}`);
-            return r.arrayBuffer();
-          })
-          .then(buf => audioCtx.decodeAudioData(buf))
-          .then(decoded => {
-            buffers[lang][role] = decoded;
-            loadedCount++;
-            loadingFill.style.width = (loadedCount / totalFiles * 100) + '%';
-            document.getElementById('status').textContent =
-              `Loaded: ${loadedCount} / ${totalFiles} …`;
-          })
-      );
+      const el = new Audio();
+      el.preload = 'metadata';            // headers only, no audio bytes yet
+      el.src = AUDIO_FILES[lang][role];
+      el.style.display = 'none';
+      document.body.appendChild(el);
+      audioEls[lang][role] = el;
+
+      // createMediaElementSource can be called once per element, full stop —
+      // do it now so the graph is wired before first play. Setting preload
+      // alone is enough to start the metadata fetch in the background.
+      const src = audioCtx.createMediaElementSource(el);
+      mediaSources[lang][role] = src;
+      src.connect(gains[role]);
     }
   }
 
   try {
-    await Promise.all(loadPromises);
+    // Block on the active pair only — that's all we need to enable Play
+    // and render the duration / strophe bars. The other language's
+    // metadata resolves in the background and the language switch will
+    // typically find it already cached.
+    await Promise.all([
+      waitForMetadata(audioEls[currentLang].odysseus),
+      waitForMetadata(audioEls[currentLang].siren),
+    ]);
+
     loadingBar.classList.remove('visible');
     document.getElementById('status').textContent = '';
     document.getElementById('btnPlay').disabled = false;
@@ -311,11 +327,53 @@ async function init() {
 
     updateDuration();
     renderStropheBars();
+
+    // While streaming: surface "Buffering …" if the network can't keep up,
+    // clear it once playback resumes. Bound on every element so it works
+    // in either language.
+    for (const lang of ['de', 'en']) {
+      for (const role of ['odysseus', 'siren']) {
+        bindBufferingStatus(audioEls[lang][role]);
+      }
+    }
   } catch (e) {
+    loadingBar.classList.remove('visible');
     document.getElementById('status').textContent =
       'Error loading audio. Please make sure the MP3 files are in the audio/ folder.';
     console.error(e);
   }
+}
+
+// Resolve once the audio element has its duration available. readyState
+// >= 1 (HAVE_METADATA) means the loadedmetadata event has already fired,
+// in which case we resolve immediately.
+function waitForMetadata(el) {
+  return new Promise((resolve, reject) => {
+    if (el.readyState >= 1) return resolve();
+    const onMeta = () => { cleanup(); resolve(); };
+    const onErr  = () => { cleanup(); reject(new Error('audio load failed: ' + el.src)); };
+    const cleanup = () => {
+      el.removeEventListener('loadedmetadata', onMeta);
+      el.removeEventListener('error', onErr);
+    };
+    el.addEventListener('loadedmetadata', onMeta);
+    el.addEventListener('error', onErr);
+  });
+}
+
+// "waiting" fires when the element is stalled needing more data; "playing"
+// or "canplay" once it can resume. We only show the hint while the user
+// is actively in playback — a paused stall is not visible to the user.
+function bindBufferingStatus(el) {
+  el.addEventListener('waiting', () => {
+    if (isPlaying) document.getElementById('status').textContent = 'Buffering …';
+  });
+  el.addEventListener('playing', () => {
+    document.getElementById('status').textContent = '';
+  });
+  el.addEventListener('canplay', () => {
+    if (isPlaying) document.getElementById('status').textContent = '';
+  });
 }
 
 // ── Crossfade ──
@@ -355,36 +413,29 @@ document.getElementById('crossfade').addEventListener('input', function() {
 });
 
 // ── Playback ──
+// startPlayback() is idempotent w.r.t. position — it pushes the active
+// pair to `offset` (or leaves them where they are if no offset is given,
+// which is what togglePlay does for resume) and calls play() on both.
+// We don't need an `ended` handler; updateProgress watches the clock
+// and stops at duration. play() returns a Promise that can reject if
+// the autoplay policy blocks us — togglePlay's audioCtx.resume() and
+// the user gesture should prevent that, but we swallow the rejection
+// just in case.
 
 function startPlayback(offset) {
-  // Create new source nodes (they're one-shot)
-  sources.odysseus = audioCtx.createBufferSource();
-  sources.siren = audioCtx.createBufferSource();
-  sources.odysseus.buffer = buffers[currentLang].odysseus;
-  sources.siren.buffer = buffers[currentLang].siren;
-  sources.odysseus.connect(gains.odysseus);
-  sources.siren.connect(gains.siren);
+  const ody = audioEls[currentLang].odysseus;
+  const sir = audioEls[currentLang].siren;
 
-  // When the longer track ends, stop everything
-  const durOdy = buffers[currentLang].odysseus.duration;
-  const durSir = buffers[currentLang].siren.duration;
-  const maxDur = Math.max(durOdy, durSir);
+  if (typeof offset === 'number') {
+    ody.currentTime = offset;
+    sir.currentTime = offset;
+  }
 
-  sources.odysseus.onended = () => {
-    if (isPlaying && getCurrentTime() >= maxDur - 0.1) {
-      stopPlayback();
-    }
-  };
-  sources.siren.onended = () => {
-    if (isPlaying && getCurrentTime() >= maxDur - 0.1) {
-      stopPlayback();
-    }
-  };
+  ody.play().catch(err => console.warn('odysseus play failed:', err));
+  sir.play().catch(err => console.warn('siren play failed:', err));
 
-  sources.odysseus.start(0, offset);
-  sources.siren.start(0, offset);
-  startTime = audioCtx.currentTime - offset;
   isPlaying = true;
+  lastDriftCheck = performance.now();
 }
 
 function seek(event) {
@@ -398,18 +449,27 @@ function seek(event) {
 }
 
 // ── Language Switching ──
+// No fetch / decode involved any more — we just pause + rewind the old
+// pair and play the new one. Both pairs stay permanently connected to
+// the gain bus, so the inactive pair is silent simply because it's
+// paused. Metadata for the new pair is usually already loaded (init
+// kicks off all four metadata fetches in parallel); on the off chance
+// it isn't, waitForMetadata resolves quickly because the browser only
+// needs the MP3 header.
 
 function switchLang(lang) {
+  if (lang === currentLang) return;
   const wasPlaying = isPlaying;
-  const offset = getCurrentTime();
 
   if (isPlaying) {
     stopSources();
     isPlaying = false;
   }
+  // Rewind the now-inactive pair so a later switch back starts from 0:00.
+  audioEls[currentLang].odysseus.currentTime = 0;
+  audioEls[currentLang].siren.currentTime    = 0;
 
   currentLang = lang;
-  pauseOffset = 0; // reset to start when switching language
 
   document.getElementById('btnDe').classList.toggle('active', lang === 'de');
   document.getElementById('btnEn').classList.toggle('active', lang === 'en');
@@ -421,17 +481,27 @@ function switchLang(lang) {
   // Reset play button (SVG + label)
   updatePlayButton();
 
-  updateDuration();
   document.getElementById('timeCurrent').textContent = '0:00';
   document.getElementById('progressFill').style.width = '0%';
-  renderStropheBars();
   initTickers();
   updateTickers(0);
 
-  if (wasPlaying) {
-    startPlayback(0);
-    updatePlayButton();
-  }
+  // Duration / strophe-bar geometry depends on the new pair's metadata.
+  // It's almost always already loaded — but await it just in case.
+  Promise.all([
+    waitForMetadata(audioEls[lang].odysseus),
+    waitForMetadata(audioEls[lang].siren),
+  ]).then(() => {
+    updateDuration();
+    renderStropheBars();
+    if (wasPlaying) {
+      startPlayback(0);
+      updatePlayButton();
+    }
+  }).catch(err => {
+    console.error(err);
+    document.getElementById('status').textContent = 'Error loading audio.';
+  });
 }
 
 // ── Strophe Markers on Timeline ──
@@ -493,18 +563,46 @@ function updateStropheHighlight(currentTime) {
 }
 
 function seekTo(seconds) {
-  if (audioCtx.state === 'suspended') audioCtx.resume();
+  if (audioCtx && audioCtx.state === 'suspended') audioCtx.resume();
   var dur = getMaxDuration();
+  if (dur <= 0) return;                       // metadata not loaded yet — bail
   var target = Math.max(0, Math.min(seconds, dur));
 
+  var ody = audioEls[currentLang].odysseus;
+  var sir = audioEls[currentLang].siren;
+  if (!ody || !sir) return;
+
+  // Each track has its own duration — the shorter track's currentTime must
+  // not be set past its end, otherwise some browsers reject the assignment
+  // silently and the seek "doesn't take".
+  var odyTarget = isNaN(ody.duration) ? target : Math.min(target, ody.duration);
+  var sirTarget = isNaN(sir.duration) ? target : Math.min(target, sir.duration);
+  try { ody.currentTime = odyTarget; } catch (e) { console.warn('odysseus seek failed:', e); }
+  try { sir.currentTime = sirTarget; } catch (e) { console.warn('siren seek failed:', e); }
+
+  // If the user was already playing, the browser may pause one or both
+  // elements briefly while fetching the new byte range — kick them back
+  // into play() so the seek doesn't leave us hanging in 'seeking' state.
   if (isPlaying) {
-    stopSources();
-    startPlayback(target);
-  } else {
-    pauseOffset = target;
-    document.getElementById('timeCurrent').textContent = formatTime(target);
-    document.getElementById('progressFill').style.width = (target / dur * 100) + '%';
+    if (ody.paused) ody.play().catch(err => console.warn('odysseus resume failed:', err));
+    if (sir.paused) sir.play().catch(err => console.warn('siren resume failed:', err));
   }
+
+  // Resync the drift timer so we don't immediately re-sync after the
+  // user just placed both heads at the same spot.
+  lastDriftCheck = performance.now();
+
+  // Update UI immediately, regardless of play state. The next
+  // updateProgress frame reads audioEl.currentTime — but with
+  // preload="metadata" the browser may still be fetching the byte range
+  // for the new position when that frame fires, so currentTime can lag
+  // by a few ms. Pushing the visual state from `target` here makes the
+  // jump feel instant, and updateProgress overwrites with the live
+  // value once playback advances normally.
+  document.getElementById('timeCurrent').textContent = formatTime(target);
+  document.getElementById('progressFill').style.width = (target / dur * 100) + '%';
+  updateTickers(target);
+  updateStropheHighlight(target);
 }
 
 // Jump to the next (+1) or previous (-1) strophe boundary for a given voice
@@ -572,6 +670,16 @@ function jumpPrev() {
 }
 
 // ── Progress update loop ──
+// Two HTMLAudioElement instances each have their own clock and can drift
+// over long playback (typically a few ms / minute, not perceptible in
+// speech but worth correcting on principle). Once a minute we check the
+// gap and snap the Siren to the Odysseus clock if it exceeds the
+// threshold. Also handles the "we've reached the end" stop, which used
+// to live in the BufferSourceNode `onended` handler.
+
+let lastDriftCheck = 0;
+const DRIFT_CHECK_INTERVAL_MS = 60000;
+const DRIFT_THRESHOLD_S = 0.08;
 
 function updateProgress() {
   var cur = getCurrentTime();
@@ -581,6 +689,29 @@ function updateProgress() {
   if (isPlaying) {
     document.getElementById('progressFill').style.width = (pct * 100) + '%';
     document.getElementById('timeCurrent').textContent = formatTime(cur);
+
+    // End-of-track stop — replaces the old BufferSourceNode onended.
+    if (dur > 0 && cur >= dur - 0.05) {
+      stopPlayback();
+    } else {
+      // Drift correction: every minute, pull Siren onto Odysseus's clock
+      // if they've drifted apart. Cheap and rarely needed, but keeps long
+      // listens precisely aligned. Guarded on both elements actually
+      // playing so a buffering stall doesn't trigger a phantom jump.
+      const now = performance.now();
+      if (now - lastDriftCheck > DRIFT_CHECK_INTERVAL_MS) {
+        lastDriftCheck = now;
+        const ody = audioEls[currentLang].odysseus;
+        const sir = audioEls[currentLang].siren;
+        if (ody && sir && !ody.paused && !sir.paused &&
+            !isNaN(ody.currentTime) && !isNaN(sir.currentTime)) {
+          const diff = Math.abs(ody.currentTime - sir.currentTime);
+          if (diff > DRIFT_THRESHOLD_S) {
+            sir.currentTime = ody.currentTime;
+          }
+        }
+      }
+    }
   }
 
   // Always update tickers and strophe highlights (also when paused, for seek)

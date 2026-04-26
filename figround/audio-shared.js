@@ -1,7 +1,16 @@
 // ══════════════════════════════════════════════════════
 // Figure and Ground — shared audio logic
-// Used by audio.html (and the deprecated audio-prototype.html)
+// Used by audio.html
 // Depends on: figround.js (FIGROUND), audio-timestamps.js (AUDIO_TIMESTAMPS)
+//
+// Streaming architecture:
+// We use HTMLAudioElement + MediaElementAudioSourceNode rather than
+// fetch + decodeAudioData. The browser handles range requests, buffering
+// and seeking; the Web Audio graph (gain + StereoPanner) sits on top of
+// the source so crossfade and positional control still work. Initial
+// load is just the MP3 header (~50 KB per file) instead of the full
+// ~5 MB × 4 files, and there's no decoded-PCM buffer in RAM (which would
+// be ~200 MB for these tracks).
 // ══════════════════════════════════════════════════════
 
 // ── Scroll hint: show only when content overflows ──
@@ -28,37 +37,45 @@ const AUDIO_FILES = {
 };
 
 let audioCtx = null;
-let buffers = { de: {}, en: {} };
-let sources = { odysseus: null, siren: null };
-let gains = { odysseus: null, siren: null };
+// Four <audio> elements (lang × role). Each is wrapped exactly once in a
+// MediaElementAudioSourceNode (createMediaElementSource() can only be
+// called once per element). All four sources stay permanently connected
+// to the gain bus; the inactive language is simply paused, so silent.
+let audioEls     = { de: { odysseus: null, siren: null }, en: { odysseus: null, siren: null } };
+let mediaSources = { de: { odysseus: null, siren: null }, en: { odysseus: null, siren: null } };
+let gains   = { odysseus: null, siren: null };
 let panners = { odysseus: null, siren: null };
 
 let currentLang = FIGROUND.detectLang();
 let isPlaying = false;
-let startTime = 0;      // audioCtx.currentTime when playback started
-let pauseOffset = 0;    // how far into the track we paused
-let loadedCount = 0;
-const totalFiles = 4;
 
-// Stereo panning range: how far left/right the voices sit
-// -1 = hard left, +1 = hard right
+// Stereo panning range: how far left/right the voices sit.
+// -1 = hard left, +1 = hard right.
 const PAN_ODYSSEUS_BASE = -0.35;  // Odysseus slightly left
-const PAN_SIREN_BASE = 0.35;     // Siren slightly right
+const PAN_SIREN_BASE    = 0.35;   // Siren slightly right
 
 // ── Playback primitives ──
-// (startPlayback() stays per-page: proto-2 adds onended handlers.)
+// HTMLAudioElement preserves currentTime across pause, so getCurrentTime
+// just reads it directly — no separate pauseOffset / startTime bookkeeping
+// like the old AudioBufferSourceNode flow needed.
+
+function activeEls() {
+  return audioEls[currentLang];
+}
 
 function stopSources() {
-  try { sources.odysseus?.stop(); } catch(e) {}
-  try { sources.siren?.stop(); } catch(e) {}
-  sources.odysseus = null;
-  sources.siren = null;
+  const els = activeEls();
+  if (els.odysseus) els.odysseus.pause();
+  if (els.siren)    els.siren.pause();
 }
 
 function stopPlayback() {
-  pauseOffset = 0;
   isPlaying = false;
   stopSources();
+  // Rewind to the start so the next Play begins at 0:00.
+  const els = activeEls();
+  if (els.odysseus) els.odysseus.currentTime = 0;
+  if (els.siren)    els.siren.currentTime = 0;
   updatePlayButton();
   document.getElementById('progressFill').style.width = '0%';
   document.getElementById('timeCurrent').textContent = '0:00';
@@ -68,17 +85,18 @@ function togglePlay() {
   if (audioCtx.state === 'suspended') audioCtx.resume();
 
   if (isPlaying) {
-    pauseOffset = getCurrentTime();
     isPlaying = false;
     stopSources();
   } else {
-    startPlayback(pauseOffset);
+    // No offset arg → resume from wherever the audio elements are;
+    // they remember currentTime from the last pause / seek.
+    startPlayback();
   }
   updatePlayButton();
 }
 
 // ── Play button: SVG icon + label ──
-// Both prototypes use a markup pattern of:
+// Markup pattern (audio.html):
 //   <button id="btnPlay">
 //     <span id="btnPlayIcon"></span>
 //     <span id="btnPlayLabel">Play</span>
@@ -95,16 +113,22 @@ function updatePlayButton() {
 }
 
 function getCurrentTime() {
-  if (!isPlaying) return pauseOffset;
-  return audioCtx.currentTime - startTime;
+  // Use Odysseus as the primary clock — Siren is kept aligned via the
+  // periodic drift correction in audio.html's updateProgress loop.
+  const ody = activeEls().odysseus;
+  if (!ody) return 0;
+  const t = ody.currentTime;
+  return isNaN(t) ? 0 : t;
 }
 
 function getMaxDuration() {
-  if (!buffers[currentLang].odysseus || !buffers[currentLang].siren) return 0;
-  return Math.max(
-    buffers[currentLang].odysseus.duration,
-    buffers[currentLang].siren.duration
-  );
+  const els = activeEls();
+  if (!els.odysseus || !els.siren) return 0;
+  const dOdy = els.odysseus.duration;
+  const dSir = els.siren.duration;
+  // Before metadata loads, duration is NaN — treat as 0.
+  if (isNaN(dOdy) || isNaN(dSir)) return 0;
+  return Math.max(dOdy, dSir);
 }
 
 function updateDuration() {
