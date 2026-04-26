@@ -1,6 +1,6 @@
 /* ══════════════════════════════════════════════════════
    Figure and Ground — shared audio styles
-   Used by audio.html (and the deprecated audio-prototype.html)
+   Used by audio.html.
    ══════════════════════════════════════════════════════ */
 
 /* ── BODY (audio-specific gradient) ──
@@ -167,8 +167,7 @@ input[type="range"]#crossfade::-moz-range-thumb {
 }
 
 /* ── PROGRESS BAR — shared bits only
-   (.progress-container and .progress-bar-bg stay inline:
-    they differ between the two prototypes)                */
+   (.progress-container and .progress-bar-bg stay inline in audio.html) */
 .progress-bar-fill {
   height: 100%;
   width: 0%;
@@ -220,9 +219,9 @@ input[type="range"]#crossfade::-moz-range-thumb {
 
 /* ══════════════════════════════════════════════════════════════
    CHIP-STYLE CONTROLS — buttons, transport.
-   Proto-specific bits (btn-transport, strophe-bars, play-group)
-   live in each prototype's inline <style>. Lang buttons live in
-   the shared header (figround.css) — no .btn-lang here anymore.
+   audio.html-specific bits (btn-transport, strophe-bars, play-group)
+   live in its inline <style>. Lang buttons live in the shared header
+   (figround.css) — no .btn-lang here anymore.
    ══════════════════════════════════════════════════════════════ */
 
 .transport {
@@ -378,8 +377,8 @@ input[type="range"]#crossfade::-moz-range-thumb {
 
 /* ══════════════════════════════════════════════════════════════
    MOBILE BASE (phones, < 768 px) — language buttons now live in the
-   shared header, so transport contains only Play (and prev/stop/next
-   in proto-2, handled by that file's inline style).
+   shared header, so transport contains only Play (and prev/next,
+   handled by audio.html's inline style).
    ══════════════════════════════════════════════════════════════ */
 @media (max-width: 768px) {
   .speaker-left,

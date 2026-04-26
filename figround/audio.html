@@ -7,7 +7,7 @@
 <link rel="stylesheet" href="figround.css">
 <link rel="stylesheet" href="audio-shared.css">
 <style>
-  /* Proto-2 (Advanced Mode) specifics.
+  /* audio.html-specific styling.
      Shared transport / play-button chrome, mobile base → audio-shared.css.
      Play button SVG icons + updatePlayButton()         → audio-shared.js.
      Header / footer / explanation                      → injected by
@@ -105,7 +105,7 @@
   .strophe-bar-ody.strophe-bar-active { background: rgba(244,248,252,0.75); }
   .strophe-bar-sir.strophe-bar-active { background: rgba(5,10,18,0.65); }
 
-  /* ── PERSPECTIVE TOGGLE (proto-2: larger, stronger palette than proto-1) ── */
+  /* ── PERSPECTIVE TOGGLE ── */
   .perspective-toggle {
     width: 32px;
     height: 32px;
@@ -198,7 +198,7 @@
   <!-- Progress with strophe bars -->
   <div class="progress-container">
     <div class="strophe-bars strophe-bars-ody" id="stropheBarsOdy"></div>
-    <div class="progress-bar-bg" id="progressBg" onclick="seek(event)">
+    <div class="progress-bar-bg" id="progressBg">
       <div class="progress-bar-fill" id="progressFill"></div>
     </div>
     <div class="strophe-bars strophe-bars-sir" id="stropheBarsSir"></div>
@@ -302,6 +302,17 @@ async function init() {
       const src = audioCtx.createMediaElementSource(el);
       mediaSources[lang][role] = src;
       src.connect(gains[role]);
+
+      // Odysseus is our primary clock; once it settles at the seek target,
+      // drop the pendingSeekTarget override so getCurrentTime goes back to
+      // reading the live element. Guard on "still active language" so a
+      // language switch mid-flight doesn't clear a target that belongs to
+      // the now-active pair.
+      if (role === 'odysseus') {
+        el.addEventListener('seeked', () => {
+          if (audioEls[currentLang].odysseus === el) pendingSeekTarget = null;
+        });
+      }
     }
   }
 
@@ -438,15 +449,38 @@ function startPlayback(offset) {
   lastDriftCheck = performance.now();
 }
 
-function seek(event) {
-  if (audioCtx.state === 'suspended') audioCtx.resume();
+// Click + drag scrub on the progress bar. Pointer events unify mouse,
+// touch and pen — pointerdown jumps to the position, subsequent
+// pointermove (while the pointer is captured) live-scrubs. setPointerCapture
+// keeps the gesture alive even when the cursor leaves the (3 px-tall)
+// bar, which it inevitably will mid-drag.
+(function setupProgressBarDrag() {
   const bar = document.getElementById('progressBg');
-  const rect = bar.getBoundingClientRect();
-  const x = event.clientX - rect.left;
-  const pct = x / rect.width;
-  const dur = getMaxDuration();
-  seekTo(pct * dur);
-}
+  let dragging = false;
+
+  function targetFromEvent(e) {
+    const rect = bar.getBoundingClientRect();
+    const pct = Math.max(0, Math.min(1, (e.clientX - rect.left) / rect.width));
+    return pct * getMaxDuration();
+  }
+
+  bar.addEventListener('pointerdown', (e) => {
+    if (getMaxDuration() <= 0) return;
+    dragging = true;
+    bar.setPointerCapture(e.pointerId);
+    seekTo(targetFromEvent(e));
+    e.preventDefault();
+  });
+  bar.addEventListener('pointermove', (e) => {
+    if (dragging) seekTo(targetFromEvent(e));
+  });
+  bar.addEventListener('pointerup', (e) => {
+    if (!dragging) return;
+    dragging = false;
+    if (bar.hasPointerCapture(e.pointerId)) bar.releasePointerCapture(e.pointerId);
+  });
+  bar.addEventListener('pointercancel', () => { dragging = false; });
+})();
 
 // ── Language Switching ──
 // No fetch / decode involved any more — we just pause + rewind the old
@@ -535,6 +569,10 @@ function renderStropheBars() {
         bar.addEventListener('click', function(e) {
           e.stopPropagation();
           seekTo(startSec);
+          // If we're not yet playing, start — clicking a strophe is
+          // effectively "play me from here", so don't make the user
+          // also press Play.
+          if (!isPlaying) togglePlay();
         });
       })(entries[i].start);
       container.appendChild(bar);
@@ -567,6 +605,12 @@ function seekTo(seconds) {
   var dur = getMaxDuration();
   if (dur <= 0) return;                       // metadata not loaded yet — bail
   var target = Math.max(0, Math.min(seconds, dur));
+
+  // Override the clock reads until 'seeked' fires (init() sets up the
+  // listener that clears this). Without this, the next animation frame
+  // would read the audio element's still-stale currentTime and snap the
+  // ticker / strophe highlight back to the old position.
+  pendingSeekTarget = target;
 
   var ody = audioEls[currentLang].odysseus;
   var sir = audioEls[currentLang].siren;

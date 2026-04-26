@@ -49,6 +49,16 @@ let panners = { odysseus: null, siren: null };
 let currentLang = FIGROUND.detectLang();
 let isPlaying = false;
 
+// While a seek is in flight, getCurrentTime() returns this instead of
+// audioEl.currentTime. The element's currentTime can lag the setter by
+// a handful of ms — with preload="metadata" the browser may still be
+// fetching the byte range for the new position when the next animation
+// frame fires. The override is cleared when the active Odysseus element's
+// 'seeked' event fires (see init() in audio.html). It also lets
+// jumpNext / jumpPrev base their lookup on the just-targeted position
+// rather than the not-yet-updated audio clock.
+let pendingSeekTarget = null;
+
 // Stereo panning range: how far left/right the voices sit.
 // -1 = hard left, +1 = hard right.
 const PAN_ODYSSEUS_BASE = -0.35;  // Odysseus slightly left
@@ -115,6 +125,10 @@ function updatePlayButton() {
 function getCurrentTime() {
   // Use Odysseus as the primary clock — Siren is kept aligned via the
   // periodic drift correction in audio.html's updateProgress loop.
+  // While a seek is in flight, prefer the target so callers like
+  // jumpNext / updateTickers see the new position immediately, even
+  // before the audio element's own clock has caught up.
+  if (pendingSeekTarget !== null) return pendingSeekTarget;
   const ody = activeEls().odysseus;
   if (!ody) return 0;
   const t = ody.currentTime;
