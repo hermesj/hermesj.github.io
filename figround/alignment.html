@@ -44,11 +44,12 @@
        Track font-size is the only authority — band height derives from
        it via the golden ratio, so resizing the type rescales everything
        in proportion. Padding above/below the text line equals 1.618 ×
-       the text line-height; total band height = 1.4em × (1 + 2 × 1.618)
-       ≈ 5.93em. */
+       the text line-height, then the whole thing is halved so the bands
+       read as slim ribbons rather than blocks: total band height
+       = 1.4em × (1 + 2 × 1.618) / 2 ≈ 2.96em. */
     --track-fs: clamp(1.2rem, 1.65vw, 1.6rem);
     --line-h: 1.4;
-    --band-h: calc(var(--track-fs) * var(--line-h) * (1 + 2 * 1.618));
+    --band-h: calc(var(--track-fs) * var(--line-h) * (1 + 2 * 1.618) / 2);
   }
 
   /* ── TITLE ──
@@ -69,18 +70,20 @@
   }
 
   /* ── BANDS CONTAINER ──
-     Fills the available vertical space below the title + explanation.
-     The bands themselves are fixed-height (var(--band-h)); each band is
-     preceded by its own .band-label heading; three .band-pad spacers
-     soak up the leftover space using a 0.55 : 0.618 : 1 flex ratio. The
-     middle gap stays at the φ-section value, the bottom margin keeps the
-     full share, and the top margin is shrunk so the upper label sits
-     closer to the page heading. */
+     Fills the available vertical space below the title + explanation
+     and the FULL viewport width — the bands run all the way to the
+     screen edges (no margin, no border-radius), as if the text were
+     spilling off-screen on both sides. The bands themselves are
+     fixed-height (var(--band-h)); each band is preceded by its own
+     .band-label heading; three .band-pad spacers soak up the leftover
+     space using a 0.55 : 0.618 : 1 flex ratio. The middle gap stays at
+     the φ-section value, the bottom margin keeps the full share, and
+     the top margin is shrunk so the upper label sits closer to the
+     page heading. */
   .bands {
     flex: 1;
     min-height: 0;
-    width: 72vw;
-    margin: 0 auto;
+    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: stretch;
@@ -88,7 +91,34 @@
 
   .band-pad { flex: 1; min-height: 0; }
   .band-pad.pad-top { flex: 0.55; }   /* gap to page title — smaller = tighter */
-  .band-pad.pad-mid { flex: 0.618; }  /* gap between the two band groups (φ-section) */
+  .band-pad.pad-mid {
+    flex: 0.618;                      /* gap between the two band groups (φ-section) */
+    position: relative;               /* anchors the chain SVG layer */
+  }
+
+  /* ── CHAIN LAYER ──
+     Lives inside pad-mid (the gap between the two bands) and never spills
+     into the band areas — the user's spec: "Die Ketten sieht man nur
+     zwischen den Textboxen." Each chain anchors one fixed-character
+     position in the slower text to its piecewise-linear partner in the
+     faster text. At the viewport center the two anchors land on the
+     same x-coordinate and the chain stands vertical; further out the
+     faster text has already travelled more pixels per character, so its
+     anchor offsets — and the chain tilts. Lines are redrawn on every
+     applyTransforms() so the visual stays in sync with the bands. */
+  .chain-layer {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    overflow: hidden;
+  }
+  .chain-layer line {
+    stroke: #000;
+    stroke-width: 2.8;
+    stroke-linecap: round;
+  }
 
   /* ── BAND LABEL ──
      Voice heading sitting just above its band. Sized like a main-title
@@ -99,7 +129,7 @@
     flex: 0 0 auto;
     text-align: center;
     font-family: 'Cormorant Garamond', serif;
-    font-size: clamp(1.6rem, 3vw, 2.8rem);
+    font-size: clamp(1.2rem, 3vw, 2.0rem);
     font-weight: 600;
     letter-spacing: 0.04em;
     line-height: 1.1;
@@ -118,11 +148,11 @@
   }
 
   /* ── BAND ──
-     One reading line each, height = var(--band-h) (golden-ratio padding).
-     Rounded corners; overflow:hidden clips the inner edge-veil to the
-     same shape so the corners don't stick out as squared rectangles.
-     `touch-action: none` claims drag + wheel input exclusively; the page
-     never scrolls from a band gesture. */
+     One reading line each, height = var(--band-h) (golden-ratio padding,
+     halved). Square corners that hug the viewport edges, so the band
+     reads as an endless ribbon running off the screen — overflow:hidden
+     still clips the inner edge-veil. `touch-action: none` claims drag +
+     wheel input exclusively; the page never scrolls from a band gesture. */
   .band {
     position: relative;
     flex: 0 0 auto;
@@ -131,7 +161,7 @@
     overflow: hidden;
     display: flex;
     align-items: center;
-    border-radius: 12px;
+    border-radius: 0;
     cursor: grab;
     touch-action: none;
     font-size: var(--track-fs);   /* makes 1em on band == track type size */
@@ -141,19 +171,21 @@
 
   /* Swap toggles DOM order only — voice colors stay tied to voice.
      (The user's spec: "Positionen vertauschen. Farben bleiben.")
-     Pads stay in slots 1, 4, 7. Each voice's label sits in the slot
-     just above its band, so the two move together when swapped. */
+     Pads stay in slots 1, 4, 7. Each voice's label clings to its band
+     on the OUTSIDE of the spread: top voice's label sits above its
+     band, bottom voice's label sits below its band, so the chain layer
+     in pad-mid (slot 4) is uninterrupted between the two bands. */
   .pad-top              { order: 1; }
-  .band-label-odysseus  { order: 2; }
+  .band-label-odysseus  { order: 2; }   /* default: Odysseus on top, label above its band */
   .band-odysseus        { order: 3; }
   .pad-mid              { order: 4; }
-  .band-label-siren     { order: 5; }
-  .band-siren           { order: 6; }
+  .band-siren           { order: 5; }
+  .band-label-siren     { order: 6; }   /* default: Siren on bottom, label below its band */
   .pad-bottom           { order: 7; }
   body.swapped .band-label-siren     { order: 2; }
   body.swapped .band-siren           { order: 3; }
-  body.swapped .band-label-odysseus  { order: 5; }
-  body.swapped .band-odysseus        { order: 6; }
+  body.swapped .band-odysseus        { order: 5; }
+  body.swapped .band-label-odysseus  { order: 6; }
 
   /* Band colours follow the project's Odysseus-light / Siren-dark
      convention. Tones are pulled toward the middle of the palimpsest
@@ -261,9 +293,9 @@
 
   /* ── MOBILE ── */
   @media (max-width: 768px) {
-    /* Override --track-fs only — band height auto-recomputes from it. */
+    /* Override --track-fs only — band height auto-recomputes from it.
+       Bands stay full-width (no .bands override needed). */
     body { --track-fs: 1.3rem; }
-    .bands { width: 92vw; }
 
     /* German title wraps ("Figur und" / "Hintergrund") like the other views. */
     .main-title.title-de {
@@ -289,21 +321,24 @@
   <span class="word-right" id="titleRight">Ground</span>
 </div>
 
-<!-- Bands. Each band carries a short voice label above it; the label and
-     band share an `order` slot via CSS so they swap as one unit. The three
-     .band-pad spacers split the leftover vertical space (0.55 : 0.618 : 1)
-     so the band centers land at φ-section points of the available area. -->
+<!-- Bands. The top voice carries its label ABOVE its band, the bottom
+     voice carries its label BELOW its band — leaving pad-mid between
+     the two bands as a clean strip for the chain layer. CSS `order`
+     reassigns the slots when Swap is toggled, so each label always
+     stays attached to its own band on the outside of the pair. -->
 <div class="bands" id="bands">
   <div class="band-pad pad-top"></div>
   <div class="band-label band-label-odysseus" data-en="Odysseus. The Siren. An Attempt." data-de="Odysseus. Die Sirene. Ein Versuch.">Odysseus. The Siren. An Attempt.</div>
   <div class="band band-odysseus" id="bandOdy" data-voice="odysseus">
     <div class="band-track" id="trackOdy"></div>
   </div>
-  <div class="band-pad pad-mid"></div>
-  <div class="band-label band-label-siren" data-en="The Song of the Siren." data-de="Das Lied der Sirene.">The Song of the Siren.</div>
+  <div class="band-pad pad-mid">
+    <svg class="chain-layer" id="chainLayer" aria-hidden="true"></svg>
+  </div>
   <div class="band band-siren" id="bandSir" data-voice="siren">
     <div class="band-track" id="trackSir"></div>
   </div>
+  <div class="band-label band-label-siren" data-en="The Song of the Siren." data-de="Das Lied der Sirene.">The Song of the Siren.</div>
   <div class="band-pad pad-bottom"></div>
 </div>
 
@@ -327,6 +362,7 @@ FIGROUND.ready.then(function (texts) {
   var trackSir = document.getElementById('trackSir');
   var bandOdy  = document.getElementById('bandOdy');
   var bandSir  = document.getElementById('bandSir');
+  var chainLayer = document.getElementById('chainLayer');
   var explanation = document.getElementById('sharedExplanation');
   var fadeHint = explanation
     ? FIGROUND.createHintFader(explanation)
@@ -399,6 +435,20 @@ FIGROUND.ready.then(function (texts) {
   // are no longer full-width — the track's natural left edge depends
   // on the band's centered position in the viewport.
   var trackBase = { odysseus: 0, siren: 0 };
+
+  // ── CHAIN ANCHORS ──
+  // Each entry pairs one fixed track-local offset in the slower text
+  // with the piecewise-mapped offset in the faster text. The list is
+  // rebuilt whenever the anchor pts change (on render / resize / lang
+  // switch); renderChains() then converts each pair to an SVG <line>
+  // every frame using the bands' current scroll state.
+  //
+  // Spacing: every CHAIN_INTERVAL_CHARS characters of the slower text
+  // (≈ 20). The faster text covers correspondingly more characters
+  // per chain, so its anchors fan out in pixel space — which is what
+  // tilts the chain lines further from the viewport center.
+  var CHAIN_INTERVAL_CHARS = 20;
+  var chainAnchors = [];
 
   // ── RENDER ─────────────────────────────────────────────────
 
@@ -568,6 +618,7 @@ FIGROUND.ready.then(function (texts) {
       recalcTrackBase();
       rebuildAnchors();
       calibrateSpeeds();
+      buildChainAnchors();   // depends on anchors.*.pts / .end being current
       // Land both bands at the user-defined left bound. setOffset on
       // Odysseus drives Siren via the map, so she also lines up on her
       // own left-anchor word.
@@ -598,6 +649,91 @@ FIGROUND.ready.then(function (texts) {
       'translateX(' + (trackBase.odysseus - state.odysseus.offset) + 'px)';
     trackSir.style.transform =
       'translateX(' + (trackBase.siren    - state.siren.offset)    + 'px)';
+    renderChains();
+  }
+
+  // ── CHAIN BUILD / RENDER ───────────────────────────────────
+  // Slower voice = the one whose track is shorter in pixels (both span
+  // the same wall-time during autoplay, so a shorter track = fewer
+  // pixels per second on screen). Chains are spaced at fixed character
+  // intervals along the slower voice; the faster voice's matching
+  // anchor is wherever piecewiseMap projects it. Rebuilds whenever
+  // anchors.*.pts or anchors.*.end change.
+  function buildChainAnchors() {
+    chainAnchors = [];
+    if (!texts || !texts[currentLang]) return;
+    var slowVoice = (anchors.odysseus.end <= anchors.siren.end) ? 'odysseus' : 'siren';
+    var fastVoice = (slowVoice === 'odysseus') ? 'siren' : 'odysseus';
+
+    var slowData = texts[currentLang][slowVoice];
+    var slowChars = 0;
+    slowData.paragraphs.forEach(function (p) {
+      var t = (typeof p === 'object' && p.song) ? p.text : p;
+      slowChars += t.length;
+    });
+    if (slowChars <= 0 || anchors[slowVoice].end <= 0) return;
+
+    var pxPerSlowChar = anchors[slowVoice].end / slowChars;
+    var pxStep = CHAIN_INTERVAL_CHARS * pxPerSlowChar;
+    if (pxStep <= 0) return;
+
+    var slowPts = anchors[slowVoice].pts;
+    var fastPts = anchors[fastVoice].pts;
+    var slowMin = slowPts[0];
+    var slowMax = slowPts[slowPts.length - 1];
+
+    // Walk the slow track in pxStep increments. We also offset the
+    // grid by the left bound's fractional remainder so the anchors
+    // land at the *same* slow-text characters regardless of pts[0].
+    var firstStep = Math.ceil(slowMin / pxStep) * pxStep;
+    for (var slowOff = firstStep; slowOff <= slowMax; slowOff += pxStep) {
+      var fastOff = piecewiseMap(slowOff, slowPts, fastPts);
+      var anchorObj = {};
+      anchorObj[slowVoice] = slowOff;
+      anchorObj[fastVoice] = fastOff;
+      chainAnchors.push(anchorObj);
+    }
+  }
+
+  // Convert chain anchors to SVG <line> elements. Each anchor's screen
+  // x-coordinate equals viewCenter + (track-local offset) − (current
+  // state offset for that voice), because the track's transform places
+  // its first chunk at viewCenter when offset = 0. SVG-local x =
+  // screen_x minus the chain layer's bounding-rect left.
+  var SVG_NS = 'http://www.w3.org/2000/svg';
+  function renderChains() {
+    if (!chainLayer) return;
+    // Drop existing children — for chain counts in the low dozens this
+    // is cheap enough not to bother with node pooling.
+    while (chainLayer.firstChild) chainLayer.removeChild(chainLayer.firstChild);
+    if (!chainAnchors.length) return;
+
+    var rect = chainLayer.getBoundingClientRect();
+    if (rect.width <= 0 || rect.height <= 0) return;
+
+    var topVoice    = document.body.classList.contains('swapped') ? 'siren' : 'odysseus';
+    var bottomVoice = (topVoice === 'odysseus') ? 'siren' : 'odysseus';
+
+    var w = rect.width;
+    var h = rect.height;
+    var pad = 24;   // tolerate slight overshoot so partial-edge chains stay visible
+
+    for (var i = 0; i < chainAnchors.length; i++) {
+      var a = chainAnchors[i];
+      var topX    = viewCenter + a[topVoice]    - state[topVoice].offset    - rect.left;
+      var bottomX = viewCenter + a[bottomVoice] - state[bottomVoice].offset - rect.left;
+
+      // Cull chains where both endpoints lie clearly outside the layer.
+      if ((topX < -pad && bottomX < -pad) ||
+          (topX > w + pad && bottomX > w + pad)) continue;
+
+      var line = document.createElementNS(SVG_NS, 'line');
+      line.setAttribute('x1', topX.toFixed(1));
+      line.setAttribute('y1', '0');
+      line.setAttribute('x2', bottomX.toFixed(1));
+      line.setAttribute('y2', h.toFixed(1));
+      chainLayer.appendChild(line);
+    }
   }
 
   // Set the offset of `voice` (the one the user just touched) and
@@ -735,8 +871,10 @@ FIGROUND.ready.then(function (texts) {
   // Flips the two bands' DOM order (via CSS flex `order`), which moves
   // Odysseus from top to bottom and vice versa. Colors stay bound to
   // voice, per the user's spec: "Positionen vertauschen. Farben bleiben."
+  // Re-render chains so each line connects the correct top/bottom voice.
   window.swap = function () {
     document.body.classList.toggle('swapped');
+    renderChains();
   };
 
   // ── RESIZE ──
@@ -751,6 +889,7 @@ FIGROUND.ready.then(function (texts) {
       recalcTrackBase();
       rebuildAnchors();
       calibrateSpeeds();
+      buildChainAnchors();
       applyTransforms();
     });
   });
