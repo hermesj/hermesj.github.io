@@ -7,7 +7,7 @@
 <meta name="description" content="Two parallel prose texts on the myth of Odysseus and the Siren, presented as an interleaved visual poster.">
 <meta property="og:title" content="Figure and Ground">
 <meta property="og:description" content="Two parallel prose texts on the myth of Odysseus and the Siren — interleaved visual poster.">
-<meta property="og:image" content="https://hermesj.github.io/figround/images/og-image-poster-en.png">
+<meta property="og:image" content="https://hermesj.github.io/figround/images/tile-poster-en.jpg">
 <meta property="og:url" content="https://hermesj.github.io/figround/poster.html">
 <meta property="og:type" content="website">
 <meta name="twitter:card" content="summary_large_image">
@@ -37,6 +37,11 @@
 
 <script src="figround.js"></script>
 <script>
+// Poster is a print-like, single-language render — pick the language
+// once on load and lay everything out. No FIGROUND.injectHeader (no
+// shared header / footer), no in-page lang toggle: switching languages
+// happens by reloading with ?lang=de / ?lang=en (the index page links
+// to both variants explicitly).
 FIGROUND.ready.then(function(texts) {
   var lang = FIGROUND.detectLang();
   var data = texts[lang];

@@ -7,7 +7,7 @@
 <meta name="description" content="Two parallel prose texts on the myth of Odysseus and the Siren — as poster, focus, sound, and palimpsest.">
 <meta property="og:title" content="Figure and Ground">
 <meta property="og:description" content="One myth. Two perspectives. Five ways in.">
-<meta property="og:image" content="https://hermesj.github.io/figround/images/og-image-index-en.png">
+<meta property="og:image" content="https://hermesj.github.io/figround/images/tile-index-en.jpg">
 <meta property="og:url" content="https://hermesj.github.io/figround/">
 <meta property="og:type" content="website">
 <meta name="twitter:card" content="summary_large_image">
@@ -258,9 +258,9 @@
     </a>
 
     <a class="tile" href="alignment.html" id="tileAlignment">
-      <img class="tile-img" src="images/tile-alignment-en.png" alt="Alignment view preview" id="alignmentImg"
+      <img class="tile-img" src="images/tile-alignment-en.jpg" alt="Alignment view preview" id="alignmentImg"
            width="1200" height="630" loading="lazy" decoding="async"
-           data-img-en="images/tile-alignment-en.png" data-img-de="images/tile-alignment-de.png">
+           data-img-en="images/tile-alignment-en.jpg" data-img-de="images/tile-alignment-de.jpg">
       <div class="tile-body">
         <div class="tile-title" data-en="Chains" data-de="Ketten">Chains</div>
         <div class="tile-desc" data-en="Chained texts." data-de="Aneinander gekettete Texte.">Chained texts.</div>
@@ -315,8 +315,16 @@
 
 </div>
 
+<script src="figround.js"></script>
 <script>
-var currentLang = (navigator.language && navigator.language.startsWith('de')) ? 'de' : 'en';
+// Use the shared detector — same behaviour as every other view
+// (URL ?lang= takes precedence, then navigator.language). The landing
+// page has its own bespoke layout (single-line title + tagline, custom
+// lang-switch chrome) and so does NOT use FIGROUND.injectHeader /
+// updateTitle — those expect the three-part titleLeft/Mid/Right
+// structure. Only the detect step is shared; switchLang below stays
+// page-specific because the i18n payload is unique to this page.
+var currentLang = FIGROUND.detectLang();
 
 var i18n = {
   de: {
