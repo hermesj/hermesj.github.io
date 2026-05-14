@@ -30,6 +30,43 @@
     touch-action: pinch-zoom;
   }
 
+  /* Desktop per-mode body gradient.
+     The default gradient above runs the full light→dark drama from pure
+     white to near-black. When the active mode pins black surface text on
+     the right side (Odysseus mode) or white surface text on the left
+     (Siren mode), that extreme contrast fights legibility. So we tame the
+     extreme *opposite* to the voice's text color, while keeping the other
+     end of the gradient untouched:
+       • Odysseus → black text on surface: right end caps at #3a4d66
+         (the original 68 % stop) instead of plunging to #0f1926, so the
+         dark half stays readable.
+       • Siren → white text on surface: left end starts at #7a8ca0
+         (a mid-tone) instead of #f4f4f4, so the light half doesn't
+         wash out the type — but stays light enough that the left
+         side doesn't read as a flat dark band.
+     The two halves meet around the original midpoint, so the visual
+     impression of the gradient as a whole is preserved.
+     Mobile / tablet override these inside their touch media queries
+     (with !important + their own gentler ramps), so this block only
+     governs the desktop (pointer:fine) experience. */
+  .mode-odysseus {
+    background: linear-gradient(to right,
+      #f4f4f4 0%,
+      #e4eaf0 12%,
+      #98a8b8 38%,
+      #5a6e84 70%,
+      #3a4d66 100%
+    );
+  }
+  .mode-siren {
+    background: linear-gradient(to right,
+      #7a8ca0 0%,
+      #4a5e72 30%,
+      #1a2838 65%,
+      #0f1926 100%
+    );
+  }
+
   /* ── REVEAL WASH ──
      Full-viewport tint that's revealed by the SAME circular mask the
      hidden-text layer uses. Inside the text column it just strengthens
@@ -241,6 +278,10 @@
     .cursor-ring {
       --ring-size: 260px;
       opacity: 0;
+      /* Faster than the desktop 0.3 s — on a touch device the user is
+         actively looking for the cone, so the delay to peak opacity reads
+         as lag. */
+      transition: opacity 0.12s ease, border-color 0.4s ease;
     }
     .cursor-ring.touch-active { opacity: 1; }
     /* text-layer mobile font-size is in figround.css */
@@ -581,8 +622,12 @@ FIGROUND.ready.then(function (texts) {
       els[i].textContent = els[i].getAttribute('data-' + currentLang);
     }
 
-    // Fit stage height
-    requestAnimationFrame(fitStage);
+    // Fit stage height — then refresh cached rects, since the new layout
+    // moves layer-hidden / sub-hidden positions.
+    requestAnimationFrame(function () {
+      fitStage();
+      refreshRects();
+    });
   }
 
   function fitStage() {
@@ -615,67 +660,128 @@ FIGROUND.ready.then(function (texts) {
       (mode === 'horizontal') ? 'active' : '';
     document.getElementById('btnAlignV').className =
       (mode === 'vertical') ? 'active' : '';
-    // Layout change affects layer heights → refit stage
-    requestAnimationFrame(fitStage);
+    // Layout change affects layer heights → refit stage, then refresh
+    // the cached rects since alignment switching moves layer-hidden.
+    requestAnimationFrame(function () {
+      fitStage();
+      refreshRects();
+    });
   };
 
   // ── Reveal mask ──
+  //
+  // Performance notes (matters most on mobile):
+  //
+  // 1. rAF batching. touchmove can fire at the display refresh rate (60 Hz
+  //    on most phones, 120 Hz on iPhone Pro / iPad Pro). Without batching,
+  //    each event triggered three mask-repaints (text + subtitle + wash)
+  //    × two property writes each (mask-image + -webkit-mask-image) plus
+  //    a forced layout via getBoundingClientRect — easily 5-10 ms per
+  //    event on mid-range Android, well above frame budget. We collect
+  //    the latest pointer position into queuedX/Y and let one rAF callback
+  //    apply the actual DOM writes — natural coalescing at display rate.
+  //
+  // 2. Cached bounding rects. The two text columns don't move during
+  //    pointer interaction, so we measure them once and refresh on layout
+  //    events only (resize, scroll, render, alignment switch). Saves two
+  //    forced-layout reads per paint.
+  //
+  // 3. Mask pre-warm. WebKit allocates the GPU mask buffer lazily on the
+  //    first non-trivial gradient. For a viewport-tall text layer that
+  //    one-off allocation runs ~100-200 ms on mobile, and reads as "the
+  //    cone takes forever to appear on first touch". Pre-warming with an
+  //    off-screen mask on init pushes that cost out of the interaction
+  //    path.
 
-  function updateMask(clientX, clientY) {
-    // Convert client coords to position relative to layerHidden element
-    var hiddenRect = layerHidden.getBoundingClientRect();
+  // Cached layout rects — refreshed only when geometry actually changes.
+  var hiddenRect = null;
+  var subHiddenRect = null;
+  function refreshRects() {
+    hiddenRect = layerHidden.getBoundingClientRect();
+    subHiddenRect = subHidden.getBoundingClientRect();
+  }
+
+  // rAF queue — the latest pointer position waits here until the next
+  // animation frame. queuedX/Y are also used by the ring-position write so
+  // ring + mask stay in lockstep (no half-frame between them).
+  var queuedX = -9999;
+  var queuedY = -9999;
+  var paintQueued = false;
+
+  function queuePaint() {
+    if (paintQueued) return;
+    paintQueued = true;
+    requestAnimationFrame(paintFrame);
+  }
+
+  function paintFrame() {
+    paintQueued = false;
+    cursorRing.style.left = queuedX + 'px';
+    cursorRing.style.top  = queuedY + 'px';
+    if (!hiddenRect) refreshRects();
+    writeMasks(queuedX, queuedY);
+  }
+
+  function writeMasks(clientX, clientY) {
+    var inner = REVEAL_RADIUS - REVEAL_EDGE;
+
+    // Text-column reveal — coords are layer-relative because layer-hidden
+    // is position:absolute inside the stage.
     var rx = clientX - hiddenRect.left;
     var ry = clientY - hiddenRect.top;
-
-    // Also position relative to subtitle hidden element
-    var subHiddenRect = subHidden.getBoundingClientRect();
-    var subRx = clientX - subHiddenRect.left;
-    var subRy = clientY - subHiddenRect.top;
-
     var maskValue = 'radial-gradient(circle ' + REVEAL_RADIUS + 'px at ' +
-      rx + 'px ' + ry + 'px, black 0%, black ' +
-      (REVEAL_RADIUS - REVEAL_EDGE) + 'px, transparent ' + REVEAL_RADIUS + 'px)';
-
+      rx + 'px ' + ry + 'px, black 0%, black ' + inner +
+      'px, transparent ' + REVEAL_RADIUS + 'px)';
     layerHidden.style.webkitMaskImage = maskValue;
     layerHidden.style.maskImage = maskValue;
 
-    // Subtitle reveal
+    // Subtitle reveal — same shape, different element offsets.
+    var subRx = clientX - subHiddenRect.left;
+    var subRy = clientY - subHiddenRect.top;
     var subMask = 'radial-gradient(circle ' + REVEAL_RADIUS + 'px at ' +
-      subRx + 'px ' + subRy + 'px, black 0%, black ' +
-      (REVEAL_RADIUS - REVEAL_EDGE) + 'px, transparent ' + REVEAL_RADIUS + 'px)';
-
+      subRx + 'px ' + subRy + 'px, black 0%, black ' + inner +
+      'px, transparent ' + REVEAL_RADIUS + 'px)';
     subHidden.style.webkitMaskImage = subMask;
     subHidden.style.maskImage = subMask;
 
-    // Wash reveal — positioned in viewport coords since .reveal-wash is
-    // position:fixed (not tied to the text column like layer-hidden).
-    // Continuous fade (black → transparent) rather than the solid-inner
-    // mask used for layer-hidden: we want the wash to read as a soft
-    // gradient cone, not a defined disc. The text-reveal mask keeps
-    // its solid inner so text stays fully readable.
+    // Wash mask — in viewport coords because .reveal-wash is position:fixed.
+    // Continuous fade (no solid inner) so it reads as a soft cone, not a
+    // disc; the text-layer masks keep the solid inner so text stays sharp.
     var washMask = 'radial-gradient(circle ' + REVEAL_RADIUS + 'px at ' +
       clientX + 'px ' + clientY + 'px, black 0%, transparent 100%)';
-
     revealWash.style.webkitMaskImage = washMask;
     revealWash.style.maskImage = washMask;
   }
 
-  function clearMask() {
-    var empty = 'radial-gradient(circle 0px at -9999px -9999px, black 0%, transparent 0%)';
-    layerHidden.style.webkitMaskImage = empty;
-    layerHidden.style.maskImage = empty;
-    subHidden.style.webkitMaskImage = empty;
-    subHidden.style.maskImage = empty;
-    revealWash.style.webkitMaskImage = empty;
-    revealWash.style.maskImage = empty;
+  // Pre-warm — issue a full-radius mask at an off-screen position so the
+  // GPU buffer is allocated and the gradient parsed before the first user
+  // touch. Without this, the very first reveal stalls visibly on mobile.
+  function prewarmMasks() {
+    var inner = REVEAL_RADIUS - REVEAL_EDGE;
+    var preMask = 'radial-gradient(circle ' + REVEAL_RADIUS +
+      'px at -9999px -9999px, black 0%, black ' + inner +
+      'px, transparent ' + REVEAL_RADIUS + 'px)';
+    layerHidden.style.webkitMaskImage = preMask;
+    layerHidden.style.maskImage = preMask;
+    subHidden.style.webkitMaskImage = preMask;
+    subHidden.style.maskImage = preMask;
+    var preWash = 'radial-gradient(circle ' + REVEAL_RADIUS +
+      'px at -9999px -9999px, black 0%, transparent 100%)';
+    revealWash.style.webkitMaskImage = preWash;
+    revealWash.style.maskImage = preWash;
   }
+
+  // Geometry-change refresh — anything that can move the text columns
+  // invalidates the cached rects.
+  window.addEventListener('resize', refreshRects);
+  window.addEventListener('scroll', refreshRects, { passive: true });
 
   // ── Desktop: mouse ──
   document.addEventListener('mousemove', function (e) {
     fadeHint();
-    cursorRing.style.left = e.clientX + 'px';
-    cursorRing.style.top = e.clientY + 'px';
-    updateMask(e.clientX, e.clientY);
+    queuedX = e.clientX;
+    queuedY = e.clientY;
+    queuePaint();
   });
 
   // ── Mobile: touch ──
@@ -707,12 +813,12 @@ FIGROUND.ready.then(function (texts) {
     function onTouch(e) {
       if (scrollingViaArrow) return;
       fadeHint();
-      var tx = e.touches[0].clientX;
-      var ty = e.touches[0].clientY - ringOffsetY;
-      cursorRing.style.left = tx + 'px';
-      cursorRing.style.top = ty + 'px';
+      queuedX = e.touches[0].clientX;
+      queuedY = e.touches[0].clientY - ringOffsetY;
+      // touch-active is idempotent (classList.add is a no-op if present)
+      // and visual-only; safe to write straight from the event.
       cursorRing.classList.add('touch-active');
-      updateMask(tx, ty);
+      queuePaint();
     }
 
     document.addEventListener('touchstart', onTouch, { passive: true });
@@ -808,6 +914,12 @@ FIGROUND.ready.then(function (texts) {
   // ── Init ──
   render();
   switchAlign('horizontal');
+  // Pre-warm the mask buffers and seed the rect cache once layout settles,
+  // so the very first finger-down doesn't have to wait for either.
+  requestAnimationFrame(function () {
+    refreshRects();
+    prewarmMasks();
+  });
 });
 </script>
 
