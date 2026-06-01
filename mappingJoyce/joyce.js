@@ -103,7 +103,7 @@
   var lang = "en";
   var work = WORKS[params.get("work")] ? params.get("work") : "dubliners";
 
-  var map, layers = {}, bounds = {};
+  var map, layers = {}, bounds = {}, placesByGroup = {};
 
   function groupsOf() { return WORKS[work].groups; }
   function groupFor(story) {
@@ -151,6 +151,9 @@
     clearLayers();
     groupsOf().forEach(function (g) { layers[g.key] = L.layerGroup().addTo(map); });
 
+    placesByGroup = {};
+    groupsOf().forEach(function (g) { placesByGroup[g.key] = []; });
+
     fetch(WORKS[work].file)
       .then(function (r) { return r.json(); })
       .then(function (geo) {
@@ -173,7 +176,15 @@
               (bounds[p.story] = bounds[p.story] || L.latLngBounds([])).extend(ll);
             });
           }
-          if (layer) { layer.bindPopup(popupHtml(p), { maxWidth: 300 }); layer.addTo(grp); }
+          if (layer) {
+            layer.bindPopup(popupHtml(p), { maxWidth: 300 });
+            layer.addTo(grp);
+            (placesByGroup[p.story] || (placesByGroup[p.story] = [])).push({
+              name: p.name,
+              kind: p.kind || (f.geometry.type === "LineString" ? "route" : "place"),
+              layer: layer
+            });
+          }
         });
         if (dublin.isValid()) map.fitBounds(dublin.pad(0.05));
         else if (all.isValid()) map.fitBounds(all.pad(0.05));
@@ -185,31 +196,75 @@
       });
   }
 
+  // Pan/zoom to a single place and open its popup, making sure its group
+  // layer is switched on first.
+  function focusPlace(groupKey, entry, item) {
+    if (!map.hasLayer(layers[groupKey])) {
+      layers[groupKey].addTo(map);
+      if (item) item.classList.remove("off");
+    }
+    if (entry.kind === "route" && entry.layer.getBounds) {
+      map.flyToBounds(entry.layer.getBounds().pad(0.3));
+    } else if (entry.layer.getLatLng) {
+      map.flyTo(entry.layer.getLatLng(), 16);
+    }
+    entry.layer.openPopup();
+  }
+
   function buildSidebar() {
+    var t = I18N[lang];
     var box = document.getElementById("story-list");
     box.innerHTML = "";
     groupsOf().forEach(function (g, idx) {
-      var item = document.createElement("div");
-      item.className = "story-item";
+      var entries = placesByGroup[g.key] || [];
       var label = lang === "de" ? g.de : g.key;
       if (work === "ulysses") label = (idx + 1) + ". " + label;
-      item.innerHTML = '<span class="swatch" style="background:' + g.color + '"></span>' +
-        '<span class="story-name">' + esc(label) + "</span>";
-      var c = document.createElement("span");
-      c.className = "count";
-      c.textContent = layers[g.key] ? layers[g.key].getLayers().length : 0;
-      item.appendChild(c);
 
-      var on = true;
-      item.addEventListener("click", function () {
-        on = !on;
-        item.classList.toggle("off", !on);
-        if (on) {
-          layers[g.key].addTo(map);
-          if (bounds[g.key]) map.fitBounds(bounds[g.key].pad(0.2));
-        } else { map.removeLayer(layers[g.key]); }
+      // ── the group row (click = expand/collapse; swatch = layer on/off) ──
+      var item = document.createElement("div");
+      item.className = "story-item";
+      item.innerHTML =
+        '<span class="caret">▸</span>' +
+        '<span class="swatch" style="background:' + g.color + '" title="' +
+          (lang === "de" ? "Ebene ein/aus" : "toggle layer") + '"></span>' +
+        '<span class="story-name">' + esc(label) + "</span>" +
+        '<span class="count">' + entries.length + "</span>";
+
+      // ── the collapsible list of this group's places ──
+      var sub = document.createElement("div");
+      sub.className = "place-list";
+      sub.hidden = true;
+      entries.forEach(function (e) {
+        var pi = document.createElement("div");
+        pi.className = "place-item";
+        pi.innerHTML = esc(e.name) +
+          (e.kind === "route" ? ' <span class="pl-route">' + t.route + "</span>" : "");
+        pi.addEventListener("click", function (ev) {
+          ev.stopPropagation();
+          focusPlace(g.key, e, item);
+        });
+        sub.appendChild(pi);
       });
+
+      item.addEventListener("click", function () {
+        var opening = sub.hidden;
+        sub.hidden = !opening;
+        item.classList.toggle("expanded", opening);
+        if (opening && !map.hasLayer(layers[g.key])) {
+          layers[g.key].addTo(map);
+          item.classList.remove("off");
+        }
+      });
+
+      item.querySelector(".swatch").addEventListener("click", function (ev) {
+        ev.stopPropagation();
+        var turnOn = !map.hasLayer(layers[g.key]);
+        if (turnOn) layers[g.key].addTo(map); else map.removeLayer(layers[g.key]);
+        item.classList.toggle("off", !turnOn);
+      });
+
       box.appendChild(item);
+      box.appendChild(sub);
     });
   }
 

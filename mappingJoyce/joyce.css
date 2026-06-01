@@ -158,16 +158,50 @@ header .tagline {
 .story-item:hover { background: rgba(0, 0, 0, 0.04); }
 .story-item.off { opacity: 0.4; }
 
+.caret {
+  flex: 0 0 auto;
+  width: 0.8em;
+  font-size: 0.7rem;
+  color: #9a8a7a;
+  transition: transform 0.15s ease;
+}
+.story-item.expanded .caret { transform: rotate(90deg); }
+
 .swatch {
   width: 13px;
   height: 13px;
   border-radius: 50%;
   flex: 0 0 auto;
   border: 1px solid rgba(0, 0, 0, 0.25);
+  cursor: pointer;
 }
+.swatch:hover { box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.18); }
+
 .story-item .count {
   margin-left: auto;
   font-size: 0.72rem;
+  color: #9a8a7a;
+}
+
+/* ── collapsible place list under each group ── */
+.place-list {
+  border-bottom: 1px solid rgba(60, 40, 20, 0.06);
+}
+.place-item {
+  padding: 0.28em 1em 0.28em 2.7em;
+  font-size: 0.82rem;
+  color: var(--ink-soft);
+  cursor: pointer;
+  line-height: 1.3;
+}
+.place-item:hover {
+  background: rgba(0, 0, 0, 0.05);
+  color: var(--ink);
+}
+.pl-route {
+  font-size: 0.68rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
   color: #9a8a7a;
 }
 

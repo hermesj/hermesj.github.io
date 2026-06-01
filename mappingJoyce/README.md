@@ -25,10 +25,16 @@ Three works share one map, switched via the header tabs (or
 > incomplete and their quotes/references are not yet finally verified. The
 > Dubliners layer is the stable one.
 
-Each story/episode/chapter is a colour-coded, toggleable layer. The map opens
-on the Dublin region; far-flung references (Persia, Buenos Aires … for
-Dubliners; Cork for Portrait) appear when you zoom out. UI is bilingual
-(German / English) via `?lang=de` / `?lang=en`.
+Each story/episode/chapter is a colour-coded layer. In the left sidebar,
+**clicking a group row expands an accordion** listing its individual places;
+clicking a place flies the map there and opens its popup. The **coloured
+swatch** toggles that layer's visibility on/off (and *Show all* / *Hide all*
+do so globally). The map opens on the Dublin region; far-flung references
+(Persia, Buenos Aires … for Dubliners; Cork for Portrait) appear when you zoom
+out.
+
+The UI is English; a German layer (`?lang=de`) exists in the code but is
+currently disabled, because the literary quotes are English-only.
 
 ## Stack
 
