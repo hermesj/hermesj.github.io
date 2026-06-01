@@ -1,0 +1,4118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2" xmlns:gx="http://www.google.com/kml/ext/2.2" xmlns:kml="http://www.opengis.net/kml/2.2" xmlns:atom="http://www.w3.org/2005/Atom">
+<Document>
+	<name>Mapping Dubliners Project</name>
+	<open>1</open>
+	<description><![CDATA[<p>This map is a visualization of the streets, locations, and routes depicted in James Joyce's Dubliners. Each place marker provides a brief contextual explanation and contains the passage from the text in which the reference appears.</p>
+
+<p>Quotations are from the 1967 Modern Library edition.</p>
+
+<p>View the <i>Dubliners</i> <a href="http://www.gutenberg.org/ebooks/2814" terget="_blank">full text</a> at Project Gutenberg.]]></description>
+	<LookAt>
+		<longitude>-6.271190209047707</longitude>
+		<latitude>53.34371302471707</latitude>
+		<altitude>0</altitude>
+		<heading>-0.7632423537894664</heading>
+		<tilt>0.887692733697016</tilt>
+		<range>29927.13243842129</range>
+		<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
+	</LookAt>
+	<gx:balloonVisibility>1</gx:balloonVisibility>
+	<Style id="sn_ylw-pushpin1000">
+		<IconStyle>
+			<color>ff808000</color>
+			<scale>1.1</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<LineStyle>
+			<color>ff008000</color>
+		</LineStyle>
+	</Style>
+	<Style id="s_ylw-pushpin_hl11">
+		<IconStyle>
+			<color>ff008000</color>
+			<scale>1.3</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<LineStyle>
+			<color>ff008000</color>
+		</LineStyle>
+	</Style>
+	<StyleMap id="m_ylw-pushpin0">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#s_ylw-pushpin21</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#s_ylw-pushpin_hl0</styleUrl>
+		</Pair>
+	</StyleMap>
+	<Style id="sn_ylw-pushpin23">
+		<IconStyle>
+			<color>ff008080</color>
+		</IconStyle>
+		<LineStyle>
+			<color>ff008080</color>
+			<width>5</width>
+		</LineStyle>
+	</Style>
+	<Style id="sn_ylw-pushpin00">
+		<IconStyle>
+			<color>ff800000</color>
+			<scale>1.1</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+	</Style>
+	<Style id="sh_ylw-pushpin1">
+		<IconStyle>
+			<color>c5800080</color>
+			<scale>1.3</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<LineStyle>
+			<color>ff800080</color>
+			<width>3</width>
+		</LineStyle>
+	</Style>
+	<StyleMap id="msn_ylw-pushpin0">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#sn_ylw-pushpin1</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#sh_ylw-pushpin4</styleUrl>
+		</Pair>
+	</StyleMap>
+	<Style id="sn_ylw-pushpin22">
+		<IconStyle>
+			<color>ff008080</color>
+		</IconStyle>
+		<LineStyle>
+			<color>ff008080</color>
+			<width>5</width>
+		</LineStyle>
+	</Style>
+	<StyleMap id="sn_ylw-pushpin2020">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#sn_ylw-pushpin0001</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#sn_ylw-pushpin230</styleUrl>
+		</Pair>
+	</StyleMap>
+	<Style id="s_ylw-pushpin1">
+		<IconStyle>
+			<color>ff862b12</color>
+			<scale>1.1</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+	</Style>
+	<StyleMap id="msn_ylw-pushpin4">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#sn_ylw-pushpin102</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#sh_ylw-pushpin6</styleUrl>
+		</Pair>
+	</StyleMap>
+	<StyleMap id="m_ylw-pushpin9">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#s_ylw-pushpin100</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#s_ylw-pushpin_hl2000</styleUrl>
+		</Pair>
+	</StyleMap>
+	<StyleMap id="msn_grn-pushpin">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#sn_grn-pushpin</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#sh_grn-pushpin</styleUrl>
+		</Pair>
+	</StyleMap>
+	<Style id="sn_blue-pushpin1">
+		<IconStyle>
+			<color>ff008080</color>
+			<Icon>
+				<href>http://maps.gstatic.com/intl/en_us/mapfiles/ms/micons/blue-pushpin.png</href>
+			</Icon>
+		</IconStyle>
+	</Style>
+	<StyleMap id="msn_ylw-pushpin1">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#sn_ylw-pushpin3</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#sh_ylw-pushpin2</styleUrl>
+		</Pair>
+	</StyleMap>
+	<Style id="sh_ylw-pushpin2">
+		<IconStyle>
+			<color>ffe30000</color>
+			<scale>1.3</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<LineStyle>
+			<color>ff800000</color>
+		</LineStyle>
+	</Style>
+	<StyleMap id="m_ylw-pushpin3">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#s_ylw-pushpin100</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#s_ylw-pushpin_hl2000</styleUrl>
+		</Pair>
+	</StyleMap>
+	<Style id="sh_ylw-pushpin3">
+		<IconStyle>
+			<color>ff008000</color>
+			<scale>1.3</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<LineStyle>
+			<color>ff008000</color>
+			<width>5</width>
+		</LineStyle>
+	</Style>
+	<Style id="s_ylw-pushpin_hl0">
+		<IconStyle>
+			<scale>1.3</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<LineStyle>
+			<color>ff8000ff</color>
+			<width>3.5</width>
+		</LineStyle>
+	</Style>
+	<Style id="sn_ylw-pushpin102">
+		<IconStyle>
+			<color>ff800000</color>
+			<scale>1.1</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<LineStyle>
+			<color>ffffff00</color>
+			<width>2.7</width>
+		</LineStyle>
+	</Style>
+	<StyleMap id="sn_ylw-pushpin20">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#sn_ylw-pushpin001</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#sn_ylw-pushpin22</styleUrl>
+		</Pair>
+	</StyleMap>
+	<StyleMap id="m_ylw-pushpin4">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#s_ylw-pushpin100</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#s_ylw-pushpin_hl2000</styleUrl>
+		</Pair>
+	</StyleMap>
+	<Style id="s_ylw-pushpin0">
+		<IconStyle>
+			<color>ff008000</color>
+			<scale>1.1</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<LineStyle>
+			<color>ff008000</color>
+		</LineStyle>
+	</Style>
+	<Style id="s_ylw-pushpin_hl20">
+		<IconStyle>
+			<color>ff800000</color>
+			<scale>1.3</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<LineStyle>
+			<color>ff800000</color>
+		</LineStyle>
+	</Style>
+	<StyleMap id="msn_ylw-pushpin20">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#sn_ylw-pushpin1001</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#sh_ylw-pushpin100</styleUrl>
+		</Pair>
+	</StyleMap>
+	<Style id="sn_blue-pushpin11">
+		<IconStyle>
+			<color>ff008080</color>
+			<Icon>
+				<href>http://maps.gstatic.com/intl/en_us/mapfiles/ms/micons/blue-pushpin.png</href>
+			</Icon>
+		</IconStyle>
+	</Style>
+	<Style id="sh_grn-pushpin">
+		<IconStyle>
+			<color>ff408000</color>
+			<scale>1.3</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/grn-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<LineStyle>
+			<color>ff008000</color>
+		</LineStyle>
+	</Style>
+	<StyleMap id="m_ylw-pushpin5">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#s_ylw-pushpin20</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#s_ylw-pushpin_hl3</styleUrl>
+		</Pair>
+	</StyleMap>
+	<StyleMap id="msn_ylw-pushpin31">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#sn_ylw-pushpin100</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#sh_ylw-pushpin00</styleUrl>
+		</Pair>
+	</StyleMap>
+	<Style id="sn_ylw-pushpin000">
+		<IconStyle>
+			<color>ff008080</color>
+		</IconStyle>
+		<LineStyle>
+			<color>ff008080</color>
+			<width>5</width>
+		</LineStyle>
+	</Style>
+	<Style id="sn_ylw-pushpin10">
+		<IconStyle>
+			<color>ff800000</color>
+			<scale>1.1</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<LineStyle>
+			<color>ff800000</color>
+		</LineStyle>
+	</Style>
+	<StyleMap id="msn_ylw-pushpin10">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#sn_ylw-pushpin101</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#sh_ylw-pushpin5</styleUrl>
+		</Pair>
+	</StyleMap>
+	<Style id="sn_ylw-pushpin30">
+		<IconStyle>
+			<color>ff800000</color>
+			<scale>1.1</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<LineStyle>
+			<color>ff00ff00</color>
+			<width>5.2</width>
+		</LineStyle>
+	</Style>
+	<Style id="sn_ylw-pushpin2">
+		<IconStyle>
+			<color>c5800080</color>
+			<scale>1.1</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<LineStyle>
+			<color>ff800080</color>
+		</LineStyle>
+	</Style>
+	<Style id="s_ylw-pushpin_hl2">
+		<IconStyle>
+			<scale>1.3</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<LineStyle>
+			<color>ff124817</color>
+			<width>3.8</width>
+		</LineStyle>
+	</Style>
+	<Style id="sh_ylw-pushpin50">
+		<IconStyle>
+			<color>ff800000</color>
+			<scale>1.3</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+	</Style>
+	<StyleMap id="msn_ylw-pushpin12">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#sn_ylw-pushpin00</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#sh_ylw-pushpin50</styleUrl>
+		</Pair>
+	</StyleMap>
+	<Style id="sn_ylw-pushpin">
+		<IconStyle>
+			<color>ff800000</color>
+			<scale>1.1</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<LineStyle>
+			<color>ff000000</color>
+			<width>5.1</width>
+		</LineStyle>
+	</Style>
+	<Style id="s_ylw-pushpin_hl200">
+		<IconStyle>
+			<color>ff800000</color>
+			<scale>1.3</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<LineStyle>
+			<color>ff800000</color>
+		</LineStyle>
+	</Style>
+	<StyleMap id="m_ylw-pushpin7">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#s_ylw-pushpin1001</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#s_ylw-pushpin_hl200</styleUrl>
+		</Pair>
+	</StyleMap>
+	<StyleMap id="m_ylw-pushpin1">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#s_ylw-pushpin1</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#s_ylw-pushpin_hl1</styleUrl>
+		</Pair>
+	</StyleMap>
+	<Style id="sh_ylw-pushpin100">
+		<IconStyle>
+			<color>ff808000</color>
+			<scale>1.3</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<LineStyle>
+			<color>ff008000</color>
+		</LineStyle>
+	</Style>
+	<StyleMap id="sn_blue-pushpin2">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#sn_blue-pushpin11</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#sn_blue-pushpin02</styleUrl>
+		</Pair>
+	</StyleMap>
+	<Style id="sn_ylw-pushpin002">
+		<IconStyle>
+			<color>ff008080</color>
+		</IconStyle>
+		<LineStyle>
+			<color>ff008080</color>
+			<width>5</width>
+		</LineStyle>
+	</Style>
+	<Style id="s_ylw-pushpin_hl2000">
+		<IconStyle>
+			<color>ff800000</color>
+			<scale>1.3</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<LineStyle>
+			<color>ff800000</color>
+		</LineStyle>
+	</Style>
+	<Style id="sn_ylw-pushpin24">
+		<IconStyle>
+			<color>ff008080</color>
+		</IconStyle>
+		<LineStyle>
+			<color>ff008080</color>
+			<width>5</width>
+		</LineStyle>
+	</Style>
+	<StyleMap id="m_ylw-pushpin20">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#s_ylw-pushpin0</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#s_ylw-pushpin_hl11</styleUrl>
+		</Pair>
+	</StyleMap>
+	<Style id="sn_ylw-pushpin01">
+		<IconStyle>
+			<color>c5800080</color>
+			<scale>1.1</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<LineStyle>
+			<color>ff800080</color>
+			<width>3</width>
+		</LineStyle>
+	</Style>
+	<StyleMap id="m_ylw-pushpin">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#s_ylw-pushpin2</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#s_ylw-pushpin_hl2</styleUrl>
+		</Pair>
+	</StyleMap>
+	<StyleMap id="m_ylw-pushpin00">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#s_ylw-pushpin100</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#s_ylw-pushpin_hl2000</styleUrl>
+		</Pair>
+	</StyleMap>
+	<Style id="s_ylw-pushpin1000">
+		<IconStyle>
+			<color>ffe30000</color>
+			<scale>1.1</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<LineStyle>
+			<color>ff800000</color>
+		</LineStyle>
+	</Style>
+	<StyleMap id="sn_ylw-pushpin203">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#sn_ylw-pushpin003</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#sn_ylw-pushpin21</styleUrl>
+		</Pair>
+	</StyleMap>
+	<Style id="s_ylw-pushpin_hl">
+		<IconStyle>
+			<color>ff0b0264</color>
+			<scale>1.3</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+	</Style>
+	<Style id="sn_ylw-pushpin25">
+		<IconStyle>
+			<color>ff008080</color>
+		</IconStyle>
+		<LineStyle>
+			<color>ff008080</color>
+			<width>5</width>
+		</LineStyle>
+	</Style>
+	<Style id="sn_ylw-pushpin0">
+		<IconStyle>
+			<color>e3000080</color>
+			<scale>1.1</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<LineStyle>
+			<color>ff800000</color>
+		</LineStyle>
+	</Style>
+	<StyleMap id="msn_ylw-pushpin7">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#sn_ylw-pushpin01</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#sh_ylw-pushpin1</styleUrl>
+		</Pair>
+	</StyleMap>
+	<Style id="sn_grn-pushpin">
+		<IconStyle>
+			<color>ff408000</color>
+			<scale>1.1</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/grn-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<LineStyle>
+			<color>ff008000</color>
+		</LineStyle>
+	</Style>
+	<StyleMap id="sn_ylw-pushpin202">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#sn_ylw-pushpin0000</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#sn_ylw-pushpin23</styleUrl>
+		</Pair>
+	</StyleMap>
+	<StyleMap id="msn_ylw-pushpin6">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#sn_ylw-pushpin0</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#sh_ylw-pushpin40</styleUrl>
+		</Pair>
+	</StyleMap>
+	<Style id="sn_blue-pushpin00">
+		<IconStyle>
+			<color>ff008080</color>
+			<Icon>
+				<href>http://maps.gstatic.com/intl/en_us/mapfiles/ms/micons/blue-pushpin.png</href>
+			</Icon>
+		</IconStyle>
+	</Style>
+	<Style id="s_ylw-pushpin5">
+		<IconStyle>
+			<color>ff008000</color>
+			<scale>1.1</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<LineStyle>
+			<color>ff008000</color>
+		</LineStyle>
+	</Style>
+	<Style id="s_ylw-pushpin100">
+		<IconStyle>
+			<color>ff800000</color>
+			<scale>1.1</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<LineStyle>
+			<color>ff800000</color>
+		</LineStyle>
+	</Style>
+	<StyleMap id="msn_ylw-pushpin11">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#sn_ylw-pushpin10</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#sh_ylw-pushpin</styleUrl>
+		</Pair>
+	</StyleMap>
+	<StyleMap id="msn_ylw-pushpin3">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#sn_ylw-pushpin8</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#sh_ylw-pushpin7</styleUrl>
+		</Pair>
+	</StyleMap>
+	<Style id="sn_blue-pushpin10">
+		<IconStyle>
+			<color>ff008080</color>
+			<Icon>
+				<href>http://maps.gstatic.com/intl/en_us/mapfiles/ms/micons/blue-pushpin.png</href>
+			</Icon>
+		</IconStyle>
+	</Style>
+	<Style id="sn_blue-pushpin02">
+		<IconStyle>
+			<color>ff008080</color>
+			<Icon>
+				<href>http://maps.gstatic.com/intl/en_us/mapfiles/ms/micons/blue-pushpin.png</href>
+			</Icon>
+		</IconStyle>
+	</Style>
+	<Style id="sh_ylw-pushpin">
+		<IconStyle>
+			<color>ff800000</color>
+			<scale>1.3</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<LineStyle>
+			<color>ff800000</color>
+		</LineStyle>
+	</Style>
+	<Style id="s_ylw-pushpin_hl20000">
+		<IconStyle>
+			<color>ffe30000</color>
+			<scale>1.3</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<LineStyle>
+			<color>ff800000</color>
+		</LineStyle>
+	</Style>
+	<Style id="sn_blue-pushpin01">
+		<IconStyle>
+			<color>ff008080</color>
+			<Icon>
+				<href>http://maps.gstatic.com/intl/en_us/mapfiles/ms/micons/blue-pushpin.png</href>
+			</Icon>
+		</IconStyle>
+	</Style>
+	<Style id="sn_ylw-pushpin100">
+		<IconStyle>
+			<color>ff800000</color>
+			<scale>1.1</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<LineStyle>
+			<color>ff800000</color>
+		</LineStyle>
+	</Style>
+	<Style id="sh_ylw-pushpin6">
+		<IconStyle>
+			<color>ff800000</color>
+			<scale>1.3</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<LineStyle>
+			<color>ffffff00</color>
+			<width>2.7</width>
+		</LineStyle>
+	</Style>
+	<Style id="s_ylw-pushpin_hl1">
+		<IconStyle>
+			<color>ff862b12</color>
+			<scale>1.3</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+	</Style>
+	<StyleMap id="m_ylw-pushpin70">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#s_ylw-pushpin11</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#s_ylw-pushpin_hl21</styleUrl>
+		</Pair>
+	</StyleMap>
+	<Style id="sh_ylw-pushpin20">
+		<IconStyle>
+			<color>ff800000</color>
+			<scale>1.3</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<LineStyle>
+			<color>ff00ff00</color>
+			<width>5.2</width>
+		</LineStyle>
+	</Style>
+	<StyleMap id="m_ylw-pushpin100">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#s_ylw-pushpin100</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#s_ylw-pushpin_hl2000</styleUrl>
+		</Pair>
+	</StyleMap>
+	<StyleMap id="sn_ylw-pushpin201">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#sn_ylw-pushpin000</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#sn_ylw-pushpin25</styleUrl>
+		</Pair>
+	</StyleMap>
+	<Style id="sn_ylw-pushpin003">
+		<IconStyle>
+			<color>ff008080</color>
+		</IconStyle>
+		<LineStyle>
+			<color>ff008080</color>
+			<width>5</width>
+		</LineStyle>
+	</Style>
+	<Style id="sh_ylw-pushpin0">
+		<IconStyle>
+			<color>ff800000</color>
+			<scale>1.3</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<LineStyle>
+			<color>ff000000</color>
+			<width>5.1</width>
+		</LineStyle>
+	</Style>
+	<Style id="s_ylw-pushpin00">
+		<IconStyle>
+			<color>ff800000</color>
+			<scale>1.1</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<LineStyle>
+			<color>ff800000</color>
+		</LineStyle>
+	</Style>
+	<Style id="sh_ylw-pushpin7">
+		<IconStyle>
+			<color>ff800000</color>
+			<scale>1.3</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<LineStyle>
+			<color>ff800000</color>
+		</LineStyle>
+	</Style>
+	<Style id="s_ylw-pushpin_hl00">
+		<IconStyle>
+			<color>ff800000</color>
+			<scale>1.3</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<LineStyle>
+			<color>ff800000</color>
+		</LineStyle>
+	</Style>
+	<Style id="sn_ylw-pushpin21">
+		<IconStyle>
+			<color>ff008080</color>
+		</IconStyle>
+		<LineStyle>
+			<color>ff008080</color>
+			<width>5</width>
+		</LineStyle>
+	</Style>
+	<Style id="s_ylw-pushpin_hl10">
+		<IconStyle>
+			<color>ff008000</color>
+			<scale>1.3</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<LineStyle>
+			<color>ff008000</color>
+		</LineStyle>
+	</Style>
+	<Style id="sn_ylw-pushpin1001">
+		<IconStyle>
+			<color>ff808000</color>
+			<scale>1.1</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<LineStyle>
+			<color>ff008000</color>
+		</LineStyle>
+	</Style>
+	<Style id="s_ylw-pushpin_hl3">
+		<IconStyle>
+			<color>e3000080</color>
+			<scale>1.3</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<LineStyle>
+			<color>ff800000</color>
+		</LineStyle>
+	</Style>
+	<StyleMap id="m_ylw-pushpin2">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#s_ylw-pushpin5</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#s_ylw-pushpin_hl10</styleUrl>
+		</Pair>
+	</StyleMap>
+	<StyleMap id="msn_ylw-pushpin60">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#sn_ylw-pushpin30</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#sh_ylw-pushpin20</styleUrl>
+		</Pair>
+	</StyleMap>
+	<StyleMap id="sn_blue-pushpin">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#sn_blue-pushpin10</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#sn_blue-pushpin00</styleUrl>
+		</Pair>
+	</StyleMap>
+	<Style id="sn_ylw-pushpin0000">
+		<IconStyle>
+			<color>ff008080</color>
+		</IconStyle>
+		<LineStyle>
+			<color>ff008080</color>
+			<width>5</width>
+		</LineStyle>
+	</Style>
+	<Style id="sh_ylw-pushpin8">
+		<IconStyle>
+			<color>c5800080</color>
+			<scale>1.3</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<LineStyle>
+			<color>ff800080</color>
+		</LineStyle>
+	</Style>
+	<Style id="sh_ylw-pushpin10">
+		<IconStyle>
+			<color>ff808000</color>
+			<scale>1.3</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<LineStyle>
+			<color>ff008000</color>
+		</LineStyle>
+	</Style>
+	<StyleMap id="msn_ylw-pushpin8">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#sn_ylw-pushpin2</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#sh_ylw-pushpin8</styleUrl>
+		</Pair>
+	</StyleMap>
+	<StyleMap id="msn_ylw-pushpin">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#sn_ylw-pushpin</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#sh_ylw-pushpin0</styleUrl>
+		</Pair>
+	</StyleMap>
+	<Style id="s_ylw-pushpin_hl21">
+		<IconStyle>
+			<color>ff800000</color>
+			<scale>1.3</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<LineStyle>
+			<color>ff800000</color>
+			<width>5.4</width>
+		</LineStyle>
+	</Style>
+	<Style id="s_ylw-pushpin20">
+		<IconStyle>
+			<color>e3000080</color>
+			<scale>1.1</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<LineStyle>
+			<color>ff800000</color>
+		</LineStyle>
+	</Style>
+	<Style id="sn_ylw-pushpin0001">
+		<IconStyle>
+			<color>ff008080</color>
+		</IconStyle>
+		<LineStyle>
+			<color>ff008080</color>
+			<width>5</width>
+		</LineStyle>
+	</Style>
+	<Style id="s_ylw-pushpin10">
+		<IconStyle>
+			<color>ff800000</color>
+			<scale>1.1</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<LineStyle>
+			<color>ff800000</color>
+		</LineStyle>
+	</Style>
+	<Style id="s_ylw-pushpin3">
+		<IconStyle>
+			<color>c5800080</color>
+			<scale>1.1</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<LineStyle>
+			<color>ff800080</color>
+		</LineStyle>
+	</Style>
+	<StyleMap id="m_ylw-pushpin11">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#s_ylw-pushpin10</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#s_ylw-pushpin_hl20</styleUrl>
+		</Pair>
+	</StyleMap>
+	<Style id="s_ylw-pushpin">
+		<IconStyle>
+			<color>ff0b0264</color>
+			<scale>1.1</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+	</Style>
+	<StyleMap id="msn_ylw-pushpin2">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#sn_ylw-pushpin1000</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#sh_ylw-pushpin10</styleUrl>
+		</Pair>
+	</StyleMap>
+	<StyleMap id="sn_ylw-pushpin200">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#sn_ylw-pushpin002</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#sn_ylw-pushpin24</styleUrl>
+		</Pair>
+	</StyleMap>
+	<StyleMap id="sn_blue-pushpin0">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#sn_blue-pushpin1</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#sn_blue-pushpin01</styleUrl>
+		</Pair>
+	</StyleMap>
+	<Style id="sh_ylw-pushpin5">
+		<IconStyle>
+			<color>ff800000</color>
+			<scale>1.3</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<LineStyle>
+			<color>ffffff00</color>
+			<width>3</width>
+		</LineStyle>
+	</Style>
+	<StyleMap id="msn_ylw-pushpin5">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#sn_ylw-pushpin7</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#sh_ylw-pushpin3</styleUrl>
+		</Pair>
+	</StyleMap>
+	<Style id="sn_ylw-pushpin001">
+		<IconStyle>
+			<color>ff008080</color>
+		</IconStyle>
+		<LineStyle>
+			<color>ff008080</color>
+			<width>5</width>
+		</LineStyle>
+	</Style>
+	<Style id="sh_ylw-pushpin40">
+		<IconStyle>
+			<color>e3000080</color>
+			<scale>1.3</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<LineStyle>
+			<color>ff800000</color>
+		</LineStyle>
+	</Style>
+	<Style id="sn_ylw-pushpin101">
+		<IconStyle>
+			<color>ff800000</color>
+			<scale>1.1</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<LineStyle>
+			<color>ffffff00</color>
+			<width>3</width>
+		</LineStyle>
+	</Style>
+	<StyleMap id="m_ylw-pushpin110">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#s_ylw-pushpin100</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#s_ylw-pushpin_hl2000</styleUrl>
+		</Pair>
+	</StyleMap>
+	<Style id="s_ylw-pushpin11">
+		<IconStyle>
+			<color>ff800000</color>
+			<scale>1.1</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<LineStyle>
+			<color>ff800000</color>
+			<width>5.4</width>
+		</LineStyle>
+	</Style>
+	<StyleMap id="m_ylw-pushpin12">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#s_ylw-pushpin</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#s_ylw-pushpin_hl</styleUrl>
+		</Pair>
+	</StyleMap>
+	<Style id="sn_ylw-pushpin7">
+		<IconStyle>
+			<color>ff008000</color>
+			<scale>1.1</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<LineStyle>
+			<color>ff008000</color>
+			<width>5</width>
+		</LineStyle>
+	</Style>
+	<Style id="s_ylw-pushpin2">
+		<IconStyle>
+			<scale>1.1</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<LineStyle>
+			<color>ff124817</color>
+			<width>3.8</width>
+		</LineStyle>
+	</Style>
+	<StyleMap id="m_ylw-pushpin10">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#s_ylw-pushpin00</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#s_ylw-pushpin_hl00</styleUrl>
+		</Pair>
+	</StyleMap>
+	<Style id="sh_ylw-pushpin00">
+		<IconStyle>
+			<color>ff800000</color>
+			<scale>1.3</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<LineStyle>
+			<color>ff800000</color>
+		</LineStyle>
+	</Style>
+	<Style id="s_ylw-pushpin21">
+		<IconStyle>
+			<scale>1.1</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<LineStyle>
+			<color>ff8000ff</color>
+			<width>3.5</width>
+		</LineStyle>
+	</Style>
+	<Style id="sh_ylw-pushpin4">
+		<IconStyle>
+			<color>ff800000</color>
+			<scale>1.3</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<LineStyle>
+			<color>ff00ffff</color>
+			<width>3</width>
+		</LineStyle>
+	</Style>
+	<StyleMap id="m_ylw-pushpin8">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#s_ylw-pushpin3</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#s_ylw-pushpin_hl000</styleUrl>
+		</Pair>
+	</StyleMap>
+	<Style id="sn_ylw-pushpin3">
+		<IconStyle>
+			<color>ffe30000</color>
+			<scale>1.1</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<LineStyle>
+			<color>ff800000</color>
+		</LineStyle>
+	</Style>
+	<Style id="sn_ylw-pushpin230">
+		<IconStyle>
+			<color>ff008080</color>
+		</IconStyle>
+		<LineStyle>
+			<color>ff008080</color>
+			<width>5</width>
+		</LineStyle>
+	</Style>
+	<Style id="s_ylw-pushpin1001">
+		<IconStyle>
+			<color>ff800000</color>
+			<scale>1.1</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<LineStyle>
+			<color>ff800000</color>
+		</LineStyle>
+	</Style>
+	<StyleMap id="m_ylw-pushpin6">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#s_ylw-pushpin1000</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#s_ylw-pushpin_hl20000</styleUrl>
+		</Pair>
+	</StyleMap>
+	<Style id="s_ylw-pushpin_hl000">
+		<IconStyle>
+			<color>c5800080</color>
+			<scale>1.3</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<LineStyle>
+			<color>ff800080</color>
+		</LineStyle>
+	</Style>
+	<Style id="sn_ylw-pushpin1">
+		<IconStyle>
+			<color>ff800000</color>
+			<scale>1.1</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<LineStyle>
+			<color>ff00ffff</color>
+			<width>3</width>
+		</LineStyle>
+	</Style>
+	<Style id="sn_ylw-pushpin8">
+		<IconStyle>
+			<color>ff800000</color>
+			<scale>1.1</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<LineStyle>
+			<color>ff800000</color>
+		</LineStyle>
+	</Style>
+	<StyleMap id="m_ylw-pushpin71">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#s_ylw-pushpin100</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#s_ylw-pushpin_hl2000</styleUrl>
+		</Pair>
+	</StyleMap>
+	<Folder>
+		<name>&quot;The Sisters&quot;</name>
+		<description>Streets and Locations in &quot;The Sisters.&quot;</description>
+		<LookAt>
+			<longitude>-6.261410704198779</longitude>
+			<latitude>53.35275899802055</latitude>
+			<altitude>0</altitude>
+			<heading>105.5622881256366</heading>
+			<tilt>45.13856745528481</tilt>
+			<range>103.6345997808057</range>
+			<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
+		</LookAt>
+		<Placemark>
+			<name>Great Britain Street</name>
+			<description><![CDATA[<div dir="ltr">&quot;The Sisters&quot;<br>[where the priest's sisters are caring for Father Flynn; where he dies]<br>&quot;The next morning after breakfast I went down to look at the little house in Great Britain Street. It was an unassuming shop, registered under the vague name of Drapery &quot; (11).<br><br>The name of the street was changed to Parnell Street after the death of Parnell. A history of the street&nbsp; is contained in <a href="http://issuu.com/scoyne73/docs/parnellstreeteast/1" target="_blank"><i><font size="2">Parnell Street: A Vision for an Historic City Centre Street</font></i><font size="2"><br></font></a></div>]]></description>
+			<styleUrl>#msn_ylw-pushpin6</styleUrl>
+			<Point>
+				<coordinates>-6.260705,53.352909,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>St. Catherine&apos;s</name>
+			<description>&quot;The Sisters&quot;
+[where Father James Flynn served as priest]
+
+&quot;Two poor women and a telegram boy were reading the card pinned on the crape. I also approached and read:
+
+July 1st, 1895
+The Rev. James Flynn (formerly of S. Catherine&apos;s Church, Meath Street), aged sixty-five years.
+R.I.P.&quot; (12)</description>
+			<LookAt>
+				<longitude>-6.27840749030563</longitude>
+				<latitude>53.34205095428231</latitude>
+				<altitude>6.890662392146691</altitude>
+				<heading>0.001311606648674516</heading>
+				<tilt>33.35838679400212</tilt>
+				<range>335.9340048697805</range>
+				<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
+			</LookAt>
+			<styleUrl>#msn_ylw-pushpin8</styleUrl>
+			<Point>
+				<gx:drawOrder>1</gx:drawOrder>
+				<coordinates>-6.27881924003777,53.3420099316512,24.02273494476195</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Irish College in Rome</name>
+			<description>&quot;The Sisters&quot;
+[where Father Flynn studied for the priesthood]
+ 
+&quot;He had studied in the Irish college in Romeand he had taught me to pronounce Latin properly&quot; (13).</description>
+			<LookAt>
+				<longitude>12.50205300007116</longitude>
+				<latitude>41.8872900002544</latitude>
+				<altitude>0</altitude>
+				<heading>4.747136889818372e-11</heading>
+				<tilt>0</tilt>
+				<range>999.999992230869</range>
+				<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
+			</LookAt>
+			<styleUrl>#msn_ylw-pushpin8</styleUrl>
+			<Point>
+				<gx:drawOrder>1</gx:drawOrder>
+				<coordinates>12.50205300007116,41.8872900002544,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Persia</name>
+			<description>&quot;The Sisters&quot;
+[where the narrator imagines he might have been in his dream]
+
+&quot;As I walked along in the sun I remembered Old Cotter&apos;s words and tried to remember what had happened afterwards in the dream. I remembered that I had noticed long velvet curtains and a swinging lamp of antique fashion. I felt that I had been very far away, in some land where the customs were strange--in Persia, I thought...But I could not remember the end of the dream&quot; (13-14).</description>
+			<LookAt>
+				<longitude>53.68804181793316</longitude>
+				<latitude>32.42790479830219</latitude>
+				<altitude>0</altitude>
+				<heading>-2.242582949018225e-06</heading>
+				<tilt>0</tilt>
+				<range>1964888.856692486</range>
+				<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
+			</LookAt>
+			<styleUrl>#msn_ylw-pushpin6</styleUrl>
+			<Point>
+				<gx:drawOrder>1</gx:drawOrder>
+				<coordinates>53.68804181793316,32.42790479830219,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Irishtown</name>
+			<open>1</open>
+			<description><![CDATA["The Sisters"<br>[where Father Flynn and his sisters grew up]<br>"But still and all he kept on saying that before the summer was over 
+he'd go out for a drive one fine day just to see the old house again 
+where we were all born down in Irishtown and take me and Nannie with 
+him. If we could only get one of them new-fangled carriages that makes 
+no noise that Father O'Rourke told him about, them with the rheumatic 
+wheels, for the day cheap -- he said, at Johnny Rush's over the way 
+there and drive out the three of us together of a Sunday evening. He had
+ his mind set on that.... Poor James!" (16)<br>]]></description>
+			<LookAt>
+				<longitude>-6.223106555966232</longitude>
+				<latitude>53.340992769622</latitude>
+				<altitude>0</altitude>
+				<heading>2.917608175525065</heading>
+				<tilt>0</tilt>
+				<range>3161.784892047926</range>
+				<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
+			</LookAt>
+			<styleUrl>#m_ylw-pushpin5</styleUrl>
+			<Point>
+				<coordinates>-6.219240822222928,53.33684709829025,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Johhny Rush&apos;s</name>
+			<description>&quot;The Sisters&quot;
+[where the sisters and Father Flynn had planned to get a carriage for a visit to Irishtown]
+&quot;If we could only get one of them new-fangled carriages that makes no noise that Father O&apos;Rourke told him about—them with the rheumatic wheels—for the day cheap—he said, at Johnny Rush&apos;s over the way there and drive out the three of us together of a Sunday evening. He had his mind set on that.... Poor James!&quot; (17)</description>
+			<LookAt>
+				<longitude>-6.256698893156835</longitude>
+				<latitude>53.35277874271539</latitude>
+				<altitude>3.133245441460709</altitude>
+				<heading>136.4853774397014</heading>
+				<tilt>45.1378553474735</tilt>
+				<range>100.6814560571561</range>
+				<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
+			</LookAt>
+			<styleUrl>#m_ylw-pushpin12</styleUrl>
+			<Point>
+				<gx:drawOrder>1</gx:drawOrder>
+				<coordinates>-6.256698893156835,53.35277874271538,8.262309757574162</coordinates>
+			</Point>
+		</Placemark>
+	</Folder>
+	<Folder>
+		<name>&quot;An Encounter&quot;</name>
+		<description>Street, Locations, and Routes in &quot;An Encounter.&quot;</description>
+		<LookAt>
+			<longitude>-6.251641732932618</longitude>
+			<latitude>53.35601037503885</latitude>
+			<altitude>0</altitude>
+			<heading>-1.296423119302893</heading>
+			<tilt>37.10705927653709</tilt>
+			<range>877.8516334937644</range>
+			<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
+		</LookAt>
+		<Placemark>
+			<name>Gardiner Street</name>
+			<description><![CDATA["An Encounter"<br>[where Joe Dillon's parents go to mass]<br><br>"His parents went to eight- o'clock mass every morning in Gardiner Street
+ and the peaceful odour of Mrs. Dillon was prevalent in the hall of the 
+house" (19).<br>]]></description>
+			<LookAt>
+				<longitude>-6.259119050349646</longitude>
+				<latitude>53.35720488712262</latitude>
+				<altitude>0</altitude>
+				<heading>6.49726338368487</heading>
+				<tilt>41.71172426803538</tilt>
+				<range>341.7815398337818</range>
+				<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
+			</LookAt>
+			<styleUrl>#sn_ylw-pushpin202</styleUrl>
+			<Point>
+				<coordinates>-6.26022340636542,53.35784835872251,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Canal Bridge</name>
+			<description><![CDATA["An Encounter"<br>[where the narrator meets Mahony]<br><br>"We were to meet at ten in the morning on the Canal Bridge" (21).<br><br>Two maps from 1836 and 1883 name this bridge Newcombe and Newcomen Bridge, respectively.]]></description>
+			<LookAt>
+				<longitude>-6.243805314155204</longitude>
+				<latitude>53.35665440757322</latitude>
+				<altitude>0</altitude>
+				<heading>-1.909301949840659</heading>
+				<tilt>24.26117634630861</tilt>
+				<range>193.5224061499731</range>
+				<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
+			</LookAt>
+			<styleUrl>#sn_ylw-pushpin20</styleUrl>
+			<Point>
+				<coordinates>-6.244153000000001,53.356522,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>North Strand Road</name>
+			<description><![CDATA["An Encounter"<br>[After the Canal Bridge, the first street the narrator and his friend take on their journey]<br><br>"We walked along the North Strand Road till we came to the Vitriol Works and then turned to the right along the Wharf Road" (22).<br>]]></description>
+			<LookAt>
+				<longitude>-6.241705163693696</longitude>
+				<latitude>53.3581968483197</latitude>
+				<altitude>0</altitude>
+				<heading>-3.696923426549979</heading>
+				<tilt>33.13561159777353</tilt>
+				<range>122.6799603787144</range>
+				<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
+			</LookAt>
+			<styleUrl>#sn_ylw-pushpin2020</styleUrl>
+			<Point>
+				<coordinates>-6.241325,53.358517,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Wharf Road</name>
+			<description><![CDATA["An Encounter"<br>[part of the boys' route]<br><br>"We walked along the North Strand Road till we came to the Vitriol Works and then turned to the right along the Wharf Road" (22).<br>]]></description>
+			<LookAt>
+				<longitude>-6.236970543097675</longitude>
+				<latitude>53.35929252976211</latitude>
+				<altitude>0</altitude>
+				<heading>-11.3661444337516</heading>
+				<tilt>45.0844012511515</tilt>
+				<range>94.14163133347839</range>
+				<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
+			</LookAt>
+			<styleUrl>#sn_ylw-pushpin201</styleUrl>
+			<Point>
+				<coordinates>-6.238606,53.36042800000001,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Ringsend</name>
+			<description><![CDATA["An Encounter"<br>[the area past which the boats are that the boys watch; where the boys wander after crossing the Liffey]<br><br>"We pleased ourselves with the spectacle of Dublin's commerce -- the 
+barges signalled from far away by their curls of woolly smoke, the brown
+ fishing fleet beyond Ringsend, the big white sailing vessel which was 
+being discharged on the opposite quay" (23).<br><br>"When we were tired of this sight we wandered slowly into Ringsend" (23).<br>]]></description>
+			<LookAt>
+				<longitude>-6.223419518922792</longitude>
+				<latitude>53.34112503947026</latitude>
+				<altitude>0</altitude>
+				<heading>-8.699132503424405</heading>
+				<tilt>22.91881941978069</tilt>
+				<range>3398.905738261753</range>
+				<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
+			</LookAt>
+			<styleUrl>#sn_ylw-pushpin203</styleUrl>
+			<Point>
+				<coordinates>-6.227366390125316,53.34275619544761,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>The Dodder</name>
+			<description><![CDATA[<div dir="ltr">&quot;An Encounter&quot;<br>[the river that the boys can see from the sloping bank where they meet the josser]<br>&quot;We both felt rather tired and when we reached the field we made at once for a sloping bank over the ridge of which we could see the Dodder&quot; (24).</div>]]></description>
+			<LookAt>
+				<longitude>-6.228442207780897</longitude>
+				<latitude>53.34038793145185</latitude>
+				<altitude>0</altitude>
+				<heading>-0.0001812546696368594</heading>
+				<tilt>59.85685935485365</tilt>
+				<range>305.3129351016642</range>
+				<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
+			</LookAt>
+			<styleUrl>#sn_ylw-pushpin2020</styleUrl>
+			<Point>
+				<coordinates>-6.228218,53.340202,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>&quot;An Encounter&quot; Route</name>
+			<description>&quot;An Encounter&quot;
+The approximate path the narrator and Mahony travel in &quot;An Encounter.&quot;</description>
+			<styleUrl>#sn_ylw-pushpin200</styleUrl>
+			<LineString>
+				<tessellate>1</tessellate>
+				<coordinates>
+					-6.250030002093018,53.35797000818081,0 -6.249143951214849,53.3573352206858,0 -6.248725647725653,53.35750045644036,0 -6.248101877144975,53.35779821459258,0 -6.24786674556311,53.35790570241438,0 -6.247702462865044,53.35795517028548,0 -6.247494031563077,53.35809577236208,0 -6.247285223634869,53.3579860366565,0 -6.246436066915708,53.35758425523001,0 -6.2454436951949,53.35705389352371,0 -6.245115008381143,53.35686043293271,0 -6.244978560257554,53.35673894609435,0 -6.244705948273047,53.35659875947859,0 -6.244621970760943,53.35654239965567,0 -6.244564313813436,53.35649915699585,0 -6.244516284616378,53.35645119893908,0 -6.244422069341604,53.35650019214522,0 -6.244341711287484,53.35656833151774,0 -6.244258456201729,53.35664238813025,0 -6.244134743795,53.35671113986401,0 -6.244060179788771,53.35675581050896,0 -6.243985227483728,53.35680846732532,0 -6.243809251129999,53.35693878228999,0 -6.243582354340543,53.35707837238714,0 -6.243234959573819,53.35730494199214,0 -6.242944435484134,53.35752389369706,0 -6.242631478666633,53.35772127548702,0 -6.242504706330504,53.35778654962682,0 -6.242313552863928,53.35791269521306,0 -6.242060232464002,53.35808171405076,0 -6.241877777154801,53.35821229774767,0 -6.24169910083579,53.35831135786539,0 -6.241437649442995,53.35846683800823,0 -6.241139018763589,53.35868839842507,0 -6.241003197971187,53.35880261810816,0 -6.240858067805951,53.35895824611285,0 -6.240679032007085,53.35912273941437,0 -6.240509718011891,53.35930016950557,0 -6.240307999088875,53.35948299725441,0 -6.24017293907831,53.35958084137186,0 -6.239961918108181,53.35975635748888,0 -6.239893748487844,53.35978664033143,0 -6.239848163069154,53.35981459771769,0 -6.239716850068731,53.35989337692618,0 -6.239611079941063,53.36000137487909,0 -6.239505727985565,53.36007908261836,0 -6.239365023933125,53.36017412990825,0 -6.239246525832913,53.36029855194683,0 -6.239121546419585,53.36038617561677,0 -6.239036559996766,53.36040928138014,0 -6.238919634814419,53.36046052358107,0 -6.238707729348665,53.36040875432583,0 -6.23855570395646,53.36029253104338,0 -6.238301765824607,53.36017077818039,0 -6.237611581613864,53.35979998401162,0 -6.225235560578107,53.35259898626287,0 -6.226867311853307,53.34981896384282,0 -6.227339042997464,53.34711614680315,0 -6.227671732279846,53.34691824965626,0 -6.228320489912632,53.34671598521108,0 -6.229705469167723,53.34672636081667,0 -6.229930238626119,53.34472261274267,0 -6.230178601243761,53.34399668255307,0 -6.23032198937377,53.34364503507731,0 -6.230416722379561,53.34332257289987,0 -6.229857336540981,53.34314279381137,0 -6.229363765855858,53.34164406236882,0 -6.228619638564892,53.34169665641267,0 -6.227540582407485,53.34177465647976,0 -6.227917168131949,53.34234819017991,0 -6.228075895155603,53.34257582822799,0 -6.226224292647295,53.34300756107417,0 -6.2263005141432,53.34380138551177,0 -6.226557831954679,53.34441572906113,0 -6.228047594512405,53.3447015982,0 -6.228150490192581,53.34403870259528,0 -6.228273560141063,53.34357610521224,0 -6.228290793556148,53.3432253693254,0 -6.228509112745605,53.34266950451781,0 
+				</coordinates>
+			</LineString>
+		</Placemark>
+	</Folder>
+	<Folder>
+		<name>&quot;Araby&quot;</name>
+		<description>Streets, Locations, and Routes in &quot;Araby.&quot;</description>
+		<LookAt>
+			<longitude>-6.250613245724718</longitude>
+			<latitude>53.35807985282521</latitude>
+			<altitude>0</altitude>
+			<heading>-2.054205776740139e-07</heading>
+			<tilt>0</tilt>
+			<range>788.3489295444016</range>
+			<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
+		</LookAt>
+		<Placemark>
+			<name>North Richmond Street</name>
+			<description><![CDATA["Araby"<br>[the blind street where the narrator lives]<br><br>"NORTH RICHMOND STREET being blind, was a quiet street except at the hour
+ when the Christian Brothers' School set the boys free. An uninhabited 
+house of two storeys stood at the blind end, detached from its 
+neighbours in a square ground. The other houses of the street, conscious 
+of decent lives within them, gazed at one another with brown 
+imperturbable faces" (29).<br>]]></description>
+			<styleUrl>#m_ylw-pushpin20</styleUrl>
+			<Point>
+				<coordinates>-6.250613000125558,53.35807799982346,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Christian Brothers Shool</name>
+			<description><![CDATA[<div dir="ltr">&quot;Araby&quot;<br>[the school on Richmond Street]<br>&quot;NORTH RICHMOND STREET being blind, was a quiet street except at the hour when the Christian Brothers&#39; School set the boys free&quot; (29).</div>]]></description>
+			<styleUrl>#m_ylw-pushpin2</styleUrl>
+			<Point>
+				<coordinates>-6.250749,53.358227,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Buckingham Street</name>
+			<description><![CDATA["Araby"<br>[the street down which the narrator walks to get to the station]<br><br>"I held a florin tightly in my hand as I strode down Buckingham Street towards the station." (34)<br>]]></description>
+			<styleUrl>#m_ylw-pushpin2</styleUrl>
+			<Point>
+				<coordinates>-6.249465,53.35368,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Westland Row</name>
+			<description><![CDATA[[one of the stations through which the train passes]<br><br>"At Westland Row Station a crowd of people pressed to the carriage doors;
+ but the porters moved them back, saying that it was a special train for
+ the bazaar" (34).<br>]]></description>
+			<styleUrl>#m_ylw-pushpin2</styleUrl>
+			<Point>
+				<coordinates>-6.249869,53.343182,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>&quot;Araby&quot; Route</name>
+			<description><![CDATA[<div dir="ltr">&quot;Araby&quot;<br>The approximate route the narrator of &quot;Araby&quot; takes on his trip to the bazaar. <br><br>End route according to Gifford.</div>]]></description>
+			<styleUrl>#msn_ylw-pushpin5</styleUrl>
+			<LineString>
+				<tessellate>1</tessellate>
+				<coordinates>
+					-6.250366,53.358559,0 -6.250902000000001,53.357597,0 -6.249851,53.357021,0 -6.251073999999999,53.35638400000001,0 -6.24895,53.352528,0 -6.253691999999999,53.350002,0 -6.254464,53.349094,0 -6.254645675242546,53.34799526744708,0 -6.254357,53.347149,0 -6.251768047490131,53.34482266810559,0 -6.249970692860782,53.343854884755,0 -6.240709116624512,53.34112131718865,0 -6.233416045907122,53.33737664247975,0 -6.225710884667356,53.33148459497058,0 
+				</coordinates>
+			</LineString>
+		</Placemark>
+		<gx:Tour>
+			<name>Araby Tour</name>
+			<gx:Playlist>
+				<gx:FlyTo>
+					<gx:duration>10</gx:duration>
+					<LookAt>
+						<longitude>-6.250366</longitude>
+						<latitude>53.358559</latitude>
+						<altitude>0</altitude>
+						<heading>169.9908142089844</heading>
+						<tilt>60</tilt>
+						<range>100</range>
+					</LookAt>
+				</gx:FlyTo>
+				<gx:FlyTo>
+					<gx:duration>3</gx:duration>
+					<gx:flyToMode>smooth</gx:flyToMode>
+					<LookAt>
+						<longitude>-6.249922826939144</longitude>
+						<latitude>53.35706036471641</latitude>
+						<altitude>0</altitude>
+						<heading>197.3696746826172</heading>
+						<tilt>60</tilt>
+						<range>100</range>
+					</LookAt>
+				</gx:FlyTo>
+				<gx:FlyTo>
+					<gx:duration>3</gx:duration>
+					<gx:flyToMode>smooth</gx:flyToMode>
+					<LookAt>
+						<longitude>-6.250665739904661</longitude>
+						<latitude>53.35564282724689</latitude>
+						<altitude>0</altitude>
+						<heading>161.8004455566406</heading>
+						<tilt>60</tilt>
+						<range>100</range>
+					</LookAt>
+				</gx:FlyTo>
+				<gx:FlyTo>
+					<gx:duration>3</gx:duration>
+					<gx:flyToMode>smooth</gx:flyToMode>
+					<LookAt>
+						<longitude>-6.249720073741519</longitude>
+						<latitude>53.35392602464563</latitude>
+						<altitude>0</altitude>
+						<heading>172.6449890136719</heading>
+						<tilt>60</tilt>
+						<range>100</range>
+					</LookAt>
+				</gx:FlyTo>
+				<gx:FlyTo>
+					<gx:duration>3</gx:duration>
+					<gx:flyToMode>smooth</gx:flyToMode>
+					<LookAt>
+						<longitude>-6.249369432875099</longitude>
+						<latitude>53.35230457371519</latitude>
+						<altitude>0</altitude>
+						<heading>217.6449890136719</heading>
+						<tilt>60</tilt>
+						<range>100</range>
+					</LookAt>
+				</gx:FlyTo>
+				<gx:FlyTo>
+					<gx:duration>3</gx:duration>
+					<gx:flyToMode>smooth</gx:flyToMode>
+					<LookAt>
+						<longitude>-6.251628320098294</longitude>
+						<latitude>53.35110129469248</latitude>
+						<altitude>0</altitude>
+						<heading>226.4429016113281</heading>
+						<tilt>60</tilt>
+						<range>100</range>
+					</LookAt>
+				</gx:FlyTo>
+				<gx:FlyTo>
+					<gx:duration>3</gx:duration>
+					<gx:flyToMode>smooth</gx:flyToMode>
+					<LookAt>
+						<longitude>-6.253810405456367</longitude>
+						<latitude>53.34986273555132</latitude>
+						<altitude>0</altitude>
+						<heading>197.7959747314453</heading>
+						<tilt>60</tilt>
+						<range>100</range>
+					</LookAt>
+				</gx:FlyTo>
+				<gx:FlyTo>
+					<gx:duration>2.999999999999998</gx:duration>
+					<gx:flyToMode>smooth</gx:flyToMode>
+					<LookAt>
+						<longitude>-6.254725015766421</longitude>
+						<latitude>53.34816180083421</latitude>
+						<altitude>0</altitude>
+						<heading>159.3994445800781</heading>
+						<tilt>60</tilt>
+						<range>100</range>
+					</LookAt>
+				</gx:FlyTo>
+				<gx:FlyTo>
+					<gx:duration>3.000000000000002</gx:duration>
+					<gx:flyToMode>smooth</gx:flyToMode>
+					<LookAt>
+						<longitude>-6.253682269266496</longitude>
+						<latitude>53.3465057299257</latitude>
+						<altitude>0</altitude>
+						<heading>144.0992889404297</heading>
+						<tilt>60</tilt>
+						<range>100</range>
+					</LookAt>
+				</gx:FlyTo>
+				<gx:FlyTo>
+					<gx:duration>3.000000000000002</gx:duration>
+					<gx:flyToMode>smooth</gx:flyToMode>
+					<LookAt>
+						<longitude>-6.25190824911112</longitude>
+						<latitude>53.34504269289207</latitude>
+						<altitude>0</altitude>
+						<heading>134.8208770751953</heading>
+						<tilt>60</tilt>
+						<range>100</range>
+					</LookAt>
+				</gx:FlyTo>
+				<gx:FlyTo>
+					<gx:duration>3.000000000000002</gx:duration>
+					<gx:flyToMode>smooth</gx:flyToMode>
+					<LookAt>
+						<longitude>-6.249816035049556</longitude>
+						<latitude>53.34380138295651</latitude>
+						<altitude>0</altitude>
+						<heading>111.9765625</heading>
+						<tilt>60</tilt>
+						<range>100</range>
+					</LookAt>
+				</gx:FlyTo>
+				<gx:FlyTo>
+					<gx:duration>3.000000000000002</gx:duration>
+					<gx:flyToMode>smooth</gx:flyToMode>
+					<LookAt>
+						<longitude>-6.247014763946325</longitude>
+						<latitude>53.34312644455122</latitude>
+						<altitude>0</altitude>
+						<heading>116.2050018310547</heading>
+						<tilt>60</tilt>
+						<range>100</range>
+					</LookAt>
+				</gx:FlyTo>
+				<gx:FlyTo>
+					<gx:duration>2.745860788513385</gx:duration>
+					<gx:flyToMode>smooth</gx:flyToMode>
+					<LookAt>
+						<longitude>-6.244529000000001</longitude>
+						<latitude>53.34239600000001</latitude>
+						<altitude>0</altitude>
+						<heading>116.2050018310547</heading>
+						<tilt>60</tilt>
+						<range>100</range>
+					</LookAt>
+				</gx:FlyTo>
+			</gx:Playlist>
+		</gx:Tour>
+	</Folder>
+	<Folder>
+		<name>&quot;Eveline&quot;</name>
+		<description>Streets and Locations in &quot;Eveline.&quot;</description>
+		<LookAt>
+			<longitude>-6.243576880445115</longitude>
+			<latitude>53.34787672316807</latitude>
+			<altitude>0</altitude>
+			<heading>-0.004527062444575459</heading>
+			<tilt>0</tilt>
+			<range>1764.107776201585</range>
+			<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
+		</LookAt>
+		<Placemark>
+			<name>Belfast</name>
+			<description>&quot;Eveline&quot;
+[where the man who built the new houses is from]
+&quot;One time there used to be a field there in which they used to play every
+ evening with other people&apos;s children. Then a man from Belfast bought 
+the field and built houses in it -- not like their little brown houses 
+but bright brick houses with shining roofs&quot; (36).</description>
+			<LookAt>
+				<longitude>-5.930109001406121</longitude>
+				<latitude>54.59726700031735</latitude>
+				<altitude>0</altitude>
+				<heading>-1.146106518356015e-09</heading>
+				<tilt>0</tilt>
+				<range>1000.000187825944</range>
+				<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
+			</LookAt>
+			<styleUrl>#msn_ylw-pushpin2</styleUrl>
+			<Point>
+				<coordinates>-5.930108999999999,54.597267,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>England</name>
+			<description><![CDATA["Eveline"<br>[where the Waters are from and where they moved]<br>"Tizzie Dunn was dead, too, and the Waters had gone back to England. 
+Everything changes. Now she was going to go away like the others, to 
+leave her home" (37).<br>]]></description>
+			<LookAt>
+				<longitude>0.6223785602521837</longitude>
+				<latitude>52.23782491739406</latitude>
+				<altitude>0</altitude>
+				<heading>1.098638500184367</heading>
+				<tilt>0</tilt>
+				<range>942779.3316584994</range>
+				<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
+			</LookAt>
+			<styleUrl>#msn_ylw-pushpin2</styleUrl>
+			<Point>
+				<coordinates>-0.770427,52.019028,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Melbourne, Australia</name>
+			<description><![CDATA["Eveline"<br>[where the priest in the photograph now lives]<br>"He had been a school friend of her father. Whenever he showed the 
+photograph to a visitor her father used to pass it with a casual word:<br><br>-He is in Melbourne now" (37).<br>]]></description>
+			<LookAt>
+				<longitude>145.0104959016058</longitude>
+				<latitude>-37.8097624787783</latitude>
+				<altitude>0</altitude>
+				<heading>-0.02912674211534014</heading>
+				<tilt>0</tilt>
+				<range>25522.4353597572</range>
+				<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
+			</LookAt>
+			<styleUrl>#msn_ylw-pushpin2</styleUrl>
+			<Point>
+				<coordinates>144.962982,-37.813187,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Melbourne, UK</name>
+			<description><![CDATA[(alternatively)<br>"Eveline"<br>[where the priest in the photograph now lives]<br>"He had been a school friend of her father. Whenever he showed the 
+photograph to a visitor her father used to pass it with a casual word:<br><br>-He is in Melbourne now" (37).<br>]]></description>
+			<LookAt>
+				<longitude>-1.414628219983195</longitude>
+				<latitude>52.81882748569412</latitude>
+				<altitude>0</altitude>
+				<heading>0.01101569831697432</heading>
+				<tilt>0</tilt>
+				<range>6984.029465959624</range>
+				<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
+			</LookAt>
+			<styleUrl>#msn_ylw-pushpin2</styleUrl>
+			<Point>
+				<coordinates>-1.428454,52.823006,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>The Stores</name>
+			<description>&quot;Eveline&quot;
+[where Eveline works]
+&quot;Of course she had to work hard both in the house and at business. What would they say of her in the Stores when they found out that she had run away with a fellow?&quot; (37)</description>
+			<LookAt>
+				<longitude>-6.265326021075732</longitude>
+				<latitude>53.34176433453035</latitude>
+				<altitude>0</altitude>
+				<heading>-0.0005732119382843461</heading>
+				<tilt>31.18325761644828</tilt>
+				<range>179.8880635023667</range>
+				<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
+			</LookAt>
+			<styleUrl>#msn_grn-pushpin</styleUrl>
+			<Point>
+				<coordinates>-6.265572044458159,53.34135609739011,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Buenos Ayres</name>
+			<description><![CDATA[<div dir="ltr">&quot;Eveline&quot;<br>[where Frank wants to take Eveline]<br><br>&quot;She was to go away with him by the night-boat to be his wife and to live with him in Buenos Ayres where he had a home waiting for her&quot; (38).<br><br>&quot;He had fallen on his feet in Buenos Ayres, he said, and had come over to the old country just for a holiday&quot; (39).<br><br>&quot;If she went, tomorrow she would be on the sea with Frank, steaming towards Buenos Ayres&quot; (40).</div>]]></description>
+			<styleUrl>#msn_ylw-pushpin2</styleUrl>
+			<Point>
+				<coordinates>-58.373161,-34.608418,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Canada</name>
+			<description><![CDATA["Eveline"<br>[one of the places Frank travels on the <a href="http://www.theshipslist.com/ships/lines/allan.html">Allan Line</a> (or the Montreal Ocean Steamship Company)]<br>"He had tales of distant countries. He had started as a deck boy at a 
+pound a month on a ship of the Allan Line going out to Canada" (39).<br>]]></description>
+			<styleUrl>#msn_ylw-pushpin2</styleUrl>
+			<Point>
+				<coordinates>-63.764648,44.684277,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Straits of Magellan</name>
+			<description><![CDATA["Eveline"<br>[one of the areas Frank has explored in his travels]<br>"He told her the names of the ships he had been on and the names of the 
+different services. He had sailed through the Straits of Magellan and he
+ told her stories of the terrible Patagonians" (39).<br>]]></description>
+			<styleUrl>#msn_ylw-pushpin2</styleUrl>
+			<Point>
+				<coordinates>-70.488281,-53.748711,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Patagonia</name>
+			<description><![CDATA["Eveline"<br>[one of the areas Frank has explored in his travels]<br>"He told her the names of the ships he had been on and the names of the 
+different services. He had sailed through the Straits of Magellan and he
+ told her stories of the terrible Patagonians" (39).<br>]]></description>
+			<styleUrl>#msn_ylw-pushpin2</styleUrl>
+			<Point>
+				<coordinates>-72.29003899999999,-52.038979,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Hill of Howth</name>
+			<description><![CDATA["Eveline"<br>[where Eveline went as a child with her family when her mother was still alive]<br>"Another day, when their mother was alive, they had all gone for a picnic to the Hill of Howth" (39).<br>]]></description>
+			<styleUrl>#msn_ylw-pushpin2</styleUrl>
+			<Point>
+				<coordinates>-6.07002,53.373192,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>North Wall</name>
+			<description><![CDATA["Eveline"<br>[where Frank and Eveline go to catch the ship]<br>"She stood among the swaying crowd in the station at the North Wall" (40).<br>]]></description>
+			<LookAt>
+				<longitude>-6.243576880445115</longitude>
+				<latitude>53.34787672316807</latitude>
+				<altitude>0</altitude>
+				<heading>-0.004527062444575459</heading>
+				<tilt>0</tilt>
+				<range>1764.107776201585</range>
+				<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
+			</LookAt>
+			<styleUrl>#msn_ylw-pushpin20</styleUrl>
+			<Point>
+				<coordinates>-6.245844078581435,53.3478145570936,0</coordinates>
+			</Point>
+		</Placemark>
+	</Folder>
+	<Folder>
+		<name>&quot;After the Race&quot;</name>
+		<description>Streets, Locations, and Routes in &quot;After the Race.&quot;</description>
+		<LookAt>
+			<longitude>-6.335858999992482</longitude>
+			<latitude>53.32862900029554</latitude>
+			<altitude>0</altitude>
+			<heading>5.951612947688606e-12</heading>
+			<tilt>0</tilt>
+			<range>1000.000264301766</range>
+			<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
+		</LookAt>
+		<Placemark>
+			<name>Naas Road</name>
+			<description><![CDATA["After the Race"<br><div>[where the cars are at the beginning of the story]</div><div>"THE cars came scudding in towards Dublin, running evenly like pellets in the groove of the Naas Road" (42).</div>]]></description>
+			<styleUrl>#m_ylw-pushpin10</styleUrl>
+			<Point>
+				<coordinates>-6.335858999999999,53.328629,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Inchicore Square</name>
+			<description><![CDATA["After the Race"<br><div>[the cars continue]</div><div>"At the crest of the hill at Inchicore sightseers had gathered in clumps 
+to watch the cars careering homeward and through this channel of poverty
+ and inaction the Continent sped its wealth and industry" (42).</div>]]></description>
+			<styleUrl>#msn_ylw-pushpin3</styleUrl>
+			<Point>
+				<coordinates>-6.32167179650316,53.33957141830153,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>France</name>
+			<description><![CDATA[<div dir="ltr">&quot;After the Race&quot;<br>[the country whose cars the Irish support; the country Segouin drives for; where Segouin is from and where he owns hotels; one of the places the men toast]<br><br>&quot;Now and again the clumps of people raised the cheer of the gratefully oppressed. Their sympathy, however, was for the blue cars -- the cars of their friends, the French.<br><br>The French, moreover, were virtual victors. Their team had finished solidly; they had been placed second and third and the driver of the winning German car was reported a Belgian. Each blue car, therefore, received a double measure of welcome as it topped the crest of the hill and each cheer of welcome was acknowledged with smiles and nods by those in the car. In one of these trimly built cars was a party of four young men whose spirits seemed to be at present well above the level of successful Gallicism: in fact, these four young men were almost hilarious&quot; (42).<br><br>&quot;Segouin was in good humour because he had unexpectedly received some orders in advance (he was about to start a motor establishment in Paris) and Riviere was in good humour because he was to be appointed manager of the establishment; these two young men (who were cousins) were also in good humour because of the success of the French cars&quot; (43).<br><br>&quot;They were not much more than acquaintances as yet but Jimmy found great pleasure in the society of one who had seen so much of the world and was reputed to own some of the biggest hotels in France&quot; (43).<br><br>&quot;The Frenchmen flung their laughter and light words over their shoulders and often Jimmy had to strain forward to catch the quick phrase&quot; (44).<br><br>&quot;At the control Segouin had presented him to one of the French competitors and, in answer to his confused murmur of compliment, the swarthy face of the driver had disclosed a line of shining white teeth. It was pleasant after that honour to return to the profane world of spectators amid nudges and significant looks&quot; (44).<br><br>&quot;Jimmy, whose imagination was kindling, conceived the lively youth of the Frenchmen twined elegantly upon the firm framework of the Englishman&#39;s manner&quot; (46).<br><br>&quot;Riviere, not wholly ingenuously, undertook to explain to Jimmy the triumph of the French mechanicians&quot; (46).<br><br>&quot;They drank Ireland, England, France, Hungary, the United States of America. Jimmy made a speech, a long speech, Villona saying: &quot;Hear! hear!&quot; whenever there was a pause&quot; (47).</div>]]></description>
+			<styleUrl>#m_ylw-pushpin10</styleUrl>
+			<Point>
+				<coordinates>1.757813,47.39835000000001,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Germany</name>
+			<description><![CDATA[<div dir="ltr">&quot;After the Race&quot;<br>[where the car is from that is disqualified]<br>&quot;The French, moreover, were virtual victors. Their team had finished solidly; they had been placed second and third and the driver of the winning German car was reported a Belgian&quot; (42).</div>]]></description>
+			<styleUrl>#m_ylw-pushpin10</styleUrl>
+			<Point>
+				<coordinates>9.667968999999999,50.289337,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Belgium</name>
+			<description><![CDATA[<div dir="ltr">&quot;After the Race&quot;<br>[where the driver of the disqualified German car is from]<br>&quot;The French, moreover, were virtual victors. Their team had finished solidly; they had been placed second and third and the driver of the winning German car was reported a Belgian&quot; (42).</div>]]></description>
+			<styleUrl>#m_ylw-pushpin10</styleUrl>
+			<Point>
+				<coordinates>4.746094,51.124214,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Canada</name>
+			<description><![CDATA[<div dir="ltr">&quot;After the Race&quot;<br>[where Riviere was born]<br>&quot;They were Charles Segouin, the owner of the car; Andre Riviere, a young electrician of Canadian birth; a huge Hungarian named Villona and a neatly groomed young man named Doyle&quot; (42-43).</div>]]></description>
+			<styleUrl>#m_ylw-pushpin10</styleUrl>
+			<Point>
+				<coordinates>-69.609375,52.48277999999999,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Hungary</name>
+			<description><![CDATA[<div dir="ltr">&quot;After the Race&quot;<br>[where Villona is from; one of the places the men toast]<br><br>&quot;They were Charles Segouin, the owner of the car; Andre Riviere, a young electrician of Canadian birth; a huge Hungarian named Villona and a neatly groomed young man named Doyle&quot; (42-43).<br><br>&quot;The car ran on merrily with its cargo of hilarious youth. The two cousins sat on the front seat; Jimmy and his Hungarian friend sat behind&quot; (44).<br><br>&quot;His father, therefore, was unusually friendly with Villona and his manner expressed a real respect for foreign accomplishments; but this subtlety of his host was probably lost upon the Hungarian, who was beginning to have a sharp desire for his dinner&quot; (45-46).<br><br>&quot;The resonant voice of the Hungarian was about to prevail in ridicule of the spurious lutes of the romantic painters when Segouin shepherded his party into politics&quot; (46).<br><br>&quot;They drank Ireland, England, France, Hungary, the United States of America&quot; (47).<br><br>&quot;The cabin door opened and he saw the Hungarian standing in a shaft of grey light:<br><br>-Daybreak, gentlemen!&quot; (48).</div>]]></description>
+			<styleUrl>#m_ylw-pushpin10</styleUrl>
+			<Point>
+				<coordinates>19.6875,46.98025100000001,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Kingstown</name>
+			<description><![CDATA["After the Race"<br>[where Jimmy's father had started his business]<br>"His father, who had begun life as an advanced Nationalist, had modified 
+his views early. He had made his money as a butcher in Kingstown and by 
+opening shops in Dublin and in the suburbs he had made his money many 
+times over" (43).<br>]]></description>
+			<styleUrl>#msn_ylw-pushpin3</styleUrl>
+			<Point>
+				<coordinates>-6.142570184161525,53.28852901087195,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Dublin University</name>
+			<description><![CDATA[<div dir="ltr">&quot;After the Race&quot;<br>[where Jimmy Doyle went to study law]<br>&quot;He had sent his son to England to be educated in a big Catholic college and had afterwards sent him to Dublin University to study law. Jimmy did not study very earnestly and took to bad courses for a while&quot; (43).</div>]]></description>
+			<styleUrl>#m_ylw-pushpin10</styleUrl>
+			<Point>
+				<coordinates>-6.258795,53.344471,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Cambridge</name>
+			<description><![CDATA[<div dir="ltr">&quot;After the Race&quot;<br>[where Jimmy goes to college for a term &quot;to see a little life&quot;]<br>&quot;Then he had been sent for a term to Cambridge to see a little life. His father, remonstrative, but covertly proud of the excess, had paid his bills and brought him home. It was at Cambridge that he had met Segouin&quot; (43).<br><br>&quot;The party was increased by a young Englishman named Routh whom Jimmy had seen with Segouin at Cambridge&quot; (46).</div>]]></description>
+			<styleUrl>#m_ylw-pushpin10</styleUrl>
+			<Point>
+				<coordinates>0.116613,52.205303,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Dame Street</name>
+			<description><![CDATA["After the Race"<br><div>[the drive continues]</div><div>"They drove down Dame Street. The street was busy with unusual traffic, 
+loud with the horns of motorists and the gongs of impatient 
+tram-drivers. Near the Bank Segouin drew up and Jimmy and his friend 
+alighted" (45).</div>]]></description>
+			<styleUrl>#m_ylw-pushpin10</styleUrl>
+			<Point>
+				<coordinates>-6.26478,53.344173,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Grafton Street</name>
+			<description><![CDATA["After the Race"<br><div>[where the car goes after Jimmy and Villona get out; later where they meet Farley, the American]</div><div><br>&nbsp;</div><div>"The car steered out slowly for Grafton Street while the two young men pushed their way through the knot of gazers" (45).</div><div><br>&nbsp;</div><div>"At the corner of Grafton Street a short fat man was putting two handsome
+ ladies on a car in charge of another fat man. The car drove off and the
+ short fat man caught sight of the party" (47)</div>]]></description>
+			<styleUrl>#m_ylw-pushpin10</styleUrl>
+			<Point>
+				<coordinates>-6.259439,53.342903,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Stephen&apos;s Green</name>
+			<description><![CDATA[<div dir="ltr">&quot;After the Race&quot;<br>[where the men walk, smoking, after dinner]<br>&quot;The five young men strolled along Stephen&#39;s Green in a faint cloud of aromatic smoke&quot; (46).</div>]]></description>
+			<styleUrl>#m_ylw-pushpin10</styleUrl>
+			<Point>
+				<coordinates>-6.260629,53.339832,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>United States of America</name>
+			<description><![CDATA[<div dir="ltr">&quot;After the Race&quot;<br>[where Farley is from; a place the men toast]<br><br>&quot;Farley was an American&quot; (47).<br><br>&quot;They got into a rowboat at the slip and made out for the American&#39;s yacht&quot; (47).<br><br>&quot;They drank Ireland, England, France, Hungary, the United States of America&quot; (47).</div>]]></description>
+			<styleUrl>#m_ylw-pushpin10</styleUrl>
+			<Point>
+				<coordinates>-88.242188,37.996162,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Westland Row</name>
+			<description><![CDATA["After the Race"<br>[where the men get the train to go to the harbour]<br>"They took the train at Westland Row and in a few seconds, as it seemed to Jimmy, they were walking out of Kingstown Station" (47).<br>]]></description>
+			<styleUrl>#m_ylw-pushpin10</styleUrl>
+			<Point>
+				<coordinates>-6.249869,53.343182,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Kingstown Harbour</name>
+			<description><![CDATA["After the Race"<br>[where the men deboard the train and board Farley's yacht]<br>"They took the train at Westland Row and in a few seconds, as it seemed 
+to Jimmy, they were walking out of Kingstown Station...It
+ was a serene summer night; the harbour lay like a darkened mirror at 
+their feet...They
+ got into a rowboat at the slip and made out for the American's yacht. 
+There was to be supper, music, cards" (47).<br>]]></description>
+			<styleUrl>#m_ylw-pushpin10</styleUrl>
+			<Point>
+				<coordinates>-6.135135,53.29718400000001,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>&quot;After the Race&quot; Car Route</name>
+			<description><![CDATA["After the Race"<br>[the route the car takes as it drives into town]<br>]]></description>
+			<styleUrl>#msn_ylw-pushpin10</styleUrl>
+			<LineString>
+				<tessellate>1</tessellate>
+				<coordinates>
+					-6.329744445912101,53.33226351369493,0 -6.328618769164685,53.33401373706663,0 -6.327692899486061,53.33494994602501,0 -6.321386815325354,53.33925763904858,0 -6.320316560006854,53.34048602426518,0 -6.319847940215233,53.34102983746226,0 -6.318849814364482,53.34159901713272,0 -6.313754030929616,53.34231442285525,0 -6.307899531055864,53.34199497310967,0 -6.307700750252167,53.34061193943158,0 -6.303820046134683,53.34074215054507,0 -6.301472491064885,53.34101364286575,0 -6.295398116324041,53.34196595462173,0 -6.289731470277792,53.3434318212137,0 -6.285030049105571,53.34349679892438,0 -6.281488052080641,53.34322199933695,0 -6.277463568196144,53.34283063278264,0 -6.275207208838848,53.34338644138064,0 -6.272027115543483,53.34289179974493,0 -6.271523710812762,53.34292534334358,0 -6.270655872994024,53.34315930657442,0 -6.270375819197441,53.34325954564822,0 -6.269906055383863,53.34321068991321,0 -6.268958600894918,53.34336607436711,0 -6.26771916332669,53.34367347401533,0 -6.267574006900531,53.34377449000712,0 -6.267636555002318,53.34406983943033,0 -6.267075505967147,53.34414998426293,0 -6.266233118965334,53.34416512715137,0 -6.264456393920036,53.3441684184241,0 -6.262382173589062,53.34423305015976,0 -6.262330149912214,53.34410553603127,0 -6.262241210816917,53.34395511636843,0 -6.261719743901828,53.34357742922366,0 -6.260842202975313,53.34386736823242,0 -6.260288940190547,53.34363229547743,0 -6.259639202866744,53.34335690767841,0 -6.259448654432113,53.34328885980528,0 -6.259357389185233,53.34324799918732,0 
+				</coordinates>
+			</LineString>
+		</Placemark>
+		<Placemark>
+			<name>&quot;After the Race&quot; Walking/Car/Train Route</name>
+			<description><![CDATA["After the Race"<br>[the route the men take after dinner and on their way to the yacht]<br>]]></description>
+			<styleUrl>#msn_ylw-pushpin4</styleUrl>
+			<LineString>
+				<tessellate>1</tessellate>
+				<coordinates>
+					-6.256072,53.338703,0 -6.260911,53.339966,0 -6.260846,53.34008799999999,0 -6.253413,53.337975,0 -6.250151000000001,53.34189600000001,0 -6.250581000000001,53.342049,0 -6.249624,53.343586,0 -6.246464,53.342823,0 -6.243177472379315,53.34190369334807,0 -6.240702441621932,53.34093951523606,0 -6.234892267387688,53.33818998461552,0 -6.233463357763325,53.33731930545484,0 -6.22798417272879,53.33321336010279,0 -6.213341980912523,53.3220394408422,0 -6.210348016887184,53.31994832832839,0 -6.198903025070896,53.31235550765514,0 -6.192637270092404,53.3085600884095,0 -6.179316483306694,53.30312638251376,0 -6.176180630301689,53.30204999148898,0 -6.173842400312379,53.30135183616575,0 -6.171791964582004,53.30089804440823,0 -6.168729413240428,53.30013325477285,0 -6.166008154091069,53.29936056887176,0 -6.16239560539916,53.29818267896363,0 -6.156913076953428,53.29614188222724,0 -6.155301735518945,53.29577517059068,0 -6.153530272937822,53.29547059065775,0 -6.150903851706573,53.29540442283552,0 -6.148574596658673,53.29558402825324,0 -6.145785485035264,53.29589371297917,0 -6.141581088883874,53.29630200481554,0 -6.139857057413809,53.29626925737784,0 -6.138099299124146,53.29608955339313,0 -6.136779148609801,53.29582831809902,0 -6.135700357040326,53.29550999637425,0 -6.135198079058469,53.29527080240592,0 -6.134352612212446,53.29492859530398,0 
+				</coordinates>
+			</LineString>
+		</Placemark>
+	</Folder>
+	<Folder>
+		<name>&quot;Two Gallants&quot;</name>
+		<description><![CDATA[Streets, Locations, and Routes in "Two Gallants."<br><br>End route according to Gifford.]]></description>
+		<Placemark>
+			<name>Rutland Square</name>
+			<description><![CDATA[<div dir="ltr">&quot;Two Gallants&quot;<br>[where the story starts; where Lenehan returns as he walks alone]<br><br>&quot;Two young men came down the hill of Rutland Square. On of them was just bringing a long monologue to a close. The other, who walked on the verge of the path and was at times obliged to step on to the road, owing to his companion&#39;s rudeness, wore an amused listening face&quot; (49).<br><br>&quot;He turned to the left when he came to the corner of Rutland Square and felt more at ease in the dark quiet street, the sombre look of which suited his mood&quot; (56-57).</div>]]></description>
+			<styleUrl>#m_ylw-pushpin8</styleUrl>
+			<Point>
+				<coordinates>-6.262904,53.352695,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Dorset Street</name>
+			<description><![CDATA[<div dir="ltr">&quot;Two Gallants&quot;<br>[where Lenehan has been talking all day before walking with Corley]<br>&quot;His tongue was tired for he had been talking all the afternoon in a public-house in Dorset Street&quot; (50).</div>]]></description>
+			<styleUrl>#m_ylw-pushpin8</styleUrl>
+			<Point>
+				<coordinates>-6.265104000000001,53.356174,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Dame Street</name>
+			<description><![CDATA["Two Gallants"<br>[where Corley picked up his girl]<br>"--One night, man, he said, I was going along Dame Street and I spotted a
+ fine tart under Waterhouse's clock and said good- night, you know. So 
+we went for a walk round by the canal and she told me she was a slavey 
+in a house in Baggot Street" (50).<br>]]></description>
+			<styleUrl>#m_ylw-pushpin8</styleUrl>
+			<Point>
+				<coordinates>-6.263527,53.344185,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Baggot Street</name>
+			<description><![CDATA["Two Gallants"<br>[where Corley's girl is a "slavey"; where Lenehan sees the couple later]<br>"--One night, man, he said, I was going along Dame Street and I spotted a
+ fine tart under Waterhouse's clock and said good- night, you know. So 
+we went for a walk round by the canal and she told me she was a slavey 
+in a house in Baggot Street" (50).<br><br>"They turned down Baggot Street and he followed them at once, taking the other footpath" (59).]]></description>
+			<styleUrl>#m_ylw-pushpin8</styleUrl>
+			<Point>
+				<coordinates>-6.253025,53.33799,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Donnybrook</name>
+			<description><![CDATA[<div dir="ltr">&quot;Two Gallants&quot;<br>[where Corley takes his girl one day; possibly where the two are going when they break off from Lenehan]<br><br>&quot;I put my arm round her and squeezed her a bit that night. Then next Sunday, man, I met her by appointment. We vent out to Donnybrook and I brought her into a field there&quot; (50-51).<br><br>&quot;He kept the pair in view until he had seen them climbing the stairs of the Donnybrook tram; then he turned about and went back the way he had come&quot; (56).</div>]]></description>
+			<styleUrl>#m_ylw-pushpin8</styleUrl>
+			<Point>
+				<coordinates>-6.23594,53.32170099999999,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Pim&apos;s</name>
+			<description>&quot;Two Gallants&quot;
+[where Corley claims to have worked]
+
+&quot;--Maybe she thinks you&apos;ll marry her, said Lenehan.
+
+--I told her I was out of a job, said Corley. i told her I was in Pim&apos;s. She doesn&apos;t know my name. i was too hairy to tell her that. But she thinks I&apos;m a bit of class, you know&quot; (51).</description>
+			<LookAt>
+				<longitude>-6.265888537635575</longitude>
+				<latitude>53.34127507264372</latitude>
+				<altitude>0</altitude>
+				<heading>-0.001024464349621534</heading>
+				<tilt>31.18324698990775</tilt>
+				<range>177.6031439573132</range>
+				<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
+			</LookAt>
+			<styleUrl>#m_ylw-pushpin12</styleUrl>
+			<Point>
+				<gx:drawOrder>1</gx:drawOrder>
+				<coordinates>-6.265551083841626,53.34140295425303,14.55381216941777</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>South Circular</name>
+			<description><![CDATA["Two Gallants"<br>[one place where Corley used to pick up girls]<br>""First I used to go with girls, you know," said Corley, unbosoming; "girls off the South Circular" (52).<br>]]></description>
+			<styleUrl>#m_ylw-pushpin8</styleUrl>
+			<Point>
+				<coordinates>-6.293612,53.335018,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Earl Street</name>
+			<description><![CDATA["Two Gallants"<br>[where Corley saw one of his girls in a car]<br>"-She's on the turf now. I saw her driving down Earl Street one night with two fellows with her on a car" (53).<br>]]></description>
+			<styleUrl>#msn_ylw-pushpin8</styleUrl>
+			<Point>
+				<coordinates>-6.259001845281045,53.35007563674542,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Trinity College Dublin</name>
+			<description><![CDATA[<div dir="ltr">&quot;Two Gallants&quot;<br>[where Corley and Lenehan are toward the beginning of the story]<br><br>&quot;As they passed along the railings of Trinity College, Lenehan skipped out into the road and peered up at the clock&quot; (53).</div>]]></description>
+			<styleUrl>#m_ylw-pushpin8</styleUrl>
+			<Point>
+				<coordinates>-6.258795,53.344471,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Nassau Street</name>
+			<description><![CDATA["Two Gallants"<div>[where the men walk, talking about women]</div><div><br>&nbsp;</div><div>"<span style="font-family:Arial,Helvetica,sans-serif">They walked along Nassau Street and then turned into Kildare Street. Not far from the porch of the club a harpist stood in the roadway, playing to a little ring of listeners" (54).</span></div>]]></description>
+			<styleUrl>#m_ylw-pushpin8</styleUrl>
+			<Point>
+				<coordinates>-6.256338,53.342583,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Kildare Street</name>
+			<description><![CDATA[<div dir="ltr">&quot;Two Gallants&quot;<br>[where the men encounter the harpist]<br><br>&quot;They walked along Nassau Street and then turned into Kildare Street. Not far from the porch of the club a harpist stood in the roadway, playing to a little ring of listeners&quot; (54).</div>]]></description>
+			<styleUrl>#m_ylw-pushpin8</styleUrl>
+			<Point>
+				<coordinates>-6.254697,53.34186600000001,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Stephen&apos;s Green</name>
+			<description><![CDATA[<div dir="ltr">&quot;Two Gallants&quot;<br>[where Lenehan and Corley cross the street; where Lenehan continues to walk once he is alone; the direction of which Corley walks to meet back up with Lenehan]<br><br>&quot;When they reached Stephen&#39;s Green they crossed the road. Here the noise of trams, the lights and the crowd released them from their silence&quot; (54).<br><br>&quot;He walked listlessly round Stephen&#39;s Green and then down Grafton Street&quot; (56).<br><br>&quot;He set off briskly along the northern side of the Green hurrying for fear Corley should return too soon&quot; (59).<br><br>&quot;The door closed on her and Corley began to walk swiftly towards Stephen&#39;s Green&quot; (60).</div>]]></description>
+			<styleUrl>#m_ylw-pushpin8</styleUrl>
+			<Point>
+				<coordinates>-6.2568,53.338818,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Hume Street</name>
+			<description><![CDATA["Two Gallants"<br>[the corner near Stephen's Green where Lenehan and Corley spot Corley's girl standing; the street Lenehan walks down to get a closer look]<br><br>"At the corner of Hume Street a young woman was standing. She wore a blue
+ dress and a white sailor hat. She stood on the curbstone, swinging a 
+sunshade in one hand" (54).<br><br>"Lenehan observed them for a few minutes. Then he walked rapidly along 
+beside the chains at some distance and crossed the road obliquely. As he
+ approached Hume Street corner he found the air heavily scented and his 
+eyes made a swift anxious scrutiny of the young woman's appearance" (55).<br>]]></description>
+			<styleUrl>#m_ylw-pushpin8</styleUrl>
+			<Point>
+				<coordinates>-6.254324,53.337605,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Merrion Street</name>
+			<description><![CDATA[<div dir="ltr">&quot;Two Gallants&quot;<br>[where Corley and Lenehan are going to meet; where Lenehan follows the couple; where Lenehan awaits their return]<br><br>--And after? Where will we meet?<br><br>--Half ten, answered Corley, bringing over his other leg.<br><br>--Where?<br><br>--Corner of Merrion Street. We&#39;ll be coming back.&quot; (55)<br><br>&quot;After waiting for a little time he saw them coming towards him and, when they turned to the right, he followed them, stepping lightly in his white shoes, down one side of Merrion Square&quot; (56).<br><br>&quot;When he reached the corner of Merrion Street he took his stand in the shadow of a lamp and brought out one of the cigarettes which he had reserved and lit it. He leaned against the lamp-post and kept his gaze fixed on the part from which he expected to see Corley and the young woman return&quot; (59).</div>]]></description>
+			<styleUrl>#m_ylw-pushpin8</styleUrl>
+			<Point>
+				<coordinates>-6.253634999999999,53.33814599999999,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>The Shelbourne Hotel</name>
+			<description><![CDATA[<div dir="ltr">&quot;Two Gallants&quot;<br>[where Lenehan stops and waits to see Corley and the girl before he begins following them]<br>&quot;Lenehan walked as far as the Shelbourne Hotel where he halted and waited&quot; (56)</div>]]></description>
+			<styleUrl>#m_ylw-pushpin8</styleUrl>
+			<Point>
+				<coordinates>-6.256564,53.338818,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Duke&apos;s Lawn</name>
+			<description><![CDATA[<div dir="ltr">&quot;Two Gallants&quot;<br>[where Lenehan first finds himself alone]<br>&quot;His gaiety seemed to forsake him and, as he came by the railings of the Duke&#39;s Lawn, he allowed his hand to run along them&quot; (56).</div>]]></description>
+			<styleUrl>#m_ylw-pushpin8</styleUrl>
+			<Point>
+				<coordinates>-6.252036,53.340122,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Grafton Street</name>
+			<description><![CDATA[<div dir="ltr">&quot;Two Gallants&quot;<br>[one of the streets Lenehan walks after leaving Corley and returns to after eating]<br><br>&quot;He walked listlessly round Stephen&#39;s Green and then down Grafton Street&quot; (56).<br><br>&quot;He turned to the left at the City Markets and walked on into Grafton Street&quot; (58).</div>]]></description>
+			<styleUrl>#m_ylw-pushpin8</styleUrl>
+			<Point>
+				<coordinates>-6.259223999999999,53.343891,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Capel Street</name>
+			<description><![CDATA[<div dir="ltr">&quot;Two Gallants&quot;<br>[where Lenehan walks after finishing his meal]<br>&quot;He paid twopence halfpenny to the slatternly girl and went out of the shop to begin his wandering again. He went into Capel Street and walked along towards the City Hall&quot; (58).</div>]]></description>
+			<styleUrl>#m_ylw-pushpin8</styleUrl>
+			<Point>
+				<coordinates>-6.267979,53.346146,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>City Hall</name>
+			<description><![CDATA[<div dir="ltr">&quot;Two Gallants&quot;<br>[one of the landmarks along Lenehan&#39;s wandering path]<br>&quot;He paid twopence halfpenny to the slatternly girl and went out of the shop to begin his wandering again. He went into Capel Street and walked along towards the City Hall&quot; (58)</div>]]></description>
+			<styleUrl>#m_ylw-pushpin8</styleUrl>
+			<Point>
+				<coordinates>-6.26725,53.344082,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Dame Street and George&apos;s Street</name>
+			<description><![CDATA[<div dir="ltr">&quot;Two Gallants&quot;<br>[where Lenehan meets his friends]<br>&quot;Then he turned into Dame Street. At the corner of George&#39;s Street he met two friends of his and stopped to converse with them&quot; (58).</div>]]></description>
+			<styleUrl>#m_ylw-pushpin8</styleUrl>
+			<Point>
+				<coordinates>-6.264471,53.344154,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>City Markets</name>
+			<description>&quot;Two Gallants&quot;
+[where Lenehan turns off of George&apos;s Street as he makes his way back to meet Corley]
+&quot;He turned to the left at the City Markets and walked onto Grafton Street&quot; (58).</description>
+			<LookAt>
+				<longitude>-6.264415409926557</longitude>
+				<latitude>53.34270570787157</latitude>
+				<altitude>0</altitude>
+				<heading>8.783085237755243e-05</heading>
+				<tilt>36.48933149614134</tilt>
+				<range>285.7987121165464</range>
+				<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
+			</LookAt>
+			<styleUrl>#m_ylw-pushpin12</styleUrl>
+			<Point>
+				<gx:drawOrder>1</gx:drawOrder>
+				<coordinates>-6.264415409926557,53.34270570787157,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Westmoreland Street</name>
+			<description><![CDATA["Two Gallants"<br>[where one of Lenehan's friends says he saw Mac earlier]<br>"One said that he had seen Mac an hour before in Westmoreland Street. At 
+this Lenehan said that he had been with Mac the night before in Egan's. 
+The young man who had seen Mac in Westmoreland Street asked was it true 
+that Mac had won a bit over a billiard match. Lenehan did not know: he 
+said that Holohan had stood them drinks in Egan's" (58).<br>]]></description>
+			<styleUrl>#m_ylw-pushpin8</styleUrl>
+			<Point>
+				<coordinates>-6.259116,53.345726,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>George&apos;s Street</name>
+			<description><![CDATA[<div dir="ltr">&quot;Two Gallants&quot;<br>[where Lenehan walks after speaking to his friends]<br>&quot;He left his friends at a quarter to ten and went up George&#39;s Street. He turned to the left at the City Markets and walked on into Grafton Street&quot; (58).</div>]]></description>
+			<styleUrl>#m_ylw-pushpin8</styleUrl>
+			<Point>
+				<coordinates>-6.26446,53.34320100000001,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Ely Place</name>
+			<description><![CDATA["Two Gallants"<br>[where Corley swerves off before allowing Lenehan to catch up]<br>"They had reached the corner of Ely Place" (60).<br>]]></description>
+			<styleUrl>#m_ylw-pushpin8</styleUrl>
+			<Point>
+				<coordinates>-6.254245,53.337372,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>&quot;Two Gallants&quot; Route</name>
+			<description><![CDATA[<div dir="ltr">The route Lenahan and Corley and then Lenehan alone take in &quot;Two Gallants.&quot;</div>]]></description>
+			<styleUrl>#msn_ylw-pushpin7</styleUrl>
+			<LineString>
+				<tessellate>1</tessellate>
+				<coordinates>
+					-6.262382,53.35352699999999,0 -6.261394999999999,53.352657,0 -6.259121,53.34721399999999,0 -6.259271,53.344624,0 -6.259334999999999,53.343433,0 -6.258906,53.343216,0 -6.254526,53.342197,0 -6.256508,53.33902,0 -6.25669,53.338779,0 -6.256068000000001,53.33861900000001,0 -6.256451,53.337894,0 -6.256941,53.337078,0 -6.256533,53.33694799999999,0 -6.255363999999999,53.338455,0 -6.255257,53.33857699999999,0 -6.253551,53.33812700000001,0 -6.251662,53.340412,0 -6.253411,53.338192,0 -6.255686,53.338703,0 -6.257359,53.336372,0 -6.261265,53.337364,0 -6.262520000000001,53.337681,0 -6.260846,53.33976,0 -6.260686216373657,53.34005270620069,0 -6.260773,53.34071699999999,0 -6.259546,53.342636,0 -6.259409,53.344353,0 -6.259398,53.3447,0 -6.259237,53.34557700000001,0 -6.259226,53.347248,0 -6.261567,53.35251599999999,0 -6.264721,53.351017,0 -6.26736,53.350105,0 -6.269226999999999,53.34959400000001,0 -6.267489,53.344753,0 -6.267183,53.344109,0 -6.266791,53.344162,0 -6.26611,53.344189,0 -6.264989,53.344189,0 -6.264522000000001,53.344162,0 -6.264451,53.342976,0 -6.264466726111398,53.34265024708597,0 -6.263275133183489,53.34248136800691,0 -6.262462744390682,53.34229200861627,0 -6.262770054047984,53.34186143735742,0 -6.262965683451171,53.34157920527866,0 -6.26308612118083,53.34143568314758,0 -6.263184488879866,53.34132330643669,0 -6.26328297324452,53.34121526171974,0 -6.262387840981507,53.34100015777209,0 -6.260962999999999,53.340755,0 -6.260850999999999,53.340649,0 -6.260813,53.34003100000001,0 -6.260551674861206,53.33986028189786,0 -6.255384000000001,53.33855800000001,0 -6.253684,53.33813499999999,0 -6.252403000000001,53.337837,0 -6.252434,53.337791,0 -6.253673,53.3381,0 -6.253882,53.337887,0 
+				</coordinates>
+			</LineString>
+		</Placemark>
+		<Placemark>
+			<name>Lenehan and Corley Together</name>
+			<description>&quot;Two Gallants&quot;
+
+The route Lenehan and Corley travel together in the first part of the story.</description>
+			<styleUrl>#m_ylw-pushpin0</styleUrl>
+			<LineString>
+				<tessellate>1</tessellate>
+				<coordinates>
+					-6.262299823239582,53.35354618432306,0 -6.261308588089671,53.3526595472673,0 -6.260159757481087,53.34995221867962,0 -6.259097878624981,53.34770550229954,0 -6.258778498982229,53.34716986049491,0 -6.259021636181384,53.34664038566433,0 -6.259083650815182,53.34563409252549,0 -6.259058512686733,53.34504340993864,0 -6.259099298831893,53.34481045288621,0 -6.259359526764976,53.3444271452717,0 -6.259184920013618,53.34392765083714,0 -6.25923439914612,53.34344808078669,0 -6.259234672372162,53.34327421710238,0 -6.258935308486951,53.34318727132997,0 -6.254606013730621,53.34215592519323,0 -6.255332282286287,53.34084561762942,0 -6.255877130638332,53.33985235086374,0 -6.256685269424812,53.3388207969155,0 -6.256045581643127,53.33862502546098,0 
+				</coordinates>
+			</LineString>
+		</Placemark>
+	</Folder>
+	<Folder>
+		<name>&quot;The Boarding House&quot;</name>
+		<description>Streets and Locations in &quot;The Boarding House.&quot;</description>
+		<LookAt>
+			<longitude>-6.263493998992336</longitude>
+			<latitude>53.35648000063955</latitude>
+			<altitude>0</altitude>
+			<heading>8.085057465534e-10</heading>
+			<tilt>0</tilt>
+			<range>1019.158129777168</range>
+			<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
+		</LookAt>
+		<Placemark>
+			<name>Spring Gardens</name>
+			<description><![CDATA[<div dir="ltr">&quot;The Boarding House&quot;<br>[the place near where Mrs. Mooney first opens the butcher shop with Mr. Mooney]<br>&quot;She had married her father&#39;s foreman and opened a butcher&#39;s shop near Spring Gardens&quot; (61).<br><br>(found with Gilbert, John Thomas. A History of the City of Dublin, Vol. 2. Dublin: McGlashan and Gill, 1859, pp. 280.)</div>]]></description>
+			<styleUrl>#msn_ylw-pushpin1</styleUrl>
+			<Point>
+				<coordinates>-6.2421143804085,53.35965657525689,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Hardwicke Street</name>
+			<description><![CDATA[<div dir="ltr">&quot;The Boarding House&quot;<br>[where the boarding house is located]<br>&quot;Mrs. Mooney, who had taken what remained of her money out of the butcher business and set up a boarding house in Hardwicke Street, was a big imposing woman&quot; (62).</div>]]></description>
+			<styleUrl>#m_ylw-pushpin6</styleUrl>
+			<Point>
+				<coordinates>-6.263494,53.35647999999999,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Liverpool</name>
+			<description><![CDATA["The Boarding House"<br>[where some of the tourists come from]<br>"Her house had a floating population made up of tourists from Liverpool 
+and the Isle of Man and, occasionally, artistes from the music halls" (62).<br>]]></description>
+			<styleUrl>#m_ylw-pushpin6</styleUrl>
+			<Point>
+				<coordinates>-2.977838,53.410778,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Isle of Man</name>
+			<description><![CDATA[<div dir="ltr">United Kingdom<br>&quot;The Boarding House&quot;<br>[where some of the the tourists are from]<br>&quot;Her house had a floating population made up of tourists from Liverpool and the Isle of Man and, occasionally, artistes from the music halls&quot; (62).</div>]]></description>
+			<styleUrl>#m_ylw-pushpin6</styleUrl>
+			<Point>
+				<coordinates>-4.561996,54.23868199999999,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Fleet Street</name>
+			<description><![CDATA["The Boarding House"<br>[where Jack Mooney works]<br>"Jack Mooney, the Madam's son, who was clerk to a commission agent in Fleet Street, had the reputation of being a hard case" (62).]]></description>
+			<styleUrl>#m_ylw-pushpin6</styleUrl>
+			<Point>
+				<coordinates>-6.259802000000001,53.345814,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Saint George&apos;s</name>
+			<description><![CDATA[<div dir="ltr">&quot;The Boarding House&quot;<br>[a church close to the boarding house]<br>&quot;The belfry of George&#39;s Church sent out constant peals and worshippers, singly or in groups, traversed the little circus before the church, revealing their purpose by their self-contained demeanour no less than by the little volumes in their gloved hands&quot; (63).</div>]]></description>
+			<styleUrl>#m_ylw-pushpin6</styleUrl>
+			<Point>
+				<coordinates>-6.262851,53.357273,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Marlborough Street</name>
+			<description><![CDATA["The Boarding House"<br>[where Mrs. Mooney plans to "catch short twelve"]<br>"It was seventeen minutes past eleven: she would have lots of time to 
+have the matter out with Mr. Doran and then catch short twelve at 
+Marlborough Street" (64).<br>]]></description>
+			<styleUrl>#m_ylw-pushpin6</styleUrl>
+			<Point>
+				<coordinates>-6.258446999999999,53.350693,0</coordinates>
+			</Point>
+		</Placemark>
+	</Folder>
+	<Folder>
+		<name>&quot;A Little Cloud&quot;</name>
+		<description>Streets, Locations, and Routes in &quot;A Little Cloud.&quot;</description>
+		<Style>
+			<ListStyle>
+				<listItemType>check</listItemType>
+				<bgColor>00ffffff</bgColor>
+				<maxSnippetLines>2</maxSnippetLines>
+			</ListStyle>
+		</Style>
+		<Placemark>
+			<name>North Wall</name>
+			<description><![CDATA["A Little Cloud"<br>[where Chandler saw Gallaher off]<br>"EIGHT years before he had seen his friend off at the North Wall and wished him godspeed" (70).<br>]]></description>
+			<styleUrl>#m_ylw-pushpin11</styleUrl>
+			<Point>
+				<coordinates>-6.245342200070115,53.34782649196635,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>London</name>
+			<description><![CDATA["A Little Cloud"<br>[where Gallaher lives, working for The London Press; where Gallaher suggests Chandler go]<br><br>"Little Chandler's thoughts ever since lunch-time had been of his meeting
+ with Gallaher, of Gallaher's invitation and of the great city London 
+where Gallaher lived" (70).<br><br>"The friend whom he had known under a shabby and necessitous guise had become a brilliant figure on the London Press" (71).<br><br>"Ignatius Gallaher on the London Press! Who would have thought it possible eight years before?" (72)<br><br>"Perhaps Gallaher might be able to get it into some London paper for him" (73).<br><br>"Every step brought him nearer to London, farther from his own sober inartistic life" (73).<br><br>"--But Hogan has a good sit, hasn't he?<br><br>--Yes; he's in the Land Commission.<br><br>--I met him one night in London and he seemed to be very flush.... Poor O'Hara! Boose, I suppose?" (75-76)<br><br>"--Go to London or Paris: Paris, for choice. That'd do you good" (76).<br><br>
+"There was something vulgar in his
+ friend which he had not observed before. But perhaps it was only the 
+result of living in London amid the bustle and competition of the Press.
+ The old personal charm was still there under this new gaudy manner" (77).<br><br>"--Then it is an immoral city, said Little Chandler, with timid insistence -- I mean, compared with London or Dublin?" (77)<br><br>"--London! said Ignatius Gallaher. It's six of one and half-a-dozen of 
+the other. You ask Hogan, my boy. I showed him a bit about London when 
+he was over there. He'd open your eye.... I say, Tommy, don't make punch
+ of that whisky: liquor up" (77).<br><br>"Was it too late for him to try to live bravely like Gallaher? Could he go to London?" (83)<br>]]></description>
+			<LookAt>
+				<longitude>-0.2271030674759422</longitude>
+				<latitude>51.50131732786858</latitude>
+				<altitude>0</altitude>
+				<heading>-0.0789402032582447</heading>
+				<tilt>0</tilt>
+				<range>238674.5461891159</range>
+				<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
+			</LookAt>
+			<styleUrl>#m_ylw-pushpin110</styleUrl>
+			<Point>
+				<coordinates>-0.126236,51.500153,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Henrietta Street</name>
+			<description><![CDATA["A Little Cloud"<br>[where Chandler emerges from his office]<br>"He emerged from under the feudal arch of the King's Inns, a neat modest figure, and walked swiftly down Henrietta Street" (71).<br>]]></description>
+			<styleUrl>#m_ylw-pushpin110</styleUrl>
+			<Point>
+				<coordinates>-6.270396,53.352585,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Corless&apos;s</name>
+			<description><![CDATA["A Little Cloud"<br>[where Chandler meets Gallaher]<br><br>"He had never been in Corless's but he knew the value of the name. He 
+knew that people went there after the theatre to eat oysters and drink 
+liqueurs; and he had heard that the waiters there spoke French and 
+German. Walking swiftly by at night he had seen cabs drawn up before the
+ door and richly dressed ladies, escorted by cavaliers, alight and enter
+ quickly. They wore noisy dresses and many wraps. Their faces were 
+powdered and they caught up their dresses, when they touched earth, like
+ alarmed Atalantas. He had always passed without turning his head to 
+look" (72).<br><br>"He pursued his revery so ardently that he passed his street and had to 
+turn back. As he came near Corless's his former agitation began to 
+overmaster him and he halted before the door in indecision" (74).<br><br>(based on Gifford, Don. Joyce Annotated: Notes for Dubliners and A Portrait of the Artist As a Young Man, 2nd ed.Berkeley: U of California P, 1982 , pp. 68)<br>]]></description>
+			<styleUrl>#m_ylw-pushpin110</styleUrl>
+			<Point>
+				<coordinates>-6.261048,53.34384900000001,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Capel Street</name>
+			<description><![CDATA[<div dir="ltr">&quot;A Little Cloud&quot;<br>[the direction towards which Chandler turns; and the street he walks down]<br><br>&quot;He turned to the right towards Capel Street&quot; (72).<br><br>&quot;Little Chandler quickened his pace. For the first time in his life he felt himself superior to the people he passed. For the first time his soul revolted against the dull inelegance of Capel Street&quot; (73).</div>]]></description>
+			<styleUrl>#m_ylw-pushpin110</styleUrl>
+			<Point>
+				<coordinates>-6.269867,53.35076100000001,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Grattan Bridge</name>
+			<description><![CDATA[<div dir="ltr">&quot;A Little Cloud&quot;<br>[the bridge Chandler crosses on his way to meet Gallaher]<br><br>&quot;As he crossed Grattan Bridge he looked down the river towards the lower quays and pitied the poor stunted houses. They seemed to him a band of tramps, huddled together along the riverbanks, their old coats covered with dust and soot, stupefied by the panorama of sunset and waiting for the first chill of night bid them arise, shake themselves and begone&quot; (73).<br><br>&quot;There were so many things he wanted to describe: his sensation of a few hours before on Grattan Bridge, for example&quot; (84).</div>]]></description>
+			<styleUrl>#m_ylw-pushpin110</styleUrl>
+			<Point>
+				<coordinates>-6.267743000000001,53.345608,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Isle of Man</name>
+			<description><![CDATA[<div dir="ltr">&quot;A Little Cloud&quot;<br>[somewhere Chandler has been]<br>--Have you never been anywhere even for a trip?<br><br>--I&#39;ve been to the Isle of Man, said Little Chandler.<br><br>Ignatius Gallaher laughed.<br><br>--The Isle of Man! he said. Go to London or Paris: Paris, for choice. That&#39;d do you good&quot; (76).<br></div>]]></description>
+			<LookAt>
+				<longitude>-4.369508083130054</longitude>
+				<latitude>54.01393637600914</latitude>
+				<altitude>0</altitude>
+				<heading>0.1559753894580582</heading>
+				<tilt>0</tilt>
+				<range>325237.4614181627</range>
+				<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
+			</LookAt>
+			<styleUrl>#m_ylw-pushpin110</styleUrl>
+			<Point>
+				<coordinates>-4.561996,54.23868199999999,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Paris</name>
+			<description><![CDATA["A Little Cloud"<br>
+[where Gallaher suggests Chandler go]<br>
+"--Go to London or Paris: Paris, for choice. That'd do you good. <br>
+--Have you seen Paris?" (76)<br>
+<br>
+"--It's not so beautiful, you know. Of course, it is beautiful.... But 
+it's the life of Paris; that's the thing. Ah, there's no city like Paris
+ for gaiety, movement, excitement...." (76)<br><br>"--Everything in Paris is gay, said Ignatius Gallaher. They believe in 
+enjoying life -- and don't you think they're right? If you want to enjoy
+ yourself properly you must go to Paris. And, mind you, they've a great 
+feeling for the Irish there" (77).<br><br>"--Tell me, he said, is it true that Paris is so... immoral as they say?<br><br>Ignatius Gallaher made a catholic gesture with his right arm.<br><br>--Every place is immoral, he said. Of course you do find spicy bits in Paris. Go to one of the students' balls, for instance" (77).<br><br>"There's no woman like the Parisienne -- for style, for go" (77).<br>]]></description>
+			<LookAt>
+				<longitude>2.327397157483757</longitude>
+				<latitude>48.88454937178169</latitude>
+				<altitude>0</altitude>
+				<heading>-0.01776870816614176</heading>
+				<tilt>0</tilt>
+				<range>44431.09604763232</range>
+				<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
+			</LookAt>
+			<styleUrl>#m_ylw-pushpin110</styleUrl>
+			<Point>
+				<coordinates>2.350987,48.856667,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Moulin Rouge</name>
+			<description><![CDATA[<div dir="ltr">&quot;A Little Cloud&quot;<br>[a place Gallaher has been]<br><br>&quot;--I&#39;ve been to the Moulin Rouge, Ignatius Gallaher continued when the barman had removed their glasses, and I&#39;ve been to all the Bohemian cafes. Hot stuff! Not for a pious chap like you, Tommy&quot; (76).</div>]]></description>
+			<styleUrl>#m_ylw-pushpin110</styleUrl>
+			<Point>
+				<coordinates>2.33247,48.88412100000001,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Berlin</name>
+			<description><![CDATA["A Little Cloud"<br>[a place Gallaher likes]<br>"He summarised the vices of many capitals and seemed inclined to award the palm to Berlin" (78).<br>]]></description>
+			<LookAt>
+				<longitude>13.44247036643581</longitude>
+				<latitude>52.51722262659827</latitude>
+				<altitude>0</altitude>
+				<heading>0.02465648335756365</heading>
+				<tilt>0</tilt>
+				<range>25226.58844423441</range>
+				<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
+			</LookAt>
+			<styleUrl>#m_ylw-pushpin110</styleUrl>
+			<Point>
+				<coordinates>13.4114,52.523403,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>&quot;A Little Cloud&quot; Route</name>
+			<description><![CDATA[[The route Chandler takes from his office to meet Gallaher.]<br>]]></description>
+			<styleUrl>#msn_ylw-pushpin60</styleUrl>
+			<LineString>
+				<tessellate>1</tessellate>
+				<coordinates>
+					-6.270279,53.35256600000001,0 -6.269099000000001,53.352169,0 -6.269935,53.351219,0 -6.269882908160873,53.35079830445576,0 -6.269475540024691,53.35022857145821,0 -6.269257379418541,53.34971839293635,0 -6.268705834733376,53.3481773208399,0 -6.267913803532452,53.34606334698532,0 -6.267492115531194,53.34493706372566,0 -6.267258086538679,53.34415994461589,0 -6.267199418342289,53.34410472714067,0 -6.266721594573986,53.34410868703596,0 -6.266125239676612,53.34414549489345,0 -6.264513739898772,53.34414301634637,0 -6.262949098631642,53.34418766989761,0 -6.26237946234825,53.34421567578224,0 -6.262216530652855,53.3442269006898,0 -6.261618515073818,53.34426244885537,0 -6.261472000000001,53.344254,0 -6.261097000000001,53.344257,0 -6.26085,53.344254,0 -6.260428654015296,53.34427141493344,0 -6.260515452741883,53.34423888385496,0 -6.260756163132413,53.34423777171452,0 -6.260829883879899,53.344211830895,0 -6.260839561591421,53.34416410314113,0 -6.260834640138996,53.34405211372362,0 -6.260858955185173,53.34393609984366,0 -6.260903,53.343895,0 -6.261021,53.343845,0 
+				</coordinates>
+			</LineString>
+		</Placemark>
+	</Folder>
+	<Folder>
+		<name>&quot;Counterparts&quot;</name>
+		<description>Streets, Locations, and Routes in &quot;Counterparts.&quot;</description>
+		<Placemark>
+			<name>O&apos;Neill&apos;s</name>
+			<description>[where Farrington goes to get a quick drink before finishing his copies; where he considers going to borrow money]
+
+&quot;He was now safe in the dark snug of O&apos;Neill&apos;s
+shop, and filling up the little window that looked into the bar with his
+inflamed face, the colour of dark wine or dark meat, he called out:
+
+&apos;Here, Pat, give us a g.p., like a good fellow&apos;&quot; (88)
+
+&quot;On the stairs a moist pungent odour of
+perfumes saluted his nose: evidently Miss Delacour had come while he
+was out in O&apos;Neill&apos;s&quot; (89).
+
+&quot;The fog had begun to chill him and he wondered could he touch Pat in
+O&apos;Neill&apos;s. He could not touch him for more than a bob--and a bob was
+no use&quot; (92).</description>
+			<LookAt>
+				<longitude>-6.264934901021149</longitude>
+				<latitude>53.3452719175361</latitude>
+				<altitude>0</altitude>
+				<heading>167.4113886498837</heading>
+				<tilt>43.95668675215775</tilt>
+				<range>69.86707178562051</range>
+				<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
+			</LookAt>
+			<styleUrl>#msn_ylw-pushpin12</styleUrl>
+			<Point>
+				<coordinates>-6.264748032866029,53.3454114160656,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Eustace Street</name>
+			<description><![CDATA["Counterparts"<br>[where Farrington works]<br>"Darkness, accompanied by a thick fog, was gaining upon the dusk of February and the lamps in Eustace Street had been lit" (89).<br>]]></description>
+			<LookAt>
+				<longitude>-6.264647265801895</longitude>
+				<latitude>53.34466994049919</latitude>
+				<altitude>0</altitude>
+				<heading>0.00015141262461012</heading>
+				<tilt>0</tilt>
+				<range>288.9348620379002</range>
+				<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
+			</LookAt>
+			<styleUrl>#m_ylw-pushpin4</styleUrl>
+			<Point>
+				<coordinates>-6.264836,53.344921,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Fleet Street</name>
+			<description><![CDATA["Counterparts"<br>[where Farrington pawns his watch]<br>"Suddenly, as he was fingering his watch-chain, he thought of Terry 
+Kelly's pawn-office in Fleet Street. That was the dart! Why didn't he 
+think of it sooner?" (92)<br>]]></description>
+			<LookAt>
+				<longitude>-6.259040334474538</longitude>
+				<latitude>53.34581760582775</latitude>
+				<altitude>0</altitude>
+				<heading>0.0006110486590905101</heading>
+				<tilt>0</tilt>
+				<range>321.183961078775</range>
+				<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
+			</LookAt>
+			<styleUrl>#msn_ylw-pushpin31</styleUrl>
+			<Point>
+				<coordinates>-6.259802000000001,53.345814,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Temple Bar</name>
+			<description><![CDATA["Counterparts"<br>[where the alley is that Farrington cuts through to get to the pawn office]<br>"He went through the narrow alley of Temple Bar quickly, muttering to 
+himself that they could all go to hell because he was going to have a 
+good night of it" (92-93).<br>]]></description>
+			<LookAt>
+				<longitude>-6.261995778742913</longitude>
+				<latitude>53.34545292563597</latitude>
+				<altitude>0</altitude>
+				<heading>0.000921462705652545</heading>
+				<tilt>0</tilt>
+				<range>246.9837255427674</range>
+				<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
+			</LookAt>
+			<styleUrl>#m_ylw-pushpin4</styleUrl>
+			<Point>
+				<coordinates>-6.263149,53.3456,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Westmoreland Street</name>
+			<description><![CDATA["Counterparts"<br>[the busy street Farrington takes to get to the first bar]<br>"In Westmoreland Street the footpaths were crowded with young men and 
+women returning from business and ragged urchins ran here and there 
+yelling out the names of the evening editions" (93).<br>]]></description>
+			<LookAt>
+				<longitude>-6.258255808497116</longitude>
+				<latitude>53.34524371298228</latitude>
+				<altitude>0</altitude>
+				<heading>0.001001857009412103</heading>
+				<tilt>0</tilt>
+				<range>410.6405335576399</range>
+				<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
+			</LookAt>
+			<styleUrl>#m_ylw-pushpin11</styleUrl>
+			<Point>
+				<coordinates>-6.259105012383976,53.3454778687866,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Davy Byrne&apos;s</name>
+			<description><![CDATA[<div dir="ltr">&quot;Counterparts&quot;<br>[the pub where Farrington meets Nosey Flynn]<br>&quot;Nosey Flynn was sitting up in his usual corner of Davy Byrne&#39;s and, when he heard the story, he stood Farrington a half-one, saying it was as smart a thing as ever he heard&quot; (93).</div>]]></description>
+			<Camera>
+				<gx:ViewerOptions>
+					<gx:option enabled="0" name="historicalimagery"></gx:option>
+					<gx:option enabled="0" name="sunlight"></gx:option>
+					<gx:option name="streetview"></gx:option>
+				</gx:ViewerOptions>
+				<longitude>-6.25927199999997</longitude>
+				<latitude>53.34193800000011</latitude>
+				<altitude>2.500000000945364</altitude>
+				<heading>-154.7813456119185</heading>
+				<tilt>84.56535694549467</tilt>
+				<roll>0.6457798711496441</roll>
+				<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
+			</Camera>
+			<styleUrl>#m_ylw-pushpin11</styleUrl>
+			<Point>
+				<coordinates>-6.25934439154342,53.34187681960266,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Fownes Street</name>
+			<description><![CDATA["Counterparts"<br>[where O'Halloran made his retort to a clerk in an office he was in]<br>"O'Halloran stood tailors of malt, hot, all round and told the story of 
+the retort he had made to the chief clerk when he was in Callan's of 
+Fownes's Street; but, as the retort was after the manner of the liberal 
+shepherds in the eclogues, he had to admit that it was not as clever as 
+Farrington's retort" (93).<br>]]></description>
+			<LookAt>
+				<longitude>-6.263232944980769</longitude>
+				<latitude>53.3447295240878</latitude>
+				<altitude>0</altitude>
+				<heading>-3.284758338843762e-05</heading>
+				<tilt>0</tilt>
+				<range>241.372606657731</range>
+				<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
+			</LookAt>
+			<styleUrl>#m_ylw-pushpin11</styleUrl>
+			<Point>
+				<coordinates>-6.263367582774002,53.34495166907974,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Duke Street</name>
+			<description><![CDATA["Counterparts" <br>[where Higgins and Nosey Flynn break off from the group of men who are going to continue to drink]<br>"At the corner of Duke Street Higgins and Nosey Flynn bevelled off to the
+ left while the other three turned back towards the city" (94).<br>]]></description>
+			<styleUrl>#m_ylw-pushpin4</styleUrl>
+			<Point>
+				<coordinates>-6.258898,53.341888,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Scotch House</name>
+			<description><![CDATA[<div dir="ltr">&quot;Counterparts&quot;<br>[where the men go after Davy Byrne&#39;s]<br><br>&quot;Rain was drizzling down on the cold streets and, when they reached the Ballast Office, Farrington suggested the Scotch House. The bar was full of men and loud with the noise of tongues and glasses&quot; (94).<br><br>&quot;When the Scotch House closed they went round to Mulligan&#39;s&quot; (95).</div>]]></description>
+			<LookAt>
+				<longitude>-6.257368736453614</longitude>
+				<latitude>53.34717117274028</latitude>
+				<altitude>0</altitude>
+				<heading>179.2025329037038</heading>
+				<tilt>70.45152265775798</tilt>
+				<range>48.42739674972503</range>
+				<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
+			</LookAt>
+			<styleUrl>#m_ylw-pushpin11</styleUrl>
+			<Point>
+				<coordinates>-6.257411010766015,53.34717455819253,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Poolbeg Street</name>
+			<description><![CDATA["Counterparts"<br>[where Mulligan's is, the third bar of the night]<br>"Weathers made them all have just one little tincture at his expense and 
+promised to meet them later on at Mulligan's in Poolbeg Street" (94).<br>]]></description>
+			<LookAt>
+				<longitude>-6.255452633018146</longitude>
+				<latitude>53.34700311511277</latitude>
+				<altitude>0</altitude>
+				<heading>-2.802123299911301</heading>
+				<tilt>25.98995975562106</tilt>
+				<range>81.80043399630267</range>
+				<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
+			</LookAt>
+			<styleUrl>#m_ylw-pushpin11</styleUrl>
+			<Point>
+				<coordinates>-6.255426577434267,53.34686157577433,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>London</name>
+			<description>[where the woman Farrington admires is from, judging by her accent]
+
+&quot;She glanced at him once or twice and, when the party was leaving the room, she brushed against his chair and said &quot;O, pardon!&quot; in a London accent&quot; (95).</description>
+			<LookAt>
+				<longitude>-0.06652401794327023</longitude>
+				<latitude>51.53629063384381</latitude>
+				<altitude>0</altitude>
+				<heading>23.07010849574557</heading>
+				<tilt>0</tilt>
+				<range>60664.52824791875</range>
+				<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
+			</LookAt>
+			<styleUrl>#m_ylw-pushpin1</styleUrl>
+			<Point>
+				<gx:drawOrder>1</gx:drawOrder>
+				<coordinates>-0.1278466606169382,51.50727349050236,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>O&apos;Connell Bridge</name>
+			<description><![CDATA["Counterparts"<br>[where Farrington stands, waiting for the Sandymount tram, after losing the arm wrestling contest]<br>"A very sullen-faced man stood at the corner of O'Connell Bridge waiting for the little Sandymount tram to take him home" (96).<br>]]></description>
+			<styleUrl>#m_ylw-pushpin4</styleUrl>
+			<Point>
+				<coordinates>-6.25907,53.347485,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Shelbourne Road</name>
+			<description><![CDATA["Counterparts"<br>[where Farrington lives]<br>"His tram let him down at Shelbourne Road and he steered his great body along in the shadow of the wall of the barracks" (97).<br>]]></description>
+			<styleUrl>#m_ylw-pushpin11</styleUrl>
+			<Point>
+				<coordinates>-6.234099967945854,53.3368641832765,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>&quot;Counterparts&quot; Route</name>
+			<description><![CDATA[<div dir="ltr">Farrington&#39;s path between the office, the bars, and his house.</div>]]></description>
+			<LookAt>
+				<longitude>-6.247938975046014</longitude>
+				<latitude>53.34069333101355</latitude>
+				<altitude>0</altitude>
+				<heading>-0.01249229746700123</heading>
+				<tilt>22.57824851153069</tilt>
+				<range>1872.782339694848</range>
+				<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
+			</LookAt>
+			<styleUrl>#msn_ylw-pushpin0</styleUrl>
+			<LineString>
+				<tessellate>1</tessellate>
+				<coordinates>
+					-6.26485,53.344799,0 -6.26493,53.345421,0 -6.264418394847807,53.34549881161608,0 -6.260690869676901,53.34572492155691,0 -6.259316391460858,53.34578119436825,0 -6.259319426905123,53.34485880075653,0 -6.259229295470528,53.34464828589127,0 -6.259343898693139,53.34450840186723,0 -6.259347885993929,53.34434365028596,0 -6.259252074104337,53.34424841314161,0 -6.259156935534045,53.3441331974051,0 -6.259150329225065,53.34384960703306,0 -6.259187422202025,53.34328919504789,0 -6.259339395989839,53.34303122917483,0 -6.259817646150073,53.34200143404937,0 -6.258854,53.341892,0 -6.259838108506343,53.34202871587561,0 -6.259697378085446,53.34231792981244,0 -6.259251968916228,53.34327267309687,0 -6.259183417063064,53.3441116747899,0 -6.259263240672876,53.34420561380096,0 -6.259312563274319,53.34427639435967,0 -6.259374091320708,53.3443275473372,0 -6.259360073757537,53.34455084770531,0 -6.259285063977051,53.34494835599769,0 -6.259287721501031,53.34580534831376,0 -6.259306914845735,53.34586233054983,0 -6.259297054016232,53.34681020202062,0 -6.25847354861593,53.34699160656367,0 -6.257458430002602,53.34723696190554,0 -6.25740634015176,53.34720646925965,0 -6.257305424211856,53.34701478312332,0 -6.257272179911922,53.34692319286169,0 -6.257252760444318,53.34686812899071,0 -6.257234911999086,53.34684943710403,0 -6.255427926898387,53.34684009365676,0 -6.25543238903245,53.34682837188373,0 -6.25724810259875,53.34683506391135,0 -6.257379212904002,53.34718739270036,0 -6.257472026823682,53.34719487525584,0 -6.257651925473379,53.34715573581176,0 -6.258311427166335,53.34700463806433,0 -6.25848450192573,53.34696140942489,0 -6.258752000000001,53.34715700000001,0 -6.258755000000001,53.34715700000001,0 -6.25876,53.34715700000001,0 -6.258719303715161,53.34707286598811,0 -6.258572789303209,53.34681496535374,0 -6.257240675700663,53.34590995544794,0 -6.256894914376021,53.34590718023664,0 -6.256857844777181,53.34562577903058,0 -6.256364128822531,53.34551823366942,0 -6.256007888899061,53.34544559468485,0 -6.255725970165673,53.34536342210651,0 -6.255368796265027,53.34527273681825,0 -6.255077748968304,53.34520606509935,0 -6.254788956319539,53.34516039626991,0 -6.253858937084935,53.34500752578428,0 -6.253156903381395,53.34487963527364,0 -6.252055164144563,53.34468530255527,0 -6.251553135577836,53.34458017262669,0 -6.250471247493305,53.34438171399842,0 -6.249574184825107,53.34419480664848,0 -6.249499096713559,53.34384731883807,0 -6.249748287978002,53.34336679034288,0 -6.250079630469456,53.34278610370652,0 -6.250274536005257,53.34246453650523,0 -6.25058408370484,53.34200072189296,0 -6.250228086813165,53.34187000984876,0 -6.250285919538193,53.34171538084036,0 -6.250765230559237,53.34117085816406,0 -6.246123287002709,53.33951837618424,0 -6.241572206784464,53.33798209873033,0 -6.240596696086143,53.33764351111775,0 -6.239999181034377,53.33737927053498,0 -6.238258555374739,53.33622085688972,0 -6.238154146773175,53.33613814188256,0 -6.235842614412813,53.33681409850456,0 -6.234900669263803,53.33714593159061,0 -6.234883307766474,53.33724562124377,0 
+				</coordinates>
+			</LineString>
+		</Placemark>
+	</Folder>
+	<Folder>
+		<name>&quot;Clay&quot;</name>
+		<description>Streets, Locations, and Routes in &quot;Clay.&quot;</description>
+		<LookAt>
+			<longitude>-6.229941266932377</longitude>
+			<latitude>53.34856264306682</latitude>
+			<altitude>0</altitude>
+			<heading>-0.1138311902886937</heading>
+			<tilt>0</tilt>
+			<range>8575.844354925457</range>
+			<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
+		</LookAt>
+		<Placemark>
+			<name>Ballsbridge</name>
+			<description><![CDATA["Clay"<br>[where Dublin by Lamplight is located]<br>"From Ballsbridge to the Pillar, twenty minutes; from the Pillar to 
+Drumcondra, twenty minutes; and twenty minutes to buy the things. She 
+would be there before eight" (100).<br>(address from Gifford, pp. 77)<br>]]></description>
+			<styleUrl>#m_ylw-pushpin00</styleUrl>
+			<Point>
+				<coordinates>-6.232293000000001,53.328609,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Nelson&apos;s Pillar</name>
+			<description><![CDATA[[one stop along Maria's route]<br>"From Ballsbridge to the Pillar, twenty minutes; from the Pillar to 
+Drumcondra, twenty minutes; and twenty minutes to buy the things. She 
+would be there before eight" (100)<br>]]></description>
+			<styleUrl>#m_ylw-pushpin00</styleUrl>
+			<Point>
+				<coordinates>-6.259808,53.349598,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Drumcondra</name>
+			<description><![CDATA["Clay" <br>[where Joe lives]<br>"From Ballsbridge to the Pillar, twenty minutes; from the Pillar to 
+Drumcondra, twenty minutes; and twenty minutes to buy the things. She 
+would be there before eight" (100).<br><br>"She thought she would have to stand in the Drumcondra tram because none 
+of the young men seemed to notice her but an elderly gentleman made room
+ for her" (102).]]></description>
+			<styleUrl>#m_ylw-pushpin00</styleUrl>
+			<Point>
+				<coordinates>-6.262807999999999,53.362385,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Belfast</name>
+			<description><![CDATA[<div dir="ltr">&quot;Clay&quot;<br>[where Maria&#39;s purse was purchased]<br>&quot;She took out her purse with the silver clasps and read again the words A Present from Belfast. She was very fond of that purse because Joe had brought it to her five years before when he and Alphy had gone to Belfast on a Whit-Monday trip&quot; (100).</div>]]></description>
+			<styleUrl>#m_ylw-pushpin00</styleUrl>
+			<Point>
+				<coordinates>-5.910645,54.591957,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Downes&apos;s Cakeshop</name>
+			<description><![CDATA["Clay"<br>[where Maria buys penny cakes]<br>"She went into Downes's cake-shop but the shop was so full of people that
+ it was a long time before she could get herself attended to...She decided to buy some plumcake but Downes's plumcake had not enough 
+almond icing on top of it so she went over to a shop in Henry Street" (102).<br>]]></description>
+			<LookAt>
+				<longitude>-6.259324788060932</longitude>
+				<latitude>53.34967202048722</latitude>
+				<altitude>0</altitude>
+				<heading>4.681555297057545</heading>
+				<tilt>0</tilt>
+				<range>487.4139991700728</range>
+				<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
+			</LookAt>
+			<styleUrl>#m_ylw-pushpin00</styleUrl>
+			<Point>
+				<coordinates>-6.259256999999999,53.349972,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Henry Street</name>
+			<description><![CDATA["Clay"<br>[where Maria buys plumcake]<br>"She decided to buy some plumcake but Downes's plumcake had not enough 
+almond icing on top of it so she went over to a shop in Henry Street" (102).<br>]]></description>
+			<styleUrl>#m_ylw-pushpin00</styleUrl>
+			<Point>
+				<coordinates>-6.261541999999999,53.349644,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>&quot;Clay&quot; Route</name>
+			<description><![CDATA[<div dir="ltr">The route Maria travels to visit Joe.<br><br>(end route according to Gifford)</div>]]></description>
+			<styleUrl>#msn_ylw-pushpin</styleUrl>
+			<LineString>
+				<tessellate>1</tessellate>
+				<coordinates>
+					-6.232288801250125,53.3286122053877,0 -6.232106804719928,53.32860727824148,0 -6.231953106574847,53.32881457368973,0 -6.231866012764024,53.32940324055094,0 -6.232386819414999,53.32972817635629,0 -6.23449196468867,53.33146742598118,0 -6.235130274966044,53.33198299654617,0 -6.237279642204135,53.33501104668937,0 -6.237876965118176,53.33577762049573,0 -6.238135877644315,53.33612908062868,0 -6.240170491021453,53.33750549982186,0 -6.25075091121039,53.34118726081383,0 -6.250154667550555,53.34186174842312,0 -6.250528285809576,53.34200985612699,0 -6.249745584414988,53.34356230655808,0 -6.249305577217471,53.34409935247022,0 -6.250931602212581,53.34448370093234,0 -6.251852717136625,53.34465864062835,0 -6.25429408150679,53.34509806701642,0 -6.256826039826367,53.34569887479089,0 -6.258748525123434,53.34692520355656,0 -6.258927935851698,53.34706038557993,0 -6.25904672883367,53.3473369219554,0 -6.259286274762692,53.34766198910272,0 -6.260254,53.34977,0 -6.259301999999999,53.349968,0 -6.261714,53.349525,0 -6.260297,53.34984600000001,0 -6.261245,53.352528,0 -6.265275400470564,53.3560560005461,0 -6.263838687729458,53.35752718315823,0 -6.26193793793413,53.35917538844979,0 -6.259460000000001,53.361748,0 -6.260767000000001,53.362072,0 -6.260893000000001,53.36210299999999,0 -6.261013,53.36212900000001,0 -6.261306,53.362194,0 -6.261370000000001,53.362209,0 -6.261856578852518,53.36231871518378,0 
+				</coordinates>
+			</LineString>
+		</Placemark>
+	</Folder>
+	<Folder>
+		<name>&quot;A Painful Case&quot;</name>
+		<description>Streets and Locations in &quot;A Painful Case.&quot;</description>
+		<LookAt>
+			<longitude>-6.268606874019864</longitude>
+			<latitude>53.3438658482069</latitude>
+			<altitude>0</altitude>
+			<heading>-5.673432309413866</heading>
+			<tilt>0</tilt>
+			<range>5483.331879315573</range>
+			<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
+		</LookAt>
+		<Placemark>
+			<name>Chapelizod</name>
+			<description><![CDATA["A Painful Case" <br>[where Mr. Duffy lives]<br>"MR. JAMES DUFFY lived in Chapelizod because he wished to live as far as 
+possible from the city of which he was a citizen and because he found 
+all the other suburbs of Dublin mean, modern and pretentious. He lived 
+in an old sombre house and from his windows he could look into the 
+disused distillery or upwards along the shallow river on which Dublin is
+ built" (107).<br>]]></description>
+			<styleUrl>#m_ylw-pushpin3</styleUrl>
+			<Point>
+				<coordinates>-6.342888,53.347271,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Baggot Street</name>
+			<description><![CDATA["A Painful Case"<br>[where Duffy works]<br>"He had been for many years cashier of a private bank in Baggot Street" (108).<br>]]></description>
+			<styleUrl>#m_ylw-pushpin3</styleUrl>
+			<Point>
+				<coordinates>-6.252487,53.337933,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Dan Burke&apos;s</name>
+			<description><![CDATA["A Painful Case"<br>[where Duffy eats lunch]<br>"At midday he went to Dan Burke's and took his lunch -- a bottle of lager beer and a small trayful of arrowroot biscuits" (108).<br>(according to Gifford)<br>]]></description>
+			<styleUrl>#m_ylw-pushpin3</styleUrl>
+			<Point>
+				<coordinates>-6.248155,53.33629999999999,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>George&apos;s Street</name>
+			<description><![CDATA[<div dir="ltr">&quot;A Painful Case&quot;<br>[where Duffy eats dinner]<br>&quot;He dined in an eating-house in George&#39;s Street where he felt himself safe from the society o Dublin&#39;s gilded youth and where there was a certain plain honesty in the bill of fare&quot; (108-09).</div>]]></description>
+			<styleUrl>#m_ylw-pushpin3</styleUrl>
+			<Point>
+				<coordinates>-6.264439,53.34306,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Rotunda</name>
+			<description><![CDATA[<div dir="ltr">&quot;A Painful Case&quot;<br>[where Duffy meets Mrs. Sinico]<br>&quot;One evening he found himself sitting beside two ladies in the Rotunda&quot; (109).</div>]]></description>
+			<styleUrl>#m_ylw-pushpin3</styleUrl>
+			<Point>
+				<coordinates>-6.262035,53.352692,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Earlsfort Terrace</name>
+			<description><![CDATA["A Painful Case"<br>[where Duffy meets Mrs. Sinico for a second time]<br>"He met her again a few weeks afterwards at a concert in Earlsfort 
+Terrace and seized the moments when her daughter's attention was 
+diverted to become intimate" (110).<br>]]></description>
+			<styleUrl>#m_ylw-pushpin3</styleUrl>
+			<Point>
+				<coordinates>-6.257424,53.33450299999999,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Leghorn</name>
+			<description><![CDATA["A Painful Case"<br>[where Mr. Sinico is from]<br>"Her name was Mrs. Sinico. Her husband's great-great-grandfather had come from Leghorn" (110).<br>]]></description>
+			<LookAt>
+				<longitude>12.13919699684127</longitude>
+				<latitude>43.43197411606796</latitude>
+				<altitude>0</altitude>
+				<heading>1.259440176428177</heading>
+				<tilt>0</tilt>
+				<range>548504.4156967021</range>
+				<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
+			</LookAt>
+			<styleUrl>#m_ylw-pushpin3</styleUrl>
+			<Point>
+				<coordinates>10.308011,43.551876,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Holland</name>
+			<description><![CDATA["A Painful Case"<br>[where Mr. Sinico sails on his mercantile ship]<br>"Her husband was captain of a mercantile boat plying between Dublin and Holland; and they had one child" (110).<br>]]></description>
+			<LookAt>
+				<longitude>4.960091769112389</longitude>
+				<latitude>52.19135453618983</latitude>
+				<altitude>0</altitude>
+				<heading>0.3081382229272982</heading>
+				<tilt>0</tilt>
+				<range>189118.8079828619</range>
+				<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
+			</LookAt>
+			<styleUrl>#m_ylw-pushpin3</styleUrl>
+			<Point>
+				<coordinates>4.570313,52.281601,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Parkgate</name>
+			<description><![CDATA["A Painful Case"<br>[where the cakeshop is that Duffy and Mrs. Sinico meet for the last time]<br>"As he did not wish their last interview to be troubled by the influence 
+of their ruined confessional they meet in a little cakeshop near the 
+Parkgate" (112).<br>]]></description>
+			<styleUrl>#m_ylw-pushpin3</styleUrl>
+			<Point>
+				<coordinates>-6.301602999999999,53.349476,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>City of Dublin Hospital</name>
+			<description><![CDATA["A Painful Case"<br>[the hospital where Mrs. Sinico is taken]<br>"Today at the City of Dublin Hospital the Deputy Coroner (in the absence 
+of Mr. Leverett) held an inquest on the body of Mrs. Emily Sinico, aged 
+forty-three years, who was killed at Sydney Parade Station yesterday 
+evening" (113).<br>]]></description>
+			<styleUrl>#m_ylw-pushpin3</styleUrl>
+			<Point>
+				<coordinates>-6.244239,53.333538,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Sydney Parade Station</name>
+			<description><![CDATA[<div dir="ltr">&quot;A Painful Case&quot;<br>[where Mrs. Sinico is hit by the train]<br>&quot;Today at the City of Dublin Hospital the Deputy Coroner (in the absence of Mr. Leverett) held an inquest on the body of Mrs. Emily Sinico, aged forty-three years, who was killed at Sydney Parade Station yesterday evening&quot; (113).</div>]]></description>
+			<styleUrl>#m_ylw-pushpin3</styleUrl>
+			<Point>
+				<coordinates>-6.211846,53.32094599999999,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Rotterdam</name>
+			<description><![CDATA["A Painful Case"<br>[where Mr. Sinico is when he gets news of his wife's death]<br>"He stated that the deceased was his wife. He was not in Dublin at the 
+time of the accident as he had arrived only that morning from Rotterdam" (114).<br>]]></description>
+			<styleUrl>#m_ylw-pushpin3</styleUrl>
+			<Point>
+				<coordinates>4.481776,51.924217,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Lucan Road</name>
+			<description><![CDATA["A Painful Case"<br>[the view from Duffy's window as he reads the newspaper story]<br>"The river lay quiet beside the empty distillery and from time to time a light appeared in some house on the Lucan road" (115).<br>]]></description>
+			<styleUrl>#m_ylw-pushpin3</styleUrl>
+			<Point>
+				<coordinates>-6.352844,53.351372,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Chapelizod Bridge?</name>
+			<description><![CDATA["A Painful Case"<br>[a place Duffy passes as he walks]<br>"When he came to the public-house at Chapelizod Bridge he went in and ordered a hot punch" (116).<br>]]></description>
+			<styleUrl>#m_ylw-pushpin3</styleUrl>
+			<Point>
+				<coordinates>-6.293793,53.348087,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>County Kildare</name>
+			<description><![CDATA["A Painful Case"<br>[the county the estate is in that the men are talking about]<br>"There were five or six workingmen in the shop discussing the value of a gentleman's estate in County Kildare" (116).<br>]]></description>
+			<styleUrl>#m_ylw-pushpin3</styleUrl>
+			<Point>
+				<coordinates>-6.908998,53.159828,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Magazine Hill</name>
+			<description><![CDATA["A Painful Case"<br>[where Duffy sits]<br>"When he gained the crest of the Magazine Hill he halted and looked along
+ the river towards Dublin, the lights of which burned redly and 
+hospitably in the cold night" (117).<br>]]></description>
+			<styleUrl>#m_ylw-pushpin3</styleUrl>
+			<Point>
+				<coordinates>-6.309242,53.349422,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Kingsbridge Station</name>
+			<description><![CDATA["A Painful Case"<br>[where Duffy watches and hears the train]<br>"Beyond the river he saw a goods train winding out of Kingsbridge 
+Station, like a worm with a fiery head winding through the darkness, 
+obstinately and laboriously. It passed slowly out of sight; but still he
+ heard in his ears the laborious drone of the engine reiterating the 
+syllables of her name" (117).<br>]]></description>
+			<styleUrl>#m_ylw-pushpin3</styleUrl>
+			<Point>
+				<coordinates>-6.294823,53.346554,0</coordinates>
+			</Point>
+		</Placemark>
+	</Folder>
+	<Folder>
+		<name>&quot;Ivy Day in the Committee Room&quot;</name>
+		<description>Streets and Locations in &quot;Ivy Day in the Committee Room.&quot;</description>
+		<Placemark>
+			<name>Wicklow Street</name>
+			<description><![CDATA["Ivy Day in the Committee Room"<br>[where the Committee Room is]<br>"Mr. O'Connor had been engaged by Tierney's agent to canvass one part of<br>the ward but, as the weather was inclement and his boots let in the wet,<br>he spent a great part of the day sitting by the fire in the Committee<br>Room in Wicklow Street with Jack, the old caretaker" (119).<br>]]></description>
+			<styleUrl>#m_ylw-pushpin9</styleUrl>
+			<Point>
+				<coordinates>-6.260875,53.34293399999999,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Christian Brothers School</name>
+			<description><![CDATA[<div dir="ltr">&quot;Ivy Day in the Committee Room&quot;<br>[where old Jack sent his son to school]<br>&quot;--Ah, yes, he said, continuing, it&#39;s hard to know what way to bring up children. Now who&#39;d think he&#39;d turn out like that! I sent him to<br>the Christian Brothers and I done what I could him, and there he goes boosing about. I tried to make him someway decent&quot; (119).<br></div>]]></description>
+			<styleUrl>#m_ylw-pushpin9</styleUrl>
+			<Point>
+				<coordinates>-6.250766999999999,53.35815,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Aungier Street</name>
+			<description><![CDATA["Ivy Day in the Committee Room"<br>[where O'Connor has been canvassing]<br><br>"--Did you serve Aungier Street? he asked Mr. O'Connor.<br><br>--Yes, said Mr. O'Connor, beginning to search his pockets for memoranda" (122).<br>]]></description>
+			<styleUrl>#m_ylw-pushpin9</styleUrl>
+			<Point>
+				<coordinates>-6.26579,53.339985,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Mary&apos;s Lane</name>
+			<description><![CDATA["Ivy Day in the Committee Room"<br>[where Richard Tierney's father had a shop]<br><br>"--O, he's as tricky as they make 'em, said Mr. Henchy. He hasn't got those little pigs' eyes for nothing. Blast his soul! Couldn't he pay up like a man instead of: 'O, now, Mr. Henchy, I must speak to Mr. Fanning.... I've spent a lot of money'? Mean little schoolboy of hell! I suppose he forgets the time his little old father kept the hand-me-down shop in Mary's Lane.<br><br>--But is that a fact? asked Mr. O'Connor.<br><br>--God, yes, said Mr. Henchy. Did you never hear that? And the men used to go in on Sunday morning before the houses were open to buy a waistcoat or a trousers--moya! But Tricky Dicky's little old father always had a tricky little black bottle up in a corner. Do you mind now? That's that. That's where he first saw the light" (123).<br>]]></description>
+			<styleUrl>#m_ylw-pushpin9</styleUrl>
+			<Point>
+				<coordinates>-6.272536,53.348087,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Suffolk Street</name>
+			<description><![CDATA["Ivy Day in the Committee Room"<br>[where O'Connor saw Cowley and two others]<br>"--There's some deal on in that quarter, said Mr. O'Connor thoughtfully. I saw the three of them hard at it yesterday at Suffolk Street corner" (127).<br>]]></description>
+			<styleUrl>#m_ylw-pushpin9</styleUrl>
+			<Point>
+				<coordinates>-6.260443,53.34365099999999,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Dawson Street</name>
+			<description><![CDATA["Ivy Day in the Committee Room"<br>[where Henchy has been canvassing]<br>"--Yes. I got him one or two sure things in Dawson Street, Crofton and<br>myself" (129).<br>]]></description>
+			<styleUrl>#m_ylw-pushpin9</styleUrl>
+			<Point>
+				<coordinates>-6.258230000000001,53.341309,0</coordinates>
+			</Point>
+		</Placemark>
+	</Folder>
+	<Folder>
+		<name>&quot;A Mother&quot;</name>
+		<description>Streets and Locations in &quot;A Mother.&quot;</description>
+		<LookAt>
+			<longitude>-6.25314652382462</longitude>
+			<latitude>53.34436471839782</latitude>
+			<altitude>0</altitude>
+			<heading>-2.437073340895622</heading>
+			<tilt>0</tilt>
+			<range>4326.715322974999</range>
+			<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
+		</LookAt>
+		<Placemark>
+			<name>Ormond Quay</name>
+			<description><![CDATA["A Mother"<br>[where Mr Kearney works as a bootmaker]<br>"However, when she drew near the limit and her friends began to loosen their tongues about her, she silenced them by marrying Mr. Kearney, who was a bootmaker on Ormond Quay" (137).<br>]]></description>
+			<styleUrl>#m_ylw-pushpin100</styleUrl>
+			<Point>
+				<coordinates>-6.269793999999999,53.345806,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Skerries</name>
+			<description><![CDATA["A Mother"<br>[one of the places the Kearney's vacation]<br>"Every year in the month of July Mrs. Kearney found occasion to say to some friend:<br><br>--My good man is packing us off to Skerries for a few weeks.<br><br>If it was not Skerries it was Howth or Greystones" (137).<br>]]></description>
+			<styleUrl>#m_ylw-pushpin100</styleUrl>
+			<Point>
+				<coordinates>-6.106991,53.580788,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Howth</name>
+			<description><![CDATA["A Mother"<br>
+[one of the places the Kearney's vacation]<br>
+"Every year in the month of July Mrs. Kearney found occasion to say to some friend:<br>
+<br>
+--My good man is packing us off to Skerries for a few weeks.<br>
+<br>
+If it was not Skerries it was Howth or Greystones" (137).<br>]]></description>
+			<styleUrl>#m_ylw-pushpin100</styleUrl>
+			<Point>
+				<coordinates>-6.068042,53.386848,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Greystones</name>
+			<description><![CDATA["A Mother"<br>
+[one of the places the Kearney's vacation]<br>
+"Every year in the month of July Mrs. Kearney found occasion to say to some friend:<br>
+<br>
+--My good man is packing us off to Skerries for a few weeks.<br>
+<br>
+If it was not Skerries it was Howth or Greystones" (137).<br>]]></description>
+			<styleUrl>#m_ylw-pushpin100</styleUrl>
+			<Point>
+				<coordinates>-6.075536,53.13911400000001,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Cathedral Street</name>
+			<description><![CDATA["A Mother"<br>[the street whose corner the Kearneys and their friends gather occasionally]<br>"On special Sundays, when Mr. Kearney went with his family to the pro-cathedral, a little crowd of people would assemble after mass at the corner of Cathedral Street" (137).<br>]]></description>
+			<styleUrl>#m_ylw-pushpin100</styleUrl>
+			<Point>
+				<coordinates>-6.25935,53.350548,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Antient Concert Rooms</name>
+			<description><![CDATA["A Mother"<br>[where the concert series takes place]<br><br>"Therefore she was not surprised when one day Mr. Holohan came to her and proposed that her daughter should be the accompanist at a series of four grand concerts which his Society was going to give in the Antient Concert Rooms" (138).<br><br>"When Mrs. Kearney arrived with her daughter at the Antient Concert Rooms<br>on Wednesday night she did not like the look of things" (139).<br><br>"Mrs. Kearney, with her husband and<br>daughter, arrived at the Antient Concert Rooms three-quarters of an hour before the time at which the concert was to begin" (141).<br>]]></description>
+			<styleUrl>#m_ylw-pushpin100</styleUrl>
+			<Point>
+				<coordinates>-6.250387,53.34446,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Brown Thomas&apos;s</name>
+			<description><![CDATA["A Mother"<br>[where Mrs Kearney buys the chermeuse]<br>"Everything went on smoothly. Mrs. Kearney bought some lovely blush-pink<br>charmeuse in Brown Thomas's to let into the front of Kathleen's dress" (138).<br><br>(According to Gifford the shop is located somewhere in Grafton Street.)<br>]]></description>
+			<styleUrl>#m_ylw-pushpin100</styleUrl>
+			<Point>
+				<coordinates>-6.259718,53.34282699999999,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>London</name>
+			<description><![CDATA["A Mother"<br>[where Madam Glynn is from]<br>"Mr. Holohan said that she was Madam Glynn from London" (143).<br>]]></description>
+			<LookAt>
+				<longitude>-0.09606962782409578</longitude>
+				<latitude>51.50828848343491</latitude>
+				<altitude>0</altitude>
+				<heading>0.02371022654324636</heading>
+				<tilt>0</tilt>
+				<range>14760.22972043098</range>
+				<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
+			</LookAt>
+			<styleUrl>#m_ylw-pushpin100</styleUrl>
+			<Point>
+				<coordinates>-0.126364,51.50016000000001,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Mansion House</name>
+			<description><![CDATA[<div dir="ltr">&quot;A Mother&quot;<br>[where the American priest is speaking]<br><br>&quot;The Freeman man had come in to say that he could not wait for the concert as he had to report the lecture which an American priest was giving in the Mansion House&quot; (144).</div>]]></description>
+			<styleUrl>#m_ylw-pushpin100</styleUrl>
+			<Point>
+				<coordinates>-6.250387,53.341236,0</coordinates>
+			</Point>
+		</Placemark>
+	</Folder>
+	<Folder>
+		<name>&quot;Grace&quot;</name>
+		<description>Streets and Locations in &quot;Grace.&quot;</description>
+		<LookAt>
+			<longitude>-6.234764181896605</longitude>
+			<latitude>53.36137485405369</latitude>
+			<altitude>0</altitude>
+			<heading>-0.7890086565671015</heading>
+			<tilt>0</tilt>
+			<range>11708.72927945813</range>
+			<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
+		</LookAt>
+		<Placemark>
+			<name>Grafton Street</name>
+			<description><![CDATA[<div dir="ltr">&quot;Grace&quot;<br>[where the bar is]<br>&quot;When they came out into Grafton Street, Mr. Power whistled for an outsider&quot; (153).</div>]]></description>
+			<styleUrl>#sn_blue-pushpin0</styleUrl>
+			<Point>
+				<coordinates>-6.260147,53.341751,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Westmoreland Street</name>
+			<description><![CDATA["Grace" <br>[the direction the car drives]<br>"The car drove off towards Westmoreland Street" (153).<br>]]></description>
+			<styleUrl>#sn_blue-pushpin0</styleUrl>
+			<Point>
+				<coordinates>-6.259073999999999,53.346001,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Crowe Street</name>
+			<description><![CDATA["Grace"<br>[where Kernan's office is]<br>"Modern business methods had spared him only so far as to allow him a little office in Crowe Street, on the window blind of which was written the name of his firm with the address--London, E. C." (154)<br>]]></description>
+			<styleUrl>#sn_blue-pushpin0</styleUrl>
+			<Point>
+				<coordinates>-6.263783,53.34456299999999,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Dublin Castle</name>
+			<description><![CDATA[<div dir="ltr">&quot;Grace&quot;<br>[where Mr Power works]<br>&quot;Mr. Power, a much younger man, was employed in the Royal Irish Constabulary Office in Dublin Castle&quot; (154).</div>]]></description>
+			<styleUrl>#sn_blue-pushpin0</styleUrl>
+			<Point>
+				<coordinates>-6.266194,53.34308999999999,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>The Glasnevin road</name>
+			<description><![CDATA["Grace"<br>[where Kernan lives]<br>"The car halted before a small house on the Glasnevin road and Mr. Kernan was helped into the house" (154).<br>]]></description>
+			<styleUrl>#sn_blue-pushpin</styleUrl>
+			<Point>
+				<coordinates>-6.272317137951521,53.36358855513777,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Fogarty&apos;s</name>
+			<description><![CDATA["Grace"<br>[where Mrs Kernan offers to go to get something for Mr power]<br>"--I'm so sorry, she continued, that I've nothing in the house to offer you. But if you wait a minute I'll send round to Fogarty's, at the corner" (155).<br>(Gifford notes that this location is a possibility [102].)<br>]]></description>
+			<styleUrl>#sn_blue-pushpin0</styleUrl>
+			<Point>
+				<coordinates>-6.265431,53.361523,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Star of the Sea Church</name>
+			<description><![CDATA[<div dir="ltr">&quot;Grace&quot;<br>[where the Kernans were married]<br>&quot;In her days of courtship, Mr. Kernan had seemed to her a not ungallant figure: and she still hurried to the chapel door whenever a wedding was reported and, seeing the bridal pair, recalled with vivid pleasure how she had passed out of the Star of the Sea Church in Sandymount, leaning on the arm of a jovial well-fed man, who was dressed smartly in a frock-coat and lavender trousers and carried a silk hat gracefully balanced upon his other arm&quot; (156).</div>]]></description>
+			<styleUrl>#sn_blue-pushpin0</styleUrl>
+			<Point>
+				<coordinates>-6.219973,53.33575100000001,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Glasgow</name>
+			<description><![CDATA["Grace"<br>[where one of the Kernans' sons lives]<br>"Her two eldest sons were launched. One was in a draper's shop in Glasgow and the other was clerk to a tea-merchant in Belfast" (156).<br>]]></description>
+			<LookAt>
+				<longitude>-4.243444567444296</longitude>
+				<latitude>55.86645764126894</latitude>
+				<altitude>0</altitude>
+				<heading>0.012950155540949</heading>
+				<tilt>0</tilt>
+				<range>6447.464224053281</range>
+				<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
+			</LookAt>
+			<styleUrl>#sn_blue-pushpin0</styleUrl>
+			<Point>
+				<coordinates>-4.25909,55.865536,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Belfast</name>
+			<description><![CDATA["Grace"<br>[where one of the Kernans' sons lives]<br>"Her two eldest sons were launched. One was in a draper's shop in Glasgow and the other was clerk to a tea-merchant in Belfast" (156).<br>]]></description>
+			<LookAt>
+				<longitude>-5.788501762343233</longitude>
+				<latitude>54.60174169828085</latitude>
+				<altitude>0</altitude>
+				<heading>0.1154270733511629</heading>
+				<tilt>0</tilt>
+				<range>29057.61393661406</range>
+				<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
+			</LookAt>
+			<styleUrl>#sn_blue-pushpin0</styleUrl>
+			<Point>
+				<coordinates>-5.930108999999999,54.597267,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Thomas Street</name>
+			<description><![CDATA["Grace"<br>[where Mr Kernan books orders]<br>"He had never been violent since the boys had grown up, and she knew that he would walk to the end of Thomas Street and back again to book even a small order" (156).<br>]]></description>
+			<styleUrl>#sn_blue-pushpin0</styleUrl>
+			<Point>
+				<coordinates>-6.280646,53.343048,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>M&apos;Auley&apos;s</name>
+			<description><![CDATA["Grace"<br>[where the men plan to meet before the retreat]<br>"--We can meet in M'Auley's, said Mr. M'Coy. That'll be the most convenient place" (162).<br>]]></description>
+			<styleUrl>#sn_blue-pushpin0</styleUrl>
+			<Point>
+				<coordinates>-6.2608,53.359982,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Gardiner Street</name>
+			<description><![CDATA["Grace"<br>[where the church is that Kernan goes to]<br>"The transept of the Jesuit Church in Gardiner Street was almost full; and still at every moment gentlemen entered from the side door and, directed by the lay-brother, walked on tiptoe along the aisles until they found seating accommodation" (172).<br>]]></description>
+			<styleUrl>#sn_blue-pushpin2</styleUrl>
+			<Point>
+				<coordinates>-6.259664279721676,53.35790277142934,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Grace Route (Approximate)</name>
+			<styleUrl>#m_ylw-pushpin</styleUrl>
+			<LineString>
+				<tessellate>1</tessellate>
+				<coordinates>
+					-6.260009695447478,53.34187747348623,0 -6.259714023009725,53.34233878291193,0 -6.259543146345596,53.34262693679106,0 -6.259375627783824,53.34320138684508,0 -6.259300296094597,53.34363045227868,0 -6.259220195687001,53.34393411242885,0 -6.259255656141884,53.34417131177094,0 -6.259421265626409,53.34443229082264,0 -6.259359456236153,53.34465128527169,0 -6.259235817362194,53.34477972317475,0 -6.259163387212187,53.34497793122905,0 -6.259127006989383,53.34518176409954,0 -6.259127084753129,53.34576167724882,0 -6.259146022504915,53.3469199632865,0 -6.259138627759438,53.34710205190659,0 -6.259449947617901,53.34757016316141,0 -6.259794632196551,53.34851437746261,0 -6.26028863766795,53.34957807363997,0 -6.260738669439418,53.35066461754381,0 -6.261529367761567,53.35248106703333,0 -6.261627819885729,53.35280266227561,0 -6.262056378838494,53.35329697203577,0 -6.263457990791395,53.35451176877319,0 -6.265249252775256,53.35605593227053,0 -6.265493494618526,53.35615706019982,0 -6.267890781274562,53.35673474909034,0 -6.268099391536727,53.35714284824953,0 -6.26932266690161,53.35846039941746,0 -6.269696791411272,53.35887674223762,0 -6.269702688478817,53.35983302128653,0 -6.269674794866706,53.36059898492595,0 -6.271405084655864,53.36073718821803,0 -6.272674899521351,53.36080165898603,0 -6.272789537106766,53.36164650583965,0 -6.272785330124143,53.3623730181535,0 -6.272363218252587,53.3632071236987,0 
+				</coordinates>
+			</LineString>
+		</Placemark>
+	</Folder>
+	<Folder>
+		<name>&quot;The Dead&quot;</name>
+		<description>Streets, Locations, and Routes in &quot;The Dead.&quot;</description>
+		<Placemark>
+			<name>Stoney Batter</name>
+			<description><![CDATA[<div dir="ltr">&quot;The Dead&quot;<br>[the place Kate, Julia, and Mary Jane left after their brother Pat died]<br>&quot;For years and years it had gone off in splendid style, as long as anyone could remember; ever since Kate and Julia, after the death of their brother Pat, had left the house in Stoney Batter and taken Mary Jane, their only niece, to live with them in the dark, gaunt house on Usher&#39;s Island, the upper part of which they had rented from Mr. Fulham, the corn-factor on the ground floor&quot; (176).</div>]]></description>
+			<styleUrl>#msn_ylw-pushpin11</styleUrl>
+			<Point>
+				<coordinates>-6.282098,53.350693,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Usher&apos;s Island</name>
+			<description><![CDATA["The Dead"<br>[where the Misses Morkan live; the setting of the party]<br>"For years and years it had gone off in splendid style, as long as anyone could remember; ever since Kate and Julia, after the death of their brother Pat, had left the house in Stoney Batter and taken Mary Jane, their only niece, to live with them in the dark, gaunt house on Usher's Island, the upper part of which they had rented from Mr. Fulham, the corn-factor on the ground floor" (176).<br>]]></description>
+			<LookAt>
+				<longitude>-6.282374664358806</longitude>
+				<latitude>53.34598209101767</latitude>
+				<altitude>0</altitude>
+				<heading>0.0002273054186493474</heading>
+				<tilt>0</tilt>
+				<range>261.9642004638501</range>
+				<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
+			</LookAt>
+			<styleUrl>#msn_ylw-pushpin11</styleUrl>
+			<Point>
+				<coordinates>-6.282658,53.346397,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Haddington Road</name>
+			<description><![CDATA["The Dead"<br>[where Mary Jane "ha[s] the organ"]<br>"Mary Jane, who was then a little girl in short clothes, was now the main prop of the household, for she had the organ in Haddington Road" (176).<br>]]></description>
+			<styleUrl>#m_ylw-pushpin71</styleUrl>
+			<Point>
+				<coordinates>-6.239469,53.335758,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Antient Concert Rooms</name>
+			<description><![CDATA["The Dead" <br>[where Mary Jane gives pupils' concerts]<br>"She had been through the Academy<br>and gave a pupils' concert every year in the upper room of the Antient<br>Concert Rooms" (176).<br>(address according to Gifford)<br>]]></description>
+			<styleUrl>#m_ylw-pushpin71</styleUrl>
+			<Point>
+				<coordinates>-6.250073999999999,53.344395,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Kingstown</name>
+			<description><![CDATA["The Dead"<br>[one of the areas Mary Jane's students live]<br>"Many of her pupils belonged to the better-class families on the Kingstown and Dalkey line" (176).<br>]]></description>
+			<styleUrl>#msn_ylw-pushpin11</styleUrl>
+			<Point>
+				<coordinates>-6.148380359998757,53.29051756535317,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Dalkey</name>
+			<description><![CDATA["The Dead"<br>[one of the areas served by the train Mary Jane's students live near]<br>"Many of her pupils belonged to the better-class families on the Kingstown and Dalkey line" (176).<br>]]></description>
+			<styleUrl>#msn_ylw-pushpin11</styleUrl>
+			<Point>
+				<coordinates>-6.105697999999999,53.279133,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Adam and Eve&apos;s</name>
+			<description><![CDATA["The Dead"<br>[where Julia sings soprano]<br>"Julia, though she was quite grey, was still the leading soprano in Adam and Eve's, and Kate, being too feeble to go about much, gave music lessons to beginners on the old square piano in the back room" (176).<br><br>(According to Gifford, Adam and Eve's was a "[p]opular name for the Franciscan Church of St. Francis of Assisi in Merchant's Quay" [112])<br>]]></description>
+			<styleUrl>#m_ylw-pushpin71</styleUrl>
+			<Point>
+				<coordinates>-6.274325,53.345119,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Port and Docks</name>
+			<description><![CDATA[<div dir="ltr">&quot;The Dead&quot;<br>[where Gabriel&#39;s father worked]<br>&quot;They both kissed Gabriel frankly. He was their favourite nephew the son of their dead elder sister, Ellen, who had married T. J. Conroy of the<br>Port and Docks&quot; (179).</div>]]></description>
+			<LookAt>
+				<longitude>-6.217363243720055</longitude>
+				<latitude>53.35083974301691</latitude>
+				<altitude>0</altitude>
+				<heading>0.0008109398037915415</heading>
+				<tilt>0</tilt>
+				<range>2325.099460714624</range>
+				<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
+			</LookAt>
+			<styleUrl>#m_ylw-pushpin71</styleUrl>
+			<Point>
+				<coordinates>-6.218374,53.35086800000001,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Monkstown</name>
+			<description><![CDATA[<div dir="ltr">&quot;The Dead&quot;<br>[where Gabriel and Gretta live]<br>&quot;--Gretta tells me you&#39;re not going to take a cab back to Monkstown tonight, Gabriel, said Aunt Kate&quot; (180).</div>]]></description>
+			<styleUrl>#m_ylw-pushpin71</styleUrl>
+			<Point>
+				<coordinates>-6.153396,53.293205,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Merrion</name>
+			<description><![CDATA[<div dir="ltr">&quot;The Dead&quot;<br>[the point on the Conroys&#39; journey home the previous year after which Gretta got a cold]<br><br>--No, said Gabriel, turning to his wife, we had quite enough of that last year, hadn&#39;t we? Don&#39;t you remember, Aunt Kate, what a cold Gretta got out of it? Cab windows rattling all the way, and the east wind blowing in after we passed Merrion. Very jolly it was. Gretta caught a dreadful cold&quot; (180).</div>]]></description>
+			<styleUrl>#m_ylw-pushpin71</styleUrl>
+			<Point>
+				<coordinates>-6.192168999999999,53.30257,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>The Gresham Hotel Dublin</name>
+			<description><![CDATA[<div dir="ltr">&quot;The Dead&quot;<br>[where Gabriel and Gretta stay]<br>&quot;--O, the room is all right, replied Gabriel. I&#39;ve taken one in the<br>Gresham&quot; (181).</div>]]></description>
+			<styleUrl>#m_ylw-pushpin71</styleUrl>
+			<Point>
+				<coordinates>-6.260879,53.35165,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Balbriggan</name>
+			<description><![CDATA["The Dead"<br>[where Gabriel's brother is a curate]<br>"Thanks to her, Constantine was now senior curate in Balbrigan and, thanks to her, Gabriel himself had taken his degree in the Royal University" (186).<br>]]></description>
+			<styleUrl>#m_ylw-pushpin71</styleUrl>
+			<Point>
+				<coordinates>-6.184122,53.607685,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Bachelor&apos;s Walk</name>
+			<description><![CDATA["The Dead"<br>[where Gabriel buys books at Hickey's and O'Clohissey's]<br>"Nearly every day when his teaching in the<br>college was ended he used to wander down the quays to the second-hand<br>booksellers, to Hickey's on Bachelor's Walk, to Web's or Massey's on Aston's Quay, or to O'Clohissey's in the bystreet" (188).<br>]]></description>
+			<styleUrl>#m_ylw-pushpin71</styleUrl>
+			<Point>
+				<coordinates>-6.260034,53.347355,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Aston Quay</name>
+			<description><![CDATA["The Dead"<br>[where Gabriel buys books at Web's and Massey's]<br>"Nearly every day when his teaching in the<br>college was ended he used to wander down the quays to the second-hand<br>booksellers, to Hickey's on Bachelor's Walk, to Web's or Massey's on<br>Aston's Quay, or to O'Clohissey's in the bystreet" (188).<br>]]></description>
+			<styleUrl>#m_ylw-pushpin71</styleUrl>
+			<Point>
+				<coordinates>-6.260016999999999,53.34676,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Aran Isles</name>
+			<description><![CDATA[<div dir="ltr">&quot;The Dead&quot;<br>[where Molly Ivors is going for a month-long excursion with Mr Kilkelly and Kathleen Kearney]<br>&quot;--O, Mr. Conroy, will you come for an excursion to the Aran Isles this summer? We&#39;re going to stay there a whole month. It will be splendid out in the Atlantic. You ought to come. Mr. Clancy is coming, and Mr. Kilkelly and Kathleen Kearney. It would be splendid for Gretta too if she&#39;d come. She&#39;s from Connacht, isn&#39;t she?&quot; (188)<br></div>]]></description>
+			<LookAt>
+				<longitude>-9.600464767394973</longitude>
+				<latitude>53.07358139132354</latitude>
+				<altitude>0</altitude>
+				<heading>-0.05487388690859411</heading>
+				<tilt>0</tilt>
+				<range>26510.23223410338</range>
+				<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
+			</LookAt>
+			<styleUrl>#m_ylw-pushpin71</styleUrl>
+			<Point>
+				<coordinates>-9.531841999999999,53.05733099999999,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Connacht</name>
+			<description><![CDATA["The Dead"<br>[where Gretta's people are from]<br>"--O, Mr. Conroy, will you come for an excursion to the Aran Isles this summer? We're going to stay there a whole month. It will be splendid out in the Atlantic. You ought to come. Mr. Clancy is coming, and Mr. Kilkelly and Kathleen Kearney. It would be splendid for Gretta too if she'd come. She's from Connacht, isn't she?" (189).<br>]]></description>
+			<LookAt>
+				<longitude>-8.955600604847747</longitude>
+				<latitude>53.57501445977941</latitude>
+				<altitude>0</altitude>
+				<heading>0.02770674380212946</heading>
+				<tilt>0</tilt>
+				<range>11841.04988289702</range>
+				<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
+			</LookAt>
+			<styleUrl>#m_ylw-pushpin71</styleUrl>
+			<Point>
+				<coordinates>-8.990035000000001,53.572918,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>France</name>
+			<description><![CDATA["The Dead"<br>[where Gabriel vacations]<br>"--Well, we usually go to France or Belgium or perhaps Germany, said Gabriel awkwardly" (189).<br>]]></description>
+			<LookAt>
+				<longitude>5.39042599070619</longitude>
+				<latitude>46.97919245243946</latitude>
+				<altitude>0</altitude>
+				<heading>0.9056059807849118</heading>
+				<tilt>0</tilt>
+				<range>1302845.594029248</range>
+				<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
+			</LookAt>
+			<styleUrl>#m_ylw-pushpin71</styleUrl>
+			<Point>
+				<coordinates>4.130859,46.377254,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Germany</name>
+			<description><![CDATA["The Dead"<br>[where Gabriel and Gretta usually vacation]<br>"--Well, we usually go to France or Belgium or perhaps Germany, said Gabriel awkwardly" (189).<br>]]></description>
+			<LookAt>
+				<longitude>11.34071629575304</longitude>
+				<latitude>49.31294641313697</latitude>
+				<altitude>0</altitude>
+				<heading>0.7933039061551133</heading>
+				<tilt>0</tilt>
+				<range>721120.8714085775</range>
+				<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
+			</LookAt>
+			<styleUrl>#m_ylw-pushpin71</styleUrl>
+			<Point>
+				<coordinates>10.283203,49.72448,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Belgium</name>
+			<description><![CDATA["The Dead"<br>[where Gabriel and Gretta usually vacation]<br>"--Well, we usually go to France or Belgium or perhaps Germany, said Gabriel awkwardly" (189).<br>]]></description>
+			<LookAt>
+				<longitude>6.295415454819799</longitude>
+				<latitude>50.71026320195389</latitude>
+				<altitude>0</altitude>
+				<heading>0.7703332267367714</heading>
+				<tilt>0</tilt>
+				<range>357111.9157359407</range>
+				<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
+			</LookAt>
+			<styleUrl>#m_ylw-pushpin71</styleUrl>
+			<Point>
+				<coordinates>5.009766,50.457504,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Glasgow</name>
+			<description><![CDATA["The Dead"<br>[where Mrs. Malins lives with her daughter]<br>"She lived with her married daughter in Glasgow and came to Dublin on a visit once a year. She answered placidly that she had had a beautiful crossing and that the captain had been most attentive to her.<br>She spoke also of the beautiful house her daughter kept in Glasgow, and of all the friends they had there" (190).<br>]]></description>
+			<LookAt>
+				<longitude>-4.175637638703361</longitude>
+				<latitude>55.8666601038145</latitude>
+				<altitude>0</altitude>
+				<heading>0.06752718822629027</heading>
+				<tilt>0</tilt>
+				<range>19508.25765093405</range>
+				<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
+			</LookAt>
+			<styleUrl>#m_ylw-pushpin71</styleUrl>
+			<Point>
+				<coordinates>-4.257223,55.865627,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Galway</name>
+			<description><![CDATA["The Dead"<br>[where Gretta is from]<br>"--There was no row, said Gabriel moodily, only she wanted me to go for<br>a trip to the west of Ireland and I said I wouldn't.<br><br>His wife clasped her hands excitedly and gave a little jump.<br><br>--O, do go, Gabriel, she cried. I'd love to see Galway again" (191).<br><br>"--It was a person I used to know in Galway when I was living with my<br>grandmother, she said" (218).<br><br>"--I used to go out walking with him, she said, when I was in Galway.<br><br>A thought flew across Gabriel's mind.<br><br>--Perhaps that was why you wanted to go to Galway with that Ivors girl? he said coldly" (219).<br><br>"--It was in the winter, she said, about the beginning of the winter when I was going to leave my grandmother's and come up here to the convent. And he was ill at the time in his lodgings in Galway and wouldn't be let out, and his people in Oughterard were written to. He was in decline, they said, or something like that. I never knew rightly" (220).<br><br>"--And then when it came to the time for me to leave Galway and come up to the convent he was much worse and I wouldn't be let see him so I wrote him a letter saying I was going up to Dublin and would be back in the summer, and hoping he would be better then" (221).<br>]]></description>
+			<styleUrl>#m_ylw-pushpin71</styleUrl>
+			<Point>
+				<coordinates>-9.051780000000001,53.273796,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Wellington Monument</name>
+			<description><![CDATA["The Dead"<br>[where Gabriel wants to go walk instead of staying at the party]<br><br>"How cool it must be outside! How pleasant it would be to walk out alone, first along by the river and then through the park! The snow would be lying on the branches of the trees and forming a bright cap on the top of the Wellington Monument. How much more pleasant it would be there than at the supper-table!" (192)<br><br>"In the distance lay the park where the trees were weighted with snow. The Wellington Monument wore a gleaming cap of snow that flashed westward over the white field of Fifteen Acres" (202).<br>]]></description>
+			<LookAt>
+				<longitude>-6.303202965778979</longitude>
+				<latitude>53.34886453168107</latitude>
+				<altitude>0</altitude>
+				<heading>-0.0001812912395877953</heading>
+				<tilt>0</tilt>
+				<range>231.6645186657014</range>
+				<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
+			</LookAt>
+			<styleUrl>#m_ylw-pushpin71</styleUrl>
+			<Point>
+				<coordinates>-6.302977,53.349117,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Theatre Royal</name>
+			<description><![CDATA[<div dir="ltr">&quot;The Dead&quot;<br>[one of the opera venues discussed at supper]<br>&quot;The subject of talk was the opera company which was then at the Theatre Royal&quot; (198).</div>]]></description>
+			<LookAt>
+				<longitude>-6.261521206160731</longitude>
+				<latitude>53.34602437285445</latitude>
+				<altitude>0</altitude>
+				<heading>-0.005970705623000261</heading>
+				<tilt>0</tilt>
+				<range>1421.567519078548</range>
+				<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
+			</LookAt>
+			<styleUrl>#m_ylw-pushpin7</styleUrl>
+			<Point>
+				<coordinates>-6.256527625166624,53.34660241275274,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>London</name>
+			<description><![CDATA["The Dead"<br>[where the good singers are]<br>"--Oh, well, said Mr. Bartell D'Arcy, I presume there are as good<br>singers today as there were then.<br><br>--Where are they? asked Mr. Browne defiantly.<br><br>--In London, Paris, Milan, said Mr. Bartell D'Arcy warmly" (199).<br>]]></description>
+			<LookAt>
+				<longitude>-0.09794458307450404</longitude>
+				<latitude>51.50142843948464</latitude>
+				<altitude>0</altitude>
+				<heading>0.02214271014750089</heading>
+				<tilt>0</tilt>
+				<range>10081.57059810183</range>
+				<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
+			</LookAt>
+			<styleUrl>#m_ylw-pushpin71</styleUrl>
+			<Point>
+				<coordinates>-0.126236,51.500153,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Paris</name>
+			<description><![CDATA["The Dead"<br>
+[where the good singers are]<br>
+"--Oh, well, said Mr. Bartell D'Arcy, I presume there are as good<br>
+singers today as there were then.<br>
+<br>
+--Where are they? asked Mr. Browne defiantly.<br>
+<br>
+--In London, Paris, Milan, said Mr. Bartell D'Arcy warmly" (199).<br>]]></description>
+			<LookAt>
+				<longitude>2.359169774486316</longitude>
+				<latitude>48.85563413030112</latitude>
+				<altitude>0</altitude>
+				<heading>0.006162211752831132</heading>
+				<tilt>0</tilt>
+				<range>3302.249298344266</range>
+				<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
+			</LookAt>
+			<styleUrl>#m_ylw-pushpin71</styleUrl>
+			<Point>
+				<coordinates>2.350987,48.856667,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Milan</name>
+			<description><![CDATA["The Dead"<br>
+[where the good singers are]<br>
+"--Oh, well, said Mr. Bartell D'Arcy, I presume there are as good<br>
+singers today as there were then.<br>
+<br>
+--Where are they? asked Mr. Browne defiantly.<br>
+<br>
+--In London, Paris, Milan, said Mr. Bartell D'Arcy warmly" (199).<br>]]></description>
+			<LookAt>
+				<longitude>9.226618895074358</longitude>
+				<latitude>45.4531787056457</latitude>
+				<altitude>0</altitude>
+				<heading>0.02742466511929528</heading>
+				<tilt>0</tilt>
+				<range>19757.50561826239</range>
+				<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
+			</LookAt>
+			<styleUrl>#m_ylw-pushpin71</styleUrl>
+			<Point>
+				<coordinates>9.188141,45.463688,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Mount Melleray Monastery</name>
+			<description><![CDATA["The Dead"<br>[where Mrs. Malins's son is going]<br>"Mrs. Malins, who had been silent all through the supper, said that her son was going down to Mount Melleray in a week or so. The table then spoke of Mount Melleray, how bracing the air was down there, how hospitable the monks were and<br>how they never asked for a penny-piece from their guests" (200).<br>]]></description>
+			<LookAt>
+				<longitude>-7.855715239501516</longitude>
+				<latitude>52.18884378610809</latitude>
+				<altitude>0</altitude>
+				<heading>-130.9112881520281</heading>
+				<tilt>36.04394419620783</tilt>
+				<range>904.7377530099088</range>
+				<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
+			</LookAt>
+			<styleUrl>#msn_ylw-pushpin11</styleUrl>
+			<Point>
+				<coordinates>-7.858994443448099,52.18872731654472,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Back Lane</name>
+			<description><![CDATA["The Dead"<br>[where the Morkans's "ancestral mansion" was]<br>"--So the old gentleman, as I said, harnessed Johnny and put on his very best tall hat and his very best stock collar and drove out in grand style from his ancestral mansion somewhere near Back<br>Lane, I think.<br><br>Everyone laughed, even Mrs. Malins, at Gabriel's manner and Aunt Kate said:<br><br>--O, now, Gabriel, he didn't live in Back Lane, really. Only the mill was there" (207-08).<br>]]></description>
+			<styleUrl>#m_ylw-pushpin71</styleUrl>
+			<Point>
+				<coordinates>-6.273225,53.34251399999999,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>College Green</name>
+			<description><![CDATA["The Dead"<br>[where the statue of "King Billy" is located]<br>"--Out from the mansion of his forefathers, continued Gabriel, he drove with Johnny. And everything went on beautifully until Johnny came in sight of King Billy's statue: and whether he fell in love with the horse<br>King Billy sits on or whether he thought he was back again in the mill, anyhow he began to walk round the statue" (208).<br>]]></description>
+			<LookAt>
+				<longitude>-6.260377853226162</longitude>
+				<latitude>53.34427543840698</latitude>
+				<altitude>0</altitude>
+				<heading>-2.553921581366857e-05</heading>
+				<tilt>0</tilt>
+				<range>410.6911730552659</range>
+				<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
+			</LookAt>
+			<styleUrl>#m_ylw-pushpin71</styleUrl>
+			<Point>
+				<coordinates>-6.260346000000001,53.344475,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Trinity College Dublin</name>
+			<description><![CDATA[<div dir="ltr">&quot;The Dead&quot;<br>[where the cabman is directed to go]<br><br>&quot;--Do you know Trinity College?<br><br>--Yes, sir, said the cabman.<br><br>--Well, drive bang up against Trinity College gates, said Mr. Browne, and then we&#39;ll tell you where to go. You understand now?<br><br>--Yes, sir, said the cabman.<br><br>--Make like a bird for Trinity College.<br><br>--Right, sir, said the cabman&quot; (209).</div>]]></description>
+			<LookAt>
+				<longitude>-6.257177056766612</longitude>
+				<latitude>53.34457550633176</latitude>
+				<altitude>0</altitude>
+				<heading>0.001297979141534544</heading>
+				<tilt>0</tilt>
+				<range>361.0622369740176</range>
+				<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
+			</LookAt>
+			<styleUrl>#m_ylw-pushpin71</styleUrl>
+			<Point>
+				<coordinates>-6.258795,53.344471,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Four Courts</name>
+			<description><![CDATA[<div dir="ltr">&quot;The Dead&quot;<br>[a place Gabriel, Gretta, D&#39;Arcy, and Miss O&#39;Callaghan see across the river as they leave the party]<br>&quot;The lamps were still burning redly in the murky air and, across the river, the palace of the Four Courts stood out menacingly against the heavy sky&quot; (213).</div>]]></description>
+			<styleUrl>#m_ylw-pushpin71</styleUrl>
+			<Point>
+				<coordinates>-6.273685,53.345699,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Winetavern Street</name>
+			<description><![CDATA["The Dead"<br>[where Gabriel, Gretta, D'Arcy, and O'Callaghan find the cab]<br>"At the corner of Winetavern Street they met a cab" (214).<br>]]></description>
+			<styleUrl>#m_ylw-pushpin71</styleUrl>
+			<Point>
+				<coordinates>-6.27212,53.344921,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>O&apos;Connell Street</name>
+			<description><![CDATA["The Dead"<br>[where the cab turns and crosses the bridge]<br>"As the cab drove across O'Connell Bridge Miss O'Callaghan said:<br><br>--They say you never cross O'Connell Bridge without seeing a white horse" (214).<br>]]></description>
+			<styleUrl>#m_ylw-pushpin71</styleUrl>
+			<Point>
+				<coordinates>-6.259916,53.348698,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Henry Street</name>
+			<description><![CDATA["The Dead"<br>[where Malins had opened a shop]<br>"--O, at Christmas, when he opened that little Christmas-card shop in Henry Street" (217).<br>]]></description>
+			<LookAt>
+				<longitude>-6.262284454266907</longitude>
+				<latitude>53.34941170983968</latitude>
+				<altitude>0</altitude>
+				<heading>0.0002565751341331783</heading>
+				<tilt>0</tilt>
+				<range>401.0073549323388</range>
+				<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
+			</LookAt>
+			<styleUrl>#m_ylw-pushpin71</styleUrl>
+			<Point>
+				<coordinates>-6.262605,53.349388,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Oughterard</name>
+			<description><![CDATA["The Dead"<br>[where Michael Furey's people are from]<br>"...And he was ill at the time in his lodgings in Galway and wouldn't be let out, and his people in Oughterard were written to. He was in decline, they said, or something like that..." (220).<br><br>"--Yes, he went home. And when I was only a week in the convent he died and he was buried in Oughterard, where his people came from. O, the day I heard that, that he was dead!" (221)<br>]]></description>
+			<LookAt>
+				<longitude>-9.228128254207755</longitude>
+				<latitude>53.41678692587432</latitude>
+				<altitude>0</altitude>
+				<heading>0.07301370039051858</heading>
+				<tilt>0</tilt>
+				<range>19756.25774951248</range>
+				<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
+			</LookAt>
+			<styleUrl>#m_ylw-pushpin71</styleUrl>
+			<Point>
+				<coordinates>-9.319044,53.43166,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Nun&apos;s Island</name>
+			<description><![CDATA["The Dead"<br>[where Gretta grandmother's house was]<br>"--Then the night before I left, I was in my grandmother's house in Nuns' Island, packing up, and I heard gravel thrown up against the window" (221).<br>]]></description>
+			<styleUrl>#m_ylw-pushpin71</styleUrl>
+			<Point>
+				<coordinates>-9.057696,53.273029,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Bog of Allen</name>
+			<description><![CDATA["The Dead"<br>[a place where Gabriel imagines the snow falling]<br>"It was falling on every part of the dark central plain, on the treeless hills, falling softly upon the Bog of Allen and, farther westward, softly falling into the dark mutinous Shannon waves" (223).<br>]]></description>
+			<LookAt>
+				<longitude>-6.81869410988531</longitude>
+				<latitude>53.24123094396564</latitude>
+				<altitude>0</altitude>
+				<heading>0.09941605943680101</heading>
+				<tilt>0</tilt>
+				<range>27456.68438674922</range>
+				<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
+			</LookAt>
+			<styleUrl>#msn_ylw-pushpin11</styleUrl>
+			<Point>
+				<coordinates>-6.944256249138836,53.27454762545256,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>The Shannon Waves</name>
+			<description><![CDATA["The Dead"<br>[a place Gabriel imagines the snow falling]<br>"It was falling on every part of the dark central plain, on the treeless hills, falling softly upon the Bog of Allen and, farther westward, softly falling into the dark mutinous Shannon waves" (223).<br>]]></description>
+			<LookAt>
+				<longitude>-8.980594825823644</longitude>
+				<latitude>52.68795069725028</latitude>
+				<altitude>0</altitude>
+				<heading>0.00385684575005856</heading>
+				<tilt>0</tilt>
+				<range>10164.57983735186</range>
+				<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
+			</LookAt>
+			<styleUrl>#m_ylw-pushpin71</styleUrl>
+			<Point>
+				<coordinates>-8.985443,52.677631,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>&quot;The Dead&quot; Route</name>
+			<description><![CDATA[<div dir="ltr">[the route travelled by Gabriel and Gretta after the party]</div>]]></description>
+			<styleUrl>#m_ylw-pushpin70</styleUrl>
+			<LineString>
+				<tessellate>1</tessellate>
+				<coordinates>
+					-6.282848371096251,53.34642738788662,0 -6.282861214266998,53.34638334052862,0 -6.280602007712535,53.3461876489478,0 -6.277139348548225,53.34550985589241,0 -6.275908210936948,53.34525426288621,0 -6.275227870280377,53.34518527577023,0 -6.272777279174166,53.34502719143017,0 -6.271884,53.345016,0 -6.269792,53.345177,0 -6.267573828494911,53.34535511234565,0 -6.264804161291455,53.34574603890112,0 -6.263203657074717,53.34598174312185,0 -6.262172359902547,53.34618135274458,0 -6.261629350923475,53.34629079788609,0 -6.259145706111592,53.3469434132116,0 -6.261103001793994,53.35145634139018,0 -6.260858647344869,53.35157860512548,0 
+				</coordinates>
+			</LineString>
+		</Placemark>
+	</Folder>
+</Document>
+</kml>

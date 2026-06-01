@@ -1,0 +1,283 @@
+{
+  "_comment": "Human-editable source for the Ulysses layer. Each entry is geocoded by helpers/geocode_ulysses.py via OpenStreetMap/Nominatim and written to ulysses.geojson. To add a place: copy an entry, set 'episode', 'name', and a 'geocode' query (a real, findable Dublin address/landmark). Leave 'lat'/'lon' out and the geocoder fills + caches them; set them by hand to override. 'quote' and 'ref' (Gabler episode.line, e.g. '1.1') are optional and SHOULD be verified against the public-domain text before publishing. 'kind' is 'place' (default) or 'route'.",
+  "episodes": [
+    {
+      "n": 1,
+      "en": "Telemachus",
+      "de": "Telemachos",
+      "part": "Telemachiad"
+    },
+    {
+      "n": 2,
+      "en": "Nestor",
+      "de": "Nestor",
+      "part": "Telemachiad"
+    },
+    {
+      "n": 3,
+      "en": "Proteus",
+      "de": "Proteus",
+      "part": "Telemachiad"
+    },
+    {
+      "n": 4,
+      "en": "Calypso",
+      "de": "Kalypso",
+      "part": "Odyssey"
+    },
+    {
+      "n": 5,
+      "en": "Lotus Eaters",
+      "de": "Lotophagen",
+      "part": "Odyssey"
+    },
+    {
+      "n": 6,
+      "en": "Hades",
+      "de": "Hades",
+      "part": "Odyssey"
+    },
+    {
+      "n": 7,
+      "en": "Aeolus",
+      "de": "Aiolos",
+      "part": "Odyssey"
+    },
+    {
+      "n": 8,
+      "en": "Lestrygonians",
+      "de": "Laistrygonen",
+      "part": "Odyssey"
+    },
+    {
+      "n": 9,
+      "en": "Scylla and Charybdis",
+      "de": "Skylla und Charybdis",
+      "part": "Odyssey"
+    },
+    {
+      "n": 10,
+      "en": "Wandering Rocks",
+      "de": "Irrfelsen",
+      "part": "Odyssey"
+    },
+    {
+      "n": 11,
+      "en": "Sirens",
+      "de": "Sirenen",
+      "part": "Odyssey"
+    },
+    {
+      "n": 12,
+      "en": "Cyclops",
+      "de": "Zyklop",
+      "part": "Odyssey"
+    },
+    {
+      "n": 13,
+      "en": "Nausicaa",
+      "de": "Nausikaa",
+      "part": "Odyssey"
+    },
+    {
+      "n": 14,
+      "en": "Oxen of the Sun",
+      "de": "Die Rinder des Sonnengottes",
+      "part": "Odyssey"
+    },
+    {
+      "n": 15,
+      "en": "Circe",
+      "de": "Kirke",
+      "part": "Odyssey"
+    },
+    {
+      "n": 16,
+      "en": "Eumaeus",
+      "de": "Eumaios",
+      "part": "Nostos"
+    },
+    {
+      "n": 17,
+      "en": "Ithaca",
+      "de": "Ithaka",
+      "part": "Nostos"
+    },
+    {
+      "n": 18,
+      "en": "Penelope",
+      "de": "Penelope",
+      "part": "Nostos"
+    }
+  ],
+  "places": [
+    {
+      "episode": 1,
+      "name": "Martello Tower, Sandycove",
+      "geocode": "James Joyce Tower and Museum, Sandycove, Dublin",
+      "gloss": "Stephen Dedalus, Buck Mulligan and Haines lodge here; the novel opens on its gun-platform.",
+      "quote": "Stately, plump Buck Mulligan came from the stairhead, bearing a bowl of lather on which a mirror and a razor lay crossed.",
+      "ref": "1.1",
+      "lat": 53.288671,
+      "lon": -6.113608
+    },
+    {
+      "episode": 1,
+      "name": "The Forty Foot",
+      "geocode": "Forty Foot, Sandycove, Dublin",
+      "gloss": "The men's bathing place below the tower where Mulligan goes to swim.",
+      "lat": 53.289486,
+      "lon": -6.113699
+    },
+    {
+      "episode": 2,
+      "name": "Mr Deasy's school, Dalkey",
+      "geocode": "Dalkey, Dublin",
+      "gloss": "Stephen teaches a morning history class and is paid by the headmaster Mr Deasy.",
+      "lat": 53.278281,
+      "lon": -6.107438
+    },
+    {
+      "episode": 3,
+      "name": "Sandymount Strand",
+      "geocode": "Sandymount Strand, Dublin",
+      "gloss": "Stephen walks the tideline alone, meditating on perception and the 'ineluctable modality of the visible.'",
+      "quote": "Ineluctable modality of the visible: at least that if no more, thought through my eyes.",
+      "ref": "3.1",
+      "lat": 53.327652,
+      "lon": -6.208006
+    },
+    {
+      "episode": 4,
+      "name": "7 Eccles Street",
+      "geocode": "Eccles Street, Dublin",
+      "gloss": "Leopold and Molly Bloom's home; the Odyssey of Bloom's day begins and ends here.",
+      "quote": "Mr Leopold Bloom ate with relish the inner organs of beasts and fowls.",
+      "ref": "4.1",
+      "lat": 53.358368,
+      "lon": -6.266838
+    },
+    {
+      "episode": 4,
+      "name": "St George's Church",
+      "geocode": "St George's Church, Hardwicke Place, Dublin",
+      "gloss": "Its bells (‘Heigho! Heigho!’) sound the hour over Bloom's breakfast.",
+      "lat": 53.357351,
+      "lon": -6.262803
+    },
+    {
+      "episode": 5,
+      "name": "Sweny's Pharmacy",
+      "geocode": "Sweny's Pharmacy, Lincoln Place, Dublin",
+      "gloss": "Bloom buys the lemon soap that he carries through the day.",
+      "lat": 53.34187,
+      "lon": -6.250551
+    },
+    {
+      "episode": 5,
+      "name": "Westland Row Station",
+      "geocode": "Dublin Pearse railway station, Dublin",
+      "gloss": "Formerly Westland Row; Bloom collects a letter under the name Henry Flower.",
+      "lat": 53.343335,
+      "lon": -6.248463
+    },
+    {
+      "episode": 6,
+      "name": "Glasnevin Cemetery",
+      "geocode": "Glasnevin Cemetery, Dublin",
+      "gloss": "Paddy Dignam's funeral; Bloom rides out in the carriage and broods on death.",
+      "lat": 53.372077,
+      "lon": -6.278578
+    },
+    {
+      "episode": 7,
+      "name": "Freeman's Journal office",
+      "geocode": "Prince's Street North, Dublin",
+      "gloss": "The newspaper offices where Bloom tries to place an ad; the episode is set in the rhetoric of headlines.",
+      "lat": 53.348928,
+      "lon": -6.261178
+    },
+    {
+      "episode": 7,
+      "name": "Nelson's Pillar (site)",
+      "geocode": "General Post Office, O'Connell Street, Dublin",
+      "gloss": "The old Pillar on Sackville (O'Connell) Street; hub of the trams in the 'Aeolus' wind imagery.",
+      "lat": 53.349285,
+      "lon": -6.261051
+    },
+    {
+      "episode": 8,
+      "name": "Davy Byrne's",
+      "geocode": "Duke Street, Dublin, Ireland",
+      "gloss": "Bloom lunches on a gorgonzola sandwich and a glass of burgundy in the 'moral pub.'",
+      "quote": "He entered Davy Byrne's. Moral pub. He doesn't chat. Stands a drink now and then.",
+      "ref": "8.732",
+      "lat": 53.341854,
+      "lon": -6.258617
+    },
+    {
+      "episode": 9,
+      "name": "National Library of Ireland",
+      "geocode": "National Library of Ireland, Kildare Street, Dublin",
+      "gloss": "Stephen expounds his Hamlet theory to the librarians; Bloom passes between the doors.",
+      "lat": 53.341125,
+      "lon": -6.2545
+    },
+    {
+      "episode": 11,
+      "name": "Ormond Hotel",
+      "geocode": "Ormond Quay Upper, Dublin",
+      "gloss": "The barmaids Miss Douce and Miss Kennedy; music and song fill the 'Sirens' episode.",
+      "lat": 53.345843,
+      "lon": -6.269772
+    },
+    {
+      "episode": 12,
+      "name": "Barney Kiernan's (site)",
+      "geocode": "Little Britain Street, Dublin",
+      "gloss": "The pub of the nameless narrator and the hostile Citizen; Bloom is driven out under a hail of abuse.",
+      "lat": 53.349423,
+      "lon": -6.26943
+    },
+    {
+      "episode": 13,
+      "name": "Star of the Sea Church, Sandymount",
+      "geocode": "Leahy's Terrace, Sandymount, Dublin",
+      "gloss": "Its evening service counterpoints Gerty MacDowell on the strand below.",
+      "lat": 53.335287,
+      "lon": -6.219554
+    },
+    {
+      "episode": 14,
+      "name": "National Maternity Hospital, Holles Street",
+      "geocode": "National Maternity Hospital, Holles Street, Dublin",
+      "gloss": "Mina Purefoy gives birth; the prose gestates through the history of English styles.",
+      "lat": 53.34006,
+      "lon": -6.245854
+    },
+    {
+      "episode": 15,
+      "name": "Nighttown (Mabbot Street)",
+      "geocode": "Talbot Street, Dublin",
+      "gloss": "The brothel quarter (Monto); the hallucinatory 'Circe' drama. Mabbot Street is now Corporation Street/James Joyce Street.",
+      "lat": 53.350904,
+      "lon": -6.253352
+    },
+    {
+      "episode": 16,
+      "name": "Cabman's shelter, Butt Bridge",
+      "geocode": "Butt Bridge, Dublin",
+      "gloss": "Bloom takes the exhausted Stephen for coffee in the small hours.",
+      "lat": 53.347846,
+      "lon": -6.254962
+    },
+    {
+      "episode": 17,
+      "name": "7 Eccles Street (return)",
+      "geocode": "Eccles Street, Dublin",
+      "gloss": "Bloom, locked out, climbs over the area railings and lets Stephen in; the catechism of 'Ithaca.'",
+      "lat": 53.358368,
+      "lon": -6.266838
+    }
+  ]
+}

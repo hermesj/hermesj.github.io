@@ -1,0 +1,398 @@
+{
+ "type": "FeatureCollection",
+ "metadata": {
+  "title": "Mapping Joyce — Ulysses",
+  "note": "Original dataset compiled for mappingJoyce from the public-domain text of Ulysses (1922). Coordinates via OpenStreetMap/Nominatim.",
+  "license": "CC BY-NC 4.0"
+ },
+ "features": [
+  {
+   "type": "Feature",
+   "properties": {
+    "work": "Ulysses",
+    "episode": 1,
+    "story": "Telemachus",
+    "episode_de": "Telemachos",
+    "name": "Martello Tower, Sandycove",
+    "kind": "place",
+    "gloss": "Stephen Dedalus, Buck Mulligan and Haines lodge here; the novel opens on its gun-platform.",
+    "quote": "Stately, plump Buck Mulligan came from the stairhead, bearing a bowl of lather on which a mirror and a razor lay crossed.",
+    "ref": "1.1"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -6.113608,
+     53.288671
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "work": "Ulysses",
+    "episode": 1,
+    "story": "Telemachus",
+    "episode_de": "Telemachos",
+    "name": "The Forty Foot",
+    "kind": "place",
+    "gloss": "The men's bathing place below the tower where Mulligan goes to swim."
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -6.113699,
+     53.289486
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "work": "Ulysses",
+    "episode": 2,
+    "story": "Nestor",
+    "episode_de": "Nestor",
+    "name": "Mr Deasy's school, Dalkey",
+    "kind": "place",
+    "gloss": "Stephen teaches a morning history class and is paid by the headmaster Mr Deasy."
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -6.107438,
+     53.278281
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "work": "Ulysses",
+    "episode": 3,
+    "story": "Proteus",
+    "episode_de": "Proteus",
+    "name": "Sandymount Strand",
+    "kind": "place",
+    "gloss": "Stephen walks the tideline alone, meditating on perception and the 'ineluctable modality of the visible.'",
+    "quote": "Ineluctable modality of the visible: at least that if no more, thought through my eyes.",
+    "ref": "3.1"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -6.208006,
+     53.327652
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "work": "Ulysses",
+    "episode": 4,
+    "story": "Calypso",
+    "episode_de": "Kalypso",
+    "name": "7 Eccles Street",
+    "kind": "place",
+    "gloss": "Leopold and Molly Bloom's home; the Odyssey of Bloom's day begins and ends here.",
+    "quote": "Mr Leopold Bloom ate with relish the inner organs of beasts and fowls.",
+    "ref": "4.1"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -6.266838,
+     53.358368
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "work": "Ulysses",
+    "episode": 4,
+    "story": "Calypso",
+    "episode_de": "Kalypso",
+    "name": "St George's Church",
+    "kind": "place",
+    "gloss": "Its bells (‘Heigho! Heigho!’) sound the hour over Bloom's breakfast."
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -6.262803,
+     53.357351
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "work": "Ulysses",
+    "episode": 5,
+    "story": "Lotus Eaters",
+    "episode_de": "Lotophagen",
+    "name": "Sweny's Pharmacy",
+    "kind": "place",
+    "gloss": "Bloom buys the lemon soap that he carries through the day."
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -6.250551,
+     53.34187
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "work": "Ulysses",
+    "episode": 5,
+    "story": "Lotus Eaters",
+    "episode_de": "Lotophagen",
+    "name": "Westland Row Station",
+    "kind": "place",
+    "gloss": "Formerly Westland Row; Bloom collects a letter under the name Henry Flower."
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -6.248463,
+     53.343335
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "work": "Ulysses",
+    "episode": 6,
+    "story": "Hades",
+    "episode_de": "Hades",
+    "name": "Glasnevin Cemetery",
+    "kind": "place",
+    "gloss": "Paddy Dignam's funeral; Bloom rides out in the carriage and broods on death."
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -6.278578,
+     53.372077
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "work": "Ulysses",
+    "episode": 7,
+    "story": "Aeolus",
+    "episode_de": "Aiolos",
+    "name": "Freeman's Journal office",
+    "kind": "place",
+    "gloss": "The newspaper offices where Bloom tries to place an ad; the episode is set in the rhetoric of headlines."
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -6.261178,
+     53.348928
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "work": "Ulysses",
+    "episode": 7,
+    "story": "Aeolus",
+    "episode_de": "Aiolos",
+    "name": "Nelson's Pillar (site)",
+    "kind": "place",
+    "gloss": "The old Pillar on Sackville (O'Connell) Street; hub of the trams in the 'Aeolus' wind imagery."
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -6.261051,
+     53.349285
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "work": "Ulysses",
+    "episode": 8,
+    "story": "Lestrygonians",
+    "episode_de": "Laistrygonen",
+    "name": "Davy Byrne's",
+    "kind": "place",
+    "gloss": "Bloom lunches on a gorgonzola sandwich and a glass of burgundy in the 'moral pub.'",
+    "quote": "He entered Davy Byrne's. Moral pub. He doesn't chat. Stands a drink now and then.",
+    "ref": "8.732"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -6.258617,
+     53.341854
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "work": "Ulysses",
+    "episode": 9,
+    "story": "Scylla and Charybdis",
+    "episode_de": "Skylla und Charybdis",
+    "name": "National Library of Ireland",
+    "kind": "place",
+    "gloss": "Stephen expounds his Hamlet theory to the librarians; Bloom passes between the doors."
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -6.2545,
+     53.341125
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "work": "Ulysses",
+    "episode": 11,
+    "story": "Sirens",
+    "episode_de": "Sirenen",
+    "name": "Ormond Hotel",
+    "kind": "place",
+    "gloss": "The barmaids Miss Douce and Miss Kennedy; music and song fill the 'Sirens' episode."
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -6.269772,
+     53.345843
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "work": "Ulysses",
+    "episode": 12,
+    "story": "Cyclops",
+    "episode_de": "Zyklop",
+    "name": "Barney Kiernan's (site)",
+    "kind": "place",
+    "gloss": "The pub of the nameless narrator and the hostile Citizen; Bloom is driven out under a hail of abuse."
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -6.26943,
+     53.349423
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "work": "Ulysses",
+    "episode": 13,
+    "story": "Nausicaa",
+    "episode_de": "Nausikaa",
+    "name": "Star of the Sea Church, Sandymount",
+    "kind": "place",
+    "gloss": "Its evening service counterpoints Gerty MacDowell on the strand below."
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -6.219554,
+     53.335287
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "work": "Ulysses",
+    "episode": 14,
+    "story": "Oxen of the Sun",
+    "episode_de": "Die Rinder des Sonnengottes",
+    "name": "National Maternity Hospital, Holles Street",
+    "kind": "place",
+    "gloss": "Mina Purefoy gives birth; the prose gestates through the history of English styles."
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -6.245854,
+     53.34006
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "work": "Ulysses",
+    "episode": 15,
+    "story": "Circe",
+    "episode_de": "Kirke",
+    "name": "Nighttown (Mabbot Street)",
+    "kind": "place",
+    "gloss": "The brothel quarter (Monto); the hallucinatory 'Circe' drama. Mabbot Street is now Corporation Street/James Joyce Street."
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -6.253352,
+     53.350904
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "work": "Ulysses",
+    "episode": 16,
+    "story": "Eumaeus",
+    "episode_de": "Eumaios",
+    "name": "Cabman's shelter, Butt Bridge",
+    "kind": "place",
+    "gloss": "Bloom takes the exhausted Stephen for coffee in the small hours."
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -6.254962,
+     53.347846
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "work": "Ulysses",
+    "episode": 17,
+    "story": "Ithaca",
+    "episode_de": "Ithaka",
+    "name": "7 Eccles Street (return)",
+    "kind": "place",
+    "gloss": "Bloom, locked out, climbs over the area railings and lets Stephen in; the catechism of 'Ithaca.'"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -6.266838,
+     53.358368
+    ]
+   }
+  }
+ ]
+}

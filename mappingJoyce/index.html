@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mapping Joyce — Dubliners</title>
+<meta name="description" content="An interactive OpenStreetMap of every place in James Joyce's Dubliners — derived from the Mapping Dubliners Project (CC BY-NC 4.0).">
+<meta property="og:title" content="Mapping Joyce — Dubliners">
+<meta property="og:description" content="The places of James Joyce's Dubliners, mapped on OpenStreetMap.">
+<meta property="og:url" content="https://hermesj.github.io/mappingJoyce/">
+<meta property="og:type" content="website">
+
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+      integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
+<link rel="stylesheet" href="joyce.css">
+</head>
+<body>
+
+<div id="app">
+
+  <header>
+    <h1>Mapping Joyce</h1>
+    <span class="work-switch">
+      <a id="work-dubliners" class="active" onclick="switchWork('dubliners')">Dubliners</a>
+      <a id="work-ulysses" onclick="switchWork('ulysses')">Ulysses</a>
+      <a id="work-portrait" onclick="switchWork('portrait')">Portrait</a>
+    </span>
+    <span class="tagline" id="tagline">The places of James Joyce's Dubliners, mapped.</span>
+    <span class="lang-switch">
+      <a id="btnDe" onclick="switchLang('de')">Deutsch</a>
+      <a id="btnEn" class="active" onclick="switchLang('en')">English</a>
+    </span>
+  </header>
+
+  <nav id="sidebar">
+    <div class="sidebar-tools">
+      <button id="btnShowAll" type="button">Show all</button>
+      <button id="btnHideAll" type="button">Hide all</button>
+    </div>
+    <div id="story-list"></div>
+  </nav>
+
+  <div id="map"></div>
+
+</div>
+
+<div class="credit" id="credit"></div>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+        integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+<script src="joyce.js"></script>
+
+</body>
+</html>

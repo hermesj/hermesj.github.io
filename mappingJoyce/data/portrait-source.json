@@ -1,0 +1,167 @@
+{
+  "_comment": "Human-editable source for the Portrait layer, grouped by the novel's 5 chapters. Geocoded by helpers/geocode_source.py via OpenStreetMap/Nominatim into portrait.geojson. To add a place: copy an entry, set 'group' (chapter 1-5), 'name', and a 'geocode' query (a real, findable place). Leave 'lat'/'lon' out and the geocoder fills + caches them. 'quote'/'ref' are optional and SHOULD be verified against the public-domain text (Gutenberg #4217) before publishing.",
+  "work": "Portrait",
+  "groups": [
+    {
+      "n": 1,
+      "en": "Chapter 1",
+      "de": "Kapitel 1"
+    },
+    {
+      "n": 2,
+      "en": "Chapter 2",
+      "de": "Kapitel 2"
+    },
+    {
+      "n": 3,
+      "en": "Chapter 3",
+      "de": "Kapitel 3"
+    },
+    {
+      "n": 4,
+      "en": "Chapter 4",
+      "de": "Kapitel 4"
+    },
+    {
+      "n": 5,
+      "en": "Chapter 5",
+      "de": "Kapitel 5"
+    }
+  ],
+  "places": [
+    {
+      "group": 1,
+      "name": "Clongowes Wood College",
+      "geocode": "Clongowes Wood College, Clane, County Kildare, Ireland",
+      "gloss": "Stephen's first boarding school; the square ditch, the infirmary, and the unjust pandybatting by Father Dolan.",
+      "quote": "Once upon a time and a very good time it was there was a moocow coming down along the road and this moocow that was coming down along the road met a nicens little boy named baby tuckoo.",
+      "ref": "Ch. 1",
+      "lat": 53.310977,
+      "lon": -6.686851
+    },
+    {
+      "group": 1,
+      "name": "The Dedalus home, Bray",
+      "geocode": "Martello Terrace, Bray, County Wicklow, Ireland",
+      "gloss": "The bitter Christmas-dinner quarrel over Parnell between Dante, Mr Casey and Simon Dedalus.",
+      "lat": 53.207324,
+      "lon": -6.101173
+    },
+    {
+      "group": 2,
+      "name": "Blackrock",
+      "geocode": "Blackrock, County Dublin, Ireland",
+      "gloss": "The family's home in faded prosperity; Stephen's Monte Cristo daydreams and evening runs with Mike Flynn.",
+      "lat": 53.301864,
+      "lon": -6.178834
+    },
+    {
+      "group": 2,
+      "name": "Belvedere College",
+      "geocode": "Belvedere College, Great Denmark Street, Dublin, Ireland",
+      "gloss": "Stephen's Jesuit day school in the city; the Whitsuntide play and his growing inward estrangement.",
+      "lat": 53.355758,
+      "lon": -6.26243
+    },
+    {
+      "group": 2,
+      "name": "Cork",
+      "geocode": "Cork, Ireland",
+      "gloss": "Stephen travels with his father to sell the last of the family property; he feels utterly estranged.",
+      "lat": 51.898514,
+      "lon": -8.472642
+    },
+    {
+      "group": 2,
+      "name": "Queen's College, Cork",
+      "geocode": "University College Cork, Cork, Ireland",
+      "gloss": "In his father's old anatomy theatre the word ‘Foetus’ cut into a desk jolts Stephen with shame.",
+      "lat": 51.894701,
+      "lon": -8.49031
+    },
+    {
+      "group": 2,
+      "name": "Nighttown",
+      "geocode": "Foley Street, Dublin, Ireland",
+      "gloss": "The brothel quarter (Monto); at the chapter's close Stephen wanders into the arms of a prostitute.",
+      "lat": 53.351375,
+      "lon": -6.253219
+    },
+    {
+      "group": 3,
+      "name": "The retreat, Belvedere College",
+      "geocode": "Belvedere College, Great Denmark Street, Dublin, Ireland",
+      "gloss": "The three-day retreat and the terrifying sermons on death and hell that drive Stephen to repentance.",
+      "lat": 53.355758,
+      "lon": -6.26243
+    },
+    {
+      "group": 3,
+      "name": "Church Street chapel",
+      "geocode": "St Mary of the Angels, Church Street, Dublin, Ireland",
+      "gloss": "Across the city, in terror of damnation, Stephen makes his confession to a Capuchin priest.",
+      "lat": 53.3476,
+      "lon": -6.2772
+    },
+    {
+      "group": 4,
+      "name": "Bull Wall, Dollymount",
+      "geocode": "Bull Wall, Dublin, Ireland",
+      "gloss": "The wading girl — Stephen's great epiphany of beauty and his calling to art rather than priesthood.",
+      "quote": "A girl stood before him in midstream, alone and still, gazing out to sea. She seemed like one whom magic had changed into the likeness of a strange and beautiful seabird.",
+      "ref": "Ch. 4",
+      "lat": 53.356919,
+      "lon": -6.174428
+    },
+    {
+      "group": 4,
+      "name": "North Bull Island",
+      "geocode": "North Bull Island, Dublin, Ireland",
+      "gloss": "Stephen crosses the wooden bridge to the strand where, wading, he sees the bird-girl.",
+      "lat": 53.374037,
+      "lon": -6.141645
+    },
+    {
+      "group": 4,
+      "name": "The director's office, Belvedere",
+      "geocode": "Belvedere College, Great Denmark Street, Dublin, Ireland",
+      "gloss": "The director sounds Stephen on a vocation to the priesthood — an offer he silently declines.",
+      "lat": 53.355758,
+      "lon": -6.26243
+    },
+    {
+      "group": 5,
+      "name": "University College Dublin (Newman House)",
+      "geocode": "Newman House, St Stephen's Green, Dublin, Ireland",
+      "gloss": "Stephen the university student; the dean of studies, the aesthetic theory, the villanelle.",
+      "lat": 53.337148,
+      "lon": -6.260554
+    },
+    {
+      "group": 5,
+      "name": "National Library of Ireland",
+      "geocode": "National Library of Ireland, Kildare Street, Dublin, Ireland",
+      "gloss": "On its steps Stephen watches the birds and argues with Cranly about belief and exile.",
+      "lat": 53.341125,
+      "lon": -6.2545
+    },
+    {
+      "group": 5,
+      "name": "St Stephen's Green",
+      "geocode": "St Stephen's Green, Dublin, Ireland",
+      "gloss": "The Green Stephen crosses daily, emblem of the city he is preparing to leave.",
+      "lat": 53.338052,
+      "lon": -6.259023
+    },
+    {
+      "group": 5,
+      "name": "Kingstown Harbour (departure)",
+      "geocode": "Dún Laoghaire Harbour, County Dublin, Ireland",
+      "gloss": "The diary's close: Stephen resolves to leave Ireland for the continent.",
+      "quote": "Welcome, O life! I go to encounter for the millionth time the reality of experience and to forge in the smithy of my soul the uncreated conscience of my race.",
+      "ref": "Ch. 5",
+      "lat": 53.298595,
+      "lon": -6.134469
+    }
+  ]
+}
