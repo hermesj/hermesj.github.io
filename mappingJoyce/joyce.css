@@ -223,6 +223,14 @@ header .tagline {
   color: var(--ink);
   max-width: 280px;
 }
+/* When a long quote exceeds maxHeight, Leaflet wraps the content in this
+   scrollable container — give it a touch of breathing room and a subtle
+   scrollbar. */
+.leaflet-popup-scrolled {
+  padding-right: 0.4em;
+  border-bottom: 1px solid rgba(60, 40, 20, 0.12);
+  scrollbar-width: thin;
+}
 .pop-name {
   font-weight: 600;
   font-size: 1rem;

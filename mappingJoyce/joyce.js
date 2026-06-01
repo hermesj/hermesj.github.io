@@ -177,7 +177,10 @@
             });
           }
           if (layer) {
-            layer.bindPopup(popupHtml(p), { maxWidth: 300 });
+            // maxHeight lets Leaflet add a scrollbar when a long quote would
+            // otherwise overflow the map and get clipped; autoPan (default)
+            // also nudges the popup into view.
+            layer.bindPopup(popupHtml(p), { maxWidth: 300, maxHeight: 260 });
             layer.addTo(grp);
             (placesByGroup[p.story] || (placesByGroup[p.story] = [])).push({
               name: p.name,
