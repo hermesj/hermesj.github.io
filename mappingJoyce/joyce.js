@@ -95,7 +95,12 @@
 
   var DUBLIN = [53.3478, -6.2597];
   var params = new URLSearchParams(location.search);
-  var lang = (params.get("lang") || (navigator.language || "en").slice(0, 2)) === "de" ? "de" : "en";
+  // German UI is temporarily disabled: the literary quotes are English (the
+  // source text), so a German chrome would be only half-translated. The i18n
+  // dictionary and the per-group German titles are kept intact — re-enable by
+  // restoring the .lang-switch in index.html and the detection line below:
+  //   var lang = (params.get("lang") || (navigator.language||"en").slice(0,2)) === "de" ? "de" : "en";
+  var lang = "en";
   var work = WORKS[params.get("work")] ? params.get("work") : "dubliners";
 
   var map, layers = {}, bounds = {};
@@ -229,8 +234,9 @@
     document.getElementById("btnHideAll").textContent = t.hideAll;
     document.getElementById("credit").innerHTML =
       work === "ulysses" ? t.creditU : work === "portrait" ? t.creditP : t.creditD;
-    document.getElementById("btnDe").className = lang === "de" ? "active" : "";
-    document.getElementById("btnEn").className = lang === "en" ? "active" : "";
+    var bd = document.getElementById("btnDe"), be = document.getElementById("btnEn");
+    if (bd) bd.className = lang === "de" ? "active" : "";
+    if (be) be.className = lang === "en" ? "active" : "";
     ["dubliners", "ulysses", "portrait"].forEach(function (w) {
       var el = document.getElementById("work-" + w);
       el.className = work === w ? "active" : "";
