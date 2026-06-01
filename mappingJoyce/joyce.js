@@ -147,6 +147,15 @@
     layers = {}; bounds = {};
   }
 
+  // Cap a popup to the map pane's pixel height (minus room for the tip,
+  // wrapper chrome and autoPan padding). The pane sits below the header, so a
+  // popup no taller than this can never be clipped behind it; anything longer
+  // gets Leaflet's scrollbar. Pane height is independent of zoom — only the
+  // viewport size matters — so this is stable except across window resizes.
+  function popupMaxHeight() {
+    return Math.max(120, (map ? map.getSize().y : 600) - 64);
+  }
+
   function loadWork() {
     clearLayers();
     groupsOf().forEach(function (g) { layers[g.key] = L.layerGroup().addTo(map); });
@@ -177,10 +186,10 @@
             });
           }
           if (layer) {
-            // maxHeight lets Leaflet add a scrollbar when a long quote would
-            // otherwise overflow the map and get clipped; autoPan (default)
-            // also nudges the popup into view.
-            layer.bindPopup(popupHtml(p), { maxWidth: 300, maxHeight: 260 });
+            // maxHeight (sized to the map pane) lets Leaflet add a scrollbar
+            // when a long quote would otherwise overflow; autoPan then nudges
+            // the popup fully into view below the header.
+            layer.bindPopup(popupHtml(p), { maxWidth: 300, maxHeight: popupMaxHeight() });
             layer.addTo(grp);
             (placesByGroup[p.story] || (placesByGroup[p.story] = [])).push({
               name: p.name,
@@ -206,12 +215,23 @@
       layers[groupKey].addTo(map);
       if (item) item.classList.remove("off");
     }
+    // Open the popup only once the camera has settled: opening mid-flight lets
+    // the in-progress flyTo re-centre the marker and override the popup's
+    // autoPan, which is what pushed tall popups up behind the header.
+    // Open once the camera has come to rest. Sizing the popup and seating it
+    // below the header is handled centrally by the map's "popupopen" handler,
+    // so opening on an idle map is all that's needed here.
+    var opened = false;
+    function open() { if (!opened) { opened = true; entry.layer.openPopup(); } }
+    map.once("moveend", function () { setTimeout(open, 60); });
+    setTimeout(open, 1100); // fallback if the view doesn't actually move
     if (entry.kind === "route" && entry.layer.getBounds) {
       map.flyToBounds(entry.layer.getBounds().pad(0.3));
     } else if (entry.layer.getLatLng) {
       map.flyTo(entry.layer.getLatLng(), 16);
+    } else {
+      open();
     }
-    entry.layer.openPopup();
   }
 
   function buildSidebar() {
@@ -320,6 +340,26 @@
       maxZoom: 19,
       attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>'
     }).addTo(map);
+
+    // Central popup sizing + placement, for every open path (sidebar click or
+    // a direct marker click). Cap the height to the map pane (so a long quote
+    // scrolls instead of overflowing) and converge autoPan over a few settle
+    // steps so the popup ends up fully inside the pane, below the header — a
+    // single autoPan pass undershoots for tall popups.
+    map.on("popupopen", function (e) {
+      var p = e.popup;
+      p.options.maxHeight = popupMaxHeight();
+      p.update();
+      [60, 320, 650].forEach(function (d) {
+        setTimeout(function () { if (p.isOpen && p.isOpen() && p._adjustPan) p._adjustPan(); }, d);
+      });
+    });
+
+    // Re-fit an open popup when the window (and thus the map pane) is resized.
+    map.on("resize", function () {
+      var p = map._popup;
+      if (p && p.isOpen()) { p.options.maxHeight = popupMaxHeight(); p.update(); if (p._adjustPan) p._adjustPan(); }
+    });
 
     applyLang();
     loadWork();
