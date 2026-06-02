@@ -6,6 +6,10 @@ of the [Mapping Dubliners Project](https://mappingdubliners.org/).
 
 Live: https://hermesj.github.io/mappingJoyce/
 
+Built with the **[litmap](https://github.com/hermesj/litmap)** engine — the
+generic, config-driven literary-geography engine extracted from this project.
+Mapping Joyce is its reference example.
+
 ## What it shows
 
 Three works share one map, switched via the header tabs (or
