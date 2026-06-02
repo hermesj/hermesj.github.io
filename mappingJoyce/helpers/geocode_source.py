@@ -22,12 +22,14 @@ Usage:
 """
 import json
 import os
+import subprocess
 import sys
 import time
 import urllib.parse
 import urllib.request
 
 NOMINATIM = "https://nominatim.openstreetmap.org/search"
+OSRM = "https://router.project-osrm.org/route/v1/driving/"
 UA = "mappingJoyce/1.0 (https://hermesj.github.io/mappingJoyce/ ; geocoding Joyce landmarks)"
 
 
@@ -39,6 +41,23 @@ def geocode(query):
     if not data:
         return None
     return round(float(data[0]["lat"]), 6), round(float(data[0]["lon"]), 6)
+
+
+def route(frm, to):
+    """Road-following [lon,lat] path between two [lat,lon] endpoints via OSRM.
+
+    Uses curl rather than urllib: the public OSRM demo server's TLS handshake
+    fails under Python's ssl here, while curl negotiates it fine.
+    """
+    pair = "{},{};{},{}".format(frm[1], frm[0], to[1], to[0])
+    url = OSRM + pair + "?overview=full&geometries=geojson"
+    out = subprocess.run(["curl", "-s", "-m", "30", "-A", UA, url],
+                         capture_output=True, text=True, timeout=40)
+    data = json.loads(out.stdout)
+    if data.get("code") != "Ok" or not data.get("routes"):
+        return None
+    line = data["routes"][0]["geometry"]["coordinates"]
+    return [[round(c[0], 6), round(c[1], 6)] for c in line]
 
 
 def main(src_path, out_path):
@@ -80,13 +99,46 @@ def main(src_path, out_path):
             "name": place["name"],
             "kind": place.get("kind", "place"),
         }
-        for k in ("gloss", "quote", "ref"):
+        for k in ("time", "gloss", "quote", "ref"):
             if place.get(k):
                 props[k] = place[k]
         features.append({
             "type": "Feature",
             "properties": props,
             "geometry": {"type": "Point", "coordinates": [lon, lat]},
+        })
+
+    # Optional road-following routes (LineStrings) between [lat,lon] endpoints.
+    for r in src.get("routes", []):
+        coords = r.get("coords")
+        if not coords:
+            print(f"  routing: {r['name']!r} ...", end=" ", flush=True)
+            try:
+                coords = route(r["from"], r["to"])
+            except Exception as e:
+                print(f"FAILED ({e})")
+                continue
+            time.sleep(1.1)  # courtesy rate limit
+            if not coords:
+                print("no route — check the endpoints")
+                continue
+            r["coords"] = coords
+            changed = True
+            print(f"{len(coords)} points")
+
+        gn = r.get("group", r.get("episode"))
+        g = by_n.get(gn, {})
+        props = {
+            "work": work, "group": gn, "story": g.get("en", str(gn)),
+            "group_de": g.get("de", ""), "name": r["name"], "kind": "route",
+        }
+        for k in ("time", "gloss", "quote", "ref"):
+            if r.get(k):
+                props[k] = r[k]
+        features.append({
+            "type": "Feature",
+            "properties": props,
+            "geometry": {"type": "LineString", "coordinates": coords},
         })
 
     if changed:

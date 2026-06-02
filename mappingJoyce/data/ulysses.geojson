@@ -2,7 +2,7 @@
  "type": "FeatureCollection",
  "metadata": {
   "title": "Mapping Joyce — Ulysses",
-  "note": "Original dataset compiled for mappingJoyce from the public-domain text of Ulysses (1922). Coordinates via OpenStreetMap/Nominatim.",
+  "note": "Original dataset compiled for mappingJoyce from the public-domain text. Coordinates via OpenStreetMap/Nominatim.",
   "license": "CC BY-NC 4.0"
  },
  "features": [
@@ -10,12 +10,13 @@
    "type": "Feature",
    "properties": {
     "work": "Ulysses",
-    "episode": 1,
+    "group": 1,
     "story": "Telemachus",
-    "episode_de": "Telemachos",
-    "name": "Martello Tower, Sandycove",
+    "group_de": "Telemachos",
+    "name": "The Joyce Tower, Sandycove",
     "kind": "place",
-    "gloss": "Stephen Dedalus, Buck Mulligan and Haines lodge here; the novel opens on its gun-platform.",
+    "time": "8am",
+    "gloss": "Stephen, Mulligan and Haines lodge in the Martello tower; the novel opens on its gun-platform.",
     "quote": "Stately, plump Buck Mulligan came from the stairhead, bearing a bowl of lather on which a mirror and a razor lay crossed.",
     "ref": "1.1"
    },
@@ -31,12 +32,13 @@
    "type": "Feature",
    "properties": {
     "work": "Ulysses",
-    "episode": 1,
+    "group": 1,
     "story": "Telemachus",
-    "episode_de": "Telemachos",
+    "group_de": "Telemachos",
     "name": "The Forty Foot",
     "kind": "place",
-    "gloss": "The men's bathing place below the tower where Mulligan goes to swim."
+    "time": "8am",
+    "gloss": "The men's bathing place just below the tower, where Mulligan goes down to swim — 'the snotgreen sea, the scrotumtightening sea.'"
    },
    "geometry": {
     "type": "Point",
@@ -50,18 +52,19 @@
    "type": "Feature",
    "properties": {
     "work": "Ulysses",
-    "episode": 2,
+    "group": 2,
     "story": "Nestor",
-    "episode_de": "Nestor",
-    "name": "Mr Deasy's school, Dalkey",
+    "group_de": "Nestor",
+    "name": "The School, Dalkey",
     "kind": "place",
-    "gloss": "Stephen teaches a morning history class and is paid by the headmaster Mr Deasy."
+    "time": "9.45am",
+    "gloss": "Mr Deasy's boys' school at Summerfield; Stephen teaches a history class and is paid his wages."
    },
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -6.107438,
-     53.278281
+     -6.109231,
+     53.273695
     ]
    }
   },
@@ -69,12 +72,13 @@
    "type": "Feature",
    "properties": {
     "work": "Ulysses",
-    "episode": 3,
+    "group": 3,
     "story": "Proteus",
-    "episode_de": "Proteus",
+    "group_de": "Proteus",
     "name": "Sandymount Strand",
     "kind": "place",
-    "gloss": "Stephen walks the tideline alone, meditating on perception and the 'ineluctable modality of the visible.'",
+    "time": "11am",
+    "gloss": "Stephen walks the tideline alone, meditating on perception — the 'ineluctable modality of the visible.'",
     "quote": "Ineluctable modality of the visible: at least that if no more, thought through my eyes.",
     "ref": "3.1"
    },
@@ -90,12 +94,13 @@
    "type": "Feature",
    "properties": {
     "work": "Ulysses",
-    "episode": 4,
+    "group": 4,
     "story": "Calypso",
-    "episode_de": "Kalypso",
-    "name": "7 Eccles Street",
+    "group_de": "Kalypso",
+    "name": "No. 7 Eccles Street",
     "kind": "place",
-    "gloss": "Leopold and Molly Bloom's home; the Odyssey of Bloom's day begins and ends here.",
+    "time": "8am",
+    "gloss": "Bloom's morning at home: he fries a kidney and brings Molly her breakfast.",
     "quote": "Mr Leopold Bloom ate with relish the inner organs of beasts and fowls.",
     "ref": "4.1"
    },
@@ -111,18 +116,19 @@
    "type": "Feature",
    "properties": {
     "work": "Ulysses",
-    "episode": 4,
-    "story": "Calypso",
-    "episode_de": "Kalypso",
-    "name": "St George's Church",
+    "group": 5,
+    "story": "Lotus Eaters",
+    "group_de": "Lotophagen",
+    "name": "Sir John Rogerson's Quay",
     "kind": "place",
-    "gloss": "Its bells (‘Heigho! Heigho!’) sound the hour over Bloom's breakfast."
+    "time": "9.45am",
+    "gloss": "Bloom begins his drifting, lotus-scented morning along the river quays."
    },
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -6.262803,
-     53.357351
+     -6.239241,
+     53.346054
     ]
    }
   },
@@ -130,12 +136,33 @@
    "type": "Feature",
    "properties": {
     "work": "Ulysses",
-    "episode": 5,
+    "group": 5,
     "story": "Lotus Eaters",
-    "episode_de": "Lotophagen",
+    "group_de": "Lotophagen",
+    "name": "Westland Row Post Office",
+    "kind": "place",
+    "time": "9.45am",
+    "gloss": "Bloom collects Martha Clifford's letter under the name Henry Flower."
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -6.249887,
+     53.339917
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "work": "Ulysses",
+    "group": 5,
+    "story": "Lotus Eaters",
+    "group_de": "Lotophagen",
     "name": "Sweny's Pharmacy",
     "kind": "place",
-    "gloss": "Bloom buys the lemon soap that he carries through the day."
+    "time": "9.45am",
+    "gloss": "Bloom buys the cake of lemon soap he carries through the day."
    },
    "geometry": {
     "type": "Point",
@@ -149,18 +176,19 @@
    "type": "Feature",
    "properties": {
     "work": "Ulysses",
-    "episode": 5,
-    "story": "Lotus Eaters",
-    "episode_de": "Lotophagen",
-    "name": "Westland Row Station",
+    "group": 6,
+    "story": "Hades",
+    "group_de": "Hades",
+    "name": "Paddy Dignam's house",
     "kind": "place",
-    "gloss": "Formerly Westland Row; Bloom collects a letter under the name Henry Flower."
+    "time": "11am",
+    "gloss": "The funeral procession sets out from the dead man's house in Sandymount."
    },
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -6.248463,
-     53.343335
+     -6.223359,
+     53.335519
     ]
    }
   },
@@ -168,12 +196,13 @@
    "type": "Feature",
    "properties": {
     "work": "Ulysses",
-    "episode": 6,
+    "group": 6,
     "story": "Hades",
-    "episode_de": "Hades",
+    "group_de": "Hades",
     "name": "Glasnevin Cemetery",
     "kind": "place",
-    "gloss": "Paddy Dignam's funeral; Bloom rides out in the carriage and broods on death."
+    "time": "11am",
+    "gloss": "Dignam's burial; Bloom broods on death and the dead among the graves."
    },
    "geometry": {
     "type": "Point",
@@ -187,12 +216,13 @@
    "type": "Feature",
    "properties": {
     "work": "Ulysses",
-    "episode": 7,
+    "group": 7,
     "story": "Aeolus",
-    "episode_de": "Aiolos",
-    "name": "Freeman's Journal office",
+    "group_de": "Aiolos",
+    "name": "Freeman's Journal / Evening Telegraph",
     "kind": "place",
-    "gloss": "The newspaper offices where Bloom tries to place an ad; the episode is set in the rhetoric of headlines."
+    "time": "12.15pm",
+    "gloss": "The newspaper offices; the episode of windy rhetoric and headlines."
    },
    "geometry": {
     "type": "Point",
@@ -206,18 +236,19 @@
    "type": "Feature",
    "properties": {
     "work": "Ulysses",
-    "episode": 7,
-    "story": "Aeolus",
-    "episode_de": "Aiolos",
-    "name": "Nelson's Pillar (site)",
+    "group": 8,
+    "story": "Lestrygonians",
+    "group_de": "Laistrygonen",
+    "name": "Graham Lemon's sweetshop",
     "kind": "place",
-    "gloss": "The old Pillar on Sackville (O'Connell) Street; hub of the trams in the 'Aeolus' wind imagery."
+    "time": "1.10pm",
+    "gloss": "Bloom is handed the 'Elijah is coming' throwaway outside Lemon's, 49 Lower O'Connell Street."
    },
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -6.261051,
-     53.349285
+     -6.259271,
+     53.34793
     ]
    }
   },
@@ -225,11 +256,12 @@
    "type": "Feature",
    "properties": {
     "work": "Ulysses",
-    "episode": 8,
+    "group": 8,
     "story": "Lestrygonians",
-    "episode_de": "Laistrygonen",
-    "name": "Davy Byrne's",
+    "group_de": "Laistrygonen",
+    "name": "Davy Byrne's pub",
     "kind": "place",
+    "time": "1.10pm",
     "gloss": "Bloom lunches on a gorgonzola sandwich and a glass of burgundy in the 'moral pub.'",
     "quote": "He entered Davy Byrne's. Moral pub. He doesn't chat. Stands a drink now and then.",
     "ref": "8.732"
@@ -246,12 +278,13 @@
    "type": "Feature",
    "properties": {
     "work": "Ulysses",
-    "episode": 9,
+    "group": 9,
     "story": "Scylla and Charybdis",
-    "episode_de": "Skylla und Charybdis",
+    "group_de": "Skylla und Charybdis",
     "name": "National Library of Ireland",
     "kind": "place",
-    "gloss": "Stephen expounds his Hamlet theory to the librarians; Bloom passes between the doors."
+    "time": "2.10pm",
+    "gloss": "Stephen expounds his theory of Hamlet to the librarians; Bloom passes between the doors."
    },
    "geometry": {
     "type": "Point",
@@ -265,11 +298,292 @@
    "type": "Feature",
    "properties": {
     "work": "Ulysses",
-    "episode": 11,
-    "story": "Sirens",
-    "episode_de": "Sirenen",
-    "name": "Ormond Hotel",
+    "group": 10,
+    "story": "Wandering Rocks",
+    "group_de": "Irrfelsen",
+    "name": "Fr Conmee: Jesuit house",
     "kind": "place",
+    "time": "2.55pm",
+    "gloss": "Father Conmee sets out from the Jesuit house in Gardiner Street on his afternoon walk."
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -6.260377,
+     53.358059
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "work": "Ulysses",
+    "group": 10,
+    "story": "Wandering Rocks",
+    "group_de": "Irrfelsen",
+    "name": "Fr Conmee: Marino",
+    "kind": "place",
+    "time": "2.55pm",
+    "gloss": "Father Conmee's walk carries him out towards Marino."
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -6.234749,
+     53.366309
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "work": "Ulysses",
+    "group": 10,
+    "story": "Wandering Rocks",
+    "group_de": "Irrfelsen",
+    "name": "Blazes Boylan: Thornton's",
+    "kind": "place",
+    "time": "2.55pm",
+    "gloss": "Blazes Boylan orders fruit and wine for Molly at Thornton's, 63 Grafton Street."
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -6.259887,
+     53.342087
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "work": "Ulysses",
+    "group": 10,
+    "story": "Wandering Rocks",
+    "group_de": "Irrfelsen",
+    "name": "Ned Lambert: St Mary's Abbey",
+    "kind": "place",
+    "time": "2.55pm",
+    "gloss": "Ned Lambert shows the historic Chapter House of St Mary's Abbey to a visiting clergyman."
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -6.269465,
+     53.347407
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "work": "Ulysses",
+    "group": 10,
+    "story": "Wandering Rocks",
+    "group_de": "Irrfelsen",
+    "name": "Lenehan & M'Coy: Crampton Court",
+    "kind": "place",
+    "time": "2.55pm",
+    "gloss": "Lenehan and M'Coy cut through Crampton Court, gossiping about Boylan and Molly."
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -6.266265,
+     53.344618
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "work": "Ulysses",
+    "group": 10,
+    "story": "Wandering Rocks",
+    "group_de": "Irrfelsen",
+    "name": "Mr Bloom: Merchant's Arch",
+    "kind": "place",
+    "time": "2.55pm",
+    "gloss": "Bloom browses the book-barrows by Merchant's Arch and chooses 'Sweets of Sin' for Molly."
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -6.262869,
+     53.345738
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "work": "Ulysses",
+    "group": 10,
+    "story": "Wandering Rocks",
+    "group_de": "Irrfelsen",
+    "name": "Dilly Dedalus: Dillon's auction rooms",
+    "kind": "place",
+    "time": "2.55pm",
+    "gloss": "Dilly Dedalus waits outside Dillon's auction rooms, 25 Bachelor's Walk."
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -6.261846,
+     53.346945
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "work": "Ulysses",
+    "group": 10,
+    "story": "Wandering Rocks",
+    "group_de": "Irrfelsen",
+    "name": "Mr Kernan: James's Street",
+    "kind": "place",
+    "time": "2.55pm",
+    "gloss": "Tom Kernan strolls contentedly down James's Street after a good sale."
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -6.290096,
+     53.343259
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "work": "Ulysses",
+    "group": 10,
+    "story": "Wandering Rocks",
+    "group_de": "Irrfelsen",
+    "name": "Stephen Dedalus: Russell's shop",
+    "kind": "place",
+    "time": "2.55pm",
+    "gloss": "Stephen lingers at a jeweller's window, Russell's, 57 Fleet Street."
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -6.259882,
+     53.345772
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "work": "Ulysses",
+    "group": 10,
+    "story": "Wandering Rocks",
+    "group_de": "Irrfelsen",
+    "name": "Martin Cunningham: Dublin Castle",
+    "kind": "place",
+    "time": "2.55pm",
+    "gloss": "Martin Cunningham gathers subscriptions for the Dignam family at the Castle."
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -6.267004,
+     53.342662
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "work": "Ulysses",
+    "group": 10,
+    "story": "Wandering Rocks",
+    "group_de": "Irrfelsen",
+    "name": "Buck Mulligan: DBC tearooms",
+    "kind": "place",
+    "time": "2.55pm",
+    "gloss": "Mulligan and Haines take tea at the DBC tearooms, 33 Dame Street."
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -6.267019,
+     53.344133
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "work": "Ulysses",
+    "group": 10,
+    "story": "Wandering Rocks",
+    "group_de": "Irrfelsen",
+    "name": "Master Dignam: Ruggy O'Donohoe's",
+    "kind": "place",
+    "time": "2.55pm",
+    "gloss": "Young Patrick Dignam dawdles past Ruggy O'Donohoe's pub, 23 Wicklow Street."
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -6.261326,
+     53.343013
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "work": "Ulysses",
+    "group": 10,
+    "story": "Wandering Rocks",
+    "group_de": "Irrfelsen",
+    "name": "Viceroy's cavalcade: Viceregal Lodge",
+    "kind": "place",
+    "time": "2.55pm",
+    "gloss": "The viceregal cavalcade sets out from the Viceregal Lodge in the Phoenix Park."
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -6.317814,
+     53.361341
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "work": "Ulysses",
+    "group": 10,
+    "story": "Wandering Rocks",
+    "group_de": "Irrfelsen",
+    "name": "Viceroy's cavalcade: RDS showgrounds",
+    "kind": "place",
+    "time": "2.55pm",
+    "gloss": "The cavalcade proceeds through the city to the RDS showgrounds at Ballsbridge."
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -6.228863,
+     53.326654
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "work": "Ulysses",
+    "group": 11,
+    "story": "Sirens",
+    "group_de": "Sirenen",
+    "name": "The Ormond Hotel",
+    "kind": "place",
+    "time": "3.40pm",
     "gloss": "The barmaids Miss Douce and Miss Kennedy; music and song fill the 'Sirens' episode."
    },
    "geometry": {
@@ -284,18 +598,19 @@
    "type": "Feature",
    "properties": {
     "work": "Ulysses",
-    "episode": 12,
+    "group": 12,
     "story": "Cyclops",
-    "episode_de": "Zyklop",
-    "name": "Barney Kiernan's (site)",
+    "group_de": "Zyklop",
+    "name": "Arbour Hill / Stonybatter",
     "kind": "place",
-    "gloss": "The pub of the nameless narrator and the hostile Citizen; Bloom is driven out under a hail of abuse."
+    "time": "5pm",
+    "gloss": "The nameless narrator crosses Stonybatter on his way to the pub."
    },
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -6.26943,
-     53.349423
+     -6.283777,
+     53.349901
     ]
    }
   },
@@ -303,18 +618,39 @@
    "type": "Feature",
    "properties": {
     "work": "Ulysses",
-    "episode": 13,
+    "group": 12,
+    "story": "Cyclops",
+    "group_de": "Zyklop",
+    "name": "Barney Kiernan's pub",
+    "kind": "place",
+    "time": "5pm",
+    "gloss": "Barney Kiernan's, 8–10 Little Britain Street; the Citizen's hostility drives Bloom out."
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -6.270092,
+     53.34926
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "work": "Ulysses",
+    "group": 13,
     "story": "Nausicaa",
-    "episode_de": "Nausikaa",
-    "name": "Star of the Sea Church, Sandymount",
+    "group_de": "Nausikaa",
+    "name": "Sandymount Strand",
     "kind": "place",
-    "gloss": "Its evening service counterpoints Gerty MacDowell on the strand below."
+    "time": "8.25pm",
+    "gloss": "Gerty MacDowell on the strand at dusk, watched from afar by Bloom."
    },
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -6.219554,
-     53.335287
+     -6.208006,
+     53.327652
     ]
    }
   },
@@ -322,12 +658,13 @@
    "type": "Feature",
    "properties": {
     "work": "Ulysses",
-    "episode": 14,
+    "group": 14,
     "story": "Oxen of the Sun",
-    "episode_de": "Die Rinder des Sonnengottes",
-    "name": "National Maternity Hospital, Holles Street",
+    "group_de": "Die Rinder des Sonnengottes",
+    "name": "Holles Street Hospital",
     "kind": "place",
-    "gloss": "Mina Purefoy gives birth; the prose gestates through the history of English styles."
+    "time": "10pm",
+    "gloss": "Mina Purefoy gives birth; the prose gestates through the history of English style."
    },
    "geometry": {
     "type": "Point",
@@ -341,18 +678,19 @@
    "type": "Feature",
    "properties": {
     "work": "Ulysses",
-    "episode": 15,
+    "group": 15,
     "story": "Circe",
-    "episode_de": "Kirke",
-    "name": "Nighttown (Mabbot Street)",
+    "group_de": "Kirke",
+    "name": "Mabbot Street (Nighttown)",
     "kind": "place",
-    "gloss": "The brothel quarter (Monto); the hallucinatory 'Circe' drama. Mabbot Street is now Corporation Street/James Joyce Street."
+    "time": "11.25pm",
+    "gloss": "Mabbot Street, the entrance to Nighttown (Monto), where the hallucinatory drama begins."
    },
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -6.253352,
-     53.350904
+     -6.253691,
+     53.352014
     ]
    }
   },
@@ -360,12 +698,33 @@
    "type": "Feature",
    "properties": {
     "work": "Ulysses",
-    "episode": 16,
+    "group": 15,
+    "story": "Circe",
+    "group_de": "Kirke",
+    "name": "Bella Cohen's",
+    "kind": "place",
+    "time": "11.25pm",
+    "gloss": "Bella Cohen's brothel, 82 Lower Tyrone Street (now Railway Street)."
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -6.252511,
+     53.353023
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "work": "Ulysses",
+    "group": 16,
     "story": "Eumaeus",
-    "episode_de": "Eumaios",
+    "group_de": "Eumaios",
     "name": "Cabman's shelter, Butt Bridge",
     "kind": "place",
-    "gloss": "Bloom takes the exhausted Stephen for coffee in the small hours."
+    "time": "12.40am",
+    "gloss": "Bloom takes the exhausted Stephen for coffee in the cabman's shelter."
    },
    "geometry": {
     "type": "Point",
@@ -379,18 +738,4947 @@
    "type": "Feature",
    "properties": {
     "work": "Ulysses",
-    "episode": 17,
+    "group": 17,
     "story": "Ithaca",
-    "episode_de": "Ithaka",
-    "name": "7 Eccles Street (return)",
+    "group_de": "Ithaka",
+    "name": "Return to Eccles Street",
     "kind": "place",
-    "gloss": "Bloom, locked out, climbs over the area railings and lets Stephen in; the catechism of 'Ithaca.'"
+    "time": "1am",
+    "gloss": "Bloom and Stephen walk back to Eccles Street; the cosmic catechism of 'Ithaca.'"
    },
    "geometry": {
     "type": "Point",
     "coordinates": [
      -6.266838,
      53.358368
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "work": "Ulysses",
+    "group": 18,
+    "story": "Penelope",
+    "group_de": "Penelope",
+    "name": "No. 7 Eccles Street",
+    "kind": "place",
+    "time": "2am",
+    "gloss": "Molly Bloom's nocturnal monologue in bed — the book's closing 'yes I said yes I will Yes.'",
+    "quote": "yes I said yes I will Yes.",
+    "ref": "18.1609"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -6.266838,
+     53.358368
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "work": "Ulysses",
+    "group": 1,
+    "story": "Telemachus",
+    "group_de": "Telemachos",
+    "name": "Stephen's morning: to the Forty Foot",
+    "kind": "route",
+    "time": "8am",
+    "gloss": "From the Martello tower down to the Forty Foot, where Mulligan swims."
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      -6.113441,
+      53.288695
+     ],
+     [
+      -6.113441,
+      53.288695
+     ],
+     [
+      -6.113452,
+      53.288807
+     ],
+     [
+      -6.11346,
+      53.288871
+     ],
+     [
+      -6.113482,
+      53.288934
+     ],
+     [
+      -6.11353,
+      53.288962
+     ],
+     [
+      -6.11362,
+      53.288989
+     ],
+     [
+      -6.113709,
+      53.289012
+     ],
+     [
+      -6.113755,
+      53.289014
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "work": "Ulysses",
+    "group": 2,
+    "story": "Nestor",
+    "group_de": "Nestor",
+    "name": "Stephen's morning: to the school",
+    "kind": "route",
+    "time": "9.45am",
+    "gloss": "Stephen's way from Sandycove to Mr Deasy's school in Dalkey."
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      -6.113755,
+      53.289014
+     ],
+     [
+      -6.113709,
+      53.289012
+     ],
+     [
+      -6.11362,
+      53.288989
+     ],
+     [
+      -6.11353,
+      53.288962
+     ],
+     [
+      -6.113482,
+      53.288934
+     ],
+     [
+      -6.11346,
+      53.288871
+     ],
+     [
+      -6.113452,
+      53.288807
+     ],
+     [
+      -6.113441,
+      53.288695
+     ],
+     [
+      -6.113411,
+      53.288644
+     ],
+     [
+      -6.11336,
+      53.288606
+     ],
+     [
+      -6.11315,
+      53.288462
+     ],
+     [
+      -6.112526,
+      53.288067
+     ],
+     [
+      -6.112253,
+      53.287865
+     ],
+     [
+      -6.112399,
+      53.287806
+     ],
+     [
+      -6.112543,
+      53.287754
+     ],
+     [
+      -6.112733,
+      53.287627
+     ],
+     [
+      -6.112823,
+      53.2874
+     ],
+     [
+      -6.112906,
+      53.287161
+     ],
+     [
+      -6.112925,
+      53.287107
+     ],
+     [
+      -6.113037,
+      53.286796
+     ],
+     [
+      -6.113208,
+      53.286257
+     ],
+     [
+      -6.113413,
+      53.285726
+     ],
+     [
+      -6.112955,
+      53.285681
+     ],
+     [
+      -6.111989,
+      53.285592
+     ],
+     [
+      -6.111333,
+      53.285517
+     ],
+     [
+      -6.1111,
+      53.28548
+     ],
+     [
+      -6.110785,
+      53.285404
+     ],
+     [
+      -6.109974,
+      53.285196
+     ],
+     [
+      -6.109358,
+      53.285048
+     ],
+     [
+      -6.108985,
+      53.284922
+     ],
+     [
+      -6.108845,
+      53.284869
+     ],
+     [
+      -6.108773,
+      53.284824
+     ],
+     [
+      -6.108711,
+      53.28478
+     ],
+     [
+      -6.108592,
+      53.284694
+     ],
+     [
+      -6.108361,
+      53.284491
+     ],
+     [
+      -6.108057,
+      53.284304
+     ],
+     [
+      -6.107343,
+      53.283961
+     ],
+     [
+      -6.107153,
+      53.28385
+     ],
+     [
+      -6.107057,
+      53.283767
+     ],
+     [
+      -6.106893,
+      53.283507
+     ],
+     [
+      -6.10683,
+      53.283188
+     ],
+     [
+      -6.106805,
+      53.28288
+     ],
+     [
+      -6.106898,
+      53.282416
+     ],
+     [
+      -6.106969,
+      53.281944
+     ],
+     [
+      -6.107027,
+      53.281543
+     ],
+     [
+      -6.107038,
+      53.281474
+     ],
+     [
+      -6.10714,
+      53.280987
+     ],
+     [
+      -6.107167,
+      53.28086
+     ],
+     [
+      -6.107206,
+      53.28067
+     ],
+     [
+      -6.107185,
+      53.280507
+     ],
+     [
+      -6.107094,
+      53.280154
+     ],
+     [
+      -6.107033,
+      53.27994
+     ],
+     [
+      -6.107001,
+      53.279826
+     ],
+     [
+      -6.106916,
+      53.279452
+     ],
+     [
+      -6.106908,
+      53.279223
+     ],
+     [
+      -6.106941,
+      53.278981
+     ],
+     [
+      -6.106968,
+      53.278731
+     ],
+     [
+      -6.106972,
+      53.278702
+     ],
+     [
+      -6.107022,
+      53.278514
+     ],
+     [
+      -6.107028,
+      53.278463
+     ],
+     [
+      -6.107036,
+      53.278374
+     ],
+     [
+      -6.107043,
+      53.278276
+     ],
+     [
+      -6.107046,
+      53.278236
+     ],
+     [
+      -6.10706,
+      53.278174
+     ],
+     [
+      -6.107074,
+      53.278124
+     ],
+     [
+      -6.107237,
+      53.278137
+     ],
+     [
+      -6.107334,
+      53.278148
+     ],
+     [
+      -6.107615,
+      53.278173
+     ],
+     [
+      -6.10768,
+      53.27818
+     ],
+     [
+      -6.107815,
+      53.277861
+     ],
+     [
+      -6.107893,
+      53.27769
+     ],
+     [
+      -6.107958,
+      53.277525
+     ],
+     [
+      -6.108015,
+      53.277345
+     ],
+     [
+      -6.108054,
+      53.277206
+     ],
+     [
+      -6.108067,
+      53.277132
+     ],
+     [
+      -6.108072,
+      53.277062
+     ],
+     [
+      -6.108076,
+      53.276915
+     ],
+     [
+      -6.108081,
+      53.276843
+     ],
+     [
+      -6.108085,
+      53.276775
+     ],
+     [
+      -6.108103,
+      53.276421
+     ],
+     [
+      -6.108114,
+      53.276257
+     ],
+     [
+      -6.108122,
+      53.276206
+     ],
+     [
+      -6.108131,
+      53.276168
+     ],
+     [
+      -6.10818,
+      53.276004
+     ],
+     [
+      -6.108291,
+      53.275644
+     ],
+     [
+      -6.108342,
+      53.275476
+     ],
+     [
+      -6.108443,
+      53.275143
+     ],
+     [
+      -6.108586,
+      53.274707
+     ],
+     [
+      -6.108608,
+      53.274646
+     ],
+     [
+      -6.108658,
+      53.274539
+     ],
+     [
+      -6.108683,
+      53.274486
+     ],
+     [
+      -6.108796,
+      53.274256
+     ],
+     [
+      -6.108827,
+      53.274197
+     ],
+     [
+      -6.108839,
+      53.274174
+     ],
+     [
+      -6.109027,
+      53.2739
+     ],
+     [
+      -6.109179,
+      53.27374
+     ],
+     [
+      -6.109231,
+      53.273695
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "work": "Ulysses",
+    "group": 3,
+    "story": "Proteus",
+    "group_de": "Proteus",
+    "name": "Stephen's morning: by rail to Sandymount",
+    "kind": "route",
+    "time": "11am",
+    "gloss": "Stephen most likely takes the coastal railway (the Dublin & South Eastern line, today's DART) from Dalkey to Sandymount, then walks onto the strand."
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      -6.109231,
+      53.273695
+     ],
+     [
+      -6.108871,
+      53.274103
+     ],
+     [
+      -6.108626,
+      53.274547
+     ],
+     [
+      -6.104834,
+      53.274456
+     ],
+     [
+      -6.104265,
+      53.275699
+     ],
+     [
+      -6.103246,
+      53.275466
+     ],
+     [
+      -6.103147,
+      53.275594
+     ],
+     [
+      -6.108152,
+      53.27682
+     ],
+     [
+      -6.113162,
+      53.278167
+     ],
+     [
+      -6.123108,
+      53.281238
+     ],
+     [
+      -6.125457,
+      53.282016
+     ],
+     [
+      -6.126316,
+      53.282516
+     ],
+     [
+      -6.127067,
+      53.283164
+     ],
+     [
+      -6.127506,
+      53.283908
+     ],
+     [
+      -6.127678,
+      53.284736
+     ],
+     [
+      -6.127667,
+      53.286365
+     ],
+     [
+      -6.127571,
+      53.287173
+     ],
+     [
+      -6.127158,
+      53.288002
+     ],
+     [
+      -6.126949,
+      53.288443
+     ],
+     [
+      -6.126852,
+      53.288879
+     ],
+     [
+      -6.127131,
+      53.289815
+     ],
+     [
+      -6.128086,
+      53.290771
+     ],
+     [
+      -6.130414,
+      53.292624
+     ],
+     [
+      -6.134748,
+      53.294952
+     ],
+     [
+      -6.136336,
+      53.295619
+     ],
+     [
+      -6.138418,
+      53.296029
+     ],
+     [
+      -6.140392,
+      53.296337
+     ],
+     [
+      -6.142516,
+      53.29617
+     ],
+     [
+      -6.152172,
+      53.295234
+     ],
+     [
+      -6.155691,
+      53.295811
+     ],
+     [
+      -6.160841,
+      53.297543
+     ],
+     [
+      -6.165261,
+      53.299184
+     ],
+     [
+      -6.178586,
+      53.302646
+     ],
+     [
+      -6.187084,
+      53.306173
+     ],
+     [
+      -6.191397,
+      53.307955
+     ],
+     [
+      -6.195196,
+      53.309985
+     ],
+     [
+      -6.208413,
+      53.318685
+     ],
+     [
+      -6.214893,
+      53.323248
+     ],
+     [
+      -6.22105,
+      53.327928
+     ],
+     [
+      -6.219463,
+      53.3284
+     ],
+     [
+      -6.217618,
+      53.330078
+     ],
+     [
+      -6.215773,
+      53.330553
+     ],
+     [
+      -6.215858,
+      53.331424
+     ],
+     [
+      -6.215537,
+      53.332372
+     ],
+     [
+      -6.214721,
+      53.33309
+     ],
+     [
+      -6.213841,
+      53.333474
+     ],
+     [
+      -6.212339,
+      53.333782
+     ],
+     [
+      -6.211309,
+      53.333474
+     ],
+     [
+      -6.210537,
+      53.332757
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "work": "Ulysses",
+    "group": 6,
+    "story": "Hades",
+    "group_de": "Hades",
+    "name": "Funeral route",
+    "kind": "route",
+    "time": "11am",
+    "gloss": "Paddy Dignam's funeral cortège from Sandymount across the city to Glasnevin."
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      -6.22336,
+      53.335519
+     ],
+     [
+      -6.222991,
+      53.335723
+     ],
+     [
+      -6.222685,
+      53.335884
+     ],
+     [
+      -6.222347,
+      53.336062
+     ],
+     [
+      -6.22221,
+      53.336111
+     ],
+     [
+      -6.222093,
+      53.336148
+     ],
+     [
+      -6.222124,
+      53.336244
+     ],
+     [
+      -6.2222,
+      53.33673
+     ],
+     [
+      -6.222236,
+      53.336869
+     ],
+     [
+      -6.222307,
+      53.337234
+     ],
+     [
+      -6.222393,
+      53.337547
+     ],
+     [
+      -6.222464,
+      53.337798
+     ],
+     [
+      -6.22251,
+      53.337935
+     ],
+     [
+      -6.222548,
+      53.338029
+     ],
+     [
+      -6.222638,
+      53.33819
+     ],
+     [
+      -6.222685,
+      53.338262
+     ],
+     [
+      -6.222691,
+      53.338269
+     ],
+     [
+      -6.222845,
+      53.338462
+     ],
+     [
+      -6.222904,
+      53.338534
+     ],
+     [
+      -6.222939,
+      53.338571
+     ],
+     [
+      -6.222979,
+      53.338613
+     ],
+     [
+      -6.223038,
+      53.338674
+     ],
+     [
+      -6.223117,
+      53.338784
+     ],
+     [
+      -6.223178,
+      53.338966
+     ],
+     [
+      -6.223214,
+      53.339143
+     ],
+     [
+      -6.22323,
+      53.339223
+     ],
+     [
+      -6.223291,
+      53.339481
+     ],
+     [
+      -6.223326,
+      53.339586
+     ],
+     [
+      -6.223348,
+      53.33965
+     ],
+     [
+      -6.223381,
+      53.339711
+     ],
+     [
+      -6.223423,
+      53.339767
+     ],
+     [
+      -6.223534,
+      53.339883
+     ],
+     [
+      -6.223678,
+      53.340006
+     ],
+     [
+      -6.223814,
+      53.340098
+     ],
+     [
+      -6.223838,
+      53.340111
+     ],
+     [
+      -6.223932,
+      53.340169
+     ],
+     [
+      -6.224036,
+      53.340233
+     ],
+     [
+      -6.224107,
+      53.340269
+     ],
+     [
+      -6.224216,
+      53.340323
+     ],
+     [
+      -6.224623,
+      53.340522
+     ],
+     [
+      -6.224938,
+      53.340685
+     ],
+     [
+      -6.225237,
+      53.340865
+     ],
+     [
+      -6.225417,
+      53.340976
+     ],
+     [
+      -6.225435,
+      53.340988
+     ],
+     [
+      -6.225622,
+      53.341104
+     ],
+     [
+      -6.225682,
+      53.341141
+     ],
+     [
+      -6.225785,
+      53.341211
+     ],
+     [
+      -6.225829,
+      53.34124
+     ],
+     [
+      -6.225856,
+      53.34126
+     ],
+     [
+      -6.225873,
+      53.341275
+     ],
+     [
+      -6.226,
+      53.341389
+     ],
+     [
+      -6.226224,
+      53.341616
+     ],
+     [
+      -6.226316,
+      53.34169
+     ],
+     [
+      -6.226396,
+      53.341751
+     ],
+     [
+      -6.226503,
+      53.3418
+     ],
+     [
+      -6.226622,
+      53.341843
+     ],
+     [
+      -6.226743,
+      53.341864
+     ],
+     [
+      -6.226803,
+      53.341867
+     ],
+     [
+      -6.22697,
+      53.341853
+     ],
+     [
+      -6.227495,
+      53.34178
+     ],
+     [
+      -6.227571,
+      53.341771
+     ],
+     [
+      -6.227849,
+      53.341739
+     ],
+     [
+      -6.22791,
+      53.341732
+     ],
+     [
+      -6.227967,
+      53.341728
+     ],
+     [
+      -6.228453,
+      53.341697
+     ],
+     [
+      -6.22856,
+      53.34169
+     ],
+     [
+      -6.228639,
+      53.341684
+     ],
+     [
+      -6.228693,
+      53.34168
+     ],
+     [
+      -6.228706,
+      53.341679
+     ],
+     [
+      -6.22874,
+      53.341677
+     ],
+     [
+      -6.22875,
+      53.341676
+     ],
+     [
+      -6.228994,
+      53.341659
+     ],
+     [
+      -6.229247,
+      53.341641
+     ],
+     [
+      -6.229406,
+      53.34163
+     ],
+     [
+      -6.231012,
+      53.341511
+     ],
+     [
+      -6.231418,
+      53.341513
+     ],
+     [
+      -6.233075,
+      53.341729
+     ],
+     [
+      -6.23353,
+      53.341785
+     ],
+     [
+      -6.234319,
+      53.341883
+     ],
+     [
+      -6.234529,
+      53.341909
+     ],
+     [
+      -6.234975,
+      53.341968
+     ],
+     [
+      -6.235073,
+      53.34198
+     ],
+     [
+      -6.235215,
+      53.341997
+     ],
+     [
+      -6.235406,
+      53.342021
+     ],
+     [
+      -6.235577,
+      53.342043
+     ],
+     [
+      -6.235747,
+      53.342068
+     ],
+     [
+      -6.235882,
+      53.342084
+     ],
+     [
+      -6.236025,
+      53.342102
+     ],
+     [
+      -6.236524,
+      53.342158
+     ],
+     [
+      -6.236797,
+      53.342193
+     ],
+     [
+      -6.237002,
+      53.342218
+     ],
+     [
+      -6.237289,
+      53.342254
+     ],
+     [
+      -6.237577,
+      53.342289
+     ],
+     [
+      -6.237961,
+      53.342336
+     ],
+     [
+      -6.238453,
+      53.342397
+     ],
+     [
+      -6.23858,
+      53.342413
+     ],
+     [
+      -6.238614,
+      53.342417
+     ],
+     [
+      -6.238641,
+      53.34242
+     ],
+     [
+      -6.238803,
+      53.34244
+     ],
+     [
+      -6.238971,
+      53.342461
+     ],
+     [
+      -6.239059,
+      53.342471
+     ],
+     [
+      -6.239109,
+      53.342478
+     ],
+     [
+      -6.239626,
+      53.34255
+     ],
+     [
+      -6.239763,
+      53.342569
+     ],
+     [
+      -6.239899,
+      53.342589
+     ],
+     [
+      -6.239971,
+      53.342599
+     ],
+     [
+      -6.240906,
+      53.342716
+     ],
+     [
+      -6.240946,
+      53.342721
+     ],
+     [
+      -6.240978,
+      53.342725
+     ],
+     [
+      -6.24115,
+      53.342749
+     ],
+     [
+      -6.241306,
+      53.342765
+     ],
+     [
+      -6.24134,
+      53.342768
+     ],
+     [
+      -6.241385,
+      53.342774
+     ],
+     [
+      -6.241865,
+      53.342828
+     ],
+     [
+      -6.242029,
+      53.342848
+     ],
+     [
+      -6.242318,
+      53.342884
+     ],
+     [
+      -6.242483,
+      53.342904
+     ],
+     [
+      -6.242702,
+      53.342931
+     ],
+     [
+      -6.243087,
+      53.342979
+     ],
+     [
+      -6.243299,
+      53.343006
+     ],
+     [
+      -6.243336,
+      53.343011
+     ],
+     [
+      -6.24381,
+      53.343073
+     ],
+     [
+      -6.243898,
+      53.343084
+     ],
+     [
+      -6.243982,
+      53.343094
+     ],
+     [
+      -6.244409,
+      53.343148
+     ],
+     [
+      -6.244448,
+      53.343156
+     ],
+     [
+      -6.244564,
+      53.343179
+     ],
+     [
+      -6.244694,
+      53.343205
+     ],
+     [
+      -6.244798,
+      53.343226
+     ],
+     [
+      -6.245394,
+      53.343348
+     ],
+     [
+      -6.245521,
+      53.343373
+     ],
+     [
+      -6.245784,
+      53.343428
+     ],
+     [
+      -6.246126,
+      53.343464
+     ],
+     [
+      -6.24617,
+      53.34347
+     ],
+     [
+      -6.246237,
+      53.343488
+     ],
+     [
+      -6.246327,
+      53.343513
+     ],
+     [
+      -6.246406,
+      53.343533
+     ],
+     [
+      -6.246468,
+      53.343547
+     ],
+     [
+      -6.246532,
+      53.343578
+     ],
+     [
+      -6.246696,
+      53.343606
+     ],
+     [
+      -6.24714,
+      53.343685
+     ],
+     [
+      -6.247474,
+      53.343753
+     ],
+     [
+      -6.247942,
+      53.343849
+     ],
+     [
+      -6.248153,
+      53.343892
+     ],
+     [
+      -6.248304,
+      53.343923
+     ],
+     [
+      -6.248397,
+      53.343942
+     ],
+     [
+      -6.248641,
+      53.343992
+     ],
+     [
+      -6.248982,
+      53.344053
+     ],
+     [
+      -6.249071,
+      53.344071
+     ],
+     [
+      -6.249127,
+      53.344083
+     ],
+     [
+      -6.249276,
+      53.344108
+     ],
+     [
+      -6.249357,
+      53.344123
+     ],
+     [
+      -6.249415,
+      53.344136
+     ],
+     [
+      -6.249436,
+      53.34414
+     ],
+     [
+      -6.249625,
+      53.344187
+     ],
+     [
+      -6.250126,
+      53.34428
+     ],
+     [
+      -6.250476,
+      53.344347
+     ],
+     [
+      -6.251131,
+      53.344476
+     ],
+     [
+      -6.251423,
+      53.344533
+     ],
+     [
+      -6.251515,
+      53.344551
+     ],
+     [
+      -6.252127,
+      53.34467
+     ],
+     [
+      -6.252199,
+      53.344684
+     ],
+     [
+      -6.252301,
+      53.344704
+     ],
+     [
+      -6.252609,
+      53.344766
+     ],
+     [
+      -6.253124,
+      53.34486
+     ],
+     [
+      -6.253206,
+      53.344876
+     ],
+     [
+      -6.253363,
+      53.344905
+     ],
+     [
+      -6.25395,
+      53.345014
+     ],
+     [
+      -6.254413,
+      53.345099
+     ],
+     [
+      -6.254448,
+      53.345106
+     ],
+     [
+      -6.254622,
+      53.34514
+     ],
+     [
+      -6.255021,
+      53.345218
+     ],
+     [
+      -6.255105,
+      53.345267
+     ],
+     [
+      -6.255137,
+      53.345341
+     ],
+     [
+      -6.255137,
+      53.345356
+     ],
+     [
+      -6.255136,
+      53.345459
+     ],
+     [
+      -6.255134,
+      53.345822
+     ],
+     [
+      -6.255133,
+      53.345855
+     ],
+     [
+      -6.255133,
+      53.345891
+     ],
+     [
+      -6.255133,
+      53.345905
+     ],
+     [
+      -6.255135,
+      53.34595
+     ],
+     [
+      -6.255151,
+      53.346254
+     ],
+     [
+      -6.255145,
+      53.346416
+     ],
+     [
+      -6.255125,
+      53.346774
+     ],
+     [
+      -6.255123,
+      53.346809
+     ],
+     [
+      -6.255029,
+      53.347329
+     ],
+     [
+      -6.255023,
+      53.34736
+     ],
+     [
+      -6.255019,
+      53.347382
+     ],
+     [
+      -6.255,
+      53.347479
+     ],
+     [
+      -6.254995,
+      53.347516
+     ],
+     [
+      -6.254995,
+      53.347524
+     ],
+     [
+      -6.254963,
+      53.347891
+     ],
+     [
+      -6.254955,
+      53.348102
+     ],
+     [
+      -6.254954,
+      53.348131
+     ],
+     [
+      -6.254953,
+      53.348159
+     ],
+     [
+      -6.254948,
+      53.348223
+     ],
+     [
+      -6.254945,
+      53.34828
+     ],
+     [
+      -6.254946,
+      53.348352
+     ],
+     [
+      -6.254948,
+      53.348447
+     ],
+     [
+      -6.254949,
+      53.34853
+     ],
+     [
+      -6.254946,
+      53.348635
+     ],
+     [
+      -6.254946,
+      53.348662
+     ],
+     [
+      -6.254899,
+      53.34883
+     ],
+     [
+      -6.254851,
+      53.349001
+     ],
+     [
+      -6.254828,
+      53.34904
+     ],
+     [
+      -6.254804,
+      53.349085
+     ],
+     [
+      -6.254758,
+      53.349171
+     ],
+     [
+      -6.254733,
+      53.349196
+     ],
+     [
+      -6.254714,
+      53.349213
+     ],
+     [
+      -6.254666,
+      53.349254
+     ],
+     [
+      -6.254441,
+      53.349324
+     ],
+     [
+      -6.254017,
+      53.349451
+     ],
+     [
+      -6.253909,
+      53.349487
+     ],
+     [
+      -6.253878,
+      53.349498
+     ],
+     [
+      -6.253852,
+      53.34951
+     ],
+     [
+      -6.253799,
+      53.349546
+     ],
+     [
+      -6.253763,
+      53.349575
+     ],
+     [
+      -6.253737,
+      53.349624
+     ],
+     [
+      -6.253726,
+      53.349694
+     ],
+     [
+      -6.253728,
+      53.349763
+     ],
+     [
+      -6.253858,
+      53.349939
+     ],
+     [
+      -6.254021,
+      53.350177
+     ],
+     [
+      -6.254349,
+      53.350654
+     ],
+     [
+      -6.254375,
+      53.350691
+     ],
+     [
+      -6.254409,
+      53.350741
+     ],
+     [
+      -6.254485,
+      53.350843
+     ],
+     [
+      -6.254511,
+      53.350878
+     ],
+     [
+      -6.254995,
+      53.35153
+     ],
+     [
+      -6.255571,
+      53.352345
+     ],
+     [
+      -6.255988,
+      53.35295
+     ],
+     [
+      -6.25604,
+      53.353026
+     ],
+     [
+      -6.256852,
+      53.354151
+     ],
+     [
+      -6.256892,
+      53.354206
+     ],
+     [
+      -6.256931,
+      53.35427
+     ],
+     [
+      -6.257026,
+      53.354403
+     ],
+     [
+      -6.257203,
+      53.35465
+     ],
+     [
+      -6.257408,
+      53.354937
+     ],
+     [
+      -6.257473,
+      53.355016
+     ],
+     [
+      -6.257824,
+      53.355486
+     ],
+     [
+      -6.257938,
+      53.355645
+     ],
+     [
+      -6.25803,
+      53.355739
+     ],
+     [
+      -6.258132,
+      53.35584
+     ],
+     [
+      -6.258951,
+      53.356641
+     ],
+     [
+      -6.258979,
+      53.356669
+     ],
+     [
+      -6.259101,
+      53.356787
+     ],
+     [
+      -6.259217,
+      53.356904
+     ],
+     [
+      -6.259263,
+      53.356951
+     ],
+     [
+      -6.259786,
+      53.35748
+     ],
+     [
+      -6.259904,
+      53.357589
+     ],
+     [
+      -6.260744,
+      53.358422
+     ],
+     [
+      -6.260796,
+      53.358467
+     ],
+     [
+      -6.260825,
+      53.358492
+     ],
+     [
+      -6.260847,
+      53.358511
+     ],
+     [
+      -6.261641,
+      53.358886
+     ],
+     [
+      -6.261798,
+      53.358948
+     ],
+     [
+      -6.261894,
+      53.358985
+     ],
+     [
+      -6.262042,
+      53.359035
+     ],
+     [
+      -6.261748,
+      53.359334
+     ],
+     [
+      -6.261324,
+      53.359764
+     ],
+     [
+      -6.261246,
+      53.359846
+     ],
+     [
+      -6.260895,
+      53.360215
+     ],
+     [
+      -6.260549,
+      53.360578
+     ],
+     [
+      -6.260522,
+      53.360607
+     ],
+     [
+      -6.260478,
+      53.360657
+     ],
+     [
+      -6.260373,
+      53.360759
+     ],
+     [
+      -6.260041,
+      53.361126
+     ],
+     [
+      -6.259885,
+      53.36129
+     ],
+     [
+      -6.259795,
+      53.361348
+     ],
+     [
+      -6.259732,
+      53.361394
+     ],
+     [
+      -6.259717,
+      53.361413
+     ],
+     [
+      -6.259715,
+      53.361414
+     ],
+     [
+      -6.259636,
+      53.361514
+     ],
+     [
+      -6.259618,
+      53.361536
+     ],
+     [
+      -6.259519,
+      53.36166
+     ],
+     [
+      -6.259509,
+      53.361672
+     ],
+     [
+      -6.2595,
+      53.361689
+     ],
+     [
+      -6.259493,
+      53.361747
+     ],
+     [
+      -6.259645,
+      53.361802
+     ],
+     [
+      -6.259788,
+      53.361844
+     ],
+     [
+      -6.259794,
+      53.361846
+     ],
+     [
+      -6.260531,
+      53.362028
+     ],
+     [
+      -6.261089,
+      53.362158
+     ],
+     [
+      -6.261166,
+      53.362176
+     ],
+     [
+      -6.261636,
+      53.362285
+     ],
+     [
+      -6.262539,
+      53.362494
+     ],
+     [
+      -6.262704,
+      53.362533
+     ],
+     [
+      -6.263028,
+      53.362608
+     ],
+     [
+      -6.263877,
+      53.362805
+     ],
+     [
+      -6.264033,
+      53.362841
+     ],
+     [
+      -6.264354,
+      53.362914
+     ],
+     [
+      -6.264535,
+      53.362956
+     ],
+     [
+      -6.265099,
+      53.363085
+     ],
+     [
+      -6.265612,
+      53.363203
+     ],
+     [
+      -6.265838,
+      53.363255
+     ],
+     [
+      -6.265973,
+      53.363286
+     ],
+     [
+      -6.267076,
+      53.36354
+     ],
+     [
+      -6.267209,
+      53.363571
+     ],
+     [
+      -6.26848,
+      53.363866
+     ],
+     [
+      -6.268615,
+      53.363897
+     ],
+     [
+      -6.270104,
+      53.364242
+     ],
+     [
+      -6.270448,
+      53.364322
+     ],
+     [
+      -6.270973,
+      53.36445
+     ],
+     [
+      -6.271456,
+      53.364575
+     ],
+     [
+      -6.271516,
+      53.364592
+     ],
+     [
+      -6.271632,
+      53.364624
+     ],
+     [
+      -6.271669,
+      53.364635
+     ],
+     [
+      -6.271771,
+      53.364639
+     ],
+     [
+      -6.271759,
+      53.364769
+     ],
+     [
+      -6.271748,
+      53.364892
+     ],
+     [
+      -6.271742,
+      53.364995
+     ],
+     [
+      -6.271718,
+      53.365114
+     ],
+     [
+      -6.271692,
+      53.365281
+     ],
+     [
+      -6.271682,
+      53.365363
+     ],
+     [
+      -6.271658,
+      53.365545
+     ],
+     [
+      -6.271738,
+      53.365861
+     ],
+     [
+      -6.271746,
+      53.365896
+     ],
+     [
+      -6.271752,
+      53.365913
+     ],
+     [
+      -6.271785,
+      53.366009
+     ],
+     [
+      -6.271837,
+      53.366109
+     ],
+     [
+      -6.271971,
+      53.366318
+     ],
+     [
+      -6.272003,
+      53.366369
+     ],
+     [
+      -6.272057,
+      53.366442
+     ],
+     [
+      -6.272092,
+      53.366489
+     ],
+     [
+      -6.272132,
+      53.366545
+     ],
+     [
+      -6.272229,
+      53.366691
+     ],
+     [
+      -6.272271,
+      53.366754
+     ],
+     [
+      -6.272305,
+      53.366803
+     ],
+     [
+      -6.272453,
+      53.367022
+     ],
+     [
+      -6.272567,
+      53.367154
+     ],
+     [
+      -6.272612,
+      53.367207
+     ],
+     [
+      -6.27266,
+      53.367262
+     ],
+     [
+      -6.272699,
+      53.367307
+     ],
+     [
+      -6.272769,
+      53.367403
+     ],
+     [
+      -6.272797,
+      53.367442
+     ],
+     [
+      -6.272807,
+      53.367454
+     ],
+     [
+      -6.272903,
+      53.367585
+     ],
+     [
+      -6.273012,
+      53.367713
+     ],
+     [
+      -6.273138,
+      53.367844
+     ],
+     [
+      -6.273252,
+      53.367938
+     ],
+     [
+      -6.273339,
+      53.367991
+     ],
+     [
+      -6.273515,
+      53.368079
+     ],
+     [
+      -6.274165,
+      53.368319
+     ],
+     [
+      -6.274306,
+      53.368372
+     ],
+     [
+      -6.27451,
+      53.368447
+     ],
+     [
+      -6.274586,
+      53.368476
+     ],
+     [
+      -6.274711,
+      53.368524
+     ],
+     [
+      -6.27503,
+      53.368648
+     ],
+     [
+      -6.275725,
+      53.368916
+     ],
+     [
+      -6.276235,
+      53.369125
+     ],
+     [
+      -6.276402,
+      53.369194
+     ],
+     [
+      -6.276988,
+      53.36944
+     ],
+     [
+      -6.277385,
+      53.3696
+     ],
+     [
+      -6.277711,
+      53.369722
+     ],
+     [
+      -6.277752,
+      53.36974
+     ],
+     [
+      -6.277809,
+      53.36976
+     ],
+     [
+      -6.27787,
+      53.369785
+     ],
+     [
+      -6.27857,
+      53.370054
+     ],
+     [
+      -6.278924,
+      53.370191
+     ],
+     [
+      -6.278833,
+      53.370287
+     ],
+     [
+      -6.279064,
+      53.370378
+     ],
+     [
+      -6.279346,
+      53.370497
+     ],
+     [
+      -6.279459,
+      53.370572
+     ],
+     [
+      -6.279669,
+      53.370662
+     ],
+     [
+      -6.279697,
+      53.370689
+     ],
+     [
+      -6.279581,
+      53.370868
+     ],
+     [
+      -6.279427,
+      53.371106
+     ],
+     [
+      -6.279354,
+      53.37122
+     ],
+     [
+      -6.279005,
+      53.371754
+     ],
+     [
+      -6.278764,
+      53.372121
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "work": "Ulysses",
+    "group": 10,
+    "story": "Wandering Rocks",
+    "group_de": "Irrfelsen",
+    "name": "Fr Conmee's walk",
+    "kind": "route",
+    "time": "2.55pm",
+    "gloss": "Father Conmee walks on foot from the Jesuit house in Gardiner Street out towards Marino."
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      -6.260378,
+      53.358058
+     ],
+     [
+      -6.260744,
+      53.358422
+     ],
+     [
+      -6.260654,
+      53.358455
+     ],
+     [
+      -6.260708,
+      53.358488
+     ],
+     [
+      -6.261731,
+      53.358997
+     ],
+     [
+      -6.261415,
+      53.359358
+     ],
+     [
+      -6.261154,
+      53.359643
+     ],
+     [
+      -6.261128,
+      53.359638
+     ],
+     [
+      -6.26107,
+      53.359719
+     ],
+     [
+      -6.261012,
+      53.359792
+     ],
+     [
+      -6.26098,
+      53.359825
+     ],
+     [
+      -6.260589,
+      53.360233
+     ],
+     [
+      -6.260312,
+      53.360538
+     ],
+     [
+      -6.260256,
+      53.360597
+     ],
+     [
+      -6.260183,
+      53.360669
+     ],
+     [
+      -6.2601,
+      53.360751
+     ],
+     [
+      -6.259917,
+      53.36095
+     ],
+     [
+      -6.259691,
+      53.361202
+     ],
+     [
+      -6.259671,
+      53.361235
+     ],
+     [
+      -6.25958,
+      53.361354
+     ],
+     [
+      -6.259563,
+      53.361376
+     ],
+     [
+      -6.259507,
+      53.36145
+     ],
+     [
+      -6.259468,
+      53.361503
+     ],
+     [
+      -6.259436,
+      53.361546
+     ],
+     [
+      -6.259367,
+      53.361639
+     ],
+     [
+      -6.259334,
+      53.361668
+     ],
+     [
+      -6.259304,
+      53.361695
+     ],
+     [
+      -6.259279,
+      53.361717
+     ],
+     [
+      -6.259192,
+      53.361812
+     ],
+     [
+      -6.258581,
+      53.362478
+     ],
+     [
+      -6.258544,
+      53.362514
+     ],
+     [
+      -6.258508,
+      53.362548
+     ],
+     [
+      -6.257791,
+      53.363297
+     ],
+     [
+      -6.257706,
+      53.363368
+     ],
+     [
+      -6.257656,
+      53.36341
+     ],
+     [
+      -6.2567,
+      53.363277
+     ],
+     [
+      -6.256424,
+      53.363238
+     ],
+     [
+      -6.256307,
+      53.363222
+     ],
+     [
+      -6.255665,
+      53.363133
+     ],
+     [
+      -6.255241,
+      53.363075
+     ],
+     [
+      -6.254929,
+      53.363032
+     ],
+     [
+      -6.254684,
+      53.362999
+     ],
+     [
+      -6.254386,
+      53.362956
+     ],
+     [
+      -6.254138,
+      53.362923
+     ],
+     [
+      -6.253905,
+      53.362894
+     ],
+     [
+      -6.253671,
+      53.362862
+     ],
+     [
+      -6.253341,
+      53.362818
+     ],
+     [
+      -6.253155,
+      53.362793
+     ],
+     [
+      -6.252946,
+      53.362765
+     ],
+     [
+      -6.252262,
+      53.362673
+     ],
+     [
+      -6.252122,
+      53.362654
+     ],
+     [
+      -6.251377,
+      53.362554
+     ],
+     [
+      -6.250667,
+      53.362462
+     ],
+     [
+      -6.25048,
+      53.362432
+     ],
+     [
+      -6.250277,
+      53.36241
+     ],
+     [
+      -6.24868,
+      53.362192
+     ],
+     [
+      -6.247008,
+      53.361953
+     ],
+     [
+      -6.246039,
+      53.361819
+     ],
+     [
+      -6.245221,
+      53.36171
+     ],
+     [
+      -6.244947,
+      53.361668
+     ],
+     [
+      -6.243405,
+      53.36147
+     ],
+     [
+      -6.242937,
+      53.361429
+     ],
+     [
+      -6.242891,
+      53.361433
+     ],
+     [
+      -6.242859,
+      53.361448
+     ],
+     [
+      -6.242828,
+      53.361496
+     ],
+     [
+      -6.24265,
+      53.361769
+     ],
+     [
+      -6.242609,
+      53.361828
+     ],
+     [
+      -6.242417,
+      53.362176
+     ],
+     [
+      -6.242401,
+      53.362207
+     ],
+     [
+      -6.242289,
+      53.362393
+     ],
+     [
+      -6.242291,
+      53.362419
+     ],
+     [
+      -6.242308,
+      53.362448
+     ],
+     [
+      -6.242332,
+      53.362461
+     ],
+     [
+      -6.2423,
+      53.362497
+     ],
+     [
+      -6.24223,
+      53.362575
+     ],
+     [
+      -6.242176,
+      53.362559
+     ],
+     [
+      -6.24209,
+      53.362535
+     ],
+     [
+      -6.241975,
+      53.362513
+     ],
+     [
+      -6.241845,
+      53.362512
+     ],
+     [
+      -6.241786,
+      53.362513
+     ],
+     [
+      -6.241657,
+      53.36253
+     ],
+     [
+      -6.241209,
+      53.362634
+     ],
+     [
+      -6.240871,
+      53.362712
+     ],
+     [
+      -6.240485,
+      53.36278
+     ],
+     [
+      -6.239947,
+      53.362831
+     ],
+     [
+      -6.239946,
+      53.362873
+     ],
+     [
+      -6.239943,
+      53.364042
+     ],
+     [
+      -6.23994,
+      53.364081
+     ],
+     [
+      -6.239937,
+      53.364133
+     ],
+     [
+      -6.239933,
+      53.364418
+     ],
+     [
+      -6.239933,
+      53.364447
+     ],
+     [
+      -6.239933,
+      53.364487
+     ],
+     [
+      -6.239919,
+      53.364724
+     ],
+     [
+      -6.239939,
+      53.36483
+     ],
+     [
+      -6.239943,
+      53.364875
+     ],
+     [
+      -6.239905,
+      53.364921
+     ],
+     [
+      -6.23989,
+      53.365461
+     ],
+     [
+      -6.239886,
+      53.365512
+     ],
+     [
+      -6.239832,
+      53.365509
+     ],
+     [
+      -6.239822,
+      53.365778
+     ],
+     [
+      -6.239712,
+      53.365776
+     ],
+     [
+      -6.237834,
+      53.365761
+     ],
+     [
+      -6.237511,
+      53.365777
+     ],
+     [
+      -6.237339,
+      53.365794
+     ],
+     [
+      -6.236816,
+      53.365888
+     ],
+     [
+      -6.235166,
+      53.366241
+     ],
+     [
+      -6.235075,
+      53.366261
+     ],
+     [
+      -6.235034,
+      53.366215
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "work": "Ulysses",
+    "group": 10,
+    "story": "Wandering Rocks",
+    "group_de": "Irrfelsen",
+    "name": "Viceregal cavalcade",
+    "kind": "route",
+    "time": "2.55pm",
+    "gloss": "The viceregal cavalcade's progress from the Phoenix Park to the RDS at Ballsbridge."
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      -6.315704,
+      53.363397
+     ],
+     [
+      -6.315584,
+      53.363353
+     ],
+     [
+      -6.315225,
+      53.363228
+     ],
+     [
+      -6.314918,
+      53.363112
+     ],
+     [
+      -6.314883,
+      53.363143
+     ],
+     [
+      -6.314867,
+      53.363153
+     ],
+     [
+      -6.314832,
+      53.363154
+     ],
+     [
+      -6.314768,
+      53.363142
+     ],
+     [
+      -6.314709,
+      53.363133
+     ],
+     [
+      -6.314658,
+      53.363129
+     ],
+     [
+      -6.314616,
+      53.363134
+     ],
+     [
+      -6.314539,
+      53.363134
+     ],
+     [
+      -6.314514,
+      53.363142
+     ],
+     [
+      -6.314501,
+      53.363152
+     ],
+     [
+      -6.31448,
+      53.363171
+     ],
+     [
+      -6.314448,
+      53.363194
+     ],
+     [
+      -6.314364,
+      53.36317
+     ],
+     [
+      -6.314278,
+      53.363149
+     ],
+     [
+      -6.314193,
+      53.363128
+     ],
+     [
+      -6.314087,
+      53.363109
+     ],
+     [
+      -6.313545,
+      53.363022
+     ],
+     [
+      -6.313237,
+      53.362977
+     ],
+     [
+      -6.312311,
+      53.36282
+     ],
+     [
+      -6.312189,
+      53.362799
+     ],
+     [
+      -6.312115,
+      53.362786
+     ],
+     [
+      -6.311695,
+      53.362713
+     ],
+     [
+      -6.311536,
+      53.362682
+     ],
+     [
+      -6.311422,
+      53.362659
+     ],
+     [
+      -6.31118,
+      53.362607
+     ],
+     [
+      -6.310951,
+      53.362537
+     ],
+     [
+      -6.31071,
+      53.36244
+     ],
+     [
+      -6.310593,
+      53.362372
+     ],
+     [
+      -6.310498,
+      53.362307
+     ],
+     [
+      -6.310416,
+      53.362247
+     ],
+     [
+      -6.310345,
+      53.362189
+     ],
+     [
+      -6.310159,
+      53.362024
+     ],
+     [
+      -6.309896,
+      53.361765
+     ],
+     [
+      -6.309839,
+      53.361785
+     ],
+     [
+      -6.309457,
+      53.361923
+     ],
+     [
+      -6.308962,
+      53.362068
+     ],
+     [
+      -6.307932,
+      53.362329
+     ],
+     [
+      -6.30708,
+      53.362546
+     ],
+     [
+      -6.306573,
+      53.362684
+     ],
+     [
+      -6.305874,
+      53.362878
+     ],
+     [
+      -6.305641,
+      53.362947
+     ],
+     [
+      -6.304433,
+      53.363284
+     ],
+     [
+      -6.304099,
+      53.363373
+     ],
+     [
+      -6.304015,
+      53.363421
+     ],
+     [
+      -6.303974,
+      53.363457
+     ],
+     [
+      -6.303938,
+      53.363489
+     ],
+     [
+      -6.302991,
+      53.363169
+     ],
+     [
+      -6.302745,
+      53.363083
+     ],
+     [
+      -6.302529,
+      53.363
+     ],
+     [
+      -6.302391,
+      53.362951
+     ],
+     [
+      -6.301948,
+      53.362794
+     ],
+     [
+      -6.301858,
+      53.362762
+     ],
+     [
+      -6.301695,
+      53.362729
+     ],
+     [
+      -6.299951,
+      53.362167
+     ],
+     [
+      -6.299807,
+      53.362115
+     ],
+     [
+      -6.299169,
+      53.361888
+     ],
+     [
+      -6.298882,
+      53.361807
+     ],
+     [
+      -6.298652,
+      53.361747
+     ],
+     [
+      -6.298436,
+      53.361708
+     ],
+     [
+      -6.298381,
+      53.361698
+     ],
+     [
+      -6.298295,
+      53.361685
+     ],
+     [
+      -6.298172,
+      53.361613
+     ],
+     [
+      -6.297852,
+      53.361594
+     ],
+     [
+      -6.297791,
+      53.361591
+     ],
+     [
+      -6.297402,
+      53.361562
+     ],
+     [
+      -6.297093,
+      53.361551
+     ],
+     [
+      -6.296795,
+      53.361542
+     ],
+     [
+      -6.295734,
+      53.361502
+     ],
+     [
+      -6.295616,
+      53.361498
+     ],
+     [
+      -6.294553,
+      53.361463
+     ],
+     [
+      -6.294284,
+      53.361455
+     ],
+     [
+      -6.293872,
+      53.361441
+     ],
+     [
+      -6.293566,
+      53.361431
+     ],
+     [
+      -6.293507,
+      53.361429
+     ],
+     [
+      -6.293368,
+      53.361424
+     ],
+     [
+      -6.29316,
+      53.361415
+     ],
+     [
+      -6.293108,
+      53.361412
+     ],
+     [
+      -6.293093,
+      53.361412
+     ],
+     [
+      -6.292995,
+      53.361407
+     ],
+     [
+      -6.292741,
+      53.361399
+     ],
+     [
+      -6.292584,
+      53.361394
+     ],
+     [
+      -6.292108,
+      53.361377
+     ],
+     [
+      -6.291755,
+      53.361363
+     ],
+     [
+      -6.291353,
+      53.361347
+     ],
+     [
+      -6.291234,
+      53.361342
+     ],
+     [
+      -6.291094,
+      53.361339
+     ],
+     [
+      -6.29085,
+      53.361333
+     ],
+     [
+      -6.290559,
+      53.361321
+     ],
+     [
+      -6.289782,
+      53.361301
+     ],
+     [
+      -6.289168,
+      53.361279
+     ],
+     [
+      -6.287978,
+      53.361227
+     ],
+     [
+      -6.286119,
+      53.361156
+     ],
+     [
+      -6.286052,
+      53.361154
+     ],
+     [
+      -6.285672,
+      53.361144
+     ],
+     [
+      -6.285544,
+      53.361139
+     ],
+     [
+      -6.284796,
+      53.361119
+     ],
+     [
+      -6.284156,
+      53.361092
+     ],
+     [
+      -6.283504,
+      53.361066
+     ],
+     [
+      -6.283432,
+      53.361065
+     ],
+     [
+      -6.283371,
+      53.361064
+     ],
+     [
+      -6.283316,
+      53.361062
+     ],
+     [
+      -6.282665,
+      53.361035
+     ],
+     [
+      -6.282642,
+      53.361034
+     ],
+     [
+      -6.28184,
+      53.361001
+     ],
+     [
+      -6.281137,
+      53.360983
+     ],
+     [
+      -6.280754,
+      53.360968
+     ],
+     [
+      -6.279403,
+      53.360919
+     ],
+     [
+      -6.279357,
+      53.360918
+     ],
+     [
+      -6.279324,
+      53.360917
+     ],
+     [
+      -6.279261,
+      53.360916
+     ],
+     [
+      -6.279207,
+      53.360915
+     ],
+     [
+      -6.27919,
+      53.360913
+     ],
+     [
+      -6.279131,
+      53.360909
+     ],
+     [
+      -6.277762,
+      53.360851
+     ],
+     [
+      -6.277312,
+      53.360831
+     ],
+     [
+      -6.277022,
+      53.360823
+     ],
+     [
+      -6.276409,
+      53.360799
+     ],
+     [
+      -6.276071,
+      53.360789
+     ],
+     [
+      -6.275584,
+      53.360781
+     ],
+     [
+      -6.27553,
+      53.360781
+     ],
+     [
+      -6.275115,
+      53.360776
+     ],
+     [
+      -6.275092,
+      53.360776
+     ],
+     [
+      -6.274425,
+      53.360785
+     ],
+     [
+      -6.27391,
+      53.360793
+     ],
+     [
+      -6.273789,
+      53.360795
+     ],
+     [
+      -6.272824,
+      53.360795
+     ],
+     [
+      -6.272688,
+      53.360793
+     ],
+     [
+      -6.272492,
+      53.360781
+     ],
+     [
+      -6.271672,
+      53.360728
+     ],
+     [
+      -6.271393,
+      53.360706
+     ],
+     [
+      -6.271323,
+      53.360701
+     ],
+     [
+      -6.271145,
+      53.360687
+     ],
+     [
+      -6.271085,
+      53.360682
+     ],
+     [
+      -6.271003,
+      53.360675
+     ],
+     [
+      -6.270991,
+      53.360674
+     ],
+     [
+      -6.270583,
+      53.360642
+     ],
+     [
+      -6.270479,
+      53.360633
+     ],
+     [
+      -6.270165,
+      53.360611
+     ],
+     [
+      -6.269706,
+      53.360573
+     ],
+     [
+      -6.269672,
+      53.360571
+     ],
+     [
+      -6.269364,
+      53.360543
+     ],
+     [
+      -6.269249,
+      53.360535
+     ],
+     [
+      -6.268062,
+      53.36045
+     ],
+     [
+      -6.267568,
+      53.360416
+     ],
+     [
+      -6.267324,
+      53.3604
+     ],
+     [
+      -6.267231,
+      53.360391
+     ],
+     [
+      -6.266626,
+      53.360338
+     ],
+     [
+      -6.26652,
+      53.360329
+     ],
+     [
+      -6.266084,
+      53.360298
+     ],
+     [
+      -6.265712,
+      53.360269
+     ],
+     [
+      -6.265643,
+      53.360264
+     ],
+     [
+      -6.265572,
+      53.360257
+     ],
+     [
+      -6.265474,
+      53.360248
+     ],
+     [
+      -6.265421,
+      53.360244
+     ],
+     [
+      -6.265188,
+      53.360225
+     ],
+     [
+      -6.264754,
+      53.360189
+     ],
+     [
+      -6.264634,
+      53.360179
+     ],
+     [
+      -6.264554,
+      53.360172
+     ],
+     [
+      -6.264499,
+      53.360168
+     ],
+     [
+      -6.264415,
+      53.360161
+     ],
+     [
+      -6.264137,
+      53.360138
+     ],
+     [
+      -6.264046,
+      53.36013
+     ],
+     [
+      -6.263483,
+      53.360085
+     ],
+     [
+      -6.262987,
+      53.360037
+     ],
+     [
+      -6.262008,
+      53.359892
+     ],
+     [
+      -6.261634,
+      53.359831
+     ],
+     [
+      -6.261324,
+      53.359764
+     ],
+     [
+      -6.261269,
+      53.359754
+     ],
+     [
+      -6.261204,
+      53.359744
+     ],
+     [
+      -6.26107,
+      53.359719
+     ],
+     [
+      -6.260562,
+      53.359622
+     ],
+     [
+      -6.259309,
+      53.359362
+     ],
+     [
+      -6.259157,
+      53.359323
+     ],
+     [
+      -6.258697,
+      53.359205
+     ],
+     [
+      -6.258489,
+      53.359169
+     ],
+     [
+      -6.257974,
+      53.35908
+     ],
+     [
+      -6.257655,
+      53.359016
+     ],
+     [
+      -6.25732,
+      53.358944
+     ],
+     [
+      -6.256659,
+      53.358802
+     ],
+     [
+      -6.255562,
+      53.358587
+     ],
+     [
+      -6.255027,
+      53.358475
+     ],
+     [
+      -6.254861,
+      53.358442
+     ],
+     [
+      -6.254596,
+      53.358388
+     ],
+     [
+      -6.253484,
+      53.358148
+     ],
+     [
+      -6.252622,
+      53.357979
+     ],
+     [
+      -6.2525,
+      53.357955
+     ],
+     [
+      -6.252362,
+      53.357926
+     ],
+     [
+      -6.252115,
+      53.357874
+     ],
+     [
+      -6.251243,
+      53.357691
+     ],
+     [
+      -6.25119,
+      53.35768
+     ],
+     [
+      -6.251102,
+      53.357662
+     ],
+     [
+      -6.251028,
+      53.357646
+     ],
+     [
+      -6.250837,
+      53.35761
+     ],
+     [
+      -6.250655,
+      53.357559
+     ],
+     [
+      -6.250451,
+      53.357487
+     ],
+     [
+      -6.250259,
+      53.357382
+     ],
+     [
+      -6.249966,
+      53.35716
+     ],
+     [
+      -6.249924,
+      53.357129
+     ],
+     [
+      -6.249897,
+      53.357108
+     ],
+     [
+      -6.249774,
+      53.357015
+     ],
+     [
+      -6.249651,
+      53.356922
+     ],
+     [
+      -6.249613,
+      53.356893
+     ],
+     [
+      -6.249037,
+      53.35646
+     ],
+     [
+      -6.249002,
+      53.356434
+     ],
+     [
+      -6.248934,
+      53.356385
+     ],
+     [
+      -6.2486,
+      53.356139
+     ],
+     [
+      -6.248464,
+      53.356038
+     ],
+     [
+      -6.248427,
+      53.35601
+     ],
+     [
+      -6.248392,
+      53.355983
+     ],
+     [
+      -6.248357,
+      53.355956
+     ],
+     [
+      -6.247997,
+      53.355691
+     ],
+     [
+      -6.247948,
+      53.355655
+     ],
+     [
+      -6.247263,
+      53.355138
+     ],
+     [
+      -6.246979,
+      53.354923
+     ],
+     [
+      -6.246869,
+      53.354844
+     ],
+     [
+      -6.246814,
+      53.354804
+     ],
+     [
+      -6.24677,
+      53.354771
+     ],
+     [
+      -6.246691,
+      53.354702
+     ],
+     [
+      -6.246594,
+      53.354638
+     ],
+     [
+      -6.246545,
+      53.354609
+     ],
+     [
+      -6.246508,
+      53.354587
+     ],
+     [
+      -6.246477,
+      53.354566
+     ],
+     [
+      -6.246412,
+      53.354525
+     ],
+     [
+      -6.24621,
+      53.354371
+     ],
+     [
+      -6.245673,
+      53.353962
+     ],
+     [
+      -6.245529,
+      53.353852
+     ],
+     [
+      -6.245463,
+      53.353803
+     ],
+     [
+      -6.245312,
+      53.35369
+     ],
+     [
+      -6.244901,
+      53.353385
+     ],
+     [
+      -6.24449,
+      53.353081
+     ],
+     [
+      -6.243544,
+      53.352374
+     ],
+     [
+      -6.24344,
+      53.352299
+     ],
+     [
+      -6.24342,
+      53.352284
+     ],
+     [
+      -6.243412,
+      53.352279
+     ],
+     [
+      -6.243401,
+      53.352271
+     ],
+     [
+      -6.243374,
+      53.352251
+     ],
+     [
+      -6.243249,
+      53.35216
+     ],
+     [
+      -6.243179,
+      53.352107
+     ],
+     [
+      -6.242983,
+      53.351965
+     ],
+     [
+      -6.242885,
+      53.35189
+     ],
+     [
+      -6.242703,
+      53.35176
+     ],
+     [
+      -6.242554,
+      53.351654
+     ],
+     [
+      -6.242402,
+      53.351545
+     ],
+     [
+      -6.242361,
+      53.351513
+     ],
+     [
+      -6.242267,
+      53.35144
+     ],
+     [
+      -6.24215,
+      53.351353
+     ],
+     [
+      -6.242129,
+      53.351338
+     ],
+     [
+      -6.242119,
+      53.35133
+     ],
+     [
+      -6.24211,
+      53.351324
+     ],
+     [
+      -6.242086,
+      53.351307
+     ],
+     [
+      -6.242034,
+      53.351271
+     ],
+     [
+      -6.241382,
+      53.350792
+     ],
+     [
+      -6.241188,
+      53.35065
+     ],
+     [
+      -6.241152,
+      53.350623
+     ],
+     [
+      -6.241034,
+      53.350538
+     ],
+     [
+      -6.240963,
+      53.350484
+     ],
+     [
+      -6.240946,
+      53.350471
+     ],
+     [
+      -6.240914,
+      53.350444
+     ],
+     [
+      -6.240873,
+      53.350409
+     ],
+     [
+      -6.240834,
+      53.350372
+     ],
+     [
+      -6.240811,
+      53.350343
+     ],
+     [
+      -6.240783,
+      53.350227
+     ],
+     [
+      -6.240793,
+      53.350111
+     ],
+     [
+      -6.240945,
+      53.349209
+     ],
+     [
+      -6.24096,
+      53.349121
+     ],
+     [
+      -6.240964,
+      53.349094
+     ],
+     [
+      -6.240969,
+      53.349063
+     ],
+     [
+      -6.240982,
+      53.348942
+     ],
+     [
+      -6.240988,
+      53.348903
+     ],
+     [
+      -6.240991,
+      53.348886
+     ],
+     [
+      -6.240993,
+      53.348875
+     ],
+     [
+      -6.240998,
+      53.348841
+     ],
+     [
+      -6.241056,
+      53.348476
+     ],
+     [
+      -6.241085,
+      53.348293
+     ],
+     [
+      -6.241104,
+      53.348168
+     ],
+     [
+      -6.24112,
+      53.348067
+     ],
+     [
+      -6.24116,
+      53.347798
+     ],
+     [
+      -6.241166,
+      53.347764
+     ],
+     [
+      -6.241169,
+      53.34774
+     ],
+     [
+      -6.24117,
+      53.347733
+     ],
+     [
+      -6.241173,
+      53.347717
+     ],
+     [
+      -6.241187,
+      53.347622
+     ],
+     [
+      -6.241196,
+      53.347561
+     ],
+     [
+      -6.241179,
+      53.347516
+     ],
+     [
+      -6.241154,
+      53.347461
+     ],
+     [
+      -6.241344,
+      53.34641
+     ],
+     [
+      -6.241341,
+      53.346379
+     ],
+     [
+      -6.241313,
+      53.346346
+     ],
+     [
+      -6.241287,
+      53.346319
+     ],
+     [
+      -6.241238,
+      53.346289
+     ],
+     [
+      -6.241135,
+      53.34627
+     ],
+     [
+      -6.240772,
+      53.34624
+     ],
+     [
+      -6.240672,
+      53.34623
+     ],
+     [
+      -6.240623,
+      53.346223
+     ],
+     [
+      -6.24059,
+      53.346214
+     ],
+     [
+      -6.240539,
+      53.346189
+     ],
+     [
+      -6.240493,
+      53.34616
+     ],
+     [
+      -6.240467,
+      53.346135
+     ],
+     [
+      -6.240448,
+      53.346103
+     ],
+     [
+      -6.240447,
+      53.346041
+     ],
+     [
+      -6.240449,
+      53.346023
+     ],
+     [
+      -6.240453,
+      53.345991
+     ],
+     [
+      -6.240502,
+      53.345818
+     ],
+     [
+      -6.240556,
+      53.345595
+     ],
+     [
+      -6.240578,
+      53.345518
+     ],
+     [
+      -6.240766,
+      53.34461
+     ],
+     [
+      -6.24077,
+      53.344593
+     ],
+     [
+      -6.240792,
+      53.344487
+     ],
+     [
+      -6.240812,
+      53.344393
+     ],
+     [
+      -6.240818,
+      53.344364
+     ],
+     [
+      -6.240823,
+      53.344337
+     ],
+     [
+      -6.240824,
+      53.344334
+     ],
+     [
+      -6.24086,
+      53.344158
+     ],
+     [
+      -6.240888,
+      53.34402
+     ],
+     [
+      -6.240909,
+      53.343918
+     ],
+     [
+      -6.241116,
+      53.342914
+     ],
+     [
+      -6.241124,
+      53.342876
+     ],
+     [
+      -6.241131,
+      53.342845
+     ],
+     [
+      -6.24115,
+      53.342749
+     ],
+     [
+      -6.241174,
+      53.342649
+     ],
+     [
+      -6.24118,
+      53.342621
+     ],
+     [
+      -6.241186,
+      53.342587
+     ],
+     [
+      -6.241253,
+      53.342244
+     ],
+     [
+      -6.241268,
+      53.342168
+     ],
+     [
+      -6.241304,
+      53.341983
+     ],
+     [
+      -6.241342,
+      53.341788
+     ],
+     [
+      -6.241361,
+      53.341688
+     ],
+     [
+      -6.241437,
+      53.341344
+     ],
+     [
+      -6.241478,
+      53.341167
+     ],
+     [
+      -6.241482,
+      53.341147
+     ],
+     [
+      -6.241507,
+      53.340981
+     ],
+     [
+      -6.241511,
+      53.340958
+     ],
+     [
+      -6.241554,
+      53.340683
+     ],
+     [
+      -6.241651,
+      53.34016
+     ],
+     [
+      -6.241682,
+      53.340049
+     ],
+     [
+      -6.241676,
+      53.339928
+     ],
+     [
+      -6.24167,
+      53.339819
+     ],
+     [
+      -6.241668,
+      53.339798
+     ],
+     [
+      -6.241663,
+      53.339761
+     ],
+     [
+      -6.241663,
+      53.339755
+     ],
+     [
+      -6.241588,
+      53.339626
+     ],
+     [
+      -6.241363,
+      53.339527
+     ],
+     [
+      -6.241228,
+      53.339471
+     ],
+     [
+      -6.241001,
+      53.339379
+     ],
+     [
+      -6.24049,
+      53.339179
+     ],
+     [
+      -6.240098,
+      53.339029
+     ],
+     [
+      -6.239876,
+      53.338945
+     ],
+     [
+      -6.239875,
+      53.338945
+     ],
+     [
+      -6.239701,
+      53.338887
+     ],
+     [
+      -6.239241,
+      53.338745
+     ],
+     [
+      -6.239106,
+      53.338708
+     ],
+     [
+      -6.238995,
+      53.338677
+     ],
+     [
+      -6.238958,
+      53.338668
+     ],
+     [
+      -6.238861,
+      53.338641
+     ],
+     [
+      -6.238853,
+      53.338639
+     ],
+     [
+      -6.238802,
+      53.338624
+     ],
+     [
+      -6.23879,
+      53.33862
+     ],
+     [
+      -6.238734,
+      53.338604
+     ],
+     [
+      -6.238514,
+      53.33854
+     ],
+     [
+      -6.238414,
+      53.338513
+     ],
+     [
+      -6.23812,
+      53.338428
+     ],
+     [
+      -6.238106,
+      53.338424
+     ],
+     [
+      -6.238089,
+      53.33842
+     ],
+     [
+      -6.238075,
+      53.338416
+     ],
+     [
+      -6.23781,
+      53.33834
+     ],
+     [
+      -6.237135,
+      53.338154
+     ],
+     [
+      -6.236938,
+      53.338093
+     ],
+     [
+      -6.236708,
+      53.338026
+     ],
+     [
+      -6.23646,
+      53.337949
+     ],
+     [
+      -6.236052,
+      53.337822
+     ],
+     [
+      -6.235693,
+      53.337699
+     ],
+     [
+      -6.235259,
+      53.337529
+     ],
+     [
+      -6.23503,
+      53.337421
+     ],
+     [
+      -6.23481,
+      53.337316
+     ],
+     [
+      -6.234797,
+      53.33731
+     ],
+     [
+      -6.234662,
+      53.33722
+     ],
+     [
+      -6.23451,
+      53.337124
+     ],
+     [
+      -6.234352,
+      53.337008
+     ],
+     [
+      -6.234114,
+      53.336833
+     ],
+     [
+      -6.233702,
+      53.336518
+     ],
+     [
+      -6.233657,
+      53.336483
+     ],
+     [
+      -6.233223,
+      53.336154
+     ],
+     [
+      -6.233072,
+      53.336036
+     ],
+     [
+      -6.232808,
+      53.335829
+     ],
+     [
+      -6.232698,
+      53.335732
+     ],
+     [
+      -6.232579,
+      53.335604
+     ],
+     [
+      -6.232487,
+      53.335479
+     ],
+     [
+      -6.232465,
+      53.335438
+     ],
+     [
+      -6.232419,
+      53.335351
+     ],
+     [
+      -6.23239,
+      53.335267
+     ],
+     [
+      -6.232201,
+      53.334731
+     ],
+     [
+      -6.232147,
+      53.334579
+     ],
+     [
+      -6.231918,
+      53.333981
+     ],
+     [
+      -6.231869,
+      53.333855
+     ],
+     [
+      -6.231813,
+      53.333703
+     ],
+     [
+      -6.2318,
+      53.333666
+     ],
+     [
+      -6.231726,
+      53.33346
+     ],
+     [
+      -6.231716,
+      53.333424
+     ],
+     [
+      -6.231675,
+      53.33328
+     ],
+     [
+      -6.231665,
+      53.333167
+     ],
+     [
+      -6.231653,
+      53.332948
+     ],
+     [
+      -6.231664,
+      53.332778
+     ],
+     [
+      -6.231677,
+      53.332654
+     ],
+     [
+      -6.231684,
+      53.332573
+     ],
+     [
+      -6.231706,
+      53.332426
+     ],
+     [
+      -6.231725,
+      53.332306
+     ],
+     [
+      -6.231816,
+      53.331438
+     ],
+     [
+      -6.231857,
+      53.330678
+     ],
+     [
+      -6.231858,
+      53.330661
+     ],
+     [
+      -6.231872,
+      53.330411
+     ],
+     [
+      -6.231883,
+      53.330213
+     ],
+     [
+      -6.231888,
+      53.330145
+     ],
+     [
+      -6.23189,
+      53.330114
+     ],
+     [
+      -6.2319,
+      53.32995
+     ],
+     [
+      -6.231914,
+      53.329837
+     ],
+     [
+      -6.231964,
+      53.329683
+     ],
+     [
+      -6.232014,
+      53.329528
+     ],
+     [
+      -6.231876,
+      53.329462
+     ],
+     [
+      -6.231757,
+      53.329404
+     ],
+     [
+      -6.231528,
+      53.3293
+     ],
+     [
+      -6.231513,
+      53.329294
+     ],
+     [
+      -6.23135,
+      53.329222
+     ],
+     [
+      -6.231182,
+      53.329151
+     ],
+     [
+      -6.231128,
+      53.329127
+     ],
+     [
+      -6.231025,
+      53.329088
+     ],
+     [
+      -6.230918,
+      53.329091
+     ],
+     [
+      -6.23086,
+      53.329071
+     ],
+     [
+      -6.230829,
+      53.32906
+     ],
+     [
+      -6.230748,
+      53.329023
+     ],
+     [
+      -6.230681,
+      53.328995
+     ],
+     [
+      -6.230664,
+      53.328984
+     ],
+     [
+      -6.230604,
+      53.328936
+     ],
+     [
+      -6.230564,
+      53.328897
+     ],
+     [
+      -6.23054,
+      53.328856
+     ],
+     [
+      -6.230536,
+      53.328823
+     ],
+     [
+      -6.23054,
+      53.328798
+     ],
+     [
+      -6.230553,
+      53.32875
+     ],
+     [
+      -6.230566,
+      53.328709
+     ],
+     [
+      -6.230594,
+      53.328638
+     ],
+     [
+      -6.23066,
+      53.328571
+     ],
+     [
+      -6.230823,
+      53.327772
+     ],
+     [
+      -6.230844,
+      53.327672
+     ],
+     [
+      -6.230857,
+      53.327612
+     ],
+     [
+      -6.230867,
+      53.327562
+     ],
+     [
+      -6.230869,
+      53.32755
+     ],
+     [
+      -6.230877,
+      53.327515
+     ],
+     [
+      -6.230917,
+      53.327321
+     ],
+     [
+      -6.230815,
+      53.327313
+     ],
+     [
+      -6.230696,
+      53.32729
+     ],
+     [
+      -6.230606,
+      53.327263
+     ],
+     [
+      -6.230518,
+      53.327236
+     ],
+     [
+      -6.230472,
+      53.327221
+     ],
+     [
+      -6.23039,
+      53.327194
+     ],
+     [
+      -6.230373,
+      53.327188
+     ],
+     [
+      -6.230193,
+      53.327134
+     ],
+     [
+      -6.230126,
+      53.327114
+     ],
+     [
+      -6.228958,
+      53.326797
+     ],
+     [
+      -6.228789,
+      53.32675
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "work": "Ulysses",
+    "group": 17,
+    "story": "Ithaca",
+    "group_de": "Ithaka",
+    "name": "Walk home to Eccles Street",
+    "kind": "route",
+    "time": "1am",
+    "gloss": "Bloom and Stephen's late walk from the cabman's shelter at Butt Bridge up Marlborough Street and Temple Street to Eccles Street."
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      -6.254967,
+      53.347845
+     ],
+     [
+      -6.254962,
+      53.347891
+     ],
+     [
+      -6.254955,
+      53.348102
+     ],
+     [
+      -6.254954,
+      53.348131
+     ],
+     [
+      -6.255055,
+      53.348131
+     ],
+     [
+      -6.255111,
+      53.34813
+     ],
+     [
+      -6.255119,
+      53.348161
+     ],
+     [
+      -6.255162,
+      53.348165
+     ],
+     [
+      -6.25535,
+      53.348141
+     ],
+     [
+      -6.256821,
+      53.34795
+     ],
+     [
+      -6.257096,
+      53.347915
+     ],
+     [
+      -6.257106,
+      53.347937
+     ],
+     [
+      -6.25711,
+      53.347947
+     ],
+     [
+      -6.257134,
+      53.348003
+     ],
+     [
+      -6.257155,
+      53.34805
+     ],
+     [
+      -6.25716,
+      53.348061
+     ],
+     [
+      -6.257248,
+      53.348046
+     ],
+     [
+      -6.25727,
+      53.348074
+     ],
+     [
+      -6.257376,
+      53.348321
+     ],
+     [
+      -6.25747,
+      53.348315
+     ],
+     [
+      -6.257466,
+      53.348303
+     ],
+     [
+      -6.25747,
+      53.348315
+     ],
+     [
+      -6.257376,
+      53.348321
+     ],
+     [
+      -6.257519,
+      53.348653
+     ],
+     [
+      -6.257582,
+      53.348644
+     ],
+     [
+      -6.257591,
+      53.348668
+     ],
+     [
+      -6.257593,
+      53.348675
+     ],
+     [
+      -6.257602,
+      53.348701
+     ],
+     [
+      -6.25762,
+      53.348751
+     ],
+     [
+      -6.257643,
+      53.348804
+     ],
+     [
+      -6.257701,
+      53.348796
+     ],
+     [
+      -6.257841,
+      53.349136
+     ],
+     [
+      -6.257848,
+      53.349151
+     ],
+     [
+      -6.257867,
+      53.349195
+     ],
+     [
+      -6.258264,
+      53.350124
+     ],
+     [
+      -6.258288,
+      53.350182
+     ],
+     [
+      -6.258371,
+      53.350388
+     ],
+     [
+      -6.258494,
+      53.35069
+     ],
+     [
+      -6.258607,
+      53.35094
+     ],
+     [
+      -6.259207,
+      53.352247
+     ],
+     [
+      -6.259117,
+      53.352266
+     ],
+     [
+      -6.259162,
+      53.352374
+     ],
+     [
+      -6.259297,
+      53.352661
+     ],
+     [
+      -6.259359,
+      53.352652
+     ],
+     [
+      -6.259377,
+      53.352695
+     ],
+     [
+      -6.259426,
+      53.3528
+     ],
+     [
+      -6.25946,
+      53.352813
+     ],
+     [
+      -6.259486,
+      53.352878
+     ],
+     [
+      -6.259466,
+      53.352902
+     ],
+     [
+      -6.25962,
+      53.353215
+     ],
+     [
+      -6.259638,
+      53.353237
+     ],
+     [
+      -6.259678,
+      53.353253
+     ],
+     [
+      -6.259704,
+      53.35325
+     ],
+     [
+      -6.259735,
+      53.353271
+     ],
+     [
+      -6.259772,
+      53.353302
+     ],
+     [
+      -6.259798,
+      53.35332
+     ],
+     [
+      -6.259833,
+      53.353349
+     ],
+     [
+      -6.259886,
+      53.35339
+     ],
+     [
+      -6.259548,
+      53.353536
+     ],
+     [
+      -6.260081,
+      53.353887
+     ],
+     [
+      -6.260246,
+      53.354011
+     ],
+     [
+      -6.260813,
+      53.354436
+     ],
+     [
+      -6.26132,
+      53.354808
+     ],
+     [
+      -6.261913,
+      53.355284
+     ],
+     [
+      -6.26196,
+      53.355292
+     ],
+     [
+      -6.262007,
+      53.355282
+     ],
+     [
+      -6.262093,
+      53.355235
+     ],
+     [
+      -6.262146,
+      53.355272
+     ],
+     [
+      -6.262206,
+      53.355318
+     ],
+     [
+      -6.261193,
+      53.35579
+     ],
+     [
+      -6.261167,
+      53.355802
+     ],
+     [
+      -6.261163,
+      53.35585
+     ],
+     [
+      -6.261698,
+      53.356233
+     ],
+     [
+      -6.261802,
+      53.3563
+     ],
+     [
+      -6.261731,
+      53.356333
+     ],
+     [
+      -6.261749,
+      53.356346
+     ],
+     [
+      -6.26187,
+      53.356432
+     ],
+     [
+      -6.262133,
+      53.35662
+     ],
+     [
+      -6.262032,
+      53.356674
+     ],
+     [
+      -6.262571,
+      53.357069
+     ],
+     [
+      -6.26266,
+      53.357096
+     ],
+     [
+      -6.262741,
+      53.357121
+     ],
+     [
+      -6.262839,
+      53.357125
+     ],
+     [
+      -6.263102,
+      53.357247
+     ],
+     [
+      -6.263125,
+      53.357277
+     ],
+     [
+      -6.26313,
+      53.357318
+     ],
+     [
+      -6.263192,
+      53.357352
+     ],
+     [
+      -6.263256,
+      53.357395
+     ],
+     [
+      -6.263586,
+      53.357525
+     ],
+     [
+      -6.263665,
+      53.357465
+     ],
+     [
+      -6.263746,
+      53.3574
+     ],
+     [
+      -6.263777,
+      53.357398
+     ],
+     [
+      -6.263786,
+      53.357391
+     ],
+     [
+      -6.263887,
+      53.357425
+     ],
+     [
+      -6.263908,
+      53.357433
+     ],
+     [
+      -6.264017,
+      53.35747
+     ],
+     [
+      -6.264001,
+      53.357485
+     ],
+     [
+      -6.267024,
+      53.358352
+     ],
+     [
+      -6.267116,
+      53.358379
+     ],
+     [
+      -6.267073,
+      53.358437
+     ],
+     [
+      -6.266838,
+      53.358368
+     ]
     ]
    }
   }

@@ -13,8 +13,13 @@ Three works share one map, switched via the header tabs (or
 
 - **Dubliners** — 196 features across the 15 stories: 185 places and 11
   character routes, with editorial gloss + verbatim quote + page number.
-- **Ulysses** *(experimental)* — an original, growing dataset grouped by the
-  novel's 18 episodes, with gloss + quote + Gabler episode.line reference.
+- **Ulysses** *(experimental)* — an original dataset of 37 locations across
+  all 18 episodes (including the dozen-plus vignettes of *Wandering Rocks*)
+  plus 4 road-following journey lines (Dignam's funeral, Fr Conmee's walk, the
+  viceregal cavalcade, the late walk home). Each carries the episode's clock
+  time, a gloss, and where apt a quote + Gabler episode.line reference.
+  Locations and times follow the published *Ulysses Map of County Dublin*
+  index (factual addresses, geocoded here).
 - **Portrait** (*A Portrait of the Artist as a Young Man*) *(experimental)* —
   an original dataset grouped by the novel's 5 chapters, tracing Stephen
   Dedalus from Clongowes and Bray through Belvedere, Cork and UCD to his
@@ -73,36 +78,57 @@ cd helpers
 python3 kml_to_geojson.py source-doc.kml ../data/dubliners.geojson
 ```
 
-**Ulysses** (own dataset). Edit `data/ulysses-source.json` — add a place under
-`places` with `episode`, `name`, a `geocode` query (a real, findable Dublin
-landmark/street), and optional `gloss` / `quote` / `ref`. Then:
+**Ulysses** and **Portrait** (own datasets) use the generic geocoder
+`helpers/geocode_source.py`, which is work-agnostic — it reads
+`groups`/`chapters`/`episodes` + `places` from any such source file, resolves
+each `geocode` query via OpenStreetMap/Nominatim (<=1 req/s), caches the
+resulting `lat`/`lon` back into the source so it is never re-queried, and
+rewrites the GeoJSON. Set `lat`/`lon` by hand to override geocoding.
 
 ```bash
 cd helpers
-python3 geocode_ulysses.py
-```
-
-The geocoder resolves each new `geocode` query via OpenStreetMap/Nominatim
-(<=1 req/s), caches the resulting `lat`/`lon` back into the source so it is
-never re-queried, and rewrites `data/ulysses.geojson`. Set `lat`/`lon` by hand
-to override geocoding. The seed covers iconic locations across 16 of the 18
-episodes; episodes 10 (Wandering Rocks) and 18 (Penelope) are placeholders to
-fill in. **Quotes and episode.line refs should be verified against the
-public-domain text before publishing.**
-
-**Portrait** (own dataset, grouped by chapter). Same workflow with the generic
-geocoder:
-
-```bash
-cd helpers
+python3 geocode_source.py ../data/ulysses-source.json  ../data/ulysses.geojson
 python3 geocode_source.py ../data/portrait-source.json ../data/portrait.geojson
 ```
 
-`geocode_source.py` is work-agnostic (reads `groups`/`chapters`/`episodes` +
-`places` from any such source file). The Portrait seed has ~16 places across
-all 5 chapters. Note that Nominatim can pick the wrong same-named street
-(e.g. "Church Street") — verify new coordinates, and set `lat`/`lon` by hand
-where needed. Quotes/refs likewise need checking against Gutenberg #4217.
+To add a place, copy an entry in the relevant `*-source.json` and set the
+group (`episode` / `group`), `name`, a `geocode` query (a real, findable
+address), and optional `time` / `gloss` / `quote` / `ref`.
+
+A source may also carry a `routes` array: each route has `from`/`to`
+`[lat,lon]` endpoints, and the geocoder draws a road-following line between
+them via the public OSRM router (using `curl`), caching the path in `coords`.
+Delete `coords` to re-route, or hand-edit the line (e.g. in
+[uMap](https://umap.openstreetmap.fr/)) and paste the corrected `[lon,lat]`
+array back into `coords`. The current Ulysses routes are first approximations
+to be checked against the text.
+
+Notes: Nominatim sometimes picks the wrong same-named street (e.g. a
+"Church Street" in the wrong suburb) — sanity-check new coordinates and set
+`lat`/`lon` by hand where needed. **Quotes, times and episode.line refs should
+be verified against the public-domain texts before publishing** (Ulysses; and
+Portrait via Gutenberg #4217). `helpers/geocode_ulysses.py` is the older
+Ulysses-only geocoder, kept for reference; `geocode_source.py` supersedes it.
+
+## Editing geometry in uMap (round-trip)
+
+Export the Ulysses layer to KML, fix points/routes by hand in
+[uMap](https://umap.openstreetmap.fr/), then import the edits back:
+
+```bash
+cd helpers
+# 1. export to KML (folders per episode, colours, ExtendedData for round-trip)
+python3 geojson_to_kml.py ../data/ulysses.geojson ../data/ulysses.kml
+# 2. … import ulysses.kml into uMap, move markers / redraw lines, export …
+# 3. re-import the edited file (KML or GeoJSON) back into the source
+python3 import_umap.py path/to/edited.kml ../data/ulysses-source.json
+# 4. regenerate the GeoJSON the site loads
+python3 geocode_source.py ../data/ulysses-source.json ../data/ulysses.geojson
+```
+
+`import_umap.py` matches features by (episode, name) and writes only the
+geometry back (points → `lat`/`lon`, routes → `coords`), so glosses, quotes
+and times are preserved. The export↔import cycle is geometry-lossless.
 
 ## Local preview
 

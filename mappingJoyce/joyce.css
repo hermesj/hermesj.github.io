@@ -243,6 +243,17 @@ header .tagline {
   color: var(--ink-soft);
   margin-bottom: 0.5em;
 }
+.pop-time {
+  display: inline-block;
+  margin-left: 0.4em;
+  padding: 0.05em 0.45em;
+  font-size: 0.66rem;
+  letter-spacing: 0.03em;
+  color: #6a5037;
+  background: rgba(120, 90, 60, 0.12);
+  border-radius: 3px;
+  vertical-align: 0.1em;
+}
 .pop-gloss {
   font-style: italic;
   color: var(--ink-soft);

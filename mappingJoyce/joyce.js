@@ -33,24 +33,29 @@
 
   // ── Ulysses: the 18 episodes (key = English title, matches `story`) ──
   var ULYSSES_GROUPS = [
-    { key: "Telemachus",           de: "Telemachos",                   color: "#b5651d" },
-    { key: "Nestor",               de: "Nestor",                       color: "#8d6e3a" },
-    { key: "Proteus",              de: "Proteus",                      color: "#1f6f6f" },
-    { key: "Calypso",              de: "Kalypso",                      color: "#2c7a3f" },
-    { key: "Lotus Eaters",         de: "Lotophagen",                   color: "#6b8e23" },
-    { key: "Hades",                de: "Hades",                        color: "#34495e" },
-    { key: "Aeolus",               de: "Aiolos",                       color: "#2980b9" },
-    { key: "Lestrygonians",        de: "Laistrygonen",                 color: "#a67c00" },
-    { key: "Scylla and Charybdis", de: "Skylla und Charybdis",         color: "#8e44ad" },
-    { key: "Wandering Rocks",      de: "Irrfelsen",                    color: "#16735b" },
-    { key: "Sirens",               de: "Sirenen",                      color: "#c0392b" },
-    { key: "Cyclops",              de: "Zyklop",                       color: "#7b3f00" },
-    { key: "Nausicaa",             de: "Nausikaa",                     color: "#d2691e" },
-    { key: "Oxen of the Sun",      de: "Die Rinder des Sonnengottes",  color: "#9b1d4f" },
-    { key: "Circe",                de: "Kirke",                        color: "#6a1b9a" },
-    { key: "Eumaeus",              de: "Eumaios",                      color: "#1565a0" },
-    { key: "Ithaca",               de: "Ithaka",                       color: "#33691e" },
-    { key: "Penelope",             de: "Penelope",                     color: "#7d5a2b" }
+    // Colours follow Joyce's Linati schema (the more complete of the two:
+    // 14 of 18 episodes have an assigned colour), adapted for legibility on a
+    // light basemap — white→gold/black/grey stand-ins, a representative tone
+    // for "rainbow" (Wandering Rocks), two distinct greens, and neutral tones
+    // for the four episodes Joyce left uncoloured (9, 16, 17, 18).
+    { key: "Telemachus",           de: "Telemachos",                   color: "#c9a227" }, // gold/white
+    { key: "Nestor",               de: "Nestor",                       color: "#7b4f2a" }, // brown
+    { key: "Proteus",              de: "Proteus",                      color: "#2e7d32" }, // green
+    { key: "Calypso",              de: "Kalypso",                      color: "#e07b16" }, // orange
+    { key: "Lotus Eaters",         de: "Lotophagen",                   color: "#4e342e" }, // dark brown
+    { key: "Hades",                de: "Hades",                        color: "#2b2b2b" }, // black/white
+    { key: "Aeolus",               de: "Aiolos",                       color: "#c0392b" }, // red
+    { key: "Lestrygonians",        de: "Laistrygonen",                 color: "#7e1620" }, // blood red
+    { key: "Scylla and Charybdis", de: "Skylla und Charybdis",         color: "#5d6d7e" }, // (none) neutral
+    { key: "Wandering Rocks",      de: "Irrfelsen",                    color: "#6a5acd" }, // rainbow (stand-in)
+    { key: "Sirens",               de: "Sirenen",                      color: "#ff7f50" }, // coral
+    { key: "Cyclops",              de: "Zyklop",                       color: "#1b5e20" }, // green (dark)
+    { key: "Nausicaa",             de: "Nausikaa",                     color: "#7f9bb3" }, // grey/blue
+    { key: "Oxen of the Sun",      de: "Die Rinder des Sonnengottes",  color: "#bdc3c7" }, // white (light grey)
+    { key: "Circe",                de: "Kirke",                        color: "#8e44ad" }, // violet
+    { key: "Eumaeus",              de: "Eumaios",                      color: "#607d8b" }, // (none) neutral
+    { key: "Ithaca",               de: "Ithaka",                       color: "#2c3e50" }, // (none) night
+    { key: "Penelope",             de: "Penelope",                     color: "#6d4c41" }  // (none) earth
   ];
 
   // ── A Portrait of the Artist as a Young Man: the 5 chapters ──
@@ -124,8 +129,13 @@
     if (p.kind === "route") h += ' <span style="font-weight:400;color:#9a8a7a">(' + t.route + ")</span>";
     h += "</div>";
     var sub = titleFor(p.story);
-    if (work === "ulysses" && p.episode) sub = t.ref + " " + p.episode + " · " + sub;
-    h += '<div class="pop-story">' + esc(sub) + "</div>";
+    // geocode_source.py emits the group number as `group`; the older
+    // geocode_ulysses.py used `episode`. Accept either for the episode prefix.
+    var epNum = (p.group != null) ? p.group : p.episode;
+    if (work === "ulysses" && epNum != null) sub = t.ref + " " + epNum + " · " + sub;
+    h += '<div class="pop-story">' + esc(sub);
+    if (p.time) h += ' <span class="pop-time">' + esc(p.time) + "</span>";
+    h += "</div>";
     if (p.gloss) h += '<div class="pop-gloss">' + esc(p.gloss) + "</div>";
     if (p.quote) {
       h += '<div class="pop-quote">' + esc(p.quote);
