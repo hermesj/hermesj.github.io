@@ -71,34 +71,38 @@ KMZ (<https://mappingdubliners.org/files/mappingdublinersearth.kmz>). Map tiles
 
 ## Regenerating the data
 
-**Dubliners** (from the original KMZ, already unpacked to `source-doc.kml`):
+**Dubliners** (from the original KMZ, already unpacked to `source-doc.kml`) —
+an example-specific importer:
 
 ```bash
-cd helpers
-python3 kml_to_geojson.py source-doc.kml ../data/dubliners.geojson
+cd pipeline/example-dubliners
+python3 kml_to_geojson.py source-doc.kml ../../data/dubliners.geojson
 ```
 
 **Ulysses** and **Portrait** (own datasets) use the generic geocoder
-`helpers/geocode_source.py`, which is work-agnostic — it reads
+`pipeline/geocode_source.py`, which is work-agnostic — it reads
 `groups`/`chapters`/`episodes` + `places` from any such source file, resolves
 each `geocode` query via OpenStreetMap/Nominatim (<=1 req/s), caches the
 resulting `lat`/`lon` back into the source so it is never re-queried, and
 rewrites the GeoJSON. Set `lat`/`lon` by hand to override geocoding.
 
 ```bash
-cd helpers
+cd pipeline
 python3 geocode_source.py ../data/ulysses-source.json  ../data/ulysses.geojson
 python3 geocode_source.py ../data/portrait-source.json ../data/portrait.geojson
 ```
+
+Bias ambiguous geocodes to a region with `--region=S,W,N,E`
+(e.g. Dublin `--region=53.0,-6.7,53.7,-6.0`).
 
 To add a place, copy an entry in the relevant `*-source.json` and set the
 group (`episode` / `group`), `name`, a `geocode` query (a real, findable
 address), and optional `time` / `gloss` / `quote` / `ref`.
 
 A source may also carry a `routes` array: each route has `from`/`to`
-`[lat,lon]` endpoints, and the geocoder draws a road-following line between
-them via the public OSRM router (using `curl`), caching the path in `coords`.
-Delete `coords` to re-route, or hand-edit the line (e.g. in
+`[lat,lon]` endpoints and an optional `mode` — `"driving"` (default, OSRM) or
+`"foot"` (BRouter, avoids motorways). The geocoder draws the line and caches it
+in `coords`. Delete `coords` to re-route, or hand-edit the line (e.g. in
 [uMap](https://umap.openstreetmap.fr/)) and paste the corrected `[lon,lat]`
 array back into `coords`. The current Ulysses routes are first approximations
 to be checked against the text.
@@ -107,8 +111,9 @@ Notes: Nominatim sometimes picks the wrong same-named street (e.g. a
 "Church Street" in the wrong suburb) — sanity-check new coordinates and set
 `lat`/`lon` by hand where needed. **Quotes, times and episode.line refs should
 be verified against the public-domain texts before publishing** (Ulysses; and
-Portrait via Gutenberg #4217). `helpers/geocode_ulysses.py` is the older
-Ulysses-only geocoder, kept for reference; `geocode_source.py` supersedes it.
+Portrait via Gutenberg #4217). `pipeline/legacy/geocode_ulysses.py` is the
+older Ulysses-only geocoder, kept for reference; `geocode_source.py` supersedes
+it.
 
 ## Editing geometry in uMap (round-trip)
 
@@ -116,7 +121,7 @@ Export the Ulysses layer to KML, fix points/routes by hand in
 [uMap](https://umap.openstreetmap.fr/), then import the edits back:
 
 ```bash
-cd helpers
+cd pipeline
 # 1. export to KML (folders per episode, colours, ExtendedData for round-trip)
 python3 geojson_to_kml.py ../data/ulysses.geojson ../data/ulysses.kml
 # 2. … import ulysses.kml into uMap, move markers / redraw lines, export …
@@ -136,3 +141,18 @@ and times are preserved. The export↔import cycle is geometry-lossless.
 python3 -m http.server 8732
 # open http://localhost:8732/
 ```
+
+## Licensing
+
+Three layers, three sets of terms (full details in
+[`NOTICE.md`](NOTICE.md)):
+
+- **Code** (`engine/`, `pipeline/`, `text/code/`) — **MIT** ([`LICENSE`](LICENSE)).
+- **Geodata** (`data/`) — **CC BY-NC 4.0**; the Dubliners layer derives from
+  Jasmine Mulliken's *Mapping Dubliners Project* (attribution required).
+  See [`data/NOTICE.md`](data/NOTICE.md).
+- **Source texts** (`text/raw/`) — **public domain** only
+  ([`text/raw/NOTICE.md`](text/raw/NOTICE.md)).
+
+Basemap © OpenStreetMap contributors © CARTO; coordinates/routes derive from
+OpenStreetMap (ODbL). No copyrighted critical editions are reproduced.

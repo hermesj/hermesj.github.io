@@ -1,8 +1,8 @@
 {
  "type": "FeatureCollection",
  "metadata": {
-  "title": "Mapping Joyce — Portrait",
-  "note": "Original dataset compiled for mappingJoyce from the public-domain text. Coordinates via OpenStreetMap/Nominatim.",
+  "title": "Portrait",
+  "note": "Dataset compiled from a public-domain text. Coordinates via OpenStreetMap/Nominatim; routes via OSRM (driving) / BRouter (foot).",
   "license": "CC BY-NC 4.0"
  },
  "features": [

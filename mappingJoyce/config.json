@@ -1,0 +1,114 @@
+{
+  "site": { "title": "Mapping Joyce", "defaultWork": "dubliners", "defaultLang": "en" },
+
+  "basemap": {
+    "url": "https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png",
+    "maxZoom": 19,
+    "attribution": "&copy; <a href=\"https://www.openstreetmap.org/copyright\">OpenStreetMap</a> contributors &copy; <a href=\"https://carto.com/attributions\">CARTO</a>"
+  },
+
+  "view": { "center": [53.3478, -6.2597], "zoom": 13, "regionBBox": [53.0, -6.7, 53.7, -6.0] },
+
+  "ui": {
+    "en": { "showAll": "Show all", "hideAll": "Hide all", "route": "Route", "page": "p.",
+            "exp": "experimental", "toggleLayer": "toggle layer",
+            "expNote": "Experimental · an original, still-incomplete dataset; quotes not yet finally verified." },
+    "de": { "showAll": "Alle zeigen", "hideAll": "Alle aus", "route": "Route", "page": "S.",
+            "exp": "experimentell", "toggleLayer": "Ebene ein/aus",
+            "expNote": "Experimentell · eigener, noch unvollständiger Datensatz; Zitate noch nicht final geprüft." }
+  },
+
+  "works": {
+    "dubliners": {
+      "label": { "en": "Dubliners", "de": "Dubliner" },
+      "data": "data/dubliners.geojson",
+      "experimental": false,
+      "numberedGroups": false,
+      "groupPrefix": null,
+      "tagline": {
+        "en": "The places of James Joyce's Dubliners, mapped.",
+        "de": "Die Orte aus James Joyces »Dubliner« auf der Karte."
+      },
+      "credit": {
+        "en": "Geodata derived from the <a href=\"https://mappingdubliners.org/\" target=\"_blank\" rel=\"noopener\">Mapping Dubliners Project</a> by Jasmine Mulliken (CC&nbsp;BY-NC&nbsp;4.0) · Map © <a href=\"https://www.openstreetmap.org/copyright\" target=\"_blank\" rel=\"noopener\">OpenStreetMap</a> contributors",
+        "de": "Geodaten abgeleitet aus dem <a href=\"https://mappingdubliners.org/\" target=\"_blank\" rel=\"noopener\">Mapping Dubliners Project</a> von Jasmine Mulliken (CC&nbsp;BY-NC&nbsp;4.0) · Karte © <a href=\"https://www.openstreetmap.org/copyright\" target=\"_blank\" rel=\"noopener\">OpenStreetMap</a>-Mitwirkende"
+      },
+      "groups": [
+        { "key": "The Sisters",                   "de": "Die Schwestern",            "color": "#b5651d" },
+        { "key": "An Encounter",                  "de": "Eine Begegnung",            "color": "#1f6f6f" },
+        { "key": "Araby",                         "de": "Araby",                     "color": "#8e44ad" },
+        { "key": "Eveline",                       "de": "Eveline",                   "color": "#2c7a3f" },
+        { "key": "After the Race",                "de": "Nach dem Rennen",           "color": "#c0392b" },
+        { "key": "Two Gallants",                  "de": "Zwei Kavaliere",            "color": "#16735b" },
+        { "key": "The Boarding House",            "de": "Die Pension",               "color": "#a67c00" },
+        { "key": "A Little Cloud",                "de": "Eine kleine Wolke",         "color": "#2980b9" },
+        { "key": "Counterparts",                  "de": "Gegenstücke",               "color": "#7d5a2b" },
+        { "key": "Clay",                          "de": "Lehm",                      "color": "#6b8e23" },
+        { "key": "A Painful Case",                "de": "Ein betrüblicher Fall",     "color": "#9b1d4f" },
+        { "key": "Ivy Day in the Committee Room", "de": "Efeutag im Sitzungszimmer", "color": "#33691e" },
+        { "key": "A Mother",                      "de": "Eine Mutter",               "color": "#1565a0" },
+        { "key": "Grace",                         "de": "Gnade",                     "color": "#7b3f00" },
+        { "key": "The Dead",                      "de": "Die Toten",                 "color": "#34495e" }
+      ]
+    },
+
+    "ulysses": {
+      "label": { "en": "Ulysses", "de": "Ulysses" },
+      "data": "data/ulysses.geojson",
+      "experimental": true,
+      "numberedGroups": true,
+      "groupPrefix": { "en": "Episode", "de": "Episode" },
+      "tagline": {
+        "en": "The settings of James Joyce's Ulysses, by episode.",
+        "de": "Die Schauplätze von James Joyces »Ulysses«, nach Episoden."
+      },
+      "credit": {
+        "en": "Original dataset from the public-domain text of Ulysses (1922) · coordinates © <a href=\"https://www.openstreetmap.org/copyright\" target=\"_blank\" rel=\"noopener\">OpenStreetMap</a>",
+        "de": "Eigener Datensatz aus dem gemeinfreien Text des »Ulysses« (1922) · Koordinaten © <a href=\"https://www.openstreetmap.org/copyright\" target=\"_blank\" rel=\"noopener\">OpenStreetMap</a>"
+      },
+      "groups": [
+        { "key": "Telemachus",           "de": "Telemachos",                  "color": "#c9a227" },
+        { "key": "Nestor",               "de": "Nestor",                      "color": "#7b4f2a" },
+        { "key": "Proteus",              "de": "Proteus",                     "color": "#2e7d32" },
+        { "key": "Calypso",              "de": "Kalypso",                     "color": "#e07b16" },
+        { "key": "Lotus Eaters",         "de": "Lotophagen",                  "color": "#4e342e" },
+        { "key": "Hades",                "de": "Hades",                       "color": "#2b2b2b" },
+        { "key": "Aeolus",               "de": "Aiolos",                      "color": "#c0392b" },
+        { "key": "Lestrygonians",        "de": "Laistrygonen",                "color": "#7e1620" },
+        { "key": "Scylla and Charybdis", "de": "Skylla und Charybdis",        "color": "#5d6d7e" },
+        { "key": "Wandering Rocks",      "de": "Irrfelsen",                   "color": "#6a5acd" },
+        { "key": "Sirens",               "de": "Sirenen",                     "color": "#ff7f50" },
+        { "key": "Cyclops",              "de": "Zyklop",                      "color": "#1b5e20" },
+        { "key": "Nausicaa",             "de": "Nausikaa",                    "color": "#7f9bb3" },
+        { "key": "Oxen of the Sun",      "de": "Die Rinder des Sonnengottes", "color": "#bdc3c7" },
+        { "key": "Circe",                "de": "Kirke",                       "color": "#8e44ad" },
+        { "key": "Eumaeus",              "de": "Eumaios",                     "color": "#607d8b" },
+        { "key": "Ithaca",               "de": "Ithaka",                      "color": "#2c3e50" },
+        { "key": "Penelope",             "de": "Penelope",                    "color": "#6d4c41" }
+      ]
+    },
+
+    "portrait": {
+      "label": { "en": "Portrait", "de": "Porträt" },
+      "data": "data/portrait.geojson",
+      "experimental": true,
+      "numberedGroups": false,
+      "groupPrefix": null,
+      "tagline": {
+        "en": "Stephen Dedalus's path through A Portrait of the Artist as a Young Man, by chapter.",
+        "de": "Stephen Dedalus' Weg in »Ein Porträt des Künstlers als junger Mann«, nach Kapiteln."
+      },
+      "credit": {
+        "en": "Original dataset from the public-domain text of A Portrait of the Artist as a Young Man (1916) · coordinates © <a href=\"https://www.openstreetmap.org/copyright\" target=\"_blank\" rel=\"noopener\">OpenStreetMap</a>",
+        "de": "Eigener Datensatz aus dem gemeinfreien Text von »A Portrait of the Artist as a Young Man« (1916) · Koordinaten © <a href=\"https://www.openstreetmap.org/copyright\" target=\"_blank\" rel=\"noopener\">OpenStreetMap</a>"
+      },
+      "groups": [
+        { "key": "Chapter 1", "de": "Kapitel 1", "color": "#b5651d" },
+        { "key": "Chapter 2", "de": "Kapitel 2", "color": "#2c7a3f" },
+        { "key": "Chapter 3", "de": "Kapitel 3", "color": "#8e44ad" },
+        { "key": "Chapter 4", "de": "Kapitel 4", "color": "#c0392b" },
+        { "key": "Chapter 5", "de": "Kapitel 5", "color": "#1565a0" }
+      ]
+    }
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "_comment": "Project-specific configuration for code/split_episodes.py. Paths are relative to this file. The splitter finds lines matching markerRegex (capturing the unit number), selects the chosen run of them, and splits the text into units, stripping marker and stripRegex lines from each unit's body. For Ulysses (1922) the unit markers '[ N ]' appear twice — once in the table of contents, once at the real episode openings — so markerRun='last' takes the second run.",
+  "source": "raw/ulysses-1922.txt",
+  "output": "annotations/episodes.json",
+  "markerRegex": "^\\s*\\[\\s*(\\d+)\\s*\\]\\s*$",
+  "stripRegex": "^\\s*—\\s*[IVX]+\\s*—\\s*$",
+  "markerRun": "last",
+  "count": 18,
+  "unitField": "episode",
+  "titles": [
+    "Telemachus", "Nestor", "Proteus", "Calypso", "Lotus Eaters", "Hades",
+    "Aeolus", "Lestrygonians", "Scylla and Charybdis", "Wandering Rocks",
+    "Sirens", "Cyclops", "Nausicaa", "Oxen of the Sun", "Circe", "Eumaeus",
+    "Ithaca", "Penelope"
+  ]
+}

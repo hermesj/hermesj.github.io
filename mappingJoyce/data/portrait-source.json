@@ -1,5 +1,5 @@
 {
-  "_comment": "Human-editable source for the Portrait layer, grouped by the novel's 5 chapters. Geocoded by helpers/geocode_source.py via OpenStreetMap/Nominatim into portrait.geojson. To add a place: copy an entry, set 'group' (chapter 1-5), 'name', and a 'geocode' query (a real, findable place). Leave 'lat'/'lon' out and the geocoder fills + caches them. 'quote'/'ref' are optional and SHOULD be verified against the public-domain text (Gutenberg #4217) before publishing.",
+  "_comment": "Human-editable source for the Portrait layer, grouped by the novel's 5 chapters. Geocoded by pipeline/geocode_source.py via OpenStreetMap/Nominatim into portrait.geojson. To add a place: copy an entry, set 'group' (chapter 1-5), 'name', and a 'geocode' query (a real, findable place). Leave 'lat'/'lon' out and the geocoder fills + caches them. 'quote'/'ref' are optional and SHOULD be verified against the public-domain text (Gutenberg #4217) before publishing.",
   "work": "Portrait",
   "groups": [
     {

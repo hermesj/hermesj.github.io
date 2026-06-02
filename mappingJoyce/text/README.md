@@ -1,11 +1,11 @@
-# TextProcessing
+# text
 
 Text-driven pipelines to **verify and enrich** the mappingJoyce datasets
 against Joyce's own words — from simple place/quote checking up to full
 Named-Entity-Recognition (NER) annotation.
 
 ```
-TextProcessing/
+text/
 ├── raw/            public-domain source texts (+ provenance NOTICE)
 ├── code/           pipeline scripts (one step each, composable)
 └── annotations/    generated JSON (episode splits, verification, NER candidates)
@@ -47,7 +47,7 @@ time and not vendored here.
 | Stage 2b — derive place candidates | `code/candidates.py` | `annotations/ner_candidates.json` |
 
 ```bash
-cd TextProcessing/code
+cd text/code
 python3 split_episodes.py
 python3 verify_places.py
 pip install spacy && python -m spacy download en_core_web_sm   # once

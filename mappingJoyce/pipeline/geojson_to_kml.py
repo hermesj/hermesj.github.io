@@ -13,7 +13,7 @@ import json
 import sys
 import xml.sax.saxutils as su
 
-# Episode/chapter colours (must match the *_GROUPS palettes in joyce.js).
+# Episode/chapter colours (must match the group colours in config.json).
 COLORS = [
     "#c9a227", "#7b4f2a", "#2e7d32", "#e07b16", "#4e342e", "#2b2b2b",
     "#c0392b", "#7e1620", "#5d6d7e", "#6a5acd", "#ff7f50", "#1b5e20",

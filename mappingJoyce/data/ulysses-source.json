@@ -1,5 +1,5 @@
 {
-  "_comment": "Human-editable source for the Ulysses layer, grouped by the novel's 18 episodes. Locations and times follow the published 'Ulysses Map of County Dublin' index (factual addresses, geocoded by helpers/geocode_source.py via OpenStreetMap/Nominatim into ulysses.geojson). To add a place: copy an entry, set 'episode', 'name', a 'geocode' query and optional 'time'/'gloss'/'quote'/'ref'. Leave 'lat'/'lon' out and the geocoder fills + caches them; set them by hand to override. Quotes/refs SHOULD be verified against the public-domain text before publishing.",
+  "_comment": "Human-editable source for the Ulysses layer, grouped by the novel's 18 episodes. Locations and times follow the published 'Ulysses Map of County Dublin' index (factual addresses, geocoded by pipeline/geocode_source.py via OpenStreetMap/Nominatim into ulysses.geojson). To add a place: copy an entry, set 'episode', 'name', a 'geocode' query and optional 'time'/'gloss'/'quote'/'ref'. Leave 'lat'/'lon' out and the geocoder fills + caches them; set them by hand to override. Quotes/refs SHOULD be verified against the public-domain text before publishing.",
   "work": "Ulysses",
   "episodes": [
     {
