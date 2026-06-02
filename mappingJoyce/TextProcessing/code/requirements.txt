@@ -1,0 +1,3 @@
+# Stage 2 (NER) only — Stages "split" and "verify" use the standard library.
+spacy>=3.7
+# then: python -m spacy download en_core_web_sm   (or en_core_web_lg / en_core_web_trf)

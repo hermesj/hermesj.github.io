@@ -121,7 +121,8 @@
       "quote": "Stately, plump Buck Mulligan came from the stairhead, bearing a bowl of lather on which a mirror and a razor lay crossed.",
       "ref": "1.1",
       "lat": 53.288671,
-      "lon": -6.113608
+      "lon": -6.113608,
+      "character": "Stephen"
     },
     {
       "episode": 1,
@@ -130,7 +131,8 @@
       "geocode": "Forty Foot, Sandycove, Dublin, Ireland",
       "gloss": "The men's bathing place just below the tower, where Mulligan goes down to swim — 'the snotgreen sea, the scrotumtightening sea.'",
       "lat": 53.289486,
-      "lon": -6.113699
+      "lon": -6.113699,
+      "character": "Buck"
     },
     {
       "episode": 2,
@@ -139,7 +141,8 @@
       "geocode": "Dalkey Avenue, Dalkey, Dublin, Ireland",
       "gloss": "Mr Deasy's boys' school at Summerfield; Stephen teaches a history class and is paid his wages.",
       "lat": 53.273695,
-      "lon": -6.109231
+      "lon": -6.109231,
+      "character": "Stephen"
     },
     {
       "episode": 3,
@@ -150,7 +153,8 @@
       "quote": "Ineluctable modality of the visible: at least that if no more, thought through my eyes.",
       "ref": "3.1",
       "lat": 53.327652,
-      "lon": -6.208006
+      "lon": -6.208006,
+      "character": "Stephen"
     },
     {
       "episode": 4,
@@ -161,7 +165,8 @@
       "quote": "Mr Leopold Bloom ate with relish the inner organs of beasts and fowls.",
       "ref": "4.1",
       "lat": 53.358368,
-      "lon": -6.266838
+      "lon": -6.266838,
+      "character": "Leopold"
     },
     {
       "episode": 5,
@@ -170,7 +175,8 @@
       "geocode": "Sir John Rogerson's Quay, Dublin, Ireland",
       "gloss": "Bloom begins his drifting, lotus-scented morning along the river quays.",
       "lat": 53.346054,
-      "lon": -6.239241
+      "lon": -6.239241,
+      "character": "Leopold"
     },
     {
       "episode": 5,
@@ -179,7 +185,8 @@
       "geocode": "Westland Row, Dublin, Ireland",
       "gloss": "Bloom collects Martha Clifford's letter under the name Henry Flower.",
       "lat": 53.339917,
-      "lon": -6.249887
+      "lon": -6.249887,
+      "character": "Leopold"
     },
     {
       "episode": 5,
@@ -188,7 +195,8 @@
       "geocode": "Sweny's Pharmacy, Lincoln Place, Dublin, Ireland",
       "gloss": "Bloom buys the cake of lemon soap he carries through the day.",
       "lat": 53.34187,
-      "lon": -6.250551
+      "lon": -6.250551,
+      "character": "Leopold"
     },
     {
       "episode": 6,
@@ -197,7 +205,8 @@
       "geocode": "9 Newbridge Avenue, Sandymount, Dublin, Ireland",
       "gloss": "The funeral procession sets out from the dead man's house in Sandymount.",
       "lat": 53.335519,
-      "lon": -6.223359
+      "lon": -6.223359,
+      "character": "Leopold"
     },
     {
       "episode": 6,
@@ -206,7 +215,8 @@
       "geocode": "Glasnevin Cemetery, Dublin, Ireland",
       "gloss": "Dignam's burial; Bloom broods on death and the dead among the graves.",
       "lat": 53.372077,
-      "lon": -6.278578
+      "lon": -6.278578,
+      "character": "Leopold"
     },
     {
       "episode": 7,
@@ -215,7 +225,8 @@
       "geocode": "Prince's Street North, Dublin, Ireland",
       "gloss": "The newspaper offices; the episode of windy rhetoric and headlines.",
       "lat": 53.348928,
-      "lon": -6.261178
+      "lon": -6.261178,
+      "character": "Leopold, Stephen"
     },
     {
       "episode": 8,
@@ -224,7 +235,8 @@
       "geocode": "O'Connell Street Lower, Dublin, Ireland",
       "gloss": "Bloom is handed the 'Elijah is coming' throwaway outside Lemon's, 49 Lower O'Connell Street.",
       "lat": 53.34793,
-      "lon": -6.259271
+      "lon": -6.259271,
+      "character": "Leopold"
     },
     {
       "episode": 8,
@@ -235,7 +247,8 @@
       "quote": "He entered Davy Byrne's. Moral pub. He doesn't chat. Stands a drink now and then.",
       "ref": "8.732",
       "lat": 53.341854,
-      "lon": -6.258617
+      "lon": -6.258617,
+      "character": "Leopold"
     },
     {
       "episode": 9,
@@ -244,7 +257,8 @@
       "geocode": "National Library of Ireland, Kildare Street, Dublin, Ireland",
       "gloss": "Stephen expounds his theory of Hamlet to the librarians; Bloom passes between the doors.",
       "lat": 53.341125,
-      "lon": -6.2545
+      "lon": -6.2545,
+      "character": "Stephen, Leopold"
     },
     {
       "episode": 10,
@@ -253,7 +267,8 @@
       "geocode": "Gardiner Street Upper, Dublin, Ireland",
       "gloss": "Father Conmee sets out from the Jesuit house in Gardiner Street on his afternoon walk.",
       "lat": 53.358059,
-      "lon": -6.260377
+      "lon": -6.260377,
+      "character": "Conmee"
     },
     {
       "episode": 10,
@@ -262,7 +277,8 @@
       "geocode": "Marino, Dublin, Ireland",
       "gloss": "Father Conmee's walk carries him out towards Marino.",
       "lat": 53.366309,
-      "lon": -6.234749
+      "lon": -6.234749,
+      "character": "Conmee"
     },
     {
       "episode": 10,
@@ -271,7 +287,8 @@
       "geocode": "Grafton Street, Dublin, Ireland",
       "gloss": "Blazes Boylan orders fruit and wine for Molly at Thornton's, 63 Grafton Street.",
       "lat": 53.342087,
-      "lon": -6.259887
+      "lon": -6.259887,
+      "character": "Blazes"
     },
     {
       "episode": 10,
@@ -280,7 +297,8 @@
       "geocode": "Meetinghouse Lane, Dublin, Ireland",
       "gloss": "Ned Lambert shows the historic Chapter House of St Mary's Abbey to a visiting clergyman.",
       "lat": 53.347407,
-      "lon": -6.269465
+      "lon": -6.269465,
+      "character": "Ned"
     },
     {
       "episode": 10,
@@ -289,7 +307,8 @@
       "geocode": "Crampton Court, Dublin, Ireland",
       "gloss": "Lenehan and M'Coy cut through Crampton Court, gossiping about Boylan and Molly.",
       "lat": 53.344618,
-      "lon": -6.266265
+      "lon": -6.266265,
+      "character": "Lenehan, M'Coy"
     },
     {
       "episode": 10,
@@ -298,7 +317,8 @@
       "geocode": "Merchant's Arch, Dublin, Ireland",
       "gloss": "Bloom browses the book-barrows by Merchant's Arch and chooses 'Sweets of Sin' for Molly.",
       "lat": 53.345738,
-      "lon": -6.262869
+      "lon": -6.262869,
+      "character": "Leopold"
     },
     {
       "episode": 10,
@@ -307,7 +327,8 @@
       "geocode": "Bachelors Walk, Dublin, Ireland",
       "gloss": "Dilly Dedalus waits outside Dillon's auction rooms, 25 Bachelor's Walk.",
       "lat": 53.346945,
-      "lon": -6.261846
+      "lon": -6.261846,
+      "character": "Dilly"
     },
     {
       "episode": 10,
@@ -316,7 +337,8 @@
       "geocode": "James's Street, Dublin, Ireland",
       "gloss": "Tom Kernan strolls contentedly down James's Street after a good sale.",
       "lat": 53.343259,
-      "lon": -6.290096
+      "lon": -6.290096,
+      "character": "Tom"
     },
     {
       "episode": 10,
@@ -325,7 +347,8 @@
       "geocode": "Fleet Street, Dublin, Ireland",
       "gloss": "Stephen lingers at a jeweller's window, Russell's, 57 Fleet Street.",
       "lat": 53.345772,
-      "lon": -6.259882
+      "lon": -6.259882,
+      "character": "Stephen"
     },
     {
       "episode": 10,
@@ -334,7 +357,8 @@
       "geocode": "Dublin Castle, Dublin, Ireland",
       "gloss": "Martin Cunningham gathers subscriptions for the Dignam family at the Castle.",
       "lat": 53.342662,
-      "lon": -6.267004
+      "lon": -6.267004,
+      "character": "Martin"
     },
     {
       "episode": 10,
@@ -343,7 +367,8 @@
       "geocode": "Dame Street, Dublin, Ireland",
       "gloss": "Mulligan and Haines take tea at the DBC tearooms, 33 Dame Street.",
       "lat": 53.344133,
-      "lon": -6.267019
+      "lon": -6.267019,
+      "character": "Buck"
     },
     {
       "episode": 10,
@@ -352,7 +377,8 @@
       "geocode": "Wicklow Street, Dublin, Ireland",
       "gloss": "Young Patrick Dignam dawdles past Ruggy O'Donohoe's pub, 23 Wicklow Street.",
       "lat": 53.343013,
-      "lon": -6.261326
+      "lon": -6.261326,
+      "character": "Patrick"
     },
     {
       "episode": 10,
@@ -361,7 +387,8 @@
       "geocode": "Áras an Uachtaráin, Phoenix Park, Dublin, Ireland",
       "gloss": "The viceregal cavalcade sets out from the Viceregal Lodge in the Phoenix Park.",
       "lat": 53.361341,
-      "lon": -6.317814
+      "lon": -6.317814,
+      "character": "the Viceroy"
     },
     {
       "episode": 10,
@@ -370,7 +397,8 @@
       "geocode": "Royal Dublin Society, Ballsbridge, Dublin, Ireland",
       "gloss": "The cavalcade proceeds through the city to the RDS showgrounds at Ballsbridge.",
       "lat": 53.326654,
-      "lon": -6.228863
+      "lon": -6.228863,
+      "character": "the Viceroy"
     },
     {
       "episode": 11,
@@ -379,7 +407,8 @@
       "geocode": "Ormond Quay Upper, Dublin, Ireland",
       "gloss": "The barmaids Miss Douce and Miss Kennedy; music and song fill the 'Sirens' episode.",
       "lat": 53.345843,
-      "lon": -6.269772
+      "lon": -6.269772,
+      "character": "Leopold, Blazes"
     },
     {
       "episode": 12,
@@ -388,7 +417,8 @@
       "geocode": "Arbour Hill, Dublin, Ireland",
       "gloss": "The nameless narrator crosses Stonybatter on his way to the pub.",
       "lat": 53.349901,
-      "lon": -6.283777
+      "lon": -6.283777,
+      "character": "the Narrator"
     },
     {
       "episode": 12,
@@ -397,7 +427,8 @@
       "geocode": "Little Britain Street, Dublin, Ireland",
       "gloss": "Barney Kiernan's, 8–10 Little Britain Street; the Citizen's hostility drives Bloom out.",
       "lat": 53.34926,
-      "lon": -6.270092
+      "lon": -6.270092,
+      "character": "Leopold"
     },
     {
       "episode": 13,
@@ -406,7 +437,8 @@
       "geocode": "Sandymount Strand, Dublin, Ireland",
       "gloss": "Gerty MacDowell on the strand at dusk, watched from afar by Bloom.",
       "lat": 53.327652,
-      "lon": -6.208006
+      "lon": -6.208006,
+      "character": "Leopold, Gerty"
     },
     {
       "episode": 14,
@@ -415,7 +447,8 @@
       "geocode": "National Maternity Hospital, Holles Street, Dublin, Ireland",
       "gloss": "Mina Purefoy gives birth; the prose gestates through the history of English style.",
       "lat": 53.34006,
-      "lon": -6.245854
+      "lon": -6.245854,
+      "character": "Leopold, Stephen"
     },
     {
       "episode": 15,
@@ -424,7 +457,8 @@
       "geocode": "James Joyce Street, Dublin, Ireland",
       "gloss": "Mabbot Street, the entrance to Nighttown (Monto), where the hallucinatory drama begins.",
       "lat": 53.352014,
-      "lon": -6.253691
+      "lon": -6.253691,
+      "character": "Leopold, Stephen"
     },
     {
       "episode": 15,
@@ -433,7 +467,8 @@
       "geocode": "Railway Street, Dublin, Ireland",
       "gloss": "Bella Cohen's brothel, 82 Lower Tyrone Street (now Railway Street).",
       "lat": 53.353023,
-      "lon": -6.252511
+      "lon": -6.252511,
+      "character": "Leopold, Stephen"
     },
     {
       "episode": 16,
@@ -442,7 +477,8 @@
       "geocode": "Butt Bridge, Dublin, Ireland",
       "gloss": "Bloom takes the exhausted Stephen for coffee in the cabman's shelter.",
       "lat": 53.347846,
-      "lon": -6.254962
+      "lon": -6.254962,
+      "character": "Leopold, Stephen"
     },
     {
       "episode": 17,
@@ -451,7 +487,8 @@
       "geocode": "Eccles Street, Dublin, Ireland",
       "gloss": "Bloom and Stephen walk back to Eccles Street; the cosmic catechism of 'Ithaca.'",
       "lat": 53.358368,
-      "lon": -6.266838
+      "lon": -6.266838,
+      "character": "Leopold, Stephen"
     },
     {
       "episode": 18,
@@ -462,7 +499,8 @@
       "quote": "yes I said yes I will Yes.",
       "ref": "18.1609",
       "lat": 53.358368,
-      "lon": -6.266838
+      "lon": -6.266838,
+      "character": "Molly"
     }
   ],
   "_routes_comment": "Approximate journeys, drawn as road-following lines by geocode_source.py via the public OSRM router between 'from'/'to' [lat,lon] endpoints. The path is cached in 'coords' (a [lon,lat] list) on first run; delete 'coords' to re-route, or edit the line by hand (e.g. in uMap) and paste the corrected [lon,lat] array back into 'coords'. These are first approximations and should be checked against the text.",
@@ -517,7 +555,8 @@
           -6.113755,
           53.289014
         ]
-      ]
+      ],
+      "character": "Stephen"
     },
     {
       "episode": 2,
@@ -921,7 +960,8 @@
           -6.109231,
           53.273695
         ]
-      ]
+      ],
+      "character": "Stephen"
     },
     {
       "episode": 3,
@@ -1134,7 +1174,8 @@
           53.332757
         ]
       ],
-      "mode": "rail"
+      "mode": "rail",
+      "character": "Stephen"
     },
     {
       "episode": 6,
@@ -2626,7 +2667,8 @@
           -6.278764,
           53.372121
         ]
-      ]
+      ],
+      "character": "Leopold"
     },
     {
       "episode": 10,
@@ -3075,7 +3117,8 @@
           53.366215
         ]
       ],
-      "mode": "foot"
+      "mode": "foot",
+      "character": "Conmee"
     },
     {
       "episode": 10,
@@ -4939,7 +4982,8 @@
           -6.228789,
           53.32675
         ]
-      ]
+      ],
+      "character": "the Viceroy"
     },
     {
       "episode": 17,
@@ -5360,7 +5404,8 @@
           53.358368
         ]
       ],
-      "mode": "foot"
+      "mode": "foot",
+      "character": "Leopold, Stephen"
     }
   ]
 }

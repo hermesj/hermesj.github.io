@@ -99,7 +99,7 @@ def main(src_path, out_path):
             "name": place["name"],
             "kind": place.get("kind", "place"),
         }
-        for k in ("time", "gloss", "quote", "ref"):
+        for k in ("character", "time", "gloss", "quote", "ref"):
             if place.get(k):
                 props[k] = place[k]
         features.append({
@@ -132,7 +132,7 @@ def main(src_path, out_path):
             "work": work, "group": gn, "story": g.get("en", str(gn)),
             "group_de": g.get("de", ""), "name": r["name"], "kind": "route",
         }
-        for k in ("time", "gloss", "quote", "ref"):
+        for k in ("character", "time", "gloss", "quote", "ref"):
             if r.get(k):
                 props[k] = r[k]
         features.append({

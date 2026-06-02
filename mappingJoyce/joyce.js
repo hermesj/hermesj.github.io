@@ -136,6 +136,7 @@
     h += '<div class="pop-story">' + esc(sub);
     if (p.time) h += ' <span class="pop-time">' + esc(p.time) + "</span>";
     h += "</div>";
+    if (p.character) h += '<div class="pop-char">' + esc(p.character) + "</div>";
     if (p.gloss) h += '<div class="pop-gloss">' + esc(p.gloss) + "</div>";
     if (p.quote) {
       h += '<div class="pop-quote">' + esc(p.quote);

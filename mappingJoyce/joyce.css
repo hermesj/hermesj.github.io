@@ -254,6 +254,17 @@ header .tagline {
   border-radius: 3px;
   vertical-align: 0.1em;
 }
+.pop-char {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #4a3a2a;
+  margin-bottom: 0.45em;
+}
+.pop-char::before {
+  content: "\1F6B6  "; /* walking figure */
+  font-weight: 400;
+}
+
 .pop-gloss {
   font-style: italic;
   color: var(--ink-soft);

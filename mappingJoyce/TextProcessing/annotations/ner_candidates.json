@@ -1,0 +1,2895 @@
+{
+ "model": "en_core_web_trf",
+ "place_labels": [
+  "FAC",
+  "GPE",
+  "LOC"
+ ],
+ "min_count": 2,
+ "candidates": [
+  {
+   "text": "Dublin",
+   "count": 101,
+   "episodes": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18
+   ],
+   "already_mapped": true
+  },
+  {
+   "text": "Ireland",
+   "count": 84,
+   "episodes": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17
+   ],
+   "already_mapped": true
+  },
+  {
+   "text": "Paris",
+   "count": 26,
+   "episodes": [
+    1,
+    2,
+    3,
+    7,
+    9,
+    10,
+    12,
+    15,
+    16,
+    17
+   ],
+   "already_mapped": false
+  },
+  {
+   "text": "London",
+   "count": 26,
+   "episodes": [
+    4,
+    5,
+    9,
+    10,
+    12,
+    13,
+    15,
+    16,
+    17,
+    18
+   ],
+   "already_mapped": false
+  },
+  {
+   "text": "England",
+   "count": 22,
+   "episodes": [
+    1,
+    2,
+    6,
+    8,
+    9,
+    10,
+    12,
+    15,
+    16,
+    17,
+    18
+   ],
+   "already_mapped": false
+  },
+  {
+   "text": "Gibraltar",
+   "count": 22,
+   "episodes": [
+    4,
+    11,
+    12,
+    13,
+    15,
+    16,
+    17,
+    18
+   ],
+   "already_mapped": false
+  },
+  {
+   "text": "street",
+   "count": 17,
+   "episodes": [
+    5,
+    8,
+    10,
+    12,
+    13,
+    16,
+    17,
+    18
+   ],
+   "already_mapped": true
+  },
+  {
+   "text": "Egypt",
+   "count": 16,
+   "episodes": [
+    3,
+    5,
+    7,
+    9,
+    11,
+    12,
+    13,
+    14,
+    15,
+    17
+   ],
+   "already_mapped": false
+  },
+  {
+   "text": "Spain",
+   "count": 15,
+   "episodes": [
+    4,
+    8,
+    12,
+    15,
+    16,
+    17,
+    18
+   ],
+   "already_mapped": false
+  },
+  {
+   "text": "Europe",
+   "count": 14,
+   "episodes": [
+    3,
+    7,
+    9,
+    12,
+    14,
+    15,
+    17,
+    18
+   ],
+   "already_mapped": false
+  },
+  {
+   "text": "Kildare",
+   "count": 13,
+   "episodes": [
+    5,
+    8,
+    9,
+    10,
+    12,
+    15,
+    16,
+    17,
+    18
+   ],
+   "already_mapped": true
+  },
+  {
+   "text": "Ormond",
+   "count": 13,
+   "episodes": [
+    10,
+    11,
+    13,
+    16
+   ],
+   "already_mapped": true
+  },
+  {
+   "text": "Rome",
+   "count": 11,
+   "episodes": [
+    5,
+    6,
+    7,
+    8,
+    12,
+    14,
+    15
+   ],
+   "already_mapped": false
+  },
+  {
+   "text": "Holles street",
+   "count": 11,
+   "episodes": [
+    8,
+    10,
+    13,
+    14,
+    15,
+    18
+   ],
+   "already_mapped": true
+  },
+  {
+   "text": "Eccles street",
+   "count": 10,
+   "episodes": [
+    4,
+    6,
+    10,
+    15,
+    17
+   ],
+   "already_mapped": true
+  },
+  {
+   "text": "Belfast",
+   "count": 9,
+   "episodes": [
+    5,
+    10,
+    13,
+    16,
+    17,
+    18
+   ],
+   "already_mapped": false
+  },
+  {
+   "text": "Ennis",
+   "count": 9,
+   "episodes": [
+    6,
+    8,
+    13,
+    17,
+    18
+   ],
+   "already_mapped": false
+  },
+  {
+   "text": "Cork",
+   "count": 9,
+   "episodes": [
+    6,
+    7,
+    9,
+    10,
+    15,
+    16,
+    17,
+    18
+   ],
+   "already_mapped": false
+  },
+  {
+   "text": "Malahide",
+   "count": 8,
+   "episodes": [
+    3,
+    10,
+    14,
+    15,
+    16
+   ],
+   "already_mapped": false
+  },
+  {
+   "text": "America",
+   "count": 8,
+   "episodes": [
+    5,
+    10,
+    12,
+    14,
+    16
+   ],
+   "already_mapped": false
+  },
+  {
+   "text": "Dalkey",
+   "count": 7,
+   "episodes": [
+    2,
+    7,
+    10,
+    15,
+    16
+   ],
+   "already_mapped": true
+  },
+  {
+   "text": "Liverpool",
+   "count": 7,
+   "episodes": [
+    2,
+    6,
+    10,
+    12,
+    13,
+    14
+   ],
+   "already_mapped": false
+  },
+  {
+   "text": "Galway",
+   "count": 7,
+   "episodes": [
+    2,
+    12,
+    15,
+    16
+   ],
+   "already_mapped": false
+  },
+  {
+   "text": "Sandymount",
+   "count": 7,
+   "episodes": [
+    3,
+    10,
+    13,
+    16,
+    17
+   ],
+   "already_mapped": true
+  },
+  {
+   "text": "Coombe",
+   "count": 7,
+   "episodes": [
+    5,
+    6,
+    15,
+    16,
+    17
+   ],
+   "already_mapped": false
+  },
+  {
+   "text": "Poulaphouca",
+   "count": 7,
+   "episodes": [
+    15,
+    16,
+    17
+   ],
+   "already_mapped": false
+  },
+  {
+   "text": "Kingstown",
+   "count": 6,
+   "episodes": [
+    1,
+    2,
+    7,
+    15,
+    17
+   ],
+   "already_mapped": false
+  },
+  {
+   "text": "Armagh",
+   "count": 6,
+   "episodes": [
+    2,
+    12,
+    15
+   ],
+   "already_mapped": false
+  },
+  {
+   "text": "Howth",
+   "count": 6,
+   "episodes": [
+    3,
+    8,
+    10,
+    13,
+    16
+   ],
+   "already_mapped": false
+  },
+  {
+   "text": "Kilkenny",
+   "count": 6,
+   "episodes": [
+    3,
+    7,
+    9,
+    12
+   ],
+   "already_mapped": false
+  },
+  {
+   "text": "Lombard street west",
+   "count": 6,
+   "episodes": [
+    6,
+    8,
+    11,
+    13,
+    18
+   ],
+   "already_mapped": false
+  },
+  {
+   "text": "Rathmines",
+   "count": 6,
+   "episodes": [
+    7
+   ],
+   "already_mapped": false
+  },
+  {
+   "text": "Jerusalem",
+   "count": 6,
+   "episodes": [
+    7,
+    12,
+    13,
+    15,
+    17
+   ],
+   "already_mapped": false
+  },
+  {
+   "text": "Lombard street",
+   "count": 6,
+   "episodes": [
+    8,
+    17,
+    18
+   ],
+   "already_mapped": false
+  },
+  {
+   "text": "Wales",
+   "count": 5,
+   "episodes": [
+    2,
+    12,
+    18
+   ],
+   "already_mapped": false
+  },
+  {
+   "text": "Dolphin’s Barn",
+   "count": 5,
+   "episodes": [
+    4,
+    8,
+    13,
+    15,
+    17
+   ],
+   "already_mapped": false
+  },
+  {
+   "text": "Greece",
+   "count": 5,
+   "episodes": [
+    4,
+    7,
+    12,
+    15,
+    17
+   ],
+   "already_mapped": false
+  },
+  {
+   "text": "Wicklow",
+   "count": 5,
+   "episodes": [
+    5,
+    10,
+    16,
+    17
+   ],
+   "already_mapped": true
+  },
+  {
+   "text": "Vienna",
+   "count": 5,
+   "episodes": [
+    5,
+    7,
+    10,
+    17
+   ],
+   "already_mapped": false
+  },
+  {
+   "text": "China",
+   "count": 5,
+   "episodes": [
+    5,
+    8,
+    16,
+    18
+   ],
+   "already_mapped": false
+  },
+  {
+   "text": "Gardiner street",
+   "count": 5,
+   "episodes": [
+    5,
+    10,
+    11,
+    15,
+    16
+   ],
+   "already_mapped": true
+  },
+  {
+   "text": "Irishtown",
+   "count": 5,
+   "episodes": [
+    6,
+    7,
+    10,
+    13,
+    16
+   ],
+   "already_mapped": false
+  },
+  {
+   "text": "Mullingar",
+   "count": 5,
+   "episodes": [
+    6,
+    8,
+    14,
+    16,
+    17
+   ],
+   "already_mapped": false
+  },
+  {
+   "text": "Roundtown",
+   "count": 5,
+   "episodes": [
+    6,
+    7,
+    14,
+    17
+   ],
+   "already_mapped": false
+  },
+  {
+   "text": "Canada",
+   "count": 5,
+   "episodes": [
+    7,
+    12,
+    17,
+    18
+   ],
+   "already_mapped": false
+  },
+  {
+   "text": "Wexford",
+   "count": 5,
+   "episodes": [
+    7,
+    11,
+    12,
+    15
+   ],
+   "already_mapped": false
+  },
+  {
+   "text": "south",
+   "count": 5,
+   "episodes": [
+    7,
+    16,
+    17,
+    18
+   ],
+   "already_mapped": false
+  },
+  {
+   "text": "Israel",
+   "count": 5,
+   "episodes": [
+    7,
+    12,
+    13,
+    14,
+    17
+   ],
+   "already_mapped": false
+  },
+  {
+   "text": "Stratford",
+   "count": 5,
+   "episodes": [
+    9
+   ],
+   "already_mapped": false
+  },
+  {
+   "text": "Mountjoy",
+   "count": 5,
+   "episodes": [
+    10,
+    12,
+    15
+   ],
+   "already_mapped": false
+  },
+  {
+   "text": "Yorkshire",
+   "count": 5,
+   "episodes": [
+    10,
+    15
+   ],
+   "already_mapped": false
+  },
+  {
+   "text": "Hungary",
+   "count": 5,
+   "episodes": [
+    12,
+    17
+   ],
+   "already_mapped": false
+  },
+  {
+   "text": "Westland Row",
+   "count": 5,
+   "episodes": [
+    14,
+    15,
+    16,
+    18
+   ],
+   "already_mapped": true
+  },
+  {
+   "text": "Clongowes",
+   "count": 4,
+   "episodes": [
+    1,
+    3,
+    10
+   ],
+   "already_mapped": false
+  },
+  {
+   "text": "Panama",
+   "count": 4,
+   "episodes": [
+    1,
+    9,
+    10,
+    14
+   ],
+   "already_mapped": false
+  },
+  {
+   "text": "Austria",
+   "count": 4,
+   "episodes": [
+    2,
+    15,
+    17
+   ],
+   "already_mapped": false
+  },
+  {
+   "text": "Ulster",
+   "count": 4,
+   "episodes": [
+    2,
+    15
+   ],
+   "already_mapped": false
+  },
+  {
+   "text": "France",
+   "count": 4,
+   "episodes": [
+    3,
+    9,
+    12,
+    17
+   ],
+   "already_mapped": false
+  },
+  {
+   "text": "Liffey",
+   "count": 4,
+   "episodes": [
+    3,
+    15,
+    17
+   ],
+   "already_mapped": false
+  },
+  {
+   "text": "Cassiopeia",
+   "count": 4,
+   "episodes": [
+    3,
+    9,
+    17
+   ],
+   "already_mapped": false
+  },
+  {
+   "text": "Berlin",
+   "count": 4,
+   "episodes": [
+    4,
+    9,
+    15,
+    17
+   ],
+   "already_mapped": false
+  },
+  {
+   "text": "Sandycove",
+   "count": 4,
+   "episodes": [
+    5,
+    15,
+    16,
+    17
+   ],
+   "already_mapped": true
+  },
+  {
+   "text": "Donnybrook",
+   "count": 4,
+   "episodes": [
+    5,
+    7,
+    11,
+    15
+   ],
+   "already_mapped": false
+  },
+  {
+   "text": "Asia",
+   "count": 4,
+   "episodes": [
+    6,
+    15,
+    18
+   ],
+   "already_mapped": false
+  },
+  {
+   "text": "Palmerston Park",
+   "count": 4,
+   "episodes": [
+    7
+   ],
+   "already_mapped": false
+  },
+  {
+   "text": "Ringsend",
+   "count": 4,
+   "episodes": [
+    7,
+    16,
+    17
+   ],
+   "already_mapped": false
+  },
+  {
+   "text": "Glasnevin",
+   "count": 4,
+   "episodes": [
+    7,
+    10,
+    16,
+    17
+   ],
+   "already_mapped": true
+  },
+  {
+   "text": "Butt bridge",
+   "count": 4,
+   "episodes": [
+    7,
+    12,
+    17
+   ],
+   "already_mapped": true
+  },
+  {
+   "text": "Abbey street",
+   "count": 4,
+   "episodes": [
+    7,
+    8,
+    9,
+    16
+   ],
+   "already_mapped": false
+  },
+  {
+   "text": "Zion",
+   "count": 4,
+   "episodes": [
+    8,
+    15,
+    17
+   ],
+   "already_mapped": false
+  },
+  {
+   "text": "Holles",
+   "count": 4,
+   "episodes": [
+    8,
+    11,
+    16,
+    17
+   ],
+   "already_mapped": true
+  },
+  {
+   "text": "Richmond",
+   "count": 4,
+   "episodes": [
+    8,
+    10,
+    14,
+    15
+   ],
+   "already_mapped": false
+  },
+  {
+   "text": "Babylon",
+   "count": 4,
+   "episodes": [
+    8,
+    9,
+    14,
+    16
+   ],
+   "already_mapped": false
+  },
+  {
+   "text": "Meath",
+   "count": 4,
+   "episodes": [
+    8,
+    12,
+    13,
+    17
+   ],
+   "already_mapped": false
+  },
+  {
+   "text": "Limerick",
+   "count": 4,
+   "episodes": [
+    8,
+    12,
+    15
+   ],
+   "already_mapped": false
+  },
+  {
+   "text": "Grafton street",
+   "count": 4,
+   "episodes": [
+    8,
+    13,
+    18
+   ],
+   "already_mapped": true
+  },
+  {
+   "text": "Portobello",
+   "count": 4,
+   "episodes": [
+    8,
+    10,
+    12,
+    15
+   ],
+   "already_mapped": false
+  },
+  {
+   "text": "Margate",
+   "count": 4,
+   "episodes": [
+    8,
+    16,
+    18
+   ],
+   "already_mapped": false
+  },
+  {
+   "text": "New York",
+   "count": 4,
+   "episodes": [
+    8,
+    10,
+    15,
+    16
+   ],
+   "already_mapped": false
+  },
+  {
+   "text": "Maynooth",
+   "count": 4,
+   "episodes": [
+    9,
+    12,
+    15
+   ],
+   "already_mapped": false
+  },
+  {
+   "text": "Belvedere",
+   "count": 4,
+   "episodes": [
+    10
+   ],
+   "already_mapped": false
+  },
+  {
+   "text": "Newcomen bridge",
+   "count": 4,
+   "episodes": [
+    10
+   ],
+   "already_mapped": false
+  },
+  {
+   "text": "Killarney",
+   "count": 4,
+   "episodes": [
+    10,
+    12,
+    13,
+    17
+   ],
+   "already_mapped": false
+  },
+  {
+   "text": "Bridgwater",
+   "count": 4,
+   "episodes": [
+    10,
+    16
+   ],
+   "already_mapped": false
+  },
+  {
+   "text": "Queenstown",
+   "count": 4,
+   "episodes": [
+    11,
+    12,
+    16
+   ],
+   "already_mapped": false
+  },
+  {
+   "text": "the City Arms",
+   "count": 4,
+   "episodes": [
+    12,
+    13,
+    18
+   ],
+   "already_mapped": false
+  },
+  {
+   "text": "and",
+   "count": 4,
+   "episodes": [
+    12,
+    14
+   ],
+   "already_mapped": true
+  },
+  {
+   "text": "earth",
+   "count": 4,
+   "episodes": [
+    12,
+    17
+   ],
+   "already_mapped": false
+  },
+  {
+   "text": "Sligo",
+   "count": 4,
+   "episodes": [
+    12,
+    14,
+    15,
+    16
+   ],
+   "already_mapped": false
+  },
+  {
+   "text": "Britain",
+   "count": 4,
+   "episodes": [
+    12,
+    15,
+    17
+   ],
+   "already_mapped": true
+  },
+  {
+   "text": "Connemara",
+   "count": 4,
+   "episodes": [
+    12,
+    14,
+    15,
+    17
+   ],
+   "already_mapped": false
+  },
+  {
+   "text": "Beaver street",
+   "count": 4,
+   "episodes": [
+    15,
+    16,
+    17
+   ],
+   "already_mapped": false
+  },
+  {
+   "text": "Szombathely",
+   "count": 4,
+   "episodes": [
+    15,
+    17
+   ],
+   "already_mapped": false
+  },
+  {
+   "text": "Haines",
+   "count": 3,
+   "episodes": [
+    1,
+    14
+   ],
+   "already_mapped": false
+  },
+  {
+   "text": "the North Circular",
+   "count": 3,
+   "episodes": [
+    4,
+    10,
+    17
+   ],
+   "already_mapped": false
+  },
+  {
+   "text": "Dorset",
+   "count": 3,
+   "episodes": [
+    4,
+    11,
+    15
+   ],
+   "already_mapped": false
+  },
+  {
+   "text": "Jaffa",
+   "count": 3,
+   "episodes": [
+    4,
+    8
+   ],
+   "already_mapped": false
+  },
+  {
+   "text": "Mediterranean",
+   "count": 3,
+   "episodes": [
+    4,
+    7,
+    17
+   ],
+   "already_mapped": false
+  },
+  {
+   "text": "Westland",
+   "count": 3,
+   "episodes": [
+    5,
+    15
+   ],
+   "already_mapped": true
+  },
+  {
+   "text": "Ceylon",
+   "count": 3,
+   "episodes": [
+    5,
+    15,
+    17
+   ],
+   "already_mapped": false
+  },
+  {
+   "text": "O’Connell street",
+   "count": 3,
+   "episodes": [
+    5,
+    7,
+    17
+   ],
+   "already_mapped": true
+  },
+  {
+   "text": "Broadstone",
+   "count": 3,
+   "episodes": [
+    5,
+    10,
+    18
+   ],
+   "already_mapped": false
+  },
+  {
+   "text": "Loop Line",
+   "count": 3,
+   "episodes": [
+    5,
+    15,
+    16
+   ],
+   "already_mapped": false
+  },
+  {
+   "text": "Waterford",
+   "count": 3,
+   "episodes": [
+    6,
+    14,
+    15
+   ],
+   "already_mapped": false
+  },
+  {
+   "text": "Rotunda",
+   "count": 3,
+   "episodes": [
+    6,
+    11,
+    15
+   ],
+   "already_mapped": false
+  },
+  {
+   "text": "Germany",
+   "count": 3,
+   "episodes": [
+    6,
+    9,
+    15
+   ],
+   "already_mapped": false
+  },
+  {
+   "text": "Milan",
+   "count": 3,
+   "episodes": [
+    6,
+    17
+   ],
+   "already_mapped": false
+  },
+  {
+   "text": "Mount Jerome",
+   "count": 3,
+   "episodes": [
+    6,
+    15
+   ],
+   "already_mapped": false
+  },
+  {
+   "text": "Rathgar",
+   "count": 3,
+   "episodes": [
+    7,
+    17
+   ],
+   "already_mapped": false
+  },
+  {
+   "text": "Sandymount Green",
+   "count": 3,
+   "episodes": [
+    7
+   ],
+   "already_mapped": false
+  },
+  {
+   "text": "Ohio",
+   "count": 3,
+   "episodes": [
+    7
+   ],
+   "already_mapped": false
+  },
+  {
+   "text": "Donegal",
+   "count": 3,
+   "episodes": [
+    7,
+    12,
+    16
+   ],
+   "already_mapped": false
+  },
+  {
+   "text": "Phoenix",
+   "count": 3,
+   "episodes": [
+    7,
+    8,
+    12
+   ],
+   "already_mapped": true
+  },
+  {
+   "text": "Inchicore",
+   "count": 3,
+   "episodes": [
+    7,
+    10,
+    18
+   ],
+   "already_mapped": false
+  },
+  {
+   "text": "O’Connell bridge",
+   "count": 3,
+   "episodes": [
+    8,
+    10
+   ],
+   "already_mapped": false
+  },
+  {
+   "text": "Trinity",
+   "count": 3,
+   "episodes": [
+    8,
+    10
+   ],
+   "already_mapped": false
+  },
+  {
+   "text": "Nassau street",
+   "count": 3,
+   "episodes": [
+    8,
+    10
+   ],
+   "already_mapped": false
+  },
+  {
+   "text": "bay",
+   "count": 3,
+   "episodes": [
+    8,
+    17,
+    18
+   ],
+   "already_mapped": false
+  },
+  {
+   "text": "Pembroke",
+   "count": 3,
+   "episodes": [
+    9,
+    10
+   ],
+   "already_mapped": false
+  },
+  {
+   "text": "Dollymount",
+   "count": 3,
+   "episodes": [
+    10,
+    16,
+    17
+   ],
+   "already_mapped": false
+  },
+  {
+   "text": "Customhouse",
+   "count": 3,
+   "episodes": [
+    10,
+    16
+   ],
+   "already_mapped": false
+  },
+  {
+   "text": "Capel street",
+   "count": 3,
+   "episodes": [
+    10,
+    12,
+    16
+   ],
+   "already_mapped": false
+  },
+  {
+   "text": "Merrion square",
+   "count": 3,
+   "episodes": [
+    10
+   ],
+   "already_mapped": false
+  },
+  {
+   "text": "bridge",
+   "count": 3,
+   "episodes": [
+    11,
+    16,
+    17
+   ],
+   "already_mapped": true
+  },
+  {
+   "text": "Madrid",
+   "count": 3,
+   "episodes": [
+    11,
+    18
+   ],
+   "already_mapped": false
+  },
+  {
+   "text": "India",
+   "count": 3,
+   "episodes": [
+    12,
+    17
+   ],
+   "already_mapped": false
+  },
+  {
+   "text": "Alameda",
+   "count": 3,
+   "episodes": [
+    12,
+    18
+   ],
+   "already_mapped": false
+  },
+  {
+   "text": "Portugal",
+   "count": 3,
+   "episodes": [
+    12,
+    14,
+    17
+   ],
+   "already_mapped": false
+  },
+  {
+   "text": "Clanbrassil street",
+   "count": 3,
+   "episodes": [
+    14,
+    16,
+    17
+   ],
+   "already_mapped": false
+  },
+  {
+   "text": "place",
+   "count": 3,
+   "episodes": [
+    15,
+    16,
+    17
+   ],
+   "already_mapped": true
+  },
+  {
+   "text": "Amiens street",
+   "count": 3,
+   "episodes": [
+    16,
+    17
+   ],
+   "already_mapped": false
+  },
+  {
+   "text": "Beresford",
+   "count": 3,
+   "episodes": [
+    16,
+    17
+   ],
+   "already_mapped": false
+  },
+  {
+   "text": "Ontario",
+   "count": 3,
+   "episodes": [
+    17,
+    18
+   ],
+   "already_mapped": false
+  },
+  {
+   "text": "Africa",
+   "count": 3,
+   "episodes": [
+    18
+   ],
+   "already_mapped": false
+  },
+  {
+   "text": "Oxford",
+   "count": 2,
+   "episodes": [
+    1,
+    15
+   ],
+   "already_mapped": false
+  },
+  {
+   "text": "Bray Head",
+   "count": 2,
+   "episodes": [
+    1,
+    12
+   ],
+   "already_mapped": false
+  },
+  {
+   "text": "Mater",
+   "count": 2,
+   "episodes": [
+    1,
+    14
+   ],
+   "already_mapped": true
+  },
+  {
+   "text": "Elsinore",
+   "count": 2,
+   "episodes": [
+    1,
+    9
+   ],
+   "already_mapped": false
+  },
+  {
+   "text": "Westmeath",
+   "count": 2,
+   "episodes": [
+    1,
+    17
+   ],
+   "already_mapped": false
+  },
+  {
+   "text": "Carlisle",
+   "count": 2,
+   "episodes": [
+    1,
+    17
+   ],
+   "already_mapped": false
+  },
+  {
+   "text": "Pyrrhus",
+   "count": 2,
+   "episodes": [
+    2
+   ],
+   "already_mapped": false
+  },
+  {
+   "text": "Westminster",
+   "count": 2,
+   "episodes": [
+    2,
+    15
+   ],
+   "already_mapped": false
+  },
+  {
+   "text": "Beaufort",
+   "count": 2,
+   "episodes": [
+    2,
+    15
+   ],
+   "already_mapped": false
+  },
+  {
+   "text": "Breffni",
+   "count": 2,
+   "episodes": [
+    2,
+    7
+   ],
+   "already_mapped": false
+  },
+  {
+   "text": "the City Arms hotel",
+   "count": 2,
+   "episodes": [
+    2,
+    17
+   ],
+   "already_mapped": false
+  },
+  {
+   "text": "Bride Street",
+   "count": 2,
+   "episodes": [
+    3,
+    12
+   ],
+   "already_mapped": false
+  },
+  {
+   "text": "Edenville",
+   "count": 2,
+   "episodes": [
+    3,
+    14
+   ],
+   "already_mapped": false
+  },
+  {
+   "text": "Serpentine avenue",
+   "count": 2,
+   "episodes": [
+    3,
+    15
+   ],
+   "already_mapped": false
+  },
+  {
+   "text": "Romeville",
+   "count": 2,
+   "episodes": [
+    3,
+    9
+   ],
+   "already_mapped": false
+  },
+  {
+   "text": "sea",
+   "count": 2,
+   "episodes": [
+    3,
+    17
+   ],
+   "already_mapped": false
+  },
+  {
+   "text": "Leeson",
+   "count": 2,
+   "episodes": [
+    3,
+    7
+   ],
+   "already_mapped": false
+  },
+  {
+   "text": "George’s church",
+   "count": 2,
+   "episodes": [
+    4,
+    17
+   ],
+   "already_mapped": false
+  },
+  {
+   "text": "Kinnereth",
+   "count": 2,
+   "episodes": [
+    4,
+    15
+   ],
+   "already_mapped": false
+  },
+  {
+   "text": "Denzille",
+   "count": 2,
+   "episodes": [
+    4,
+    14
+   ],
+   "already_mapped": false
+  },
+  {
+   "text": "Virginia",
+   "count": 2,
+   "episodes": [
+    4,
+    17
+   ],
+   "already_mapped": false
+  },
+  {
+   "text": "Botanic",
+   "count": 2,
+   "episodes": [
+    5,
+    6
+   ],
+   "already_mapped": false
+  },
+  {
+   "text": "Eustace",
+   "count": 2,
+   "episodes": [
+    5,
+    17
+   ],
+   "already_mapped": false
+  },
+  {
+   "text": "Lincoln",
+   "count": 2,
+   "episodes": [
+    5,
+    17
+   ],
+   "already_mapped": true
+  },
+  {
+   "text": "Tritonville road",
+   "count": 2,
+   "episodes": [
+    6,
+    13
+   ],
+   "already_mapped": false
+  },
+  {
+   "text": "Brunswick",
+   "count": 2,
+   "episodes": [
+    6,
+    12
+   ],
+   "already_mapped": false
+  },
+  {
+   "text": "Clare",
+   "count": 2,
+   "episodes": [
+    6
+   ],
+   "already_mapped": false
+  },
+  {
+   "text": "Rutland",
+   "count": 2,
+   "episodes": [
+    6,
+    11
+   ],
+   "already_mapped": false
+  },
+  {
+   "text": "Basin",
+   "count": 2,
+   "episodes": [
+    6,
+    16
+   ],
+   "already_mapped": false
+  },
+  {
+   "text": "Clonsilla",
+   "count": 2,
+   "episodes": [
+    6
+   ],
+   "already_mapped": false
+  },
+  {
+   "text": "Dunphy’s",
+   "count": 2,
+   "episodes": [
+    6
+   ],
+   "already_mapped": false
+  },
+  {
+   "text": "Prospect",
+   "count": 2,
+   "episodes": [
+    6,
+    15
+   ],
+   "already_mapped": false
+  },
+  {
+   "text": "Finglas",
+   "count": 2,
+   "episodes": [
+    6
+   ],
+   "already_mapped": false
+  },
+  {
+   "text": "Blackrock",
+   "count": 2,
+   "episodes": [
+    7
+   ],
+   "already_mapped": false
+  },
+  {
+   "text": "Terenure",
+   "count": 2,
+   "episodes": [
+    7,
+    11
+   ],
+   "already_mapped": false
+  },
+  {
+   "text": "Sandymount Tower",
+   "count": 2,
+   "episodes": [
+    7
+   ],
+   "already_mapped": false
+  },
+  {
+   "text": "Ballsbridge",
+   "count": 2,
+   "episodes": [
+    7,
+    8
+   ],
+   "already_mapped": true
+  },
+  {
+   "text": "North Cork",
+   "count": 2,
+   "episodes": [
+    7
+   ],
+   "already_mapped": false
+  },
+  {
+   "text": "Clarence",
+   "count": 2,
+   "episodes": [
+    7,
+    11
+   ],
+   "already_mapped": false
+  },
+  {
+   "text": "Prince’s street",
+   "count": 2,
+   "episodes": [
+    7,
+    12
+   ],
+   "already_mapped": true
+  },
+  {
+   "text": "Marlborough",
+   "count": 2,
+   "episodes": [
+    7,
+    16
+   ],
+   "already_mapped": false
+  },
+  {
+   "text": "Rathfarnham",
+   "count": 2,
+   "episodes": [
+    7,
+    18
+   ],
+   "already_mapped": false
+  },
+  {
+   "text": "Upper",
+   "count": 2,
+   "episodes": [
+    7,
+    9
+   ],
+   "already_mapped": true
+  },
+  {
+   "text": "Bachelor’s walk",
+   "count": 2,
+   "episodes": [
+    8,
+    15
+   ],
+   "already_mapped": false
+  },
+  {
+   "text": "the Erin’s King",
+   "count": 2,
+   "episodes": [
+    8,
+    13
+   ],
+   "already_mapped": false
+  },
+  {
+   "text": "Anna Liffey",
+   "count": 2,
+   "episodes": [
+    8,
+    12
+   ],
+   "already_mapped": false
+  },
+  {
+   "text": "Tranquilla",
+   "count": 2,
+   "episodes": [
+    8,
+    13
+   ],
+   "already_mapped": false
+  },
+  {
+   "text": "Sugarloaf",
+   "count": 2,
+   "episodes": [
+    8,
+    12
+   ],
+   "already_mapped": false
+  },
+  {
+   "text": "Shelbourne",
+   "count": 2,
+   "episodes": [
+    8,
+    15
+   ],
+   "already_mapped": false
+  },
+  {
+   "text": "Lusk",
+   "count": 2,
+   "episodes": [
+    8,
+    12
+   ],
+   "already_mapped": false
+  },
+  {
+   "text": "D.B.C.",
+   "count": 2,
+   "episodes": [
+    8,
+    10
+   ],
+   "already_mapped": false
+  },
+  {
+   "text": "Greenwich",
+   "count": 2,
+   "episodes": [
+    8,
+    17
+   ],
+   "already_mapped": false
+  },
+  {
+   "text": "Dunsink",
+   "count": 2,
+   "episodes": [
+    8,
+    12
+   ],
+   "already_mapped": false
+  },
+  {
+   "text": "Empire",
+   "count": 2,
+   "episodes": [
+    8,
+    10
+   ],
+   "already_mapped": false
+  },
+  {
+   "text": "Sletty",
+   "count": 2,
+   "episodes": [
+    8,
+    17
+   ],
+   "already_mapped": false
+  },
+  {
+   "text": "Clyde road",
+   "count": 2,
+   "episodes": [
+    8,
+    15
+   ],
+   "already_mapped": false
+  },
+  {
+   "text": "Carlow",
+   "count": 2,
+   "episodes": [
+    8,
+    15
+   ],
+   "already_mapped": false
+  },
+  {
+   "text": "City Arms",
+   "count": 2,
+   "episodes": [
+    8,
+    18
+   ],
+   "already_mapped": false
+  },
+  {
+   "text": "Burgundy",
+   "count": 2,
+   "episodes": [
+    8
+   ],
+   "already_mapped": false
+  },
+  {
+   "text": "Sutton",
+   "count": 2,
+   "episodes": [
+    8,
+    17
+   ],
+   "already_mapped": false
+  },
+  {
+   "text": "Henry street",
+   "count": 2,
+   "episodes": [
+    8,
+    12
+   ],
+   "already_mapped": false
+  },
+  {
+   "text": "Denmark",
+   "count": 2,
+   "episodes": [
+    9,
+    15
+   ],
+   "already_mapped": false
+  },
+  {
+   "text": "New Place",
+   "count": 2,
+   "episodes": [
+    9
+   ],
+   "already_mapped": false
+  },
+  {
+   "text": "Enniscorthy",
+   "count": 2,
+   "episodes": [
+    9,
+    17
+   ],
+   "already_mapped": false
+  },
+  {
+   "text": "Almany",
+   "count": 2,
+   "episodes": [
+    9,
+    14
+   ],
+   "already_mapped": false
+  },
+  {
+   "text": "Southwark",
+   "count": 2,
+   "episodes": [
+    9,
+    17
+   ],
+   "already_mapped": false
+  },
+  {
+   "text": "Italy",
+   "count": 2,
+   "episodes": [
+    9,
+    16
+   ],
+   "already_mapped": false
+  },
+  {
+   "text": "Venus",
+   "count": 2,
+   "episodes": [
+    9,
+    13
+   ],
+   "already_mapped": false
+  },
+  {
+   "text": "delta",
+   "count": 2,
+   "episodes": [
+    9,
+    17
+   ],
+   "already_mapped": false
+  },
+  {
+   "text": "Camden",
+   "count": 2,
+   "episodes": [
+    9,
+    16
+   ],
+   "already_mapped": false
+  },
+  {
+   "text": "Mountjoy square",
+   "count": 2,
+   "episodes": [
+    10,
+    17
+   ],
+   "already_mapped": false
+  },
+  {
+   "text": "Fitzgibbon street",
+   "count": 2,
+   "episodes": [
+    10,
+    17
+   ],
+   "already_mapped": false
+  },
+  {
+   "text": "Rathcoffey",
+   "count": 2,
+   "episodes": [
+    10
+   ],
+   "already_mapped": false
+  },
+  {
+   "text": "Sallins",
+   "count": 2,
+   "episodes": [
+    10,
+    17
+   ],
+   "already_mapped": false
+  },
+  {
+   "text": "Cashel",
+   "count": 2,
+   "episodes": [
+    10,
+    12
+   ],
+   "already_mapped": false
+  },
+  {
+   "text": "Jervis street",
+   "count": 2,
+   "episodes": [
+    10,
+    17
+   ],
+   "already_mapped": false
+  },
+  {
+   "text": "Wellington",
+   "count": 2,
+   "episodes": [
+    10,
+    12
+   ],
+   "already_mapped": false
+  },
+  {
+   "text": "Parliament",
+   "count": 2,
+   "episodes": [
+    10
+   ],
+   "already_mapped": false
+  },
+  {
+   "text": "Kavanagh",
+   "count": 2,
+   "episodes": [
+    10
+   ],
+   "already_mapped": false
+  },
+  {
+   "text": "Essex",
+   "count": 2,
+   "episodes": [
+    10,
+    11
+   ],
+   "already_mapped": false
+  },
+  {
+   "text": "College park",
+   "count": 2,
+   "episodes": [
+    10
+   ],
+   "already_mapped": false
+  },
+  {
+   "text": "Dudley",
+   "count": 2,
+   "episodes": [
+    10
+   ],
+   "already_mapped": false
+  },
+  {
+   "text": "Kingsbridge",
+   "count": 2,
+   "episodes": [
+    10,
+    18
+   ],
+   "already_mapped": false
+  },
+  {
+   "text": "Arran",
+   "count": 2,
+   "episodes": [
+    10
+   ],
+   "already_mapped": false
+  },
+  {
+   "text": "Constitution hill",
+   "count": 2,
+   "episodes": [
+    10,
+    15
+   ],
+   "already_mapped": false
+  },
+  {
+   "text": "Lower",
+   "count": 2,
+   "episodes": [
+    10,
+    17
+   ],
+   "already_mapped": true
+  },
+  {
+   "text": "Northumberland",
+   "count": 2,
+   "episodes": [
+    10,
+    17
+   ],
+   "already_mapped": false
+  },
+  {
+   "text": "Castile",
+   "count": 2,
+   "episodes": [
+    11
+   ],
+   "already_mapped": false
+  },
+  {
+   "text": "Ormond quay",
+   "count": 2,
+   "episodes": [
+    11,
+    16
+   ],
+   "already_mapped": true
+  },
+  {
+   "text": "Burton",
+   "count": 2,
+   "episodes": [
+    11,
+    13
+   ],
+   "already_mapped": false
+  },
+  {
+   "text": "Ringabella",
+   "count": 2,
+   "episodes": [
+    11
+   ],
+   "already_mapped": false
+  },
+  {
+   "text": "Harmony avenue",
+   "count": 2,
+   "episodes": [
+    11,
+    15
+   ],
+   "already_mapped": false
+  },
+  {
+   "text": "Great Brunswick street",
+   "count": 2,
+   "episodes": [
+    11,
+    12
+   ],
+   "already_mapped": false
+  },
+  {
+   "text": "Fetter lane",
+   "count": 2,
+   "episodes": [
+    11,
+    16
+   ],
+   "already_mapped": false
+  },
+  {
+   "text": "Persia",
+   "count": 2,
+   "episodes": [
+    11
+   ],
+   "already_mapped": false
+  },
+  {
+   "text": "Arbour hill",
+   "count": 2,
+   "episodes": [
+    12
+   ],
+   "already_mapped": true
+  },
+  {
+   "text": "east",
+   "count": 2,
+   "episodes": [
+    12,
+    17
+   ],
+   "already_mapped": false
+  },
+  {
+   "text": "Munster",
+   "count": 2,
+   "episodes": [
+    12,
+    15
+   ],
+   "already_mapped": false
+  },
+  {
+   "text": "Connacht",
+   "count": 2,
+   "episodes": [
+    12
+   ],
+   "already_mapped": false
+  },
+  {
+   "text": "Thomond",
+   "count": 2,
+   "episodes": [
+    12
+   ],
+   "already_mapped": false
+  },
+  {
+   "text": "Shannon",
+   "count": 2,
+   "episodes": [
+    12
+   ],
+   "already_mapped": false
+  },
+  {
+   "text": "Santry",
+   "count": 2,
+   "episodes": [
+    12
+   ],
+   "already_mapped": false
+  },
+  {
+   "text": "Green street",
+   "count": 2,
+   "episodes": [
+    12
+   ],
+   "already_mapped": false
+  },
+  {
+   "text": "Great Britain",
+   "count": 2,
+   "episodes": [
+    12,
+    17
+   ],
+   "already_mapped": false
+  },
+  {
+   "text": "the",
+   "count": 2,
+   "episodes": [
+    12,
+    17
+   ],
+   "already_mapped": true
+  },
+  {
+   "text": "Mars",
+   "count": 2,
+   "episodes": [
+    12,
+    17
+   ],
+   "already_mapped": false
+  },
+  {
+   "text": "Hardwicke",
+   "count": 2,
+   "episodes": [
+    12,
+    17
+   ],
+   "already_mapped": false
+  },
+  {
+   "text": "Kilmainham",
+   "count": 2,
+   "episodes": [
+    12,
+    17
+   ],
+   "already_mapped": false
+  },
+  {
+   "text": "Booterstown",
+   "count": 2,
+   "episodes": [
+    12,
+    16
+   ],
+   "already_mapped": false
+  },
+  {
+   "text": "Albion",
+   "count": 2,
+   "episodes": [
+    12,
+    18
+   ],
+   "already_mapped": false
+  },
+  {
+   "text": "Nat.",
+   "count": 2,
+   "episodes": [
+    12
+   ],
+   "already_mapped": false
+  },
+  {
+   "text": "New Ross",
+   "count": 2,
+   "episodes": [
+    12,
+    16
+   ],
+   "already_mapped": false
+  },
+  {
+   "text": "Kinsale",
+   "count": 2,
+   "episodes": [
+    12
+   ],
+   "already_mapped": false
+  },
+  {
+   "text": "the Salmon Leap",
+   "count": 2,
+   "episodes": [
+    12,
+    17
+   ],
+   "already_mapped": false
+  },
+  {
+   "text": "Morocco",
+   "count": 2,
+   "episodes": [
+    12,
+    18
+   ],
+   "already_mapped": false
+  },
+  {
+   "text": "Abeakuta",
+   "count": 2,
+   "episodes": [
+    12
+   ],
+   "already_mapped": false
+  },
+  {
+   "text": "Nelson’s Pillar",
+   "count": 2,
+   "episodes": [
+    12,
+    15
+   ],
+   "already_mapped": false
+  },
+  {
+   "text": "Bailey",
+   "count": 2,
+   "episodes": [
+    13
+   ],
+   "already_mapped": false
+  },
+  {
+   "text": "the Coffee Palace",
+   "count": 2,
+   "episodes": [
+    13,
+    16
+   ],
+   "already_mapped": false
+  },
+  {
+   "text": "Sleepy Hollow",
+   "count": 2,
+   "episodes": [
+    13,
+    15
+   ],
+   "already_mapped": false
+  },
+  {
+   "text": "Crumlin",
+   "count": 2,
+   "episodes": [
+    13,
+    17
+   ],
+   "already_mapped": false
+  },
+  {
+   "text": "Holyhead",
+   "count": 2,
+   "episodes": [
+    13,
+    16
+   ],
+   "already_mapped": false
+  },
+  {
+   "text": "Alba Longa",
+   "count": 2,
+   "episodes": [
+    14
+   ],
+   "already_mapped": false
+  },
+  {
+   "text": "Orient",
+   "count": 2,
+   "episodes": [
+    14,
+    15
+   ],
+   "already_mapped": false
+  },
+  {
+   "text": "ken",
+   "count": 2,
+   "episodes": [
+    14
+   ],
+   "already_mapped": false
+  },
+  {
+   "text": "Lambay Island",
+   "count": 2,
+   "episodes": [
+    14
+   ],
+   "already_mapped": false
+  },
+  {
+   "text": "Newcastle",
+   "count": 2,
+   "episodes": [
+    14,
+    18
+   ],
+   "already_mapped": false
+  },
+  {
+   "text": "moon",
+   "count": 2,
+   "episodes": [
+    14,
+    17
+   ],
+   "already_mapped": false
+  },
+  {
+   "text": "College Green",
+   "count": 2,
+   "episodes": [
+    14,
+    17
+   ],
+   "already_mapped": false
+  },
+  {
+   "text": "hall",
+   "count": 2,
+   "episodes": [
+    14,
+    17
+   ],
+   "already_mapped": false
+  },
+  {
+   "text": "Leopardstown",
+   "count": 2,
+   "episodes": [
+    15
+   ],
+   "already_mapped": false
+  },
+  {
+   "text": "Amsterdam",
+   "count": 2,
+   "episodes": [
+    15,
+    16
+   ],
+   "already_mapped": false
+  },
+  {
+   "text": "Bloemfontein",
+   "count": 2,
+   "episodes": [
+    15,
+    18
+   ],
+   "already_mapped": false
+  },
+  {
+   "text": "the Phoenix park",
+   "count": 2,
+   "episodes": [
+    15,
+    17
+   ],
+   "already_mapped": false
+  },
+  {
+   "text": "Down",
+   "count": 2,
+   "episodes": [
+    15
+   ],
+   "already_mapped": false
+  },
+  {
+   "text": "Erin",
+   "count": 2,
+   "episodes": [
+    15,
+    16
+   ],
+   "already_mapped": false
+  },
+  {
+   "text": "Ladysmith",
+   "count": 2,
+   "episodes": [
+    15,
+    18
+   ],
+   "already_mapped": false
+  },
+  {
+   "text": "Bloomusalem",
+   "count": 2,
+   "episodes": [
+    15
+   ],
+   "already_mapped": false
+  },
+  {
+   "text": "Agendath Netaim",
+   "count": 2,
+   "episodes": [
+    15,
+    17
+   ],
+   "already_mapped": false
+  },
+  {
+   "text": "South Africa",
+   "count": 2,
+   "episodes": [
+    15,
+    16
+   ],
+   "already_mapped": false
+  },
+  {
+   "text": "Cabra",
+   "count": 2,
+   "episodes": [
+    15,
+    17
+   ],
+   "already_mapped": false
+  },
+  {
+   "text": "Pembroke road",
+   "count": 2,
+   "episodes": [
+    16,
+    18
+   ],
+   "already_mapped": false
+  },
+  {
+   "text": "Stockholm",
+   "count": 2,
+   "episodes": [
+    16
+   ],
+   "already_mapped": false
+  },
+  {
+   "text": "Fort Camden",
+   "count": 2,
+   "episodes": [
+    16,
+    17
+   ],
+   "already_mapped": false
+  },
+  {
+   "text": "the Red Sea",
+   "count": 2,
+   "episodes": [
+    16
+   ],
+   "already_mapped": false
+  },
+  {
+   "text": "the Black Sea",
+   "count": 2,
+   "episodes": [
+    16
+   ],
+   "already_mapped": false
+  },
+  {
+   "text": "Europa",
+   "count": 2,
+   "episodes": [
+    16,
+    18
+   ],
+   "already_mapped": false
+  },
+  {
+   "text": "Temple street",
+   "count": 2,
+   "episodes": [
+    17
+   ],
+   "already_mapped": false
+  },
+  {
+   "text": "Leonard’s corner",
+   "count": 2,
+   "episodes": [
+    17
+   ],
+   "already_mapped": false
+  },
+  {
+   "text": "Synge street",
+   "count": 2,
+   "episodes": [
+    17
+   ],
+   "already_mapped": false
+  },
+  {
+   "text": "globe",
+   "count": 2,
+   "episodes": [
+    17
+   ],
+   "already_mapped": false
+  },
+  {
+   "text": "the Dead Sea",
+   "count": 2,
+   "episodes": [
+    17
+   ],
+   "already_mapped": false
+  },
+  {
+   "text": "Budapest",
+   "count": 2,
+   "episodes": [
+    17
+   ],
+   "already_mapped": false
+  },
+  {
+   "text": "Sydney Parade",
+   "count": 2,
+   "episodes": [
+    17
+   ],
+   "already_mapped": false
+  },
+  {
+   "text": "Dundrum",
+   "count": 2,
+   "episodes": [
+    17
+   ],
+   "already_mapped": false
+  },
+  {
+   "text": "Charing Cross",
+   "count": 2,
+   "episodes": [
+    17
+   ],
+   "already_mapped": false
+  },
+  {
+   "text": "W. C.",
+   "count": 2,
+   "episodes": [
+    17
+   ],
+   "already_mapped": false
+  },
+  {
+   "text": "La Linea",
+   "count": 2,
+   "episodes": [
+    17,
+    18
+   ],
+   "already_mapped": false
+  },
+  {
+   "text": "Ursa Maior",
+   "count": 2,
+   "episodes": [
+    17
+   ],
+   "already_mapped": false
+  },
+  {
+   "text": "Rehoboth",
+   "count": 2,
+   "episodes": [
+    17,
+    18
+   ],
+   "already_mapped": false
+  },
+  {
+   "text": "the Great Northern Railway",
+   "count": 2,
+   "episodes": [
+    17
+   ],
+   "already_mapped": false
+  },
+  {
+   "text": "Algeciras",
+   "count": 2,
+   "episodes": [
+    18
+   ],
+   "already_mapped": false
+  },
+  {
+   "text": "the B Marche paris",
+   "count": 2,
+   "episodes": [
+    18
+   ],
+   "already_mapped": false
+  },
+  {
+   "text": "Santa Maria",
+   "count": 2,
+   "episodes": [
+    18
+   ],
+   "already_mapped": false
+  }
+ ],
+ "unmapped_count": 265
+}

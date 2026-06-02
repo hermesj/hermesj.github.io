@@ -15,6 +15,7 @@
     "group_de": "Telemachos",
     "name": "The Joyce Tower, Sandycove",
     "kind": "place",
+    "character": "Stephen",
     "time": "8am",
     "gloss": "Stephen, Mulligan and Haines lodge in the Martello tower; the novel opens on its gun-platform.",
     "quote": "Stately, plump Buck Mulligan came from the stairhead, bearing a bowl of lather on which a mirror and a razor lay crossed.",
@@ -37,6 +38,7 @@
     "group_de": "Telemachos",
     "name": "The Forty Foot",
     "kind": "place",
+    "character": "Buck",
     "time": "8am",
     "gloss": "The men's bathing place just below the tower, where Mulligan goes down to swim — 'the snotgreen sea, the scrotumtightening sea.'"
    },
@@ -57,6 +59,7 @@
     "group_de": "Nestor",
     "name": "The School, Dalkey",
     "kind": "place",
+    "character": "Stephen",
     "time": "9.45am",
     "gloss": "Mr Deasy's boys' school at Summerfield; Stephen teaches a history class and is paid his wages."
    },
@@ -77,6 +80,7 @@
     "group_de": "Proteus",
     "name": "Sandymount Strand",
     "kind": "place",
+    "character": "Stephen",
     "time": "11am",
     "gloss": "Stephen walks the tideline alone, meditating on perception — the 'ineluctable modality of the visible.'",
     "quote": "Ineluctable modality of the visible: at least that if no more, thought through my eyes.",
@@ -99,6 +103,7 @@
     "group_de": "Kalypso",
     "name": "No. 7 Eccles Street",
     "kind": "place",
+    "character": "Leopold",
     "time": "8am",
     "gloss": "Bloom's morning at home: he fries a kidney and brings Molly her breakfast.",
     "quote": "Mr Leopold Bloom ate with relish the inner organs of beasts and fowls.",
@@ -121,6 +126,7 @@
     "group_de": "Lotophagen",
     "name": "Sir John Rogerson's Quay",
     "kind": "place",
+    "character": "Leopold",
     "time": "9.45am",
     "gloss": "Bloom begins his drifting, lotus-scented morning along the river quays."
    },
@@ -141,6 +147,7 @@
     "group_de": "Lotophagen",
     "name": "Westland Row Post Office",
     "kind": "place",
+    "character": "Leopold",
     "time": "9.45am",
     "gloss": "Bloom collects Martha Clifford's letter under the name Henry Flower."
    },
@@ -161,6 +168,7 @@
     "group_de": "Lotophagen",
     "name": "Sweny's Pharmacy",
     "kind": "place",
+    "character": "Leopold",
     "time": "9.45am",
     "gloss": "Bloom buys the cake of lemon soap he carries through the day."
    },
@@ -181,6 +189,7 @@
     "group_de": "Hades",
     "name": "Paddy Dignam's house",
     "kind": "place",
+    "character": "Leopold",
     "time": "11am",
     "gloss": "The funeral procession sets out from the dead man's house in Sandymount."
    },
@@ -201,6 +210,7 @@
     "group_de": "Hades",
     "name": "Glasnevin Cemetery",
     "kind": "place",
+    "character": "Leopold",
     "time": "11am",
     "gloss": "Dignam's burial; Bloom broods on death and the dead among the graves."
    },
@@ -221,6 +231,7 @@
     "group_de": "Aiolos",
     "name": "Freeman's Journal / Evening Telegraph",
     "kind": "place",
+    "character": "Leopold, Stephen",
     "time": "12.15pm",
     "gloss": "The newspaper offices; the episode of windy rhetoric and headlines."
    },
@@ -241,6 +252,7 @@
     "group_de": "Laistrygonen",
     "name": "Graham Lemon's sweetshop",
     "kind": "place",
+    "character": "Leopold",
     "time": "1.10pm",
     "gloss": "Bloom is handed the 'Elijah is coming' throwaway outside Lemon's, 49 Lower O'Connell Street."
    },
@@ -261,6 +273,7 @@
     "group_de": "Laistrygonen",
     "name": "Davy Byrne's pub",
     "kind": "place",
+    "character": "Leopold",
     "time": "1.10pm",
     "gloss": "Bloom lunches on a gorgonzola sandwich and a glass of burgundy in the 'moral pub.'",
     "quote": "He entered Davy Byrne's. Moral pub. He doesn't chat. Stands a drink now and then.",
@@ -283,6 +296,7 @@
     "group_de": "Skylla und Charybdis",
     "name": "National Library of Ireland",
     "kind": "place",
+    "character": "Stephen, Leopold",
     "time": "2.10pm",
     "gloss": "Stephen expounds his theory of Hamlet to the librarians; Bloom passes between the doors."
    },
@@ -303,6 +317,7 @@
     "group_de": "Irrfelsen",
     "name": "Fr Conmee: Jesuit house",
     "kind": "place",
+    "character": "Conmee",
     "time": "2.55pm",
     "gloss": "Father Conmee sets out from the Jesuit house in Gardiner Street on his afternoon walk."
    },
@@ -323,6 +338,7 @@
     "group_de": "Irrfelsen",
     "name": "Fr Conmee: Marino",
     "kind": "place",
+    "character": "Conmee",
     "time": "2.55pm",
     "gloss": "Father Conmee's walk carries him out towards Marino."
    },
@@ -343,6 +359,7 @@
     "group_de": "Irrfelsen",
     "name": "Blazes Boylan: Thornton's",
     "kind": "place",
+    "character": "Blazes",
     "time": "2.55pm",
     "gloss": "Blazes Boylan orders fruit and wine for Molly at Thornton's, 63 Grafton Street."
    },
@@ -363,6 +380,7 @@
     "group_de": "Irrfelsen",
     "name": "Ned Lambert: St Mary's Abbey",
     "kind": "place",
+    "character": "Ned",
     "time": "2.55pm",
     "gloss": "Ned Lambert shows the historic Chapter House of St Mary's Abbey to a visiting clergyman."
    },
@@ -383,6 +401,7 @@
     "group_de": "Irrfelsen",
     "name": "Lenehan & M'Coy: Crampton Court",
     "kind": "place",
+    "character": "Lenehan, M'Coy",
     "time": "2.55pm",
     "gloss": "Lenehan and M'Coy cut through Crampton Court, gossiping about Boylan and Molly."
    },
@@ -403,6 +422,7 @@
     "group_de": "Irrfelsen",
     "name": "Mr Bloom: Merchant's Arch",
     "kind": "place",
+    "character": "Leopold",
     "time": "2.55pm",
     "gloss": "Bloom browses the book-barrows by Merchant's Arch and chooses 'Sweets of Sin' for Molly."
    },
@@ -423,6 +443,7 @@
     "group_de": "Irrfelsen",
     "name": "Dilly Dedalus: Dillon's auction rooms",
     "kind": "place",
+    "character": "Dilly",
     "time": "2.55pm",
     "gloss": "Dilly Dedalus waits outside Dillon's auction rooms, 25 Bachelor's Walk."
    },
@@ -443,6 +464,7 @@
     "group_de": "Irrfelsen",
     "name": "Mr Kernan: James's Street",
     "kind": "place",
+    "character": "Tom",
     "time": "2.55pm",
     "gloss": "Tom Kernan strolls contentedly down James's Street after a good sale."
    },
@@ -463,6 +485,7 @@
     "group_de": "Irrfelsen",
     "name": "Stephen Dedalus: Russell's shop",
     "kind": "place",
+    "character": "Stephen",
     "time": "2.55pm",
     "gloss": "Stephen lingers at a jeweller's window, Russell's, 57 Fleet Street."
    },
@@ -483,6 +506,7 @@
     "group_de": "Irrfelsen",
     "name": "Martin Cunningham: Dublin Castle",
     "kind": "place",
+    "character": "Martin",
     "time": "2.55pm",
     "gloss": "Martin Cunningham gathers subscriptions for the Dignam family at the Castle."
    },
@@ -503,6 +527,7 @@
     "group_de": "Irrfelsen",
     "name": "Buck Mulligan: DBC tearooms",
     "kind": "place",
+    "character": "Buck",
     "time": "2.55pm",
     "gloss": "Mulligan and Haines take tea at the DBC tearooms, 33 Dame Street."
    },
@@ -523,6 +548,7 @@
     "group_de": "Irrfelsen",
     "name": "Master Dignam: Ruggy O'Donohoe's",
     "kind": "place",
+    "character": "Patrick",
     "time": "2.55pm",
     "gloss": "Young Patrick Dignam dawdles past Ruggy O'Donohoe's pub, 23 Wicklow Street."
    },
@@ -543,6 +569,7 @@
     "group_de": "Irrfelsen",
     "name": "Viceroy's cavalcade: Viceregal Lodge",
     "kind": "place",
+    "character": "the Viceroy",
     "time": "2.55pm",
     "gloss": "The viceregal cavalcade sets out from the Viceregal Lodge in the Phoenix Park."
    },
@@ -563,6 +590,7 @@
     "group_de": "Irrfelsen",
     "name": "Viceroy's cavalcade: RDS showgrounds",
     "kind": "place",
+    "character": "the Viceroy",
     "time": "2.55pm",
     "gloss": "The cavalcade proceeds through the city to the RDS showgrounds at Ballsbridge."
    },
@@ -583,6 +611,7 @@
     "group_de": "Sirenen",
     "name": "The Ormond Hotel",
     "kind": "place",
+    "character": "Leopold, Blazes",
     "time": "3.40pm",
     "gloss": "The barmaids Miss Douce and Miss Kennedy; music and song fill the 'Sirens' episode."
    },
@@ -603,6 +632,7 @@
     "group_de": "Zyklop",
     "name": "Arbour Hill / Stonybatter",
     "kind": "place",
+    "character": "the Narrator",
     "time": "5pm",
     "gloss": "The nameless narrator crosses Stonybatter on his way to the pub."
    },
@@ -623,6 +653,7 @@
     "group_de": "Zyklop",
     "name": "Barney Kiernan's pub",
     "kind": "place",
+    "character": "Leopold",
     "time": "5pm",
     "gloss": "Barney Kiernan's, 8–10 Little Britain Street; the Citizen's hostility drives Bloom out."
    },
@@ -643,6 +674,7 @@
     "group_de": "Nausikaa",
     "name": "Sandymount Strand",
     "kind": "place",
+    "character": "Leopold, Gerty",
     "time": "8.25pm",
     "gloss": "Gerty MacDowell on the strand at dusk, watched from afar by Bloom."
    },
@@ -663,6 +695,7 @@
     "group_de": "Die Rinder des Sonnengottes",
     "name": "Holles Street Hospital",
     "kind": "place",
+    "character": "Leopold, Stephen",
     "time": "10pm",
     "gloss": "Mina Purefoy gives birth; the prose gestates through the history of English style."
    },
@@ -683,6 +716,7 @@
     "group_de": "Kirke",
     "name": "Mabbot Street (Nighttown)",
     "kind": "place",
+    "character": "Leopold, Stephen",
     "time": "11.25pm",
     "gloss": "Mabbot Street, the entrance to Nighttown (Monto), where the hallucinatory drama begins."
    },
@@ -703,6 +737,7 @@
     "group_de": "Kirke",
     "name": "Bella Cohen's",
     "kind": "place",
+    "character": "Leopold, Stephen",
     "time": "11.25pm",
     "gloss": "Bella Cohen's brothel, 82 Lower Tyrone Street (now Railway Street)."
    },
@@ -723,6 +758,7 @@
     "group_de": "Eumaios",
     "name": "Cabman's shelter, Butt Bridge",
     "kind": "place",
+    "character": "Leopold, Stephen",
     "time": "12.40am",
     "gloss": "Bloom takes the exhausted Stephen for coffee in the cabman's shelter."
    },
@@ -743,6 +779,7 @@
     "group_de": "Ithaka",
     "name": "Return to Eccles Street",
     "kind": "place",
+    "character": "Leopold, Stephen",
     "time": "1am",
     "gloss": "Bloom and Stephen walk back to Eccles Street; the cosmic catechism of 'Ithaca.'"
    },
@@ -763,6 +800,7 @@
     "group_de": "Penelope",
     "name": "No. 7 Eccles Street",
     "kind": "place",
+    "character": "Molly",
     "time": "2am",
     "gloss": "Molly Bloom's nocturnal monologue in bed — the book's closing 'yes I said yes I will Yes.'",
     "quote": "yes I said yes I will Yes.",
@@ -785,6 +823,7 @@
     "group_de": "Telemachos",
     "name": "Stephen's morning: to the Forty Foot",
     "kind": "route",
+    "character": "Stephen",
     "time": "8am",
     "gloss": "From the Martello tower down to the Forty Foot, where Mulligan swims."
    },
@@ -839,6 +878,7 @@
     "group_de": "Nestor",
     "name": "Stephen's morning: to the school",
     "kind": "route",
+    "character": "Stephen",
     "time": "9.45am",
     "gloss": "Stephen's way from Sandycove to Mr Deasy's school in Dalkey."
    },
@@ -1245,6 +1285,7 @@
     "group_de": "Proteus",
     "name": "Stephen's morning: by rail to Sandymount",
     "kind": "route",
+    "character": "Stephen",
     "time": "11am",
     "gloss": "Stephen most likely takes the coastal railway (the Dublin & South Eastern line, today's DART) from Dalkey to Sandymount, then walks onto the strand."
    },
@@ -1459,6 +1500,7 @@
     "group_de": "Hades",
     "name": "Funeral route",
     "kind": "route",
+    "character": "Leopold",
     "time": "11am",
     "gloss": "Paddy Dignam's funeral cortège from Sandymount across the city to Glasnevin."
    },
@@ -2953,6 +2995,7 @@
     "group_de": "Irrfelsen",
     "name": "Fr Conmee's walk",
     "kind": "route",
+    "character": "Conmee",
     "time": "2.55pm",
     "gloss": "Father Conmee walks on foot from the Jesuit house in Gardiner Street out towards Marino."
    },
@@ -3403,6 +3446,7 @@
     "group_de": "Irrfelsen",
     "name": "Viceregal cavalcade",
     "kind": "route",
+    "character": "the Viceroy",
     "time": "2.55pm",
     "gloss": "The viceregal cavalcade's progress from the Phoenix Park to the RDS at Ballsbridge."
    },
@@ -5269,6 +5313,7 @@
     "group_de": "Ithaka",
     "name": "Walk home to Eccles Street",
     "kind": "route",
+    "character": "Leopold, Stephen",
     "time": "1am",
     "gloss": "Bloom and Stephen's late walk from the cabman's shelter at Butt Bridge up Marlborough Street and Temple Street to Eccles Street."
    },

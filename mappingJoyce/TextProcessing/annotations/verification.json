@@ -1,0 +1,647 @@
+{
+ "summary": {
+  "quotes_total": 5,
+  "quotes_ok": 5,
+  "quotes_wrong_episode": 0,
+  "quotes_not_found": 0,
+  "names_total": 43,
+  "names_mentioned": 41
+ },
+ "items": [
+  {
+   "kind": "place",
+   "episode": 1,
+   "name": "The Joyce Tower, Sandycove",
+   "quote_found_in_book": true,
+   "quote_in_own_episode": true,
+   "quote_found_episodes": [
+    1
+   ],
+   "name_probes": [
+    "Joyce",
+    "Sandycove"
+   ],
+   "name_hits_in_episode": {
+    "Joyce": 0,
+    "Sandycove": 1
+   },
+   "name_mentioned": true
+  },
+  {
+   "kind": "place",
+   "episode": 1,
+   "name": "The Forty Foot",
+   "name_probes": [
+    "Forty",
+    "Foot"
+   ],
+   "name_hits_in_episode": {
+    "Forty": 1,
+    "Foot": 3
+   },
+   "name_mentioned": true
+  },
+  {
+   "kind": "place",
+   "episode": 2,
+   "name": "The School, Dalkey",
+   "name_probes": [
+    "Dalkey"
+   ],
+   "name_hits_in_episode": {
+    "Dalkey": 1
+   },
+   "name_mentioned": true
+  },
+  {
+   "kind": "place",
+   "episode": 3,
+   "name": "Sandymount Strand",
+   "quote_found_in_book": true,
+   "quote_in_own_episode": true,
+   "quote_found_episodes": [
+    3
+   ],
+   "name_probes": [
+    "Sandymount"
+   ],
+   "name_hits_in_episode": {
+    "Sandymount": 2
+   },
+   "name_mentioned": true
+  },
+  {
+   "kind": "place",
+   "episode": 4,
+   "name": "No. 7 Eccles Street",
+   "quote_found_in_book": true,
+   "quote_in_own_episode": true,
+   "quote_found_episodes": [
+    4
+   ],
+   "name_probes": [
+    "Eccles"
+   ],
+   "name_hits_in_episode": {
+    "Eccles": 2
+   },
+   "name_mentioned": true
+  },
+  {
+   "kind": "place",
+   "episode": 5,
+   "name": "Sir John Rogerson's Quay",
+   "name_probes": [
+    "John",
+    "Rogerson's"
+   ],
+   "name_hits_in_episode": {
+    "John": 2,
+    "Rogerson's": 1
+   },
+   "name_mentioned": true
+  },
+  {
+   "kind": "place",
+   "episode": 5,
+   "name": "Westland Row Post Office",
+   "name_probes": [
+    "Westland",
+    "Row"
+   ],
+   "name_hits_in_episode": {
+    "Westland": 3,
+    "Row": 15
+   },
+   "name_mentioned": true
+  },
+  {
+   "kind": "place",
+   "episode": 5,
+   "name": "Sweny's Pharmacy",
+   "name_probes": [
+    "Sweny's"
+   ],
+   "name_hits_in_episode": {
+    "Sweny's": 1
+   },
+   "name_mentioned": true
+  },
+  {
+   "kind": "place",
+   "episode": 6,
+   "name": "Paddy Dignam's house",
+   "name_probes": [
+    "Paddy",
+    "Dignam's"
+   ],
+   "name_hits_in_episode": {
+    "Paddy": 6,
+    "Dignam's": 0
+   },
+   "name_mentioned": true
+  },
+  {
+   "kind": "place",
+   "episode": 6,
+   "name": "Glasnevin Cemetery",
+   "name_probes": [
+    "Glasnevin"
+   ],
+   "name_hits_in_episode": {
+    "Glasnevin": 0
+   },
+   "name_mentioned": false
+  },
+  {
+   "kind": "place",
+   "episode": 7,
+   "name": "Freeman's Journal / Evening Telegraph",
+   "name_probes": [
+    "Freeman's"
+   ],
+   "name_hits_in_episode": {
+    "Freeman's": 2
+   },
+   "name_mentioned": true
+  },
+  {
+   "kind": "place",
+   "episode": 8,
+   "name": "Graham Lemon's sweetshop",
+   "name_probes": [
+    "Graham",
+    "Lemon's"
+   ],
+   "name_hits_in_episode": {
+    "Graham": 1,
+    "Lemon's": 1
+   },
+   "name_mentioned": true
+  },
+  {
+   "kind": "place",
+   "episode": 8,
+   "name": "Davy Byrne's pub",
+   "quote_found_in_book": true,
+   "quote_in_own_episode": true,
+   "quote_found_episodes": [
+    8
+   ],
+   "name_probes": [
+    "Davy",
+    "Byrne's"
+   ],
+   "name_hits_in_episode": {
+    "Davy": 18,
+    "Byrne's": 2
+   },
+   "name_mentioned": true
+  },
+  {
+   "kind": "place",
+   "episode": 9,
+   "name": "National Library of Ireland",
+   "name_probes": [
+    "National",
+    "Library",
+    "Ireland"
+   ],
+   "name_hits_in_episode": {
+    "National": 3,
+    "Library": 1,
+    "Ireland": 4
+   },
+   "name_mentioned": true
+  },
+  {
+   "kind": "place",
+   "episode": 10,
+   "name": "Fr Conmee: Jesuit house",
+   "name_probes": [
+    "Conmee",
+    "Jesuit"
+   ],
+   "name_hits_in_episode": {
+    "Conmee": 62,
+    "Jesuit": 2
+   },
+   "name_mentioned": true
+  },
+  {
+   "kind": "place",
+   "episode": 10,
+   "name": "Fr Conmee: Marino",
+   "name_probes": [
+    "Conmee",
+    "Marino"
+   ],
+   "name_hits_in_episode": {
+    "Conmee": 62,
+    "Marino": 0
+   },
+   "name_mentioned": true
+  },
+  {
+   "kind": "place",
+   "episode": 10,
+   "name": "Blazes Boylan: Thornton's",
+   "name_probes": [
+    "Blazes",
+    "Boylan",
+    "Thornton's"
+   ],
+   "name_hits_in_episode": {
+    "Blazes": 11,
+    "Boylan": 13,
+    "Thornton's": 1
+   },
+   "name_mentioned": true
+  },
+  {
+   "kind": "place",
+   "episode": 10,
+   "name": "Ned Lambert: St Mary's Abbey",
+   "name_probes": [
+    "Ned",
+    "Lambert",
+    "Mary's",
+    "Abbey"
+   ],
+   "name_hits_in_episode": {
+    "Ned": 77,
+    "Lambert": 14,
+    "Mary's": 3,
+    "Abbey": 3
+   },
+   "name_mentioned": true
+  },
+  {
+   "kind": "place",
+   "episode": 10,
+   "name": "Lenehan & M'Coy: Crampton Court",
+   "name_probes": [
+    "Lenehan",
+    "M'Coy",
+    "Crampton",
+    "Court"
+   ],
+   "name_hits_in_episode": {
+    "Lenehan": 16,
+    "M'Coy": 13,
+    "Crampton": 1,
+    "Court": 10
+   },
+   "name_mentioned": true
+  },
+  {
+   "kind": "place",
+   "episode": 10,
+   "name": "Mr Bloom: Merchant's Arch",
+   "name_probes": [
+    "Bloom",
+    "Merchant's",
+    "Arch"
+   ],
+   "name_hits_in_episode": {
+    "Bloom": 18,
+    "Merchant's": 0,
+    "Arch": 9
+   },
+   "name_mentioned": true
+  },
+  {
+   "kind": "place",
+   "episode": 10,
+   "name": "Dilly Dedalus: Dillon's auction rooms",
+   "name_probes": [
+    "Dilly",
+    "Dedalus",
+    "Dillon's"
+   ],
+   "name_hits_in_episode": {
+    "Dilly": 17,
+    "Dedalus": 33,
+    "Dillon's": 1
+   },
+   "name_mentioned": true
+  },
+  {
+   "kind": "place",
+   "episode": 10,
+   "name": "Mr Kernan: James's Street",
+   "name_probes": [
+    "Kernan",
+    "James's"
+   ],
+   "name_hits_in_episode": {
+    "Kernan": 8,
+    "James's": 4
+   },
+   "name_mentioned": true
+  },
+  {
+   "kind": "place",
+   "episode": 10,
+   "name": "Stephen Dedalus: Russell's shop",
+   "name_probes": [
+    "Stephen",
+    "Dedalus",
+    "Russell's"
+   ],
+   "name_hits_in_episode": {
+    "Stephen": 12,
+    "Dedalus": 33,
+    "Russell's": 0
+   },
+   "name_mentioned": true
+  },
+  {
+   "kind": "place",
+   "episode": 10,
+   "name": "Martin Cunningham: Dublin Castle",
+   "name_probes": [
+    "Martin",
+    "Cunningham",
+    "Dublin",
+    "Castle"
+   ],
+   "name_hits_in_episode": {
+    "Martin": 16,
+    "Cunningham": 16,
+    "Dublin": 4,
+    "Castle": 3
+   },
+   "name_mentioned": true
+  },
+  {
+   "kind": "place",
+   "episode": 10,
+   "name": "Buck Mulligan: DBC tearooms",
+   "name_probes": [
+    "Buck",
+    "Mulligan",
+    "DBC"
+   ],
+   "name_hits_in_episode": {
+    "Buck": 7,
+    "Mulligan": 9,
+    "DBC": 0
+   },
+   "name_mentioned": true
+  },
+  {
+   "kind": "place",
+   "episode": 10,
+   "name": "Master Dignam: Ruggy O'Donohoe's",
+   "name_probes": [
+    "Master",
+    "Dignam",
+    "Ruggy",
+    "O'Donohoe's"
+   ],
+   "name_hits_in_episode": {
+    "Master": 14,
+    "Dignam": 15,
+    "Ruggy": 1,
+    "O'Donohoe's": 1
+   },
+   "name_mentioned": true
+  },
+  {
+   "kind": "place",
+   "episode": 10,
+   "name": "Viceroy's cavalcade: Viceregal Lodge",
+   "name_probes": [
+    "Viceroy's",
+    "Viceregal",
+    "Lodge"
+   ],
+   "name_hits_in_episode": {
+    "Viceroy's": 1,
+    "Viceregal": 5,
+    "Lodge": 1
+   },
+   "name_mentioned": true
+  },
+  {
+   "kind": "place",
+   "episode": 10,
+   "name": "Viceroy's cavalcade: RDS showgrounds",
+   "name_probes": [
+    "Viceroy's",
+    "RDS"
+   ],
+   "name_hits_in_episode": {
+    "Viceroy's": 1,
+    "RDS": 25
+   },
+   "name_mentioned": true
+  },
+  {
+   "kind": "place",
+   "episode": 11,
+   "name": "The Ormond Hotel",
+   "name_probes": [
+    "Ormond"
+   ],
+   "name_hits_in_episode": {
+    "Ormond": 7
+   },
+   "name_mentioned": true
+  },
+  {
+   "kind": "place",
+   "episode": 12,
+   "name": "Arbour Hill / Stonybatter",
+   "name_probes": [
+    "Arbour",
+    "Hill"
+   ],
+   "name_hits_in_episode": {
+    "Arbour": 5,
+    "Hill": 20
+   },
+   "name_mentioned": true
+  },
+  {
+   "kind": "place",
+   "episode": 12,
+   "name": "Barney Kiernan's pub",
+   "name_probes": [
+    "Barney",
+    "Kiernan's"
+   ],
+   "name_hits_in_episode": {
+    "Barney": 6,
+    "Kiernan's": 2
+   },
+   "name_mentioned": true
+  },
+  {
+   "kind": "place",
+   "episode": 13,
+   "name": "Sandymount Strand",
+   "name_probes": [
+    "Sandymount"
+   ],
+   "name_hits_in_episode": {
+    "Sandymount": 2
+   },
+   "name_mentioned": true
+  },
+  {
+   "kind": "place",
+   "episode": 14,
+   "name": "Holles Street Hospital",
+   "name_probes": [
+    "Holles"
+   ],
+   "name_hits_in_episode": {
+    "Holles": 6
+   },
+   "name_mentioned": true
+  },
+  {
+   "kind": "place",
+   "episode": 15,
+   "name": "Mabbot Street (Nighttown)",
+   "name_probes": [
+    "Mabbot"
+   ],
+   "name_hits_in_episode": {
+    "Mabbot": 2
+   },
+   "name_mentioned": true
+  },
+  {
+   "kind": "place",
+   "episode": 15,
+   "name": "Bella Cohen's",
+   "name_probes": [
+    "Bella",
+    "Cohen's"
+   ],
+   "name_hits_in_episode": {
+    "Bella": 36,
+    "Cohen's": 3
+   },
+   "name_mentioned": true
+  },
+  {
+   "kind": "place",
+   "episode": 16,
+   "name": "Cabman's shelter, Butt Bridge",
+   "name_probes": [
+    "Cabman's",
+    "Butt"
+   ],
+   "name_hits_in_episode": {
+    "Cabman's": 3,
+    "Butt": 9
+   },
+   "name_mentioned": true
+  },
+  {
+   "kind": "place",
+   "episode": 17,
+   "name": "Return to Eccles Street",
+   "name_probes": [
+    "Eccles"
+   ],
+   "name_hits_in_episode": {
+    "Eccles": 6
+   },
+   "name_mentioned": true
+  },
+  {
+   "kind": "place",
+   "episode": 18,
+   "name": "No. 7 Eccles Street",
+   "quote_found_in_book": true,
+   "quote_in_own_episode": true,
+   "quote_found_episodes": [
+    18
+   ],
+   "name_probes": [
+    "Eccles"
+   ],
+   "name_hits_in_episode": {
+    "Eccles": 0
+   },
+   "name_mentioned": false
+  },
+  {
+   "kind": "route",
+   "episode": 1,
+   "name": "Stephen's morning: to the Forty Foot",
+   "name_probes": [
+    "Forty",
+    "Foot"
+   ],
+   "name_hits_in_episode": {
+    "Forty": 1,
+    "Foot": 3
+   },
+   "name_mentioned": true
+  },
+  {
+   "kind": "route",
+   "episode": 2,
+   "name": "Stephen's morning: to the school"
+  },
+  {
+   "kind": "route",
+   "episode": 3,
+   "name": "Stephen's morning: by rail to Sandymount",
+   "name_probes": [
+    "Sandymount"
+   ],
+   "name_hits_in_episode": {
+    "Sandymount": 2
+   },
+   "name_mentioned": true
+  },
+  {
+   "kind": "route",
+   "episode": 6,
+   "name": "Funeral route"
+  },
+  {
+   "kind": "route",
+   "episode": 10,
+   "name": "Fr Conmee's walk",
+   "name_probes": [
+    "Conmee's"
+   ],
+   "name_hits_in_episode": {
+    "Conmee's": 1
+   },
+   "name_mentioned": true
+  },
+  {
+   "kind": "route",
+   "episode": 10,
+   "name": "Viceregal cavalcade",
+   "name_probes": [
+    "Viceregal"
+   ],
+   "name_hits_in_episode": {
+    "Viceregal": 5
+   },
+   "name_mentioned": true
+  },
+  {
+   "kind": "route",
+   "episode": 17,
+   "name": "Walk home to Eccles Street",
+   "name_probes": [
+    "Eccles"
+   ],
+   "name_hits_in_episode": {
+    "Eccles": 6
+   },
+   "name_mentioned": true
+  }
+ ]
+}
