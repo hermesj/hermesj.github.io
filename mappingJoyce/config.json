@@ -58,6 +58,11 @@
       "experimental": true,
       "numberedGroups": true,
       "groupPrefix": { "en": "Episode", "de": "Episode" },
+      "sourceText": {
+        "url": "https://www.gutenberg.org/cache/epub/4300/pg4300-images.html",
+        "anchor": "chap{n2}",
+        "label": { "en": "in context (Gutenberg)", "de": "im Kontext (Gutenberg)" }
+      },
       "tagline": {
         "en": "The settings of James Joyce's Ulysses, by episode.",
         "de": "Die Schauplätze von James Joyces »Ulysses«, nach Episoden."

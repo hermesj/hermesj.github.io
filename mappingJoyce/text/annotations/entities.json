@@ -1,17 +1,17 @@
 {
  "model": "en_core_web_trf",
- "entity_count": 17115,
+ "entity_count": 17100,
  "label_counts": {
   "PERSON": 9587,
   "CARDINAL": 1373,
-  "GPE": 1224,
+  "GPE": 1214,
   "DATE": 990,
   "NORP": 659,
   "ORG": 631,
   "TIME": 569,
-  "FAC": 556,
+  "FAC": 554,
   "ORDINAL": 373,
-  "LOC": 360,
+  "LOC": 357,
   "MONEY": 275,
   "WORK_OF_ART": 234,
   "QUANTITY": 121,
@@ -841,12 +841,6 @@
     "end": 15959
    },
    {
-    "label": "GPE",
-    "text": "Haines",
-    "start": 16011,
-    "end": 16017
-   },
-   {
     "label": "TIME",
     "text": "last night",
     "start": 16047,
@@ -1045,12 +1039,6 @@
     "end": 18364
    },
    {
-    "label": "GPE",
-    "text": "Haines",
-    "start": 18653,
-    "end": 18659
-   },
-   {
     "label": "PERSON",
     "text": "Stephen",
     "start": 18773,
@@ -1211,12 +1199,6 @@
     "text": "Grogan",
     "start": 20461,
     "end": 20467
-   },
-   {
-    "label": "LOC",
-    "text": "Mabinogion",
-    "start": 20505,
-    "end": 20515
    },
    {
     "label": "WORK_OF_ART",
@@ -2149,12 +2131,6 @@
     "end": 31473
    },
    {
-    "label": "GPE",
-    "text": "Panama",
-    "start": 31717,
-    "end": 31723
-   },
-   {
     "label": "NORP",
     "text": "jew",
     "start": 31858,
@@ -2623,12 +2599,6 @@
     "end": 38341
    },
    {
-    "label": "GPE",
-    "text": "Carlisle",
-    "start": 38369,
-    "end": 38377
-   },
-   {
     "label": "PERSON",
     "text": "Lily",
     "start": 38384,
@@ -2830,12 +2800,6 @@
   "2": [
    {
     "label": "GPE",
-    "text": "Cochrane",
-    "start": 6,
-    "end": 14
-   },
-   {
-    "label": "GPE",
     "text": "Tarentum",
     "start": 42,
     "end": 50
@@ -2935,18 +2899,6 @@
     "text": "Dalkey",
     "start": 1290,
     "end": 1296
-   },
-   {
-    "label": "GPE",
-    "text": "Pyrrhus",
-    "start": 1300,
-    "end": 1307
-   },
-   {
-    "label": "GPE",
-    "text": "Pyrrhus",
-    "start": 1314,
-    "end": 1321
    },
    {
     "label": "PERSON",
@@ -4023,12 +3975,6 @@
     "end": 16785
    },
    {
-    "label": "GPE",
-    "text": "medley",
-    "start": 17307,
-    "end": 17313
-   },
-   {
     "label": "PERSON",
     "text": "Deasy",
     "start": 17601,
@@ -4535,12 +4481,6 @@
   ],
   "3": [
    {
-    "label": "LOC",
-    "text": "seaspawn\n",
-    "start": 132,
-    "end": 141
-   },
-   {
     "label": "CARDINAL",
     "text": "five",
     "start": 534,
@@ -5037,12 +4977,6 @@
     "text": "Howth",
     "start": 8036,
     "end": 8041
-   },
-   {
-    "label": "FAC",
-    "text": "tram",
-    "start": 8042,
-    "end": 8046
    },
    {
     "label": "CARDINAL",
@@ -5753,12 +5687,6 @@
     "end": 20721
    },
    {
-    "label": "FAC",
-    "text": "tenney",
-    "start": 21526,
-    "end": 21532
-   },
-   {
     "label": "ORDINAL",
     "text": "ninth",
     "start": 21785,
@@ -5903,12 +5831,6 @@
     "end": 26328
    },
    {
-    "label": "LOC",
-    "text": "sea",
-    "start": 26424,
-    "end": 26427
-   },
-   {
     "label": "TIME",
     "text": "night",
     "start": 26449,
@@ -6017,12 +5939,6 @@
     "end": 29495
    },
    {
-    "label": "GPE",
-    "text": "rsseeiss",
-    "start": 29503,
-    "end": 29511
-   },
-   {
     "label": "TIME",
     "text": "night",
     "start": 29945,
@@ -6057,12 +5973,6 @@
     "text": "Dublin",
     "start": 30494,
     "end": 30500
-   },
-   {
-    "label": "GPE",
-    "text": "Seadeath",
-    "start": 31239,
-    "end": 31247
    },
    {
     "label": "PERSON",

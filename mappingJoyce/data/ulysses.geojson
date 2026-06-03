@@ -18,8 +18,8 @@
     "character": "Stephen",
     "time": "8am",
     "gloss": "Stephen, Mulligan and Haines lodge in the Martello tower; the novel opens on its gun-platform.",
-    "quote": "Stately, plump Buck Mulligan came from the stairhead, bearing a bowl of lather on which a mirror and a razor lay crossed.",
-    "ref": "1.1"
+    "quote": "—Rather bleak in wintertime, I should say. Martello you call it? —Billy Pitt had them built, Buck Mulligan said, when the French were on the sea. But ours is the omphalos.",
+    "verified": true
    },
    "geometry": {
     "type": "Point",
@@ -40,7 +40,9 @@
     "kind": "place",
     "character": "Buck",
     "time": "8am",
-    "gloss": "The men's bathing place just below the tower, where Mulligan goes down to swim — 'the snotgreen sea, the scrotumtightening sea.'"
+    "gloss": "The men's bathing place just below the tower, where Mulligan goes down to swim — 'the snotgreen sea, the scrotumtightening sea.'",
+    "quote": "He capered before them down towards the fortyfoot hole, fluttering his winglike hands, leaping nimbly, Mercury's hat quivering in the fresh wind that bore back to them his brief birdsweet cries.",
+    "verified": true
    },
    "geometry": {
     "type": "Point",
@@ -61,13 +63,15 @@
     "kind": "place",
     "character": "Stephen",
     "time": "9.45am",
-    "gloss": "Mr Deasy's boys' school at Summerfield; Stephen teaches a history class and is paid his wages."
+    "gloss": "Mr Deasy's boys' school (text); modelled on the Clifton School at Summerfield, Dalkey, where Joyce taught in 1904 (background).",
+    "quote": "—History, Stephen said, is a nightmare from which I am trying to awake.",
+    "verified": true
    },
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -6.109231,
-     53.273695
+     -6.107995,
+     53.277403
     ]
    }
   },
@@ -83,14 +87,14 @@
     "character": "Stephen",
     "time": "11am",
     "gloss": "Stephen walks the tideline alone, meditating on perception — the 'ineluctable modality of the visible.'",
-    "quote": "Ineluctable modality of the visible: at least that if no more, thought through my eyes.",
-    "ref": "3.1"
+    "quote": "Am I walking into eternity along Sandymount strand? Crush, crack, crick, crick. Wild sea money. Dominie Deasy kens them a’.",
+    "verified": true
    },
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -6.208006,
-     53.327652
+     -6.206582,
+     53.325225
     ]
    }
   },
@@ -107,7 +111,8 @@
     "time": "8am",
     "gloss": "Bloom's morning at home: he fries a kidney and brings Molly her breakfast.",
     "quote": "Mr Leopold Bloom ate with relish the inner organs of beasts and fowls.",
-    "ref": "4.1"
+    "ref": "4.1",
+    "verified": false
    },
    "geometry": {
     "type": "Point",
@@ -128,7 +133,8 @@
     "kind": "place",
     "character": "Leopold",
     "time": "9.45am",
-    "gloss": "Bloom begins his drifting, lotus-scented morning along the river quays."
+    "gloss": "Bloom begins his drifting, lotus-scented morning along the river quays.",
+    "verified": false
    },
    "geometry": {
     "type": "Point",
@@ -149,7 +155,8 @@
     "kind": "place",
     "character": "Leopold",
     "time": "9.45am",
-    "gloss": "Bloom collects Martha Clifford's letter under the name Henry Flower."
+    "gloss": "Bloom collects Martha Clifford's letter under the name Henry Flower.",
+    "verified": false
    },
    "geometry": {
     "type": "Point",
@@ -170,7 +177,8 @@
     "kind": "place",
     "character": "Leopold",
     "time": "9.45am",
-    "gloss": "Bloom buys the cake of lemon soap he carries through the day."
+    "gloss": "Bloom buys the cake of lemon soap he carries through the day.",
+    "verified": false
    },
    "geometry": {
     "type": "Point",
@@ -191,7 +199,8 @@
     "kind": "place",
     "character": "Leopold",
     "time": "11am",
-    "gloss": "The funeral procession sets out from the dead man's house in Sandymount."
+    "gloss": "The funeral procession sets out from the dead man's house in Sandymount.",
+    "verified": false
    },
    "geometry": {
     "type": "Point",
@@ -212,7 +221,8 @@
     "kind": "place",
     "character": "Leopold",
     "time": "11am",
-    "gloss": "Dignam's burial; Bloom broods on death and the dead among the graves."
+    "gloss": "Dignam's burial; Bloom broods on death and the dead among the graves.",
+    "verified": false
    },
    "geometry": {
     "type": "Point",
@@ -233,7 +243,8 @@
     "kind": "place",
     "character": "Leopold, Stephen",
     "time": "12.15pm",
-    "gloss": "The newspaper offices; the episode of windy rhetoric and headlines."
+    "gloss": "The newspaper offices; the episode of windy rhetoric and headlines.",
+    "verified": false
    },
    "geometry": {
     "type": "Point",
@@ -254,7 +265,8 @@
     "kind": "place",
     "character": "Leopold",
     "time": "1.10pm",
-    "gloss": "Bloom is handed the 'Elijah is coming' throwaway outside Lemon's, 49 Lower O'Connell Street."
+    "gloss": "Bloom is handed the 'Elijah is coming' throwaway outside Lemon's, 49 Lower O'Connell Street.",
+    "verified": false
    },
    "geometry": {
     "type": "Point",
@@ -277,7 +289,8 @@
     "time": "1.10pm",
     "gloss": "Bloom lunches on a gorgonzola sandwich and a glass of burgundy in the 'moral pub.'",
     "quote": "He entered Davy Byrne's. Moral pub. He doesn't chat. Stands a drink now and then.",
-    "ref": "8.732"
+    "ref": "8.732",
+    "verified": false
    },
    "geometry": {
     "type": "Point",
@@ -298,7 +311,8 @@
     "kind": "place",
     "character": "Stephen, Leopold",
     "time": "2.10pm",
-    "gloss": "Stephen expounds his theory of Hamlet to the librarians; Bloom passes between the doors."
+    "gloss": "Stephen expounds his theory of Hamlet to the librarians; Bloom passes between the doors.",
+    "verified": false
    },
    "geometry": {
     "type": "Point",
@@ -319,7 +333,8 @@
     "kind": "place",
     "character": "Conmee",
     "time": "2.55pm",
-    "gloss": "Father Conmee sets out from the Jesuit house in Gardiner Street on his afternoon walk."
+    "gloss": "Father Conmee sets out from the Jesuit house in Gardiner Street on his afternoon walk.",
+    "verified": false
    },
    "geometry": {
     "type": "Point",
@@ -340,7 +355,8 @@
     "kind": "place",
     "character": "Conmee",
     "time": "2.55pm",
-    "gloss": "Father Conmee's walk carries him out towards Marino."
+    "gloss": "Father Conmee's walk carries him out towards Marino.",
+    "verified": false
    },
    "geometry": {
     "type": "Point",
@@ -361,7 +377,8 @@
     "kind": "place",
     "character": "Blazes",
     "time": "2.55pm",
-    "gloss": "Blazes Boylan orders fruit and wine for Molly at Thornton's, 63 Grafton Street."
+    "gloss": "Blazes Boylan orders fruit and wine for Molly at Thornton's, 63 Grafton Street.",
+    "verified": false
    },
    "geometry": {
     "type": "Point",
@@ -382,7 +399,8 @@
     "kind": "place",
     "character": "Ned",
     "time": "2.55pm",
-    "gloss": "Ned Lambert shows the historic Chapter House of St Mary's Abbey to a visiting clergyman."
+    "gloss": "Ned Lambert shows the historic Chapter House of St Mary's Abbey to a visiting clergyman.",
+    "verified": false
    },
    "geometry": {
     "type": "Point",
@@ -403,7 +421,8 @@
     "kind": "place",
     "character": "Lenehan, M'Coy",
     "time": "2.55pm",
-    "gloss": "Lenehan and M'Coy cut through Crampton Court, gossiping about Boylan and Molly."
+    "gloss": "Lenehan and M'Coy cut through Crampton Court, gossiping about Boylan and Molly.",
+    "verified": false
    },
    "geometry": {
     "type": "Point",
@@ -424,7 +443,8 @@
     "kind": "place",
     "character": "Leopold",
     "time": "2.55pm",
-    "gloss": "Bloom browses the book-barrows by Merchant's Arch and chooses 'Sweets of Sin' for Molly."
+    "gloss": "Bloom browses the book-barrows by Merchant's Arch and chooses 'Sweets of Sin' for Molly.",
+    "verified": false
    },
    "geometry": {
     "type": "Point",
@@ -445,7 +465,8 @@
     "kind": "place",
     "character": "Dilly",
     "time": "2.55pm",
-    "gloss": "Dilly Dedalus waits outside Dillon's auction rooms, 25 Bachelor's Walk."
+    "gloss": "Dilly Dedalus waits outside Dillon's auction rooms, 25 Bachelor's Walk.",
+    "verified": false
    },
    "geometry": {
     "type": "Point",
@@ -466,7 +487,8 @@
     "kind": "place",
     "character": "Tom",
     "time": "2.55pm",
-    "gloss": "Tom Kernan strolls contentedly down James's Street after a good sale."
+    "gloss": "Tom Kernan strolls contentedly down James's Street after a good sale.",
+    "verified": false
    },
    "geometry": {
     "type": "Point",
@@ -487,7 +509,8 @@
     "kind": "place",
     "character": "Stephen",
     "time": "2.55pm",
-    "gloss": "Stephen lingers at a jeweller's window, Russell's, 57 Fleet Street."
+    "gloss": "Stephen lingers at a jeweller's window, Russell's, 57 Fleet Street.",
+    "verified": false
    },
    "geometry": {
     "type": "Point",
@@ -508,7 +531,8 @@
     "kind": "place",
     "character": "Martin",
     "time": "2.55pm",
-    "gloss": "Martin Cunningham gathers subscriptions for the Dignam family at the Castle."
+    "gloss": "Martin Cunningham gathers subscriptions for the Dignam family at the Castle.",
+    "verified": false
    },
    "geometry": {
     "type": "Point",
@@ -529,7 +553,8 @@
     "kind": "place",
     "character": "Buck",
     "time": "2.55pm",
-    "gloss": "Mulligan and Haines take tea at the DBC tearooms, 33 Dame Street."
+    "gloss": "Mulligan and Haines take tea at the DBC tearooms, 33 Dame Street.",
+    "verified": false
    },
    "geometry": {
     "type": "Point",
@@ -550,7 +575,8 @@
     "kind": "place",
     "character": "Patrick",
     "time": "2.55pm",
-    "gloss": "Young Patrick Dignam dawdles past Ruggy O'Donohoe's pub, 23 Wicklow Street."
+    "gloss": "Young Patrick Dignam dawdles past Ruggy O'Donohoe's pub, 23 Wicklow Street.",
+    "verified": false
    },
    "geometry": {
     "type": "Point",
@@ -571,7 +597,8 @@
     "kind": "place",
     "character": "the Viceroy",
     "time": "2.55pm",
-    "gloss": "The viceregal cavalcade sets out from the Viceregal Lodge in the Phoenix Park."
+    "gloss": "The viceregal cavalcade sets out from the Viceregal Lodge in the Phoenix Park.",
+    "verified": false
    },
    "geometry": {
     "type": "Point",
@@ -592,7 +619,8 @@
     "kind": "place",
     "character": "the Viceroy",
     "time": "2.55pm",
-    "gloss": "The cavalcade proceeds through the city to the RDS showgrounds at Ballsbridge."
+    "gloss": "The cavalcade proceeds through the city to the RDS showgrounds at Ballsbridge.",
+    "verified": false
    },
    "geometry": {
     "type": "Point",
@@ -613,7 +641,8 @@
     "kind": "place",
     "character": "Leopold, Blazes",
     "time": "3.40pm",
-    "gloss": "The barmaids Miss Douce and Miss Kennedy; music and song fill the 'Sirens' episode."
+    "gloss": "The barmaids Miss Douce and Miss Kennedy; music and song fill the 'Sirens' episode.",
+    "verified": false
    },
    "geometry": {
     "type": "Point",
@@ -634,7 +663,8 @@
     "kind": "place",
     "character": "the Narrator",
     "time": "5pm",
-    "gloss": "The nameless narrator crosses Stonybatter on his way to the pub."
+    "gloss": "The nameless narrator crosses Stonybatter on his way to the pub.",
+    "verified": false
    },
    "geometry": {
     "type": "Point",
@@ -655,7 +685,8 @@
     "kind": "place",
     "character": "Leopold",
     "time": "5pm",
-    "gloss": "Barney Kiernan's, 8–10 Little Britain Street; the Citizen's hostility drives Bloom out."
+    "gloss": "Barney Kiernan's, 8–10 Little Britain Street; the Citizen's hostility drives Bloom out.",
+    "verified": false
    },
    "geometry": {
     "type": "Point",
@@ -676,7 +707,8 @@
     "kind": "place",
     "character": "Leopold, Gerty",
     "time": "8.25pm",
-    "gloss": "Gerty MacDowell on the strand at dusk, watched from afar by Bloom."
+    "gloss": "Gerty MacDowell on the strand at dusk, watched from afar by Bloom.",
+    "verified": false
    },
    "geometry": {
     "type": "Point",
@@ -697,7 +729,8 @@
     "kind": "place",
     "character": "Leopold, Stephen",
     "time": "10pm",
-    "gloss": "Mina Purefoy gives birth; the prose gestates through the history of English style."
+    "gloss": "Mina Purefoy gives birth; the prose gestates through the history of English style.",
+    "verified": false
    },
    "geometry": {
     "type": "Point",
@@ -718,7 +751,8 @@
     "kind": "place",
     "character": "Leopold, Stephen",
     "time": "11.25pm",
-    "gloss": "Mabbot Street, the entrance to Nighttown (Monto), where the hallucinatory drama begins."
+    "gloss": "Mabbot Street, the entrance to Nighttown (Monto), where the hallucinatory drama begins.",
+    "verified": false
    },
    "geometry": {
     "type": "Point",
@@ -739,7 +773,8 @@
     "kind": "place",
     "character": "Leopold, Stephen",
     "time": "11.25pm",
-    "gloss": "Bella Cohen's brothel, 82 Lower Tyrone Street (now Railway Street)."
+    "gloss": "Bella Cohen's brothel, 82 Lower Tyrone Street (now Railway Street).",
+    "verified": false
    },
    "geometry": {
     "type": "Point",
@@ -760,7 +795,8 @@
     "kind": "place",
     "character": "Leopold, Stephen",
     "time": "12.40am",
-    "gloss": "Bloom takes the exhausted Stephen for coffee in the cabman's shelter."
+    "gloss": "Bloom takes the exhausted Stephen for coffee in the cabman's shelter.",
+    "verified": false
    },
    "geometry": {
     "type": "Point",
@@ -781,7 +817,8 @@
     "kind": "place",
     "character": "Leopold, Stephen",
     "time": "1am",
-    "gloss": "Bloom and Stephen walk back to Eccles Street; the cosmic catechism of 'Ithaca.'"
+    "gloss": "Bloom and Stephen walk back to Eccles Street; the cosmic catechism of 'Ithaca.'",
+    "verified": false
    },
    "geometry": {
     "type": "Point",
@@ -804,7 +841,8 @@
     "time": "2am",
     "gloss": "Molly Bloom's nocturnal monologue in bed — the book's closing 'yes I said yes I will Yes.'",
     "quote": "yes I said yes I will Yes.",
-    "ref": "18.1609"
+    "ref": "18.1609",
+    "verified": false
    },
    "geometry": {
     "type": "Point",
@@ -823,28 +861,21 @@
     "group_de": "Telemachos",
     "name": "Stephen's morning: to the Forty Foot",
     "kind": "route",
-    "character": "Stephen",
+    "character": "Buck, Stephen, Haines",
     "time": "8am",
-    "gloss": "From the Martello tower down to the Forty Foot, where Mulligan swims."
+    "gloss": "Mulligan, Stephen and Haines walk down from the tower to the Forty Foot; Mulligan capers ahead to swim, then Stephen leaves for the school.",
+    "verified": true
    },
    "geometry": {
     "type": "LineString",
     "coordinates": [
      [
-      -6.113441,
-      53.288695
+      -6.113434,
+      53.288684
      ],
      [
-      -6.113441,
-      53.288695
-     ],
-     [
-      -6.113452,
-      53.288807
-     ],
-     [
-      -6.11346,
-      53.288871
+      -6.113424,
+      53.288667
      ],
      [
       -6.113482,
@@ -855,16 +886,36 @@
       53.288962
      ],
      [
-      -6.11362,
-      53.288989
-     ],
-     [
-      -6.113709,
+      -6.113708,
       53.289012
      ],
      [
-      -6.113755,
-      53.289014
+      -6.113803,
+      53.289016
+     ],
+     [
+      -6.113903,
+      53.28899
+     ],
+     [
+      -6.113934,
+      53.288982
+     ],
+     [
+      -6.113985,
+      53.289142
+     ],
+     [
+      -6.113977,
+      53.289198
+     ],
+     [
+      -6.113908,
+      53.289327
+     ],
+     [
+      -6.113701,
+      53.289484
      ]
     ]
    }
@@ -880,398 +931,139 @@
     "kind": "route",
     "character": "Stephen",
     "time": "9.45am",
-    "gloss": "Stephen's way from Sandycove to Mr Deasy's school in Dalkey."
+    "gloss": "Stephen's way from Sandycove to Mr Deasy's school in Dalkey.",
+    "verified": true
    },
    "geometry": {
     "type": "LineString",
     "coordinates": [
      [
-      -6.113755,
-      53.289014
+      -6.113699,
+      53.289486
      ],
      [
-      -6.113709,
-      53.289012
+      -6.113908,
+      53.289327
      ],
      [
-      -6.11362,
-      53.288989
+      -6.113977,
+      53.289198
      ],
      [
-      -6.11353,
-      53.288962
+      -6.113985,
+      53.289142
      ],
      [
-      -6.113482,
-      53.288934
+      -6.113934,
+      53.288982
      ],
      [
-      -6.11346,
-      53.288871
+      -6.114054,
+      53.288916
      ],
      [
-      -6.113452,
-      53.288807
+      -6.11418,
+      53.288783
      ],
      [
-      -6.113441,
-      53.288695
+      -6.114229,
+      53.288619
      ],
      [
-      -6.113411,
-      53.288644
+      -6.114286,
+      53.288145
      ],
      [
-      -6.11336,
-      53.288606
+      -6.114581,
+      53.288202
      ],
      [
-      -6.11315,
-      53.288462
+      -6.114662,
+      53.288192
      ],
      [
-      -6.112526,
-      53.288067
+      -6.114786,
+      53.28814
      ],
      [
-      -6.112253,
-      53.287865
+      -6.115136,
+      53.287134
      ],
      [
-      -6.112399,
-      53.287806
+      -6.115561,
+      53.285931
      ],
      [
-      -6.112543,
-      53.287754
+      -6.116087,
+      53.284533
      ],
      [
-      -6.112733,
-      53.287627
+      -6.116068,
+      53.284528
      ],
      [
-      -6.112823,
-      53.2874
+      -6.112654,
+      53.283638
      ],
      [
-      -6.112906,
-      53.287161
+      -6.113027,
+      53.283292
      ],
      [
-      -6.112925,
-      53.287107
+      -6.112985,
+      53.28327
      ],
      [
-      -6.113037,
-      53.286796
+      -6.112818,
+      53.283185
      ],
      [
-      -6.113208,
-      53.286257
+      -6.111844,
+      53.28229
      ],
      [
-      -6.113413,
-      53.285726
+      -6.111552,
+      53.282054
      ],
      [
-      -6.112955,
-      53.285681
+      -6.111063,
+      53.281726
      ],
      [
-      -6.111989,
-      53.285592
+      -6.110504,
+      53.28138
      ],
      [
-      -6.111333,
-      53.285517
+      -6.109681,
+      53.280818
      ],
      [
-      -6.1111,
-      53.28548
+      -6.109484,
+      53.280653
      ],
      [
-      -6.110785,
-      53.285404
+      -6.108938,
+      53.280079
      ],
      [
-      -6.109974,
-      53.285196
+      -6.107948,
+      53.278835
      ],
      [
-      -6.109358,
-      53.285048
+      -6.10781,
+      53.278462
      ],
      [
-      -6.108985,
-      53.284922
-     ],
-     [
-      -6.108845,
-      53.284869
-     ],
-     [
-      -6.108773,
-      53.284824
-     ],
-     [
-      -6.108711,
-      53.28478
-     ],
-     [
-      -6.108592,
-      53.284694
-     ],
-     [
-      -6.108361,
-      53.284491
-     ],
-     [
-      -6.108057,
-      53.284304
-     ],
-     [
-      -6.107343,
-      53.283961
-     ],
-     [
-      -6.107153,
-      53.28385
-     ],
-     [
-      -6.107057,
-      53.283767
-     ],
-     [
-      -6.106893,
-      53.283507
-     ],
-     [
-      -6.10683,
-      53.283188
-     ],
-     [
-      -6.106805,
-      53.28288
-     ],
-     [
-      -6.106898,
-      53.282416
-     ],
-     [
-      -6.106969,
-      53.281944
-     ],
-     [
-      -6.107027,
-      53.281543
-     ],
-     [
-      -6.107038,
-      53.281474
-     ],
-     [
-      -6.10714,
-      53.280987
-     ],
-     [
-      -6.107167,
-      53.28086
-     ],
-     [
-      -6.107206,
-      53.28067
-     ],
-     [
-      -6.107185,
-      53.280507
-     ],
-     [
-      -6.107094,
-      53.280154
-     ],
-     [
-      -6.107033,
-      53.27994
-     ],
-     [
-      -6.107001,
-      53.279826
-     ],
-     [
-      -6.106916,
-      53.279452
-     ],
-     [
-      -6.106908,
-      53.279223
-     ],
-     [
-      -6.106941,
-      53.278981
-     ],
-     [
-      -6.106968,
-      53.278731
-     ],
-     [
-      -6.106972,
-      53.278702
-     ],
-     [
-      -6.107022,
-      53.278514
-     ],
-     [
-      -6.107028,
-      53.278463
-     ],
-     [
-      -6.107036,
-      53.278374
-     ],
-     [
-      -6.107043,
-      53.278276
-     ],
-     [
-      -6.107046,
-      53.278236
-     ],
-     [
-      -6.10706,
-      53.278174
-     ],
-     [
-      -6.107074,
-      53.278124
-     ],
-     [
-      -6.107237,
-      53.278137
-     ],
-     [
-      -6.107334,
-      53.278148
-     ],
-     [
-      -6.107615,
-      53.278173
+      -6.107785,
+      53.278194
      ],
      [
       -6.10768,
       53.27818
      ],
      [
-      -6.107815,
-      53.277861
-     ],
-     [
-      -6.107893,
-      53.27769
-     ],
-     [
-      -6.107958,
-      53.277525
-     ],
-     [
-      -6.108015,
-      53.277345
-     ],
-     [
-      -6.108054,
-      53.277206
-     ],
-     [
-      -6.108067,
-      53.277132
-     ],
-     [
-      -6.108072,
-      53.277062
-     ],
-     [
-      -6.108076,
-      53.276915
-     ],
-     [
-      -6.108081,
-      53.276843
-     ],
-     [
-      -6.108085,
-      53.276775
-     ],
-     [
-      -6.108103,
-      53.276421
-     ],
-     [
-      -6.108114,
-      53.276257
-     ],
-     [
-      -6.108122,
-      53.276206
-     ],
-     [
-      -6.108131,
-      53.276168
-     ],
-     [
-      -6.10818,
-      53.276004
-     ],
-     [
-      -6.108291,
-      53.275644
-     ],
-     [
-      -6.108342,
-      53.275476
-     ],
-     [
-      -6.108443,
-      53.275143
-     ],
-     [
-      -6.108586,
-      53.274707
-     ],
-     [
-      -6.108608,
-      53.274646
-     ],
-     [
-      -6.108658,
-      53.274539
-     ],
-     [
-      -6.108683,
-      53.274486
-     ],
-     [
-      -6.108796,
-      53.274256
-     ],
-     [
-      -6.108827,
-      53.274197
-     ],
-     [
-      -6.108839,
-      53.274174
-     ],
-     [
-      -6.109027,
-      53.2739
-     ],
-     [
-      -6.109179,
-      53.27374
-     ],
-     [
-      -6.109231,
-      53.273695
+      -6.107995,
+      53.277403
      ]
     ]
    }
@@ -1287,206 +1079,943 @@
     "kind": "route",
     "character": "Stephen",
     "time": "11am",
-    "gloss": "Stephen most likely takes the coastal railway (the Dublin & South Eastern line, today's DART) from Dalkey to Sandymount, then walks onto the strand."
+    "gloss": "Stephen most likely takes the coastal railway (the Dublin & South Eastern line, today's DART) from Dalkey to Sandymount, then walks onto the strand.",
+    "verified": true
    },
    "geometry": {
     "type": "LineString",
     "coordinates": [
      [
-      -6.109231,
-      53.273695
+      -6.108004,
+      53.277373
      ],
      [
-      -6.108871,
-      53.274103
+      -6.107958,
+      53.277525
      ],
      [
-      -6.108626,
-      53.274547
+      -6.107815,
+      53.277861
      ],
      [
-      -6.104834,
-      53.274456
+      -6.10768,
+      53.27818
      ],
      [
-      -6.104265,
-      53.275699
+      -6.107615,
+      53.278173
      ],
      [
-      -6.103246,
-      53.275466
+      -6.107334,
+      53.278148
      ],
      [
-      -6.103147,
-      53.275594
+      -6.107236,
+      53.278137
      ],
      [
-      -6.108152,
-      53.27682
+      -6.107074,
+      53.278124
      ],
      [
-      -6.113162,
-      53.278167
+      -6.106975,
+      53.278115
      ],
      [
-      -6.123108,
-      53.281238
+      -6.106954,
+      53.278112
      ],
      [
-      -6.125457,
-      53.282016
+      -6.10666,
+      53.278063
      ],
      [
-      -6.126316,
-      53.282516
+      -6.106528,
+      53.278036
+     ],
+     [
+      -6.106402,
+      53.278005
+     ],
+     [
+      -6.106319,
+      53.277982
+     ],
+     [
+      -6.106207,
+      53.277948
+     ],
+     [
+      -6.105901,
+      53.277866
+     ],
+     [
+      -6.105863,
+      53.277861
+     ],
+     [
+      -6.105507,
+      53.277804
+     ],
+     [
+      -6.105423,
+      53.277792
+     ],
+     [
+      -6.105369,
+      53.277782
+     ],
+     [
+      -6.105186,
+      53.277755
+     ],
+     [
+      -6.105076,
+      53.277729
+     ],
+     [
+      -6.104968,
+      53.277697
+     ],
+     [
+      -6.104872,
+      53.27766
+     ],
+     [
+      -6.104695,
+      53.277581
+     ],
+     [
+      -6.104369,
+      53.277426
+     ],
+     [
+      -6.104257,
+      53.277381
+     ],
+     [
+      -6.103992,
+      53.277312
+     ],
+     [
+      -6.103788,
+      53.277256
+     ],
+     [
+      -6.103573,
+      53.277185
+     ],
+     [
+      -6.103353,
+      53.277092
+     ],
+     [
+      -6.103305,
+      53.277034
+     ],
+     [
+      -6.103281,
+      53.276979
+     ],
+     [
+      -6.103163,
+      53.276832
+     ],
+     [
+      -6.103134,
+      53.276627
+     ],
+     [
+      -6.103154,
+      53.276525
+     ],
+     [
+      -6.103184,
+      53.276444
+     ],
+     [
+      -6.103305,
+      53.276332
+     ],
+     [
+      -6.103581,
+      53.276007
+     ],
+     [
+      -6.103534,
+      53.275996
+     ],
+     [
+      -6.103583,
+      53.275903
+     ],
+     [
+      -6.103345,
+      53.275853
+     ],
+     [
+      -6.103358,
+      53.27583
+     ],
+     [
+      -6.103396,
+      53.275772
+     ],
+     [
+      -6.103342,
+      53.275758
+     ],
+     [
+      -6.103279,
+      53.27574
+     ],
+     [
+      -6.103287,
+      53.275727
+     ],
+     [
+      -6.103296,
+      53.275715
+     ],
+     [
+      -6.103301,
+      53.275707
+     ],
+     [
+      -6.103311,
+      53.275694
+     ],
+     [
+      -6.103355,
+      53.275675
+     ],
+     [
+      -6.104748,
+      53.276023
+     ],
+     [
+      -6.105775,
+      53.276236
+     ],
+     [
+      -6.106064,
+      53.276306
+     ],
+     [
+      -6.109495,
+      53.277153
+     ],
+     [
+      -6.110788,
+      53.277501
+     ],
+     [
+      -6.111114,
+      53.277597
+     ],
+     [
+      -6.111397,
+      53.277682
+     ],
+     [
+      -6.114718,
+      53.278656
+     ],
+     [
+      -6.116432,
+      53.279174
+     ],
+     [
+      -6.123116,
+      53.281226
+     ],
+     [
+      -6.124237,
+      53.281562
+     ],
+     [
+      -6.124723,
+      53.281723
+     ],
+     [
+      -6.12519,
+      53.281902
+     ],
+     [
+      -6.125522,
+      53.282045
+     ],
+     [
+      -6.125859,
+      53.282227
+     ],
+     [
+      -6.126232,
+      53.282461
+     ],
+     [
+      -6.126539,
+      53.282683
+     ],
+     [
+      -6.126899,
+      53.283007
+     ],
+     [
+      -6.127148,
+      53.283294
+     ],
+     [
+      -6.127382,
+      53.283635
+     ],
+     [
+      -6.127521,
+      53.283929
+     ],
+     [
+      -6.127638,
+      53.284273
+     ],
+     [
+      -6.127691,
+      53.284662
+     ],
+     [
+      -6.127705,
+      53.285007
+     ],
+     [
+      -6.127702,
+      53.28541
+     ],
+     [
+      -6.12769,
+      53.286282
+     ],
+     [
+      -6.127671,
+      53.286691
+     ],
+     [
+      -6.127649,
+      53.286888
+     ],
+     [
+      -6.127606,
+      53.287078
+     ],
+     [
+      -6.127532,
+      53.287301
+     ],
+     [
+      -6.127425,
+      53.287534
      ],
      [
       -6.127067,
-      53.283164
+      53.288221
      ],
      [
-      -6.127506,
-      53.283908
+      -6.127049,
+      53.288256
      ],
      [
-      -6.127678,
-      53.284736
+      -6.126986,
+      53.28841
      ],
      [
-      -6.127667,
-      53.286365
+      -6.126943,
+      53.288546
      ],
      [
-      -6.127571,
-      53.287173
+      -6.126902,
+      53.288745
      ],
      [
-      -6.127158,
-      53.288002
+      -6.126892,
+      53.288975
      ],
      [
-      -6.126949,
-      53.288443
+      -6.126924,
+      53.289254
      ],
      [
-      -6.126852,
-      53.288879
+      -6.126961,
+      53.289397
      ],
      [
-      -6.127131,
-      53.289815
+      -6.12701,
+      53.289534
      ],
      [
-      -6.128086,
-      53.290771
+      -6.127145,
+      53.289791
      ],
      [
-      -6.130414,
-      53.292624
+      -6.127244,
+      53.289939
      ],
      [
-      -6.134748,
-      53.294952
+      -6.127326,
+      53.290041
      ],
      [
-      -6.136336,
-      53.295619
+      -6.127689,
+      53.290418
      ],
      [
-      -6.138418,
-      53.296029
+      -6.12783,
+      53.290541
      ],
      [
-      -6.140392,
-      53.296337
+      -6.128341,
+      53.291005
      ],
      [
-      -6.142516,
-      53.29617
+      -6.128523,
+      53.291181
      ],
      [
-      -6.152172,
-      53.295234
+      -6.128791,
+      53.291442
      ],
      [
-      -6.155691,
-      53.295811
+      -6.129721,
+      53.292168
      ],
      [
-      -6.160841,
-      53.297543
+      -6.130094,
+      53.292423
      ],
      [
-      -6.165261,
-      53.299184
+      -6.130862,
+      53.292987
      ],
      [
-      -6.178586,
-      53.302646
+      -6.131022,
+      53.293071
      ],
      [
-      -6.187084,
-      53.306173
+      -6.131175,
+      53.293168
      ],
      [
-      -6.191397,
-      53.307955
+      -6.131797,
+      53.293514
      ],
      [
-      -6.195196,
-      53.309985
+      -6.134016,
+      53.294589
      ],
      [
-      -6.208413,
-      53.318685
+      -6.134448,
+      53.294798
      ],
      [
-      -6.214893,
-      53.323248
+      -6.134653,
+      53.294892
      ],
      [
-      -6.22105,
-      53.327928
+      -6.134688,
+      53.294909
      ],
      [
-      -6.219463,
-      53.3284
+      -6.13511,
+      53.2951
      ],
      [
-      -6.217618,
-      53.330078
+      -6.135471,
+      53.295253
      ],
      [
-      -6.215773,
-      53.330553
+      -6.135924,
+      53.295432
      ],
      [
-      -6.215858,
-      53.331424
+      -6.136365,
+      53.295586
      ],
      [
-      -6.215537,
-      53.332372
+      -6.136772,
+      53.295715
      ],
      [
-      -6.214721,
-      53.33309
+      -6.13706,
+      53.295798
      ],
      [
-      -6.213841,
-      53.333474
+      -6.137776,
+      53.295972
      ],
      [
-      -6.212339,
-      53.333782
+      -6.138066,
+      53.296031
      ],
      [
-      -6.211309,
-      53.333474
+      -6.138446,
+      53.296099
      ],
      [
-      -6.210537,
-      53.332757
+      -6.138928,
+      53.296173
+     ],
+     [
+      -6.139382,
+      53.296228
+     ],
+     [
+      -6.1397,
+      53.296258
+     ],
+     [
+      -6.139926,
+      53.296272
+     ],
+     [
+      -6.140113,
+      53.296284
+     ],
+     [
+      -6.140952,
+      53.296336
+     ],
+     [
+      -6.141551,
+      53.296326
+     ],
+     [
+      -6.142429,
+      53.296248
+     ],
+     [
+      -6.142635,
+      53.296229
+     ],
+     [
+      -6.143692,
+      53.296125
+     ],
+     [
+      -6.149115,
+      53.295515
+     ],
+     [
+      -6.150157,
+      53.295425
+     ],
+     [
+      -6.150615,
+      53.295396
+     ],
+     [
+      -6.151459,
+      53.295366
+     ],
+     [
+      -6.152246,
+      53.295376
+     ],
+     [
+      -6.152581,
+      53.295392
+     ],
+     [
+      -6.152934,
+      53.295414
+     ],
+     [
+      -6.153367,
+      53.295452
+     ],
+     [
+      -6.154031,
+      53.295529
+     ],
+     [
+      -6.154432,
+      53.295589
+     ],
+     [
+      -6.15504,
+      53.295695
+     ],
+     [
+      -6.155389,
+      53.295766
+     ],
+     [
+      -6.155754,
+      53.295849
+     ],
+     [
+      -6.156291,
+      53.295983
+     ],
+     [
+      -6.157065,
+      53.296208
+     ],
+     [
+      -6.157879,
+      53.296489
+     ],
+     [
+      -6.1618,
+      53.297965
+     ],
+     [
+      -6.16296,
+      53.298393
+     ],
+     [
+      -6.164025,
+      53.298761
+     ],
+     [
+      -6.164862,
+      53.299035
+     ],
+     [
+      -6.165244,
+      53.299153
+     ],
+     [
+      -6.166435,
+      53.29951
+     ],
+     [
+      -6.167675,
+      53.299851
+     ],
+     [
+      -6.168843,
+      53.300155
+     ],
+     [
+      -6.169542,
+      53.300324
+     ],
+     [
+      -6.170957,
+      53.300652
+     ],
+     [
+      -6.171341,
+      53.300748
+     ],
+     [
+      -6.172024,
+      53.300905
+     ],
+     [
+      -6.174181,
+      53.30143
+     ],
+     [
+      -6.174937,
+      53.301631
+     ],
+     [
+      -6.17614,
+      53.301979
+     ],
+     [
+      -6.177363,
+      53.302372
+     ],
+     [
+      -6.178051,
+      53.302601
+     ],
+     [
+      -6.178719,
+      53.302834
+     ],
+     [
+      -6.179526,
+      53.303136
+     ],
+     [
+      -6.180143,
+      53.303376
+     ],
+     [
+      -6.189823,
+      53.307296
+     ],
+     [
+      -6.191042,
+      53.307819
+     ],
+     [
+      -6.191719,
+      53.308127
+     ],
+     [
+      -6.192765,
+      53.308637
+     ],
+     [
+      -6.193663,
+      53.3091
+     ],
+     [
+      -6.19459,
+      53.309613
+     ],
+     [
+      -6.195222,
+      53.309982
+     ],
+     [
+      -6.195507,
+      53.31015
+     ],
+     [
+      -6.196871,
+      53.311023
+     ],
+     [
+      -6.199443,
+      53.312727
+     ],
+     [
+      -6.204925,
+      53.316348
+     ],
+     [
+      -6.204972,
+      53.316379
+     ],
+     [
+      -6.205042,
+      53.316425
+     ],
+     [
+      -6.20877,
+      53.318887
+     ],
+     [
+      -6.210703,
+      53.320173
+     ],
+     [
+      -6.211499,
+      53.320735
+     ],
+     [
+      -6.211603,
+      53.320751
+     ],
+     [
+      -6.21166,
+      53.320791
+     ],
+     [
+      -6.211821,
+      53.320893
+     ],
+     [
+      -6.211773,
+      53.320926
+     ],
+     [
+      -6.21176,
+      53.320937
+     ],
+     [
+      -6.211741,
+      53.320955
+     ],
+     [
+      -6.211647,
+      53.321039
+     ],
+     [
+      -6.211631,
+      53.321054
+     ],
+     [
+      -6.211592,
+      53.321096
+     ],
+     [
+      -6.211386,
+      53.32127
+     ],
+     [
+      -6.211343,
+      53.321306
+     ],
+     [
+      -6.211263,
+      53.321375
+     ],
+     [
+      -6.211255,
+      53.321381
+     ],
+     [
+      -6.210574,
+      53.321963
+     ],
+     [
+      -6.210426,
+      53.322102
+     ],
+     [
+      -6.210216,
+      53.32229
+     ],
+     [
+      -6.210115,
+      53.322382
+     ],
+     [
+      -6.209974,
+      53.322511
+     ],
+     [
+      -6.209913,
+      53.322566
+     ],
+     [
+      -6.20986,
+      53.322634
+     ],
+     [
+      -6.209761,
+      53.322716
+     ],
+     [
+      -6.209668,
+      53.322774
+     ],
+     [
+      -6.2096,
+      53.322809
+     ],
+     [
+      -6.209467,
+      53.322859
+     ],
+     [
+      -6.209358,
+      53.322899
+     ],
+     [
+      -6.209221,
+      53.322948
+     ],
+     [
+      -6.208978,
+      53.323036
+     ],
+     [
+      -6.208568,
+      53.323163
+     ],
+     [
+      -6.2083,
+      53.323251
+     ],
+     [
+      -6.208218,
+      53.323264
+     ],
+     [
+      -6.208109,
+      53.323281
+     ],
+     [
+      -6.207987,
+      53.323296
+     ],
+     [
+      -6.207887,
+      53.323309
+     ],
+     [
+      -6.20778,
+      53.323315
+     ],
+     [
+      -6.207686,
+      53.323319
+     ],
+     [
+      -6.207496,
+      53.323328
+     ],
+     [
+      -6.207446,
+      53.323332
+     ],
+     [
+      -6.207349,
+      53.323339
+     ],
+     [
+      -6.207214,
+      53.323348
+     ],
+     [
+      -6.206987,
+      53.323365
+     ],
+     [
+      -6.206681,
+      53.323402
+     ],
+     [
+      -6.206647,
+      53.32322
+     ],
+     [
+      -6.206568,
+      53.323232
+     ],
+     [
+      -6.206602,
+      53.323384
+     ],
+     [
+      -6.206568,
+      53.323232
+     ],
+     [
+      -6.206462,
+      53.323249
+     ],
+     [
+      -6.206206,
+      53.32326
+     ],
+     [
+      -6.206164,
+      53.323252
+     ],
+     [
+      -6.206206,
+      53.32326
+     ],
+     [
+      -6.206366,
+      53.324183
+     ],
+     [
+      -6.206492,
+      53.324913
+     ],
+     [
+      -6.206544,
+      53.325172
+     ],
+     [
+      -6.206582,
+      53.325225
      ]
     ]
    }
@@ -1502,7 +2031,8 @@
     "kind": "route",
     "character": "Leopold",
     "time": "11am",
-    "gloss": "Paddy Dignam's funeral cortège from Sandymount across the city to Glasnevin."
+    "gloss": "Paddy Dignam's funeral cortège from Sandymount across the city to Glasnevin.",
+    "verified": false
    },
    "geometry": {
     "type": "LineString",
@@ -2997,7 +3527,8 @@
     "kind": "route",
     "character": "Conmee",
     "time": "2.55pm",
-    "gloss": "Father Conmee walks on foot from the Jesuit house in Gardiner Street out towards Marino."
+    "gloss": "Father Conmee walks on foot from the Jesuit house in Gardiner Street out towards Marino.",
+    "verified": false
    },
    "geometry": {
     "type": "LineString",
@@ -3448,7 +3979,8 @@
     "kind": "route",
     "character": "the Viceroy",
     "time": "2.55pm",
-    "gloss": "The viceregal cavalcade's progress from the Phoenix Park to the RDS at Ballsbridge."
+    "gloss": "The viceregal cavalcade's progress from the Phoenix Park to the RDS at Ballsbridge.",
+    "verified": false
    },
    "geometry": {
     "type": "LineString",
@@ -5315,7 +5847,8 @@
     "kind": "route",
     "character": "Leopold, Stephen",
     "time": "1am",
-    "gloss": "Bloom and Stephen's late walk from the cabman's shelter at Butt Bridge up Marlborough Street and Temple Street to Eccles Street."
+    "gloss": "Bloom and Stephen's late walk from the cabman's shelter at Butt Bridge up Marlborough Street and Temple Street to Eccles Street.",
+    "verified": false
    },
    "geometry": {
     "type": "LineString",

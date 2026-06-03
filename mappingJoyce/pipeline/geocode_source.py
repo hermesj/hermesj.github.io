@@ -127,6 +127,8 @@ def main(src_path, out_path, region=None):
         for k in ("character", "time", "gloss", "quote", "ref"):
             if place.get(k):
                 props[k] = place[k]
+        if "verified" in place:           # boolean → presence check, not truthiness
+            props["verified"] = place["verified"]
         features.append({
             "type": "Feature",
             "properties": props,
@@ -161,6 +163,8 @@ def main(src_path, out_path, region=None):
         for k in ("character", "time", "gloss", "quote", "ref"):
             if r.get(k):
                 props[k] = r[k]
+        if "verified" in r:
+            props["verified"] = r["verified"]
         features.append({
             "type": "Feature",
             "properties": props,
