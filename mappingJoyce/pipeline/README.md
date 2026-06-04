@@ -1,45 +1,52 @@
 # pipeline/
 
 Data-preparation scripts (plain Python 3, standard library; routing also uses
-`curl`). They turn hand-curated sources into the `data/*.geojson` the engine
-renders, and support round-trip editing in uMap.
+`curl`). They turn the hand-curated `data/*-source.json` into the
+`data/*.geojson` the engine renders.
 
-## Generic (reusable for any project)
+## The actual workflow
 
-| Script | Purpose |
-|--------|---------|
-| `geocode_source.py` | source JSON → GeoJSON. Geocodes places (Nominatim) and draws routes between endpoints — **driving** via OSRM, **foot** via BRouter, chosen per route `mode`. Caches `lat`/`lon` and route `coords` back into the source so nothing is re-fetched. |
-| `geojson_to_kml.py` | GeoJSON → KML (episode folders, colours, ExtendedData) for editing in uMap. |
-| `import_umap.py` | edited KML/GeoJSON → back into the source (geometry only; matches by group + name). |
+The `*-source.json` files are the **single source of truth**. Each place caches
+its `lat`/`lon` and each route its `coords` once resolved, so re-running the
+geocoder is idempotent — it re-emits the same GeoJSON without re-fetching.
 
-### Parametrisation (config / args)
-
-- **Gazetteer focus** — bias ambiguous geocodes to a region:
-  `python3 geocode_source.py src.json out.geojson --region=S,W,N,E`
-  (Nominatim viewbox + bounded; e.g. Dublin `--region=53.0,-6.7,53.7,-6.0`).
-- **Routing mode** — per route in the source: `"mode": "driving"` (default,
-  OSRM) or `"mode": "foot"` (BRouter). Rail/other bespoke paths: paste a
-  `coords` array directly (then it is used as-is).
-- **Routing services** — endpoints are the `OSRM` / `BROUTER` constants at the
-  top of `geocode_source.py`.
-
-Typical loop:
+To add or change something, **edit the source directly**, then regenerate:
 
 ```bash
 python3 geocode_source.py ../data/<work>-source.json ../data/<work>.geojson
-python3 geojson_to_kml.py ../data/<work>.geojson ../data/<work>.kml   # → edit in uMap
-python3 import_umap.py edited.kml ../data/<work>-source.json          # ← pull edits back
-python3 geocode_source.py ../data/<work>-source.json ../data/<work>.geojson
 ```
 
-## Example-specific
+- **New place** — add an entry with its group, `name`, a findable `geocode`
+  query and optional `time` / `gloss` / `quote` / `ref`. It is geocoded once and
+  the result cached back.
+- **Wrong coordinate** — set `lat`/`lon` by hand (overrides geocoding). This is
+  how every hand-corrected marker in the live data was fixed.
+- **Route** — give `from`/`to` `[lat,lon]` + a `mode` (`"driving"` → OSRM,
+  `"foot"` → BRouter). For a bespoke path (e.g. a rail line) paste a `coords`
+  array (`[[lon,lat],…]`, `"mode":"rail"`) and it is used as-is. The live
+  Ulysses routes were all hand-corrected this way — coords pasted straight into
+  the source.
 
-- `example-dubliners/kml_to_geojson.py` (+ `source-doc.kml`) — converts the
-  Mapping Dubliners Project KMZ into `data/dubliners.geojson`. Tied to that one
-  source format; kept as the worked example for the flagship project, not part
-  of the generic pipeline.
+Bias ambiguous geocodes to a region:
+`--region=53.0,-6.7,53.7,-6.0` (Dublin; Nominatim viewbox + bounded). Routing
+endpoints are the `OSRM` / `BROUTER` constants at the top of
+`geocode_source.py`.
 
-## Legacy
+## Scripts
 
-- `legacy/geocode_ulysses.py` — the original Ulysses-only geocoder, superseded
-  by the generic `geocode_source.py`. Kept for reference only.
+| Script | Purpose |
+|--------|---------|
+| `geocode_source.py` | source JSON → GeoJSON. Geocodes places (Nominatim), draws routes (OSRM/BRouter), caches `lat`/`lon` + `coords` back into the source. The one script the live workflow uses. |
+| `example-dubliners/kml_to_geojson.py` (+ `source-doc.kml`) | converts the *Mapping Dubliners Project* KMZ into `data/dubliners.geojson`. Tied to that one source format — the worked example, not generic. |
+| `example-dubliners/add_srctext.py` | pins fixed Gutenberg-#2814 link targets (`srcText`) onto the Dubliners quotes. Run after `kml_to_geojson.py`. |
+
+## legacy/
+
+Kept for reference, **not part of the current workflow**:
+
+- `geocode_ulysses.py` — the original Ulysses-only geocoder, superseded by
+  `geocode_source.py`.
+- `geojson_to_kml.py` + `import_umap.py` — a uMap round-trip (export GeoJSON →
+  KML, edit in uMap, import geometry back into the source). In practice we never
+  used it: corrections were pasted straight into the source `coords`/`lat`/`lon`
+  instead. **To be revisited** if/when uMap editing is reworked.

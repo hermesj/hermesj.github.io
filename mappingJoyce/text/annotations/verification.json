@@ -1,9 +1,9 @@
 {
  "summary": {
-  "quotes_total": 5,
-  "quotes_ok": 5,
+  "quotes_total": 7,
+  "quotes_ok": 6,
   "quotes_wrong_episode": 0,
-  "quotes_not_found": 0,
+  "quotes_not_found": 1,
   "names_total": 43,
   "names_mentioned": 41
  },
@@ -12,11 +12,9 @@
    "kind": "place",
    "episode": 1,
    "name": "The Joyce Tower, Sandycove",
-   "quote_found_in_book": true,
-   "quote_in_own_episode": true,
-   "quote_found_episodes": [
-    1
-   ],
+   "quote_found_in_book": false,
+   "quote_in_own_episode": false,
+   "quote_found_episodes": [],
    "name_probes": [
     "Joyce",
     "Sandycove"
@@ -31,6 +29,11 @@
    "kind": "place",
    "episode": 1,
    "name": "The Forty Foot",
+   "quote_found_in_book": true,
+   "quote_in_own_episode": true,
+   "quote_found_episodes": [
+    1
+   ],
    "name_probes": [
     "Forty",
     "Foot"
@@ -45,6 +48,11 @@
    "kind": "place",
    "episode": 2,
    "name": "The School, Dalkey",
+   "quote_found_in_book": true,
+   "quote_in_own_episode": true,
+   "quote_found_episodes": [
+    2
+   ],
    "name_probes": [
     "Dalkey"
    ],

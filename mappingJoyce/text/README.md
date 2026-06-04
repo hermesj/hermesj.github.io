@@ -68,3 +68,13 @@ yields false positives, so the candidate list is a suggestion set, not ground
 truth — and it mixes Dublin places we have not mapped (e.g. the Coombe,
 Malahide, Kingstown) with far-off references (Paris, London, Gibraltar) and
 noise (e.g. "thou", person surnames).
+
+> The annotations checked in under `annotations/` were generated with
+> **`en_core_web_trf`** (not the `en_core_web_sm` of the quick-start above), and
+> the episode 1–3 entities were then **hand-pruned** of obvious false positives.
+> Re-running `annotate.py` with the default model will therefore differ and will
+> overwrite that manual cleanup. `split_episodes.py`, `verify_places.py` and
+> `candidates.py` need no model and are safe to re-run (idempotent);
+> `verify_places.py` in particular should be re-run whenever
+> `data/ulysses-source.json` changes, since `verification.json` is a report on
+> the current dataset.

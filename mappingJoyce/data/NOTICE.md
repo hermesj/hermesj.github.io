@@ -6,8 +6,9 @@ licensed **Creative Commons Attribution-NonCommercial 4.0 International
 
 ## Per work
 
-- **`dubliners.geojson` / `dubliners-source` (via `pipeline/example-dubliners/`)**
-  — **Derived from** the *Mapping Dubliners Project* by Jasmine Mulliken, PhD
+- **`dubliners.geojson`** (built from Mulliken's KMZ via
+  `pipeline/example-dubliners/`) — **Derived from** the *Mapping Dubliners
+  Project* by Jasmine Mulliken, PhD
   (<https://mappingdubliners.org/>; deposit
   <https://works.hcommons.org/records/m5n9p-pr591>), which is itself published
   under CC BY-NC 4.0. **Attribution to Jasmine Mulliken is required**;
@@ -25,10 +26,14 @@ licensed **Creative Commons Attribution-NonCommercial 4.0 International
 
 ## Sources of coordinates & routes
 
-Coordinates were obtained by geocoding via **OpenStreetMap / Nominatim**, and
-routes were drawn with **OSRM** (driving) and **BRouter** (foot). These derive
-from **OpenStreetMap data, © OpenStreetMap contributors, licensed under the
-Open Database License (ODbL)** — <https://www.openstreetmap.org/copyright>.
+Coordinates were initially obtained by geocoding via
+**OpenStreetMap / Nominatim**, and routes initially drawn with **OSRM**
+(driving) and **BRouter** (foot). Many were then **corrected or placed by hand**
+on the OpenStreetMap basemap — moving a marker to the exact spot, or redrawing a
+walking route along the real path. Whether geocoded or hand-placed, all
+coordinates and routes derive from **OpenStreetMap data, © OpenStreetMap
+contributors, licensed under the Open Database License (ODbL)** —
+<https://www.openstreetmap.org/copyright>.
 
 The **Gabler critical edition (1984)** is not used; `ref` fields cite its line
 numbers only (e.g. `8.732`) as locators.
