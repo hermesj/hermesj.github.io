@@ -117,10 +117,8 @@ def main(src_path, out_path, region=None):
         gn = place.get("group", place.get("episode"))
         g = by_n.get(gn, {})
         props = {
-            "work": work,
             "group": gn,
             "story": g.get("en", str(gn)),
-            "group_de": g.get("de", ""),
             "name": place["name"],
             "kind": place.get("kind", "place"),
         }
@@ -157,8 +155,8 @@ def main(src_path, out_path, region=None):
         gn = r.get("group", r.get("episode"))
         g = by_n.get(gn, {})
         props = {
-            "work": work, "group": gn, "story": g.get("en", str(gn)),
-            "group_de": g.get("de", ""), "name": r["name"], "kind": "route",
+            "group": gn, "story": g.get("en", str(gn)),
+            "name": r["name"], "kind": "route",
         }
         for k in ("character", "time", "gloss", "quote", "ref"):
             if r.get(k):

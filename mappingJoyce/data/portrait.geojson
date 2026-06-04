@@ -9,10 +9,8 @@
   {
    "type": "Feature",
    "properties": {
-    "work": "Portrait",
     "group": 1,
     "story": "Chapter 1",
-    "group_de": "Kapitel 1",
     "name": "Clongowes Wood College",
     "kind": "place",
     "gloss": "Stephen's first boarding school; the square ditch, the infirmary, and the unjust pandybatting by Father Dolan.",
@@ -31,10 +29,8 @@
   {
    "type": "Feature",
    "properties": {
-    "work": "Portrait",
     "group": 1,
     "story": "Chapter 1",
-    "group_de": "Kapitel 1",
     "name": "The Dedalus home, Bray",
     "kind": "place",
     "gloss": "The bitter Christmas-dinner quarrel over Parnell between Dante, Mr Casey and Simon Dedalus.",
@@ -51,10 +47,8 @@
   {
    "type": "Feature",
    "properties": {
-    "work": "Portrait",
     "group": 2,
     "story": "Chapter 2",
-    "group_de": "Kapitel 2",
     "name": "Blackrock",
     "kind": "place",
     "gloss": "The family's home in faded prosperity; Stephen's Monte Cristo daydreams and evening runs with Mike Flynn.",
@@ -71,10 +65,8 @@
   {
    "type": "Feature",
    "properties": {
-    "work": "Portrait",
     "group": 2,
     "story": "Chapter 2",
-    "group_de": "Kapitel 2",
     "name": "Belvedere College",
     "kind": "place",
     "gloss": "Stephen's Jesuit day school in the city; the Whitsuntide play and his growing inward estrangement.",
@@ -91,10 +83,8 @@
   {
    "type": "Feature",
    "properties": {
-    "work": "Portrait",
     "group": 2,
     "story": "Chapter 2",
-    "group_de": "Kapitel 2",
     "name": "Cork",
     "kind": "place",
     "gloss": "Stephen travels with his father to sell the last of the family property; he feels utterly estranged.",
@@ -111,10 +101,8 @@
   {
    "type": "Feature",
    "properties": {
-    "work": "Portrait",
     "group": 2,
     "story": "Chapter 2",
-    "group_de": "Kapitel 2",
     "name": "Queen's College, Cork",
     "kind": "place",
     "gloss": "In his father's old anatomy theatre the word ‘Foetus’ cut into a desk jolts Stephen with shame.",
@@ -131,10 +119,8 @@
   {
    "type": "Feature",
    "properties": {
-    "work": "Portrait",
     "group": 2,
     "story": "Chapter 2",
-    "group_de": "Kapitel 2",
     "name": "Nighttown",
     "kind": "place",
     "gloss": "The brothel quarter (Monto); at the chapter's close Stephen wanders into the arms of a prostitute.",
@@ -151,10 +137,8 @@
   {
    "type": "Feature",
    "properties": {
-    "work": "Portrait",
     "group": 3,
     "story": "Chapter 3",
-    "group_de": "Kapitel 3",
     "name": "The retreat, Belvedere College",
     "kind": "place",
     "gloss": "The three-day retreat and the terrifying sermons on death and hell that drive Stephen to repentance.",
@@ -171,10 +155,8 @@
   {
    "type": "Feature",
    "properties": {
-    "work": "Portrait",
     "group": 3,
     "story": "Chapter 3",
-    "group_de": "Kapitel 3",
     "name": "Church Street chapel",
     "kind": "place",
     "gloss": "Across the city, in terror of damnation, Stephen makes his confession to a Capuchin priest.",
@@ -191,10 +173,8 @@
   {
    "type": "Feature",
    "properties": {
-    "work": "Portrait",
     "group": 4,
     "story": "Chapter 4",
-    "group_de": "Kapitel 4",
     "name": "Bull Wall, Dollymount",
     "kind": "place",
     "gloss": "The wading girl — Stephen's great epiphany of beauty and his calling to art rather than priesthood.",
@@ -213,10 +193,8 @@
   {
    "type": "Feature",
    "properties": {
-    "work": "Portrait",
     "group": 4,
     "story": "Chapter 4",
-    "group_de": "Kapitel 4",
     "name": "North Bull Island",
     "kind": "place",
     "gloss": "Stephen crosses the wooden bridge to the strand where, wading, he sees the bird-girl.",
@@ -233,10 +211,8 @@
   {
    "type": "Feature",
    "properties": {
-    "work": "Portrait",
     "group": 4,
     "story": "Chapter 4",
-    "group_de": "Kapitel 4",
     "name": "The director's office, Belvedere",
     "kind": "place",
     "gloss": "The director sounds Stephen on a vocation to the priesthood — an offer he silently declines.",
@@ -253,10 +229,8 @@
   {
    "type": "Feature",
    "properties": {
-    "work": "Portrait",
     "group": 5,
     "story": "Chapter 5",
-    "group_de": "Kapitel 5",
     "name": "University College Dublin (Newman House)",
     "kind": "place",
     "gloss": "Stephen the university student; the dean of studies, the aesthetic theory, the villanelle.",
@@ -273,10 +247,8 @@
   {
    "type": "Feature",
    "properties": {
-    "work": "Portrait",
     "group": 5,
     "story": "Chapter 5",
-    "group_de": "Kapitel 5",
     "name": "National Library of Ireland",
     "kind": "place",
     "gloss": "On its steps Stephen watches the birds and argues with Cranly about belief and exile.",
@@ -293,10 +265,8 @@
   {
    "type": "Feature",
    "properties": {
-    "work": "Portrait",
     "group": 5,
     "story": "Chapter 5",
-    "group_de": "Kapitel 5",
     "name": "St Stephen's Green",
     "kind": "place",
     "gloss": "The Green Stephen crosses daily, emblem of the city he is preparing to leave.",
@@ -313,10 +283,8 @@
   {
    "type": "Feature",
    "properties": {
-    "work": "Portrait",
     "group": 5,
     "story": "Chapter 5",
-    "group_de": "Kapitel 5",
     "name": "Kingstown Harbour (departure)",
     "kind": "place",
     "gloss": "The diary's close: Stephen resolves to leave Ireland for the continent.",

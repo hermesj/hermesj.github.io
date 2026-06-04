@@ -9,10 +9,8 @@
   {
    "type": "Feature",
    "properties": {
-    "work": "Ulysses",
     "group": 1,
     "story": "Telemachus",
-    "group_de": "Telemachos",
     "name": "The Joyce Tower, Sandycove",
     "kind": "place",
     "character": "Stephen",
@@ -32,10 +30,8 @@
   {
    "type": "Feature",
    "properties": {
-    "work": "Ulysses",
     "group": 1,
     "story": "Telemachus",
-    "group_de": "Telemachos",
     "name": "The Forty Foot",
     "kind": "place",
     "character": "Buck",
@@ -55,10 +51,8 @@
   {
    "type": "Feature",
    "properties": {
-    "work": "Ulysses",
     "group": 2,
     "story": "Nestor",
-    "group_de": "Nestor",
     "name": "The School, Dalkey",
     "kind": "place",
     "character": "Stephen",
@@ -78,10 +72,8 @@
   {
    "type": "Feature",
    "properties": {
-    "work": "Ulysses",
     "group": 3,
     "story": "Proteus",
-    "group_de": "Proteus",
     "name": "Sandymount Strand",
     "kind": "place",
     "character": "Stephen",
@@ -101,10 +93,8 @@
   {
    "type": "Feature",
    "properties": {
-    "work": "Ulysses",
     "group": 4,
     "story": "Calypso",
-    "group_de": "Kalypso",
     "name": "No. 7 Eccles Street",
     "kind": "place",
     "character": "Leopold",
@@ -125,10 +115,8 @@
   {
    "type": "Feature",
    "properties": {
-    "work": "Ulysses",
     "group": 5,
     "story": "Lotus Eaters",
-    "group_de": "Lotophagen",
     "name": "Sir John Rogerson's Quay",
     "kind": "place",
     "character": "Leopold",
@@ -147,10 +135,8 @@
   {
    "type": "Feature",
    "properties": {
-    "work": "Ulysses",
     "group": 5,
     "story": "Lotus Eaters",
-    "group_de": "Lotophagen",
     "name": "Westland Row Post Office",
     "kind": "place",
     "character": "Leopold",
@@ -169,10 +155,8 @@
   {
    "type": "Feature",
    "properties": {
-    "work": "Ulysses",
     "group": 5,
     "story": "Lotus Eaters",
-    "group_de": "Lotophagen",
     "name": "Sweny's Pharmacy",
     "kind": "place",
     "character": "Leopold",
@@ -191,10 +175,8 @@
   {
    "type": "Feature",
    "properties": {
-    "work": "Ulysses",
     "group": 6,
     "story": "Hades",
-    "group_de": "Hades",
     "name": "Paddy Dignam's house",
     "kind": "place",
     "character": "Leopold",
@@ -213,10 +195,8 @@
   {
    "type": "Feature",
    "properties": {
-    "work": "Ulysses",
     "group": 6,
     "story": "Hades",
-    "group_de": "Hades",
     "name": "Glasnevin Cemetery",
     "kind": "place",
     "character": "Leopold",
@@ -235,10 +215,8 @@
   {
    "type": "Feature",
    "properties": {
-    "work": "Ulysses",
     "group": 7,
     "story": "Aeolus",
-    "group_de": "Aiolos",
     "name": "Freeman's Journal / Evening Telegraph",
     "kind": "place",
     "character": "Leopold, Stephen",
@@ -257,10 +235,8 @@
   {
    "type": "Feature",
    "properties": {
-    "work": "Ulysses",
     "group": 8,
     "story": "Lestrygonians",
-    "group_de": "Laistrygonen",
     "name": "Graham Lemon's sweetshop",
     "kind": "place",
     "character": "Leopold",
@@ -279,10 +255,8 @@
   {
    "type": "Feature",
    "properties": {
-    "work": "Ulysses",
     "group": 8,
     "story": "Lestrygonians",
-    "group_de": "Laistrygonen",
     "name": "Davy Byrne's pub",
     "kind": "place",
     "character": "Leopold",
@@ -303,10 +277,8 @@
   {
    "type": "Feature",
    "properties": {
-    "work": "Ulysses",
     "group": 9,
     "story": "Scylla and Charybdis",
-    "group_de": "Skylla und Charybdis",
     "name": "National Library of Ireland",
     "kind": "place",
     "character": "Stephen, Leopold",
@@ -325,10 +297,8 @@
   {
    "type": "Feature",
    "properties": {
-    "work": "Ulysses",
     "group": 10,
     "story": "Wandering Rocks",
-    "group_de": "Irrfelsen",
     "name": "Fr Conmee: Jesuit house",
     "kind": "place",
     "character": "Conmee",
@@ -347,10 +317,8 @@
   {
    "type": "Feature",
    "properties": {
-    "work": "Ulysses",
     "group": 10,
     "story": "Wandering Rocks",
-    "group_de": "Irrfelsen",
     "name": "Fr Conmee: Marino",
     "kind": "place",
     "character": "Conmee",
@@ -369,10 +337,8 @@
   {
    "type": "Feature",
    "properties": {
-    "work": "Ulysses",
     "group": 10,
     "story": "Wandering Rocks",
-    "group_de": "Irrfelsen",
     "name": "Blazes Boylan: Thornton's",
     "kind": "place",
     "character": "Blazes",
@@ -391,10 +357,8 @@
   {
    "type": "Feature",
    "properties": {
-    "work": "Ulysses",
     "group": 10,
     "story": "Wandering Rocks",
-    "group_de": "Irrfelsen",
     "name": "Ned Lambert: St Mary's Abbey",
     "kind": "place",
     "character": "Ned",
@@ -413,10 +377,8 @@
   {
    "type": "Feature",
    "properties": {
-    "work": "Ulysses",
     "group": 10,
     "story": "Wandering Rocks",
-    "group_de": "Irrfelsen",
     "name": "Lenehan & M'Coy: Crampton Court",
     "kind": "place",
     "character": "Lenehan, M'Coy",
@@ -435,10 +397,8 @@
   {
    "type": "Feature",
    "properties": {
-    "work": "Ulysses",
     "group": 10,
     "story": "Wandering Rocks",
-    "group_de": "Irrfelsen",
     "name": "Mr Bloom: Merchant's Arch",
     "kind": "place",
     "character": "Leopold",
@@ -457,10 +417,8 @@
   {
    "type": "Feature",
    "properties": {
-    "work": "Ulysses",
     "group": 10,
     "story": "Wandering Rocks",
-    "group_de": "Irrfelsen",
     "name": "Dilly Dedalus: Dillon's auction rooms",
     "kind": "place",
     "character": "Dilly",
@@ -479,10 +437,8 @@
   {
    "type": "Feature",
    "properties": {
-    "work": "Ulysses",
     "group": 10,
     "story": "Wandering Rocks",
-    "group_de": "Irrfelsen",
     "name": "Mr Kernan: James's Street",
     "kind": "place",
     "character": "Tom",
@@ -501,10 +457,8 @@
   {
    "type": "Feature",
    "properties": {
-    "work": "Ulysses",
     "group": 10,
     "story": "Wandering Rocks",
-    "group_de": "Irrfelsen",
     "name": "Stephen Dedalus: Russell's shop",
     "kind": "place",
     "character": "Stephen",
@@ -523,10 +477,8 @@
   {
    "type": "Feature",
    "properties": {
-    "work": "Ulysses",
     "group": 10,
     "story": "Wandering Rocks",
-    "group_de": "Irrfelsen",
     "name": "Martin Cunningham: Dublin Castle",
     "kind": "place",
     "character": "Martin",
@@ -545,10 +497,8 @@
   {
    "type": "Feature",
    "properties": {
-    "work": "Ulysses",
     "group": 10,
     "story": "Wandering Rocks",
-    "group_de": "Irrfelsen",
     "name": "Buck Mulligan: DBC tearooms",
     "kind": "place",
     "character": "Buck",
@@ -567,10 +517,8 @@
   {
    "type": "Feature",
    "properties": {
-    "work": "Ulysses",
     "group": 10,
     "story": "Wandering Rocks",
-    "group_de": "Irrfelsen",
     "name": "Master Dignam: Ruggy O'Donohoe's",
     "kind": "place",
     "character": "Patrick",
@@ -589,10 +537,8 @@
   {
    "type": "Feature",
    "properties": {
-    "work": "Ulysses",
     "group": 10,
     "story": "Wandering Rocks",
-    "group_de": "Irrfelsen",
     "name": "Viceroy's cavalcade: Viceregal Lodge",
     "kind": "place",
     "character": "the Viceroy",
@@ -611,10 +557,8 @@
   {
    "type": "Feature",
    "properties": {
-    "work": "Ulysses",
     "group": 10,
     "story": "Wandering Rocks",
-    "group_de": "Irrfelsen",
     "name": "Viceroy's cavalcade: RDS showgrounds",
     "kind": "place",
     "character": "the Viceroy",
@@ -633,10 +577,8 @@
   {
    "type": "Feature",
    "properties": {
-    "work": "Ulysses",
     "group": 11,
     "story": "Sirens",
-    "group_de": "Sirenen",
     "name": "The Ormond Hotel",
     "kind": "place",
     "character": "Leopold, Blazes",
@@ -655,10 +597,8 @@
   {
    "type": "Feature",
    "properties": {
-    "work": "Ulysses",
     "group": 12,
     "story": "Cyclops",
-    "group_de": "Zyklop",
     "name": "Arbour Hill / Stonybatter",
     "kind": "place",
     "character": "the Narrator",
@@ -677,10 +617,8 @@
   {
    "type": "Feature",
    "properties": {
-    "work": "Ulysses",
     "group": 12,
     "story": "Cyclops",
-    "group_de": "Zyklop",
     "name": "Barney Kiernan's pub",
     "kind": "place",
     "character": "Leopold",
@@ -699,10 +637,8 @@
   {
    "type": "Feature",
    "properties": {
-    "work": "Ulysses",
     "group": 13,
     "story": "Nausicaa",
-    "group_de": "Nausikaa",
     "name": "Sandymount Strand",
     "kind": "place",
     "character": "Leopold, Gerty",
@@ -721,10 +657,8 @@
   {
    "type": "Feature",
    "properties": {
-    "work": "Ulysses",
     "group": 14,
     "story": "Oxen of the Sun",
-    "group_de": "Die Rinder des Sonnengottes",
     "name": "Holles Street Hospital",
     "kind": "place",
     "character": "Leopold, Stephen",
@@ -743,10 +677,8 @@
   {
    "type": "Feature",
    "properties": {
-    "work": "Ulysses",
     "group": 15,
     "story": "Circe",
-    "group_de": "Kirke",
     "name": "Mabbot Street (Nighttown)",
     "kind": "place",
     "character": "Leopold, Stephen",
@@ -765,10 +697,8 @@
   {
    "type": "Feature",
    "properties": {
-    "work": "Ulysses",
     "group": 15,
     "story": "Circe",
-    "group_de": "Kirke",
     "name": "Bella Cohen's",
     "kind": "place",
     "character": "Leopold, Stephen",
@@ -787,10 +717,8 @@
   {
    "type": "Feature",
    "properties": {
-    "work": "Ulysses",
     "group": 16,
     "story": "Eumaeus",
-    "group_de": "Eumaios",
     "name": "Cabman's shelter, Butt Bridge",
     "kind": "place",
     "character": "Leopold, Stephen",
@@ -809,10 +737,8 @@
   {
    "type": "Feature",
    "properties": {
-    "work": "Ulysses",
     "group": 17,
     "story": "Ithaca",
-    "group_de": "Ithaka",
     "name": "Return to Eccles Street",
     "kind": "place",
     "character": "Leopold, Stephen",
@@ -831,10 +757,8 @@
   {
    "type": "Feature",
    "properties": {
-    "work": "Ulysses",
     "group": 18,
     "story": "Penelope",
-    "group_de": "Penelope",
     "name": "No. 7 Eccles Street",
     "kind": "place",
     "character": "Molly",
@@ -855,10 +779,8 @@
   {
    "type": "Feature",
    "properties": {
-    "work": "Ulysses",
     "group": 1,
     "story": "Telemachus",
-    "group_de": "Telemachos",
     "name": "Stephen's morning: to the Forty Foot",
     "kind": "route",
     "character": "Buck, Stephen, Haines",
@@ -923,10 +845,8 @@
   {
    "type": "Feature",
    "properties": {
-    "work": "Ulysses",
     "group": 2,
     "story": "Nestor",
-    "group_de": "Nestor",
     "name": "Stephen's morning: to the school",
     "kind": "route",
     "character": "Stephen",
@@ -1071,10 +991,8 @@
   {
    "type": "Feature",
    "properties": {
-    "work": "Ulysses",
     "group": 3,
     "story": "Proteus",
-    "group_de": "Proteus",
     "name": "Stephen's morning: by rail to Sandymount",
     "kind": "route",
     "character": "Stephen",
@@ -2023,10 +1941,8 @@
   {
    "type": "Feature",
    "properties": {
-    "work": "Ulysses",
     "group": 6,
     "story": "Hades",
-    "group_de": "Hades",
     "name": "Funeral route",
     "kind": "route",
     "character": "Leopold",
@@ -3519,10 +3435,8 @@
   {
    "type": "Feature",
    "properties": {
-    "work": "Ulysses",
     "group": 10,
     "story": "Wandering Rocks",
-    "group_de": "Irrfelsen",
     "name": "Fr Conmee's walk",
     "kind": "route",
     "character": "Conmee",
@@ -3971,10 +3885,8 @@
   {
    "type": "Feature",
    "properties": {
-    "work": "Ulysses",
     "group": 10,
     "story": "Wandering Rocks",
-    "group_de": "Irrfelsen",
     "name": "Viceregal cavalcade",
     "kind": "route",
     "character": "the Viceroy",
@@ -5839,10 +5751,8 @@
   {
    "type": "Feature",
    "properties": {
-    "work": "Ulysses",
     "group": 17,
     "story": "Ithaca",
-    "group_de": "Ithaka",
     "name": "Walk home to Eccles Street",
     "kind": "route",
     "character": "Leopold, Stephen",

@@ -10,9 +10,10 @@ The KML groups placemarks into 15 folders, one per story of Joyce's
 
     "Story Title"<br>[a short gloss]<br><br>"a verbatim Joyce quote" (42).<br>
 
-We split that into structured properties (story, gloss, quote, page) while
-also keeping a cleaned-up `description` for fallback display. Geometry is
-either a Point (a place) or a LineString (a character's route).
+We split that into structured properties (gloss, quote, page) that the engine
+actually reads; the leading story-label and the raw description blob are parsed
+only to drive that split and are not emitted (the engine never read them).
+Geometry is either a Point (a place) or a LineString (a character's route).
 
 Usage:
     python3 kml_to_geojson.py path/to/doc.kml ../data/dubliners.geojson
@@ -56,11 +57,11 @@ def parse_description(desc, story=None):
     txt = re.sub(r"<[^>]+>", "", txt)
     txt = _html.unescape(txt).replace("\xa0", " ")
     lines = [ln.strip() for ln in txt.split("\n") if ln.strip()]
-    out = {"description": "\n".join(lines)}
+    out = {}
     if not lines:
         return out
+    # Peel off (but don't emit) the leading story-label line "Story Title".
     if lines[0].startswith('"') and lines[0].endswith('"'):
-        out["story_label"] = lines[0].strip('"')
         lines = lines[1:]
     if lines and lines[0].startswith("[") and lines[0].endswith("]"):
         out["gloss"] = lines[0][1:-1].strip()

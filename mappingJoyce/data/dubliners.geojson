@@ -12,8 +12,6 @@
    "properties": {
     "story": "The Sisters",
     "name": "Great Britain Street",
-    "description": "\"The Sisters\"\n[where the priest's sisters are caring for Father Flynn; where he dies]\n\"The next morning after breakfast I went down to look at the little house in Great Britain Street. It was an unassuming shop, registered under the vague name of Drapery \" (11).\nThe name of the street was changed to Parnell Street after the death of Parnell. A history of the street  is contained in Parnell Street: A Vision for an Historic City Centre Street",
-    "story_label": "The Sisters",
     "gloss": "where the priest's sisters are caring for Father Flynn; where he dies",
     "quote": "The next morning after breakfast I went down to look at the little house in Great Britain Street. It was an unassuming shop, registered under the vague name of Drapery \" (11). The name of the street was changed to Parnell Street after the death of Parnell. A history of the street  is contained in Parnell Street: A Vision for an Historic City Centre Street",
     "kind": "place",
@@ -32,8 +30,6 @@
    "properties": {
     "story": "The Sisters",
     "name": "St. Catherine's",
-    "description": "\"The Sisters\"\n[where Father James Flynn served as priest]\n\"Two poor women and a telegram boy were reading the card pinned on the crape. I also approached and read:\nJuly 1st, 1895\nThe Rev. James Flynn (formerly of S. Catherine's Church, Meath Street), aged sixty-five years.\nR.I.P.\" (12)",
-    "story_label": "The Sisters",
     "gloss": "where Father James Flynn served as priest",
     "page": 12,
     "quote": "Two poor women and a telegram boy were reading the card pinned on the crape. I also approached and read: July 1st, 1895 The Rev. James Flynn (formerly of S. Catherine's Church, Meath Street), aged sixty-five years. R.I.P.",
@@ -53,8 +49,6 @@
    "properties": {
     "story": "The Sisters",
     "name": "Irish College in Rome",
-    "description": "\"The Sisters\"\n[where Father Flynn studied for the priesthood]\n\"He had studied in the Irish college in Romeand he had taught me to pronounce Latin properly\" (13).",
-    "story_label": "The Sisters",
     "gloss": "where Father Flynn studied for the priesthood",
     "page": 13,
     "quote": "He had studied in the Irish college in Romeand he had taught me to pronounce Latin properly",
@@ -74,8 +68,6 @@
    "properties": {
     "story": "The Sisters",
     "name": "Persia",
-    "description": "\"The Sisters\"\n[where the narrator imagines he might have been in his dream]\n\"As I walked along in the sun I remembered Old Cotter's words and tried to remember what had happened afterwards in the dream. I remembered that I had noticed long velvet curtains and a swinging lamp of antique fashion. I felt that I had been very far away, in some land where the customs were strange--in Persia, I thought...But I could not remember the end of the dream\" (13-14).",
-    "story_label": "The Sisters",
     "gloss": "where the narrator imagines he might have been in his dream",
     "quote": "As I walked along in the sun I remembered Old Cotter's words and tried to remember what had happened afterwards in the dream. I remembered that I had noticed long velvet curtains and a swinging lamp of antique fashion. I felt that I had been very far away, in some land where the customs were strange--in Persia, I thought...But I could not remember the end of the dream\" (13-14).",
     "kind": "place",
@@ -94,8 +86,6 @@
    "properties": {
     "story": "The Sisters",
     "name": "Irishtown",
-    "description": "\"The Sisters\"\n[where Father Flynn and his sisters grew up]\n\"But still and all he kept on saying that before the summer was over\nhe'd go out for a drive one fine day just to see the old house again\nwhere we were all born down in Irishtown and take me and Nannie with\nhim. If we could only get one of them new-fangled carriages that makes\nno noise that Father O'Rourke told him about, them with the rheumatic\nwheels, for the day cheap -- he said, at Johnny Rush's over the way\nthere and drive out the three of us together of a Sunday evening. He had\nhis mind set on that.... Poor James!\" (16)",
-    "story_label": "The Sisters",
     "gloss": "where Father Flynn and his sisters grew up",
     "page": 16,
     "quote": "But still and all he kept on saying that before the summer was over he'd go out for a drive one fine day just to see the old house again where we were all born down in Irishtown and take me and Nannie with him. If we could only get one of them new-fangled carriages that makes no noise that Father O'Rourke told him about, them with the rheumatic wheels, for the day cheap -- he said, at Johnny Rush's over the way there and drive out the three of us together of a Sunday evening. He had his mind set on that.... Poor James!",
@@ -115,8 +105,6 @@
    "properties": {
     "story": "The Sisters",
     "name": "Johhny Rush's",
-    "description": "\"The Sisters\"\n[where the sisters and Father Flynn had planned to get a carriage for a visit to Irishtown]\n\"If we could only get one of them new-fangled carriages that makes no noise that Father O'Rourke told him about—them with the rheumatic wheels—for the day cheap—he said, at Johnny Rush's over the way there and drive out the three of us together of a Sunday evening. He had his mind set on that.... Poor James!\" (17)",
-    "story_label": "The Sisters",
     "gloss": "where the sisters and Father Flynn had planned to get a carriage for a visit to Irishtown",
     "page": 17,
     "quote": "If we could only get one of them new-fangled carriages that makes no noise that Father O'Rourke told him about—them with the rheumatic wheels—for the day cheap—he said, at Johnny Rush's over the way there and drive out the three of us together of a Sunday evening. He had his mind set on that.... Poor James!",
@@ -136,8 +124,6 @@
    "properties": {
     "story": "An Encounter",
     "name": "Gardiner Street",
-    "description": "\"An Encounter\"\n[where Joe Dillon's parents go to mass]\n\"His parents went to eight- o'clock mass every morning in Gardiner Street\nand the peaceful odour of Mrs. Dillon was prevalent in the hall of the\nhouse\" (19).",
-    "story_label": "An Encounter",
     "gloss": "where Joe Dillon's parents go to mass",
     "page": 19,
     "quote": "His parents went to eight- o'clock mass every morning in Gardiner Street and the peaceful odour of Mrs. Dillon was prevalent in the hall of the house",
@@ -157,8 +143,6 @@
    "properties": {
     "story": "An Encounter",
     "name": "Canal Bridge",
-    "description": "\"An Encounter\"\n[where the narrator meets Mahony]\n\"We were to meet at ten in the morning on the Canal Bridge\" (21).\nTwo maps from 1836 and 1883 name this bridge Newcombe and Newcomen Bridge, respectively.",
-    "story_label": "An Encounter",
     "gloss": "where the narrator meets Mahony",
     "quote": "We were to meet at ten in the morning on the Canal Bridge\" (21). Two maps from 1836 and 1883 name this bridge Newcombe and Newcomen Bridge, respectively.",
     "kind": "place",
@@ -177,8 +161,6 @@
    "properties": {
     "story": "An Encounter",
     "name": "North Strand Road",
-    "description": "\"An Encounter\"\n[After the Canal Bridge, the first street the narrator and his friend take on their journey]\n\"We walked along the North Strand Road till we came to the Vitriol Works and then turned to the right along the Wharf Road\" (22).",
-    "story_label": "An Encounter",
     "gloss": "After the Canal Bridge, the first street the narrator and his friend take on their journey",
     "page": 22,
     "quote": "We walked along the North Strand Road till we came to the Vitriol Works and then turned to the right along the Wharf Road",
@@ -198,8 +180,6 @@
    "properties": {
     "story": "An Encounter",
     "name": "Wharf Road",
-    "description": "\"An Encounter\"\n[part of the boys' route]\n\"We walked along the North Strand Road till we came to the Vitriol Works and then turned to the right along the Wharf Road\" (22).",
-    "story_label": "An Encounter",
     "gloss": "part of the boys' route",
     "page": 22,
     "quote": "We walked along the North Strand Road till we came to the Vitriol Works and then turned to the right along the Wharf Road",
@@ -219,8 +199,6 @@
    "properties": {
     "story": "An Encounter",
     "name": "Ringsend",
-    "description": "\"An Encounter\"\n[the area past which the boats are that the boys watch; where the boys wander after crossing the Liffey]\n\"We pleased ourselves with the spectacle of Dublin's commerce -- the\nbarges signalled from far away by their curls of woolly smoke, the brown\nfishing fleet beyond Ringsend, the big white sailing vessel which was\nbeing discharged on the opposite quay\" (23).\n\"When we were tired of this sight we wandered slowly into Ringsend\" (23).",
-    "story_label": "An Encounter",
     "gloss": "the area past which the boats are that the boys watch; where the boys wander after crossing the Liffey",
     "page": 23,
     "quote": "We pleased ourselves with the spectacle of Dublin's commerce -- the barges signalled from far away by their curls of woolly smoke, the brown fishing fleet beyond Ringsend, the big white sailing vessel which was being discharged on the opposite quay\" (23). \"When we were tired of this sight we wandered slowly into Ringsend",
@@ -240,8 +218,6 @@
    "properties": {
     "story": "An Encounter",
     "name": "The Dodder",
-    "description": "\"An Encounter\"\n[the river that the boys can see from the sloping bank where they meet the josser]\n\"We both felt rather tired and when we reached the field we made at once for a sloping bank over the ridge of which we could see the Dodder\" (24).",
-    "story_label": "An Encounter",
     "gloss": "the river that the boys can see from the sloping bank where they meet the josser",
     "page": 24,
     "quote": "We both felt rather tired and when we reached the field we made at once for a sloping bank over the ridge of which we could see the Dodder",
@@ -261,8 +237,6 @@
    "properties": {
     "story": "An Encounter",
     "name": "\"An Encounter\" Route",
-    "description": "\"An Encounter\"\nThe approximate path the narrator and Mahony travel in \"An Encounter.\"",
-    "story_label": "An Encounter",
     "quote": "The approximate path the narrator and Mahony travel in \"An Encounter.",
     "kind": "route"
    },
@@ -593,8 +567,6 @@
    "properties": {
     "story": "Araby",
     "name": "North Richmond Street",
-    "description": "\"Araby\"\n[the blind street where the narrator lives]\n\"NORTH RICHMOND STREET being blind, was a quiet street except at the hour\nwhen the Christian Brothers' School set the boys free. An uninhabited\nhouse of two storeys stood at the blind end, detached from its\nneighbours in a square ground. The other houses of the street, conscious\nof decent lives within them, gazed at one another with brown\nimperturbable faces\" (29).",
-    "story_label": "Araby",
     "gloss": "the blind street where the narrator lives",
     "page": 29,
     "quote": "NORTH RICHMOND STREET being blind, was a quiet street except at the hour when the Christian Brothers' School set the boys free. An uninhabited house of two storeys stood at the blind end, detached from its neighbours in a square ground. The other houses of the street, conscious of decent lives within them, gazed at one another with brown imperturbable faces",
@@ -614,8 +586,6 @@
    "properties": {
     "story": "Araby",
     "name": "Christian Brothers Shool",
-    "description": "\"Araby\"\n[the school on Richmond Street]\n\"NORTH RICHMOND STREET being blind, was a quiet street except at the hour when the Christian Brothers' School set the boys free\" (29).",
-    "story_label": "Araby",
     "gloss": "the school on Richmond Street",
     "page": 29,
     "quote": "NORTH RICHMOND STREET being blind, was a quiet street except at the hour when the Christian Brothers' School set the boys free",
@@ -635,8 +605,6 @@
    "properties": {
     "story": "Araby",
     "name": "Buckingham Street",
-    "description": "\"Araby\"\n[the street down which the narrator walks to get to the station]\n\"I held a florin tightly in my hand as I strode down Buckingham Street towards the station.\" (34)",
-    "story_label": "Araby",
     "gloss": "the street down which the narrator walks to get to the station",
     "page": 34,
     "quote": "I held a florin tightly in my hand as I strode down Buckingham Street towards the station.",
@@ -656,7 +624,6 @@
    "properties": {
     "story": "Araby",
     "name": "Westland Row",
-    "description": "[one of the stations through which the train passes]\n\"At Westland Row Station a crowd of people pressed to the carriage doors;\nbut the porters moved them back, saying that it was a special train for\nthe bazaar\" (34).",
     "gloss": "one of the stations through which the train passes",
     "page": 34,
     "quote": "At Westland Row Station a crowd of people pressed to the carriage doors; but the porters moved them back, saying that it was a special train for the bazaar",
@@ -676,8 +643,6 @@
    "properties": {
     "story": "Araby",
     "name": "\"Araby\" Route",
-    "description": "\"Araby\"\nThe approximate route the narrator of \"Araby\" takes on his trip to the bazaar.\nEnd route according to Gifford.",
-    "story_label": "Araby",
     "quote": "The approximate route the narrator of \"Araby\" takes on his trip to the bazaar. End route according to Gifford.",
     "kind": "route"
    },
@@ -748,8 +713,6 @@
    "properties": {
     "story": "Eveline",
     "name": "Belfast",
-    "description": "\"Eveline\"\n[where the man who built the new houses is from]\n\"One time there used to be a field there in which they used to play every\nevening with other people's children. Then a man from Belfast bought\nthe field and built houses in it -- not like their little brown houses\nbut bright brick houses with shining roofs\" (36).",
-    "story_label": "Eveline",
     "gloss": "where the man who built the new houses is from",
     "page": 36,
     "quote": "One time there used to be a field there in which they used to play every evening with other people's children. Then a man from Belfast bought the field and built houses in it -- not like their little brown houses but bright brick houses with shining roofs",
@@ -769,8 +732,6 @@
    "properties": {
     "story": "Eveline",
     "name": "England",
-    "description": "\"Eveline\"\n[where the Waters are from and where they moved]\n\"Tizzie Dunn was dead, too, and the Waters had gone back to England.\nEverything changes. Now she was going to go away like the others, to\nleave her home\" (37).",
-    "story_label": "Eveline",
     "gloss": "where the Waters are from and where they moved",
     "page": 37,
     "quote": "Tizzie Dunn was dead, too, and the Waters had gone back to England. Everything changes. Now she was going to go away like the others, to leave her home",
@@ -790,8 +751,6 @@
    "properties": {
     "story": "Eveline",
     "name": "Melbourne, Australia",
-    "description": "\"Eveline\"\n[where the priest in the photograph now lives]\n\"He had been a school friend of her father. Whenever he showed the\nphotograph to a visitor her father used to pass it with a casual word:\n-He is in Melbourne now\" (37).",
-    "story_label": "Eveline",
     "gloss": "where the priest in the photograph now lives",
     "page": 37,
     "quote": "He had been a school friend of her father. Whenever he showed the photograph to a visitor her father used to pass it with a casual word: -He is in Melbourne now",
@@ -811,7 +770,6 @@
    "properties": {
     "story": "Eveline",
     "name": "Melbourne, UK",
-    "description": "(alternatively)\n\"Eveline\"\n[where the priest in the photograph now lives]\n\"He had been a school friend of her father. Whenever he showed the\nphotograph to a visitor her father used to pass it with a casual word:\n-He is in Melbourne now\" (37).",
     "page": 37,
     "quote": "He had been a school friend of her father. Whenever he showed the photograph to a visitor her father used to pass it with a casual word: -He is in Melbourne now",
     "kind": "place",
@@ -830,8 +788,6 @@
    "properties": {
     "story": "Eveline",
     "name": "The Stores",
-    "description": "\"Eveline\"\n[where Eveline works]\n\"Of course she had to work hard both in the house and at business. What would they say of her in the Stores when they found out that she had run away with a fellow?\" (37)",
-    "story_label": "Eveline",
     "gloss": "where Eveline works",
     "page": 37,
     "quote": "Of course she had to work hard both in the house and at business. What would they say of her in the Stores when they found out that she had run away with a fellow?",
@@ -851,8 +807,6 @@
    "properties": {
     "story": "Eveline",
     "name": "Buenos Ayres",
-    "description": "\"Eveline\"\n[where Frank wants to take Eveline]\n\"She was to go away with him by the night-boat to be his wife and to live with him in Buenos Ayres where he had a home waiting for her\" (38).\n\"He had fallen on his feet in Buenos Ayres, he said, and had come over to the old country just for a holiday\" (39).\n\"If she went, tomorrow she would be on the sea with Frank, steaming towards Buenos Ayres\" (40).",
-    "story_label": "Eveline",
     "gloss": "where Frank wants to take Eveline",
     "page": 40,
     "quote": "She was to go away with him by the night-boat to be his wife and to live with him in Buenos Ayres where he had a home waiting for her\" (38). \"He had fallen on his feet in Buenos Ayres, he said, and had come over to the old country just for a holiday\" (39). \"If she went, tomorrow she would be on the sea with Frank, steaming towards Buenos Ayres",
@@ -872,8 +826,6 @@
    "properties": {
     "story": "Eveline",
     "name": "Canada",
-    "description": "\"Eveline\"\n[one of the places Frank travels on the Allan Line (or the Montreal Ocean Steamship Company)]\n\"He had tales of distant countries. He had started as a deck boy at a\npound a month on a ship of the Allan Line going out to Canada\" (39).",
-    "story_label": "Eveline",
     "gloss": "one of the places Frank travels on the Allan Line (or the Montreal Ocean Steamship Company)",
     "page": 39,
     "quote": "He had tales of distant countries. He had started as a deck boy at a pound a month on a ship of the Allan Line going out to Canada",
@@ -893,8 +845,6 @@
    "properties": {
     "story": "Eveline",
     "name": "Straits of Magellan",
-    "description": "\"Eveline\"\n[one of the areas Frank has explored in his travels]\n\"He told her the names of the ships he had been on and the names of the\ndifferent services. He had sailed through the Straits of Magellan and he\ntold her stories of the terrible Patagonians\" (39).",
-    "story_label": "Eveline",
     "gloss": "one of the areas Frank has explored in his travels",
     "page": 39,
     "quote": "He told her the names of the ships he had been on and the names of the different services. He had sailed through the Straits of Magellan and he told her stories of the terrible Patagonians",
@@ -914,8 +864,6 @@
    "properties": {
     "story": "Eveline",
     "name": "Patagonia",
-    "description": "\"Eveline\"\n[one of the areas Frank has explored in his travels]\n\"He told her the names of the ships he had been on and the names of the\ndifferent services. He had sailed through the Straits of Magellan and he\ntold her stories of the terrible Patagonians\" (39).",
-    "story_label": "Eveline",
     "gloss": "one of the areas Frank has explored in his travels",
     "page": 39,
     "quote": "He told her the names of the ships he had been on and the names of the different services. He had sailed through the Straits of Magellan and he told her stories of the terrible Patagonians",
@@ -935,8 +883,6 @@
    "properties": {
     "story": "Eveline",
     "name": "Hill of Howth",
-    "description": "\"Eveline\"\n[where Eveline went as a child with her family when her mother was still alive]\n\"Another day, when their mother was alive, they had all gone for a picnic to the Hill of Howth\" (39).",
-    "story_label": "Eveline",
     "gloss": "where Eveline went as a child with her family when her mother was still alive",
     "page": 39,
     "quote": "Another day, when their mother was alive, they had all gone for a picnic to the Hill of Howth",
@@ -956,8 +902,6 @@
    "properties": {
     "story": "Eveline",
     "name": "North Wall",
-    "description": "\"Eveline\"\n[where Frank and Eveline go to catch the ship]\n\"She stood among the swaying crowd in the station at the North Wall\" (40).",
-    "story_label": "Eveline",
     "gloss": "where Frank and Eveline go to catch the ship",
     "page": 40,
     "quote": "She stood among the swaying crowd in the station at the North Wall",
@@ -977,8 +921,6 @@
    "properties": {
     "story": "After the Race",
     "name": "Naas Road",
-    "description": "\"After the Race\"\n[where the cars are at the beginning of the story]\"THE cars came scudding in towards Dublin, running evenly like pellets in the groove of the Naas Road\" (42).",
-    "story_label": "After the Race",
     "page": 42,
     "quote": "THE cars came scudding in towards Dublin, running evenly like pellets in the groove of the Naas Road",
     "kind": "place",
@@ -997,8 +939,6 @@
    "properties": {
     "story": "After the Race",
     "name": "Inchicore Square",
-    "description": "\"After the Race\"\n[the cars continue]\"At the crest of the hill at Inchicore sightseers had gathered in clumps\nto watch the cars careering homeward and through this channel of poverty\nand inaction the Continent sped its wealth and industry\" (42).",
-    "story_label": "After the Race",
     "page": 42,
     "quote": "At the crest of the hill at Inchicore sightseers had gathered in clumps to watch the cars careering homeward and through this channel of poverty and inaction the Continent sped its wealth and industry",
     "kind": "place",
@@ -1017,8 +957,6 @@
    "properties": {
     "story": "After the Race",
     "name": "France",
-    "description": "\"After the Race\"\n[the country whose cars the Irish support; the country Segouin drives for; where Segouin is from and where he owns hotels; one of the places the men toast]\n\"Now and again the clumps of people raised the cheer of the gratefully oppressed. Their sympathy, however, was for the blue cars -- the cars of their friends, the French.\nThe French, moreover, were virtual victors. Their team had finished solidly; they had been placed second and third and the driver of the winning German car was reported a Belgian. Each blue car, therefore, received a double measure of welcome as it topped the crest of the hill and each cheer of welcome was acknowledged with smiles and nods by those in the car. In one of these trimly built cars was a party of four young men whose spirits seemed to be at present well above the level of successful Gallicism: in fact, these four young men were almost hilarious\" (42).\n\"Segouin was in good humour because he had unexpectedly received some orders in advance (he was about to start a motor establishment in Paris) and Riviere was in good humour because he was to be appointed manager of the establishment; these two young men (who were cousins) were also in good humour because of the success of the French cars\" (43).\n\"They were not much more than acquaintances as yet but Jimmy found great pleasure in the society of one who had seen so much of the world and was reputed to own some of the biggest hotels in France\" (43).\n\"The Frenchmen flung their laughter and light words over their shoulders and often Jimmy had to strain forward to catch the quick phrase\" (44).\n\"At the control Segouin had presented him to one of the French competitors and, in answer to his confused murmur of compliment, the swarthy face of the driver had disclosed a line of shining white teeth. It was pleasant after that honour to return to the profane world of spectators amid nudges and significant looks\" (44).\n\"Jimmy, whose imagination was kindling, conceived the lively youth of the Frenchmen twined elegantly upon the firm framework of the Englishman's manner\" (46).\n\"Riviere, not wholly ingenuously, undertook to explain to Jimmy the triumph of the French mechanicians\" (46).\n\"They drank Ireland, England, France, Hungary, the United States of America. Jimmy made a speech, a long speech, Villona saying: \"Hear! hear!\" whenever there was a pause\" (47).",
-    "story_label": "After the Race",
     "gloss": "the country whose cars the Irish support; the country Segouin drives for; where Segouin is from and where he owns hotels; one of the places the men toast",
     "page": 47,
     "quote": "Now and again the clumps of people raised the cheer of the gratefully oppressed. Their sympathy, however, was for the blue cars -- the cars of their friends, the French. The French, moreover, were virtual victors. Their team had finished solidly; they had been placed second and third and the driver of the winning German car was reported a Belgian. Each blue car, therefore, received a double measure of welcome as it topped the crest of the hill and each cheer of welcome was acknowledged with smiles and nods by those in the car. In one of these trimly built cars was a party of four young men whose spirits seemed to be at present well above the level of successful Gallicism: in fact, these four young men were almost hilarious\" (42). \"Segouin was in good humour because he had unexpectedly received some orders in advance (he was about to start a motor establishment in Paris) and Riviere was in good humour because he was to be appointed manager of the establishment; these two young men (who were cousins) were also in good humour because of the success of the French cars\" (43). \"They were not much more than acquaintances as yet but Jimmy found great pleasure in the society of one who had seen so much of the world and was reputed to own some of the biggest hotels in France\" (43). \"The Frenchmen flung their laughter and light words over their shoulders and often Jimmy had to strain forward to catch the quick phrase\" (44). \"At the control Segouin had presented him to one of the French competitors and, in answer to his confused murmur of compliment, the swarthy face of the driver had disclosed a line of shining white teeth. It was pleasant after that honour to return to the profane world of spectators amid nudges and significant looks\" (44). \"Jimmy, whose imagination was kindling, conceived the lively youth of the Frenchmen twined elegantly upon the firm framework of the Englishman's manner\" (46). \"Riviere, not wholly ingenuously, undertook to explain to Jimmy the triumph of the French mechanicians\" (46). \"They drank Ireland, England, France, Hungary, the United States of America. Jimmy made a speech, a long speech, Villona saying: \"Hear! hear!\" whenever there was a pause",
@@ -1038,8 +976,6 @@
    "properties": {
     "story": "After the Race",
     "name": "Germany",
-    "description": "\"After the Race\"\n[where the car is from that is disqualified]\n\"The French, moreover, were virtual victors. Their team had finished solidly; they had been placed second and third and the driver of the winning German car was reported a Belgian\" (42).",
-    "story_label": "After the Race",
     "gloss": "where the car is from that is disqualified",
     "page": 42,
     "quote": "The French, moreover, were virtual victors. Their team had finished solidly; they had been placed second and third and the driver of the winning German car was reported a Belgian",
@@ -1059,8 +995,6 @@
    "properties": {
     "story": "After the Race",
     "name": "Belgium",
-    "description": "\"After the Race\"\n[where the driver of the disqualified German car is from]\n\"The French, moreover, were virtual victors. Their team had finished solidly; they had been placed second and third and the driver of the winning German car was reported a Belgian\" (42).",
-    "story_label": "After the Race",
     "gloss": "where the driver of the disqualified German car is from",
     "page": 42,
     "quote": "The French, moreover, were virtual victors. Their team had finished solidly; they had been placed second and third and the driver of the winning German car was reported a Belgian",
@@ -1080,8 +1014,6 @@
    "properties": {
     "story": "After the Race",
     "name": "Canada",
-    "description": "\"After the Race\"\n[where Riviere was born]\n\"They were Charles Segouin, the owner of the car; Andre Riviere, a young electrician of Canadian birth; a huge Hungarian named Villona and a neatly groomed young man named Doyle\" (42-43).",
-    "story_label": "After the Race",
     "gloss": "where Riviere was born",
     "quote": "They were Charles Segouin, the owner of the car; Andre Riviere, a young electrician of Canadian birth; a huge Hungarian named Villona and a neatly groomed young man named Doyle\" (42-43).",
     "kind": "place",
@@ -1100,8 +1032,6 @@
    "properties": {
     "story": "After the Race",
     "name": "Hungary",
-    "description": "\"After the Race\"\n[where Villona is from; one of the places the men toast]\n\"They were Charles Segouin, the owner of the car; Andre Riviere, a young electrician of Canadian birth; a huge Hungarian named Villona and a neatly groomed young man named Doyle\" (42-43).\n\"The car ran on merrily with its cargo of hilarious youth. The two cousins sat on the front seat; Jimmy and his Hungarian friend sat behind\" (44).\n\"His father, therefore, was unusually friendly with Villona and his manner expressed a real respect for foreign accomplishments; but this subtlety of his host was probably lost upon the Hungarian, who was beginning to have a sharp desire for his dinner\" (45-46).\n\"The resonant voice of the Hungarian was about to prevail in ridicule of the spurious lutes of the romantic painters when Segouin shepherded his party into politics\" (46).\n\"They drank Ireland, England, France, Hungary, the United States of America\" (47).\n\"The cabin door opened and he saw the Hungarian standing in a shaft of grey light:\n-Daybreak, gentlemen!\" (48).",
-    "story_label": "After the Race",
     "gloss": "where Villona is from; one of the places the men toast",
     "page": 48,
     "quote": "They were Charles Segouin, the owner of the car; Andre Riviere, a young electrician of Canadian birth; a huge Hungarian named Villona and a neatly groomed young man named Doyle\" (42-43). \"The car ran on merrily with its cargo of hilarious youth. The two cousins sat on the front seat; Jimmy and his Hungarian friend sat behind\" (44). \"His father, therefore, was unusually friendly with Villona and his manner expressed a real respect for foreign accomplishments; but this subtlety of his host was probably lost upon the Hungarian, who was beginning to have a sharp desire for his dinner\" (45-46). \"The resonant voice of the Hungarian was about to prevail in ridicule of the spurious lutes of the romantic painters when Segouin shepherded his party into politics\" (46). \"They drank Ireland, England, France, Hungary, the United States of America\" (47). \"The cabin door opened and he saw the Hungarian standing in a shaft of grey light: -Daybreak, gentlemen!",
@@ -1121,8 +1051,6 @@
    "properties": {
     "story": "After the Race",
     "name": "Kingstown",
-    "description": "\"After the Race\"\n[where Jimmy's father had started his business]\n\"His father, who had begun life as an advanced Nationalist, had modified\nhis views early. He had made his money as a butcher in Kingstown and by\nopening shops in Dublin and in the suburbs he had made his money many\ntimes over\" (43).",
-    "story_label": "After the Race",
     "gloss": "where Jimmy's father had started his business",
     "page": 43,
     "quote": "His father, who had begun life as an advanced Nationalist, had modified his views early. He had made his money as a butcher in Kingstown and by opening shops in Dublin and in the suburbs he had made his money many times over",
@@ -1142,8 +1070,6 @@
    "properties": {
     "story": "After the Race",
     "name": "Dublin University",
-    "description": "\"After the Race\"\n[where Jimmy Doyle went to study law]\n\"He had sent his son to England to be educated in a big Catholic college and had afterwards sent him to Dublin University to study law. Jimmy did not study very earnestly and took to bad courses for a while\" (43).",
-    "story_label": "After the Race",
     "gloss": "where Jimmy Doyle went to study law",
     "page": 43,
     "quote": "He had sent his son to England to be educated in a big Catholic college and had afterwards sent him to Dublin University to study law. Jimmy did not study very earnestly and took to bad courses for a while",
@@ -1163,8 +1089,6 @@
    "properties": {
     "story": "After the Race",
     "name": "Cambridge",
-    "description": "\"After the Race\"\n[where Jimmy goes to college for a term \"to see a little life\"]\n\"Then he had been sent for a term to Cambridge to see a little life. His father, remonstrative, but covertly proud of the excess, had paid his bills and brought him home. It was at Cambridge that he had met Segouin\" (43).\n\"The party was increased by a young Englishman named Routh whom Jimmy had seen with Segouin at Cambridge\" (46).",
-    "story_label": "After the Race",
     "gloss": "where Jimmy goes to college for a term \"to see a little life\"",
     "page": 46,
     "quote": "Then he had been sent for a term to Cambridge to see a little life. His father, remonstrative, but covertly proud of the excess, had paid his bills and brought him home. It was at Cambridge that he had met Segouin\" (43). \"The party was increased by a young Englishman named Routh whom Jimmy had seen with Segouin at Cambridge",
@@ -1184,8 +1108,6 @@
    "properties": {
     "story": "After the Race",
     "name": "Dame Street",
-    "description": "\"After the Race\"\n[the drive continues]\"They drove down Dame Street. The street was busy with unusual traffic,\nloud with the horns of motorists and the gongs of impatient\ntram-drivers. Near the Bank Segouin drew up and Jimmy and his friend\nalighted\" (45).",
-    "story_label": "After the Race",
     "page": 45,
     "quote": "They drove down Dame Street. The street was busy with unusual traffic, loud with the horns of motorists and the gongs of impatient tram-drivers. Near the Bank Segouin drew up and Jimmy and his friend alighted",
     "kind": "place",
@@ -1204,8 +1126,6 @@
    "properties": {
     "story": "After the Race",
     "name": "Grafton Street",
-    "description": "\"After the Race\"\n[where the car goes after Jimmy and Villona get out; later where they meet Farley, the American]\n\"The car steered out slowly for Grafton Street while the two young men pushed their way through the knot of gazers\" (45).\n\"At the corner of Grafton Street a short fat man was putting two handsome\nladies on a car in charge of another fat man. The car drove off and the\nshort fat man caught sight of the party\" (47)",
-    "story_label": "After the Race",
     "gloss": "where the car goes after Jimmy and Villona get out; later where they meet Farley, the American",
     "page": 47,
     "quote": "The car steered out slowly for Grafton Street while the two young men pushed their way through the knot of gazers\" (45). \"At the corner of Grafton Street a short fat man was putting two handsome ladies on a car in charge of another fat man. The car drove off and the short fat man caught sight of the party",
@@ -1225,8 +1145,6 @@
    "properties": {
     "story": "After the Race",
     "name": "Stephen's Green",
-    "description": "\"After the Race\"\n[where the men walk, smoking, after dinner]\n\"The five young men strolled along Stephen's Green in a faint cloud of aromatic smoke\" (46).",
-    "story_label": "After the Race",
     "gloss": "where the men walk, smoking, after dinner",
     "page": 46,
     "quote": "The five young men strolled along Stephen's Green in a faint cloud of aromatic smoke",
@@ -1246,8 +1164,6 @@
    "properties": {
     "story": "After the Race",
     "name": "United States of America",
-    "description": "\"After the Race\"\n[where Farley is from; a place the men toast]\n\"Farley was an American\" (47).\n\"They got into a rowboat at the slip and made out for the American's yacht\" (47).\n\"They drank Ireland, England, France, Hungary, the United States of America\" (47).",
-    "story_label": "After the Race",
     "gloss": "where Farley is from; a place the men toast",
     "page": 47,
     "quote": "Farley was an American\" (47). \"They got into a rowboat at the slip and made out for the American's yacht\" (47). \"They drank Ireland, England, France, Hungary, the United States of America",
@@ -1267,8 +1183,6 @@
    "properties": {
     "story": "After the Race",
     "name": "Westland Row",
-    "description": "\"After the Race\"\n[where the men get the train to go to the harbour]\n\"They took the train at Westland Row and in a few seconds, as it seemed to Jimmy, they were walking out of Kingstown Station\" (47).",
-    "story_label": "After the Race",
     "gloss": "where the men get the train to go to the harbour",
     "page": 47,
     "quote": "They took the train at Westland Row and in a few seconds, as it seemed to Jimmy, they were walking out of Kingstown Station",
@@ -1288,8 +1202,6 @@
    "properties": {
     "story": "After the Race",
     "name": "Kingstown Harbour",
-    "description": "\"After the Race\"\n[where the men deboard the train and board Farley's yacht]\n\"They took the train at Westland Row and in a few seconds, as it seemed\nto Jimmy, they were walking out of Kingstown Station...It\nwas a serene summer night; the harbour lay like a darkened mirror at\ntheir feet...They\ngot into a rowboat at the slip and made out for the American's yacht.\nThere was to be supper, music, cards\" (47).",
-    "story_label": "After the Race",
     "gloss": "where the men deboard the train and board Farley's yacht",
     "page": 47,
     "quote": "They took the train at Westland Row and in a few seconds, as it seemed to Jimmy, they were walking out of Kingstown Station...It was a serene summer night; the harbour lay like a darkened mirror at their feet...They got into a rowboat at the slip and made out for the American's yacht. There was to be supper, music, cards",
@@ -1309,8 +1221,6 @@
    "properties": {
     "story": "After the Race",
     "name": "\"After the Race\" Car Route",
-    "description": "\"After the Race\"\n[the route the car takes as it drives into town]",
-    "story_label": "After the Race",
     "gloss": "the route the car takes as it drives into town",
     "quote": "",
     "kind": "route"
@@ -1482,8 +1392,6 @@
    "properties": {
     "story": "After the Race",
     "name": "\"After the Race\" Walking/Car/Train Route",
-    "description": "\"After the Race\"\n[the route the men take after dinner and on their way to the yacht]",
-    "story_label": "After the Race",
     "gloss": "the route the men take after dinner and on their way to the yacht",
     "quote": "",
     "kind": "route"
@@ -1647,8 +1555,6 @@
    "properties": {
     "story": "Two Gallants",
     "name": "Rutland Square",
-    "description": "\"Two Gallants\"\n[where the story starts; where Lenehan returns as he walks alone]\n\"Two young men came down the hill of Rutland Square. On of them was just bringing a long monologue to a close. The other, who walked on the verge of the path and was at times obliged to step on to the road, owing to his companion's rudeness, wore an amused listening face\" (49).\n\"He turned to the left when he came to the corner of Rutland Square and felt more at ease in the dark quiet street, the sombre look of which suited his mood\" (56-57).",
-    "story_label": "Two Gallants",
     "gloss": "where the story starts; where Lenehan returns as he walks alone",
     "quote": "Two young men came down the hill of Rutland Square. On of them was just bringing a long monologue to a close. The other, who walked on the verge of the path and was at times obliged to step on to the road, owing to his companion's rudeness, wore an amused listening face\" (49). \"He turned to the left when he came to the corner of Rutland Square and felt more at ease in the dark quiet street, the sombre look of which suited his mood\" (56-57).",
     "kind": "place",
@@ -1667,8 +1573,6 @@
    "properties": {
     "story": "Two Gallants",
     "name": "Dorset Street",
-    "description": "\"Two Gallants\"\n[where Lenehan has been talking all day before walking with Corley]\n\"His tongue was tired for he had been talking all the afternoon in a public-house in Dorset Street\" (50).",
-    "story_label": "Two Gallants",
     "gloss": "where Lenehan has been talking all day before walking with Corley",
     "page": 50,
     "quote": "His tongue was tired for he had been talking all the afternoon in a public-house in Dorset Street",
@@ -1688,8 +1592,6 @@
    "properties": {
     "story": "Two Gallants",
     "name": "Dame Street",
-    "description": "\"Two Gallants\"\n[where Corley picked up his girl]\n\"--One night, man, he said, I was going along Dame Street and I spotted a\nfine tart under Waterhouse's clock and said good- night, you know. So\nwe went for a walk round by the canal and she told me she was a slavey\nin a house in Baggot Street\" (50).",
-    "story_label": "Two Gallants",
     "gloss": "where Corley picked up his girl",
     "page": 50,
     "quote": "--One night, man, he said, I was going along Dame Street and I spotted a fine tart under Waterhouse's clock and said good- night, you know. So we went for a walk round by the canal and she told me she was a slavey in a house in Baggot Street",
@@ -1709,8 +1611,6 @@
    "properties": {
     "story": "Two Gallants",
     "name": "Baggot Street",
-    "description": "\"Two Gallants\"\n[where Corley's girl is a \"slavey\"; where Lenehan sees the couple later]\n\"--One night, man, he said, I was going along Dame Street and I spotted a\nfine tart under Waterhouse's clock and said good- night, you know. So\nwe went for a walk round by the canal and she told me she was a slavey\nin a house in Baggot Street\" (50).\n\"They turned down Baggot Street and he followed them at once, taking the other footpath\" (59).",
-    "story_label": "Two Gallants",
     "gloss": "where Corley's girl is a \"slavey\"; where Lenehan sees the couple later",
     "page": 59,
     "quote": "--One night, man, he said, I was going along Dame Street and I spotted a fine tart under Waterhouse's clock and said good- night, you know. So we went for a walk round by the canal and she told me she was a slavey in a house in Baggot Street\" (50). \"They turned down Baggot Street and he followed them at once, taking the other footpath",
@@ -1730,8 +1630,6 @@
    "properties": {
     "story": "Two Gallants",
     "name": "Donnybrook",
-    "description": "\"Two Gallants\"\n[where Corley takes his girl one day; possibly where the two are going when they break off from Lenehan]\n\"I put my arm round her and squeezed her a bit that night. Then next Sunday, man, I met her by appointment. We vent out to Donnybrook and I brought her into a field there\" (50-51).\n\"He kept the pair in view until he had seen them climbing the stairs of the Donnybrook tram; then he turned about and went back the way he had come\" (56).",
-    "story_label": "Two Gallants",
     "gloss": "where Corley takes his girl one day; possibly where the two are going when they break off from Lenehan",
     "page": 56,
     "quote": "I put my arm round her and squeezed her a bit that night. Then next Sunday, man, I met her by appointment. We vent out to Donnybrook and I brought her into a field there\" (50-51). \"He kept the pair in view until he had seen them climbing the stairs of the Donnybrook tram; then he turned about and went back the way he had come",
@@ -1751,8 +1649,6 @@
    "properties": {
     "story": "Two Gallants",
     "name": "Pim's",
-    "description": "\"Two Gallants\"\n[where Corley claims to have worked]\n\"--Maybe she thinks you'll marry her, said Lenehan.\n--I told her I was out of a job, said Corley. i told her I was in Pim's. She doesn't know my name. i was too hairy to tell her that. But she thinks I'm a bit of class, you know\" (51).",
-    "story_label": "Two Gallants",
     "gloss": "where Corley claims to have worked",
     "page": 51,
     "quote": "--Maybe she thinks you'll marry her, said Lenehan. --I told her I was out of a job, said Corley. i told her I was in Pim's. She doesn't know my name. i was too hairy to tell her that. But she thinks I'm a bit of class, you know",
@@ -1772,8 +1668,6 @@
    "properties": {
     "story": "Two Gallants",
     "name": "South Circular",
-    "description": "\"Two Gallants\"\n[one place where Corley used to pick up girls]\n\"\"First I used to go with girls, you know,\" said Corley, unbosoming; \"girls off the South Circular\" (52).",
-    "story_label": "Two Gallants",
     "gloss": "one place where Corley used to pick up girls",
     "page": 52,
     "quote": "First I used to go with girls, you know,\" said Corley, unbosoming; \"girls off the South Circular",
@@ -1793,8 +1687,6 @@
    "properties": {
     "story": "Two Gallants",
     "name": "Earl Street",
-    "description": "\"Two Gallants\"\n[where Corley saw one of his girls in a car]\n\"-She's on the turf now. I saw her driving down Earl Street one night with two fellows with her on a car\" (53).",
-    "story_label": "Two Gallants",
     "gloss": "where Corley saw one of his girls in a car",
     "page": 53,
     "quote": "-She's on the turf now. I saw her driving down Earl Street one night with two fellows with her on a car",
@@ -1814,8 +1706,6 @@
    "properties": {
     "story": "Two Gallants",
     "name": "Trinity College Dublin",
-    "description": "\"Two Gallants\"\n[where Corley and Lenehan are toward the beginning of the story]\n\"As they passed along the railings of Trinity College, Lenehan skipped out into the road and peered up at the clock\" (53).",
-    "story_label": "Two Gallants",
     "gloss": "where Corley and Lenehan are toward the beginning of the story",
     "page": 53,
     "quote": "As they passed along the railings of Trinity College, Lenehan skipped out into the road and peered up at the clock",
@@ -1835,7 +1725,6 @@
    "properties": {
     "story": "Two Gallants",
     "name": "Nassau Street",
-    "description": "\"Two Gallants\"[where the men walk, talking about women]\n\"They walked along Nassau Street and then turned into Kildare Street. Not far from the porch of the club a harpist stood in the roadway, playing to a little ring of listeners\" (54).",
     "page": 54,
     "quote": "They walked along Nassau Street and then turned into Kildare Street. Not far from the porch of the club a harpist stood in the roadway, playing to a little ring of listeners",
     "kind": "place",
@@ -1854,8 +1743,6 @@
    "properties": {
     "story": "Two Gallants",
     "name": "Kildare Street",
-    "description": "\"Two Gallants\"\n[where the men encounter the harpist]\n\"They walked along Nassau Street and then turned into Kildare Street. Not far from the porch of the club a harpist stood in the roadway, playing to a little ring of listeners\" (54).",
-    "story_label": "Two Gallants",
     "gloss": "where the men encounter the harpist",
     "page": 54,
     "quote": "They walked along Nassau Street and then turned into Kildare Street. Not far from the porch of the club a harpist stood in the roadway, playing to a little ring of listeners",
@@ -1875,8 +1762,6 @@
    "properties": {
     "story": "Two Gallants",
     "name": "Stephen's Green",
-    "description": "\"Two Gallants\"\n[where Lenehan and Corley cross the street; where Lenehan continues to walk once he is alone; the direction of which Corley walks to meet back up with Lenehan]\n\"When they reached Stephen's Green they crossed the road. Here the noise of trams, the lights and the crowd released them from their silence\" (54).\n\"He walked listlessly round Stephen's Green and then down Grafton Street\" (56).\n\"He set off briskly along the northern side of the Green hurrying for fear Corley should return too soon\" (59).\n\"The door closed on her and Corley began to walk swiftly towards Stephen's Green\" (60).",
-    "story_label": "Two Gallants",
     "gloss": "where Lenehan and Corley cross the street; where Lenehan continues to walk once he is alone; the direction of which Corley walks to meet back up with Lenehan",
     "page": 60,
     "quote": "When they reached Stephen's Green they crossed the road. Here the noise of trams, the lights and the crowd released them from their silence\" (54). \"He walked listlessly round Stephen's Green and then down Grafton Street\" (56). \"He set off briskly along the northern side of the Green hurrying for fear Corley should return too soon\" (59). \"The door closed on her and Corley began to walk swiftly towards Stephen's Green",
@@ -1896,8 +1781,6 @@
    "properties": {
     "story": "Two Gallants",
     "name": "Hume Street",
-    "description": "\"Two Gallants\"\n[the corner near Stephen's Green where Lenehan and Corley spot Corley's girl standing; the street Lenehan walks down to get a closer look]\n\"At the corner of Hume Street a young woman was standing. She wore a blue\ndress and a white sailor hat. She stood on the curbstone, swinging a\nsunshade in one hand\" (54).\n\"Lenehan observed them for a few minutes. Then he walked rapidly along\nbeside the chains at some distance and crossed the road obliquely. As he\napproached Hume Street corner he found the air heavily scented and his\neyes made a swift anxious scrutiny of the young woman's appearance\" (55).",
-    "story_label": "Two Gallants",
     "gloss": "the corner near Stephen's Green where Lenehan and Corley spot Corley's girl standing; the street Lenehan walks down to get a closer look",
     "page": 55,
     "quote": "At the corner of Hume Street a young woman was standing. She wore a blue dress and a white sailor hat. She stood on the curbstone, swinging a sunshade in one hand\" (54). \"Lenehan observed them for a few minutes. Then he walked rapidly along beside the chains at some distance and crossed the road obliquely. As he approached Hume Street corner he found the air heavily scented and his eyes made a swift anxious scrutiny of the young woman's appearance",
@@ -1917,8 +1800,6 @@
    "properties": {
     "story": "Two Gallants",
     "name": "Merrion Street",
-    "description": "\"Two Gallants\"\n[where Corley and Lenehan are going to meet; where Lenehan follows the couple; where Lenehan awaits their return]\n--And after? Where will we meet?\n--Half ten, answered Corley, bringing over his other leg.\n--Where?\n--Corner of Merrion Street. We'll be coming back.\" (55)\n\"After waiting for a little time he saw them coming towards him and, when they turned to the right, he followed them, stepping lightly in his white shoes, down one side of Merrion Square\" (56).\n\"When he reached the corner of Merrion Street he took his stand in the shadow of a lamp and brought out one of the cigarettes which he had reserved and lit it. He leaned against the lamp-post and kept his gaze fixed on the part from which he expected to see Corley and the young woman return\" (59).",
-    "story_label": "Two Gallants",
     "gloss": "where Corley and Lenehan are going to meet; where Lenehan follows the couple; where Lenehan awaits their return",
     "page": 59,
     "quote": "--And after? Where will we meet? --Half ten, answered Corley, bringing over his other leg. --Where? --Corner of Merrion Street. We'll be coming back.\" (55) \"After waiting for a little time he saw them coming towards him and, when they turned to the right, he followed them, stepping lightly in his white shoes, down one side of Merrion Square\" (56). \"When he reached the corner of Merrion Street he took his stand in the shadow of a lamp and brought out one of the cigarettes which he had reserved and lit it. He leaned against the lamp-post and kept his gaze fixed on the part from which he expected to see Corley and the young woman return",
@@ -1938,8 +1819,6 @@
    "properties": {
     "story": "Two Gallants",
     "name": "The Shelbourne Hotel",
-    "description": "\"Two Gallants\"\n[where Lenehan stops and waits to see Corley and the girl before he begins following them]\n\"Lenehan walked as far as the Shelbourne Hotel where he halted and waited\" (56)",
-    "story_label": "Two Gallants",
     "gloss": "where Lenehan stops and waits to see Corley and the girl before he begins following them",
     "page": 56,
     "quote": "Lenehan walked as far as the Shelbourne Hotel where he halted and waited",
@@ -1959,8 +1838,6 @@
    "properties": {
     "story": "Two Gallants",
     "name": "Duke's Lawn",
-    "description": "\"Two Gallants\"\n[where Lenehan first finds himself alone]\n\"His gaiety seemed to forsake him and, as he came by the railings of the Duke's Lawn, he allowed his hand to run along them\" (56).",
-    "story_label": "Two Gallants",
     "gloss": "where Lenehan first finds himself alone",
     "page": 56,
     "quote": "His gaiety seemed to forsake him and, as he came by the railings of the Duke's Lawn, he allowed his hand to run along them",
@@ -1980,8 +1857,6 @@
    "properties": {
     "story": "Two Gallants",
     "name": "Grafton Street",
-    "description": "\"Two Gallants\"\n[one of the streets Lenehan walks after leaving Corley and returns to after eating]\n\"He walked listlessly round Stephen's Green and then down Grafton Street\" (56).\n\"He turned to the left at the City Markets and walked on into Grafton Street\" (58).",
-    "story_label": "Two Gallants",
     "gloss": "one of the streets Lenehan walks after leaving Corley and returns to after eating",
     "page": 58,
     "quote": "He walked listlessly round Stephen's Green and then down Grafton Street\" (56). \"He turned to the left at the City Markets and walked on into Grafton Street",
@@ -2001,8 +1876,6 @@
    "properties": {
     "story": "Two Gallants",
     "name": "Capel Street",
-    "description": "\"Two Gallants\"\n[where Lenehan walks after finishing his meal]\n\"He paid twopence halfpenny to the slatternly girl and went out of the shop to begin his wandering again. He went into Capel Street and walked along towards the City Hall\" (58).",
-    "story_label": "Two Gallants",
     "gloss": "where Lenehan walks after finishing his meal",
     "page": 58,
     "quote": "He paid twopence halfpenny to the slatternly girl and went out of the shop to begin his wandering again. He went into Capel Street and walked along towards the City Hall",
@@ -2022,8 +1895,6 @@
    "properties": {
     "story": "Two Gallants",
     "name": "City Hall",
-    "description": "\"Two Gallants\"\n[one of the landmarks along Lenehan's wandering path]\n\"He paid twopence halfpenny to the slatternly girl and went out of the shop to begin his wandering again. He went into Capel Street and walked along towards the City Hall\" (58)",
-    "story_label": "Two Gallants",
     "gloss": "one of the landmarks along Lenehan's wandering path",
     "page": 58,
     "quote": "He paid twopence halfpenny to the slatternly girl and went out of the shop to begin his wandering again. He went into Capel Street and walked along towards the City Hall",
@@ -2043,8 +1914,6 @@
    "properties": {
     "story": "Two Gallants",
     "name": "Dame Street and George's Street",
-    "description": "\"Two Gallants\"\n[where Lenehan meets his friends]\n\"Then he turned into Dame Street. At the corner of George's Street he met two friends of his and stopped to converse with them\" (58).",
-    "story_label": "Two Gallants",
     "gloss": "where Lenehan meets his friends",
     "page": 58,
     "quote": "Then he turned into Dame Street. At the corner of George's Street he met two friends of his and stopped to converse with them",
@@ -2064,8 +1933,6 @@
    "properties": {
     "story": "Two Gallants",
     "name": "City Markets",
-    "description": "\"Two Gallants\"\n[where Lenehan turns off of George's Street as he makes his way back to meet Corley]\n\"He turned to the left at the City Markets and walked onto Grafton Street\" (58).",
-    "story_label": "Two Gallants",
     "gloss": "where Lenehan turns off of George's Street as he makes his way back to meet Corley",
     "page": 58,
     "quote": "He turned to the left at the City Markets and walked onto Grafton Street",
@@ -2085,8 +1952,6 @@
    "properties": {
     "story": "Two Gallants",
     "name": "Westmoreland Street",
-    "description": "\"Two Gallants\"\n[where one of Lenehan's friends says he saw Mac earlier]\n\"One said that he had seen Mac an hour before in Westmoreland Street. At\nthis Lenehan said that he had been with Mac the night before in Egan's.\nThe young man who had seen Mac in Westmoreland Street asked was it true\nthat Mac had won a bit over a billiard match. Lenehan did not know: he\nsaid that Holohan had stood them drinks in Egan's\" (58).",
-    "story_label": "Two Gallants",
     "gloss": "where one of Lenehan's friends says he saw Mac earlier",
     "page": 58,
     "quote": "One said that he had seen Mac an hour before in Westmoreland Street. At this Lenehan said that he had been with Mac the night before in Egan's. The young man who had seen Mac in Westmoreland Street asked was it true that Mac had won a bit over a billiard match. Lenehan did not know: he said that Holohan had stood them drinks in Egan's",
@@ -2106,8 +1971,6 @@
    "properties": {
     "story": "Two Gallants",
     "name": "George's Street",
-    "description": "\"Two Gallants\"\n[where Lenehan walks after speaking to his friends]\n\"He left his friends at a quarter to ten and went up George's Street. He turned to the left at the City Markets and walked on into Grafton Street\" (58).",
-    "story_label": "Two Gallants",
     "gloss": "where Lenehan walks after speaking to his friends",
     "page": 58,
     "quote": "He left his friends at a quarter to ten and went up George's Street. He turned to the left at the City Markets and walked on into Grafton Street",
@@ -2127,8 +1990,6 @@
    "properties": {
     "story": "Two Gallants",
     "name": "Ely Place",
-    "description": "\"Two Gallants\"\n[where Corley swerves off before allowing Lenehan to catch up]\n\"They had reached the corner of Ely Place\" (60).",
-    "story_label": "Two Gallants",
     "gloss": "where Corley swerves off before allowing Lenehan to catch up",
     "page": 60,
     "quote": "They had reached the corner of Ely Place",
@@ -2148,7 +2009,6 @@
    "properties": {
     "story": "Two Gallants",
     "name": "\"Two Gallants\" Route",
-    "description": "The route Lenahan and Corley and then Lenehan alone take in \"Two Gallants.\"",
     "quote": "The route Lenahan and Corley and then Lenehan alone take in \"Two Gallants.",
     "kind": "route"
    },
@@ -2403,8 +2263,6 @@
    "properties": {
     "story": "Two Gallants",
     "name": "Lenehan and Corley Together",
-    "description": "\"Two Gallants\"\nThe route Lenehan and Corley travel together in the first part of the story.",
-    "story_label": "Two Gallants",
     "quote": "The route Lenehan and Corley travel together in the first part of the story.",
     "kind": "route"
    },
@@ -2495,8 +2353,6 @@
    "properties": {
     "story": "The Boarding House",
     "name": "Spring Gardens",
-    "description": "\"The Boarding House\"\n[the place near where Mrs. Mooney first opens the butcher shop with Mr. Mooney]\n\"She had married her father's foreman and opened a butcher's shop near Spring Gardens\" (61).\n(found with Gilbert, John Thomas. A History of the City of Dublin, Vol. 2. Dublin: McGlashan and Gill, 1859, pp. 280.)",
-    "story_label": "The Boarding House",
     "gloss": "the place near where Mrs. Mooney first opens the butcher shop with Mr. Mooney",
     "quote": "She had married her father's foreman and opened a butcher's shop near Spring Gardens\" (61). (found with Gilbert, John Thomas. A History of the City of Dublin, Vol. 2. Dublin: McGlashan and Gill, 1859, pp. 280.)",
     "kind": "place",
@@ -2515,8 +2371,6 @@
    "properties": {
     "story": "The Boarding House",
     "name": "Hardwicke Street",
-    "description": "\"The Boarding House\"\n[where the boarding house is located]\n\"Mrs. Mooney, who had taken what remained of her money out of the butcher business and set up a boarding house in Hardwicke Street, was a big imposing woman\" (62).",
-    "story_label": "The Boarding House",
     "gloss": "where the boarding house is located",
     "page": 62,
     "quote": "Mrs. Mooney, who had taken what remained of her money out of the butcher business and set up a boarding house in Hardwicke Street, was a big imposing woman",
@@ -2536,8 +2390,6 @@
    "properties": {
     "story": "The Boarding House",
     "name": "Liverpool",
-    "description": "\"The Boarding House\"\n[where some of the tourists come from]\n\"Her house had a floating population made up of tourists from Liverpool\nand the Isle of Man and, occasionally, artistes from the music halls\" (62).",
-    "story_label": "The Boarding House",
     "gloss": "where some of the tourists come from",
     "page": 62,
     "quote": "Her house had a floating population made up of tourists from Liverpool and the Isle of Man and, occasionally, artistes from the music halls",
@@ -2557,7 +2409,6 @@
    "properties": {
     "story": "The Boarding House",
     "name": "Isle of Man",
-    "description": "United Kingdom\n\"The Boarding House\"\n[where some of the the tourists are from]\n\"Her house had a floating population made up of tourists from Liverpool and the Isle of Man and, occasionally, artistes from the music halls\" (62).",
     "page": 62,
     "quote": "United Kingdom \"The Boarding House\" [where some of the the tourists are from] \"Her house had a floating population made up of tourists from Liverpool and the Isle of Man and, occasionally, artistes from the music halls",
     "kind": "place"
@@ -2575,8 +2426,6 @@
    "properties": {
     "story": "The Boarding House",
     "name": "Fleet Street",
-    "description": "\"The Boarding House\"\n[where Jack Mooney works]\n\"Jack Mooney, the Madam's son, who was clerk to a commission agent in Fleet Street, had the reputation of being a hard case\" (62).",
-    "story_label": "The Boarding House",
     "gloss": "where Jack Mooney works",
     "page": 62,
     "quote": "Jack Mooney, the Madam's son, who was clerk to a commission agent in Fleet Street, had the reputation of being a hard case",
@@ -2596,8 +2445,6 @@
    "properties": {
     "story": "The Boarding House",
     "name": "Saint George's",
-    "description": "\"The Boarding House\"\n[a church close to the boarding house]\n\"The belfry of George's Church sent out constant peals and worshippers, singly or in groups, traversed the little circus before the church, revealing their purpose by their self-contained demeanour no less than by the little volumes in their gloved hands\" (63).",
-    "story_label": "The Boarding House",
     "gloss": "a church close to the boarding house",
     "page": 63,
     "quote": "The belfry of George's Church sent out constant peals and worshippers, singly or in groups, traversed the little circus before the church, revealing their purpose by their self-contained demeanour no less than by the little volumes in their gloved hands",
@@ -2617,8 +2464,6 @@
    "properties": {
     "story": "The Boarding House",
     "name": "Marlborough Street",
-    "description": "\"The Boarding House\"\n[where Mrs. Mooney plans to \"catch short twelve\"]\n\"It was seventeen minutes past eleven: she would have lots of time to\nhave the matter out with Mr. Doran and then catch short twelve at\nMarlborough Street\" (64).",
-    "story_label": "The Boarding House",
     "gloss": "where Mrs. Mooney plans to \"catch short twelve\"",
     "page": 64,
     "quote": "It was seventeen minutes past eleven: she would have lots of time to have the matter out with Mr. Doran and then catch short twelve at Marlborough Street",
@@ -2638,8 +2483,6 @@
    "properties": {
     "story": "A Little Cloud",
     "name": "North Wall",
-    "description": "\"A Little Cloud\"\n[where Chandler saw Gallaher off]\n\"EIGHT years before he had seen his friend off at the North Wall and wished him godspeed\" (70).",
-    "story_label": "A Little Cloud",
     "gloss": "where Chandler saw Gallaher off",
     "page": 70,
     "quote": "EIGHT years before he had seen his friend off at the North Wall and wished him godspeed",
@@ -2659,8 +2502,6 @@
    "properties": {
     "story": "A Little Cloud",
     "name": "London",
-    "description": "\"A Little Cloud\"\n[where Gallaher lives, working for The London Press; where Gallaher suggests Chandler go]\n\"Little Chandler's thoughts ever since lunch-time had been of his meeting\nwith Gallaher, of Gallaher's invitation and of the great city London\nwhere Gallaher lived\" (70).\n\"The friend whom he had known under a shabby and necessitous guise had become a brilliant figure on the London Press\" (71).\n\"Ignatius Gallaher on the London Press! Who would have thought it possible eight years before?\" (72)\n\"Perhaps Gallaher might be able to get it into some London paper for him\" (73).\n\"Every step brought him nearer to London, farther from his own sober inartistic life\" (73).\n\"--But Hogan has a good sit, hasn't he?\n--Yes; he's in the Land Commission.\n--I met him one night in London and he seemed to be very flush.... Poor O'Hara! Boose, I suppose?\" (75-76)\n\"--Go to London or Paris: Paris, for choice. That'd do you good\" (76).\n\"There was something vulgar in his\nfriend which he had not observed before. But perhaps it was only the\nresult of living in London amid the bustle and competition of the Press.\nThe old personal charm was still there under this new gaudy manner\" (77).\n\"--Then it is an immoral city, said Little Chandler, with timid insistence -- I mean, compared with London or Dublin?\" (77)\n\"--London! said Ignatius Gallaher. It's six of one and half-a-dozen of\nthe other. You ask Hogan, my boy. I showed him a bit about London when\nhe was over there. He'd open your eye.... I say, Tommy, don't make punch\nof that whisky: liquor up\" (77).\n\"Was it too late for him to try to live bravely like Gallaher? Could he go to London?\" (83)",
-    "story_label": "A Little Cloud",
     "gloss": "where Gallaher lives, working for The London Press; where Gallaher suggests Chandler go",
     "page": 83,
     "quote": "Little Chandler's thoughts ever since lunch-time had been of his meeting with Gallaher, of Gallaher's invitation and of the great city London where Gallaher lived\" (70). \"The friend whom he had known under a shabby and necessitous guise had become a brilliant figure on the London Press\" (71). \"Ignatius Gallaher on the London Press! Who would have thought it possible eight years before?\" (72) \"Perhaps Gallaher might be able to get it into some London paper for him\" (73). \"Every step brought him nearer to London, farther from his own sober inartistic life\" (73). \"--But Hogan has a good sit, hasn't he? --Yes; he's in the Land Commission. --I met him one night in London and he seemed to be very flush.... Poor O'Hara! Boose, I suppose?\" (75-76) \"--Go to London or Paris: Paris, for choice. That'd do you good\" (76). \"There was something vulgar in his friend which he had not observed before. But perhaps it was only the result of living in London amid the bustle and competition of the Press. The old personal charm was still there under this new gaudy manner\" (77). \"--Then it is an immoral city, said Little Chandler, with timid insistence -- I mean, compared with London or Dublin?\" (77) \"--London! said Ignatius Gallaher. It's six of one and half-a-dozen of the other. You ask Hogan, my boy. I showed him a bit about London when he was over there. He'd open your eye.... I say, Tommy, don't make punch of that whisky: liquor up\" (77). \"Was it too late for him to try to live bravely like Gallaher? Could he go to London?",
@@ -2680,8 +2521,6 @@
    "properties": {
     "story": "A Little Cloud",
     "name": "Henrietta Street",
-    "description": "\"A Little Cloud\"\n[where Chandler emerges from his office]\n\"He emerged from under the feudal arch of the King's Inns, a neat modest figure, and walked swiftly down Henrietta Street\" (71).",
-    "story_label": "A Little Cloud",
     "gloss": "where Chandler emerges from his office",
     "page": 71,
     "quote": "He emerged from under the feudal arch of the King's Inns, a neat modest figure, and walked swiftly down Henrietta Street",
@@ -2701,8 +2540,6 @@
    "properties": {
     "story": "A Little Cloud",
     "name": "Corless's",
-    "description": "\"A Little Cloud\"\n[where Chandler meets Gallaher]\n\"He had never been in Corless's but he knew the value of the name. He\nknew that people went there after the theatre to eat oysters and drink\nliqueurs; and he had heard that the waiters there spoke French and\nGerman. Walking swiftly by at night he had seen cabs drawn up before the\ndoor and richly dressed ladies, escorted by cavaliers, alight and enter\nquickly. They wore noisy dresses and many wraps. Their faces were\npowdered and they caught up their dresses, when they touched earth, like\nalarmed Atalantas. He had always passed without turning his head to\nlook\" (72).\n\"He pursued his revery so ardently that he passed his street and had to\nturn back. As he came near Corless's his former agitation began to\novermaster him and he halted before the door in indecision\" (74).\n(based on Gifford, Don. Joyce Annotated: Notes for Dubliners and A Portrait of the Artist As a Young Man, 2nd ed.Berkeley: U of California P, 1982 , pp. 68)",
-    "story_label": "A Little Cloud",
     "gloss": "where Chandler meets Gallaher",
     "quote": "He had never been in Corless's but he knew the value of the name. He knew that people went there after the theatre to eat oysters and drink liqueurs; and he had heard that the waiters there spoke French and German. Walking swiftly by at night he had seen cabs drawn up before the door and richly dressed ladies, escorted by cavaliers, alight and enter quickly. They wore noisy dresses and many wraps. Their faces were powdered and they caught up their dresses, when they touched earth, like alarmed Atalantas. He had always passed without turning his head to look\" (72). \"He pursued his revery so ardently that he passed his street and had to turn back. As he came near Corless's his former agitation began to overmaster him and he halted before the door in indecision\" (74). (based on Gifford, Don. Joyce Annotated: Notes for Dubliners and A Portrait of the Artist As a Young Man, 2nd ed.Berkeley: U of California P, 1982 , pp. 68)",
     "kind": "place",
@@ -2721,8 +2558,6 @@
    "properties": {
     "story": "A Little Cloud",
     "name": "Capel Street",
-    "description": "\"A Little Cloud\"\n[the direction towards which Chandler turns; and the street he walks down]\n\"He turned to the right towards Capel Street\" (72).\n\"Little Chandler quickened his pace. For the first time in his life he felt himself superior to the people he passed. For the first time his soul revolted against the dull inelegance of Capel Street\" (73).",
-    "story_label": "A Little Cloud",
     "gloss": "the direction towards which Chandler turns; and the street he walks down",
     "page": 73,
     "quote": "He turned to the right towards Capel Street\" (72). \"Little Chandler quickened his pace. For the first time in his life he felt himself superior to the people he passed. For the first time his soul revolted against the dull inelegance of Capel Street",
@@ -2742,8 +2577,6 @@
    "properties": {
     "story": "A Little Cloud",
     "name": "Grattan Bridge",
-    "description": "\"A Little Cloud\"\n[the bridge Chandler crosses on his way to meet Gallaher]\n\"As he crossed Grattan Bridge he looked down the river towards the lower quays and pitied the poor stunted houses. They seemed to him a band of tramps, huddled together along the riverbanks, their old coats covered with dust and soot, stupefied by the panorama of sunset and waiting for the first chill of night bid them arise, shake themselves and begone\" (73).\n\"There were so many things he wanted to describe: his sensation of a few hours before on Grattan Bridge, for example\" (84).",
-    "story_label": "A Little Cloud",
     "gloss": "the bridge Chandler crosses on his way to meet Gallaher",
     "page": 84,
     "quote": "As he crossed Grattan Bridge he looked down the river towards the lower quays and pitied the poor stunted houses. They seemed to him a band of tramps, huddled together along the riverbanks, their old coats covered with dust and soot, stupefied by the panorama of sunset and waiting for the first chill of night bid them arise, shake themselves and begone\" (73). \"There were so many things he wanted to describe: his sensation of a few hours before on Grattan Bridge, for example",
@@ -2763,8 +2596,6 @@
    "properties": {
     "story": "A Little Cloud",
     "name": "Isle of Man",
-    "description": "\"A Little Cloud\"\n[somewhere Chandler has been]\n--Have you never been anywhere even for a trip?\n--I've been to the Isle of Man, said Little Chandler.\nIgnatius Gallaher laughed.\n--The Isle of Man! he said. Go to London or Paris: Paris, for choice. That'd do you good\" (76).",
-    "story_label": "A Little Cloud",
     "gloss": "somewhere Chandler has been",
     "page": 76,
     "quote": "--Have you never been anywhere even for a trip? --I've been to the Isle of Man, said Little Chandler. Ignatius Gallaher laughed. --The Isle of Man! he said. Go to London or Paris: Paris, for choice. That'd do you good",
@@ -2784,8 +2615,6 @@
    "properties": {
     "story": "A Little Cloud",
     "name": "Paris",
-    "description": "\"A Little Cloud\"\n[where Gallaher suggests Chandler go]\n\"--Go to London or Paris: Paris, for choice. That'd do you good.\n--Have you seen Paris?\" (76)\n\"--It's not so beautiful, you know. Of course, it is beautiful.... But\nit's the life of Paris; that's the thing. Ah, there's no city like Paris\nfor gaiety, movement, excitement....\" (76)\n\"--Everything in Paris is gay, said Ignatius Gallaher. They believe in\nenjoying life -- and don't you think they're right? If you want to enjoy\nyourself properly you must go to Paris. And, mind you, they've a great\nfeeling for the Irish there\" (77).\n\"--Tell me, he said, is it true that Paris is so... immoral as they say?\nIgnatius Gallaher made a catholic gesture with his right arm.\n--Every place is immoral, he said. Of course you do find spicy bits in Paris. Go to one of the students' balls, for instance\" (77).\n\"There's no woman like the Parisienne -- for style, for go\" (77).",
-    "story_label": "A Little Cloud",
     "gloss": "where Gallaher suggests Chandler go",
     "page": 77,
     "quote": "--Go to London or Paris: Paris, for choice. That'd do you good. --Have you seen Paris?\" (76) \"--It's not so beautiful, you know. Of course, it is beautiful.... But it's the life of Paris; that's the thing. Ah, there's no city like Paris for gaiety, movement, excitement....\" (76) \"--Everything in Paris is gay, said Ignatius Gallaher. They believe in enjoying life -- and don't you think they're right? If you want to enjoy yourself properly you must go to Paris. And, mind you, they've a great feeling for the Irish there\" (77). \"--Tell me, he said, is it true that Paris is so... immoral as they say? Ignatius Gallaher made a catholic gesture with his right arm. --Every place is immoral, he said. Of course you do find spicy bits in Paris. Go to one of the students' balls, for instance\" (77). \"There's no woman like the Parisienne -- for style, for go",
@@ -2805,8 +2634,6 @@
    "properties": {
     "story": "A Little Cloud",
     "name": "Moulin Rouge",
-    "description": "\"A Little Cloud\"\n[a place Gallaher has been]\n\"--I've been to the Moulin Rouge, Ignatius Gallaher continued when the barman had removed their glasses, and I've been to all the Bohemian cafes. Hot stuff! Not for a pious chap like you, Tommy\" (76).",
-    "story_label": "A Little Cloud",
     "gloss": "a place Gallaher has been",
     "page": 76,
     "quote": "--I've been to the Moulin Rouge, Ignatius Gallaher continued when the barman had removed their glasses, and I've been to all the Bohemian cafes. Hot stuff! Not for a pious chap like you, Tommy",
@@ -2826,8 +2653,6 @@
    "properties": {
     "story": "A Little Cloud",
     "name": "Berlin",
-    "description": "\"A Little Cloud\"\n[a place Gallaher likes]\n\"He summarised the vices of many capitals and seemed inclined to award the palm to Berlin\" (78).",
-    "story_label": "A Little Cloud",
     "gloss": "a place Gallaher likes",
     "page": 78,
     "quote": "He summarised the vices of many capitals and seemed inclined to award the palm to Berlin",
@@ -2847,7 +2672,6 @@
    "properties": {
     "story": "A Little Cloud",
     "name": "\"A Little Cloud\" Route",
-    "description": "[The route Chandler takes from his office to meet Gallaher.]",
     "gloss": "The route Chandler takes from his office to meet Gallaher.",
     "quote": "",
     "kind": "route"
@@ -2983,7 +2807,6 @@
    "properties": {
     "story": "Counterparts",
     "name": "O'Neill's",
-    "description": "[where Farrington goes to get a quick drink before finishing his copies; where he considers going to borrow money]\n\"He was now safe in the dark snug of O'Neill's\nshop, and filling up the little window that looked into the bar with his\ninflamed face, the colour of dark wine or dark meat, he called out:\n'Here, Pat, give us a g.p., like a good fellow'\" (88)\n\"On the stairs a moist pungent odour of\nperfumes saluted his nose: evidently Miss Delacour had come while he\nwas out in O'Neill's\" (89).\n\"The fog had begun to chill him and he wondered could he touch Pat in\nO'Neill's. He could not touch him for more than a bob--and a bob was\nno use\" (92).",
     "gloss": "where Farrington goes to get a quick drink before finishing his copies; where he considers going to borrow money",
     "page": 92,
     "quote": "He was now safe in the dark snug of O'Neill's shop, and filling up the little window that looked into the bar with his inflamed face, the colour of dark wine or dark meat, he called out: 'Here, Pat, give us a g.p., like a good fellow'\" (88) \"On the stairs a moist pungent odour of perfumes saluted his nose: evidently Miss Delacour had come while he was out in O'Neill's\" (89). \"The fog had begun to chill him and he wondered could he touch Pat in O'Neill's. He could not touch him for more than a bob--and a bob was no use",
@@ -3003,8 +2826,6 @@
    "properties": {
     "story": "Counterparts",
     "name": "Eustace Street",
-    "description": "\"Counterparts\"\n[where Farrington works]\n\"Darkness, accompanied by a thick fog, was gaining upon the dusk of February and the lamps in Eustace Street had been lit\" (89).",
-    "story_label": "Counterparts",
     "gloss": "where Farrington works",
     "page": 89,
     "quote": "Darkness, accompanied by a thick fog, was gaining upon the dusk of February and the lamps in Eustace Street had been lit",
@@ -3024,8 +2845,6 @@
    "properties": {
     "story": "Counterparts",
     "name": "Fleet Street",
-    "description": "\"Counterparts\"\n[where Farrington pawns his watch]\n\"Suddenly, as he was fingering his watch-chain, he thought of Terry\nKelly's pawn-office in Fleet Street. That was the dart! Why didn't he\nthink of it sooner?\" (92)",
-    "story_label": "Counterparts",
     "gloss": "where Farrington pawns his watch",
     "page": 92,
     "quote": "Suddenly, as he was fingering his watch-chain, he thought of Terry Kelly's pawn-office in Fleet Street. That was the dart! Why didn't he think of it sooner?",
@@ -3045,8 +2864,6 @@
    "properties": {
     "story": "Counterparts",
     "name": "Temple Bar",
-    "description": "\"Counterparts\"\n[where the alley is that Farrington cuts through to get to the pawn office]\n\"He went through the narrow alley of Temple Bar quickly, muttering to\nhimself that they could all go to hell because he was going to have a\ngood night of it\" (92-93).",
-    "story_label": "Counterparts",
     "gloss": "where the alley is that Farrington cuts through to get to the pawn office",
     "quote": "He went through the narrow alley of Temple Bar quickly, muttering to himself that they could all go to hell because he was going to have a good night of it\" (92-93).",
     "kind": "place",
@@ -3065,8 +2882,6 @@
    "properties": {
     "story": "Counterparts",
     "name": "Westmoreland Street",
-    "description": "\"Counterparts\"\n[the busy street Farrington takes to get to the first bar]\n\"In Westmoreland Street the footpaths were crowded with young men and\nwomen returning from business and ragged urchins ran here and there\nyelling out the names of the evening editions\" (93).",
-    "story_label": "Counterparts",
     "gloss": "the busy street Farrington takes to get to the first bar",
     "page": 93,
     "quote": "In Westmoreland Street the footpaths were crowded with young men and women returning from business and ragged urchins ran here and there yelling out the names of the evening editions",
@@ -3086,8 +2901,6 @@
    "properties": {
     "story": "Counterparts",
     "name": "Davy Byrne's",
-    "description": "\"Counterparts\"\n[the pub where Farrington meets Nosey Flynn]\n\"Nosey Flynn was sitting up in his usual corner of Davy Byrne's and, when he heard the story, he stood Farrington a half-one, saying it was as smart a thing as ever he heard\" (93).",
-    "story_label": "Counterparts",
     "gloss": "the pub where Farrington meets Nosey Flynn",
     "page": 93,
     "quote": "Nosey Flynn was sitting up in his usual corner of Davy Byrne's and, when he heard the story, he stood Farrington a half-one, saying it was as smart a thing as ever he heard",
@@ -3107,8 +2920,6 @@
    "properties": {
     "story": "Counterparts",
     "name": "Fownes Street",
-    "description": "\"Counterparts\"\n[where O'Halloran made his retort to a clerk in an office he was in]\n\"O'Halloran stood tailors of malt, hot, all round and told the story of\nthe retort he had made to the chief clerk when he was in Callan's of\nFownes's Street; but, as the retort was after the manner of the liberal\nshepherds in the eclogues, he had to admit that it was not as clever as\nFarrington's retort\" (93).",
-    "story_label": "Counterparts",
     "gloss": "where O'Halloran made his retort to a clerk in an office he was in",
     "page": 93,
     "quote": "O'Halloran stood tailors of malt, hot, all round and told the story of the retort he had made to the chief clerk when he was in Callan's of Fownes's Street; but, as the retort was after the manner of the liberal shepherds in the eclogues, he had to admit that it was not as clever as Farrington's retort",
@@ -3128,8 +2939,6 @@
    "properties": {
     "story": "Counterparts",
     "name": "Duke Street",
-    "description": "\"Counterparts\"\n[where Higgins and Nosey Flynn break off from the group of men who are going to continue to drink]\n\"At the corner of Duke Street Higgins and Nosey Flynn bevelled off to the\nleft while the other three turned back towards the city\" (94).",
-    "story_label": "Counterparts",
     "gloss": "where Higgins and Nosey Flynn break off from the group of men who are going to continue to drink",
     "page": 94,
     "quote": "At the corner of Duke Street Higgins and Nosey Flynn bevelled off to the left while the other three turned back towards the city",
@@ -3149,8 +2958,6 @@
    "properties": {
     "story": "Counterparts",
     "name": "Scotch House",
-    "description": "\"Counterparts\"\n[where the men go after Davy Byrne's]\n\"Rain was drizzling down on the cold streets and, when they reached the Ballast Office, Farrington suggested the Scotch House. The bar was full of men and loud with the noise of tongues and glasses\" (94).\n\"When the Scotch House closed they went round to Mulligan's\" (95).",
-    "story_label": "Counterparts",
     "gloss": "where the men go after Davy Byrne's",
     "page": 95,
     "quote": "Rain was drizzling down on the cold streets and, when they reached the Ballast Office, Farrington suggested the Scotch House. The bar was full of men and loud with the noise of tongues and glasses\" (94). \"When the Scotch House closed they went round to Mulligan's",
@@ -3170,8 +2977,6 @@
    "properties": {
     "story": "Counterparts",
     "name": "Poolbeg Street",
-    "description": "\"Counterparts\"\n[where Mulligan's is, the third bar of the night]\n\"Weathers made them all have just one little tincture at his expense and\npromised to meet them later on at Mulligan's in Poolbeg Street\" (94).",
-    "story_label": "Counterparts",
     "gloss": "where Mulligan's is, the third bar of the night",
     "page": 94,
     "quote": "Weathers made them all have just one little tincture at his expense and promised to meet them later on at Mulligan's in Poolbeg Street",
@@ -3191,7 +2996,6 @@
    "properties": {
     "story": "Counterparts",
     "name": "London",
-    "description": "[where the woman Farrington admires is from, judging by her accent]\n\"She glanced at him once or twice and, when the party was leaving the room, she brushed against his chair and said \"O, pardon!\" in a London accent\" (95).",
     "gloss": "where the woman Farrington admires is from, judging by her accent",
     "page": 95,
     "quote": "She glanced at him once or twice and, when the party was leaving the room, she brushed against his chair and said \"O, pardon!\" in a London accent",
@@ -3211,8 +3015,6 @@
    "properties": {
     "story": "Counterparts",
     "name": "O'Connell Bridge",
-    "description": "\"Counterparts\"\n[where Farrington stands, waiting for the Sandymount tram, after losing the arm wrestling contest]\n\"A very sullen-faced man stood at the corner of O'Connell Bridge waiting for the little Sandymount tram to take him home\" (96).",
-    "story_label": "Counterparts",
     "gloss": "where Farrington stands, waiting for the Sandymount tram, after losing the arm wrestling contest",
     "page": 96,
     "quote": "A very sullen-faced man stood at the corner of O'Connell Bridge waiting for the little Sandymount tram to take him home",
@@ -3231,8 +3033,6 @@
    "properties": {
     "story": "Counterparts",
     "name": "Shelbourne Road",
-    "description": "\"Counterparts\"\n[where Farrington lives]\n\"His tram let him down at Shelbourne Road and he steered his great body along in the shadow of the wall of the barracks\" (97).",
-    "story_label": "Counterparts",
     "gloss": "where Farrington lives",
     "page": 97,
     "quote": "His tram let him down at Shelbourne Road and he steered his great body along in the shadow of the wall of the barracks",
@@ -3252,7 +3052,6 @@
    "properties": {
     "story": "Counterparts",
     "name": "\"Counterparts\" Route",
-    "description": "Farrington's path between the office, the bars, and his house.",
     "quote": "Farrington's path between the office, the bars, and his house.",
     "kind": "route"
    },
@@ -3587,8 +3386,6 @@
    "properties": {
     "story": "Clay",
     "name": "Ballsbridge",
-    "description": "\"Clay\"\n[where Dublin by Lamplight is located]\n\"From Ballsbridge to the Pillar, twenty minutes; from the Pillar to\nDrumcondra, twenty minutes; and twenty minutes to buy the things. She\nwould be there before eight\" (100).\n(address from Gifford, pp. 77)",
-    "story_label": "Clay",
     "gloss": "where Dublin by Lamplight is located",
     "quote": "From Ballsbridge to the Pillar, twenty minutes; from the Pillar to Drumcondra, twenty minutes; and twenty minutes to buy the things. She would be there before eight\" (100). (address from Gifford, pp. 77)",
     "kind": "place",
@@ -3607,7 +3404,6 @@
    "properties": {
     "story": "Clay",
     "name": "Nelson's Pillar",
-    "description": "[one stop along Maria's route]\n\"From Ballsbridge to the Pillar, twenty minutes; from the Pillar to\nDrumcondra, twenty minutes; and twenty minutes to buy the things. She\nwould be there before eight\" (100)",
     "gloss": "one stop along Maria's route",
     "page": 100,
     "quote": "From Ballsbridge to the Pillar, twenty minutes; from the Pillar to Drumcondra, twenty minutes; and twenty minutes to buy the things. She would be there before eight",
@@ -3627,8 +3423,6 @@
    "properties": {
     "story": "Clay",
     "name": "Drumcondra",
-    "description": "\"Clay\"\n[where Joe lives]\n\"From Ballsbridge to the Pillar, twenty minutes; from the Pillar to\nDrumcondra, twenty minutes; and twenty minutes to buy the things. She\nwould be there before eight\" (100).\n\"She thought she would have to stand in the Drumcondra tram because none\nof the young men seemed to notice her but an elderly gentleman made room\nfor her\" (102).",
-    "story_label": "Clay",
     "gloss": "where Joe lives",
     "page": 102,
     "quote": "From Ballsbridge to the Pillar, twenty minutes; from the Pillar to Drumcondra, twenty minutes; and twenty minutes to buy the things. She would be there before eight\" (100). \"She thought she would have to stand in the Drumcondra tram because none of the young men seemed to notice her but an elderly gentleman made room for her",
@@ -3648,8 +3442,6 @@
    "properties": {
     "story": "Clay",
     "name": "Belfast",
-    "description": "\"Clay\"\n[where Maria's purse was purchased]\n\"She took out her purse with the silver clasps and read again the words A Present from Belfast. She was very fond of that purse because Joe had brought it to her five years before when he and Alphy had gone to Belfast on a Whit-Monday trip\" (100).",
-    "story_label": "Clay",
     "gloss": "where Maria's purse was purchased",
     "page": 100,
     "quote": "She took out her purse with the silver clasps and read again the words A Present from Belfast. She was very fond of that purse because Joe had brought it to her five years before when he and Alphy had gone to Belfast on a Whit-Monday trip",
@@ -3669,8 +3461,6 @@
    "properties": {
     "story": "Clay",
     "name": "Downes's Cakeshop",
-    "description": "\"Clay\"\n[where Maria buys penny cakes]\n\"She went into Downes's cake-shop but the shop was so full of people that\nit was a long time before she could get herself attended to...She decided to buy some plumcake but Downes's plumcake had not enough\nalmond icing on top of it so she went over to a shop in Henry Street\" (102).",
-    "story_label": "Clay",
     "gloss": "where Maria buys penny cakes",
     "page": 102,
     "quote": "She went into Downes's cake-shop but the shop was so full of people that it was a long time before she could get herself attended to...She decided to buy some plumcake but Downes's plumcake had not enough almond icing on top of it so she went over to a shop in Henry Street",
@@ -3690,8 +3480,6 @@
    "properties": {
     "story": "Clay",
     "name": "Henry Street",
-    "description": "\"Clay\"\n[where Maria buys plumcake]\n\"She decided to buy some plumcake but Downes's plumcake had not enough\nalmond icing on top of it so she went over to a shop in Henry Street\" (102).",
-    "story_label": "Clay",
     "gloss": "where Maria buys plumcake",
     "page": 102,
     "quote": "She decided to buy some plumcake but Downes's plumcake had not enough almond icing on top of it so she went over to a shop in Henry Street",
@@ -3711,7 +3499,6 @@
    "properties": {
     "story": "Clay",
     "name": "\"Clay\" Route",
-    "description": "The route Maria travels to visit Joe.\n(end route according to Gifford)",
     "quote": "The route Maria travels to visit Joe. (end route according to Gifford)",
     "kind": "route"
    },
@@ -3882,8 +3669,6 @@
    "properties": {
     "story": "A Painful Case",
     "name": "Chapelizod",
-    "description": "\"A Painful Case\"\n[where Mr. Duffy lives]\n\"MR. JAMES DUFFY lived in Chapelizod because he wished to live as far as\npossible from the city of which he was a citizen and because he found\nall the other suburbs of Dublin mean, modern and pretentious. He lived\nin an old sombre house and from his windows he could look into the\ndisused distillery or upwards along the shallow river on which Dublin is\nbuilt\" (107).",
-    "story_label": "A Painful Case",
     "gloss": "where Mr. Duffy lives",
     "page": 107,
     "quote": "MR. JAMES DUFFY lived in Chapelizod because he wished to live as far as possible from the city of which he was a citizen and because he found all the other suburbs of Dublin mean, modern and pretentious. He lived in an old sombre house and from his windows he could look into the disused distillery or upwards along the shallow river on which Dublin is built",
@@ -3903,8 +3688,6 @@
    "properties": {
     "story": "A Painful Case",
     "name": "Baggot Street",
-    "description": "\"A Painful Case\"\n[where Duffy works]\n\"He had been for many years cashier of a private bank in Baggot Street\" (108).",
-    "story_label": "A Painful Case",
     "gloss": "where Duffy works",
     "page": 108,
     "quote": "He had been for many years cashier of a private bank in Baggot Street",
@@ -3924,8 +3707,6 @@
    "properties": {
     "story": "A Painful Case",
     "name": "Dan Burke's",
-    "description": "\"A Painful Case\"\n[where Duffy eats lunch]\n\"At midday he went to Dan Burke's and took his lunch -- a bottle of lager beer and a small trayful of arrowroot biscuits\" (108).\n(according to Gifford)",
-    "story_label": "A Painful Case",
     "gloss": "where Duffy eats lunch",
     "quote": "At midday he went to Dan Burke's and took his lunch -- a bottle of lager beer and a small trayful of arrowroot biscuits\" (108). (according to Gifford)",
     "kind": "place",
@@ -3944,8 +3725,6 @@
    "properties": {
     "story": "A Painful Case",
     "name": "George's Street",
-    "description": "\"A Painful Case\"\n[where Duffy eats dinner]\n\"He dined in an eating-house in George's Street where he felt himself safe from the society o Dublin's gilded youth and where there was a certain plain honesty in the bill of fare\" (108-09).",
-    "story_label": "A Painful Case",
     "gloss": "where Duffy eats dinner",
     "quote": "He dined in an eating-house in George's Street where he felt himself safe from the society o Dublin's gilded youth and where there was a certain plain honesty in the bill of fare\" (108-09).",
     "kind": "place",
@@ -3964,8 +3743,6 @@
    "properties": {
     "story": "A Painful Case",
     "name": "Rotunda",
-    "description": "\"A Painful Case\"\n[where Duffy meets Mrs. Sinico]\n\"One evening he found himself sitting beside two ladies in the Rotunda\" (109).",
-    "story_label": "A Painful Case",
     "gloss": "where Duffy meets Mrs. Sinico",
     "page": 109,
     "quote": "One evening he found himself sitting beside two ladies in the Rotunda",
@@ -3985,8 +3762,6 @@
    "properties": {
     "story": "A Painful Case",
     "name": "Earlsfort Terrace",
-    "description": "\"A Painful Case\"\n[where Duffy meets Mrs. Sinico for a second time]\n\"He met her again a few weeks afterwards at a concert in Earlsfort\nTerrace and seized the moments when her daughter's attention was\ndiverted to become intimate\" (110).",
-    "story_label": "A Painful Case",
     "gloss": "where Duffy meets Mrs. Sinico for a second time",
     "page": 110,
     "quote": "He met her again a few weeks afterwards at a concert in Earlsfort Terrace and seized the moments when her daughter's attention was diverted to become intimate",
@@ -4006,8 +3781,6 @@
    "properties": {
     "story": "A Painful Case",
     "name": "Leghorn",
-    "description": "\"A Painful Case\"\n[where Mr. Sinico is from]\n\"Her name was Mrs. Sinico. Her husband's great-great-grandfather had come from Leghorn\" (110).",
-    "story_label": "A Painful Case",
     "gloss": "where Mr. Sinico is from",
     "page": 110,
     "quote": "Her name was Mrs. Sinico. Her husband's great-great-grandfather had come from Leghorn",
@@ -4027,8 +3800,6 @@
    "properties": {
     "story": "A Painful Case",
     "name": "Holland",
-    "description": "\"A Painful Case\"\n[where Mr. Sinico sails on his mercantile ship]\n\"Her husband was captain of a mercantile boat plying between Dublin and Holland; and they had one child\" (110).",
-    "story_label": "A Painful Case",
     "gloss": "where Mr. Sinico sails on his mercantile ship",
     "page": 110,
     "quote": "Her husband was captain of a mercantile boat plying between Dublin and Holland; and they had one child",
@@ -4048,8 +3819,6 @@
    "properties": {
     "story": "A Painful Case",
     "name": "Parkgate",
-    "description": "\"A Painful Case\"\n[where the cakeshop is that Duffy and Mrs. Sinico meet for the last time]\n\"As he did not wish their last interview to be troubled by the influence\nof their ruined confessional they meet in a little cakeshop near the\nParkgate\" (112).",
-    "story_label": "A Painful Case",
     "gloss": "where the cakeshop is that Duffy and Mrs. Sinico meet for the last time",
     "page": 112,
     "quote": "As he did not wish their last interview to be troubled by the influence of their ruined confessional they meet in a little cakeshop near the Parkgate",
@@ -4069,8 +3838,6 @@
    "properties": {
     "story": "A Painful Case",
     "name": "City of Dublin Hospital",
-    "description": "\"A Painful Case\"\n[the hospital where Mrs. Sinico is taken]\n\"Today at the City of Dublin Hospital the Deputy Coroner (in the absence\nof Mr. Leverett) held an inquest on the body of Mrs. Emily Sinico, aged\nforty-three years, who was killed at Sydney Parade Station yesterday\nevening\" (113).",
-    "story_label": "A Painful Case",
     "gloss": "the hospital where Mrs. Sinico is taken",
     "page": 113,
     "quote": "Today at the City of Dublin Hospital the Deputy Coroner (in the absence of Mr. Leverett) held an inquest on the body of Mrs. Emily Sinico, aged forty-three years, who was killed at Sydney Parade Station yesterday evening",
@@ -4090,8 +3857,6 @@
    "properties": {
     "story": "A Painful Case",
     "name": "Sydney Parade Station",
-    "description": "\"A Painful Case\"\n[where Mrs. Sinico is hit by the train]\n\"Today at the City of Dublin Hospital the Deputy Coroner (in the absence of Mr. Leverett) held an inquest on the body of Mrs. Emily Sinico, aged forty-three years, who was killed at Sydney Parade Station yesterday evening\" (113).",
-    "story_label": "A Painful Case",
     "gloss": "where Mrs. Sinico is hit by the train",
     "page": 113,
     "quote": "Today at the City of Dublin Hospital the Deputy Coroner (in the absence of Mr. Leverett) held an inquest on the body of Mrs. Emily Sinico, aged forty-three years, who was killed at Sydney Parade Station yesterday evening",
@@ -4111,8 +3876,6 @@
    "properties": {
     "story": "A Painful Case",
     "name": "Rotterdam",
-    "description": "\"A Painful Case\"\n[where Mr. Sinico is when he gets news of his wife's death]\n\"He stated that the deceased was his wife. He was not in Dublin at the\ntime of the accident as he had arrived only that morning from Rotterdam\" (114).",
-    "story_label": "A Painful Case",
     "gloss": "where Mr. Sinico is when he gets news of his wife's death",
     "page": 114,
     "quote": "He stated that the deceased was his wife. He was not in Dublin at the time of the accident as he had arrived only that morning from Rotterdam",
@@ -4132,8 +3895,6 @@
    "properties": {
     "story": "A Painful Case",
     "name": "Lucan Road",
-    "description": "\"A Painful Case\"\n[the view from Duffy's window as he reads the newspaper story]\n\"The river lay quiet beside the empty distillery and from time to time a light appeared in some house on the Lucan road\" (115).",
-    "story_label": "A Painful Case",
     "gloss": "the view from Duffy's window as he reads the newspaper story",
     "page": 115,
     "quote": "The river lay quiet beside the empty distillery and from time to time a light appeared in some house on the Lucan road",
@@ -4153,8 +3914,6 @@
    "properties": {
     "story": "A Painful Case",
     "name": "Chapelizod Bridge?",
-    "description": "\"A Painful Case\"\n[a place Duffy passes as he walks]\n\"When he came to the public-house at Chapelizod Bridge he went in and ordered a hot punch\" (116).",
-    "story_label": "A Painful Case",
     "gloss": "a place Duffy passes as he walks",
     "page": 116,
     "quote": "When he came to the public-house at Chapelizod Bridge he went in and ordered a hot punch",
@@ -4174,8 +3933,6 @@
    "properties": {
     "story": "A Painful Case",
     "name": "County Kildare",
-    "description": "\"A Painful Case\"\n[the county the estate is in that the men are talking about]\n\"There were five or six workingmen in the shop discussing the value of a gentleman's estate in County Kildare\" (116).",
-    "story_label": "A Painful Case",
     "gloss": "the county the estate is in that the men are talking about",
     "page": 116,
     "quote": "There were five or six workingmen in the shop discussing the value of a gentleman's estate in County Kildare",
@@ -4195,8 +3952,6 @@
    "properties": {
     "story": "A Painful Case",
     "name": "Magazine Hill",
-    "description": "\"A Painful Case\"\n[where Duffy sits]\n\"When he gained the crest of the Magazine Hill he halted and looked along\nthe river towards Dublin, the lights of which burned redly and\nhospitably in the cold night\" (117).",
-    "story_label": "A Painful Case",
     "gloss": "where Duffy sits",
     "page": 117,
     "quote": "When he gained the crest of the Magazine Hill he halted and looked along the river towards Dublin, the lights of which burned redly and hospitably in the cold night",
@@ -4216,8 +3971,6 @@
    "properties": {
     "story": "A Painful Case",
     "name": "Kingsbridge Station",
-    "description": "\"A Painful Case\"\n[where Duffy watches and hears the train]\n\"Beyond the river he saw a goods train winding out of Kingsbridge\nStation, like a worm with a fiery head winding through the darkness,\nobstinately and laboriously. It passed slowly out of sight; but still he\nheard in his ears the laborious drone of the engine reiterating the\nsyllables of her name\" (117).",
-    "story_label": "A Painful Case",
     "gloss": "where Duffy watches and hears the train",
     "page": 117,
     "quote": "Beyond the river he saw a goods train winding out of Kingsbridge Station, like a worm with a fiery head winding through the darkness, obstinately and laboriously. It passed slowly out of sight; but still he heard in his ears the laborious drone of the engine reiterating the syllables of her name",
@@ -4237,8 +3990,6 @@
    "properties": {
     "story": "Ivy Day in the Committee Room",
     "name": "Wicklow Street",
-    "description": "\"Ivy Day in the Committee Room\"\n[where the Committee Room is]\n\"Mr. O'Connor had been engaged by Tierney's agent to canvass one part of\nthe ward but, as the weather was inclement and his boots let in the wet,\nhe spent a great part of the day sitting by the fire in the Committee\nRoom in Wicklow Street with Jack, the old caretaker\" (119).",
-    "story_label": "Ivy Day in the Committee Room",
     "gloss": "where the Committee Room is",
     "page": 119,
     "quote": "Mr. O'Connor had been engaged by Tierney's agent to canvass one part of the ward but, as the weather was inclement and his boots let in the wet, he spent a great part of the day sitting by the fire in the Committee Room in Wicklow Street with Jack, the old caretaker",
@@ -4258,8 +4009,6 @@
    "properties": {
     "story": "Ivy Day in the Committee Room",
     "name": "Christian Brothers School",
-    "description": "\"Ivy Day in the Committee Room\"\n[where old Jack sent his son to school]\n\"--Ah, yes, he said, continuing, it's hard to know what way to bring up children. Now who'd think he'd turn out like that! I sent him to\nthe Christian Brothers and I done what I could him, and there he goes boosing about. I tried to make him someway decent\" (119).",
-    "story_label": "Ivy Day in the Committee Room",
     "gloss": "where old Jack sent his son to school",
     "page": 119,
     "quote": "--Ah, yes, he said, continuing, it's hard to know what way to bring up children. Now who'd think he'd turn out like that! I sent him to the Christian Brothers and I done what I could him, and there he goes boosing about. I tried to make him someway decent",
@@ -4279,8 +4028,6 @@
    "properties": {
     "story": "Ivy Day in the Committee Room",
     "name": "Aungier Street",
-    "description": "\"Ivy Day in the Committee Room\"\n[where O'Connor has been canvassing]\n\"--Did you serve Aungier Street? he asked Mr. O'Connor.\n--Yes, said Mr. O'Connor, beginning to search his pockets for memoranda\" (122).",
-    "story_label": "Ivy Day in the Committee Room",
     "gloss": "where O'Connor has been canvassing",
     "page": 122,
     "quote": "--Did you serve Aungier Street? he asked Mr. O'Connor. --Yes, said Mr. O'Connor, beginning to search his pockets for memoranda",
@@ -4300,8 +4047,6 @@
    "properties": {
     "story": "Ivy Day in the Committee Room",
     "name": "Mary's Lane",
-    "description": "\"Ivy Day in the Committee Room\"\n[where Richard Tierney's father had a shop]\n\"--O, he's as tricky as they make 'em, said Mr. Henchy. He hasn't got those little pigs' eyes for nothing. Blast his soul! Couldn't he pay up like a man instead of: 'O, now, Mr. Henchy, I must speak to Mr. Fanning.... I've spent a lot of money'? Mean little schoolboy of hell! I suppose he forgets the time his little old father kept the hand-me-down shop in Mary's Lane.\n--But is that a fact? asked Mr. O'Connor.\n--God, yes, said Mr. Henchy. Did you never hear that? And the men used to go in on Sunday morning before the houses were open to buy a waistcoat or a trousers--moya! But Tricky Dicky's little old father always had a tricky little black bottle up in a corner. Do you mind now? That's that. That's where he first saw the light\" (123).",
-    "story_label": "Ivy Day in the Committee Room",
     "gloss": "where Richard Tierney's father had a shop",
     "page": 123,
     "quote": "--O, he's as tricky as they make 'em, said Mr. Henchy. He hasn't got those little pigs' eyes for nothing. Blast his soul! Couldn't he pay up like a man instead of: 'O, now, Mr. Henchy, I must speak to Mr. Fanning.... I've spent a lot of money'? Mean little schoolboy of hell! I suppose he forgets the time his little old father kept the hand-me-down shop in Mary's Lane. --But is that a fact? asked Mr. O'Connor. --God, yes, said Mr. Henchy. Did you never hear that? And the men used to go in on Sunday morning before the houses were open to buy a waistcoat or a trousers--moya! But Tricky Dicky's little old father always had a tricky little black bottle up in a corner. Do you mind now? That's that. That's where he first saw the light",
@@ -4321,8 +4066,6 @@
    "properties": {
     "story": "Ivy Day in the Committee Room",
     "name": "Suffolk Street",
-    "description": "\"Ivy Day in the Committee Room\"\n[where O'Connor saw Cowley and two others]\n\"--There's some deal on in that quarter, said Mr. O'Connor thoughtfully. I saw the three of them hard at it yesterday at Suffolk Street corner\" (127).",
-    "story_label": "Ivy Day in the Committee Room",
     "gloss": "where O'Connor saw Cowley and two others",
     "page": 127,
     "quote": "--There's some deal on in that quarter, said Mr. O'Connor thoughtfully. I saw the three of them hard at it yesterday at Suffolk Street corner",
@@ -4342,8 +4085,6 @@
    "properties": {
     "story": "Ivy Day in the Committee Room",
     "name": "Dawson Street",
-    "description": "\"Ivy Day in the Committee Room\"\n[where Henchy has been canvassing]\n\"--Yes. I got him one or two sure things in Dawson Street, Crofton and\nmyself\" (129).",
-    "story_label": "Ivy Day in the Committee Room",
     "gloss": "where Henchy has been canvassing",
     "page": 129,
     "quote": "--Yes. I got him one or two sure things in Dawson Street, Crofton and myself",
@@ -4363,8 +4104,6 @@
    "properties": {
     "story": "A Mother",
     "name": "Ormond Quay",
-    "description": "\"A Mother\"\n[where Mr Kearney works as a bootmaker]\n\"However, when she drew near the limit and her friends began to loosen their tongues about her, she silenced them by marrying Mr. Kearney, who was a bootmaker on Ormond Quay\" (137).",
-    "story_label": "A Mother",
     "gloss": "where Mr Kearney works as a bootmaker",
     "page": 137,
     "quote": "However, when she drew near the limit and her friends began to loosen their tongues about her, she silenced them by marrying Mr. Kearney, who was a bootmaker on Ormond Quay",
@@ -4384,8 +4123,6 @@
    "properties": {
     "story": "A Mother",
     "name": "Skerries",
-    "description": "\"A Mother\"\n[one of the places the Kearney's vacation]\n\"Every year in the month of July Mrs. Kearney found occasion to say to some friend:\n--My good man is packing us off to Skerries for a few weeks.\nIf it was not Skerries it was Howth or Greystones\" (137).",
-    "story_label": "A Mother",
     "gloss": "one of the places the Kearney's vacation",
     "page": 137,
     "quote": "Every year in the month of July Mrs. Kearney found occasion to say to some friend: --My good man is packing us off to Skerries for a few weeks. If it was not Skerries it was Howth or Greystones",
@@ -4405,8 +4142,6 @@
    "properties": {
     "story": "A Mother",
     "name": "Howth",
-    "description": "\"A Mother\"\n[one of the places the Kearney's vacation]\n\"Every year in the month of July Mrs. Kearney found occasion to say to some friend:\n--My good man is packing us off to Skerries for a few weeks.\nIf it was not Skerries it was Howth or Greystones\" (137).",
-    "story_label": "A Mother",
     "gloss": "one of the places the Kearney's vacation",
     "page": 137,
     "quote": "Every year in the month of July Mrs. Kearney found occasion to say to some friend: --My good man is packing us off to Skerries for a few weeks. If it was not Skerries it was Howth or Greystones",
@@ -4426,8 +4161,6 @@
    "properties": {
     "story": "A Mother",
     "name": "Greystones",
-    "description": "\"A Mother\"\n[one of the places the Kearney's vacation]\n\"Every year in the month of July Mrs. Kearney found occasion to say to some friend:\n--My good man is packing us off to Skerries for a few weeks.\nIf it was not Skerries it was Howth or Greystones\" (137).",
-    "story_label": "A Mother",
     "gloss": "one of the places the Kearney's vacation",
     "page": 137,
     "quote": "Every year in the month of July Mrs. Kearney found occasion to say to some friend: --My good man is packing us off to Skerries for a few weeks. If it was not Skerries it was Howth or Greystones",
@@ -4447,8 +4180,6 @@
    "properties": {
     "story": "A Mother",
     "name": "Cathedral Street",
-    "description": "\"A Mother\"\n[the street whose corner the Kearneys and their friends gather occasionally]\n\"On special Sundays, when Mr. Kearney went with his family to the pro-cathedral, a little crowd of people would assemble after mass at the corner of Cathedral Street\" (137).",
-    "story_label": "A Mother",
     "gloss": "the street whose corner the Kearneys and their friends gather occasionally",
     "page": 137,
     "quote": "On special Sundays, when Mr. Kearney went with his family to the pro-cathedral, a little crowd of people would assemble after mass at the corner of Cathedral Street",
@@ -4468,8 +4199,6 @@
    "properties": {
     "story": "A Mother",
     "name": "Antient Concert Rooms",
-    "description": "\"A Mother\"\n[where the concert series takes place]\n\"Therefore she was not surprised when one day Mr. Holohan came to her and proposed that her daughter should be the accompanist at a series of four grand concerts which his Society was going to give in the Antient Concert Rooms\" (138).\n\"When Mrs. Kearney arrived with her daughter at the Antient Concert Rooms\non Wednesday night she did not like the look of things\" (139).\n\"Mrs. Kearney, with her husband and\ndaughter, arrived at the Antient Concert Rooms three-quarters of an hour before the time at which the concert was to begin\" (141).",
-    "story_label": "A Mother",
     "gloss": "where the concert series takes place",
     "page": 141,
     "quote": "Therefore she was not surprised when one day Mr. Holohan came to her and proposed that her daughter should be the accompanist at a series of four grand concerts which his Society was going to give in the Antient Concert Rooms\" (138). \"When Mrs. Kearney arrived with her daughter at the Antient Concert Rooms on Wednesday night she did not like the look of things\" (139). \"Mrs. Kearney, with her husband and daughter, arrived at the Antient Concert Rooms three-quarters of an hour before the time at which the concert was to begin",
@@ -4489,8 +4218,6 @@
    "properties": {
     "story": "A Mother",
     "name": "Brown Thomas's",
-    "description": "\"A Mother\"\n[where Mrs Kearney buys the chermeuse]\n\"Everything went on smoothly. Mrs. Kearney bought some lovely blush-pink\ncharmeuse in Brown Thomas's to let into the front of Kathleen's dress\" (138).\n(According to Gifford the shop is located somewhere in Grafton Street.)",
-    "story_label": "A Mother",
     "gloss": "where Mrs Kearney buys the chermeuse",
     "quote": "Everything went on smoothly. Mrs. Kearney bought some lovely blush-pink charmeuse in Brown Thomas's to let into the front of Kathleen's dress\" (138). (According to Gifford the shop is located somewhere in Grafton Street.)",
     "kind": "place",
@@ -4509,8 +4236,6 @@
    "properties": {
     "story": "A Mother",
     "name": "London",
-    "description": "\"A Mother\"\n[where Madam Glynn is from]\n\"Mr. Holohan said that she was Madam Glynn from London\" (143).",
-    "story_label": "A Mother",
     "gloss": "where Madam Glynn is from",
     "page": 143,
     "quote": "Mr. Holohan said that she was Madam Glynn from London",
@@ -4530,8 +4255,6 @@
    "properties": {
     "story": "A Mother",
     "name": "Mansion House",
-    "description": "\"A Mother\"\n[where the American priest is speaking]\n\"The Freeman man had come in to say that he could not wait for the concert as he had to report the lecture which an American priest was giving in the Mansion House\" (144).",
-    "story_label": "A Mother",
     "gloss": "where the American priest is speaking",
     "page": 144,
     "quote": "The Freeman man had come in to say that he could not wait for the concert as he had to report the lecture which an American priest was giving in the Mansion House",
@@ -4551,8 +4274,6 @@
    "properties": {
     "story": "Grace",
     "name": "Grafton Street",
-    "description": "\"Grace\"\n[where the bar is]\n\"When they came out into Grafton Street, Mr. Power whistled for an outsider\" (153).",
-    "story_label": "Grace",
     "gloss": "where the bar is",
     "page": 153,
     "quote": "When they came out into Grafton Street, Mr. Power whistled for an outsider",
@@ -4572,8 +4293,6 @@
    "properties": {
     "story": "Grace",
     "name": "Westmoreland Street",
-    "description": "\"Grace\"\n[the direction the car drives]\n\"The car drove off towards Westmoreland Street\" (153).",
-    "story_label": "Grace",
     "gloss": "the direction the car drives",
     "page": 153,
     "quote": "The car drove off towards Westmoreland Street",
@@ -4593,8 +4312,6 @@
    "properties": {
     "story": "Grace",
     "name": "Crowe Street",
-    "description": "\"Grace\"\n[where Kernan's office is]\n\"Modern business methods had spared him only so far as to allow him a little office in Crowe Street, on the window blind of which was written the name of his firm with the address--London, E. C.\" (154)",
-    "story_label": "Grace",
     "gloss": "where Kernan's office is",
     "page": 154,
     "quote": "Modern business methods had spared him only so far as to allow him a little office in Crowe Street, on the window blind of which was written the name of his firm with the address--London, E. C.",
@@ -4614,8 +4331,6 @@
    "properties": {
     "story": "Grace",
     "name": "Dublin Castle",
-    "description": "\"Grace\"\n[where Mr Power works]\n\"Mr. Power, a much younger man, was employed in the Royal Irish Constabulary Office in Dublin Castle\" (154).",
-    "story_label": "Grace",
     "gloss": "where Mr Power works",
     "page": 154,
     "quote": "Mr. Power, a much younger man, was employed in the Royal Irish Constabulary Office in Dublin Castle",
@@ -4635,8 +4350,6 @@
    "properties": {
     "story": "Grace",
     "name": "The Glasnevin road",
-    "description": "\"Grace\"\n[where Kernan lives]\n\"The car halted before a small house on the Glasnevin road and Mr. Kernan was helped into the house\" (154).",
-    "story_label": "Grace",
     "gloss": "where Kernan lives",
     "page": 154,
     "quote": "The car halted before a small house on the Glasnevin road and Mr. Kernan was helped into the house",
@@ -4656,8 +4369,6 @@
    "properties": {
     "story": "Grace",
     "name": "Fogarty's",
-    "description": "\"Grace\"\n[where Mrs Kernan offers to go to get something for Mr power]\n\"--I'm so sorry, she continued, that I've nothing in the house to offer you. But if you wait a minute I'll send round to Fogarty's, at the corner\" (155).\n(Gifford notes that this location is a possibility [102].)",
-    "story_label": "Grace",
     "gloss": "where Mrs Kernan offers to go to get something for Mr power",
     "quote": "--I'm so sorry, she continued, that I've nothing in the house to offer you. But if you wait a minute I'll send round to Fogarty's, at the corner\" (155). (Gifford notes that this location is a possibility [102].)",
     "kind": "place",
@@ -4676,8 +4387,6 @@
    "properties": {
     "story": "Grace",
     "name": "Star of the Sea Church",
-    "description": "\"Grace\"\n[where the Kernans were married]\n\"In her days of courtship, Mr. Kernan had seemed to her a not ungallant figure: and she still hurried to the chapel door whenever a wedding was reported and, seeing the bridal pair, recalled with vivid pleasure how she had passed out of the Star of the Sea Church in Sandymount, leaning on the arm of a jovial well-fed man, who was dressed smartly in a frock-coat and lavender trousers and carried a silk hat gracefully balanced upon his other arm\" (156).",
-    "story_label": "Grace",
     "gloss": "where the Kernans were married",
     "page": 156,
     "quote": "In her days of courtship, Mr. Kernan had seemed to her a not ungallant figure: and she still hurried to the chapel door whenever a wedding was reported and, seeing the bridal pair, recalled with vivid pleasure how she had passed out of the Star of the Sea Church in Sandymount, leaning on the arm of a jovial well-fed man, who was dressed smartly in a frock-coat and lavender trousers and carried a silk hat gracefully balanced upon his other arm",
@@ -4697,8 +4406,6 @@
    "properties": {
     "story": "Grace",
     "name": "Glasgow",
-    "description": "\"Grace\"\n[where one of the Kernans' sons lives]\n\"Her two eldest sons were launched. One was in a draper's shop in Glasgow and the other was clerk to a tea-merchant in Belfast\" (156).",
-    "story_label": "Grace",
     "gloss": "where one of the Kernans' sons lives",
     "page": 156,
     "quote": "Her two eldest sons were launched. One was in a draper's shop in Glasgow and the other was clerk to a tea-merchant in Belfast",
@@ -4718,8 +4425,6 @@
    "properties": {
     "story": "Grace",
     "name": "Belfast",
-    "description": "\"Grace\"\n[where one of the Kernans' sons lives]\n\"Her two eldest sons were launched. One was in a draper's shop in Glasgow and the other was clerk to a tea-merchant in Belfast\" (156).",
-    "story_label": "Grace",
     "gloss": "where one of the Kernans' sons lives",
     "page": 156,
     "quote": "Her two eldest sons were launched. One was in a draper's shop in Glasgow and the other was clerk to a tea-merchant in Belfast",
@@ -4739,8 +4444,6 @@
    "properties": {
     "story": "Grace",
     "name": "Thomas Street",
-    "description": "\"Grace\"\n[where Mr Kernan books orders]\n\"He had never been violent since the boys had grown up, and she knew that he would walk to the end of Thomas Street and back again to book even a small order\" (156).",
-    "story_label": "Grace",
     "gloss": "where Mr Kernan books orders",
     "page": 156,
     "quote": "He had never been violent since the boys had grown up, and she knew that he would walk to the end of Thomas Street and back again to book even a small order",
@@ -4760,8 +4463,6 @@
    "properties": {
     "story": "Grace",
     "name": "M'Auley's",
-    "description": "\"Grace\"\n[where the men plan to meet before the retreat]\n\"--We can meet in M'Auley's, said Mr. M'Coy. That'll be the most convenient place\" (162).",
-    "story_label": "Grace",
     "gloss": "where the men plan to meet before the retreat",
     "page": 162,
     "quote": "--We can meet in M'Auley's, said Mr. M'Coy. That'll be the most convenient place",
@@ -4781,8 +4482,6 @@
    "properties": {
     "story": "Grace",
     "name": "Gardiner Street",
-    "description": "\"Grace\"\n[where the church is that Kernan goes to]\n\"The transept of the Jesuit Church in Gardiner Street was almost full; and still at every moment gentlemen entered from the side door and, directed by the lay-brother, walked on tiptoe along the aisles until they found seating accommodation\" (172).",
-    "story_label": "Grace",
     "gloss": "where the church is that Kernan goes to",
     "page": 172,
     "quote": "The transept of the Jesuit Church in Gardiner Street was almost full; and still at every moment gentlemen entered from the side door and, directed by the lay-brother, walked on tiptoe along the aisles until they found seating accommodation",
@@ -4959,8 +4658,6 @@
    "properties": {
     "story": "The Dead",
     "name": "Stoney Batter",
-    "description": "\"The Dead\"\n[the place Kate, Julia, and Mary Jane left after their brother Pat died]\n\"For years and years it had gone off in splendid style, as long as anyone could remember; ever since Kate and Julia, after the death of their brother Pat, had left the house in Stoney Batter and taken Mary Jane, their only niece, to live with them in the dark, gaunt house on Usher's Island, the upper part of which they had rented from Mr. Fulham, the corn-factor on the ground floor\" (176).",
-    "story_label": "The Dead",
     "gloss": "the place Kate, Julia, and Mary Jane left after their brother Pat died",
     "page": 176,
     "quote": "For years and years it had gone off in splendid style, as long as anyone could remember; ever since Kate and Julia, after the death of their brother Pat, had left the house in Stoney Batter and taken Mary Jane, their only niece, to live with them in the dark, gaunt house on Usher's Island, the upper part of which they had rented from Mr. Fulham, the corn-factor on the ground floor",
@@ -4980,8 +4677,6 @@
    "properties": {
     "story": "The Dead",
     "name": "Usher's Island",
-    "description": "\"The Dead\"\n[where the Misses Morkan live; the setting of the party]\n\"For years and years it had gone off in splendid style, as long as anyone could remember; ever since Kate and Julia, after the death of their brother Pat, had left the house in Stoney Batter and taken Mary Jane, their only niece, to live with them in the dark, gaunt house on Usher's Island, the upper part of which they had rented from Mr. Fulham, the corn-factor on the ground floor\" (176).",
-    "story_label": "The Dead",
     "gloss": "where the Misses Morkan live; the setting of the party",
     "page": 176,
     "quote": "For years and years it had gone off in splendid style, as long as anyone could remember; ever since Kate and Julia, after the death of their brother Pat, had left the house in Stoney Batter and taken Mary Jane, their only niece, to live with them in the dark, gaunt house on Usher's Island, the upper part of which they had rented from Mr. Fulham, the corn-factor on the ground floor",
@@ -5001,8 +4696,6 @@
    "properties": {
     "story": "The Dead",
     "name": "Haddington Road",
-    "description": "\"The Dead\"\n[where Mary Jane \"ha[s] the organ\"]\n\"Mary Jane, who was then a little girl in short clothes, was now the main prop of the household, for she had the organ in Haddington Road\" (176).",
-    "story_label": "The Dead",
     "gloss": "where Mary Jane \"ha[s] the organ\"",
     "page": 176,
     "quote": "Mary Jane, who was then a little girl in short clothes, was now the main prop of the household, for she had the organ in Haddington Road",
@@ -5022,8 +4715,6 @@
    "properties": {
     "story": "The Dead",
     "name": "Antient Concert Rooms",
-    "description": "\"The Dead\"\n[where Mary Jane gives pupils' concerts]\n\"She had been through the Academy\nand gave a pupils' concert every year in the upper room of the Antient\nConcert Rooms\" (176).\n(address according to Gifford)",
-    "story_label": "The Dead",
     "gloss": "where Mary Jane gives pupils' concerts",
     "quote": "She had been through the Academy and gave a pupils' concert every year in the upper room of the Antient Concert Rooms\" (176). (address according to Gifford)",
     "kind": "place",
@@ -5042,8 +4733,6 @@
    "properties": {
     "story": "The Dead",
     "name": "Kingstown",
-    "description": "\"The Dead\"\n[one of the areas Mary Jane's students live]\n\"Many of her pupils belonged to the better-class families on the Kingstown and Dalkey line\" (176).",
-    "story_label": "The Dead",
     "gloss": "one of the areas Mary Jane's students live",
     "page": 176,
     "quote": "Many of her pupils belonged to the better-class families on the Kingstown and Dalkey line",
@@ -5063,8 +4752,6 @@
    "properties": {
     "story": "The Dead",
     "name": "Dalkey",
-    "description": "\"The Dead\"\n[one of the areas served by the train Mary Jane's students live near]\n\"Many of her pupils belonged to the better-class families on the Kingstown and Dalkey line\" (176).",
-    "story_label": "The Dead",
     "gloss": "one of the areas served by the train Mary Jane's students live near",
     "page": 176,
     "quote": "Many of her pupils belonged to the better-class families on the Kingstown and Dalkey line",
@@ -5084,8 +4771,6 @@
    "properties": {
     "story": "The Dead",
     "name": "Adam and Eve's",
-    "description": "\"The Dead\"\n[where Julia sings soprano]\n\"Julia, though she was quite grey, was still the leading soprano in Adam and Eve's, and Kate, being too feeble to go about much, gave music lessons to beginners on the old square piano in the back room\" (176).\n(According to Gifford, Adam and Eve's was a \"[p]opular name for the Franciscan Church of St. Francis of Assisi in Merchant's Quay\" [112])",
-    "story_label": "The Dead",
     "gloss": "where Julia sings soprano",
     "quote": "Julia, though she was quite grey, was still the leading soprano in Adam and Eve's, and Kate, being too feeble to go about much, gave music lessons to beginners on the old square piano in the back room\" (176). (According to Gifford, Adam and Eve's was a \"[p]opular name for the Franciscan Church of St. Francis of Assisi in Merchant's Quay\" [112])",
     "kind": "place",
@@ -5104,8 +4789,6 @@
    "properties": {
     "story": "The Dead",
     "name": "Port and Docks",
-    "description": "\"The Dead\"\n[where Gabriel's father worked]\n\"They both kissed Gabriel frankly. He was their favourite nephew the son of their dead elder sister, Ellen, who had married T. J. Conroy of the\nPort and Docks\" (179).",
-    "story_label": "The Dead",
     "gloss": "where Gabriel's father worked",
     "page": 179,
     "quote": "They both kissed Gabriel frankly. He was their favourite nephew the son of their dead elder sister, Ellen, who had married T. J. Conroy of the Port and Docks",
@@ -5125,8 +4808,6 @@
    "properties": {
     "story": "The Dead",
     "name": "Monkstown",
-    "description": "\"The Dead\"\n[where Gabriel and Gretta live]\n\"--Gretta tells me you're not going to take a cab back to Monkstown tonight, Gabriel, said Aunt Kate\" (180).",
-    "story_label": "The Dead",
     "gloss": "where Gabriel and Gretta live",
     "page": 180,
     "quote": "--Gretta tells me you're not going to take a cab back to Monkstown tonight, Gabriel, said Aunt Kate",
@@ -5146,8 +4827,6 @@
    "properties": {
     "story": "The Dead",
     "name": "Merrion",
-    "description": "\"The Dead\"\n[the point on the Conroys' journey home the previous year after which Gretta got a cold]\n--No, said Gabriel, turning to his wife, we had quite enough of that last year, hadn't we? Don't you remember, Aunt Kate, what a cold Gretta got out of it? Cab windows rattling all the way, and the east wind blowing in after we passed Merrion. Very jolly it was. Gretta caught a dreadful cold\" (180).",
-    "story_label": "The Dead",
     "gloss": "the point on the Conroys' journey home the previous year after which Gretta got a cold",
     "page": 180,
     "quote": "--No, said Gabriel, turning to his wife, we had quite enough of that last year, hadn't we? Don't you remember, Aunt Kate, what a cold Gretta got out of it? Cab windows rattling all the way, and the east wind blowing in after we passed Merrion. Very jolly it was. Gretta caught a dreadful cold",
@@ -5167,8 +4846,6 @@
    "properties": {
     "story": "The Dead",
     "name": "The Gresham Hotel Dublin",
-    "description": "\"The Dead\"\n[where Gabriel and Gretta stay]\n\"--O, the room is all right, replied Gabriel. I've taken one in the\nGresham\" (181).",
-    "story_label": "The Dead",
     "gloss": "where Gabriel and Gretta stay",
     "page": 181,
     "quote": "--O, the room is all right, replied Gabriel. I've taken one in the Gresham",
@@ -5188,8 +4865,6 @@
    "properties": {
     "story": "The Dead",
     "name": "Balbriggan",
-    "description": "\"The Dead\"\n[where Gabriel's brother is a curate]\n\"Thanks to her, Constantine was now senior curate in Balbrigan and, thanks to her, Gabriel himself had taken his degree in the Royal University\" (186).",
-    "story_label": "The Dead",
     "gloss": "where Gabriel's brother is a curate",
     "page": 186,
     "quote": "Thanks to her, Constantine was now senior curate in Balbrigan and, thanks to her, Gabriel himself had taken his degree in the Royal University",
@@ -5209,8 +4884,6 @@
    "properties": {
     "story": "The Dead",
     "name": "Bachelor's Walk",
-    "description": "\"The Dead\"\n[where Gabriel buys books at Hickey's and O'Clohissey's]\n\"Nearly every day when his teaching in the\ncollege was ended he used to wander down the quays to the second-hand\nbooksellers, to Hickey's on Bachelor's Walk, to Web's or Massey's on Aston's Quay, or to O'Clohissey's in the bystreet\" (188).",
-    "story_label": "The Dead",
     "gloss": "where Gabriel buys books at Hickey's and O'Clohissey's",
     "page": 188,
     "quote": "Nearly every day when his teaching in the college was ended he used to wander down the quays to the second-hand booksellers, to Hickey's on Bachelor's Walk, to Web's or Massey's on Aston's Quay, or to O'Clohissey's in the bystreet",
@@ -5230,8 +4903,6 @@
    "properties": {
     "story": "The Dead",
     "name": "Aston Quay",
-    "description": "\"The Dead\"\n[where Gabriel buys books at Web's and Massey's]\n\"Nearly every day when his teaching in the\ncollege was ended he used to wander down the quays to the second-hand\nbooksellers, to Hickey's on Bachelor's Walk, to Web's or Massey's on\nAston's Quay, or to O'Clohissey's in the bystreet\" (188).",
-    "story_label": "The Dead",
     "gloss": "where Gabriel buys books at Web's and Massey's",
     "page": 188,
     "quote": "Nearly every day when his teaching in the college was ended he used to wander down the quays to the second-hand booksellers, to Hickey's on Bachelor's Walk, to Web's or Massey's on Aston's Quay, or to O'Clohissey's in the bystreet",
@@ -5251,8 +4922,6 @@
    "properties": {
     "story": "The Dead",
     "name": "Aran Isles",
-    "description": "\"The Dead\"\n[where Molly Ivors is going for a month-long excursion with Mr Kilkelly and Kathleen Kearney]\n\"--O, Mr. Conroy, will you come for an excursion to the Aran Isles this summer? We're going to stay there a whole month. It will be splendid out in the Atlantic. You ought to come. Mr. Clancy is coming, and Mr. Kilkelly and Kathleen Kearney. It would be splendid for Gretta too if she'd come. She's from Connacht, isn't she?\" (188)",
-    "story_label": "The Dead",
     "gloss": "where Molly Ivors is going for a month-long excursion with Mr Kilkelly and Kathleen Kearney",
     "page": 188,
     "quote": "--O, Mr. Conroy, will you come for an excursion to the Aran Isles this summer? We're going to stay there a whole month. It will be splendid out in the Atlantic. You ought to come. Mr. Clancy is coming, and Mr. Kilkelly and Kathleen Kearney. It would be splendid for Gretta too if she'd come. She's from Connacht, isn't she?",
@@ -5272,8 +4941,6 @@
    "properties": {
     "story": "The Dead",
     "name": "Connacht",
-    "description": "\"The Dead\"\n[where Gretta's people are from]\n\"--O, Mr. Conroy, will you come for an excursion to the Aran Isles this summer? We're going to stay there a whole month. It will be splendid out in the Atlantic. You ought to come. Mr. Clancy is coming, and Mr. Kilkelly and Kathleen Kearney. It would be splendid for Gretta too if she'd come. She's from Connacht, isn't she?\" (189).",
-    "story_label": "The Dead",
     "gloss": "where Gretta's people are from",
     "page": 189,
     "quote": "--O, Mr. Conroy, will you come for an excursion to the Aran Isles this summer? We're going to stay there a whole month. It will be splendid out in the Atlantic. You ought to come. Mr. Clancy is coming, and Mr. Kilkelly and Kathleen Kearney. It would be splendid for Gretta too if she'd come. She's from Connacht, isn't she?",
@@ -5293,8 +4960,6 @@
    "properties": {
     "story": "The Dead",
     "name": "France",
-    "description": "\"The Dead\"\n[where Gabriel vacations]\n\"--Well, we usually go to France or Belgium or perhaps Germany, said Gabriel awkwardly\" (189).",
-    "story_label": "The Dead",
     "gloss": "where Gabriel vacations",
     "page": 189,
     "quote": "--Well, we usually go to France or Belgium or perhaps Germany, said Gabriel awkwardly",
@@ -5314,8 +4979,6 @@
    "properties": {
     "story": "The Dead",
     "name": "Germany",
-    "description": "\"The Dead\"\n[where Gabriel and Gretta usually vacation]\n\"--Well, we usually go to France or Belgium or perhaps Germany, said Gabriel awkwardly\" (189).",
-    "story_label": "The Dead",
     "gloss": "where Gabriel and Gretta usually vacation",
     "page": 189,
     "quote": "--Well, we usually go to France or Belgium or perhaps Germany, said Gabriel awkwardly",
@@ -5335,8 +4998,6 @@
    "properties": {
     "story": "The Dead",
     "name": "Belgium",
-    "description": "\"The Dead\"\n[where Gabriel and Gretta usually vacation]\n\"--Well, we usually go to France or Belgium or perhaps Germany, said Gabriel awkwardly\" (189).",
-    "story_label": "The Dead",
     "gloss": "where Gabriel and Gretta usually vacation",
     "page": 189,
     "quote": "--Well, we usually go to France or Belgium or perhaps Germany, said Gabriel awkwardly",
@@ -5356,8 +5017,6 @@
    "properties": {
     "story": "The Dead",
     "name": "Glasgow",
-    "description": "\"The Dead\"\n[where Mrs. Malins lives with her daughter]\n\"She lived with her married daughter in Glasgow and came to Dublin on a visit once a year. She answered placidly that she had had a beautiful crossing and that the captain had been most attentive to her.\nShe spoke also of the beautiful house her daughter kept in Glasgow, and of all the friends they had there\" (190).",
-    "story_label": "The Dead",
     "gloss": "where Mrs. Malins lives with her daughter",
     "page": 190,
     "quote": "She lived with her married daughter in Glasgow and came to Dublin on a visit once a year. She answered placidly that she had had a beautiful crossing and that the captain had been most attentive to her. She spoke also of the beautiful house her daughter kept in Glasgow, and of all the friends they had there",
@@ -5377,8 +5036,6 @@
    "properties": {
     "story": "The Dead",
     "name": "Galway",
-    "description": "\"The Dead\"\n[where Gretta is from]\n\"--There was no row, said Gabriel moodily, only she wanted me to go for\na trip to the west of Ireland and I said I wouldn't.\nHis wife clasped her hands excitedly and gave a little jump.\n--O, do go, Gabriel, she cried. I'd love to see Galway again\" (191).\n\"--It was a person I used to know in Galway when I was living with my\ngrandmother, she said\" (218).\n\"--I used to go out walking with him, she said, when I was in Galway.\nA thought flew across Gabriel's mind.\n--Perhaps that was why you wanted to go to Galway with that Ivors girl? he said coldly\" (219).\n\"--It was in the winter, she said, about the beginning of the winter when I was going to leave my grandmother's and come up here to the convent. And he was ill at the time in his lodgings in Galway and wouldn't be let out, and his people in Oughterard were written to. He was in decline, they said, or something like that. I never knew rightly\" (220).\n\"--And then when it came to the time for me to leave Galway and come up to the convent he was much worse and I wouldn't be let see him so I wrote him a letter saying I was going up to Dublin and would be back in the summer, and hoping he would be better then\" (221).",
-    "story_label": "The Dead",
     "gloss": "where Gretta is from",
     "page": 221,
     "quote": "--There was no row, said Gabriel moodily, only she wanted me to go for a trip to the west of Ireland and I said I wouldn't. His wife clasped her hands excitedly and gave a little jump. --O, do go, Gabriel, she cried. I'd love to see Galway again\" (191). \"--It was a person I used to know in Galway when I was living with my grandmother, she said\" (218). \"--I used to go out walking with him, she said, when I was in Galway. A thought flew across Gabriel's mind. --Perhaps that was why you wanted to go to Galway with that Ivors girl? he said coldly\" (219). \"--It was in the winter, she said, about the beginning of the winter when I was going to leave my grandmother's and come up here to the convent. And he was ill at the time in his lodgings in Galway and wouldn't be let out, and his people in Oughterard were written to. He was in decline, they said, or something like that. I never knew rightly\" (220). \"--And then when it came to the time for me to leave Galway and come up to the convent he was much worse and I wouldn't be let see him so I wrote him a letter saying I was going up to Dublin and would be back in the summer, and hoping he would be better then",
@@ -5398,8 +5055,6 @@
    "properties": {
     "story": "The Dead",
     "name": "Wellington Monument",
-    "description": "\"The Dead\"\n[where Gabriel wants to go walk instead of staying at the party]\n\"How cool it must be outside! How pleasant it would be to walk out alone, first along by the river and then through the park! The snow would be lying on the branches of the trees and forming a bright cap on the top of the Wellington Monument. How much more pleasant it would be there than at the supper-table!\" (192)\n\"In the distance lay the park where the trees were weighted with snow. The Wellington Monument wore a gleaming cap of snow that flashed westward over the white field of Fifteen Acres\" (202).",
-    "story_label": "The Dead",
     "gloss": "where Gabriel wants to go walk instead of staying at the party",
     "page": 202,
     "quote": "How cool it must be outside! How pleasant it would be to walk out alone, first along by the river and then through the park! The snow would be lying on the branches of the trees and forming a bright cap on the top of the Wellington Monument. How much more pleasant it would be there than at the supper-table!\" (192) \"In the distance lay the park where the trees were weighted with snow. The Wellington Monument wore a gleaming cap of snow that flashed westward over the white field of Fifteen Acres",
@@ -5419,8 +5074,6 @@
    "properties": {
     "story": "The Dead",
     "name": "Theatre Royal",
-    "description": "\"The Dead\"\n[one of the opera venues discussed at supper]\n\"The subject of talk was the opera company which was then at the Theatre Royal\" (198).",
-    "story_label": "The Dead",
     "gloss": "one of the opera venues discussed at supper",
     "page": 198,
     "quote": "The subject of talk was the opera company which was then at the Theatre Royal",
@@ -5440,8 +5093,6 @@
    "properties": {
     "story": "The Dead",
     "name": "London",
-    "description": "\"The Dead\"\n[where the good singers are]\n\"--Oh, well, said Mr. Bartell D'Arcy, I presume there are as good\nsingers today as there were then.\n--Where are they? asked Mr. Browne defiantly.\n--In London, Paris, Milan, said Mr. Bartell D'Arcy warmly\" (199).",
-    "story_label": "The Dead",
     "gloss": "where the good singers are",
     "page": 199,
     "quote": "--Oh, well, said Mr. Bartell D'Arcy, I presume there are as good singers today as there were then. --Where are they? asked Mr. Browne defiantly. --In London, Paris, Milan, said Mr. Bartell D'Arcy warmly",
@@ -5461,8 +5112,6 @@
    "properties": {
     "story": "The Dead",
     "name": "Paris",
-    "description": "\"The Dead\"\n[where the good singers are]\n\"--Oh, well, said Mr. Bartell D'Arcy, I presume there are as good\nsingers today as there were then.\n--Where are they? asked Mr. Browne defiantly.\n--In London, Paris, Milan, said Mr. Bartell D'Arcy warmly\" (199).",
-    "story_label": "The Dead",
     "gloss": "where the good singers are",
     "page": 199,
     "quote": "--Oh, well, said Mr. Bartell D'Arcy, I presume there are as good singers today as there were then. --Where are they? asked Mr. Browne defiantly. --In London, Paris, Milan, said Mr. Bartell D'Arcy warmly",
@@ -5482,8 +5131,6 @@
    "properties": {
     "story": "The Dead",
     "name": "Milan",
-    "description": "\"The Dead\"\n[where the good singers are]\n\"--Oh, well, said Mr. Bartell D'Arcy, I presume there are as good\nsingers today as there were then.\n--Where are they? asked Mr. Browne defiantly.\n--In London, Paris, Milan, said Mr. Bartell D'Arcy warmly\" (199).",
-    "story_label": "The Dead",
     "gloss": "where the good singers are",
     "page": 199,
     "quote": "--Oh, well, said Mr. Bartell D'Arcy, I presume there are as good singers today as there were then. --Where are they? asked Mr. Browne defiantly. --In London, Paris, Milan, said Mr. Bartell D'Arcy warmly",
@@ -5503,8 +5150,6 @@
    "properties": {
     "story": "The Dead",
     "name": "Mount Melleray Monastery",
-    "description": "\"The Dead\"\n[where Mrs. Malins's son is going]\n\"Mrs. Malins, who had been silent all through the supper, said that her son was going down to Mount Melleray in a week or so. The table then spoke of Mount Melleray, how bracing the air was down there, how hospitable the monks were and\nhow they never asked for a penny-piece from their guests\" (200).",
-    "story_label": "The Dead",
     "gloss": "where Mrs. Malins's son is going",
     "page": 200,
     "quote": "Mrs. Malins, who had been silent all through the supper, said that her son was going down to Mount Melleray in a week or so. The table then spoke of Mount Melleray, how bracing the air was down there, how hospitable the monks were and how they never asked for a penny-piece from their guests",
@@ -5524,8 +5169,6 @@
    "properties": {
     "story": "The Dead",
     "name": "Back Lane",
-    "description": "\"The Dead\"\n[where the Morkans's \"ancestral mansion\" was]\n\"--So the old gentleman, as I said, harnessed Johnny and put on his very best tall hat and his very best stock collar and drove out in grand style from his ancestral mansion somewhere near Back\nLane, I think.\nEveryone laughed, even Mrs. Malins, at Gabriel's manner and Aunt Kate said:\n--O, now, Gabriel, he didn't live in Back Lane, really. Only the mill was there\" (207-08).",
-    "story_label": "The Dead",
     "gloss": "where the Morkans's \"ancestral mansion\" was",
     "quote": "--So the old gentleman, as I said, harnessed Johnny and put on his very best tall hat and his very best stock collar and drove out in grand style from his ancestral mansion somewhere near Back Lane, I think. Everyone laughed, even Mrs. Malins, at Gabriel's manner and Aunt Kate said: --O, now, Gabriel, he didn't live in Back Lane, really. Only the mill was there\" (207-08).",
     "kind": "place",
@@ -5544,8 +5187,6 @@
    "properties": {
     "story": "The Dead",
     "name": "College Green",
-    "description": "\"The Dead\"\n[where the statue of \"King Billy\" is located]\n\"--Out from the mansion of his forefathers, continued Gabriel, he drove with Johnny. And everything went on beautifully until Johnny came in sight of King Billy's statue: and whether he fell in love with the horse\nKing Billy sits on or whether he thought he was back again in the mill, anyhow he began to walk round the statue\" (208).",
-    "story_label": "The Dead",
     "gloss": "where the statue of \"King Billy\" is located",
     "page": 208,
     "quote": "--Out from the mansion of his forefathers, continued Gabriel, he drove with Johnny. And everything went on beautifully until Johnny came in sight of King Billy's statue: and whether he fell in love with the horse King Billy sits on or whether he thought he was back again in the mill, anyhow he began to walk round the statue",
@@ -5565,8 +5206,6 @@
    "properties": {
     "story": "The Dead",
     "name": "Trinity College Dublin",
-    "description": "\"The Dead\"\n[where the cabman is directed to go]\n\"--Do you know Trinity College?\n--Yes, sir, said the cabman.\n--Well, drive bang up against Trinity College gates, said Mr. Browne, and then we'll tell you where to go. You understand now?\n--Yes, sir, said the cabman.\n--Make like a bird for Trinity College.\n--Right, sir, said the cabman\" (209).",
-    "story_label": "The Dead",
     "gloss": "where the cabman is directed to go",
     "page": 209,
     "quote": "--Do you know Trinity College? --Yes, sir, said the cabman. --Well, drive bang up against Trinity College gates, said Mr. Browne, and then we'll tell you where to go. You understand now? --Yes, sir, said the cabman. --Make like a bird for Trinity College. --Right, sir, said the cabman",
@@ -5586,8 +5225,6 @@
    "properties": {
     "story": "The Dead",
     "name": "Four Courts",
-    "description": "\"The Dead\"\n[a place Gabriel, Gretta, D'Arcy, and Miss O'Callaghan see across the river as they leave the party]\n\"The lamps were still burning redly in the murky air and, across the river, the palace of the Four Courts stood out menacingly against the heavy sky\" (213).",
-    "story_label": "The Dead",
     "gloss": "a place Gabriel, Gretta, D'Arcy, and Miss O'Callaghan see across the river as they leave the party",
     "page": 213,
     "quote": "The lamps were still burning redly in the murky air and, across the river, the palace of the Four Courts stood out menacingly against the heavy sky",
@@ -5607,8 +5244,6 @@
    "properties": {
     "story": "The Dead",
     "name": "Winetavern Street",
-    "description": "\"The Dead\"\n[where Gabriel, Gretta, D'Arcy, and O'Callaghan find the cab]\n\"At the corner of Winetavern Street they met a cab\" (214).",
-    "story_label": "The Dead",
     "gloss": "where Gabriel, Gretta, D'Arcy, and O'Callaghan find the cab",
     "page": 214,
     "quote": "At the corner of Winetavern Street they met a cab",
@@ -5628,8 +5263,6 @@
    "properties": {
     "story": "The Dead",
     "name": "O'Connell Street",
-    "description": "\"The Dead\"\n[where the cab turns and crosses the bridge]\n\"As the cab drove across O'Connell Bridge Miss O'Callaghan said:\n--They say you never cross O'Connell Bridge without seeing a white horse\" (214).",
-    "story_label": "The Dead",
     "gloss": "where the cab turns and crosses the bridge",
     "page": 214,
     "quote": "As the cab drove across O'Connell Bridge Miss O'Callaghan said: --They say you never cross O'Connell Bridge without seeing a white horse",
@@ -5649,8 +5282,6 @@
    "properties": {
     "story": "The Dead",
     "name": "Henry Street",
-    "description": "\"The Dead\"\n[where Malins had opened a shop]\n\"--O, at Christmas, when he opened that little Christmas-card shop in Henry Street\" (217).",
-    "story_label": "The Dead",
     "gloss": "where Malins had opened a shop",
     "page": 217,
     "quote": "--O, at Christmas, when he opened that little Christmas-card shop in Henry Street",
@@ -5670,8 +5301,6 @@
    "properties": {
     "story": "The Dead",
     "name": "Oughterard",
-    "description": "\"The Dead\"\n[where Michael Furey's people are from]\n\"...And he was ill at the time in his lodgings in Galway and wouldn't be let out, and his people in Oughterard were written to. He was in decline, they said, or something like that...\" (220).\n\"--Yes, he went home. And when I was only a week in the convent he died and he was buried in Oughterard, where his people came from. O, the day I heard that, that he was dead!\" (221)",
-    "story_label": "The Dead",
     "gloss": "where Michael Furey's people are from",
     "page": 221,
     "quote": "...And he was ill at the time in his lodgings in Galway and wouldn't be let out, and his people in Oughterard were written to. He was in decline, they said, or something like that...\" (220). \"--Yes, he went home. And when I was only a week in the convent he died and he was buried in Oughterard, where his people came from. O, the day I heard that, that he was dead!",
@@ -5691,8 +5320,6 @@
    "properties": {
     "story": "The Dead",
     "name": "Nun's Island",
-    "description": "\"The Dead\"\n[where Gretta grandmother's house was]\n\"--Then the night before I left, I was in my grandmother's house in Nuns' Island, packing up, and I heard gravel thrown up against the window\" (221).",
-    "story_label": "The Dead",
     "gloss": "where Gretta grandmother's house was",
     "page": 221,
     "quote": "--Then the night before I left, I was in my grandmother's house in Nuns' Island, packing up, and I heard gravel thrown up against the window",
@@ -5712,8 +5339,6 @@
    "properties": {
     "story": "The Dead",
     "name": "Bog of Allen",
-    "description": "\"The Dead\"\n[a place where Gabriel imagines the snow falling]\n\"It was falling on every part of the dark central plain, on the treeless hills, falling softly upon the Bog of Allen and, farther westward, softly falling into the dark mutinous Shannon waves\" (223).",
-    "story_label": "The Dead",
     "gloss": "a place where Gabriel imagines the snow falling",
     "page": 223,
     "quote": "It was falling on every part of the dark central plain, on the treeless hills, falling softly upon the Bog of Allen and, farther westward, softly falling into the dark mutinous Shannon waves",
@@ -5733,8 +5358,6 @@
    "properties": {
     "story": "The Dead",
     "name": "The Shannon Waves",
-    "description": "\"The Dead\"\n[a place Gabriel imagines the snow falling]\n\"It was falling on every part of the dark central plain, on the treeless hills, falling softly upon the Bog of Allen and, farther westward, softly falling into the dark mutinous Shannon waves\" (223).",
-    "story_label": "The Dead",
     "gloss": "a place Gabriel imagines the snow falling",
     "page": 223,
     "quote": "It was falling on every part of the dark central plain, on the treeless hills, falling softly upon the Bog of Allen and, farther westward, softly falling into the dark mutinous Shannon waves",
@@ -5754,7 +5377,6 @@
    "properties": {
     "story": "The Dead",
     "name": "\"The Dead\" Route",
-    "description": "[the route travelled by Gabriel and Gretta after the party]",
     "gloss": "the route travelled by Gabriel and Gretta after the party",
     "quote": "",
     "kind": "route"
