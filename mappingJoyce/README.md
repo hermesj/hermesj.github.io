@@ -81,6 +81,9 @@ an example-specific importer:
 ```bash
 cd pipeline/example-dubliners
 python3 kml_to_geojson.py source-doc.kml ../../data/dubliners.geojson
+# then set fixed Gutenberg-#2814 link targets (srcText) on each quote,
+# verbatim from #2814 so highlights match despite small edition differences:
+python3 add_srctext.py ../../data/dubliners.geojson
 ```
 
 **Ulysses** and **Portrait** (own datasets) use the generic geocoder

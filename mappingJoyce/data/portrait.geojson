@@ -17,7 +17,8 @@
     "kind": "place",
     "gloss": "Stephen's first boarding school; the square ditch, the infirmary, and the unjust pandybatting by Father Dolan.",
     "quote": "Once upon a time and a very good time it was there was a moocow coming down along the road and this moocow that was coming down along the road met a nicens little boy named baby tuckoo.",
-    "ref": "Ch. 1"
+    "ref": "Ch. 1",
+    "verified": false
    },
    "geometry": {
     "type": "Point",
@@ -36,7 +37,8 @@
     "group_de": "Kapitel 1",
     "name": "The Dedalus home, Bray",
     "kind": "place",
-    "gloss": "The bitter Christmas-dinner quarrel over Parnell between Dante, Mr Casey and Simon Dedalus."
+    "gloss": "The bitter Christmas-dinner quarrel over Parnell between Dante, Mr Casey and Simon Dedalus.",
+    "verified": false
    },
    "geometry": {
     "type": "Point",
@@ -55,7 +57,8 @@
     "group_de": "Kapitel 2",
     "name": "Blackrock",
     "kind": "place",
-    "gloss": "The family's home in faded prosperity; Stephen's Monte Cristo daydreams and evening runs with Mike Flynn."
+    "gloss": "The family's home in faded prosperity; Stephen's Monte Cristo daydreams and evening runs with Mike Flynn.",
+    "verified": false
    },
    "geometry": {
     "type": "Point",
@@ -74,7 +77,8 @@
     "group_de": "Kapitel 2",
     "name": "Belvedere College",
     "kind": "place",
-    "gloss": "Stephen's Jesuit day school in the city; the Whitsuntide play and his growing inward estrangement."
+    "gloss": "Stephen's Jesuit day school in the city; the Whitsuntide play and his growing inward estrangement.",
+    "verified": false
    },
    "geometry": {
     "type": "Point",
@@ -93,7 +97,8 @@
     "group_de": "Kapitel 2",
     "name": "Cork",
     "kind": "place",
-    "gloss": "Stephen travels with his father to sell the last of the family property; he feels utterly estranged."
+    "gloss": "Stephen travels with his father to sell the last of the family property; he feels utterly estranged.",
+    "verified": false
    },
    "geometry": {
     "type": "Point",
@@ -112,7 +117,8 @@
     "group_de": "Kapitel 2",
     "name": "Queen's College, Cork",
     "kind": "place",
-    "gloss": "In his father's old anatomy theatre the word ‘Foetus’ cut into a desk jolts Stephen with shame."
+    "gloss": "In his father's old anatomy theatre the word ‘Foetus’ cut into a desk jolts Stephen with shame.",
+    "verified": false
    },
    "geometry": {
     "type": "Point",
@@ -131,7 +137,8 @@
     "group_de": "Kapitel 2",
     "name": "Nighttown",
     "kind": "place",
-    "gloss": "The brothel quarter (Monto); at the chapter's close Stephen wanders into the arms of a prostitute."
+    "gloss": "The brothel quarter (Monto); at the chapter's close Stephen wanders into the arms of a prostitute.",
+    "verified": false
    },
    "geometry": {
     "type": "Point",
@@ -150,7 +157,8 @@
     "group_de": "Kapitel 3",
     "name": "The retreat, Belvedere College",
     "kind": "place",
-    "gloss": "The three-day retreat and the terrifying sermons on death and hell that drive Stephen to repentance."
+    "gloss": "The three-day retreat and the terrifying sermons on death and hell that drive Stephen to repentance.",
+    "verified": false
    },
    "geometry": {
     "type": "Point",
@@ -169,7 +177,8 @@
     "group_de": "Kapitel 3",
     "name": "Church Street chapel",
     "kind": "place",
-    "gloss": "Across the city, in terror of damnation, Stephen makes his confession to a Capuchin priest."
+    "gloss": "Across the city, in terror of damnation, Stephen makes his confession to a Capuchin priest.",
+    "verified": false
    },
    "geometry": {
     "type": "Point",
@@ -190,7 +199,8 @@
     "kind": "place",
     "gloss": "The wading girl — Stephen's great epiphany of beauty and his calling to art rather than priesthood.",
     "quote": "A girl stood before him in midstream, alone and still, gazing out to sea. She seemed like one whom magic had changed into the likeness of a strange and beautiful seabird.",
-    "ref": "Ch. 4"
+    "ref": "Ch. 4",
+    "verified": false
    },
    "geometry": {
     "type": "Point",
@@ -209,7 +219,8 @@
     "group_de": "Kapitel 4",
     "name": "North Bull Island",
     "kind": "place",
-    "gloss": "Stephen crosses the wooden bridge to the strand where, wading, he sees the bird-girl."
+    "gloss": "Stephen crosses the wooden bridge to the strand where, wading, he sees the bird-girl.",
+    "verified": false
    },
    "geometry": {
     "type": "Point",
@@ -228,7 +239,8 @@
     "group_de": "Kapitel 4",
     "name": "The director's office, Belvedere",
     "kind": "place",
-    "gloss": "The director sounds Stephen on a vocation to the priesthood — an offer he silently declines."
+    "gloss": "The director sounds Stephen on a vocation to the priesthood — an offer he silently declines.",
+    "verified": false
    },
    "geometry": {
     "type": "Point",
@@ -247,7 +259,8 @@
     "group_de": "Kapitel 5",
     "name": "University College Dublin (Newman House)",
     "kind": "place",
-    "gloss": "Stephen the university student; the dean of studies, the aesthetic theory, the villanelle."
+    "gloss": "Stephen the university student; the dean of studies, the aesthetic theory, the villanelle.",
+    "verified": false
    },
    "geometry": {
     "type": "Point",
@@ -266,7 +279,8 @@
     "group_de": "Kapitel 5",
     "name": "National Library of Ireland",
     "kind": "place",
-    "gloss": "On its steps Stephen watches the birds and argues with Cranly about belief and exile."
+    "gloss": "On its steps Stephen watches the birds and argues with Cranly about belief and exile.",
+    "verified": false
    },
    "geometry": {
     "type": "Point",
@@ -285,7 +299,8 @@
     "group_de": "Kapitel 5",
     "name": "St Stephen's Green",
     "kind": "place",
-    "gloss": "The Green Stephen crosses daily, emblem of the city he is preparing to leave."
+    "gloss": "The Green Stephen crosses daily, emblem of the city he is preparing to leave.",
+    "verified": false
    },
    "geometry": {
     "type": "Point",
@@ -306,7 +321,8 @@
     "kind": "place",
     "gloss": "The diary's close: Stephen resolves to leave Ireland for the continent.",
     "quote": "Welcome, O life! I go to encounter for the millionth time the reality of experience and to forge in the smithy of my soul the uncreated conscience of my race.",
-    "ref": "Ch. 5"
+    "ref": "Ch. 5",
+    "verified": false
    },
    "geometry": {
     "type": "Point",

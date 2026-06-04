@@ -25,6 +25,11 @@
       "experimental": false,
       "numberedGroups": false,
       "groupPrefix": null,
+      "sourceText": {
+        "url": "https://www.gutenberg.org/cache/epub/2814/pg2814-images.html",
+        "anchor": "chap{n2}",
+        "label": { "en": "in context (Gutenberg)", "de": "im Kontext (Gutenberg)" }
+      },
       "tagline": {
         "en": "The places of James Joyce's Dubliners, mapped.",
         "de": "Die Orte aus James Joyces »Dubliner« auf der Karte."

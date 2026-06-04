@@ -37,7 +37,8 @@
       "quote": "Once upon a time and a very good time it was there was a moocow coming down along the road and this moocow that was coming down along the road met a nicens little boy named baby tuckoo.",
       "ref": "Ch. 1",
       "lat": 53.310977,
-      "lon": -6.686851
+      "lon": -6.686851,
+      "verified": false
     },
     {
       "group": 1,
@@ -45,7 +46,8 @@
       "geocode": "Martello Terrace, Bray, County Wicklow, Ireland",
       "gloss": "The bitter Christmas-dinner quarrel over Parnell between Dante, Mr Casey and Simon Dedalus.",
       "lat": 53.207324,
-      "lon": -6.101173
+      "lon": -6.101173,
+      "verified": false
     },
     {
       "group": 2,
@@ -53,7 +55,8 @@
       "geocode": "Blackrock, County Dublin, Ireland",
       "gloss": "The family's home in faded prosperity; Stephen's Monte Cristo daydreams and evening runs with Mike Flynn.",
       "lat": 53.301864,
-      "lon": -6.178834
+      "lon": -6.178834,
+      "verified": false
     },
     {
       "group": 2,
@@ -61,7 +64,8 @@
       "geocode": "Belvedere College, Great Denmark Street, Dublin, Ireland",
       "gloss": "Stephen's Jesuit day school in the city; the Whitsuntide play and his growing inward estrangement.",
       "lat": 53.355758,
-      "lon": -6.26243
+      "lon": -6.26243,
+      "verified": false
     },
     {
       "group": 2,
@@ -69,7 +73,8 @@
       "geocode": "Cork, Ireland",
       "gloss": "Stephen travels with his father to sell the last of the family property; he feels utterly estranged.",
       "lat": 51.898514,
-      "lon": -8.472642
+      "lon": -8.472642,
+      "verified": false
     },
     {
       "group": 2,
@@ -77,7 +82,8 @@
       "geocode": "University College Cork, Cork, Ireland",
       "gloss": "In his father's old anatomy theatre the word ‘Foetus’ cut into a desk jolts Stephen with shame.",
       "lat": 51.894701,
-      "lon": -8.49031
+      "lon": -8.49031,
+      "verified": false
     },
     {
       "group": 2,
@@ -85,7 +91,8 @@
       "geocode": "Foley Street, Dublin, Ireland",
       "gloss": "The brothel quarter (Monto); at the chapter's close Stephen wanders into the arms of a prostitute.",
       "lat": 53.351375,
-      "lon": -6.253219
+      "lon": -6.253219,
+      "verified": false
     },
     {
       "group": 3,
@@ -93,7 +100,8 @@
       "geocode": "Belvedere College, Great Denmark Street, Dublin, Ireland",
       "gloss": "The three-day retreat and the terrifying sermons on death and hell that drive Stephen to repentance.",
       "lat": 53.355758,
-      "lon": -6.26243
+      "lon": -6.26243,
+      "verified": false
     },
     {
       "group": 3,
@@ -101,7 +109,8 @@
       "geocode": "St Mary of the Angels, Church Street, Dublin, Ireland",
       "gloss": "Across the city, in terror of damnation, Stephen makes his confession to a Capuchin priest.",
       "lat": 53.3476,
-      "lon": -6.2772
+      "lon": -6.2772,
+      "verified": false
     },
     {
       "group": 4,
@@ -111,7 +120,8 @@
       "quote": "A girl stood before him in midstream, alone and still, gazing out to sea. She seemed like one whom magic had changed into the likeness of a strange and beautiful seabird.",
       "ref": "Ch. 4",
       "lat": 53.356919,
-      "lon": -6.174428
+      "lon": -6.174428,
+      "verified": false
     },
     {
       "group": 4,
@@ -119,7 +129,8 @@
       "geocode": "North Bull Island, Dublin, Ireland",
       "gloss": "Stephen crosses the wooden bridge to the strand where, wading, he sees the bird-girl.",
       "lat": 53.374037,
-      "lon": -6.141645
+      "lon": -6.141645,
+      "verified": false
     },
     {
       "group": 4,
@@ -127,7 +138,8 @@
       "geocode": "Belvedere College, Great Denmark Street, Dublin, Ireland",
       "gloss": "The director sounds Stephen on a vocation to the priesthood — an offer he silently declines.",
       "lat": 53.355758,
-      "lon": -6.26243
+      "lon": -6.26243,
+      "verified": false
     },
     {
       "group": 5,
@@ -135,7 +147,8 @@
       "geocode": "Newman House, St Stephen's Green, Dublin, Ireland",
       "gloss": "Stephen the university student; the dean of studies, the aesthetic theory, the villanelle.",
       "lat": 53.337148,
-      "lon": -6.260554
+      "lon": -6.260554,
+      "verified": false
     },
     {
       "group": 5,
@@ -143,7 +156,8 @@
       "geocode": "National Library of Ireland, Kildare Street, Dublin, Ireland",
       "gloss": "On its steps Stephen watches the birds and argues with Cranly about belief and exile.",
       "lat": 53.341125,
-      "lon": -6.2545
+      "lon": -6.2545,
+      "verified": false
     },
     {
       "group": 5,
@@ -151,7 +165,8 @@
       "geocode": "St Stephen's Green, Dublin, Ireland",
       "gloss": "The Green Stephen crosses daily, emblem of the city he is preparing to leave.",
       "lat": 53.338052,
-      "lon": -6.259023
+      "lon": -6.259023,
+      "verified": false
     },
     {
       "group": 5,
@@ -161,7 +176,8 @@
       "quote": "Welcome, O life! I go to encounter for the millionth time the reality of experience and to forge in the smithy of my soul the uncreated conscience of my race.",
       "ref": "Ch. 5",
       "lat": 53.298595,
-      "lon": -6.134469
+      "lon": -6.134469,
+      "verified": false
     }
   ]
 }

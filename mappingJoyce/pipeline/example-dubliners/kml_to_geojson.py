@@ -17,6 +17,7 @@ either a Point (a place) or a LineString (a character's route).
 Usage:
     python3 kml_to_geojson.py path/to/doc.kml ../data/dubliners.geojson
 """
+import html as _html
 import json
 import re
 import sys
@@ -40,33 +41,48 @@ def parse_coords(raw):
     return pts
 
 
-def parse_description(desc):
-    """Pull story / gloss / quote / page out of the CDATA HTML blob."""
+def parse_description(desc, story=None):
+    """Pull story / gloss / quote / page out of the CDATA HTML blob.
+
+    Decodes ALL HTML entities (e.g. &#39;, &nbsp;) — not just a hand-picked few —
+    so quotes display cleanly and the Gutenberg text-fragment links match. Also
+    strips editorial prefixes that the KMZ sometimes glues to the front of the
+    quote: a bracketed gloss "[…]", a parenthetical "(…)", and the story label.
+    """
     if not desc:
         return {}
-    # Normalise <br> to newlines, collapse whitespace.
+    # Normalise <br> to newlines; strip stray tags; decode entities; nbsp→space.
     txt = re.sub(r"<br\s*/?>", "\n", desc, flags=re.I)
-    txt = re.sub(r"<[^>]+>", "", txt)  # strip any other stray tags
-    txt = txt.replace("&quot;", '"').replace("&apos;", "'").replace("&amp;", "&")
+    txt = re.sub(r"<[^>]+>", "", txt)
+    txt = _html.unescape(txt).replace("\xa0", " ")
     lines = [ln.strip() for ln in txt.split("\n") if ln.strip()]
     out = {"description": "\n".join(lines)}
     if not lines:
         return out
-    # First line is usually the story title in quotes.
     if lines[0].startswith('"') and lines[0].endswith('"'):
         out["story_label"] = lines[0].strip('"')
         lines = lines[1:]
-    # A bracketed gloss often follows.
     if lines and lines[0].startswith("[") and lines[0].endswith("]"):
         out["gloss"] = lines[0][1:-1].strip()
         lines = lines[1:]
-    # Remaining text is the quote; trailing "(NN)." is the page number.
     quote = " ".join(lines).strip()
     m = re.search(r"\((\d+)\)\.?\s*$", quote)
     if m:
         out["page"] = int(m.group(1))
         quote = quote[: m.start()].strip()
-    out["quote"] = quote.strip().strip('"').strip()
+    quote = quote.strip().strip('"').strip()
+
+    # Peel off editorial prefixes glued to the front of the quote, iteratively.
+    prev = None
+    while prev != quote:
+        prev = quote
+        quote = re.sub(r"^\s*\[[^\]]*\]\s*", "", quote)        # [where the cars…]
+        quote = re.sub(r"^\s*\([^)]*\)\s*", "", quote)         # (alternatively)
+        if story:
+            quote = re.sub(r'^\s*"?' + re.escape(story) + r'"?\s*', "", quote)
+        quote = quote.lstrip('"').strip()
+
+    out["quote"] = quote
     return out
 
 
@@ -79,7 +95,7 @@ def main(kml_path, out_path):
         for pm in folder.findall("k:Placemark", NS):
             name = text_of(pm, "name").strip()
             props = {"story": story, "name": name}
-            props.update(parse_description(text_of(pm, "description")))
+            props.update(parse_description(text_of(pm, "description"), story))
 
             point = pm.find("k:Point/k:coordinates", NS)
             line = pm.find("k:LineString/k:coordinates", NS)
