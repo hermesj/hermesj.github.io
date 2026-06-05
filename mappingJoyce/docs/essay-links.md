@@ -112,7 +112,7 @@ spellings and the hand-placed essays below were checked against the blog by hand
 | wicklow-street | Ivy Day in the Committee Room · Wicklow Street | https://mappingdubliners.org/wicklow-street/ |
 | winetavern-street | The Dead · Winetavern Street | https://mappingdubliners.org/winetavern-street/ |
 
-## 2. Essays with no node yet (5) — need their own geolocation (to discuss with J. Mulliken)
+## 2. Essays with no node yet (5) — need their own geolocation 
 
 | essay slug | URL | note |
 |---|---|---|
