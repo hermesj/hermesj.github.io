@@ -26,6 +26,14 @@ import xml.etree.ElementTree as ET
 
 NS = {"k": "http://www.opengis.net/kml/2.2"}
 
+# Verbatim spelling fixes for a few placemark names in the source KMZ
+# (Mulliken's data). Applied during conversion so the typo never reaches the
+# rendered layer; re-running this importer keeps the corrections.
+NAME_FIXES = {
+    "Christian Brothers Shool": "Christian Brothers School",
+    "Johhny Rush's": "Johnny Rush's",
+}
+
 
 def text_of(el, tag):
     child = el.find(f"k:{tag}", NS)
@@ -95,6 +103,7 @@ def main(kml_path, out_path):
         story = text_of(folder, "name").strip().strip('"')
         for pm in folder.findall("k:Placemark", NS):
             name = text_of(pm, "name").strip()
+            name = NAME_FIXES.get(name, name)
             props = {"story": story, "name": name}
             props.update(parse_description(text_of(pm, "description"), story))
 

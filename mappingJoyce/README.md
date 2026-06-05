@@ -34,7 +34,11 @@ fragment that highlights the line).
 
 - **Dubliners** geodata is **derived from the
   [Mapping Dubliners Project](https://mappingdubliners.org/) by Jasmine
-  Mulliken, PhD** (CC BY-NC 4.0, attribution required).
+  Mulliken, PhD** (CC BY-NC 4.0, attribution required). We're delighted that
+  Dr Mulliken generously gave her blessing for this reuse — our sincere thanks.
+  With her express permission, each mapped place and route links back to her
+  per-place essay on Mapping Dubliners (the "📖 about this place" link in the
+  popup).
 - **Ulysses** and **Portrait** are **original datasets** compiled from the
   public-domain texts, geocoded via OpenStreetMap/Nominatim.
 - Source quotations link to the public-domain Gutenberg texts
@@ -73,6 +77,8 @@ cd pipeline/example-dubliners
 python3 kml_to_geojson.py source-doc.kml ../../data/dubliners.geojson
 # then pin fixed Gutenberg-#2814 link targets (srcText) on each quote:
 python3 add_srctext.py ../../data/dubliners.geojson
+# and attach the Mapping Dubliners essay back-links (essay-links.json):
+python3 add_essays.py ../../data/dubliners.geojson
 ```
 
 **Ulysses** and **Portrait** — from the hand-editable `*-source.json`:

@@ -12,7 +12,10 @@ licensed **Creative Commons Attribution-NonCommercial 4.0 International
   (<https://mappingdubliners.org/>; deposit
   <https://works.hcommons.org/records/m5n9p-pr591>), which is itself published
   under CC BY-NC 4.0. **Attribution to Jasmine Mulliken is required**;
-  non-commercial use only.
+  non-commercial use only. Dr Mulliken gave her express permission for this
+  reuse, with our thanks; in return, every mapped place/route links back to her
+  per-place essay on Mapping Dubliners (see `docs/essay-links.md` for the
+  mapping).
 
 - **`ulysses.geojson` / `ulysses-source.json`** — Original dataset compiled for
   this project from the **public-domain text of *Ulysses* (1922)**. Factual

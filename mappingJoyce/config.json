@@ -65,6 +65,13 @@
         "en": "All place references and the reconstructable routes of the characters in Joyce's Dubliners",
         "de": "Sämtliche Ortsreferenzen und rekonstruierbare Wegstrecken handelnder Personen aus Joyces Dubliners"
       },
+      "essay": {
+        "source": "Mapping Dubliners",
+        "label": {
+          "place": { "en": "about this place", "de": "über diesen Ort" },
+          "route": { "en": "about this route", "de": "über diese Route" }
+        }
+      },
       "credit": {
         "en": "Geodata derived from the <a href=\"https://mappingdubliners.org/\" target=\"_blank\" rel=\"noopener\">Mapping Dubliners Project</a> by Jasmine Mulliken (CC&nbsp;BY-NC&nbsp;4.0)",
         "de": "Geodaten abgeleitet aus dem <a href=\"https://mappingdubliners.org/\" target=\"_blank\" rel=\"noopener\">Mapping Dubliners Project</a> von Jasmine Mulliken (CC&nbsp;BY-NC&nbsp;4.0)"

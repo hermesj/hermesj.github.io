@@ -15,7 +15,8 @@
     "gloss": "where the priest's sisters are caring for Father Flynn; where he dies",
     "quote": "The next morning after breakfast I went down to look at the little house in Great Britain Street. It was an unassuming shop, registered under the vague name of Drapery \" (11). The name of the street was changed to Parnell Street after the death of Parnell. A history of the street  is contained in Parnell Street: A Vision for an Historic City Centre Street",
     "kind": "place",
-    "srcText": "The next morning after breakfast I went down to look"
+    "srcText": "The next morning after breakfast I went down to look",
+    "essay": "https://mappingdubliners.org/great-britain-street/"
    },
    "geometry": {
     "type": "Point",
@@ -34,7 +35,8 @@
     "page": 12,
     "quote": "Two poor women and a telegram boy were reading the card pinned on the crape. I also approached and read: July 1st, 1895 The Rev. James Flynn (formerly of S. Catherine's Church, Meath Street), aged sixty-five years. R.I.P.",
     "kind": "place",
-    "srcText": "Two poor women and a telegram boy were reading the"
+    "srcText": "Two poor women and a telegram boy were reading the",
+    "essay": "https://mappingdubliners.org/st-catherines/"
    },
    "geometry": {
     "type": "Point",
@@ -53,7 +55,8 @@
     "page": 13,
     "quote": "He had studied in the Irish college in Romeand he had taught me to pronounce Latin properly",
     "kind": "place",
-    "srcText": "He had studied in the Irish college in"
+    "srcText": "He had studied in the Irish college in",
+    "essay": "https://mappingdubliners.org/the-irish-college-in-rome/"
    },
    "geometry": {
     "type": "Point",
@@ -71,7 +74,8 @@
     "gloss": "where the narrator imagines he might have been in his dream",
     "quote": "As I walked along in the sun I remembered Old Cotter's words and tried to remember what had happened afterwards in the dream. I remembered that I had noticed long velvet curtains and a swinging lamp of antique fashion. I felt that I had been very far away, in some land where the customs were strange--in Persia, I thought...But I could not remember the end of the dream\" (13-14).",
     "kind": "place",
-    "srcText": "As I walked along in the sun I remembered old"
+    "srcText": "As I walked along in the sun I remembered old",
+    "essay": "https://mappingdubliners.org/persia/"
    },
    "geometry": {
     "type": "Point",
@@ -90,7 +94,8 @@
     "page": 16,
     "quote": "But still and all he kept on saying that before the summer was over he'd go out for a drive one fine day just to see the old house again where we were all born down in Irishtown and take me and Nannie with him. If we could only get one of them new-fangled carriages that makes no noise that Father O'Rourke told him about, them with the rheumatic wheels, for the day cheap -- he said, at Johnny Rush's over the way there and drive out the three of us together of a Sunday evening. He had his mind set on that.... Poor James!",
     "kind": "place",
-    "srcText": "“But still and all he kept on saying that before"
+    "srcText": "“But still and all he kept on saying that before",
+    "essay": "https://mappingdubliners.org/irishtown/"
    },
    "geometry": {
     "type": "Point",
@@ -104,12 +109,13 @@
    "type": "Feature",
    "properties": {
     "story": "The Sisters",
-    "name": "Johhny Rush's",
+    "name": "Johnny Rush's",
     "gloss": "where the sisters and Father Flynn had planned to get a carriage for a visit to Irishtown",
     "page": 17,
     "quote": "If we could only get one of them new-fangled carriages that makes no noise that Father O'Rourke told him about—them with the rheumatic wheels—for the day cheap—he said, at Johnny Rush's over the way there and drive out the three of us together of a Sunday evening. He had his mind set on that.... Poor James!",
     "kind": "place",
-    "srcText": "If we could only get one of them"
+    "srcText": "If we could only get one of them",
+    "essay": "https://mappingdubliners.org/johnny-rushs/"
    },
    "geometry": {
     "type": "Point",
@@ -128,7 +134,8 @@
     "page": 19,
     "quote": "His parents went to eight- o'clock mass every morning in Gardiner Street and the peaceful odour of Mrs. Dillon was prevalent in the hall of the house",
     "kind": "place",
-    "srcText": "His parents went to eight-o’clock"
+    "srcText": "His parents went to eight-o’clock",
+    "essay": "https://mappingdubliners.org/gardiner-street/"
    },
    "geometry": {
     "type": "Point",
@@ -146,7 +153,8 @@
     "gloss": "where the narrator meets Mahony",
     "quote": "We were to meet at ten in the morning on the Canal Bridge\" (21). Two maps from 1836 and 1883 name this bridge Newcombe and Newcomen Bridge, respectively.",
     "kind": "place",
-    "srcText": "We were to meet at ten in the morning on"
+    "srcText": "We were to meet at ten in the morning on",
+    "essay": "https://mappingdubliners.org/canal-bridge/"
    },
    "geometry": {
     "type": "Point",
@@ -165,7 +173,8 @@
     "page": 22,
     "quote": "We walked along the North Strand Road till we came to the Vitriol Works and then turned to the right along the Wharf Road",
     "kind": "place",
-    "srcText": "We walked along the North Strand Road till we came"
+    "srcText": "We walked along the North Strand Road till we came",
+    "essay": "https://mappingdubliners.org/north-strand-road/"
    },
    "geometry": {
     "type": "Point",
@@ -184,7 +193,8 @@
     "page": 22,
     "quote": "We walked along the North Strand Road till we came to the Vitriol Works and then turned to the right along the Wharf Road",
     "kind": "place",
-    "srcText": "We walked along the North Strand Road till we came"
+    "srcText": "We walked along the North Strand Road till we came",
+    "essay": "https://mappingdubliners.org/wharf-road/"
    },
    "geometry": {
     "type": "Point",
@@ -203,7 +213,8 @@
     "page": 23,
     "quote": "We pleased ourselves with the spectacle of Dublin's commerce -- the barges signalled from far away by their curls of woolly smoke, the brown fishing fleet beyond Ringsend, the big white sailing vessel which was being discharged on the opposite quay\" (23). \"When we were tired of this sight we wandered slowly into Ringsend",
     "kind": "place",
-    "srcText": "We pleased ourselves with the spectacle of Dublin’s"
+    "srcText": "We pleased ourselves with the spectacle of Dublin’s",
+    "essay": "https://mappingdubliners.org/ringsend/"
    },
    "geometry": {
     "type": "Point",
@@ -222,7 +233,8 @@
     "page": 24,
     "quote": "We both felt rather tired and when we reached the field we made at once for a sloping bank over the ridge of which we could see the Dodder",
     "kind": "place",
-    "srcText": "We both felt rather tired and when we reached the"
+    "srcText": "We both felt rather tired and when we reached the",
+    "essay": "https://mappingdubliners.org/the-dodder/"
    },
    "geometry": {
     "type": "Point",
@@ -238,7 +250,8 @@
     "story": "An Encounter",
     "name": "\"An Encounter\" Route",
     "quote": "The approximate path the narrator and Mahony travel in \"An Encounter.",
-    "kind": "route"
+    "kind": "route",
+    "essay": "https://mappingdubliners.org/an-encounter-route/"
    },
    "geometry": {
     "type": "LineString",
@@ -571,7 +584,8 @@
     "page": 29,
     "quote": "NORTH RICHMOND STREET being blind, was a quiet street except at the hour when the Christian Brothers' School set the boys free. An uninhabited house of two storeys stood at the blind end, detached from its neighbours in a square ground. The other houses of the street, conscious of decent lives within them, gazed at one another with brown imperturbable faces",
     "kind": "place",
-    "srcText": "North Richmond Street, being blind, was a quiet street except"
+    "srcText": "North Richmond Street, being blind, was a quiet street except",
+    "essay": "https://mappingdubliners.org/north-richmond-street/"
    },
    "geometry": {
     "type": "Point",
@@ -585,12 +599,13 @@
    "type": "Feature",
    "properties": {
     "story": "Araby",
-    "name": "Christian Brothers Shool",
+    "name": "Christian Brothers School",
     "gloss": "the school on Richmond Street",
     "page": 29,
     "quote": "NORTH RICHMOND STREET being blind, was a quiet street except at the hour when the Christian Brothers' School set the boys free",
     "kind": "place",
-    "srcText": "North Richmond Street, being blind, was a quiet street except"
+    "srcText": "North Richmond Street, being blind, was a quiet street except",
+    "essay": "https://mappingdubliners.org/the-christian-brothers-school/"
    },
    "geometry": {
     "type": "Point",
@@ -609,7 +624,8 @@
     "page": 34,
     "quote": "I held a florin tightly in my hand as I strode down Buckingham Street towards the station.",
     "kind": "place",
-    "srcText": "I held a florin tightly in my hand as I"
+    "srcText": "I held a florin tightly in my hand as I",
+    "essay": "https://mappingdubliners.org/buckingham-street/"
    },
    "geometry": {
     "type": "Point",
@@ -628,7 +644,8 @@
     "page": 34,
     "quote": "At Westland Row Station a crowd of people pressed to the carriage doors; but the porters moved them back, saying that it was a special train for the bazaar",
     "kind": "place",
-    "srcText": "At Westland Row Station a crowd of people pressed to"
+    "srcText": "At Westland Row Station a crowd of people pressed to",
+    "essay": "https://mappingdubliners.org/westland-row-station/"
    },
    "geometry": {
     "type": "Point",
@@ -644,7 +661,8 @@
     "story": "Araby",
     "name": "\"Araby\" Route",
     "quote": "The approximate route the narrator of \"Araby\" takes on his trip to the bazaar. End route according to Gifford.",
-    "kind": "route"
+    "kind": "route",
+    "essay": "https://mappingdubliners.org/araby-route/"
    },
    "geometry": {
     "type": "LineString",
@@ -717,7 +735,8 @@
     "page": 36,
     "quote": "One time there used to be a field there in which they used to play every evening with other people's children. Then a man from Belfast bought the field and built houses in it -- not like their little brown houses but bright brick houses with shining roofs",
     "kind": "place",
-    "srcText": "One time there used to be a field there in"
+    "srcText": "One time there used to be a field there in",
+    "essay": "https://mappingdubliners.org/belfast/"
    },
    "geometry": {
     "type": "Point",
@@ -773,7 +792,8 @@
     "page": 37,
     "quote": "He had been a school friend of her father. Whenever he showed the photograph to a visitor her father used to pass it with a casual word: -He is in Melbourne now",
     "kind": "place",
-    "srcText": "He had been a school friend of her father. Whenever"
+    "srcText": "He had been a school friend of her father. Whenever",
+    "essay": "https://mappingdubliners.org/melbourne/"
    },
    "geometry": {
     "type": "Point",
@@ -792,7 +812,8 @@
     "page": 37,
     "quote": "Of course she had to work hard both in the house and at business. What would they say of her in the Stores when they found out that she had run away with a fellow?",
     "kind": "place",
-    "srcText": "Of course she had to work hard, both in the"
+    "srcText": "Of course she had to work hard, both in the",
+    "essay": "https://mappingdubliners.org/the-stores/"
    },
    "geometry": {
     "type": "Point",
@@ -811,7 +832,8 @@
     "page": 40,
     "quote": "She was to go away with him by the night-boat to be his wife and to live with him in Buenos Ayres where he had a home waiting for her\" (38). \"He had fallen on his feet in Buenos Ayres, he said, and had come over to the old country just for a holiday\" (39). \"If she went, tomorrow she would be on the sea with Frank, steaming towards Buenos Ayres",
     "kind": "place",
-    "srcText": "She was to go away with him by the night-boat"
+    "srcText": "She was to go away with him by the night-boat",
+    "essay": "https://mappingdubliners.org/buenos-ayres/"
    },
    "geometry": {
     "type": "Point",
@@ -830,7 +852,8 @@
     "page": 39,
     "quote": "He had tales of distant countries. He had started as a deck boy at a pound a month on a ship of the Allan Line going out to Canada",
     "kind": "place",
-    "srcText": "He had tales of distant countries. He had started as"
+    "srcText": "He had tales of distant countries. He had started as",
+    "essay": "https://mappingdubliners.org/canada/"
    },
    "geometry": {
     "type": "Point",
@@ -849,7 +872,8 @@
     "page": 39,
     "quote": "He told her the names of the ships he had been on and the names of the different services. He had sailed through the Straits of Magellan and he told her stories of the terrible Patagonians",
     "kind": "place",
-    "srcText": "He told her the names of the ships he had"
+    "srcText": "He told her the names of the ships he had",
+    "essay": "https://mappingdubliners.org/straits-of-magellan/"
    },
    "geometry": {
     "type": "Point",
@@ -868,7 +892,8 @@
     "page": 39,
     "quote": "He told her the names of the ships he had been on and the names of the different services. He had sailed through the Straits of Magellan and he told her stories of the terrible Patagonians",
     "kind": "place",
-    "srcText": "He told her the names of the ships he had"
+    "srcText": "He told her the names of the ships he had",
+    "essay": "https://mappingdubliners.org/patagonia/"
    },
    "geometry": {
     "type": "Point",
@@ -906,7 +931,8 @@
     "page": 40,
     "quote": "She stood among the swaying crowd in the station at the North Wall",
     "kind": "place",
-    "srcText": "She stood among the swaying crowd in the station at"
+    "srcText": "She stood among the swaying crowd in the station at",
+    "essay": "https://mappingdubliners.org/north-wall/"
    },
    "geometry": {
     "type": "Point",
@@ -924,7 +950,8 @@
     "page": 42,
     "quote": "THE cars came scudding in towards Dublin, running evenly like pellets in the groove of the Naas Road",
     "kind": "place",
-    "srcText": "The cars came scudding in towards Dublin, running evenly like"
+    "srcText": "The cars came scudding in towards Dublin, running evenly like",
+    "essay": "https://mappingdubliners.org/naas-road/"
    },
    "geometry": {
     "type": "Point",
@@ -942,7 +969,8 @@
     "page": 42,
     "quote": "At the crest of the hill at Inchicore sightseers had gathered in clumps to watch the cars careering homeward and through this channel of poverty and inaction the Continent sped its wealth and industry",
     "kind": "place",
-    "srcText": "At the crest of the hill at Inchicore sightseers had"
+    "srcText": "At the crest of the hill at Inchicore sightseers had",
+    "essay": "https://mappingdubliners.org/inchicore/"
    },
    "geometry": {
     "type": "Point",
@@ -999,7 +1027,8 @@
     "page": 42,
     "quote": "The French, moreover, were virtual victors. Their team had finished solidly; they had been placed second and third and the driver of the winning German car was reported a Belgian",
     "kind": "place",
-    "srcText": "The French, moreover, were virtual victors. Their team had finished"
+    "srcText": "The French, moreover, were virtual victors. Their team had finished",
+    "essay": "https://mappingdubliners.org/belgium/"
    },
    "geometry": {
     "type": "Point",
@@ -1017,7 +1046,8 @@
     "gloss": "where Riviere was born",
     "quote": "They were Charles Segouin, the owner of the car; Andre Riviere, a young electrician of Canadian birth; a huge Hungarian named Villona and a neatly groomed young man named Doyle\" (42-43).",
     "kind": "place",
-    "srcText": "They were Charles Ségouin, the owner of the car; André"
+    "srcText": "They were Charles Ségouin, the owner of the car; André",
+    "essay": "https://mappingdubliners.org/canada/"
    },
    "geometry": {
     "type": "Point",
@@ -1036,7 +1066,8 @@
     "page": 48,
     "quote": "They were Charles Segouin, the owner of the car; Andre Riviere, a young electrician of Canadian birth; a huge Hungarian named Villona and a neatly groomed young man named Doyle\" (42-43). \"The car ran on merrily with its cargo of hilarious youth. The two cousins sat on the front seat; Jimmy and his Hungarian friend sat behind\" (44). \"His father, therefore, was unusually friendly with Villona and his manner expressed a real respect for foreign accomplishments; but this subtlety of his host was probably lost upon the Hungarian, who was beginning to have a sharp desire for his dinner\" (45-46). \"The resonant voice of the Hungarian was about to prevail in ridicule of the spurious lutes of the romantic painters when Segouin shepherded his party into politics\" (46). \"They drank Ireland, England, France, Hungary, the United States of America\" (47). \"The cabin door opened and he saw the Hungarian standing in a shaft of grey light: -Daybreak, gentlemen!",
     "kind": "place",
-    "srcText": "They were Charles Ségouin, the owner of the car; André"
+    "srcText": "They were Charles Ségouin, the owner of the car; André",
+    "essay": "https://mappingdubliners.org/hungary/"
    },
    "geometry": {
     "type": "Point",
@@ -1055,7 +1086,8 @@
     "page": 43,
     "quote": "His father, who had begun life as an advanced Nationalist, had modified his views early. He had made his money as a butcher in Kingstown and by opening shops in Dublin and in the suburbs he had made his money many times over",
     "kind": "place",
-    "srcText": "His father, who had begun life as an advanced Nationalist,"
+    "srcText": "His father, who had begun life as an advanced Nationalist,",
+    "essay": "https://mappingdubliners.org/kingstown/"
    },
    "geometry": {
     "type": "Point",
@@ -1111,7 +1143,8 @@
     "page": 45,
     "quote": "They drove down Dame Street. The street was busy with unusual traffic, loud with the horns of motorists and the gongs of impatient tram-drivers. Near the Bank Segouin drew up and Jimmy and his friend alighted",
     "kind": "place",
-    "srcText": "They drove down Dame Street. The street was busy with"
+    "srcText": "They drove down Dame Street. The street was busy with",
+    "essay": "https://mappingdubliners.org/dame-street/"
    },
    "geometry": {
     "type": "Point",
@@ -1130,7 +1163,8 @@
     "page": 47,
     "quote": "The car steered out slowly for Grafton Street while the two young men pushed their way through the knot of gazers\" (45). \"At the corner of Grafton Street a short fat man was putting two handsome ladies on a car in charge of another fat man. The car drove off and the short fat man caught sight of the party",
     "kind": "place",
-    "srcText": "The car steered out slowly for Grafton Street while the"
+    "srcText": "The car steered out slowly for Grafton Street while the",
+    "essay": "https://mappingdubliners.org/grafton-street/"
    },
    "geometry": {
     "type": "Point",
@@ -1149,7 +1183,8 @@
     "page": 46,
     "quote": "The five young men strolled along Stephen's Green in a faint cloud of aromatic smoke",
     "kind": "place",
-    "srcText": "The five young men strolled along Stephen’s Green in a"
+    "srcText": "The five young men strolled along Stephen’s Green in a",
+    "essay": "https://mappingdubliners.org/stephens-green/"
    },
    "geometry": {
     "type": "Point",
@@ -1187,7 +1222,8 @@
     "page": 47,
     "quote": "They took the train at Westland Row and in a few seconds, as it seemed to Jimmy, they were walking out of Kingstown Station",
     "kind": "place",
-    "srcText": "They took the train at Westland Row and in a"
+    "srcText": "They took the train at Westland Row and in a",
+    "essay": "https://mappingdubliners.org/westland-row-station/"
    },
    "geometry": {
     "type": "Point",
@@ -1223,7 +1259,8 @@
     "name": "\"After the Race\" Car Route",
     "gloss": "the route the car takes as it drives into town",
     "quote": "",
-    "kind": "route"
+    "kind": "route",
+    "essay": "https://mappingdubliners.org/after-the-race-route/"
    },
    "geometry": {
     "type": "LineString",
@@ -1394,7 +1431,8 @@
     "name": "\"After the Race\" Walking/Car/Train Route",
     "gloss": "the route the men take after dinner and on their way to the yacht",
     "quote": "",
-    "kind": "route"
+    "kind": "route",
+    "essay": "https://mappingdubliners.org/after-the-race-route/"
    },
    "geometry": {
     "type": "LineString",
@@ -1558,7 +1596,8 @@
     "gloss": "where the story starts; where Lenehan returns as he walks alone",
     "quote": "Two young men came down the hill of Rutland Square. On of them was just bringing a long monologue to a close. The other, who walked on the verge of the path and was at times obliged to step on to the road, owing to his companion's rudeness, wore an amused listening face\" (49). \"He turned to the left when he came to the corner of Rutland Square and felt more at ease in the dark quiet street, the sombre look of which suited his mood\" (56-57).",
     "kind": "place",
-    "srcText": "Two young men came down the hill of Rutland Square."
+    "srcText": "Two young men came down the hill of Rutland Square.",
+    "essay": "https://mappingdubliners.org/rutland-square/"
    },
    "geometry": {
     "type": "Point",
@@ -1577,7 +1616,8 @@
     "page": 50,
     "quote": "His tongue was tired for he had been talking all the afternoon in a public-house in Dorset Street",
     "kind": "place",
-    "srcText": "His tongue was tired for he had been talking all"
+    "srcText": "His tongue was tired for he had been talking all",
+    "essay": "https://mappingdubliners.org/dorset-street/"
    },
    "geometry": {
     "type": "Point",
@@ -1596,7 +1636,8 @@
     "page": 50,
     "quote": "--One night, man, he said, I was going along Dame Street and I spotted a fine tart under Waterhouse's clock and said good- night, you know. So we went for a walk round by the canal and she told me she was a slavey in a house in Baggot Street",
     "kind": "place",
-    "srcText": "“One night, man,” he said, “I was going along Dame"
+    "srcText": "“One night, man,” he said, “I was going along Dame",
+    "essay": "https://mappingdubliners.org/dame-street/"
    },
    "geometry": {
     "type": "Point",
@@ -1634,7 +1675,8 @@
     "page": 56,
     "quote": "I put my arm round her and squeezed her a bit that night. Then next Sunday, man, I met her by appointment. We vent out to Donnybrook and I brought her into a field there\" (50-51). \"He kept the pair in view until he had seen them climbing the stairs of the Donnybrook tram; then he turned about and went back the way he had come",
     "kind": "place",
-    "srcText": "I put my arm round her and squeezed her a"
+    "srcText": "I put my arm round her and squeezed her a",
+    "essay": "https://mappingdubliners.org/donnybrook/"
    },
    "geometry": {
     "type": "Point",
@@ -1672,7 +1714,8 @@
     "page": 52,
     "quote": "First I used to go with girls, you know,\" said Corley, unbosoming; \"girls off the South Circular",
     "kind": "place",
-    "srcText": "“First I used to go with girls, you know,” said"
+    "srcText": "“First I used to go with girls, you know,” said",
+    "essay": "https://mappingdubliners.org/south-circular-road/"
    },
    "geometry": {
     "type": "Point",
@@ -1691,7 +1734,8 @@
     "page": 53,
     "quote": "-She's on the turf now. I saw her driving down Earl Street one night with two fellows with her on a car",
     "kind": "place",
-    "srcText": "“She’s on the turf now. I saw her driving down"
+    "srcText": "“She’s on the turf now. I saw her driving down",
+    "essay": "https://mappingdubliners.org/earl-street/"
    },
    "geometry": {
     "type": "Point",
@@ -1710,7 +1754,8 @@
     "page": 53,
     "quote": "As they passed along the railings of Trinity College, Lenehan skipped out into the road and peered up at the clock",
     "kind": "place",
-    "srcText": "As they passed along the railings of Trinity College, Lenehan"
+    "srcText": "As they passed along the railings of Trinity College, Lenehan",
+    "essay": "https://mappingdubliners.org/trinity-college/"
    },
    "geometry": {
     "type": "Point",
@@ -1728,7 +1773,8 @@
     "page": 54,
     "quote": "They walked along Nassau Street and then turned into Kildare Street. Not far from the porch of the club a harpist stood in the roadway, playing to a little ring of listeners",
     "kind": "place",
-    "srcText": "They walked along Nassau Street and then turned into Kildare"
+    "srcText": "They walked along Nassau Street and then turned into Kildare",
+    "essay": "https://mappingdubliners.org/nassau-street/"
    },
    "geometry": {
     "type": "Point",
@@ -1766,7 +1812,8 @@
     "page": 60,
     "quote": "When they reached Stephen's Green they crossed the road. Here the noise of trams, the lights and the crowd released them from their silence\" (54). \"He walked listlessly round Stephen's Green and then down Grafton Street\" (56). \"He set off briskly along the northern side of the Green hurrying for fear Corley should return too soon\" (59). \"The door closed on her and Corley began to walk swiftly towards Stephen's Green",
     "kind": "place",
-    "srcText": "When they reached Stephen’s Green they crossed the road. Here"
+    "srcText": "When they reached Stephen’s Green they crossed the road. Here",
+    "essay": "https://mappingdubliners.org/stephens-green/"
    },
    "geometry": {
     "type": "Point",
@@ -1785,7 +1832,8 @@
     "page": 55,
     "quote": "At the corner of Hume Street a young woman was standing. She wore a blue dress and a white sailor hat. She stood on the curbstone, swinging a sunshade in one hand\" (54). \"Lenehan observed them for a few minutes. Then he walked rapidly along beside the chains at some distance and crossed the road obliquely. As he approached Hume Street corner he found the air heavily scented and his eyes made a swift anxious scrutiny of the young woman's appearance",
     "kind": "place",
-    "srcText": "At the corner of Hume Street a young woman was"
+    "srcText": "At the corner of Hume Street a young woman was",
+    "essay": "https://mappingdubliners.org/hume-street/"
    },
    "geometry": {
     "type": "Point",
@@ -1804,7 +1852,8 @@
     "page": 59,
     "quote": "--And after? Where will we meet? --Half ten, answered Corley, bringing over his other leg. --Where? --Corner of Merrion Street. We'll be coming back.\" (55) \"After waiting for a little time he saw them coming towards him and, when they turned to the right, he followed them, stepping lightly in his white shoes, down one side of Merrion Square\" (56). \"When he reached the corner of Merrion Street he took his stand in the shadow of a lamp and brought out one of the cigarettes which he had reserved and lit it. He leaned against the lamp-post and kept his gaze fixed on the part from which he expected to see Corley and the young woman return",
     "kind": "place",
-    "srcText": "“And after? Where will we meet?” “Half ten,” answered Corley,"
+    "srcText": "“And after? Where will we meet?” “Half ten,” answered Corley,",
+    "essay": "https://mappingdubliners.org/merrion-street/"
    },
    "geometry": {
     "type": "Point",
@@ -1823,7 +1872,8 @@
     "page": 56,
     "quote": "Lenehan walked as far as the Shelbourne Hotel where he halted and waited",
     "kind": "place",
-    "srcText": "Lenehan walked as far as the Shelbourne Hotel where he"
+    "srcText": "Lenehan walked as far as the Shelbourne Hotel where he",
+    "essay": "https://mappingdubliners.org/shelbourne-hotel/"
    },
    "geometry": {
     "type": "Point",
@@ -1861,7 +1911,8 @@
     "page": 58,
     "quote": "He walked listlessly round Stephen's Green and then down Grafton Street\" (56). \"He turned to the left at the City Markets and walked on into Grafton Street",
     "kind": "place",
-    "srcText": "He walked listlessly round Stephen’s Green and then down Grafton"
+    "srcText": "He walked listlessly round Stephen’s Green and then down Grafton",
+    "essay": "https://mappingdubliners.org/grafton-street/"
    },
    "geometry": {
     "type": "Point",
@@ -1880,7 +1931,8 @@
     "page": 58,
     "quote": "He paid twopence halfpenny to the slatternly girl and went out of the shop to begin his wandering again. He went into Capel Street and walked along towards the City Hall",
     "kind": "place",
-    "srcText": "He paid twopence halfpenny to the slatternly girl and went"
+    "srcText": "He paid twopence halfpenny to the slatternly girl and went",
+    "essay": "https://mappingdubliners.org/capel-street/"
    },
    "geometry": {
     "type": "Point",
@@ -1918,7 +1970,8 @@
     "page": 58,
     "quote": "Then he turned into Dame Street. At the corner of George's Street he met two friends of his and stopped to converse with them",
     "kind": "place",
-    "srcText": "Then he turned into Dame Street. At the corner of"
+    "srcText": "Then he turned into Dame Street. At the corner of",
+    "essay": "https://mappingdubliners.org/the-corner-of-dame-and-georges-streets/"
    },
    "geometry": {
     "type": "Point",
@@ -1937,7 +1990,8 @@
     "page": 58,
     "quote": "He turned to the left at the City Markets and walked onto Grafton Street",
     "kind": "place",
-    "srcText": "He turned to the left at the City Markets and"
+    "srcText": "He turned to the left at the City Markets and",
+    "essay": "https://mappingdubliners.org/city-markets/"
    },
    "geometry": {
     "type": "Point",
@@ -1956,7 +2010,8 @@
     "page": 58,
     "quote": "One said that he had seen Mac an hour before in Westmoreland Street. At this Lenehan said that he had been with Mac the night before in Egan's. The young man who had seen Mac in Westmoreland Street asked was it true that Mac had won a bit over a billiard match. Lenehan did not know: he said that Holohan had stood them drinks in Egan's",
     "kind": "place",
-    "srcText": "One said that he had seen Mac an hour before"
+    "srcText": "One said that he had seen Mac an hour before",
+    "essay": "https://mappingdubliners.org/westmoreland-street/"
    },
    "geometry": {
     "type": "Point",
@@ -2010,7 +2065,8 @@
     "story": "Two Gallants",
     "name": "\"Two Gallants\" Route",
     "quote": "The route Lenahan and Corley and then Lenehan alone take in \"Two Gallants.",
-    "kind": "route"
+    "kind": "route",
+    "essay": "https://mappingdubliners.org/two-gallants/"
    },
    "geometry": {
     "type": "LineString",
@@ -2356,7 +2412,8 @@
     "gloss": "the place near where Mrs. Mooney first opens the butcher shop with Mr. Mooney",
     "quote": "She had married her father's foreman and opened a butcher's shop near Spring Gardens\" (61). (found with Gilbert, John Thomas. A History of the City of Dublin, Vol. 2. Dublin: McGlashan and Gill, 1859, pp. 280.)",
     "kind": "place",
-    "srcText": "She had married her father’s foreman and opened a butcher’s"
+    "srcText": "She had married her father’s foreman and opened a butcher’s",
+    "essay": "https://mappingdubliners.org/spring-gardens/"
    },
    "geometry": {
     "type": "Point",
@@ -2375,7 +2432,8 @@
     "page": 62,
     "quote": "Mrs. Mooney, who had taken what remained of her money out of the butcher business and set up a boarding house in Hardwicke Street, was a big imposing woman",
     "kind": "place",
-    "srcText": "Mrs Mooney, who had taken what remained of her money"
+    "srcText": "Mrs Mooney, who had taken what remained of her money",
+    "essay": "https://mappingdubliners.org/hardwicke-street/"
    },
    "geometry": {
     "type": "Point",
@@ -2394,7 +2452,8 @@
     "page": 62,
     "quote": "Her house had a floating population made up of tourists from Liverpool and the Isle of Man and, occasionally, artistes from the music halls",
     "kind": "place",
-    "srcText": "Her house had a floating population made up of tourists"
+    "srcText": "Her house had a floating population made up of tourists",
+    "essay": "https://mappingdubliners.org/liverpool/"
    },
    "geometry": {
     "type": "Point",
@@ -2411,7 +2470,8 @@
     "name": "Isle of Man",
     "page": 62,
     "quote": "United Kingdom \"The Boarding House\" [where some of the the tourists are from] \"Her house had a floating population made up of tourists from Liverpool and the Isle of Man and, occasionally, artistes from the music halls",
-    "kind": "place"
+    "kind": "place",
+    "essay": "https://mappingdubliners.org/isle-of-man/"
    },
    "geometry": {
     "type": "Point",
@@ -2430,7 +2490,8 @@
     "page": 62,
     "quote": "Jack Mooney, the Madam's son, who was clerk to a commission agent in Fleet Street, had the reputation of being a hard case",
     "kind": "place",
-    "srcText": "Jack Mooney, the Madam’s son, who was clerk to a"
+    "srcText": "Jack Mooney, the Madam’s son, who was clerk to a",
+    "essay": "https://mappingdubliners.org/fleet-street/"
    },
    "geometry": {
     "type": "Point",
@@ -2449,7 +2510,8 @@
     "page": 63,
     "quote": "The belfry of George's Church sent out constant peals and worshippers, singly or in groups, traversed the little circus before the church, revealing their purpose by their self-contained demeanour no less than by the little volumes in their gloved hands",
     "kind": "place",
-    "srcText": "The belfry of George’s Church sent out constant peals and"
+    "srcText": "The belfry of George’s Church sent out constant peals and",
+    "essay": "https://mappingdubliners.org/st-georges/"
    },
    "geometry": {
     "type": "Point",
@@ -2468,7 +2530,8 @@
     "page": 64,
     "quote": "It was seventeen minutes past eleven: she would have lots of time to have the matter out with Mr. Doran and then catch short twelve at Marlborough Street",
     "kind": "place",
-    "srcText": "It was seventeen minutes past eleven: she would have lots"
+    "srcText": "It was seventeen minutes past eleven: she would have lots",
+    "essay": "https://mappingdubliners.org/marlborough-street/"
    },
    "geometry": {
     "type": "Point",
@@ -2487,7 +2550,8 @@
     "page": 70,
     "quote": "EIGHT years before he had seen his friend off at the North Wall and wished him godspeed",
     "kind": "place",
-    "srcText": "Eight years before he had seen his friend off at"
+    "srcText": "Eight years before he had seen his friend off at",
+    "essay": "https://mappingdubliners.org/north-wall/"
    },
    "geometry": {
     "type": "Point",
@@ -2506,7 +2570,8 @@
     "page": 83,
     "quote": "Little Chandler's thoughts ever since lunch-time had been of his meeting with Gallaher, of Gallaher's invitation and of the great city London where Gallaher lived\" (70). \"The friend whom he had known under a shabby and necessitous guise had become a brilliant figure on the London Press\" (71). \"Ignatius Gallaher on the London Press! Who would have thought it possible eight years before?\" (72) \"Perhaps Gallaher might be able to get it into some London paper for him\" (73). \"Every step brought him nearer to London, farther from his own sober inartistic life\" (73). \"--But Hogan has a good sit, hasn't he? --Yes; he's in the Land Commission. --I met him one night in London and he seemed to be very flush.... Poor O'Hara! Boose, I suppose?\" (75-76) \"--Go to London or Paris: Paris, for choice. That'd do you good\" (76). \"There was something vulgar in his friend which he had not observed before. But perhaps it was only the result of living in London amid the bustle and competition of the Press. The old personal charm was still there under this new gaudy manner\" (77). \"--Then it is an immoral city, said Little Chandler, with timid insistence -- I mean, compared with London or Dublin?\" (77) \"--London! said Ignatius Gallaher. It's six of one and half-a-dozen of the other. You ask Hogan, my boy. I showed him a bit about London when he was over there. He'd open your eye.... I say, Tommy, don't make punch of that whisky: liquor up\" (77). \"Was it too late for him to try to live bravely like Gallaher? Could he go to London?",
     "kind": "place",
-    "srcText": "Little Chandler’s thoughts ever since lunch-time"
+    "srcText": "Little Chandler’s thoughts ever since lunch-time",
+    "essay": "https://mappingdubliners.org/london-2/"
    },
    "geometry": {
     "type": "Point",
@@ -2562,7 +2627,8 @@
     "page": 73,
     "quote": "He turned to the right towards Capel Street\" (72). \"Little Chandler quickened his pace. For the first time in his life he felt himself superior to the people he passed. For the first time his soul revolted against the dull inelegance of Capel Street",
     "kind": "place",
-    "srcText": "He turned to the right towards Capel Street."
+    "srcText": "He turned to the right towards Capel Street.",
+    "essay": "https://mappingdubliners.org/capel-street/"
    },
    "geometry": {
     "type": "Point",
@@ -2581,7 +2647,8 @@
     "page": 84,
     "quote": "As he crossed Grattan Bridge he looked down the river towards the lower quays and pitied the poor stunted houses. They seemed to him a band of tramps, huddled together along the riverbanks, their old coats covered with dust and soot, stupefied by the panorama of sunset and waiting for the first chill of night bid them arise, shake themselves and begone\" (73). \"There were so many things he wanted to describe: his sensation of a few hours before on Grattan Bridge, for example",
     "kind": "place",
-    "srcText": "As he crossed Grattan Bridge he looked down the river"
+    "srcText": "As he crossed Grattan Bridge he looked down the river",
+    "essay": "https://mappingdubliners.org/grattan-bridge/"
    },
    "geometry": {
     "type": "Point",
@@ -2600,7 +2667,8 @@
     "page": 76,
     "quote": "--Have you never been anywhere even for a trip? --I've been to the Isle of Man, said Little Chandler. Ignatius Gallaher laughed. --The Isle of Man! he said. Go to London or Paris: Paris, for choice. That'd do you good",
     "kind": "place",
-    "srcText": "Have you never been anywhere even for a trip?” “I’ve"
+    "srcText": "Have you never been anywhere even for a trip?” “I’ve",
+    "essay": "https://mappingdubliners.org/isle-of-man/"
    },
    "geometry": {
     "type": "Point",
@@ -2619,7 +2687,8 @@
     "page": 77,
     "quote": "--Go to London or Paris: Paris, for choice. That'd do you good. --Have you seen Paris?\" (76) \"--It's not so beautiful, you know. Of course, it is beautiful.... But it's the life of Paris; that's the thing. Ah, there's no city like Paris for gaiety, movement, excitement....\" (76) \"--Everything in Paris is gay, said Ignatius Gallaher. They believe in enjoying life -- and don't you think they're right? If you want to enjoy yourself properly you must go to Paris. And, mind you, they've a great feeling for the Irish there\" (77). \"--Tell me, he said, is it true that Paris is so... immoral as they say? Ignatius Gallaher made a catholic gesture with his right arm. --Every place is immoral, he said. Of course you do find spicy bits in Paris. Go to one of the students' balls, for instance\" (77). \"There's no woman like the Parisienne -- for style, for go",
     "kind": "place",
-    "srcText": "“Go to London or Paris: Paris, for choice. That’d do"
+    "srcText": "“Go to London or Paris: Paris, for choice. That’d do",
+    "essay": "https://mappingdubliners.org/paris/"
    },
    "geometry": {
     "type": "Point",
@@ -2674,7 +2743,8 @@
     "name": "\"A Little Cloud\" Route",
     "gloss": "The route Chandler takes from his office to meet Gallaher.",
     "quote": "",
-    "kind": "route"
+    "kind": "route",
+    "essay": "https://mappingdubliners.org/a-little-cloud-route/"
    },
    "geometry": {
     "type": "LineString",
@@ -2830,7 +2900,8 @@
     "page": 89,
     "quote": "Darkness, accompanied by a thick fog, was gaining upon the dusk of February and the lamps in Eustace Street had been lit",
     "kind": "place",
-    "srcText": "Darkness, accompanied by a thick fog, was gaining upon the"
+    "srcText": "Darkness, accompanied by a thick fog, was gaining upon the",
+    "essay": "https://mappingdubliners.org/eustace-street/"
    },
    "geometry": {
     "type": "Point",
@@ -2849,7 +2920,8 @@
     "page": 92,
     "quote": "Suddenly, as he was fingering his watch-chain, he thought of Terry Kelly's pawn-office in Fleet Street. That was the dart! Why didn't he think of it sooner?",
     "kind": "place",
-    "srcText": "Suddenly, as he was fingering his"
+    "srcText": "Suddenly, as he was fingering his",
+    "essay": "https://mappingdubliners.org/fleet-street/"
    },
    "geometry": {
     "type": "Point",
@@ -2886,7 +2958,8 @@
     "page": 93,
     "quote": "In Westmoreland Street the footpaths were crowded with young men and women returning from business and ragged urchins ran here and there yelling out the names of the evening editions",
     "kind": "place",
-    "srcText": "In Westmoreland Street the footpaths were crowded with young men"
+    "srcText": "In Westmoreland Street the footpaths were crowded with young men",
+    "essay": "https://mappingdubliners.org/westmoreland-street/"
    },
    "geometry": {
     "type": "Point",
@@ -2905,7 +2978,8 @@
     "page": 93,
     "quote": "Nosey Flynn was sitting up in his usual corner of Davy Byrne's and, when he heard the story, he stood Farrington a half-one, saying it was as smart a thing as ever he heard",
     "kind": "place",
-    "srcText": "Nosey Flynn was sitting up in his usual corner of"
+    "srcText": "Nosey Flynn was sitting up in his usual corner of",
+    "essay": "https://mappingdubliners.org/davy-byrnes/"
    },
    "geometry": {
     "type": "Point",
@@ -2962,7 +3036,8 @@
     "page": 95,
     "quote": "Rain was drizzling down on the cold streets and, when they reached the Ballast Office, Farrington suggested the Scotch House. The bar was full of men and loud with the noise of tongues and glasses\" (94). \"When the Scotch House closed they went round to Mulligan's",
     "kind": "place",
-    "srcText": "Rain was drizzling down on the cold streets and, when"
+    "srcText": "Rain was drizzling down on the cold streets and, when",
+    "essay": "https://mappingdubliners.org/tivoli-theatre/"
    },
    "geometry": {
     "type": "Point",
@@ -2981,7 +3056,8 @@
     "page": 94,
     "quote": "Weathers made them all have just one little tincture at his expense and promised to meet them later on at Mulligan's in Poolbeg Street",
     "kind": "place",
-    "srcText": "Weathers made them all have just one little tincture at"
+    "srcText": "Weathers made them all have just one little tincture at",
+    "essay": "https://mappingdubliners.org/mulligans-in-poolbeg-street/"
    },
    "geometry": {
     "type": "Point",
@@ -3000,7 +3076,8 @@
     "page": 95,
     "quote": "She glanced at him once or twice and, when the party was leaving the room, she brushed against his chair and said \"O, pardon!\" in a London accent",
     "kind": "place",
-    "srcText": "She glanced at him once or twice and, when the"
+    "srcText": "She glanced at him once or twice and, when the",
+    "essay": "https://mappingdubliners.org/london-2/"
    },
    "geometry": {
     "type": "Point",
@@ -3018,7 +3095,8 @@
     "gloss": "where Farrington stands, waiting for the Sandymount tram, after losing the arm wrestling contest",
     "page": 96,
     "quote": "A very sullen-faced man stood at the corner of O'Connell Bridge waiting for the little Sandymount tram to take him home",
-    "kind": "place"
+    "kind": "place",
+    "essay": "https://mappingdubliners.org/oconnell-bridge-a-gateway-to-emancipation/"
    },
    "geometry": {
     "type": "Point",
@@ -3037,7 +3115,8 @@
     "page": 97,
     "quote": "His tram let him down at Shelbourne Road and he steered his great body along in the shadow of the wall of the barracks",
     "kind": "place",
-    "srcText": "His tram let him down at Shelbourne Road and he"
+    "srcText": "His tram let him down at Shelbourne Road and he",
+    "essay": "https://mappingdubliners.org/shelbourne-road/"
    },
    "geometry": {
     "type": "Point",
@@ -3053,7 +3132,8 @@
     "story": "Counterparts",
     "name": "\"Counterparts\" Route",
     "quote": "Farrington's path between the office, the bars, and his house.",
-    "kind": "route"
+    "kind": "route",
+    "essay": "https://mappingdubliners.org/counterparts-route/"
    },
    "geometry": {
     "type": "LineString",
@@ -3408,7 +3488,8 @@
     "page": 100,
     "quote": "From Ballsbridge to the Pillar, twenty minutes; from the Pillar to Drumcondra, twenty minutes; and twenty minutes to buy the things. She would be there before eight",
     "kind": "place",
-    "srcText": "From Ballsbridge to the Pillar, twenty minutes; from the Pillar"
+    "srcText": "From Ballsbridge to the Pillar, twenty minutes; from the Pillar",
+    "essay": "https://mappingdubliners.org/nelsons-pillar/"
    },
    "geometry": {
     "type": "Point",
@@ -3446,7 +3527,8 @@
     "page": 100,
     "quote": "She took out her purse with the silver clasps and read again the words A Present from Belfast. She was very fond of that purse because Joe had brought it to her five years before when he and Alphy had gone to Belfast on a Whit-Monday trip",
     "kind": "place",
-    "srcText": "She took out her purse with the silver clasps and"
+    "srcText": "She took out her purse with the silver clasps and",
+    "essay": "https://mappingdubliners.org/belfast/"
    },
    "geometry": {
     "type": "Point",
@@ -3465,7 +3547,8 @@
     "page": 102,
     "quote": "She went into Downes's cake-shop but the shop was so full of people that it was a long time before she could get herself attended to...She decided to buy some plumcake but Downes's plumcake had not enough almond icing on top of it so she went over to a shop in Henry Street",
     "kind": "place",
-    "srcText": "She went into Downes’s cake-shop"
+    "srcText": "She went into Downes’s cake-shop",
+    "essay": "https://mappingdubliners.org/downess-cake-shop/"
    },
    "geometry": {
     "type": "Point",
@@ -3500,7 +3583,8 @@
     "story": "Clay",
     "name": "\"Clay\" Route",
     "quote": "The route Maria travels to visit Joe. (end route according to Gifford)",
-    "kind": "route"
+    "kind": "route",
+    "essay": "https://mappingdubliners.org/clay-route/"
    },
    "geometry": {
     "type": "LineString",
@@ -3673,7 +3757,8 @@
     "page": 107,
     "quote": "MR. JAMES DUFFY lived in Chapelizod because he wished to live as far as possible from the city of which he was a citizen and because he found all the other suburbs of Dublin mean, modern and pretentious. He lived in an old sombre house and from his windows he could look into the disused distillery or upwards along the shallow river on which Dublin is built",
     "kind": "place",
-    "srcText": "Mr James Duffy lived in Chapelizod because he wished to"
+    "srcText": "Mr James Duffy lived in Chapelizod because he wished to",
+    "essay": "https://mappingdubliners.org/chapelizod/"
    },
    "geometry": {
     "type": "Point",
@@ -3710,7 +3795,8 @@
     "gloss": "where Duffy eats lunch",
     "quote": "At midday he went to Dan Burke's and took his lunch -- a bottle of lager beer and a small trayful of arrowroot biscuits\" (108). (according to Gifford)",
     "kind": "place",
-    "srcText": "At midday he went to Dan Burke’s and took his"
+    "srcText": "At midday he went to Dan Burke’s and took his",
+    "essay": "https://mappingdubliners.org/dan-burkes/"
    },
    "geometry": {
     "type": "Point",
@@ -3804,7 +3890,8 @@
     "page": 110,
     "quote": "Her husband was captain of a mercantile boat plying between Dublin and Holland; and they had one child",
     "kind": "place",
-    "srcText": "Her husband was captain of a mercantile boat plying between"
+    "srcText": "Her husband was captain of a mercantile boat plying between",
+    "essay": "https://mappingdubliners.org/holland/"
    },
    "geometry": {
     "type": "Point",
@@ -3823,7 +3910,8 @@
     "page": 112,
     "quote": "As he did not wish their last interview to be troubled by the influence of their ruined confessional they meet in a little cakeshop near the Parkgate",
     "kind": "place",
-    "srcText": "As he did not wish their last interview to be"
+    "srcText": "As he did not wish their last interview to be",
+    "essay": "https://mappingdubliners.org/the-phoenix-park/"
    },
    "geometry": {
     "type": "Point",
@@ -3899,7 +3987,8 @@
     "page": 115,
     "quote": "The river lay quiet beside the empty distillery and from time to time a light appeared in some house on the Lucan road",
     "kind": "place",
-    "srcText": "The river lay quiet beside the empty distillery and from"
+    "srcText": "The river lay quiet beside the empty distillery and from",
+    "essay": "https://mappingdubliners.org/lucan-road/"
    },
    "geometry": {
     "type": "Point",
@@ -3918,7 +4007,8 @@
     "page": 116,
     "quote": "When he came to the public-house at Chapelizod Bridge he went in and ordered a hot punch",
     "kind": "place",
-    "srcText": "When he came to the public-house"
+    "srcText": "When he came to the public-house",
+    "essay": "https://mappingdubliners.org/chapelizod-bridge/"
    },
    "geometry": {
     "type": "Point",
@@ -3994,7 +4084,8 @@
     "page": 119,
     "quote": "Mr. O'Connor had been engaged by Tierney's agent to canvass one part of the ward but, as the weather was inclement and his boots let in the wet, he spent a great part of the day sitting by the fire in the Committee Room in Wicklow Street with Jack, the old caretaker",
     "kind": "place",
-    "srcText": "Mr O’Connor had been engaged by Tierney’s agent to canvass"
+    "srcText": "Mr O’Connor had been engaged by Tierney’s agent to canvass",
+    "essay": "https://mappingdubliners.org/wicklow-street/"
    },
    "geometry": {
     "type": "Point",
@@ -4013,7 +4104,8 @@
     "page": 119,
     "quote": "--Ah, yes, he said, continuing, it's hard to know what way to bring up children. Now who'd think he'd turn out like that! I sent him to the Christian Brothers and I done what I could him, and there he goes boosing about. I tried to make him someway decent",
     "kind": "place",
-    "srcText": "“Ah, yes,” he said, continuing, “it’s hard to know what"
+    "srcText": "“Ah, yes,” he said, continuing, “it’s hard to know what",
+    "essay": "https://mappingdubliners.org/the-christian-brothers-school/"
    },
    "geometry": {
     "type": "Point",
@@ -4070,7 +4162,8 @@
     "page": 127,
     "quote": "--There's some deal on in that quarter, said Mr. O'Connor thoughtfully. I saw the three of them hard at it yesterday at Suffolk Street corner",
     "kind": "place",
-    "srcText": "“There’s some deal on in that quarter,” said Mr O’Connor"
+    "srcText": "“There’s some deal on in that quarter,” said Mr O’Connor",
+    "essay": "https://mappingdubliners.org/suffolk-street/"
    },
    "geometry": {
     "type": "Point",
@@ -4108,7 +4201,8 @@
     "page": 137,
     "quote": "However, when she drew near the limit and her friends began to loosen their tongues about her, she silenced them by marrying Mr. Kearney, who was a bootmaker on Ormond Quay",
     "kind": "place",
-    "srcText": "However, when she drew near the limit and her friends"
+    "srcText": "However, when she drew near the limit and her friends",
+    "essay": "https://mappingdubliners.org/ormond-quay/"
    },
    "geometry": {
     "type": "Point",
@@ -4127,7 +4221,8 @@
     "page": 137,
     "quote": "Every year in the month of July Mrs. Kearney found occasion to say to some friend: --My good man is packing us off to Skerries for a few weeks. If it was not Skerries it was Howth or Greystones",
     "kind": "place",
-    "srcText": "Every year in the month of July Mrs Kearney found"
+    "srcText": "Every year in the month of July Mrs Kearney found",
+    "essay": "https://mappingdubliners.org/skerries/"
    },
    "geometry": {
     "type": "Point",
@@ -4146,7 +4241,8 @@
     "page": 137,
     "quote": "Every year in the month of July Mrs. Kearney found occasion to say to some friend: --My good man is packing us off to Skerries for a few weeks. If it was not Skerries it was Howth or Greystones",
     "kind": "place",
-    "srcText": "Every year in the month of July Mrs Kearney found"
+    "srcText": "Every year in the month of July Mrs Kearney found",
+    "essay": "https://mappingdubliners.org/howth/"
    },
    "geometry": {
     "type": "Point",
@@ -4165,7 +4261,8 @@
     "page": 137,
     "quote": "Every year in the month of July Mrs. Kearney found occasion to say to some friend: --My good man is packing us off to Skerries for a few weeks. If it was not Skerries it was Howth or Greystones",
     "kind": "place",
-    "srcText": "Every year in the month of July Mrs Kearney found"
+    "srcText": "Every year in the month of July Mrs Kearney found",
+    "essay": "https://mappingdubliners.org/greystones/"
    },
    "geometry": {
     "type": "Point",
@@ -4203,7 +4300,8 @@
     "page": 141,
     "quote": "Therefore she was not surprised when one day Mr. Holohan came to her and proposed that her daughter should be the accompanist at a series of four grand concerts which his Society was going to give in the Antient Concert Rooms\" (138). \"When Mrs. Kearney arrived with her daughter at the Antient Concert Rooms on Wednesday night she did not like the look of things\" (139). \"Mrs. Kearney, with her husband and daughter, arrived at the Antient Concert Rooms three-quarters of an hour before the time at which the concert was to begin",
     "kind": "place",
-    "srcText": "Therefore she was not surprised when one day Mr Holohan"
+    "srcText": "Therefore she was not surprised when one day Mr Holohan",
+    "essay": "https://mappingdubliners.org/antient-concert-rooms/"
    },
    "geometry": {
     "type": "Point",
@@ -4240,7 +4338,8 @@
     "page": 143,
     "quote": "Mr. Holohan said that she was Madam Glynn from London",
     "kind": "place",
-    "srcText": "Mr Holohan said that she was Madam Glynn from London."
+    "srcText": "Mr Holohan said that she was Madam Glynn from London.",
+    "essay": "https://mappingdubliners.org/london-2/"
    },
    "geometry": {
     "type": "Point",
@@ -4278,7 +4377,8 @@
     "page": 153,
     "quote": "When they came out into Grafton Street, Mr. Power whistled for an outsider",
     "kind": "place",
-    "srcText": "When they came out into Grafton Street, Mr Power whistled"
+    "srcText": "When they came out into Grafton Street, Mr Power whistled",
+    "essay": "https://mappingdubliners.org/grafton-street/"
    },
    "geometry": {
     "type": "Point",
@@ -4297,7 +4397,8 @@
     "page": 153,
     "quote": "The car drove off towards Westmoreland Street",
     "kind": "place",
-    "srcText": "The car drove off towards Westmoreland"
+    "srcText": "The car drove off towards Westmoreland",
+    "essay": "https://mappingdubliners.org/westmoreland-street/"
    },
    "geometry": {
     "type": "Point",
@@ -4316,7 +4417,8 @@
     "page": 154,
     "quote": "Modern business methods had spared him only so far as to allow him a little office in Crowe Street, on the window blind of which was written the name of his firm with the address--London, E. C.",
     "kind": "place",
-    "srcText": "Modern business methods had spared him only so far as"
+    "srcText": "Modern business methods had spared him only so far as",
+    "essay": "https://mappingdubliners.org/crowe-street/"
    },
    "geometry": {
     "type": "Point",
@@ -4335,7 +4437,8 @@
     "page": 154,
     "quote": "Mr. Power, a much younger man, was employed in the Royal Irish Constabulary Office in Dublin Castle",
     "kind": "place",
-    "srcText": "Mr Power, a much younger man, was employed in the"
+    "srcText": "Mr Power, a much younger man, was employed in the",
+    "essay": "https://mappingdubliners.org/dublin-castle/"
    },
    "geometry": {
     "type": "Point",
@@ -4354,7 +4457,8 @@
     "page": 154,
     "quote": "The car halted before a small house on the Glasnevin road and Mr. Kernan was helped into the house",
     "kind": "place",
-    "srcText": "The car halted before a small house on the Glasnevin"
+    "srcText": "The car halted before a small house on the Glasnevin",
+    "essay": "https://mappingdubliners.org/glasnevin-road/"
    },
    "geometry": {
     "type": "Point",
@@ -4391,7 +4495,8 @@
     "page": 156,
     "quote": "In her days of courtship, Mr. Kernan had seemed to her a not ungallant figure: and she still hurried to the chapel door whenever a wedding was reported and, seeing the bridal pair, recalled with vivid pleasure how she had passed out of the Star of the Sea Church in Sandymount, leaning on the arm of a jovial well-fed man, who was dressed smartly in a frock-coat and lavender trousers and carried a silk hat gracefully balanced upon his other arm",
     "kind": "place",
-    "srcText": "In her days of courtship Mr Kernan had seemed to"
+    "srcText": "In her days of courtship Mr Kernan had seemed to",
+    "essay": "https://mappingdubliners.org/star-of-the-sea-church/"
    },
    "geometry": {
     "type": "Point",
@@ -4429,7 +4534,8 @@
     "page": 156,
     "quote": "Her two eldest sons were launched. One was in a draper's shop in Glasgow and the other was clerk to a tea-merchant in Belfast",
     "kind": "place",
-    "srcText": "Her two eldest sons were launched. One was in a"
+    "srcText": "Her two eldest sons were launched. One was in a",
+    "essay": "https://mappingdubliners.org/belfast/"
    },
    "geometry": {
     "type": "Point",
@@ -4486,7 +4592,8 @@
     "page": 172,
     "quote": "The transept of the Jesuit Church in Gardiner Street was almost full; and still at every moment gentlemen entered from the side door and, directed by the lay-brother, walked on tiptoe along the aisles until they found seating accommodation",
     "kind": "place",
-    "srcText": "The transept of the Jesuit Church in Gardiner Street was"
+    "srcText": "The transept of the Jesuit Church in Gardiner Street was",
+    "essay": "https://mappingdubliners.org/gardiner-street/"
    },
    "geometry": {
     "type": "Point",
@@ -4718,7 +4825,8 @@
     "gloss": "where Mary Jane gives pupils' concerts",
     "quote": "She had been through the Academy and gave a pupils' concert every year in the upper room of the Antient Concert Rooms\" (176). (address according to Gifford)",
     "kind": "place",
-    "srcText": "She had been through the Academy and gave a pupils’"
+    "srcText": "She had been through the Academy and gave a pupils’",
+    "essay": "https://mappingdubliners.org/antient-concert-rooms/"
    },
    "geometry": {
     "type": "Point",
@@ -4737,7 +4845,8 @@
     "page": 176,
     "quote": "Many of her pupils belonged to the better-class families on the Kingstown and Dalkey line",
     "kind": "place",
-    "srcText": "Many of her pupils belonged to the better-class"
+    "srcText": "Many of her pupils belonged to the better-class",
+    "essay": "https://mappingdubliners.org/kingstown/"
    },
    "geometry": {
     "type": "Point",
@@ -4774,7 +4883,8 @@
     "gloss": "where Julia sings soprano",
     "quote": "Julia, though she was quite grey, was still the leading soprano in Adam and Eve's, and Kate, being too feeble to go about much, gave music lessons to beginners on the old square piano in the back room\" (176). (According to Gifford, Adam and Eve's was a \"[p]opular name for the Franciscan Church of St. Francis of Assisi in Merchant's Quay\" [112])",
     "kind": "place",
-    "srcText": "Julia, though she was quite grey, was still the leading"
+    "srcText": "Julia, though she was quite grey, was still the leading",
+    "essay": "https://mappingdubliners.org/adam-and-eves/"
    },
    "geometry": {
     "type": "Point",
@@ -4793,7 +4903,8 @@
     "page": 179,
     "quote": "They both kissed Gabriel frankly. He was their favourite nephew the son of their dead elder sister, Ellen, who had married T. J. Conroy of the Port and Docks",
     "kind": "place",
-    "srcText": "They both kissed Gabriel frankly. He was their favourite nephew,"
+    "srcText": "They both kissed Gabriel frankly. He was their favourite nephew,",
+    "essay": "https://mappingdubliners.org/port-and-docks/"
    },
    "geometry": {
     "type": "Point",
@@ -4812,7 +4923,8 @@
     "page": 180,
     "quote": "--Gretta tells me you're not going to take a cab back to Monkstown tonight, Gabriel, said Aunt Kate",
     "kind": "place",
-    "srcText": "“Gretta tells me you’re not going to take a cab"
+    "srcText": "“Gretta tells me you’re not going to take a cab",
+    "essay": "https://mappingdubliners.org/monkstown/"
    },
    "geometry": {
     "type": "Point",
@@ -5002,7 +5114,8 @@
     "page": 189,
     "quote": "--Well, we usually go to France or Belgium or perhaps Germany, said Gabriel awkwardly",
     "kind": "place",
-    "srcText": "“Well, we usually go to France or Belgium or perhaps"
+    "srcText": "“Well, we usually go to France or Belgium or perhaps",
+    "essay": "https://mappingdubliners.org/belgium/"
    },
    "geometry": {
     "type": "Point",
@@ -5040,7 +5153,8 @@
     "page": 221,
     "quote": "--There was no row, said Gabriel moodily, only she wanted me to go for a trip to the west of Ireland and I said I wouldn't. His wife clasped her hands excitedly and gave a little jump. --O, do go, Gabriel, she cried. I'd love to see Galway again\" (191). \"--It was a person I used to know in Galway when I was living with my grandmother, she said\" (218). \"--I used to go out walking with him, she said, when I was in Galway. A thought flew across Gabriel's mind. --Perhaps that was why you wanted to go to Galway with that Ivors girl? he said coldly\" (219). \"--It was in the winter, she said, about the beginning of the winter when I was going to leave my grandmother's and come up here to the convent. And he was ill at the time in his lodgings in Galway and wouldn't be let out, and his people in Oughterard were written to. He was in decline, they said, or something like that. I never knew rightly\" (220). \"--And then when it came to the time for me to leave Galway and come up to the convent he was much worse and I wouldn't be let see him so I wrote him a letter saying I was going up to Dublin and would be back in the summer, and hoping he would be better then",
     "kind": "place",
-    "srcText": "“There was no row,” said Gabriel moodily, “only she wanted"
+    "srcText": "“There was no row,” said Gabriel moodily, “only she wanted",
+    "essay": "https://mappingdubliners.org/galway/"
    },
    "geometry": {
     "type": "Point",
@@ -5059,7 +5173,8 @@
     "page": 202,
     "quote": "How cool it must be outside! How pleasant it would be to walk out alone, first along by the river and then through the park! The snow would be lying on the branches of the trees and forming a bright cap on the top of the Wellington Monument. How much more pleasant it would be there than at the supper-table!\" (192) \"In the distance lay the park where the trees were weighted with snow. The Wellington Monument wore a gleaming cap of snow that flashed westward over the white field of Fifteen Acres",
     "kind": "place",
-    "srcText": "How cool it must be outside! How pleasant it would"
+    "srcText": "How cool it must be outside! How pleasant it would",
+    "essay": "https://mappingdubliners.org/wellington-monument/"
    },
    "geometry": {
     "type": "Point",
@@ -5078,7 +5193,8 @@
     "page": 198,
     "quote": "The subject of talk was the opera company which was then at the Theatre Royal",
     "kind": "place",
-    "srcText": "The subject of talk was the opera company which was"
+    "srcText": "The subject of talk was the opera company which was",
+    "essay": "https://mappingdubliners.org/theatre-royal/"
    },
    "geometry": {
     "type": "Point",
@@ -5097,7 +5213,8 @@
     "page": 199,
     "quote": "--Oh, well, said Mr. Bartell D'Arcy, I presume there are as good singers today as there were then. --Where are they? asked Mr. Browne defiantly. --In London, Paris, Milan, said Mr. Bartell D'Arcy warmly",
     "kind": "place",
-    "srcText": "“Oh, well,” said Mr Bartell D’Arcy, “I presume there are"
+    "srcText": "“Oh, well,” said Mr Bartell D’Arcy, “I presume there are",
+    "essay": "https://mappingdubliners.org/london-2/"
    },
    "geometry": {
     "type": "Point",
@@ -5116,7 +5233,8 @@
     "page": 199,
     "quote": "--Oh, well, said Mr. Bartell D'Arcy, I presume there are as good singers today as there were then. --Where are they? asked Mr. Browne defiantly. --In London, Paris, Milan, said Mr. Bartell D'Arcy warmly",
     "kind": "place",
-    "srcText": "“Oh, well,” said Mr Bartell D’Arcy, “I presume there are"
+    "srcText": "“Oh, well,” said Mr Bartell D’Arcy, “I presume there are",
+    "essay": "https://mappingdubliners.org/paris/"
    },
    "geometry": {
     "type": "Point",
@@ -5172,7 +5290,8 @@
     "gloss": "where the Morkans's \"ancestral mansion\" was",
     "quote": "--So the old gentleman, as I said, harnessed Johnny and put on his very best tall hat and his very best stock collar and drove out in grand style from his ancestral mansion somewhere near Back Lane, I think. Everyone laughed, even Mrs. Malins, at Gabriel's manner and Aunt Kate said: --O, now, Gabriel, he didn't live in Back Lane, really. Only the mill was there\" (207-08).",
     "kind": "place",
-    "srcText": "“So the old gentleman, as I said, harnessed Johnny and"
+    "srcText": "“So the old gentleman, as I said, harnessed Johnny and",
+    "essay": "https://mappingdubliners.org/back-lane/"
    },
    "geometry": {
     "type": "Point",
@@ -5210,7 +5329,8 @@
     "page": 209,
     "quote": "--Do you know Trinity College? --Yes, sir, said the cabman. --Well, drive bang up against Trinity College gates, said Mr. Browne, and then we'll tell you where to go. You understand now? --Yes, sir, said the cabman. --Make like a bird for Trinity College. --Right, sir, said the cabman",
     "kind": "place",
-    "srcText": "“Do you know Trinity College?” “Yes, sir,” said the cabman."
+    "srcText": "“Do you know Trinity College?” “Yes, sir,” said the cabman.",
+    "essay": "https://mappingdubliners.org/trinity-college/"
    },
    "geometry": {
     "type": "Point",
@@ -5248,7 +5368,8 @@
     "page": 214,
     "quote": "At the corner of Winetavern Street they met a cab",
     "kind": "place",
-    "srcText": "At the corner of Winetavern Street they met a cab."
+    "srcText": "At the corner of Winetavern Street they met a cab.",
+    "essay": "https://mappingdubliners.org/winetavern-street/"
    },
    "geometry": {
     "type": "Point",
@@ -5362,7 +5483,8 @@
     "page": 223,
     "quote": "It was falling on every part of the dark central plain, on the treeless hills, falling softly upon the Bog of Allen and, farther westward, softly falling into the dark mutinous Shannon waves",
     "kind": "place",
-    "srcText": "It was falling on every part of the dark central"
+    "srcText": "It was falling on every part of the dark central",
+    "essay": "https://mappingdubliners.org/shannon-waves/"
    },
    "geometry": {
     "type": "Point",
@@ -5379,7 +5501,8 @@
     "name": "\"The Dead\" Route",
     "gloss": "the route travelled by Gabriel and Gretta after the party",
     "quote": "",
-    "kind": "route"
+    "kind": "route",
+    "essay": "https://mappingdubliners.org/the-dead-route/"
    },
    "geometry": {
     "type": "LineString",
