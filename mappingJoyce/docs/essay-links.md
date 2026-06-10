@@ -112,15 +112,18 @@ spellings and the hand-placed essays below were checked against the blog by hand
 | wicklow-street | Ivy Day in the Committee Room · Wicklow Street | https://mappingdubliners.org/wicklow-street/ |
 | winetavern-street | The Dead · Winetavern Street | https://mappingdubliners.org/winetavern-street/ |
 
-## 2. Essays with no node yet (5) — need their own geolocation 
+## 2. Essays with no node yet (4) — need their own geolocation 
 
 | essay slug | URL | note |
 |---|---|---|
 | bewleys | https://mappingdubliners.org/bewleys/ | café (Grafton/Westmoreland St); not mapped |
-| donnybrook-tramline | https://mappingdubliners.org/donnybrook-tramline/ | the Donnybrook tram line; distinct from the Donnybrook node |
 | italy | https://mappingdubliners.org/italy/ | country reference; not mapped |
 | kavanaghs | https://mappingdubliners.org/kavanaghs/ | pub; no suitable existing node |
 | queens-theatre | https://mappingdubliners.org/queens-theatre/ | theatre (Pearse St); not mapped |
+
+_`donnybrook-tramline` is now linked from an **own addition** — the route
+"Donnybrook Tram Line" (Two Gallants) in `data/dubliners-own.geojson`, not from
+Mulliken's data._
 
 _`london` is intentionally retired in favour of **london-2** (an extended essay that links back to the original)._
 

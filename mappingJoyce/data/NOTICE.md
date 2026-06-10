@@ -17,6 +17,19 @@ licensed **Creative Commons Attribution-NonCommercial 4.0 International
   per-place essay on Mapping Dubliners (see `docs/essay-links.md` for the
   mapping).
 
+- **`dubliners-own.geojson` / `dubliners-own-source.json`** — **Original
+  additions** to the *Dubliners* layer by J. Hermes (CC BY-NC 4.0), kept in
+  a separate file so provenance stays clean. Every feature carries
+  `source: "own"` and is labelled as such in its popup ("Added by J. Hermes
+  — not part of Mapping Dubliners"). These are **not** Mulliken's work; any
+  errors in them are the author's responsibility, not hers.
+
+- **`*-annotations.json`** — editorial annotation overlays (e.g. character,
+  time, ordering, gloss overrides) authored by **J. Hermes** and merged onto the
+  base features at load time. The base data is never modified; these annotation
+  fields, wherever they appear, are the author's contribution (CC BY-NC 4.0),
+  not the base layer's author's.
+
 - **`ulysses.geojson` / `ulysses-source.json`** — Original dataset compiled for
   this project from the **public-domain text of *Ulysses* (1922)**. Factual
   locations and clock-times were informed by the published *Ulysses Map of

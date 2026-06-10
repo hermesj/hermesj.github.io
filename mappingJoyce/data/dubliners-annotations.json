@@ -1,0 +1,10 @@
+{
+  "_comment": "Editorial annotation overlay for the dubliners layer — original work by J. Hermes, applied on top of the base features at load time (the base GeoJSON is never modified). Key = stable feature id; value = a patch of fields to merge. Edited via pipeline/annotate-ui/.",
+  "work": "dubliners",
+  "annotations": {
+    "two-gallants/donnybrook-tram-line": {
+      "character": "Corley, the woman",
+      "verified": true
+    }
+  }
+}

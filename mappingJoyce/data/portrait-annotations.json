@@ -1,0 +1,5 @@
+{
+  "_comment": "Editorial annotation overlay for the portrait layer — applied on top of the base features at load time (the base GeoJSON is never modified). Key = stable feature id (slug(story)/slug(name), -2/-3 for duplicates); value = a patch of fields to merge. Edited via pipeline/annotate-ui/.",
+  "work": "portrait",
+  "annotations": {}
+}

@@ -37,8 +37,13 @@ endpoints are the `OSRM` / `BROUTER` constants at the top of
 | Script | Purpose |
 |--------|---------|
 | `geocode_source.py` | source JSON → GeoJSON. Geocodes places (Nominatim), draws routes (OSRM/BRouter), caches `lat`/`lon` + `coords` back into the source. The one script the live workflow uses. |
+| `check.py` | **project lint** — run before committing. Catches silent failures: orphaned annotation keys, features whose `story` matches no group (invisible), stale own layers, forgotten `add_srctext`/`add_essays` after a rebuild; `--mirror ../litmap` also reports drift of the shared artefacts. |
+| `overlay.py` | shared helpers (stable feature ids, overlay load/save) used by `check.py` and `annotate-ui/`. |
+| `annotate-ui/` | local stdlib web app to edit/annotate features and create new ones — see its README. |
 | `example-dubliners/kml_to_geojson.py` (+ `source-doc.kml`) | converts the *Mapping Dubliners Project* KMZ into `data/dubliners.geojson`. Tied to that one source format — the worked example, not generic. |
 | `example-dubliners/add_srctext.py` | pins fixed Gutenberg-#2814 link targets (`srcText`) onto the Dubliners quotes. Run after `kml_to_geojson.py`. |
+| `example-dubliners/add_essays.py` | attaches the Mapping Dubliners essay back-links. Run after `add_srctext.py`. |
+| `example-dubliners/rebuild.sh` | the fool-proof Dubliners rebuild: runs the three steps above **in order** (the converter wipes `srcText`/`essay`, so the enrichment steps are mandatory), then lints with `check.py`. Use this instead of the single steps. |
 
 ## legacy/
 

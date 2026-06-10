@@ -4,5 +4,7 @@
 **/.claude
 __pycache__/
 *.pyc
+mappingJoyce/tmp/
+mappingJoyce/temp/
 
 
