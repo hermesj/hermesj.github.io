@@ -54,6 +54,7 @@
         { "url": "data/dubliners-own.geojson", "source": "own" }
       ],
       "annotations": "data/dubliners-annotations.json",
+      "regionBBox": [53.27, -6.33, 53.38, -6.09],
       "experimental": false,
       "numberedGroups": false,
       "groupPrefix": null,

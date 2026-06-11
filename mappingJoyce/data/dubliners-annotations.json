@@ -5,6 +5,285 @@
     "two-gallants/donnybrook-tram-line": {
       "character": "Corley, the woman",
       "verified": true
+    },
+    "the-sisters/great-britain-street": {
+      "character": "the boy, his aunt, Eliza, Nannie"
+    },
+    "an-encounter/canal-bridge": {
+      "character": "the boy, Mahony"
+    },
+    "an-encounter/north-strand-road": {
+      "character": "the boy, Mahony"
+    },
+    "an-encounter/wharf-road": {
+      "character": "the boy, Mahony"
+    },
+    "an-encounter/ringsend": {
+      "character": "the boy, Mahony"
+    },
+    "an-encounter/the-dodder": {
+      "character": "the boy, Mahony, the old josser"
+    },
+    "an-encounter/an-encounter-route": {
+      "character": "the boy, Mahony"
+    },
+    "araby/north-richmond-street": {
+      "character": "the boy"
+    },
+    "araby/christian-brothers-school": {
+      "character": "the boy"
+    },
+    "araby/buckingham-street": {
+      "character": "the boy"
+    },
+    "araby/westland-row": {
+      "character": "the boy"
+    },
+    "araby/araby-route": {
+      "character": "the boy"
+    },
+    "eveline/north-wall": {
+      "character": "Eveline, Frank"
+    },
+    "after-the-race/naas-road": {
+      "character": "Jimmy, Ségouin, Rivière, Villona"
+    },
+    "after-the-race/inchicore-square": {
+      "character": "Jimmy, Ségouin, Rivière, Villona"
+    },
+    "after-the-race/dame-street": {
+      "character": "Jimmy, Ségouin, Rivière, Villona"
+    },
+    "after-the-race/grafton-street": {
+      "character": "Jimmy, Ségouin, Rivière, Villona, Farley"
+    },
+    "after-the-race/stephens-green": {
+      "character": "Jimmy, Ségouin, Rivière, Villona, Routh"
+    },
+    "after-the-race/westland-row": {
+      "character": "Jimmy, Ségouin, Rivière, Villona, Routh, Farley"
+    },
+    "after-the-race/kingstown-harbour": {
+      "character": "Jimmy, Ségouin, Rivière, Villona, Routh, Farley"
+    },
+    "after-the-race/after-the-race-car-route": {
+      "character": "Jimmy, Ségouin, Rivière, Villona"
+    },
+    "after-the-race/after-the-race-walking-car-train-route": {
+      "character": "Jimmy, Ségouin, Rivière, Villona, Routh, Farley"
+    },
+    "two-gallants/rutland-square": {
+      "character": "Lenehan, Corley"
+    },
+    "two-gallants/dorset-street": {
+      "character": "Lenehan"
+    },
+    "two-gallants/baggot-street": {
+      "character": "Lenehan, Corley, the woman"
+    },
+    "two-gallants/donnybrook": {
+      "character": "Corley, the woman"
+    },
+    "two-gallants/trinity-college-dublin": {
+      "character": "Lenehan, Corley"
+    },
+    "two-gallants/nassau-street": {
+      "character": "Lenehan, Corley"
+    },
+    "two-gallants/kildare-street": {
+      "character": "Lenehan, Corley"
+    },
+    "two-gallants/stephens-green": {
+      "character": "Lenehan, Corley"
+    },
+    "two-gallants/hume-street": {
+      "character": "Lenehan, Corley, the woman"
+    },
+    "two-gallants/merrion-street": {
+      "character": "Lenehan, Corley, the woman"
+    },
+    "two-gallants/the-shelbourne-hotel": {
+      "character": "Lenehan, Corley, the woman"
+    },
+    "two-gallants/dukes-lawn": {
+      "character": "Lenehan"
+    },
+    "two-gallants/grafton-street": {
+      "character": "Lenehan"
+    },
+    "two-gallants/capel-street": {
+      "character": "Lenehan"
+    },
+    "two-gallants/city-hall": {
+      "character": "Lenehan"
+    },
+    "two-gallants/dame-street-and-georges-street": {
+      "character": "Lenehan"
+    },
+    "two-gallants/city-markets": {
+      "character": "Lenehan"
+    },
+    "two-gallants/georges-street": {
+      "character": "Lenehan"
+    },
+    "two-gallants/ely-place": {
+      "character": "Lenehan, Corley, the woman"
+    },
+    "two-gallants/two-gallants-route": {
+      "character": "Lenehan, Corley"
+    },
+    "two-gallants/lenehan-and-corley-together": {
+      "character": "Lenehan, Corley"
+    },
+    "the-boarding-house/hardwicke-street": {
+      "character": "Mrs Mooney, Polly, Mr Doran"
+    },
+    "a-little-cloud/henrietta-street": {
+      "character": "Little Chandler"
+    },
+    "a-little-cloud/corlesss": {
+      "character": "Little Chandler, Gallaher"
+    },
+    "a-little-cloud/capel-street": {
+      "character": "Little Chandler"
+    },
+    "a-little-cloud/grattan-bridge": {
+      "character": "Little Chandler"
+    },
+    "a-little-cloud/a-little-cloud-route": {
+      "character": "Little Chandler"
+    },
+    "counterparts/oneills": {
+      "character": "Farrington"
+    },
+    "counterparts/eustace-street": {
+      "character": "Farrington, Mr Alleyne"
+    },
+    "counterparts/fleet-street": {
+      "character": "Farrington"
+    },
+    "counterparts/temple-bar": {
+      "character": "Farrington"
+    },
+    "counterparts/westmoreland-street": {
+      "character": "Farrington"
+    },
+    "counterparts/davy-byrnes": {
+      "character": "Farrington, Nosey Flynn, O'Halloran, Higgins"
+    },
+    "counterparts/duke-street": {
+      "character": "Farrington, O'Halloran, Paddy Leonard"
+    },
+    "counterparts/scotch-house": {
+      "character": "Farrington, O'Halloran, Paddy Leonard, Weathers"
+    },
+    "counterparts/poolbeg-street": {
+      "character": "Farrington, O'Halloran, Paddy Leonard, Weathers"
+    },
+    "counterparts/oconnell-bridge": {
+      "character": "Farrington"
+    },
+    "counterparts/shelbourne-road": {
+      "character": "Farrington, Tom"
+    },
+    "counterparts/counterparts-route": {
+      "character": "Farrington"
+    },
+    "clay/ballsbridge": {
+      "character": "Maria"
+    },
+    "clay/nelsons-pillar": {
+      "character": "Maria"
+    },
+    "clay/drumcondra": {
+      "character": "Maria, Joe"
+    },
+    "clay/downess-cakeshop": {
+      "character": "Maria"
+    },
+    "clay/henry-street": {
+      "character": "Maria"
+    },
+    "clay/clay-route": {
+      "character": "Maria"
+    },
+    "a-painful-case/chapelizod": {
+      "character": "Mr Duffy"
+    },
+    "a-painful-case/baggot-street": {
+      "character": "Mr Duffy"
+    },
+    "a-painful-case/dan-burkes": {
+      "character": "Mr Duffy"
+    },
+    "a-painful-case/georges-street": {
+      "character": "Mr Duffy"
+    },
+    "a-painful-case/rotunda": {
+      "character": "Mr Duffy, Mrs Sinico"
+    },
+    "a-painful-case/earlsfort-terrace": {
+      "character": "Mr Duffy, Mrs Sinico"
+    },
+    "a-painful-case/parkgate": {
+      "character": "Mr Duffy, Mrs Sinico"
+    },
+    "a-painful-case/city-of-dublin-hospital": {
+      "character": "Mrs Sinico"
+    },
+    "a-painful-case/sydney-parade-station": {
+      "character": "Mrs Sinico"
+    },
+    "a-painful-case/chapelizod-bridge": {
+      "character": "Mr Duffy"
+    },
+    "a-painful-case/magazine-hill": {
+      "character": "Mr Duffy"
+    },
+    "ivy-day-in-the-committee-room/wicklow-street": {
+      "character": "Mr O'Connor, Mr Henchy, Old Jack, Mr Hynes, Father Keon, Mr Crofton, Mr Lyons"
+    },
+    "ivy-day-in-the-committee-room/aungier-street": {
+      "character": "Mr O'Connor"
+    },
+    "ivy-day-in-the-committee-room/dawson-street": {
+      "character": "Mr Henchy"
+    },
+    "a-mother/antient-concert-rooms": {
+      "character": "Mrs Kearney, Kathleen, Mr Holohan, Mr Kearney"
+    },
+    "a-mother/brown-thomass": {
+      "character": "Mrs Kearney"
+    },
+    "grace/grafton-street": {
+      "character": "Mr Kernan, Mr Power"
+    },
+    "grace/westmoreland-street": {
+      "character": "Mr Kernan, Mr Power"
+    },
+    "grace/the-glasnevin-road": {
+      "character": "Mr Kernan, Mrs Kernan, Mr Power, Mr Cunningham, Mr M'Coy, Mr Fogarty"
+    },
+    "grace/gardiner-street": {
+      "character": "Mr Kernan, Mr Power, Mr Cunningham, Mr M'Coy, Mr Fogarty, Father Purdon"
+    },
+    "grace/grace-route-approximate": {
+      "character": "Mr Kernan, Mr Power"
+    },
+    "the-dead/ushers-island": {
+      "character": "Gabriel, Gretta, Aunt Kate, Aunt Julia, Mary Jane, Freddy Malins, Mr Browne, Molly Ivors, Bartell D'Arcy"
+    },
+    "the-dead/the-gresham-hotel-dublin": {
+      "character": "Gabriel, Gretta"
+    },
+    "the-dead/winetavern-street": {
+      "character": "Gabriel, Gretta, Bartell D'Arcy, Miss O'Callaghan"
+    },
+    "the-dead/oconnell-street": {
+      "character": "Gabriel, Gretta, Bartell D'Arcy, Miss O'Callaghan"
+    },
+    "the-dead/the-dead-route": {
+      "character": "Gabriel, Gretta, Bartell D'Arcy, Miss O'Callaghan"
     }
   }
 }

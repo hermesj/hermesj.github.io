@@ -86,7 +86,50 @@
       "de": "Die Toten"
     }
   ],
-  "places": [],
+  "places": [
+    {
+      "group": 12,
+      "name": "Kavanagh's",
+      "geocode": "27 Parliament Street, Dublin, Ireland",
+      "gloss": "James Kavanagh's wine-rooms, 27 Parliament Street (between Essex Gate and Dame Street) — per Gifford 'a gathering place for Dublin politicians and for those in search of political favors'; the place where Father Keon and Mr Fanning are often found together.",
+      "quote": "“Fanning and himself seem to me very thick. They’re often in Kavanagh’s together. Is he a priest at all?”",
+      "srcText": "They’re often in Kavanagh’s together",
+      "essay": "https://mappingdubliners.org/kavanaghs/",
+      "lat": 53.34481,
+      "lon": -6.267631
+    },
+    {
+      "group": 8,
+      "name": "Bewley's",
+      "lat": 53.34425,
+      "lon": -6.2663,
+      "gloss": "Bewley's tea and coffee merchants — the parcel of coffee Little Chandler forgets to bring home to Annie. Per Gifford most likely the Dame Street shop, a few steps east of City Hall on Chandler's route (placement approximate). As an Irish firm that broke the East India Company's tea monopoly in 1835, a quiet counterpoint to the story's theme of English economic dominance.",
+      "quote": "It was a quarter to nine. Little Chandler had come home late for tea and, moreover, he had forgotten to bring Annie home the parcel of coffee from Bewley’s.",
+      "srcText": "the parcel of coffee from Bewley’s",
+      "essay": "https://mappingdubliners.org/bewleys/"
+    },
+    {
+      "group": 13,
+      "name": "Queen's Theatre",
+      "geocode": "209 Pearse Street, Dublin, Ireland",
+      "gloss": "The Queen's Royal Theatre, 209 Great Brunswick Street (now Pearse Street), near the Antient Concert Rooms — a popular venue for comic and musical acts, where the bass Mr Duggan once sang the king in Maritana; possibly the 1890 burlesque Miss Maritana rather than Wallace's opera (see the Mapping Dubliners essay). Demolished 1969.",
+      "quote": "One night, when an operatic artiste had fallen ill, he had undertaken the part of the king in the opera of Maritana at the Queen’s Theatre.",
+      "srcText": "Maritana at the Queen’s Theatre",
+      "essay": "https://mappingdubliners.org/queens-theatre/",
+      "lat": 53.344821,
+      "lon": -6.252907
+    },
+    {
+      "group": 4,
+      "name": "Italy",
+      "lat": 42.8,
+      "lon": 12.5,
+      "gloss": "The melancholy street-organ air Eveline hears on her last evening — Italian organ-grinders were a familiar sound of Dublin's streets; one of the story's array of far-off places set against Eveline's confinement.",
+      "quote": "She remembered the last night of her mother’s illness; she was again in the close dark room at the other side of the hall and outside she heard a melancholy air of Italy. The organ-player had been ordered to go away and given sixpence. She remembered her father strutting back into the sickroom saying: “Damned Italians! coming over here!”",
+      "srcText": "she heard a melancholy air of Italy",
+      "essay": "https://mappingdubliners.org/italy/"
+    }
+  ],
   "routes": [
     {
       "group": 6,

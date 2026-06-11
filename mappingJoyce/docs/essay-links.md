@@ -3,10 +3,17 @@
 Back-links from our *Dubliners* features to Jasmine Mulliken's per-place essays on
 <https://mappingdubliners.org/> — used with her express permission (data CC BY-NC 4.0).
 
-Essays on site: **104** · our features: **196** · features linked: **123** · essays used: **98** · features without essay: **73**.
+Essays on site: **104** · our features: **201** (196 Mulliken-derived + 5 own
+additions) · features linked: **128** · essays used: **103** · the one unused
+essay is `london`, deliberately retired in favour of `london-2`. **Every essay
+on Mapping Dubliners is reachable from the map.**
 
 Matching is per place (one essay links *all* story-occurrences of that place). Variant/typo
 spellings and the hand-placed essays below were checked against the blog by hand.
+Five essays whose places were missing from Mulliken's KMZ are linked from **own
+additions** (`data/dubliners-own.geojson`): Donnybrook Tram Line (Two Gallants),
+Kavanagh's (Ivy Day), Bewley's (A Little Cloud), Queen's Theatre (A Mother) and
+Italy (Eveline).
 
 
 ## 1. Essay → our feature(s) — confirmed links (98 essays)
@@ -112,20 +119,10 @@ spellings and the hand-placed essays below were checked against the blog by hand
 | wicklow-street | Ivy Day in the Committee Room · Wicklow Street | https://mappingdubliners.org/wicklow-street/ |
 | winetavern-street | The Dead · Winetavern Street | https://mappingdubliners.org/winetavern-street/ |
 
-## 2. Essays with no node yet (4) — need their own geolocation 
+## 2. Essays with no node yet — **none** 🎉
 
-| essay slug | URL | note |
-|---|---|---|
-| bewleys | https://mappingdubliners.org/bewleys/ | café (Grafton/Westmoreland St); not mapped |
-| italy | https://mappingdubliners.org/italy/ | country reference; not mapped |
-| kavanaghs | https://mappingdubliners.org/kavanaghs/ | pub; no suitable existing node |
-| queens-theatre | https://mappingdubliners.org/queens-theatre/ | theatre (Pearse St); not mapped |
-
-_`donnybrook-tramline` is now linked from an **own addition** — the route
-"Donnybrook Tram Line" (Two Gallants) in `data/dubliners-own.geojson`, not from
-Mulliken's data._
-
-_`london` is intentionally retired in favour of **london-2** (an extended essay that links back to the original)._
+All essays are linked. `london` is intentionally retired in favour of
+**london-2** (an extended essay that links back to the original).
 
 
 ## 3. Our features with NO essay (73)
