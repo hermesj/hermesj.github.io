@@ -111,6 +111,10 @@
       "part": "Nostos"
     }
   ],
+  "metadata": {
+    "license": "CC BY-NC 4.0",
+    "note": "Original dataset compiled from the public-domain text of Ulysses (1922; Project Gutenberg #4300); factual locations and clock-times informed by the published Ulysses Map of County Dublin index. Coordinates via OpenStreetMap/Nominatim, routes via OSRM (driving) / BRouter (foot) — © OpenStreetMap contributors, ODbL."
+  },
   "places": [
     {
       "episode": 1,

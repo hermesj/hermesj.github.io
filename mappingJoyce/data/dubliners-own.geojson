@@ -2,8 +2,8 @@
  "type": "FeatureCollection",
  "metadata": {
   "title": "Dubliners",
-  "note": "Dataset compiled from a public-domain text. Coordinates via OpenStreetMap/Nominatim; routes via OSRM (driving) / BRouter (foot).",
-  "license": "CC BY-NC 4.0"
+  "license": "CC BY-NC 4.0",
+  "note": "Own additions to the Dubliners layer by J. Hermes — not derived from Jasmine Mulliken's Mapping Dubliners Project. Coordinates via OpenStreetMap/Nominatim, routes via OSRM (driving) / BRouter (foot) — © OpenStreetMap contributors, ODbL."
  },
  "features": [
   {

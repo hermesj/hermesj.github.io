@@ -86,6 +86,10 @@
       "de": "Die Toten"
     }
   ],
+  "metadata": {
+    "license": "CC BY-NC 4.0",
+    "note": "Own additions to the Dubliners layer by J. Hermes — not derived from Jasmine Mulliken's Mapping Dubliners Project. Coordinates via OpenStreetMap/Nominatim, routes via OSRM (driving) / BRouter (foot) — © OpenStreetMap contributors, ODbL."
+  },
   "places": [
     {
       "group": 12,

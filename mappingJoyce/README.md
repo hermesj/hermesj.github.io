@@ -122,8 +122,8 @@ python3 pipeline/check.py            # orphaned annotations, invisible features,
 ## Local preview
 
 ```bash
-python3 -m http.server 8732
-# open http://localhost:8732/
+python3 -m http.server 8081
+# open http://localhost:8081/
 ```
 
 ## Licensing
