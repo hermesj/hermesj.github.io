@@ -1,0 +1,107 @@
+/* Gemeinsames Layout für die Rahmenseiten (Start, Projekte, Voynich, Impressum).
+   Die Projekte selbst (figround, mapping*) bringen ihr eigenes Styling mit. */
+
+:root {
+  --bg: #fbfaf8;
+  --fg: #2b2b2b;
+  --muted: #6b6b6b;
+  --rule: #e4e0da;
+  --link: #0b5cad;
+  --todo-bg: #fff6d6;
+  --todo-fg: #6b5400;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #1c1c1e;
+    --fg: #e6e4e0;
+    --muted: #a09d97;
+    --rule: #3a3936;
+    --link: #7fb6f0;
+    --todo-bg: #3d3412;
+    --todo-fg: #f0dc9a;
+  }
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--fg);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 17px;
+  line-height: 1.6;
+}
+
+.wrap {
+  max-width: 680px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+a { color: var(--link); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+/* ── Kopf und Navigation ── */
+header.site {
+  border-bottom: 1px solid var(--rule);
+  padding: 18px 0 14px;
+}
+header.site .wrap {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 8px 24px;
+}
+.site-name {
+  font-weight: 600;
+  color: var(--fg);
+}
+nav.site ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 20px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+nav.site a[aria-current="page"] {
+  color: var(--fg);
+  font-weight: 600;
+}
+
+/* ── Inhalt ── */
+main { padding: 32px 0 48px; }
+h1 { font-size: 1.8em; line-height: 1.25; margin: 0 0 0.6em; }
+h2 { font-size: 1.2em; margin: 2em 0 0.5em; }
+.lead { font-size: 1.1em; color: var(--muted); }
+
+.projects { list-style: none; padding: 0; margin: 0; }
+.projects li {
+  padding: 16px 0;
+  border-bottom: 1px solid var(--rule);
+}
+.projects li:first-child { border-top: 1px solid var(--rule); }
+.projects .title { font-weight: 600; font-size: 1.05em; }
+.projects .desc { margin: 4px 0 0; }
+.projects .meta { margin: 4px 0 0; font-size: 0.9em; color: var(--muted); }
+
+/* Platzhalter für noch fehlende Texte — fällt absichtlich auf. */
+.todo {
+  background: var(--todo-bg);
+  color: var(--todo-fg);
+  border-radius: 4px;
+  padding: 8px 12px;
+  font-style: italic;
+}
+
+/* ── Fuß ── */
+footer.site {
+  border-top: 1px solid var(--rule);
+  padding: 16px 0 32px;
+  font-size: 0.9em;
+  color: var(--muted);
+}
+footer.site a { color: var(--muted); }
