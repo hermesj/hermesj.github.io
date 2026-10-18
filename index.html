@@ -3,45 +3,106 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Jürgen Hermes</title>
-<meta name="description" content="Jürgen Hermes – Informationen zur Person und zu digitalen Literaturprojekten.">
+<title data-de="Jürgen Hermes" data-en="Jürgen Hermes">Jürgen Hermes</title>
+<meta name="description" content="Jürgen Hermes – Geschäftsführer des Instituts für Digital Humanities der Universität zu Köln / managing director of the Institute for Digital Humanities, University of Cologne.">
 <link rel="stylesheet" href="assets/site.css">
+<script src="assets/lang.js"></script>
 </head>
 <body>
 
 <header class="site">
   <div class="wrap">
     <a class="site-name" href="./">Jürgen Hermes</a>
-    <nav class="site" aria-label="Hauptnavigation">
-      <ul>
-        <li><a href="./" aria-current="page">Über mich</a></li>
-        <li><a href="projekte/">Projekte</a></li>
-        <li><a href="voynich/">Voynich-Manuskript</a></li>
-      </ul>
-    </nav>
+    <div class="site-tools">
+      <nav class="site" aria-label="Navigation">
+        <ul>
+          <li><a href="./" aria-current="page"><span data-l="de">Über mich</span><span data-l="en">About</span></a></li>
+          <li><a href="projekte/"><span data-l="de">Projekte</span><span data-l="en">Projects</span></a></li>
+          <li><a href="voynich/"><span data-l="de">Voynich-Manuskript</span><span data-l="en">Voynich manuscript</span></a></li>
+        </ul>
+      </nav>
+      <div class="lang-switch" role="group" aria-label="Sprache / Language">
+        <button type="button" value="de" lang="de">DE</button>
+        <button type="button" value="en" lang="en">EN</button>
+      </div>
+    </div>
   </div>
 </header>
 
 <main>
   <div class="wrap">
     <h1>Jürgen Hermes</h1>
-    <p class="todo">[Text folgt: ein, zwei Sätze, wer Sie sind und was Sie machen.]</p>
+    <img class="portrait" src="assets/portrait.jpg" width="600" height="600"
+         alt="Jürgen Hermes mit Katze in der Hängematte im Garten"
+         data-alt-de="Jürgen Hermes mit Katze in der Hängematte im Garten"
+         data-alt-en="Jürgen Hermes with a cat in a hammock in the garden">
 
-    <h2>Arbeitsschwerpunkte</h2>
-    <p class="todo">[Text folgt: Themen, Forschungsinteressen, Lehre.]</p>
+    <!-- ───────────── Deutsch ───────────── -->
+    <div data-l="de" lang="de">
+      <p class="lead">Ich bin wissenschaftlicher Angestellter an der Universität zu Köln und im Rahmen dieser Tätigkeit Geschäftsführer des <a href="https://dh.uni-koeln.de">Instituts für Digital Humanities (IDH)</a>.</p>
+      <p>Ich forsche in den Bereichen <i>Digital Humanities</i> und <i>Computerlinguistik</i>. Mich interessiert vor allem die Schnittstelle, wo Sprache, Text und Berechnung aufeinandertreffen: Was Texte sind, wie sie von Maschinen verarbeitet werden und zunehmend auch, was große Sprachmodelle für die Geisteswissenschaften leisten können und wo die Grenzen liegen.</p>
+      <ul>
+        <li><strong>Große Sprachmodelle in den Geisteswissenschaften</strong> – offene Modelle in der Forschungspraxis, Prominenz in LLMs (Mitarbeit beim Teilprojekt C11 des SFB 1252 <i>Prominence in Language</i>), Informationsextraktion aus historischen Texten</li>
+        <li><strong>Digital-Humanities-Projekte</strong> – u.&nbsp;a. <i>Viennese Feuilleton and Biopolitics in the Interwar Period</i> (DFG), das <i>Pariser Adressbuch von 1854</i> (mit dem DHI Paris), <i>edition humboldt digital</i></li>
+        <li><strong>Historische Kryptologie</strong> – die <i>Polygraphia</i> des Trithemius und das Voynich-Manuskript (<a href="voynich/">mehr</a>)</li>
+        <li><strong>Werkzeuge für die Public Humanities</strong> – autoChirp, autoPost, autodone, Tiwoli, LitMap, siehe auch <a href="projekte/">Webprojekte</a></li>
+      </ul>
+      <p>Pro Semester übernehme ich mindestens zwei Lehrveranstaltungen, darunter eine BA-Einführung in die <i>Computerlinguistik</i> (im Wintersemester) bzw. in die <i>Statistik</i> (im Sommersemester). Dazu übernehme ich in jedem Semester eine MA-Veranstaltung mit wechselnden Themen (in letzter Zeit etwa zu <i>OpenLLMs</i>, zu <i>Public Humanities Tools</i> und zum <i>Voynich-Manuskript</i>). In den Sommersemestern veranstalte ich darüber hinaus noch mit Kolleg:innen das Kolloquium <i>Digital Humanities Cologne</i> mit Gastdozierenden, deren Vorträge im Anschluss von Studierenden gebloggt werden (<a href="https://dhc.hypotheses.org">Blog des Kolloquiums</a>). Eine Übersicht zu meinen Lehrveranstaltungen und den verwendeten Materialien findet sich <a href="https://lehre.idh.uni-koeln.de/lecturer/hermes/">hier</a>.</p>
+    </div>
 
-    <h2>Aktuelle Projekte</h2>
-    <p>Eine Übersicht meiner Webprojekte – literarische Experimente und Literaturkarten – finden Sie unter <a href="projekte/">Projekte</a>.</p>
+    <!-- ───────────── English ───────────── -->
+    <div data-l="en" lang="en">
+      <p class="lead">I'm a member of the academic staff at the University of Cologne and, in this role, managing director of the <a href="https://dh.uni-koeln.de">Institute for Digital Humanities (IDH)</a>.</p>
+      <p>My research is in <i>digital humanities</i> and <i>computational linguistics</i>. I'm mainly interested in the interface where language, text and computation meet: what texts are, how machines process them and, increasingly, what large language models can do for the humanities – and where their limits lie.</p>
+      <ul>
+        <li><strong>Large language models in the humanities</strong> – open models in research practice, prominence in LLMs (contributing to project C11 of the CRC 1252 <i>Prominence in Language</i>), information extraction from historical texts</li>
+        <li><strong>Digital humanities projects</strong> – e.g. <i>Viennese Feuilleton and Biopolitics in the Interwar Period</i> (DFG), the <i>Paris address book of 1854</i> (with the DHI Paris), <i>edition humboldt digital</i></li>
+        <li><strong>Historical cryptography</strong> – Trithemius’ <i>Polygraphia</i> and the Voynich manuscript (<a href="voynich/">more</a>)</li>
+        <li><strong>Public humanities tools</strong> – autoChirp, autoPost, autodone, Tiwoli, LitMap; see also <a href="projekte/">web projects</a></li>
+      </ul>
+      <p>Each semester I teach at least two courses, among them a BA introduction to <i>computational linguistics</i> (winter semester) or to <i>statistics</i> (summer semester). In addition, I teach an MA course every semester on changing topics (recently, for example, <i>open LLMs</i>, <i>public humanities tools</i> and the <i>Voynich manuscript</i>). In summer semesters I also co-organise the colloquium <i>Digital Humanities Cologne</i> with guest speakers, whose talks are afterwards written up as blog posts by students (<a href="https://dhc.hypotheses.org">colloquium blog</a>, in German). An overview of my courses and their materials is available <a href="https://lehre.idh.uni-koeln.de/lecturer/hermes/">here</a>.</p>
+    </div>
 
-    <h2>Kontakt</h2>
-    <p class="todo">[Text folgt: E-Mail, ggf. Profile (GitHub, ORCID, Mastodon …).]</p>
-    <p>Wenn es um das Voynich-Manuskript geht, lesen Sie bitte vorher <a href="voynich/">diese Seite</a>.</p>
+    <h2><span data-l="de">Ausgewählte Publikationen</span><span data-l="en">Selected publications</span></h2>
+    <ul class="pubs">
+      <li>Dick, A.-K., <strong>Hermes, J.</strong> &amp; Reiter, N. (2026). Scaffolding Large and Small Reasoning Models for Person-Place Relation Extraction. <i>CLEF 2026 Working Notes</i>, CEUR-WS Vol. 4283. <a href="https://ceur-ws.org/Vol-4283/paper217.pdf">PDF</a></li>
+      <li>Wagner, A. &amp; <strong>Hermes, J.</strong> (2026). Encoded Humanities, or: Not Everything Has to Be Generative. In <i>Understanding Science with Large Language Models?</i>, transcript, 101–114. <a href="https://www.transcript-verlag.de/978-3-8376-7994-6/understanding-science-with-large-language-models/"><span data-l="de">Verlag</span><span data-l="en">Publisher</span></a></li>
+      <li><strong>Hermes, J.</strong>, Niebes, K., Oberbichler, S. &amp; Wagner, A. (2026). LLMs unter Kontrolle: Offene Modelle in Forschung und Praxis. Workshop, DHd 2026, <span data-l="de">Wien</span><span data-l="en">Vienna</span>. <a href="https://zenodo.org/records/18702738">Zenodo</a></li>
+      <li><strong>Hermes, J.</strong> (2023). Durch neuronale Netze zur Lingua Franca? Wie Algorithmen unsere Kommunikation bestimmen. In <i>Wissen ordnen und entgrenzen</i>, Vandenhoeck &amp; Ruprecht, 47–64. <a href="https://www.vr-elibrary.de/doi/book/10.13109/9783666302312">eLibrary</a></li>
+      <li><strong>Hermes, J.</strong> (2022). Polygraphia III: The Cipher That Pretends to Be an Artificial Language. <i>Proceedings of VOY2022</i>, CEUR-WS Vol. 3313. <a href="https://ceur-ws.org/Vol-3313/#paper7">Paper</a></li>
+      <li><strong>Hermes, J.</strong> (2012). <i>Textprozessierung – Design und Applikation.</i> <span data-l="de">Dissertation, Universität zu Köln.</span><span data-l="en">PhD thesis, University of Cologne.</span> <a href="https://kups.ub.uni-koeln.de/4561/">KUPS</a></li>
+    </ul>
+    <p>
+      <span data-l="de">Vollständige Publikations- und Vortragslisten:</span>
+      <span data-l="en">Complete lists of publications and talks:</span>
+      <a href="https://dh.phil-fak.uni-koeln.de/mitarbeiterinnen/wissenschaftliche-mitarbeiterinnen/dr-juergen-hermes"><span data-l="de">Profil an der Universität zu Köln</span><span data-l="en">University of Cologne profile</span></a>
+      · <a href="https://orcid.org/0000-0002-8367-8073">ORCID</a>
+      · <a href="https://scholar.google.com/citations?user=wyR2RPwAAAAJ">Google Scholar</a>
+    </p>
+
+    <h2><span data-l="de">Webprojekte</span><span data-l="en">Web projects</span></h2>
+    <p data-l="de" lang="de">Eine Übersicht meiner Webprojekte – literarische Experimente, Karten literarischer Schauplätze und das Lehrportal <i>Voynich Studies Cologne</i> – finden Sie unter <a href="projekte/">Projekte</a>.</p>
+    <p data-l="en" lang="en">An overview of my web projects – literary experiments, maps of literary places and the teaching portal <i>Voynich Studies Cologne</i> – is on the <a href="projekte/">Projects</a> page.</p>
+
+    <h2><span data-l="de">Kontakt</span><span data-l="en">Contact</span></h2>
+    <p>hermesj[AT]uni-koeln.de</p>
+    <p>
+      <span data-l="de">Außerdem:</span><span data-l="en">Elsewhere:</span>
+      <a href="https://fedihum.org/@spinfocl" rel="me">Mastodon</a>
+      · <a href="https://github.com/hermesj">GitHub</a>
+      · <a href="https://hcommons.org/members/hermesj">Knowledge Commons</a>
+      · <span data-l="de">Forschungsblog</span><span data-l="en">research blog</span> <a href="https://texperimentales.hypotheses.org/">TEXperimenTales</a>
+      · <span data-l="de">privates Blog <a href="https://spinfocl.substack.com">Hysteron Proteron</a></span><span data-l="en">personal blog <a href="https://foclen.substack.com">Hysteron Proteron</a></span>
+      · <a href="https://lehre.idh.uni-koeln.de/lecturer/hermes/"><span data-l="de">Lehrmaterialien</span><span data-l="en">teaching materials</span></a>
+    </p>
+    <p class="note" data-l="de" lang="de">Wenn Sie mit mir Kontakt aufnehmen möchten, weil es Ihnen um das Voynich-Manuskript geht, lesen Sie bitte möglichst vorher <a href="voynich/">diese Seite</a>.</p>
+    <p class="note" data-l="en" lang="en">If you would like to contact me about the Voynich manuscript, please read <a href="voynich/">this page</a> first if you can.</p>
   </div>
 </main>
 
 <footer class="site">
   <div class="wrap">
-    <a href="impressum/">Impressum &amp; Datenschutz</a>
+    <a href="impressum/"><span data-l="de">Impressum &amp; Datenschutz</span><span data-l="en">Legal notice &amp; privacy</span></a>
   </div>
 </footer>
 

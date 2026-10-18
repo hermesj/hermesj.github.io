@@ -3,50 +3,119 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Voynich-Manuskript – Jürgen Hermes</title>
-<meta name="description" content="Bevor Sie mich wegen des Voynich-Manuskripts anschreiben: was ich dazu mache, was nicht, und wie Sie mich am besten erreichen.">
+<title data-de="Voynich-Manuskript entschlüsselt? Hinweise für Zuschriften – Jürgen Hermes" data-en="Deciphered the Voynich manuscript? Notes before you write – Jürgen Hermes">Voynich-Manuskript entschlüsselt? Hinweise für Zuschriften – Jürgen Hermes</title>
+<meta name="description" content="Hinweise für Zuschriften zu Entzifferungen des Voynich-Manuskripts an Jürgen Hermes: Prüfbar sind nur Vorschläge, die vier Kriterien erfüllen (Datengrundlage, Offenheit, Reproduzierbarkeit, Erklärung der statistischen Eigenschaften). Notes for anyone writing to Jürgen Hermes about a Voynich decipherment: only proposals meeting four criteria can be evaluated.">
 <link rel="stylesheet" href="../assets/site.css">
+<script src="../assets/lang.js"></script>
 </head>
 <body>
 
 <header class="site">
   <div class="wrap">
     <a class="site-name" href="../">Jürgen Hermes</a>
-    <nav class="site" aria-label="Hauptnavigation">
-      <ul>
-        <li><a href="../">Über mich</a></li>
-        <li><a href="../projekte/">Projekte</a></li>
-        <li><a href="./" aria-current="page">Voynich-Manuskript</a></li>
-      </ul>
-    </nav>
+    <div class="site-tools">
+      <nav class="site" aria-label="Navigation">
+        <ul>
+          <li><a href="../"><span data-l="de">Über mich</span><span data-l="en">About</span></a></li>
+          <li><a href="../projekte/"><span data-l="de">Projekte</span><span data-l="en">Projects</span></a></li>
+          <li><a href="./" aria-current="page"><span data-l="de">Voynich-Manuskript</span><span data-l="en">Voynich manuscript</span></a></li>
+        </ul>
+      </nav>
+      <div class="lang-switch" role="group" aria-label="Sprache / Language">
+        <button type="button" value="de" lang="de">DE</button>
+        <button type="button" value="en" lang="en">EN</button>
+      </div>
+    </div>
   </div>
 </header>
 
 <main>
-  <div class="wrap">
-    <h1>Bevor Sie mich wegen des Voynich-Manuskripts anschreiben</h1>
-    <p class="lead todo">[Text folgt: kurze Einleitung – warum es diese Seite gibt.]</p>
+  <!-- ───────────── Deutsch ───────────── -->
+  <div class="wrap" data-l="de" lang="de">
+    <h1>Voynich-Manuskript entschlüsselt? Hinweise für Zuschriften</h1>
+    <p class="lead">Wenn Sie auf einen Entzifferungsansatz oder eine Deutung für das Voynich-Manuskript gestoßen sind, spielen Sie vielleicht mit dem Gedanken, mich anzuschreiben, damit ich Ihren Ansatz begutachte. Bevor Sie das tatsächlich machen, lesen Sie bitte diese Seite.</p>
 
-    <h2>Meine Beschäftigung mit dem Manuskript</h2>
-    <p class="todo">[Text folgt: worüber Sie gearbeitet haben, mit Links zu Veröffentlichungen.]</p>
+    <h2>Warum es diese Seite gibt</h2>
+    <p>Ich beschäftige mich seit vielen Jahren immer wieder mal mit dem Voynich-Manuskript, unterrichte dazu, wurde mehrfach interviewt und bin über Suchmaschinen und KI-Recherchen entsprechend leicht zu finden. Deshalb erreichen mich regelmäßig Lösungsvorschläge – in letzter Zeit fast nur noch solche, die ganz oder überwiegend in Gesprächen mit Sprachmodellen („KI“) entstanden sind. Ich kann sie nicht alle einzeln beantworten. Diese Seite erklärt, warum, und was ein Vorschlag mitbringen müsste, um überhaupt prüfbar zu sein.</p>
 
-    <h2>Was ich nicht leisten kann</h2>
-    <p class="todo">[Text folgt: z.&nbsp;B. Begutachtung von Entzifferungsvorschlägen, Weiterleitung an Fachleute …]</p>
+    <h2>Die vier Kriterien</h2>
+    <p>Ohne diese Punkte ist keine fachliche Prüfung möglich, egal durch wen:</p>
+    <ol>
+      <li><strong>Datengrundlage.</strong> Geben Sie an, auf welcher Transliteration Ihre Analyse beruht (EVA/IVTFF, Takahashi, ZL) und auf welche Seiten sie sich bezieht. Die verwendeten Dateien sollten maschinenlesbar vorliegen.</li>
+      <li><strong>Offenheit.</strong> Sie müssen Ihr Verfahren schon offenlegen, wenn Sie wollen, dass es rezipiert wird. Mit einer Aussage wie „Ich habe das Manuskript entschlüsselt, es ist auf Ungarisch geschrieben von einer Einzelgängerin, die selbst nie schreiben gelernt hat, und es ist ein veganes Kochbuch.“ kann man wissenschaftlich nichts anfangen. Wenn Sie Angst haben, dass ich Ihnen Ihre Idee klaue, haben Sie die zu Unrecht. Ich würde meine Reputation sicher nicht wegen so etwas aufs Spiel setzen.</li>
+      <li><strong>Reproduzierbarkeit.</strong> Das Verfahren muss eine Vorschrift sein, die eine dritte Person ohne Mitwirkung des Urhebers anwenden kann, mit demselben Ergebnis. Bei Software: Welcher Voynich-Text geht hinein, welcher Klartext kommt heraus?</li>
+      <li><strong>Statistische Eigenschaften.</strong> Falls Sie den Text für eine natürliche Sprache oder für das Ergebnis einer Ersetzungschiffre halten, müssen Sie erklären, wie die seltsamen statistischen Eigenschaften des Textes zustande kommen, die wir in keiner natürlichen Sprache sehen (etwa Verbundentropie, Wortlängenverteilung, Wortwiederholungen).</li>
+    </ol>
 
-    <h2>Häufige Fragen</h2>
-    <p class="todo">[Text folgt: die Anfragen, die immer wieder kommen, mit kurzen Antworten.]</p>
+    <h2>Zur Rolle der KI</h2>
+    <p>Die Zustimmung eines Sprachmodells ist kein Befund. Diese Systeme sind darauf optimiert, an eine vorgegebene Annahme anzuschließen und sie auszubauen. Sie erzeugen zu praktisch jeder Hypothese eine flüssige, fachlich klingende Bestätigung, auch zu Hypothesen, die einander widersprechen. Ein Modell, das eine These stützt, hat sie nicht geprüft. Auch die Auskunft, ein Ansatz sei „noch nie erwogen worden“, ist unzuverlässig: Sprachmodelle kennen den Forschungsstand nur lückenhaft. Eine KI zu benutzen, stellt für sich genommen kein Problem dar. Problematisch wird es erst, wenn man ihre Zustimmung für einen Befund hält.</p>
 
-    <h2>Weiterführende Ressourcen</h2>
-    <p class="todo">[Text folgt: Digitalisat, Transkriptionen, Foren, Literatur.]</p>
+    <h2>Meine eigene Arbeit zum Manuskript</h2>
+    <p>In meiner Dissertation (2012) habe ich unter anderem die Chiffriersysteme des Abtes Johannes Trithemius computergestützt untersucht. Seine <i>Polygraphia</i> (1506/1518) enthält Chiffren, die jeden Klartextbuchstaben durch ein erfundenes Wort aus Tabellen von Homophonen ersetzen. Das Ergebnis sieht nicht aus wie ein Geheimtext, sondern wie Text in einer unbekannten Sprache – und es bildet einige der auffälligsten statistischen Eigenschaften des Voynich-Textes relativ gut nach.</p>
+    <p>Michael Greshko hat diese Idee mit der <i>Naibbe</i>-Chiffre (2025) zu einem vollständigen, von Hand ausführbaren Verfahren ausgebaut. Das <strong>Autokopisten</strong>-Modell von Torsten Timm (teilweise mit Andreas Schinner), das den Text als bedeutungslose, durch Abschreiben und Abwandeln erzeugte Folge erklärt, bildet derzeit aber mehr Eigenschaften des Manuskripts ab als jeder Chiffrevorschlag.</p>
+    <ul>
+      <li>Polygraphia III: The Cipher That Pretends to Be an Artificial Language. <i>Proceedings of VOY2022</i>, CEUR-WS Vol. 3313. <a href="https://ceur-ws.org/Vol-3313/#paper7">Paper</a></li>
+      <li>Ciphers at the Edge of Language Design. Vortrag, Villa Vigoni, Dezember 2024. <a href="https://dh.phil-fak.uni-koeln.de/sites/dighum/hermesj/Presentation_VVigoni.pdf">Folien</a></li>
+      <li>Blogbeiträge auf <a href="https://texperimentales.hypotheses.org/tag/voynich">TEXperimenTales</a></li>
+      <li>Lehrportal <a href="https://voynichsc.uni-koeln.de/">Voynich Studies Cologne</a></li>
+    </ul>
+
+    <h2>Weiterführende Links</h2>
+    <ul>
+      <li><a href="https://www.voynich.ninja/">voynich.ninja</a> – das aktivste Forum; hier können Sie Ihre Idee vorstellen und diskutieren</li>
+      <li><a href="https://www.voynich.nu/">voynich.nu</a> – René Zandbergens Seite zu Geschichte, Transliterationen und Forschungsstand</li>
+      <li><a href="https://collections.library.yale.edu/catalog/2002046">Digitalisat</a> der Beinecke Rare Book &amp; Manuscript Library, Yale (MS 408)</li>
+    </ul>
 
     <h2>Wenn Sie trotzdem schreiben möchten</h2>
-    <p class="todo">[Text folgt: was eine Nachricht enthalten sollte, und womit man rechnen kann.]</p>
+    <p>Für Fragen zu Forschung und Lehre, als Journalist:in oder als Kolleg:in erreichen Sie mich unter hermesj[AT]uni-koeln.de. Geht es um einen eigenen Lösungsvorschlag, nennen Sie bitte Ihre Antworten auf die vier Kriterien und verlinken Sie eine öffentlich zugängliche Darstellung statt großer Anhänge. Auf Zuschriften, die eine Entzifferung verkünden, ohne die Kriterien aufzugreifen, antworte ich in der Regel nur mit einem Link auf diese Seite.</p>
+  </div>
+
+  <!-- ───────────── English ───────────── -->
+  <div class="wrap" data-l="en" lang="en">
+    <h1>Deciphered the Voynich manuscript? Notes before you write</h1>
+    <p class="lead">If you have come across an approach to deciphering or interpreting the Voynich manuscript, you may be thinking of writing to me so that I can assess it. Before you actually do so, please read this page.</p>
+
+    <h2>Why this page exists</h2>
+    <p>I have been working on the Voynich manuscript on and off for many years, I teach about it, I have been interviewed about it several times, and so I am easy to find through search engines and AI research tools. As a result, I regularly receive proposed solutions – recently almost exclusively ones that were developed entirely or largely in conversations with language models (“AI”). I cannot answer them all individually. This page explains why, and what a proposal would need in order to be evaluated at all.</p>
+
+    <h2>The four criteria</h2>
+    <p>Without these, no expert evaluation is possible, whoever does it:</p>
+    <ol>
+      <li><strong>Data basis.</strong> State which transliteration your analysis is based on (EVA/IVTFF, Takahashi, ZL) and which pages it covers. The files used should be available in machine-readable form.</li>
+      <li><strong>Openness.</strong> You do have to disclose your method if you want it to be taken up. A statement like “I have deciphered the manuscript; it is written in Hungarian by a recluse who never learned to write herself, and it is a vegan cookbook.” is of no use scientifically. If you are afraid that I might steal your idea, there is no need to be. I would certainly not put my reputation at risk over something like that.</li>
+      <li><strong>Reproducibility.</strong> The method must be a procedure that a third person can apply without the author’s involvement and obtain the same result. For software: which Voynich text goes in, which plaintext comes out?</li>
+      <li><strong>Statistical properties.</strong> If you consider the text to be a natural language or the result of a substitution cipher, you need to explain how the text’s strange statistical properties come about – properties we see in no natural language (e.g. conditional entropy, word-length distribution, word repetitions).</li>
+    </ol>
+
+    <h2>On the role of AI</h2>
+    <p>Agreement from a language model is not a finding. These systems are optimised to pick up a given assumption and build on it. They produce a fluent, expert-sounding confirmation for practically any hypothesis – including hypotheses that contradict each other. A model that supports a thesis has not tested it. Nor is the claim that an approach has “never been considered before” reliable: language models know the state of research only patchily. Using an AI is not a problem in itself. It becomes one when its agreement is mistaken for a finding.</p>
+
+    <h2>My own work on the manuscript</h2>
+    <p>In my PhD thesis (2012) I analysed, among other things, the cipher systems of the abbot Johannes Trithemius computationally. His <i>Polygraphia</i> (1506/1518) contains ciphers that replace each plaintext letter with an invented word taken from tables of homophones. The result does not look like a cipher but like text in an unknown language – and it reproduces some of the most striking statistical properties of the Voynich text fairly well.</p>
+    <p>Michael Greshko has developed this idea into a complete, hand-executable procedure with the <i>Naibbe</i> cipher (2025). Still, the <strong>self-citation</strong> (auto-copying) model of Torsten Timm (partly with Andreas Schinner), which explains the text as a meaningless sequence produced by copying and varying earlier words, currently reproduces more of the manuscript’s properties than any cipher proposal.</p>
+    <ul>
+      <li>Polygraphia III: The Cipher That Pretends to Be an Artificial Language. <i>Proceedings of VOY2022</i>, CEUR-WS Vol. 3313. <a href="https://ceur-ws.org/Vol-3313/#paper7">Paper</a></li>
+      <li>Ciphers at the Edge of Language Design. Talk, Villa Vigoni, December 2024. <a href="https://dh.phil-fak.uni-koeln.de/sites/dighum/hermesj/Presentation_VVigoni.pdf">Slides</a></li>
+      <li>Blog posts on <a href="https://texperimentales.hypotheses.org/tag/voynich">TEXperimenTales</a> (in German)</li>
+      <li>Teaching portal <a href="https://voynichsc.uni-koeln.de/">Voynich Studies Cologne</a> (in German)</li>
+    </ul>
+
+    <h2>Further links</h2>
+    <ul>
+      <li><a href="https://www.voynich.ninja/">voynich.ninja</a> – the most active forum; the place to present and discuss your idea</li>
+      <li><a href="https://www.voynich.nu/">voynich.nu</a> – René Zandbergen’s site on history, transliterations and the state of research</li>
+      <li><a href="https://collections.library.yale.edu/catalog/2002046">Digital facsimile</a> at the Beinecke Rare Book &amp; Manuscript Library, Yale (MS 408)</li>
+    </ul>
+
+    <h2>If you still want to write</h2>
+    <p>For questions about research and teaching, as a journalist or as a colleague, you can reach me at hermesj[AT]uni-koeln.de. If your message concerns a solution of your own, please state your answers to the four criteria and link to a publicly accessible write-up instead of sending large attachments. Messages announcing a decipherment without addressing the criteria will usually receive only a link to this page.</p>
   </div>
 </main>
 
 <footer class="site">
   <div class="wrap">
-    <a href="../impressum/">Impressum &amp; Datenschutz</a>
+    <a href="../impressum/"><span data-l="de">Impressum &amp; Datenschutz</span><span data-l="en">Legal notice &amp; privacy</span></a>
   </div>
 </footer>
 

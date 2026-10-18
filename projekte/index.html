@@ -3,50 +3,71 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Projekte – Jürgen Hermes</title>
-<meta name="description" content="Webprojekte von Jürgen Hermes: Figure and Ground sowie Literaturkarten zu Joyce und Perutz.">
+<title data-de="Projekte – Jürgen Hermes" data-en="Projects – Jürgen Hermes">Projekte – Jürgen Hermes</title>
+<meta name="description" content="Webprojekte von Jürgen Hermes / web projects by Jürgen Hermes: Figure and Ground, Mapping Joyce, Mapping Perutz, Voynich Studies Cologne.">
 <link rel="stylesheet" href="../assets/site.css">
+<script src="../assets/lang.js"></script>
 </head>
 <body>
 
 <header class="site">
   <div class="wrap">
     <a class="site-name" href="../">Jürgen Hermes</a>
-    <nav class="site" aria-label="Hauptnavigation">
-      <ul>
-        <li><a href="../">Über mich</a></li>
-        <li><a href="./" aria-current="page">Projekte</a></li>
-        <li><a href="../voynich/">Voynich-Manuskript</a></li>
-      </ul>
-    </nav>
+    <div class="site-tools">
+      <nav class="site" aria-label="Navigation">
+        <ul>
+          <li><a href="../"><span data-l="de">Über mich</span><span data-l="en">About</span></a></li>
+          <li><a href="./" aria-current="page"><span data-l="de">Projekte</span><span data-l="en">Projects</span></a></li>
+          <li><a href="../voynich/"><span data-l="de">Voynich-Manuskript</span><span data-l="en">Voynich manuscript</span></a></li>
+        </ul>
+      </nav>
+      <div class="lang-switch" role="group" aria-label="Sprache / Language">
+        <button type="button" value="de" lang="de">DE</button>
+        <button type="button" value="en" lang="en">EN</button>
+      </div>
+    </div>
   </div>
 </header>
 
 <main>
   <div class="wrap">
-    <h1>Projekte</h1>
+    <h1><span data-l="de">Projekte</span><span data-l="en">Projects</span></h1>
 
-    <h2>Literarische Experimente</h2>
+    <h2><span data-l="de">Literarische Experimente</span><span data-l="en">Literary experiments</span></h2>
     <ul class="projects">
       <li>
         <a class="title" href="../figround/">Figure and Ground / Figur und Hintergrund</a>
-        <p class="desc">Zwei parallele Prosatexte zum Mythos von Odysseus und der Sirene – als Poster, Fokus-, Alignment-, Palimpsest- und Audioversion.</p>
-        <p class="meta">Deutsch / Englisch</p>
+        <p class="desc" data-l="de" lang="de">Zwei parallele Prosatexte zum Mythos von Odysseus und der Sirene – als Poster, Fokus-, Alignment-, Palimpsest- und Audioversion.</p>
+        <p class="desc" data-l="en" lang="en">Two parallel prose texts on the myth of Odysseus and the Siren – as poster, focus, alignment, palimpsest and audio versions.</p>
+        <p class="meta"><span data-l="de">Deutsch / Englisch</span><span data-l="en">German / English</span></p>
       </li>
     </ul>
 
-    <h2>Literaturkarten</h2>
-    <p>Interaktive Karten auf Basis von OpenStreetMap, die die Schauplätze literarischer Werke verorten. Technische Grundlage ist die Engine <a href="https://github.com/hermesj/litmap">litmap</a>.</p>
+    <h2><span data-l="de">Literaturkarten</span><span data-l="en">Literary maps</span></h2>
+    <p data-l="de" lang="de">Interaktive Karten auf Basis von OpenStreetMap, die die Schauplätze literarischer Werke verorten. Technische Grundlage ist die Engine <a href="https://github.com/hermesj/litmap">litmap</a>.</p>
+    <p data-l="en" lang="en">Interactive maps based on OpenStreetMap that locate the places of literary works. They are built on the <a href="https://github.com/hermesj/litmap">litmap</a> engine.</p>
     <ul class="projects">
       <li>
         <a class="title" href="../mappingJoyce/">Mapping Joyce</a>
-        <p class="desc">Die Orte in James Joyces <i>Dubliners</i>, <i>Ulysses</i> und <i>A Portrait of the Artist as a Young Man</i>.</p>
-        <p class="meta">Englisch</p>
+        <p class="desc" data-l="de" lang="de">Die Orte in James Joyces <i>Dubliners</i>, <i>Ulysses</i> und <i>A Portrait of the Artist as a Young Man</i>.</p>
+        <p class="desc" data-l="en" lang="en">The places in James Joyce’s <i>Dubliners</i>, <i>Ulysses</i> and <i>A Portrait of the Artist as a Young Man</i>.</p>
+        <p class="meta"><span data-l="de">Englisch</span><span data-l="en">English</span></p>
       </li>
       <li>
         <a class="title" href="../mappingPerutz/">Mapping Perutz</a>
-        <p class="desc">Die Stationen des Stanislaus Demba in Leo Perutz’ <i>Zwischen neun und neun</i> (1918) – ein einziger Wiener Tag.</p>
-        <p class="meta">Englisch</p>
+        <p class="desc" data-l="de" lang="de">Die Stationen des Stanislaus Demba in Leo Perutz’ <i>Zwischen neun und neun</i> (1918) – ein einziger Wiener Tag.</p>
+        <p class="desc" data-l="en" lang="en">The stations of Stanislaus Demba in Leo Perutz’s <i>Zwischen neun und neun</i> (<i>Between Nine and Nine</i>, 1918) – a single day in Vienna.</p>
+        <p class="meta"><span data-l="de">Englisch</span><span data-l="en">English</span></p>
+      </li>
+    </ul>
+
+    <h2><span data-l="de">Lehrportale</span><span data-l="en">Teaching portals</span></h2>
+    <ul class="projects">
+      <li>
+        <a class="title" href="https://voynichsc.uni-koeln.de/">Voynich Studies Cologne</a>
+        <p class="desc" data-l="de" lang="de">Materialsammlung zum Voynich-Manuskript, entstanden in Lehrveranstaltungen am Institut für Digital Humanities: Einführungsvideos zum Manuskript, zu seiner Geschichte und zur linguistischen Analyse sowie zu den Zugängen verschiedener Disziplinen – Kryptologie, Paläographie, Kodikologie, Botanik, Graphemik, Morphologie und Sprachphilosophie.</p>
+        <p class="desc" data-l="en" lang="en">A collection of materials on the Voynich manuscript, created in courses at the Institute for Digital Humanities: introductory videos on the manuscript, its history and its linguistic analysis, and on how different disciplines approach it – cryptology, palaeography, codicology, botany, graphemics, morphology and philosophy of language.</p>
+        <p class="meta"><span data-l="de">Deutsch · mit Studierenden des IDH</span><span data-l="en">German · with students of the IDH</span></p>
       </li>
     </ul>
   </div>
@@ -54,7 +75,7 @@
 
 <footer class="site">
   <div class="wrap">
-    <a href="../impressum/">Impressum &amp; Datenschutz</a>
+    <a href="../impressum/"><span data-l="de">Impressum &amp; Datenschutz</span><span data-l="en">Legal notice &amp; privacy</span></a>
   </div>
 </footer>
 

@@ -72,6 +72,37 @@ nav.site a[aria-current="page"] {
   font-weight: 600;
 }
 
+/* ── Sprachen: ohne JS bzw. vor der Erkennung gilt Deutsch ── */
+html:not([data-lang="en"]) [data-l="en"],
+html[data-lang="en"] [data-l="de"] { display: none !important; }
+
+.site-tools {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 4px 20px;
+}
+.lang-switch {
+  display: flex;
+  gap: 2px;
+  font-size: 0.8em;
+  letter-spacing: 0.06em;
+}
+.lang-switch button {
+  font: inherit;
+  color: var(--muted);
+  background: none;
+  border: 0;
+  border-bottom: 1px solid transparent;
+  padding: 2px 4px;
+  cursor: pointer;
+}
+.lang-switch button:hover { color: var(--fg); }
+.lang-switch button[aria-pressed="true"] {
+  color: var(--fg);
+  border-bottom-color: var(--muted);
+}
+
 /* ── Inhalt ── */
 main { padding: 32px 0 48px; }
 h1 { font-size: 1.8em; line-height: 1.25; margin: 0 0 0.6em; }
@@ -87,6 +118,38 @@ h2 { font-size: 1.2em; margin: 2em 0 0.5em; }
 .projects .title { font-weight: 600; font-size: 1.05em; }
 .projects .desc { margin: 4px 0 0; }
 .projects .meta { margin: 4px 0 0; font-size: 0.9em; color: var(--muted); }
+p.meta { font-size: 0.9em; color: var(--muted); }
+
+/* Porträt auf der Startseite: klein, links, Text fließt rechts vorbei */
+.portrait {
+  float: left;
+  width: 180px;
+  height: auto;
+  margin: 6px 24px 12px 0;
+  border-radius: 6px;
+}
+@media (max-width: 480px) {
+  .portrait { width: 112px; margin-right: 16px; }
+}
+main h2 { clear: both; }
+
+main ul { padding-left: 1.2em; display: flow-root; }
+main li { margin: 0.4em 0; }
+
+.pubs { list-style: none; padding: 0; }
+.pubs li {
+  margin: 0 0 0.8em;
+  padding-left: 1.2em;
+  text-indent: -1.2em;
+}
+
+/* Hinweiskasten (z. B. Voynich-Verweis bei den Kontaktangaben) */
+.note {
+  border-left: 3px solid var(--link);
+  background: color-mix(in srgb, var(--link) 7%, transparent);
+  padding: 10px 14px;
+  border-radius: 0 4px 4px 0;
+}
 
 /* Platzhalter für noch fehlende Texte — fällt absichtlich auf. */
 .todo {
