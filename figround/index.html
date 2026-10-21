@@ -106,6 +106,58 @@
     border: 0;
   }
 
+  /* Click-to-load: nothing is requested from YouTube until the visitor
+     clicks. The thumbnail is served locally from images/. */
+  .video-consent {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    border: 0;
+    cursor: pointer;
+    background: #000 url('images/video-intro.jpg') center / cover no-repeat;
+    font: inherit;
+  }
+
+  .video-play {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 64px;
+    height: 44px;
+    margin: -22px 0 0 -32px;
+    border-radius: 12px;
+    background: rgba(42,32,24,0.82);
+    transition: background 0.2s;
+  }
+
+  .video-play::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin: -9px 0 0 -6px;
+    border-style: solid;
+    border-width: 9px 0 9px 16px;
+    border-color: transparent transparent transparent #ede6df;
+  }
+
+  .video-consent:hover .video-play,
+  .video-consent:focus-visible .video-play {
+    background: rgba(160,40,30,0.9);
+  }
+
+  .video-notice {
+    max-width: 435px;
+    margin: 0.6em auto 0 auto;
+    text-align: center;
+    font-size: 0.8rem;
+    line-height: 1.5;
+    font-style: italic;
+    color: rgba(90,70,55,0.75);
+  }
+
   /* ── TILE GRID ── */
   .tiles {
     display: grid;
@@ -293,15 +345,17 @@
  
   <div class="video-hero">
     <h2 class="video-title" id="videoTitle">Watch the intro</h2>
-    <div class="video-embed">
-      <iframe
-        src="https://www.youtube-nocookie.com/embed/FGkI4Qlr-_4"
-        title="Figure and Ground — Intro"
-        loading="lazy"
-        allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-        referrerpolicy="strict-origin-when-cross-origin"
-        allowfullscreen></iframe>
+    <div class="video-embed" id="videoEmbed">
+      <button type="button" class="video-consent" id="videoConsent" onclick="loadVideo()"
+        aria-label="Play video (loads YouTube)"
+        data-aria-en="Play video (loads YouTube)"
+        data-aria-de="Video abspielen (lädt YouTube)">
+        <span class="video-play" aria-hidden="true"></span>
+      </button>
     </div>
+    <p class="video-notice" id="videoNotice"
+      data-en="Clicking loads the video from YouTube (Google); your IP address is transmitted to YouTube."
+      data-de="Beim Klick wird das Video von YouTube (Google) geladen; dabei wird Ihre IP-Adresse an YouTube übertragen.">Clicking loads the video from YouTube (Google); your IP address is transmitted to YouTube.</p>
   </div>
 
   <div class="footer-links">
@@ -366,11 +420,28 @@ function switchLang(lang) {
     els[i].textContent = els[i].getAttribute('data-' + lang);
   }
 
+  var consent = document.getElementById('videoConsent');
+  if (consent) consent.setAttribute('aria-label', consent.getAttribute('data-aria-' + lang));
+
   // Update all tile images with data-img-en / data-img-de attributes
   var imgs = document.querySelectorAll('[data-img-' + lang + ']');
   for (var i = 0; i < imgs.length; i++) {
     imgs[i].src = imgs[i].getAttribute('data-img-' + lang);
   }
+}
+
+// Replace the placeholder with the YouTube player only after a click.
+function loadVideo() {
+  var embed = document.getElementById('videoEmbed');
+  var iframe = document.createElement('iframe');
+  iframe.src = 'https://www.youtube-nocookie.com/embed/FGkI4Qlr-_4?autoplay=1';
+  iframe.title = 'Figure and Ground — Intro';
+  iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';
+  iframe.referrerPolicy = 'strict-origin-when-cross-origin';
+  iframe.allowFullscreen = true;
+  embed.innerHTML = '';
+  embed.appendChild(iframe);
+  document.getElementById('videoNotice').style.display = 'none';
 }
 
 switchLang(currentLang);
