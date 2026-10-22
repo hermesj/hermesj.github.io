@@ -133,6 +133,28 @@ p.meta { font-size: 0.9em; color: var(--muted); }
 }
 main h2 { clear: both; }
 
+/* Foto rechts neben einem Abschnitt (Voynich-Seite); schmal: volle Breite */
+.photo-right {
+  float: right;
+  width: 45%;
+  max-width: 300px;
+  height: auto;
+  margin: 6px 0 12px 24px;
+  border-radius: 6px;
+}
+@media (max-width: 560px) {
+  .photo-right { float: none; display: block; width: 100%; max-width: none; margin: 0 0 16px; }
+}
+
+/* Breites Bild unter der Seitenüberschrift (Projektseite) */
+.banner {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin: 0 0 8px;
+  border-radius: 6px;
+}
+
 main ul { padding-left: 1.2em; display: flow-root; }
 main li { margin: 0.4em 0; }
 
@@ -168,3 +190,6 @@ footer.site {
   color: var(--muted);
 }
 footer.site a { color: var(--muted); }
+
+/* Überschrift, die noch neben dem Foto stehen darf statt darunter zu springen */
+main h2.beside-photo { clear: none; }
