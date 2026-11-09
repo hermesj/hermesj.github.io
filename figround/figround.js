@@ -7,12 +7,34 @@ var FIGROUND = {
   data: null,
 
   // ── Detect language ──
-  // Checks URL ?lang= parameter first, then browser language.
-  // Returns 'de' or 'en'.
+  // Order: URL ?lang= parameter → remembered choice → browser language.
+  // Returns 'de' or 'en'. The choice is kept in localStorage under the
+  // same key the rest of the site uses (assets/lang.js), so it survives
+  // moving between the landing page and the views — none of the links
+  // between them carry a ?lang= parameter.
+  LANG_KEY: 'hermesj-lang',
+
   detectLang: function () {
     var urlLang = new URLSearchParams(window.location.search).get('lang');
-    if (urlLang === 'de' || urlLang === 'en') return urlLang;
+    if (urlLang === 'de' || urlLang === 'en') {
+      FIGROUND.rememberLang(urlLang);
+      return urlLang;
+    }
+    var saved = null;
+    try { saved = localStorage.getItem(FIGROUND.LANG_KEY); } catch (e) { /* private mode */ }
+    if (saved === 'de' || saved === 'en') return saved;
     return (navigator.language && navigator.language.startsWith('de')) ? 'de' : 'en';
+  },
+
+  rememberLang: function (lang) {
+    try { localStorage.setItem(FIGROUND.LANG_KEY, lang); } catch (e) { /* private mode */ }
+  },
+
+  // Click handler for every Deutsch / English button: remember the
+  // choice, then hand over to the page's own switchLang().
+  chooseLang: function (lang) {
+    FIGROUND.rememberLang(lang);
+    if (typeof window.switchLang === 'function') window.switchLang(lang);
   },
 
   // ── Mobile detection ──
@@ -88,8 +110,8 @@ var FIGROUND = {
 
     var html = [
       '<span class="hdr-group">',
-        '<a id="btnDe" onclick="switchLang(\'de\')">Deutsch</a>',
-        '<a id="btnEn" class="active" onclick="switchLang(\'en\')">English</a>',
+        '<a id="btnDe" onclick="FIGROUND.chooseLang(\'de\')">Deutsch</a>',
+        '<a id="btnEn" class="active" onclick="FIGROUND.chooseLang(\'en\')">English</a>',
       '</span>',
       '<span class="hdr-group">',
         '<a class="hdr-main-page" href="index.html" data-en="Main Page" data-de="Hauptseite">Main Page</a>',
@@ -209,6 +231,35 @@ var FIGROUND = {
     }
 
     return { header: header, footer: footer, explanation: explainEl };
+  }
+};
+
+// ── Web font readiness ──
+// Several views measure rendered text in pixels (band offsets in the
+// Chains view, ticker strophes, stage heights). The font is declared
+// with font-display: swap, so text first appears in the Georgia
+// fallback, which runs about 15 % wider — anything measured then is
+// wrong once Cormorant Garamond arrives.
+//
+// fontsReady resolves when the roman and italic faces are loaded (song
+// passages are italic and come from a separate file). It gives up after
+// two seconds so a slow or failed font never keeps a page blank; views
+// that waited should also register with onFontsChanged to re-measure if
+// the font turns up late.
+FIGROUND.fontsReady = (function () {
+  if (!document.fonts || !document.fonts.load) return Promise.resolve();
+  var loaded = Promise.all([
+    document.fonts.load('1em "Cormorant Garamond"'),
+    document.fonts.load('italic 1em "Cormorant Garamond"')
+  ]);
+  var giveUp = new Promise(function (resolve) { setTimeout(resolve, 2000); });
+  return Promise.race([loaded, giveUp]).catch(function () {});
+})();
+
+// Run fn each time a batch of web fonts has finished loading.
+FIGROUND.onFontsChanged = function (fn) {
+  if (document.fonts && document.fonts.addEventListener) {
+    document.fonts.addEventListener('loadingdone', fn);
   }
 };
 

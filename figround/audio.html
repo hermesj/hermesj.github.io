@@ -172,7 +172,7 @@
   <!-- Crossfade slider -->
   <div class="slider-container">
     <div class="slider-track-bg"></div>
-    <input type="range" id="crossfade" min="0" max="100" value="50" step="1">
+    <input type="range" id="crossfade" min="0" max="100" value="50" step="1" aria-label="Crossfade between Odysseus and the Siren">
   </div>
 
   <div class="volume-indicators">
@@ -183,14 +183,14 @@
   <!-- Transport — prev / Play / next on a single row. -->
   <div class="transport">
     <div class="play-group">
-      <button class="btn-transport" onclick="jumpPrev()" title="Vorherige Strophe" aria-label="Previous">
+      <button class="btn-transport" id="btnPrev" onclick="jumpPrev()" title="Previous strophe" aria-label="Previous strophe">
         <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round"><line x1="5" y1="5" x2="5" y2="15"/><path d="M16 5 L7.5 10 L16 15 Z"/></svg>
       </button>
       <button class="btn btn-play" id="btnPlay" onclick="togglePlay()" disabled>
         <span class="btn-icon" id="btnPlayIcon" aria-hidden="true"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round"><path d="M6 4.5 L16 10 L6 15.5 Z"/></svg></span>
         <span class="btn-label" id="btnPlayLabel">Play</span>
       </button>
-      <button class="btn-transport" onclick="jumpNext()" title="Nächste Strophe" aria-label="Next">
+      <button class="btn-transport" id="btnNext" onclick="jumpNext()" title="Next strophe" aria-label="Next strophe">
         <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round"><path d="M4 5 L12.5 10 L4 15 Z"/><line x1="15" y1="5" x2="15" y2="15"/></svg>
       </button>
     </div>
@@ -200,7 +200,7 @@
   <div class="loading-bar" id="loadingBar">
     <div class="loading-bar-fill" id="loadingFill"></div>
   </div>
-  <div class="status" id="status">Loading audio files …</div>
+  <div class="status" id="status">Loading audio …</div>
 
   <!-- Progress with strophe bars -->
   <div class="progress-container">
@@ -222,7 +222,7 @@
   <div class="ticker ticker-odysseus" id="tickerOdy">
     <div class="ticker-text ticker-text-odysseus" id="tickerTextOdy"></div>
   </div>
-  <button class="perspective-toggle mode-odysseus" id="perspToggle" onclick="togglePerspective()" title="Perspektive wechseln"></button>
+  <button class="perspective-toggle mode-odysseus" id="perspToggle" onclick="togglePerspective()" title="Switch perspective" aria-label="Switch perspective"></button>
   <div class="ticker ticker-siren" id="tickerSir">
     <div class="ticker-text ticker-text-siren" id="tickerTextSir"></div>
   </div>
@@ -245,6 +245,65 @@ FIGROUND.injectHeader({
   }
 });
 
+// ── Interface strings ──
+// Header / footer links and the help text carry data-en / data-de
+// attributes (set by FIGROUND.injectHeader). Everything that belongs to
+// this page alone lives in this table.
+const AUDIO_UI = {
+  en: {
+    siren: 'The Siren',
+    prev: 'Previous strophe',
+    next: 'Next strophe',
+    perspective: 'Switch perspective',
+    crossfade: 'Crossfade between Odysseus and the Siren',
+    loading: 'Loading audio …',
+    buffering: 'Buffering …',
+    error: 'Error loading audio. Please make sure the MP3 files are in the audio/ folder.'
+  },
+  de: {
+    siren: 'Die Sirene',
+    prev: 'Vorherige Strophe',
+    next: 'Nächste Strophe',
+    perspective: 'Perspektive wechseln',
+    crossfade: 'Überblendung zwischen Odysseus und der Sirene',
+    loading: 'Audio wird geladen …',
+    buffering: 'Audio wird gepuffert …',
+    error: 'Fehler beim Laden der Audiodateien. Bitte prüfen, ob die MP3-Dateien im Ordner audio/ liegen.'
+  }
+};
+
+// The status line shows one of the keys above (or nothing). The key is
+// kept so a language switch can re-render the message that is showing.
+let statusKey = 'loading';
+function setStatus(key) {
+  statusKey = key;
+  document.getElementById('status').textContent = key ? AUDIO_UI[currentLang][key] : '';
+}
+
+// Put every piece of interface text into currentLang. Needs texts.json
+// (for the title), so call it only after FIGROUND.ready.
+function applyLangUi() {
+  const ui = AUDIO_UI[currentLang];
+
+  FIGROUND.updateTitle(currentLang, ' — Audio');
+  document.querySelector('.speaker-right').textContent = ui.siren;
+  document.getElementById('btnDe').classList.toggle('active', currentLang === 'de');
+  document.getElementById('btnEn').classList.toggle('active', currentLang === 'en');
+
+  document.querySelectorAll('[data-' + currentLang + ']').forEach(el => {
+    el.textContent = el.getAttribute('data-' + currentLang);
+  });
+
+  for (const [id, key] of [['btnPrev', 'prev'], ['btnNext', 'next'], ['perspToggle', 'perspective']]) {
+    const el = document.getElementById(id);
+    el.title = ui[key];
+    el.setAttribute('aria-label', ui[key]);
+  }
+  document.getElementById('crossfade').setAttribute('aria-label', ui.crossfade);
+
+  setStatus(statusKey);
+}
+
 // ── Init ──
 //
 // Audio architecture: HTMLAudioElement + MediaElementAudioSourceNode.
@@ -262,9 +321,16 @@ async function init() {
   // Wait for texts to load from JSON
   const texts = await FIGROUND.ready;
 
+  // Localise before anything can fail: title, header and help text
+  // should be in the visitor's language even if the audio never loads.
+  applyLangUi();
+
   // Initialise tickers now that text data is available
   initTickers();
   updateTickers(0);
+  // Strophe positions are measured in pixels — measure again once the
+  // web font has replaced the fallback.
+  FIGROUND.onFontsChanged(initTickers);
 
   audioCtx = new (window.AudioContext || window.webkitAudioContext)();
 
@@ -292,7 +358,7 @@ async function init() {
   // up media playback for elements attached to a document).
   const loadingBar = document.getElementById('loadingBar');
   loadingBar.classList.add('visible');
-  document.getElementById('status').textContent = 'Loading audio …';
+  setStatus('loading');
 
   for (const lang of ['de', 'en']) {
     for (const role of ['odysseus', 'siren']) {
@@ -334,14 +400,8 @@ async function init() {
     ]);
 
     loadingBar.classList.remove('visible');
-    document.getElementById('status').textContent = '';
+    setStatus(null);
     document.getElementById('btnPlay').disabled = false;
-
-    // Apply detected language to UI
-    FIGROUND.updateTitle(currentLang, ' — Audio');
-    document.querySelector('.speaker-right').textContent = currentLang === 'de' ? 'Die Sirene' : 'The Siren';
-    document.getElementById('btnDe').classList.toggle('active', currentLang === 'de');
-    document.getElementById('btnEn').classList.toggle('active', currentLang === 'en');
 
     updateDuration();
     renderStropheBars();
@@ -356,8 +416,7 @@ async function init() {
     }
   } catch (e) {
     loadingBar.classList.remove('visible');
-    document.getElementById('status').textContent =
-      'Error loading audio. Please make sure the MP3 files are in the audio/ folder.';
+    setStatus('error');
     console.error(e);
   }
 }
@@ -384,13 +443,13 @@ function waitForMetadata(el) {
 // is actively in playback — a paused stall is not visible to the user.
 function bindBufferingStatus(el) {
   el.addEventListener('waiting', () => {
-    if (isPlaying) document.getElementById('status').textContent = 'Buffering …';
+    if (isPlaying) setStatus('buffering');
   });
   el.addEventListener('playing', () => {
-    document.getElementById('status').textContent = '';
+    setStatus(null);
   });
   el.addEventListener('canplay', () => {
-    if (isPlaying) document.getElementById('status').textContent = '';
+    if (isPlaying) setStatus(null);
   });
 }
 
@@ -512,12 +571,8 @@ function switchLang(lang) {
 
   currentLang = lang;
 
-  document.getElementById('btnDe').classList.toggle('active', lang === 'de');
-  document.getElementById('btnEn').classList.toggle('active', lang === 'en');
-
-  // Update title and speaker labels
-  FIGROUND.updateTitle(lang, ' — Audio');
-  document.querySelector('.speaker-right').textContent = lang === 'de' ? 'Die Sirene' : 'The Siren';
+  // Title, speaker label, header links, help text, tooltips
+  applyLangUi();
 
   // Reset play button (SVG + label)
   updatePlayButton();
@@ -541,7 +596,7 @@ function switchLang(lang) {
     }
   }).catch(err => {
     console.error(err);
-    document.getElementById('status').textContent = 'Error loading audio.';
+    setStatus('error');
   });
 }
 
@@ -754,7 +809,11 @@ function updateProgress() {
         lastDriftCheck = now;
         const ody = audioEls[currentLang].odysseus;
         const sir = audioEls[currentLang].siren;
+        // Not once either track has ended: a finished Odysseus stands
+        // still at his duration, and snapping the Siren back onto that
+        // would replay her last second.
         if (ody && sir && !ody.paused && !sir.paused &&
+            !ody.ended && !sir.ended &&
             !isNaN(ody.currentTime) && !isNaN(sir.currentTime)) {
           const diff = Math.abs(ody.currentTime - sir.currentTime);
           if (diff > DRIFT_THRESHOLD_S) {

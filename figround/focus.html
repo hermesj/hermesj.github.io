@@ -8,7 +8,7 @@
 <meta property="og:title" content="Figure and Ground — Focus">
 <meta property="og:description" content="Interactive reading view — gyroscope, touch, or mouse control the focus and visibility of both texts.">
 <meta property="og:image" content="https://hermesj.github.io/figround/images/tile-focus-en.jpg">
-<meta property="og:url" content="https://hermesj.github.io/figround/figure-ground-focus.html">
+<meta property="og:url" content="https://hermesj.github.io/figround/focus.html">
 <meta property="og:type" content="website">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="stylesheet" href="figround.css">
@@ -39,6 +39,13 @@
   }
 
   /* hint-overlay base is in figround.css */
+
+  /* On iOS the hint overlay (z-index 900) is made tappable to ask for
+     motion access. Lift the header and footer above it so language,
+     Main Page and Help stay reachable while it waits. */
+  .shared-bar {
+    z-index: 901;
+  }
 
   .hint-inner {
     display: flex;
@@ -287,7 +294,7 @@ FIGROUND.injectHeader({
   showAlignment: true,
   explanation: {
     en: 'Mouse, touch, or tilting the screen lets you move between the two perspectives.',
-    de: 'Mouse, Touch oder Neigung lässt Dich zwischen beiden Perspektiven wandern.'
+    de: 'Maus, Touch oder Neigung lässt Dich zwischen beiden Perspektiven wandern.'
   }
 });
 
@@ -332,6 +339,8 @@ FIGROUND.ready.then(function (texts) {
     stage.style.minHeight = h + 'px';
   }
   window.addEventListener('resize', fitStage);
+  // The layers get shorter when the web font replaces the fallback.
+  FIGROUND.onFontsChanged(fitStage);
 
   // ── Language switching ──
   window.switchLang = function (lang) {
@@ -487,18 +496,25 @@ FIGROUND.ready.then(function (texts) {
       }
 
       if (typeof DeviceOrientationEvent.requestPermission === 'function') {
-        // iOS: hint must be tappable to request permission
+        // iOS: hint must be tappable to request permission. The overlay
+        // covers the whole text area while it waits for that one tap
+        // (the header bar sits above it, see .shared-bar in the CSS).
         hint.style.pointerEvents = 'auto';
         hint.style.cursor = 'pointer';
+        // Whatever the answer — granted, denied, or an error — hand the
+        // pointer back. The listener is gone after one click, so an
+        // overlay left tappable would swallow every later tap for good.
+        var releaseHint = function () {
+          hint.style.pointerEvents = '';
+          hint.style.cursor = '';
+        };
         hint.addEventListener('click', function () {
           DeviceOrientationEvent.requestPermission().then(function (state) {
             if (state === 'granted') {
               window.addEventListener('deviceorientation', handleOrientation, true);
-              hint.style.pointerEvents = '';
-              hint.style.cursor = '';
               setTimeout(fadeHint, 2000);
             }
-          }).catch(console.error);
+          }).catch(console.error).then(releaseHint);
         }, { once: true });
       } else {
         window.addEventListener('deviceorientation', handleOrientation, true);

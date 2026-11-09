@@ -357,7 +357,11 @@ FIGROUND.injectHeader({
   }
 });
 
-FIGROUND.ready.then(function (texts) {
+// Everything in this view is positioned from pixel measurements of the
+// rendered text, so wait for the web font before the first render —
+// measuring in the fallback font puts the right scroll bound thousands
+// of pixels past the end of the text.
+FIGROUND.fontsReady.then(function () { return FIGROUND.ready; }).then(function (texts) {
 
   var trackOdy = document.getElementById('trackOdy');
   var trackSir = document.getElementById('trackSir');
@@ -878,22 +882,37 @@ FIGROUND.ready.then(function (texts) {
     renderChains();
   };
 
-  // ── RESIZE ──
-  window.addEventListener('resize', function () {
+  // ── RE-MEASURE (resize, late web font) ──
+  // Font clamp + layout changes shift paragraph offsets and the
+  // per-track base — re-measure both, and re-derive reading speed
+  // since pixels-per-word depends on the rendered font size. Order
+  // mirrors render(): recalcTrackBase zeroes the transforms before
+  // rebuildAnchors does its Range-based word measurements.
+  //
+  // The scroll position is carried over as a fraction of Odysseus's
+  // range, not in pixels: the old pixel offsets mean nothing once the
+  // text has a different rendered width. setOffset then re-derives the
+  // Siren through the fresh map.
+  function remeasure() {
     viewCenter = window.innerWidth / 2;
-    // Font clamp + layout changes shift paragraph offsets and the
-    // per-track base — re-measure both, and re-derive reading speed
-    // since pixels-per-word depends on the rendered font size. Order
-    // mirrors render(): recalcTrackBase zeroes the transforms before
-    // rebuildAnchors does its Range-based word measurements.
     requestAnimationFrame(function () {
+      var old = anchors.odysseus.pts;
+      var oldSpan = old[old.length - 1] - old[0];
+      var progress = oldSpan > 0
+        ? (state.odysseus.offset - old[0]) / oldSpan
+        : 0;
       recalcTrackBase();
       rebuildAnchors();
       calibrateSpeeds();
       buildChainAnchors();
-      applyTransforms();
+      var pts = anchors.odysseus.pts;
+      setOffset('odysseus', pts[0] + progress * (pts[pts.length - 1] - pts[0]));
     });
-  });
+  }
+  window.addEventListener('resize', remeasure);
+  // Safety net for when fontsReady gave up waiting and the font swaps
+  // in after the first render.
+  FIGROUND.onFontsChanged(remeasure);
 
   // ── INIT ──
   render();

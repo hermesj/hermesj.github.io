@@ -28,6 +28,9 @@
        dedicated chevron buttons — drags on the body stay as reveal
        gestures only. Pinch-zoom remains enabled for accessibility. */
     touch-action: pinch-zoom;
+    /* Containing block for .lens-layer, which has to span the whole
+       document rather than just the first screenful. */
+    position: relative;
   }
 
   /* Desktop per-mode body gradient.
@@ -67,59 +70,114 @@
     );
   }
 
-  /* ── REVEAL WASH ──
-     Full-viewport tint that's revealed by the SAME circular mask the
-     hidden-text layer uses. Inside the text column it just strengthens
-     the "lit" feel; past the column edges — where there is no hidden
-     text for the mask to expose — the wash gives the illumination cone
-     somewhere to land, so the circle stays visibly round instead of
-     being cropped by the text boundary.
-     z-index sits between body and the cursor-ring puddle (1000); the
-     ring tint layers on top of the wash, the revealed text on top of
-     everything. */
-  .reveal-wash {
-    position: fixed;
-    inset: 0;
+  /* ── REVEAL LENS ──
+     The circle of light is one small element that follows the pointer:
+
+       .lens-layer        spans the document and clips the lens, so the
+                          lens can never add scrollable overflow
+         .lens            the circle, --ring-size wide, moved by a transform
+           .reveal-wash   faint tint that carries the cone past the text
+           .cursor-ring   the puddle tint
+           .lens-window   round, soft-edged window onto …
+             .lens-content  … a copy of the hidden text, laid out at its
+                            real document position and shifted back by
+                            the lens offset, so it stays in register
+                            with the surface text
+
+     Moving the reveal is two transform updates and no repainting. The
+     earlier version rewrote a mask-image on the hidden text layer for
+     every pointer move. That layer is as tall as the whole text (about
+     5900 px on a phone), so each move redrew a mask of that size and
+     the shadowed text under it — unnoticeable on a desktop, far behind
+     the finger on a phone.
+
+     Inside the lens everything stacks in source order: wash, puddle,
+     then the revealed text on top. */
+  .lens-layer {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    overflow: hidden;
     pointer-events: none;
-    z-index: 999;
-    -webkit-mask-image: radial-gradient(circle 0px at 0px 0px, black 0%, transparent 100%);
-    mask-image: radial-gradient(circle 0px at 0px 0px, black 0%, transparent 100%);
-    -webkit-mask-repeat: no-repeat;
-    mask-repeat: no-repeat;
-    transition: background 0.3s ease;
+    z-index: 1000;
   }
 
-  /* Tint is subtle — just enough to carry the cone past the text
-     boundary. The softness comes from the JS mask below, which uses
-     a continuous radial fade (no solid inner disc) so the wash reads
-     as a gradient, not a bordered circle. */
+  .lens {
+    /* Diameter of the circle. Wash, puddle and revealed text all fill
+       it, so they are always exactly the same size. The touch media
+       queries below only bump this variable. */
+    --ring-size: 240px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: var(--ring-size);
+    height: var(--ring-size);
+    /* Parked off-screen until the first pointer position arrives. */
+    transform: translate3d(-9999px, -9999px, 0);
+    will-change: transform;
+  }
+
+  .reveal-wash,
+  .cursor-ring,
+  .lens-window {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    border-radius: 50%;
+  }
+
+  /* Wash — subtle tint with a continuous radial fade (no solid inner
+     disc), so it reads as a gradient, not a bordered circle. Inside the
+     text column it strengthens the "lit" feel; past the column edges,
+     where there is no hidden text to show, it gives the cone somewhere
+     to land so the circle stays visibly round. */
+  .reveal-wash {
+    -webkit-mask-image: radial-gradient(circle closest-side, black 0%, transparent 100%);
+    mask-image: radial-gradient(circle closest-side, black 0%, transparent 100%);
+    transition: background 0.3s ease;
+  }
   .mode-odysseus .reveal-wash { background: rgba(15,25,38,0.10); }
   .mode-siren    .reveal-wash { background: rgba(245,248,252,0.10); }
 
-  /* ── CUSTOM CURSOR ──
-     Sized via --ring-size so media queries only need to bump the var.
-     Centered via negative margins rather than transform: translate()
-     — a fixed + transform element gets its own compositor layer on
-     iOS Safari and some Chrome Android builds, which then stacks on
-     top of the hidden text regardless of z-index. */
+  /* Puddle — per-mode gradients follow below. */
   .cursor-ring {
-    /* Sized to the reveal radius (REVEAL_RADIUS = 120 in JS) * 2 so the
-       puddle is always exactly as wide as the revealed hidden-text circle.
-       If the ring were smaller (e.g. 160 we had before), the visible zone
-       would look larger inside the text column — where revealed text
-       extends the illusion out to the reveal radius — and smaller past
-       the column edge, where only the narrower puddle remains. That
-       mismatch reads as the cone "going flat" at the text boundary. */
-    --ring-size: 240px;
-    position: fixed;
-    width: var(--ring-size);
-    height: var(--ring-size);
-    margin-left: calc(-0.5 * var(--ring-size));
-    margin-top: calc(-0.5 * var(--ring-size));
-    border-radius: 50%;
-    pointer-events: none;
-    z-index: 1000;
     transition: opacity 0.3s, border-color 0.4s ease;
+  }
+
+  /* Window — clear in the middle, fading out over the outer 60 px. The
+     mask is static; overflow keeps the browser from rasterising more of
+     the text copy than the circle shows. */
+  .lens-window {
+    overflow: hidden;
+    -webkit-mask-image: radial-gradient(circle closest-side, black 0%, black calc(100% - 60px), transparent 100%);
+    mask-image: radial-gradient(circle closest-side, black 0%, black calc(100% - 60px), transparent 100%);
+  }
+
+  .lens-content {
+    position: absolute;
+    left: 0;
+    top: 0;
+    will-change: transform;
+  }
+
+  /* The copies get left / top / width from the script, measured from
+     the invisible originals in the page — so cancel the offsets their
+     shared classes would add. */
+  .lens-content .layer-hidden,
+  .lens-content .subtitle-hidden {
+    right: auto;
+    margin: 0;
+  }
+
+  /* The hidden voice in the page itself is never painted. It only lays
+     the text out: that gives the stage its height and tells the lens
+     copy where each line belongs. */
+  .layout-ref {
+    visibility: hidden;
   }
 
   /* Desktop "flashlight cone" — no border, just a radial fade so the
@@ -171,9 +229,7 @@
     top: -0.6em; /* half-line offset like the text layers */
     left: 4vw;
     right: 4vw;   /* spans the full row so text-align:center works */
-    /* Above the cursor ring (z-index 1000) so the revealed subtitle
-       isn't dimmed by the puddle tint. */
-    z-index: 1001;
+    text-align: center;   /* stated here too: the lens copy lives outside .subtitle-row */
   }
 
   /* text-stage, text-layer, and end-spacer base are in figround.css */
@@ -188,22 +244,15 @@
     position: relative;
   }
 
-  /* ── HIDDEN LAYER (revealed by cursor) ── */
+  /* ── HIDDEN LAYER ──
+     Used twice: by the invisible original in the stage (.layout-ref),
+     which these offsets position, and by its copy inside the lens,
+     which is what the reader actually sees. */
   .layer-hidden {
     position: absolute;
     top: 0;
     left: 4vw;
     right: 4vw;
-    /* Above the cursor ring (z-index 1000): the puddle tint sits
-       between body gradient and surface text, not on top of the
-       revealed hidden text. */
-    z-index: 1001;
-    /* mask is set dynamically via JS */
-    -webkit-mask-image: radial-gradient(circle 0px at 0px 0px, black 0%, transparent 100%);
-    mask-image: radial-gradient(circle 0px at 0px 0px, black 0%, transparent 100%);
-    -webkit-mask-repeat: no-repeat;
-    mask-repeat: no-repeat;
-    transition: none;
   }
 
   /* ── VERTICAL ALIGNED MODE ──
@@ -274,9 +323,9 @@
      scroll arrows, per-mode gradient). Phones always match. */
   @media (max-width: 768px) and (pointer: coarse) {
     body { cursor: default; }
-    /* Ring doubled and shifted in JS so bottom edge sits on the finger */
+    /* Lens enlarged, and shifted in JS so its bottom edge sits on the finger */
+    .lens { --ring-size: 260px; }
     .cursor-ring {
-      --ring-size: 260px;
       opacity: 0;
       /* Faster than the desktop 0.3 s — on a touch device the user is
          actively looking for the cone, so the delay to peak opacity reads
@@ -370,9 +419,9 @@
      mode instead of the soft flashlight cone. */
   @media (min-width: 769px) and (max-width: 1200px) and (pointer: coarse) {
     body { cursor: default; }
-    /* Ring doubled and shifted in JS so bottom edge sits on the finger */
+    /* Lens enlarged, and shifted in JS so its bottom edge sits on the finger */
+    .lens { --ring-size: 260px; }
     .cursor-ring {
-      --ring-size: 260px;
       opacity: 0;
     }
     .cursor-ring.touch-active { opacity: 1; }
@@ -465,7 +514,7 @@
     opacity: 0;
     pointer-events: none;
     transition: opacity 0.3s ease, background 0.2s ease, transform 0.15s ease;
-    z-index: 1500;           /* above cursor-ring (1000) + layer-hidden (1001) */
+    z-index: 1500;           /* above the reveal lens (1000) */
     padding: 0;
     -webkit-tap-highlight-color: transparent;
   }
@@ -489,20 +538,32 @@
   .scroll-arrow-up   { top: 12px; }
   .scroll-arrow-down { bottom: 12px; }
 
-  /* Only show the buttons on touch-capable viewports.
-     Desktop scrolls with wheel/trackpad as usual — gated on
-     pointer:coarse so a narrow-window desktop doesn't get them. */
-  @media (max-width: 1200px) and (pointer: coarse) {
+  /* Only show the buttons on touch devices. Desktop scrolls with
+     wheel/trackpad as usual — gated on pointer:coarse so a
+     narrow-window desktop doesn't get them. No width limit: body's
+     touch-action blocks touch scrolling at every size, so a large
+     tablet (13" iPad in landscape is 1366 px wide) needs them too. */
+  @media (pointer: coarse) {
     .scroll-arrow { display: flex; }
   }
 </style>
 </head>
 <body class="mode-odysseus">
 
-<!-- Full-viewport wash — gives the reveal cone something to land on
-     past the text column edges. See .reveal-wash CSS above. -->
-<div class="reveal-wash" id="revealWash"></div>
-<div class="cursor-ring" id="cursorRing"></div>
+<!-- Reveal lens — the circle of light, carrying its own copy of the
+     hidden voice. See REVEAL LENS in the CSS above. -->
+<div class="lens-layer">
+  <div class="lens" id="lens">
+    <div class="reveal-wash"></div>
+    <div class="cursor-ring" id="cursorRing"></div>
+    <div class="lens-window">
+      <div class="lens-content" id="lensContent">
+        <span class="subtitle-hidden" id="lensSub"></span>
+        <div class="text-layer layer-hidden" id="lensText"></div>
+      </div>
+    </div>
+  </div>
+</div>
 
 <div class="main-title">
   <span class="word-left" id="titleLeft">Figure</span>
@@ -510,14 +571,16 @@
   <span class="word-right" id="titleRight">Ground</span>
 </div>
 
+<!-- The .layout-ref elements are the hidden voice laid out in place but
+     never painted; the lens copies above mirror their position. -->
 <div class="subtitle-row" id="subtitleRow">
   <span class="subtitle-surface" id="subSurface"></span>
-  <span class="subtitle-hidden" id="subHidden"></span>
+  <span class="subtitle-hidden layout-ref" id="subHidden"></span>
 </div>
 
 <div class="text-stage" id="stage">
   <div class="text-layer layer-surface" id="layerSurface"></div>
-  <div class="text-layer layer-hidden" id="layerHidden"></div>
+  <div class="text-layer layer-hidden layout-ref" id="layerHidden"></div>
 </div>
 
 <div class="end-spacer"></div>
@@ -545,7 +608,7 @@ FIGROUND.injectHeader({
   showAlignment: true,
   explanation: {
     en: 'Beneath the surface, you’ll find another perspective. Use the mouse or touch to discover it.',
-    de: 'Unter der Oberfläche findest Du eine weitere Perspektive. Nutze Mouse oder Berührung, um sie zu finden.'
+    de: 'Unter der Oberfläche findest Du eine weitere Perspektive. Nutze Maus oder Berührung, um sie zu finden.'
   }
 });
 
@@ -555,7 +618,10 @@ FIGROUND.ready.then(function (texts) {
   var subSurface = document.getElementById('subSurface');
   var subHidden = document.getElementById('subHidden');
   var cursorRing = document.getElementById('cursorRing');
-  var revealWash = document.getElementById('revealWash');
+  var lens = document.getElementById('lens');
+  var lensContent = document.getElementById('lensContent');
+  var lensSub = document.getElementById('lensSub');
+  var lensText = document.getElementById('lensText');
   var explanation = document.getElementById('sharedExplanation');
   var stage = document.getElementById('stage');
   // The shared explanation slab takes the role of the previous hint
@@ -570,18 +636,6 @@ FIGROUND.ready.then(function (texts) {
 
   var isMobile = FIGROUND.isMobile;
 
-  // Reveal radius
-  // Reveal radius matches the visual ring radius on touch devices
-  // (ring diameter 260 → radius 130), so the illuminated text spans
-  // the full ring rather than a smaller inner circle.
-  var REVEAL_RADIUS = isMobile ? 130 : 120;
-  var REVEAL_EDGE = 60; // soft edge in px
-
-  // Track mouse/touch position relative to the stage
-  var pointerX = -9999;
-  var pointerY = -9999;
-  var pointerActive = false;
-
   // ── Render ──
 
   function render() {
@@ -594,9 +648,14 @@ FIGROUND.ready.then(function (texts) {
     document.querySelector('.main-title').classList.toggle('title-de', currentLang === 'de');
 
     subSurface.textContent = surface.subtitle;
-    subHidden.textContent = hidden.subtitle;
     layerSurface.innerHTML = FIGROUND.renderParagraphs(surface.paragraphs);
-    layerHidden.innerHTML = FIGROUND.renderParagraphs(hidden.paragraphs);
+    // The hidden voice goes in twice: into the invisible layout
+    // originals in the page, and into the copies the lens shows.
+    var hiddenHtml = FIGROUND.renderParagraphs(hidden.paragraphs);
+    subHidden.textContent = hidden.subtitle;
+    lensSub.textContent = hidden.subtitle;
+    layerHidden.innerHTML = hiddenHtml;
+    lensText.innerHTML = hiddenHtml;
 
     // Voice classes drive the vertical-aligned layout (Odysseus narrow,
     // Siren wider). Classes flip whenever swap toggles surfaceVoice.
@@ -622,19 +681,24 @@ FIGROUND.ready.then(function (texts) {
       els[i].textContent = els[i].getAttribute('data-' + currentLang);
     }
 
-    // Fit stage height — then refresh cached rects, since the new layout
-    // moves layer-hidden / sub-hidden positions.
-    requestAnimationFrame(function () {
-      fitStage();
-      refreshRects();
-    });
+    // Fit stage height — then line the lens copies up with the new layout.
+    requestAnimationFrame(relayout);
   }
 
   function fitStage() {
     var h = Math.max(layerSurface.scrollHeight, layerHidden.scrollHeight);
     stage.style.minHeight = h + 'px';
   }
-  window.addEventListener('resize', fitStage);
+
+  // Everything that depends on where the text ends up. Runs after each
+  // render and whenever the layout can have moved: resize, alignment
+  // switch, the web font replacing the fallback.
+  function relayout() {
+    fitStage();
+    syncLens();
+  }
+  window.addEventListener('resize', relayout);
+  FIGROUND.onFontsChanged(relayout);
 
   // ── Language switching ──
   window.switchLang = function (lang) {
@@ -660,52 +724,55 @@ FIGROUND.ready.then(function (texts) {
       (mode === 'horizontal') ? 'active' : '';
     document.getElementById('btnAlignV').className =
       (mode === 'vertical') ? 'active' : '';
-    // Layout change affects layer heights → refit stage, then refresh
-    // the cached rects since alignment switching moves layer-hidden.
-    requestAnimationFrame(function () {
-      fitStage();
-      refreshRects();
-    });
+    // Layout change affects layer heights and moves the hidden layer →
+    // refit the stage and re-place the lens copies.
+    requestAnimationFrame(relayout);
   };
 
-  // ── Reveal mask ──
+  // ── Reveal lens ──
   //
-  // Performance notes (matters most on mobile):
+  // The lens is a small circle positioned in document coordinates and
+  // moved with a transform; inside it sits a copy of the hidden voice,
+  // shifted back by the same amount so every line stays exactly where
+  // the invisible original is. See REVEAL LENS in the CSS for the parts.
   //
-  // 1. rAF batching. touchmove can fire at the display refresh rate (60 Hz
-  //    on most phones, 120 Hz on iPhone Pro / iPad Pro). Without batching,
-  //    each event triggered three mask-repaints (text + subtitle + wash)
-  //    × two property writes each (mask-image + -webkit-mask-image) plus
-  //    a forced layout via getBoundingClientRect — easily 5-10 ms per
-  //    event on mid-range Android, well above frame budget. We collect
-  //    the latest pointer position into queuedX/Y and let one rAF callback
-  //    apply the actual DOM writes — natural coalescing at display rate.
+  // What a pointer move costs is the point of this design:
   //
-  // 2. Cached bounding rects. The two text columns don't move during
-  //    pointer interaction, so we measure them once and refresh on layout
-  //    events only (resize, scroll, render, alignment switch). Saves two
-  //    forced-layout reads per paint.
+  // 1. No painting. Both writes below are transforms on layers the
+  //    browser has already rasterised, so the reveal is moved by the
+  //    compositor. Nothing about the text, its shadows or a mask is
+  //    redrawn while the finger moves.
   //
-  // 3. Mask pre-warm. WebKit allocates the GPU mask buffer lazily on the
-  //    first non-trivial gradient. For a viewport-tall text layer that
-  //    one-off allocation runs ~100-200 ms on mobile, and reads as "the
-  //    cone takes forever to appear on first touch". Pre-warming with an
-  //    off-screen mask on init pushes that cost out of the interaction
-  //    path.
+  // 2. No layout reads. Positions come from the events' pageX / pageY,
+  //    and the copies are measured only when the layout itself changes
+  //    (syncLens, called from relayout).
+  //
+  // 3. rAF batching. touchmove can fire faster than the display
+  //    refreshes; the latest position waits in lensX / lensY and one
+  //    animation-frame callback applies it.
 
-  // Cached layout rects — refreshed only when geometry actually changes.
-  var hiddenRect = null;
-  var subHiddenRect = null;
-  function refreshRects() {
-    hiddenRect = layerHidden.getBoundingClientRect();
-    subHiddenRect = subHidden.getBoundingClientRect();
+  // Place a lens copy where its invisible original sits in the page.
+  // Same left edge and same width means the same line breaks.
+  function placeCopy(copy, original) {
+    var r = original.getBoundingClientRect();
+    copy.style.left  = (r.left + window.scrollX) + 'px';
+    copy.style.top   = (r.top  + window.scrollY) + 'px';
+    copy.style.width = r.width + 'px';
   }
 
-  // rAF queue — the latest pointer position waits here until the next
-  // animation frame. queuedX/Y are also used by the ring-position write so
-  // ring + mask stay in lockstep (no half-frame between them).
-  var queuedX = -9999;
-  var queuedY = -9999;
+  var lensRadius = 120;   // half of --ring-size; read from the page in syncLens
+
+  function syncLens() {
+    placeCopy(lensText, layerHidden);
+    placeCopy(lensSub, subHidden);
+    lensRadius = lens.offsetWidth / 2;
+    queuePaint();
+  }
+
+  // Centre of the lens in document coordinates. Because it is anchored
+  // to the document, the lens scrolls with the text on its own.
+  var lensX = -9999;
+  var lensY = -9999;
   var paintQueued = false;
 
   function queuePaint() {
@@ -716,78 +783,43 @@ FIGROUND.ready.then(function (texts) {
 
   function paintFrame() {
     paintQueued = false;
-    cursorRing.style.left = queuedX + 'px';
-    cursorRing.style.top  = queuedY + 'px';
-    if (!hiddenRect) refreshRects();
-    writeMasks(queuedX, queuedY);
+    // Whole pixels: a layer composited at a fractional offset is
+    // resampled, which blurs the text.
+    var x = Math.round(lensX - lensRadius);
+    var y = Math.round(lensY - lensRadius);
+    lens.style.transform = 'translate3d(' + x + 'px,' + y + 'px,0)';
+    lensContent.style.transform = 'translate3d(' + (-x) + 'px,' + (-y) + 'px,0)';
   }
-
-  function writeMasks(clientX, clientY) {
-    var inner = REVEAL_RADIUS - REVEAL_EDGE;
-
-    // Text-column reveal — coords are layer-relative because layer-hidden
-    // is position:absolute inside the stage.
-    var rx = clientX - hiddenRect.left;
-    var ry = clientY - hiddenRect.top;
-    var maskValue = 'radial-gradient(circle ' + REVEAL_RADIUS + 'px at ' +
-      rx + 'px ' + ry + 'px, black 0%, black ' + inner +
-      'px, transparent ' + REVEAL_RADIUS + 'px)';
-    layerHidden.style.webkitMaskImage = maskValue;
-    layerHidden.style.maskImage = maskValue;
-
-    // Subtitle reveal — same shape, different element offsets.
-    var subRx = clientX - subHiddenRect.left;
-    var subRy = clientY - subHiddenRect.top;
-    var subMask = 'radial-gradient(circle ' + REVEAL_RADIUS + 'px at ' +
-      subRx + 'px ' + subRy + 'px, black 0%, black ' + inner +
-      'px, transparent ' + REVEAL_RADIUS + 'px)';
-    subHidden.style.webkitMaskImage = subMask;
-    subHidden.style.maskImage = subMask;
-
-    // Wash mask — in viewport coords because .reveal-wash is position:fixed.
-    // Continuous fade (no solid inner) so it reads as a soft cone, not a
-    // disc; the text-layer masks keep the solid inner so text stays sharp.
-    var washMask = 'radial-gradient(circle ' + REVEAL_RADIUS + 'px at ' +
-      clientX + 'px ' + clientY + 'px, black 0%, transparent 100%)';
-    revealWash.style.webkitMaskImage = washMask;
-    revealWash.style.maskImage = washMask;
-  }
-
-  // Pre-warm — issue a full-radius mask at an off-screen position so the
-  // GPU buffer is allocated and the gradient parsed before the first user
-  // touch. Without this, the very first reveal stalls visibly on mobile.
-  function prewarmMasks() {
-    var inner = REVEAL_RADIUS - REVEAL_EDGE;
-    var preMask = 'radial-gradient(circle ' + REVEAL_RADIUS +
-      'px at -9999px -9999px, black 0%, black ' + inner +
-      'px, transparent ' + REVEAL_RADIUS + 'px)';
-    layerHidden.style.webkitMaskImage = preMask;
-    layerHidden.style.maskImage = preMask;
-    subHidden.style.webkitMaskImage = preMask;
-    subHidden.style.maskImage = preMask;
-    var preWash = 'radial-gradient(circle ' + REVEAL_RADIUS +
-      'px at -9999px -9999px, black 0%, transparent 100%)';
-    revealWash.style.webkitMaskImage = preWash;
-    revealWash.style.maskImage = preWash;
-  }
-
-  // Geometry-change refresh — anything that can move the text columns
-  // invalidates the cached rects.
-  window.addEventListener('resize', refreshRects);
-  window.addEventListener('scroll', refreshRects, { passive: true });
 
   // ── Desktop: mouse ──
+  // Last mouse position in viewport coordinates, or null while touch is
+  // in charge. A mouse cursor stays put on screen when the page scrolls
+  // under it, so the lens has to be re-anchored on scroll; after a touch
+  // the lens is left with its text (see touchend below).
+  var mousePos = null;
+  var lastTouchAt = 0;
+
   document.addEventListener('mousemove', function (e) {
+    // Browsers replay a tap as mouse events at the tap position. Taking
+    // those would pull the lens off its place above the finger.
+    if (Date.now() - lastTouchAt < 1000) return;
     fadeHint();
-    queuedX = e.clientX;
-    queuedY = e.clientY;
+    mousePos = { x: e.clientX, y: e.clientY };
+    lensX = e.pageX;
+    lensY = e.pageY;
     queuePaint();
   });
 
+  window.addEventListener('scroll', function () {
+    if (!mousePos) return;
+    lensX = mousePos.x + window.scrollX;
+    lensY = mousePos.y + window.scrollY;
+    queuePaint();
+  }, { passive: true });
+
   // ── Mobile: touch ──
   // Flag set while a scroll arrow is held — reveal handlers then bail,
-  // so the ring doesn't chase the button and the mask doesn't update
-  // from the button-press coordinates.
+  // so the lens doesn't chase the button.
   var scrollingViaArrow = false;
 
   if (isMobile) {
@@ -802,7 +834,7 @@ FIGROUND.ready.then(function (texts) {
       // media query) so it doesn't misfire on a narrow desktop
       // window where FIGROUND.isMobile might still be true
       // (e.g. touch-capable laptop used with a mouse).
-      ringOffsetY = window.matchMedia('(max-width: 1200px) and (pointer: coarse)').matches
+      ringOffsetY = window.matchMedia('(pointer: coarse)').matches
         ? cursorRing.offsetHeight / 2
         : 0;
     }
@@ -811,10 +843,12 @@ FIGROUND.ready.then(function (texts) {
     window.addEventListener('orientationchange', recalcRingOffset);
 
     function onTouch(e) {
+      lastTouchAt = Date.now();
       if (scrollingViaArrow) return;
       fadeHint();
-      queuedX = e.touches[0].clientX;
-      queuedY = e.touches[0].clientY - ringOffsetY;
+      mousePos = null;
+      lensX = e.touches[0].pageX;
+      lensY = e.touches[0].pageY - ringOffsetY;
       // touch-active is idempotent (classList.add is a no-op if present)
       // and visual-only; safe to write straight from the event.
       cursorRing.classList.add('touch-active');
@@ -825,16 +859,19 @@ FIGROUND.ready.then(function (texts) {
     document.addEventListener('touchmove', onTouch, { passive: true });
 
     document.addEventListener('touchend', function () {
-      // Ring fades out, but the reveal mask stays put — the last
+      lastTouchAt = Date.now();
+      // The puddle fades out, but the lens stays where it is — the last
       // revealed patch of text remains readable (at lower contrast,
-      // since the puddle is gone). Next touch overwrites the mask.
+      // since the puddle is gone) and scrolls along with the page.
+      // The next touch moves it.
       cursorRing.classList.remove('touch-active');
     }, { passive: true });
   }
 
   // ── Scroll arrows ──
-  // Hold-to-scroll at a constant rate. Buttons are hidden via CSS on
-  // desktop (>1200px), so this code only takes effect on touch viewports.
+  // Hold-to-scroll at a constant rate. Buttons are hidden via CSS unless
+  // the primary pointer is coarse, so this code only takes effect on
+  // touch devices.
   var scrollUp   = document.getElementById('scrollUp');
   var scrollDown = document.getElementById('scrollDown');
   var SCROLL_SPEED = 8; // px per animation frame (~480 px/s at 60fps)
@@ -914,12 +951,6 @@ FIGROUND.ready.then(function (texts) {
   // ── Init ──
   render();
   switchAlign('horizontal');
-  // Pre-warm the mask buffers and seed the rect cache once layout settles,
-  // so the very first finger-down doesn't have to wait for either.
-  requestAnimationFrame(function () {
-    refreshRects();
-    prewarmMasks();
-  });
 });
 </script>
 

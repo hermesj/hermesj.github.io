@@ -278,8 +278,8 @@
 <div class="page">
 
   <div class="lang-switch">
-    <a id="btnDe" onclick="switchLang('de')">Deutsch</a>
-    <a id="btnEn" class="active" onclick="switchLang('en')">English</a>
+    <a id="btnDe" onclick="FIGROUND.chooseLang('de')">Deutsch</a>
+    <a id="btnEn" class="active" onclick="FIGROUND.chooseLang('en')">English</a>
   </div>
 
   <div class="header">
@@ -333,7 +333,7 @@
            width="1200" height="630" loading="lazy" decoding="async"
            data-img-en="images/tile-poster-en.jpg" data-img-de="images/tile-poster-de.jpg">
       <div class="tile-body">
-        <div class="tile-title" data-en="Poster (static)" data-de="Poster (static)">Poster</div>
+        <div class="tile-title" data-en="Poster (static)" data-de="Poster (statisch)">Poster</div>
         <div class="tile-desc" data-en="Interlocked figures, each the other's ground." data-de="Verzahnte Figuren, die sich wechselseitig Hintergrund sind.">Interlocked figures, each the other's ground.</div>
       </div>
     </a>
@@ -372,7 +372,8 @@
 <script src="figround.js"></script>
 <script>
 // Use the shared detector — same behaviour as every other view
-// (URL ?lang= takes precedence, then navigator.language). The landing
+// (URL ?lang= takes precedence, then the remembered choice, then
+// navigator.language). The landing
 // page has its own bespoke layout (single-line title + tagline, custom
 // lang-switch chrome) and so does NOT use FIGROUND.injectHeader /
 // updateTitle — those expect the three-part titleLeft/Mid/Right

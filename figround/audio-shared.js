@@ -130,8 +130,14 @@ function getCurrentTime() {
   // before the audio element's own clock has caught up.
   if (pendingSeekTarget !== null) return pendingSeekTarget;
   const ody = activeEls().odysseus;
+  const sir = activeEls().siren;
   if (!ody) return 0;
-  const t = ody.currentTime;
+  // The two files are not always equally long (the English Odysseus
+  // track is 1.4 s shorter than the Siren's). Once Odysseus has run
+  // out, his clock stands still short of getMaxDuration(), so hand over
+  // to the Siren — otherwise the end of playback is never reached.
+  const t = (ody.ended && sir) ? Math.max(ody.currentTime, sir.currentTime)
+                               : ody.currentTime;
   return isNaN(t) ? 0 : t;
 }
 
